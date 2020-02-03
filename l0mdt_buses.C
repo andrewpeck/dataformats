@@ -116,23 +116,23 @@ end record;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++++++++++++++++++++++++MTCBUILD_IN_PTCALC_ENDCAP+++++++++++++++++++++
 type MTCBUILD_IN_PTCALC_ENDCAPis record
-SLCPROC_IN_ENDCAP_MTCBUILD : std::logic_vector(#REF! downto 0;
-mdt_pt_thresh : std::logic_vector(#REF! downto #REF!;
-mdt_pt : std::logic_vector(#REF! downto #REF!;
-mdt_processing_flags : std::logic_vector(#REF! downto #REF!;
-mdt_charge : std::logic_vector(#REF! downto #REF!;
-mdt_n_segments : std::logic_vector(#REF! downto #REF!;
-mdt_quality : std::logic_vector(#REF! downto #REF!;
+SLCPROC_IN_ENDCAP_MTCBUILD : std::logic_vector(79 downto 0;
+mdt_pt_thresh : std::logic_vector(83 downto 80;
+mdt_pt : std::logic_vector(91 downto 84;
+mdt_processing_flags : std::logic_vector(95 downto 92;
+mdt_charge : std::logic_vector(96 downto 96;
+mdt_n_segments : std::logic_vector(98 downto 97;
+mdt_quality : std::logic_vector(99 downto 99;
 end record;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //++++++++++++++++++++++++++MTCBUILD_IN_PTCALC_BARREL+++++++++++++++++++++
 type MTCBUILD_IN_PTCALC_BARRELis record
-SLCPROC_IN_BARREL_MTCBUILD : std::logic_vector(#REF! downto 0;
-mdt_pt_thresh : std::logic_vector(#REF! downto #REF!;
-mdt_pt : std::logic_vector(#REF! downto #REF!;
-mdt_processing_flags : std::logic_vector(#REF! downto #REF!;
-mdt_charge : std::logic_vector(#REF! downto #REF!;
-mdt_n_segments : std::logic_vector(#REF! downto #REF!;
-mdt_quality : std::logic_vector(#REF! downto #REF!;
+SLCPROC_IN_BARREL_MTCBUILD : std::logic_vector(83 downto 0;
+mdt_pt_thresh : std::logic_vector(87 downto 84;
+mdt_pt : std::logic_vector(95 downto 88;
+mdt_processing_flags : std::logic_vector(99 downto 96;
+mdt_charge : std::logic_vector(100 downto 100;
+mdt_n_segments : std::logic_vector(102 downto 101;
+mdt_quality : std::logic_vector(103 downto 103;
 end record;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

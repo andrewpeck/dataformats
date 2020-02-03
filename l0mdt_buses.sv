@@ -129,24 +129,24 @@ logic [54 : 54] sf_seg_quality;
 //++++++++++++++++++++++++++MTCBUILD_IN_PTCALC_ENDCAP+++++++++++++++++++++
 typedef struct {
 SLCPROC_IN_ENDCAP SLCPROC_IN_ENDCAP_MTCBUILD;
-logic [#REF! : #REF!] mdt_pt_thresh;
-logic [#REF! : #REF!] mdt_pt;
-logic [#REF! : #REF!] mdt_processing_flags;
-logic [#REF! : #REF!] mdt_charge;
-logic [#REF! : #REF!] mdt_n_segments;
-logic [#REF! : #REF!] mdt_quality;
+logic [83 : 80] mdt_pt_thresh;
+logic [91 : 84] mdt_pt;
+logic [95 : 92] mdt_processing_flags;
+logic [96 : 96] mdt_charge;
+logic [98 : 97] mdt_n_segments;
+logic [99 : 99] mdt_quality;
 } MTCBUILD_IN_PTCALC_ENDCAP;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 //++++++++++++++++++++++++++MTCBUILD_IN_PTCALC_BARREL+++++++++++++++++++++
 typedef struct {
 SLCPROC_IN_BARREL SLCPROC_IN_BARREL_MTCBUILD;
-logic [#REF! : #REF!] mdt_pt_thresh;
-logic [#REF! : #REF!] mdt_pt;
-logic [#REF! : #REF!] mdt_processing_flags;
-logic [#REF! : #REF!] mdt_charge;
-logic [#REF! : #REF!] mdt_n_segments;
-logic [#REF! : #REF!] mdt_quality;
+logic [87 : 84] mdt_pt_thresh;
+logic [95 : 88] mdt_pt;
+logic [99 : 96] mdt_processing_flags;
+logic [100 : 100] mdt_charge;
+logic [102 : 101] mdt_n_segments;
+logic [103 : 103] mdt_quality;
 } MTCBUILD_IN_PTCALC_BARREL;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

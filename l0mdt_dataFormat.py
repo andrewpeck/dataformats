@@ -66,7 +66,7 @@ def write_c_file(c_name) :
    f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
    f.write("type "+bus.name+"is record\n")
    for var in bus.vars:
-    f.write(var.name+" : std::logic_vector("+var.msb+" downto "+var.lsb+";\n")
+    f.write(var.name+" : std::logic_vector("+var.width+" downto 0;\n")
    f.write("end record;\n")
    f.write("//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
 
@@ -84,7 +84,7 @@ def write_sv_file(sv_name) :
     if var.type != 'var':
      f.write(var.type+" "+var.name+";\n")
     elif var.type == 'var':
-     f.write("logic ["+var.msb+" : "+var.lsb+"] "+var.name+";\n")
+     f.write("logic ["+var.width+" : 0] "+var.name+";\n")
    f.write("} "+bus.name+";\n")
    f.write("//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
    f.write("\n")
@@ -103,7 +103,7 @@ def write_vhdl_file(vhdl_name) :
     if var.type != 'var':
      f.write(var.type+" : "+var.name+";\n")
     elif var.type == 'var':
-     f.write(var.name+" : std::logic_vector("+var.msb+" downto "+var.lsb+");\n")
+     f.write(var.name+" : std::logic_vector("+var.width+" downto 0);\n")
    f.write("end record;\n")
    f.write("//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
    f.write("\n")

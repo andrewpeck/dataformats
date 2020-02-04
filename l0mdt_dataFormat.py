@@ -1,6 +1,7 @@
 import csv
 from typing import NamedTuple
 import sys, getopt, csv
+from datetime import datetime, timezone
 
 #declare variable class
 class Var(NamedTuple):
@@ -60,8 +61,31 @@ def read_csv(input_file) :
 
 #C file writer
 def write_c_file(c_name) :
-  f = open(c_name+".C", "w")
+  
+  now = datetime.now(tz=None) 
+  dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
+  #constants
+  f_constants = open(c_name+"_constants.h","w")
+  
+  f_constants.write("// Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
+  f_constants.write("// Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
+  f_constants.write("\n");
+  f_constants.write("\n");
+  f_constants.write("\n");
+
+
+  for bus in buses:
+   for var in bus.vars:
+    if var.type!="struct" and var.parameter!="(COPY)":
+     f_constants.write("const int "+var.name+"_width = "+var.width+";\n")
+     f_constants.write("const int "+var.name+"_lsb = "+var.lsb+";\n")
+     f_constants.write("const int "+var.name+"_msb = "+var.msb+";\n")
+     f_constants.write("\n");
+  f_constants.close()
+  
+  #interface
+  f = open(c_name+".C", "w")
   for bus in buses:
    f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
    f.write("type "+bus.name+"is record\n")
@@ -75,8 +99,30 @@ def write_c_file(c_name) :
 
 #system-verilog file writer
 def write_sv_file(sv_name) :
-  f = open(sv_name+".sv", "w")
+  
+  now = datetime.now(tz=None) 
+  dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
+  #constants
+  f_constants = open(sv_name+"_constants.sv","w")
+  
+  f_constants.write("// Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
+  f_constants.write("// Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
+  f_constants.write("\n");
+  f_constants.write("\n");
+  f_constants.write("\n");
+  
+  for bus in buses:
+   for var in bus.vars:
+    if var.type!="struct" and var.parameter!="(COPY)":
+     f_constants.write("'define "+var.name+"_width "+var.width+";\n")
+     f_constants.write("'define "+var.name+"_lsb "+var.lsb+";\n")
+     f_constants.write("'define "+var.name+"_msb "+var.msb+";\n")
+     f_constants.write("\n");
+  f_constants.close()
+  
+  #interface
+  f = open(sv_name+".sv", "w")
   for bus in buses:
    f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
    f.write("typedef struct {\n")
@@ -94,10 +140,32 @@ def write_sv_file(sv_name) :
 
 #vhdl file writer
 def write_vhdl_file(vhdl_name) :
-  f = open(vhdl_name+".vhdl", "w")
+  
+  now = datetime.now(tz=None) 
+  dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+
+  #constants
+  f_constants = open(vhdl_name+"_constants.vhdl","w")
+  
+  f_constants.write("-- Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
+  f_constants.write("-- Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
+  f_constants.write("\n");
+  f_constants.write("\n");
+  f_constants.write("\n");
 
   for bus in buses:
-   f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
+   for var in bus.vars:
+    if var.type!="struct" and var.parameter!="(COPY)":
+     f_constants.write("constant "+var.name+"_width : natural := "+var.width+";\n")
+     f_constants.write("constant "+var.name+"_lsb : natural := "+var.lsb+";\n")
+     f_constants.write("constant "+var.name+"_msb : natural := "+var.msb+";\n")
+     f_constants.write("\n");
+  f_constants.close()
+  
+  #interface
+  f = open(vhdl_name+".vhdl", "w")
+  for bus in buses:
+   f.write("-- ++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
    f.write("type "+bus.name+" is record\n")
    for var in bus.vars:
     if var.type != 'var':
@@ -105,7 +173,7 @@ def write_vhdl_file(vhdl_name) :
     elif var.type == 'var':
      f.write(var.name+" : std::logic_vector("+var.width+" downto 0);\n")
    f.write("end record;\n")
-   f.write("//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
+   f.write("-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
    f.write("\n")
   f.close()
   print('VHDL file written')

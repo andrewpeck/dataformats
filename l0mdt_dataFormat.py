@@ -24,7 +24,7 @@ class Var(NamedTuple):
 #declare Bus class (set of variables)
 class Bus(NamedTuple):
  name: str
- nbits: int
+ width: int
  vars: Var = []
 
 buses = []
@@ -77,13 +77,18 @@ def write_c_file(c_name) :
 
 
   for bus in buses:
+   f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
+   f_constants.write("const int "+bus.name+"_width = "+bus.width+";\n")
+   f_constants.write("\n")
    for var in bus.vars:
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("// "+var.parameter+"\n")
-     f_constants.write("const int "+var.name+"_width = "+var.width+";\n")
-     f_constants.write("const int "+var.name+"_lsb = "+var.lsb+";\n")
-     f_constants.write("const int "+var.name+"_msb = "+var.msb+";\n")
+     f_constants.write("const int "+bus.name+"_"+var.name+"_width = "+var.width+";\n")
+     f_constants.write("const int "+bus.name+"_"+var.name+"_lsb = "+var.lsb+";\n")
+     f_constants.write("const int "+bus.name+"_"+var.name+"_msb = "+var.msb+";\n")
      f_constants.write("\n");
+   f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
+   f_constants.write("\n")
   f_constants.close()
   
   #interface
@@ -116,13 +121,18 @@ def write_sv_file(sv_name) :
   f_constants.write("\n");
   
   for bus in buses:
+   f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
+   f_constants.write("'define "+bus.name+"_width "+bus.width+";\n")
+   f_constants.write("\n")
    for var in bus.vars:
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("// "+var.parameter+"\n")
-     f_constants.write("'define "+var.name+"_width "+var.width+";\n")
-     f_constants.write("'define "+var.name+"_lsb "+var.lsb+";\n")
-     f_constants.write("'define "+var.name+"_msb "+var.msb+";\n")
-     f_constants.write("\n");
+     f_constants.write("'define "+bus.name+"_"+var.name+"_width "+var.width+";\n")
+     f_constants.write("'define "+bus.name+"_"+var.name+"_lsb "+var.lsb+";\n")
+     f_constants.write("'define "+bus.name+"_"+var.name+"_msb "+var.msb+";\n")
+     f_constants.write("\n")
+   f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
+   f_constants.write("\n")
   f_constants.close()
   
   #interface
@@ -159,13 +169,18 @@ def write_vhdl_file(vhdl_name) :
   f_constants.write("\n");
 
   for bus in buses:
+   f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
+   f_constants.write("const "+bus.name+"_width : natural := "+bus.width+";\n")
+   f_constants.write("\n")
    for var in bus.vars:
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("-- "+var.parameter+"\n")
-     f_constants.write("constant "+var.name+"_width : natural := "+var.width+";\n")
-     f_constants.write("constant "+var.name+"_lsb : natural := "+var.lsb+";\n")
-     f_constants.write("constant "+var.name+"_msb : natural := "+var.msb+";\n")
-     f_constants.write("\n");
+     f_constants.write("constant "+bus.name+"_"+var.name+"_width : natural := "+var.width+";\n")
+     f_constants.write("constant "+bus.name+"_"+var.name+"_lsb : natural := "+var.lsb+";\n")
+     f_constants.write("constant "+bus.name+"_"+var.name+"_msb : natural := "+var.msb+";\n")
+     f_constants.write("\n")
+   f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
+   f_constants.write("\n")
   f_constants.close()
   
   #interface

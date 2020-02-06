@@ -91,7 +91,7 @@ def write_c_file(c_name) :
   f_constants.close()
   
   #interface
-  f = open(c_name+".C", "w")
+  f = open(c_name+".h", "w")
   for bus in buses:
    f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
    f.write("type "+bus.name+"is record\n")

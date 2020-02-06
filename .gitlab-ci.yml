@@ -15,14 +15,14 @@ mypy:
   - ls -l
   - python l0mdt_dataFormat.py -i l0mdt_buses.csv
 
-artifacts:
-      paths:
-        - l0mdt_buses.sv
-        - l0mdt_buses.vhdl
-        - l0mdt_buses.h
-        - l0mdt_buses_constants.sv
-        - l0mdt_buses_constant.vhdl
-        - l0mdt_buses_constants.h
+  artifacts:
+   paths:
+    - l0mdt_buses.sv
+    - l0mdt_buses.vhdl
+    - l0mdt_buses.h
+    - l0mdt_buses_constants.sv
+    - l0mdt_buses_constant.vhdl
+    - l0mdt_buses_constants.h
 
 #myexport:
 #  stage: Export

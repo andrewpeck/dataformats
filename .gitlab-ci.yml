@@ -15,7 +15,7 @@ mypy:
   - ls -l
   - python l0mdt_dataFormat.py -i l0mdt_buses.csv
 
-myexport
+myexport:
   stage: Export
   script:
   - pwd ls -l

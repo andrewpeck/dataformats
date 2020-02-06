@@ -75,7 +75,6 @@ def write_c_file(c_name) :
   f_constants.write("\n");
   f_constants.write("\n");
 
-
   for bus in buses:
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("const int "+bus.name+"_width = "+bus.width+";\n")
@@ -204,7 +203,6 @@ def write_vhdl_file(vhdl_name) :
 #main function
 def main(argv):
    inputfile = ''
-   outputfile = ''
    try:
       opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
    except getopt.GetoptError:
@@ -212,14 +210,11 @@ def main(argv):
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':
-         print('test.py -i <inputfile> -o <outputfile>')
+         print('l0mdt_dataFormat.py -i <inputfile>')
          sys.exit()
       elif opt in ("-i", "--ifile"):
          inputfile = arg
-      elif opt in ("-o", "--ofile"):
-         outputfile = arg
    print('Input file is "', inputfile)
-   print('Output file is "', outputfile)
 
    read_csv(inputfile)
    print(buses)

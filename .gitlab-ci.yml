@@ -5,7 +5,7 @@ before_script:
   #- pip install -r requirements.txt
 
 stages:
-  #-Export
+  - Export
   - Conversion
 
 mypy:
@@ -14,6 +14,12 @@ mypy:
   - pwd
   - ls -l
   - python l0mdt_dataFormat.py -i l0mdt_buses.csv
+
+myexport
+  stage: Export
+  script:
+  - pwd ls -l
+  - wget --output-document=l0mdt_buses.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vSylQoq9qcxKz2dhXTtZpDkz00jicsuqYw_u6hopU_zs0gtBy5pBBD10hlvqPQ6ShLH5MP3eNKenzAO/pub?gid=1745105770&single=true&output=csv"
 
 #flake8:
 #  stage: Static Analysis

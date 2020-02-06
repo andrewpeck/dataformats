@@ -3,6 +3,7 @@ from typing import NamedTuple
 import sys, getopt, csv
 from datetime import datetime, timezone
 
+
 #declare variable class
 class Var(NamedTuple):
  name: str

@@ -19,18 +19,28 @@ build:
 
 deploy:
   stage: deploy
-  before_script:
-    - 'which ssh-agent || ( apt-get update -qy && apt-get install openssh-client -qqy )'
-    - eval `ssh-agent -s`
-    - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh ke
-    - mkdir -p ~/.ssh
-    - echo "after mkdir"
-    - chmod 700 ~/.ssh
-    - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
-    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+before_script:
+    -  env
+    -  export REPO=`echo $CI_PROJECT_URL | sed -e s#https://##`
+    -  git remote set-url origin https://${CI_USER}:${CI_PUSH_TOKEN}@$REPO
+    -  git config --global user.email ${CI_EMAIL}
+    -  git config --global user.name ${CI_USER}
+    -  git fetch
+    -  git fetch origin $CI_COMMIT_REF_NAME    
+    -  git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    -  git checkout $CI_COMMIT_REF_NAME
+    -  echo $CI_USER_PASSWORD | kinit $CI_USER
+ # before_script:
+ #   - 'which ssh-agent || ( apt-get update -qy && apt-get install openssh-client -qqy )'
+ #   - eval `ssh-agent -s`
+ #   - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/authorized_keys
+ #   - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh ke
+ #   - mkdir -p ~/.ssh
+ #   - echo "after mkdir"
+ #   - chmod 700 ~/.ssh
+ #   - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
+ #   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   script:
-    - git config --global user.email "${CI_EMAIL}"
-    - git config --global user.name "${CI_USERNAME}"
     - git add -f *.sv *.vhdl *.h
     - git commit -m "Compiled PDF from $CI_COMMIT_SHORT_SHA [skip ci]" || echo "No changes, nothing to commit!"
     - git remote rm origin && git remote add origin git@gitlab.com:$CI_PROJECT_PATH.git

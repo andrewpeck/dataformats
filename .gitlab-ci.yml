@@ -19,7 +19,7 @@ build:
 
 deploy:
   stage: deploy
-before_script:
+  before_script:
     -  env
     -  export REPO=`echo $CI_PROJECT_URL | sed -e s#https://##`
     -  git remote set-url origin https://${CI_USER}:${CI_PUSH_TOKEN}@$REPO

@@ -2,7 +2,7 @@
 type SLC_MU_ID is record
 slc_id : std::logic_vector(2 downto 0);
 sl_id : std::logic_vector(6 downto 0);
-slc_bdid : std::logic_vector(12 downto 0);
+slc_bcid : std::logic_vector(12 downto 0);
 end record;
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

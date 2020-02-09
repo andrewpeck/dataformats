@@ -2,7 +2,7 @@
 typedef struct {
 logic [2 : 0] slc_id;
 logic [6 : 0] sl_id;
-logic [12 : 0] slc_bdid;
+logic [12 : 0] slc_bcid;
 } SLC_MU_ID;
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 

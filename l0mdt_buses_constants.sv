@@ -1,6 +1,6 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770
-// Date : 09/02/2020 18:51:48 UTC
+// Date : 09/02/2020 22:09:42 UTC
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -18,9 +18,9 @@
 'define SLC_MU_ID_sl_id_msb 7;
 
 // 
-'define SLC_MU_ID_slc_bdid_width 12;
-'define SLC_MU_ID_slc_bdid_lsb 8;
-'define SLC_MU_ID_slc_bdid_msb 19;
+'define SLC_MU_ID_slc_bcid_width 12;
+'define SLC_MU_ID_slc_bcid_lsb 8;
+'define SLC_MU_ID_slc_bcid_msb 19;
 
 //---------------------------------------------------------------------------------------------------------------------------
 

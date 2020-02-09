@@ -1,6 +1,6 @@
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770
--- Date : 09/02/2020 18:51:48 UTC
+-- Date : 09/02/2020 22:09:42 UTC
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -18,9 +18,9 @@ constant SLC_MU_ID_sl_id_lsb : natural := 2;
 constant SLC_MU_ID_sl_id_msb : natural := 7;
 
 -- 
-constant SLC_MU_ID_slc_bdid_width : natural := 12;
-constant SLC_MU_ID_slc_bdid_lsb : natural := 8;
-constant SLC_MU_ID_slc_bdid_msb : natural := 19;
+constant SLC_MU_ID_slc_bcid_width : natural := 12;
+constant SLC_MU_ID_slc_bcid_lsb : natural := 8;
+constant SLC_MU_ID_slc_bcid_msb : natural := 19;
 
 -----------------------------------------------------------------------------------------------------------------------------
 

@@ -90,17 +90,6 @@ def write_c_file(c_name) :
    f_constants.write("\n")
   f_constants.close()
   
-  #interface
-  f = open(c_name+".h", "w")
-  for bus in buses:
-   f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
-   f.write("type "+bus.name+"is record\n")
-   for var in bus.vars:
-    f.write(var.name+" : std::logic_vector("+var.width+" downto 0;\n")
-   f.write("end record;\n")
-   f.write("//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-
-  f.close()
   print('C file written')
 
 #system-verilog file writer
@@ -134,21 +123,6 @@ def write_sv_file(sv_name) :
    f_constants.write("\n")
   f_constants.close()
   
-  #interface
-  f = open(sv_name+".sv", "w")
-  for bus in buses:
-   f.write("//++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
-   f.write("typedef struct {\n")
-   for var in bus.vars:
-    if var.type != 'var':
-     f.write(var.type+" "+var.name+";\n")
-    elif var.type == 'var':
-     f.write("logic ["+var.width+" : 0] "+var.name+";\n")
-   f.write("} "+bus.name+";\n")
-   f.write("//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-   f.write("\n")
-
-  f.close()
   print('SV file written')
 
 #vhdl file writer
@@ -182,20 +156,6 @@ def write_vhdl_file(vhdl_name) :
    f_constants.write("\n")
   f_constants.close()
   
-  #interface
-  f = open(vhdl_name+".vhdl", "w")
-  for bus in buses:
-   f.write("-- ++++++++++++++++++++++++++"+bus.name+"+++++++++++++++++++++\n")
-   f.write("type "+bus.name+" is record\n")
-   for var in bus.vars:
-    if var.type != 'var':
-     f.write(var.type+" : "+var.name+";\n")
-    elif var.type == 'var':
-     f.write(var.name+" : std::logic_vector("+var.width+" downto 0);\n")
-   f.write("end record;\n")
-   f.write("-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-   f.write("\n")
-  f.close()
   print('VHDL file written')
 
 
@@ -204,9 +164,9 @@ def write_vhdl_file(vhdl_name) :
 def main(argv):
    inputfile = ''
    try:
-      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
+      opts, args = getopt.getopt(argv,"hi:o:",["ifile="])
    except getopt.GetoptError:
-      print('test.py -i <inputfile> -o <outputfile>')
+      print('test.py -i <inputfile>')
       sys.exit(2)
    for opt, arg in opts:
       if opt == '-h':

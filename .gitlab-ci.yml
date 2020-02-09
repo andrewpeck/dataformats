@@ -25,6 +25,7 @@ deploy:
     -  git remote set-url origin https://${CI_USER}:${CI_PUSH_TOKEN}@$REPO
     -  git config --global user.email ${CI_EMAIL}
     -  git config --global user.name ${CI_USER}
+    -  git config --global http.postBuffer 157286400
     -  echo "after config user name"
     -  git fetch
     -  git fetch origin $CI_COMMIT_REF_NAME    

@@ -35,16 +35,6 @@ deploy:
     -  git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
     -  git checkout $CI_COMMIT_REF_NAME
     -  echo $CI_USER_PASSWORD | kinit $CI_USER
- # before_script:
- #   - 'which ssh-agent || ( apt-get update -qy && apt-get install openssh-client -qqy )'
- #   - eval `ssh-agent -s`
- #   - echo "$SSH_PRIVATE_KEY" >> ~/.ssh/authorized_keys
- #   - echo "${SSH_PRIVATE_KEY}" | tr -d '\r' | ssh-add - > /dev/null # add ssh ke
- #   - mkdir -p ~/.ssh
- #   - echo "after mkdir"
- #   - chmod 700 ~/.ssh
- #   - echo "$SSH_PUBLIC_KEY" >> ~/.ssh/id_rsa.pub
- #   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
   variables:
     GIT_SSL_NO_VERIFY: "true"
   script:

@@ -17,6 +17,7 @@ build:
     - l0mdt_buses_constants.vhdl
     - l0mdt_buses_constants.h
 
+
 deploy:
   stage: deploy
   except:

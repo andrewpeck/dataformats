@@ -1,6 +1,6 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770
-// Date : 10/02/2020 07:56:29 UTC
+// Date : 10/02/2020 11:56:45 UTC
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -233,9 +233,9 @@
 'define HESF_IN_SLCPROC_slcproc_vec_ang_msb 27;
 
 // SLc Muon Unique Identifier
-'define HESF_IN_SLCPROC_slc_mu_id_width 20;
-'define HESF_IN_SLCPROC_slc_mu_id_lsb 28;
-'define HESF_IN_SLCPROC_slc_mu_id_msb 47;
+'define HESF_IN_SLCPROC_SLC_MUID_IN_HESF_width 20;
+'define HESF_IN_SLCPROC_SLC_MUID_IN_HESF_lsb 28;
+'define HESF_IN_SLCPROC_SLC_MUID_IN_HESF_msb 47;
 
 //---------------------------------------------------------------------------------------------------------------------------
 

@@ -1,6 +1,6 @@
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 -- Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770
--- Date : 10/02/2020 07:56:29 UTC
+-- Date : 10/02/2020 11:56:45 UTC
 --++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -233,9 +233,9 @@ constant HESF_IN_SLCPROC_slcproc_vec_ang_lsb : natural := 18;
 constant HESF_IN_SLCPROC_slcproc_vec_ang_msb : natural := 27;
 
 -- SLc Muon Unique Identifier
-constant HESF_IN_SLCPROC_slc_mu_id_width : natural := 20;
-constant HESF_IN_SLCPROC_slc_mu_id_lsb : natural := 28;
-constant HESF_IN_SLCPROC_slc_mu_id_msb : natural := 47;
+constant HESF_IN_SLCPROC_SLC_MUID_IN_HESF_width : natural := 20;
+constant HESF_IN_SLCPROC_SLC_MUID_IN_HESF_lsb : natural := 28;
+constant HESF_IN_SLCPROC_SLC_MUID_IN_HESF_msb : natural := 47;
 
 -----------------------------------------------------------------------------------------------------------------------------
 

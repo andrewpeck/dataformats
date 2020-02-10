@@ -11,6 +11,7 @@ export_csv:
     - pwd
     - ls -l
     - python l0mdt_dataFormat.py -i l0mdt_buses.csv
+  trigger: commit_csv
   artifacts:
    when: on_success
    paths:
@@ -38,8 +39,6 @@ commit_csv:
     -  echo $CI_USER_PASSWORD | kinit $CI_USER
   variables:
     GIT_SSL_NO_VERIFY: "true"
-  dependencies: export_csv
-  when: on_dependent_success
 
   script:
     - git add -f *.sv *.vhdl *.h

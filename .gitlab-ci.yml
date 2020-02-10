@@ -38,6 +38,9 @@ commit_csv:
     -  echo $CI_USER_PASSWORD | kinit $CI_USER
   variables:
     GIT_SSL_NO_VERIFY: "true"
+  dependencies: export_csv
+  when: on_dependent_success
+
   script:
     - git add -f *.sv *.vhdl *.h
     - git commit -m "Compiled PDF from $CI_COMMIT_SHORT_SHA [skip ci]" || echo "No changes, nothing to commit!"

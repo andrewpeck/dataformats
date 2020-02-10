@@ -2,7 +2,7 @@ stages:
     - build
     - deploy
 
-build:
+export_csv:
   image: "python:3.8"
   stage: build
   script:
@@ -18,7 +18,7 @@ build:
     - l0mdt_buses_constants.vhdl
     - l0mdt_buses_constants.h
 
-deploy:
+commit_csv:
   stage: deploy
   except:
         variables:

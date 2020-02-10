@@ -20,10 +20,10 @@ export_csv:
 
 commit_csv:
   stage: deploy
-  except:
-        variables:
-            - $CI_PIPELINE_SOURCE != "push"
-            - $CI_COMMIT_REF_SLUG != "master"
+#  except:
+#        variables:
+#            - $CI_PIPELINE_SOURCE != "push"
+#            - $CI_COMMIT_REF_SLUG != "master"
   before_script:
     -  env
     -  export REPO=`echo $CI_PROJECT_URL | sed -e s#https://##`

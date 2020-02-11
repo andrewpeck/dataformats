@@ -8,8 +8,9 @@ class Var(NamedTuple):
  name: str
  station: str
  width: int
- lsb: int
  msb: int
+ lsb: int
+ decb: int
  low: int
  high: int
  prec: int
@@ -19,6 +20,7 @@ class Var(NamedTuple):
  source: str
  parameter: str
  type: str
+ use: str
  comments: str
 
 #declare Bus class (set of variables)
@@ -57,7 +59,7 @@ def read_csv(input_file) :
    elif row[0] == '':
     continue	
 	    	
-   vars.append(Var(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14]))
+   vars.append(Var(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15],row[16]))
 
 #C file writer
 def write_c_file(c_name) :
@@ -70,7 +72,7 @@ def write_c_file(c_name) :
   
   f_constants.write("//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("// Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
-  f_constants.write("// Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
+  #f_constants.write("// Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
   f_constants.write("//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("\n");
   f_constants.write("\n");
@@ -85,6 +87,7 @@ def write_c_file(c_name) :
      f_constants.write("const int "+bus.name+"_"+var.name+"_width = "+var.width+";\n")
      f_constants.write("const int "+bus.name+"_"+var.name+"_lsb = "+var.lsb+";\n")
      f_constants.write("const int "+bus.name+"_"+var.name+"_msb = "+var.msb+";\n")
+     f_constants.write("const int "+bus.name+"_"+var.name+"_decb = "+var.decb+";\n")
      f_constants.write("\n");
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("\n")
@@ -103,7 +106,7 @@ def write_sv_file(sv_name) :
   
   f_constants.write("//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("// Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
-  f_constants.write("// Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
+  #f_constants.write("// Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
   f_constants.write("//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("\n");
   f_constants.write("\n");
@@ -118,6 +121,7 @@ def write_sv_file(sv_name) :
      f_constants.write("'define "+bus.name+"_"+var.name+"_width "+var.width+";\n")
      f_constants.write("'define "+bus.name+"_"+var.name+"_lsb "+var.lsb+";\n")
      f_constants.write("'define "+bus.name+"_"+var.name+"_msb "+var.msb+";\n")
+     f_constants.write("'define "+bus.name+"_"+var.name+"_decb "+var.decb+";\n")
      f_constants.write("\n")
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("\n")
@@ -136,7 +140,7 @@ def write_vhdl_file(vhdl_name) :
   
   f_constants.write("--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("-- Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
-  f_constants.write("-- Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
+  #f_constants.write("-- Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
   f_constants.write("--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("\n");
   f_constants.write("\n");
@@ -151,6 +155,7 @@ def write_vhdl_file(vhdl_name) :
      f_constants.write("constant "+bus.name+"_"+var.name+"_width : natural := "+var.width+";\n")
      f_constants.write("constant "+bus.name+"_"+var.name+"_lsb : natural := "+var.lsb+";\n")
      f_constants.write("constant "+bus.name+"_"+var.name+"_msb : natural := "+var.msb+";\n")
+     f_constants.write("constant "+bus.name+"_"+var.name+"_decb : natural := "+var.decb+";\n")
      f_constants.write("\n")
    f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("\n")

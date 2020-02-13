@@ -348,25 +348,25 @@ constant HE_LSF_mdt_valid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const HE_CSF_width : natural := 65;
+const HE_CSF_width : natural := 39;
 
 -- Tube drift radius
-constant HE_CSF_mdt_radius_width : natural := 32;
-constant HE_CSF_mdt_radius_lsb : natural := 33;
-constant HE_CSF_mdt_radius_msb : natural := 64;
-constant HE_CSF_mdt_radius_decb : natural := 27;
+constant HE_CSF_mdt_radius_width : natural := 9;
+constant HE_CSF_mdt_radius_lsb : natural := 30;
+constant HE_CSF_mdt_radius_msb : natural := 38;
+constant HE_CSF_mdt_radius_decb : natural := 4;
 
 -- Tube local position along second coord
-constant HE_CSF_mdt_localy_width : natural := 15;
-constant HE_CSF_mdt_localy_lsb : natural := 18;
-constant HE_CSF_mdt_localy_msb : natural := 32;
-constant HE_CSF_mdt_localy_decb : natural := 5;
+constant HE_CSF_mdt_localy_width : natural := 14;
+constant HE_CSF_mdt_localy_lsb : natural := 16;
+constant HE_CSF_mdt_localy_msb : natural := 29;
+constant HE_CSF_mdt_localy_decb : natural := 4;
 
 -- Tube local position along precision coord
-constant HE_CSF_mdt_localx_width : natural := 16;
+constant HE_CSF_mdt_localx_width : natural := 14;
 constant HE_CSF_mdt_localx_lsb : natural := 2;
-constant HE_CSF_mdt_localx_msb : natural := 17;
-constant HE_CSF_mdt_localx_decb : natural := 5;
+constant HE_CSF_mdt_localx_msb : natural := 15;
+constant HE_CSF_mdt_localx_decb : natural := 3;
 
 -- Data Valid bit
 constant HE_CSF_data_valid_width : natural := 1;

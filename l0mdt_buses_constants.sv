@@ -348,25 +348,25 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-'define HE_CSF_width 65;
+'define HE_CSF_width 39;
 
 // Tube drift radius
-'define HE_CSF_mdt_radius_width 32;
-'define HE_CSF_mdt_radius_lsb 33;
-'define HE_CSF_mdt_radius_msb 64;
-'define HE_CSF_mdt_radius_decb 27;
+'define HE_CSF_mdt_radius_width 9;
+'define HE_CSF_mdt_radius_lsb 30;
+'define HE_CSF_mdt_radius_msb 38;
+'define HE_CSF_mdt_radius_decb 4;
 
 // Tube local position along second coord
-'define HE_CSF_mdt_localy_width 15;
-'define HE_CSF_mdt_localy_lsb 18;
-'define HE_CSF_mdt_localy_msb 32;
-'define HE_CSF_mdt_localy_decb 5;
+'define HE_CSF_mdt_localy_width 14;
+'define HE_CSF_mdt_localy_lsb 16;
+'define HE_CSF_mdt_localy_msb 29;
+'define HE_CSF_mdt_localy_decb 4;
 
 // Tube local position along precision coord
-'define HE_CSF_mdt_localx_width 16;
+'define HE_CSF_mdt_localx_width 14;
 'define HE_CSF_mdt_localx_lsb 2;
-'define HE_CSF_mdt_localx_msb 17;
-'define HE_CSF_mdt_localx_decb 5;
+'define HE_CSF_mdt_localx_msb 15;
+'define HE_CSF_mdt_localx_decb 3;
 
 // Data Valid bit
 'define HE_CSF_data_valid_width 1;

@@ -82,12 +82,12 @@ mdt_valid,,1,0,0,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
 TOTAL,,39,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 HE_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_radius,,32,64,33,27,0,16,0.0000000038,mm,,SF,HE,Tube drift radius,var,,csf
-mdt_localy,,15,32,18,5,0,512,0.02,mm,,SF,HE,Tube local position along second coord,var,,csf
-mdt_localx,,16,17,2,5,0,1024,0.02,mm,,SF,HE,Tube local position along precision coord,var,,csf
+mdt_radius,,9,38,30,4,0,16,0.05,mm,,SF,HE,Tube drift radius,var,,csf
+mdt_localy,,14,29,16,4,0,512,0.05,mm,,SF,HE,Tube local position along second coord,var,,csf
+mdt_localx,,14,15,2,3,0,1024,0.07,mm,,SF,HE,Tube local position along precision coord,var,,csf
 data_valid,,1,1,1,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_valid,,1,0,0,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
-TOTAL,,65,,,,,,,,,,,,,,
+TOTAL,,39,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPELINE,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 charge,,1,52,52,0,0,2,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,

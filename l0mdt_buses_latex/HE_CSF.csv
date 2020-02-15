@@ -1,5 +1,6 @@
-mdt_radius,9,30,38,4
-mdt_localy,14,16,29,4
-mdt_localx,14,2,15,3
-data_valid,1,1,1,0
-mdt_valid,1,0,0,0
+Name,Width,MSB index,LSB index,DECB
+mdt\_radius,9,38,30,4
+mdt\_localy,14,29,16,4
+mdt\_localx,14,15,2,3
+data\_valid,1,1,1,0
+mdt\_valid,1,0,0,0

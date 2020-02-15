@@ -171,8 +171,11 @@ def write_latex_files(out):
     for bus in buses:
         fname = os.path.join(latex_name, bus.name + '.csv')
         with open(fname, 'w') as fobj:
-            for var in bus.vars:
-                l = ",".join([var.name, var.width, var.lsb, var.msb, var.decb])
+             l = ",".join(["Name", "Width", "MSB index", "LSB index", "DECB"])
+             fobj.write(l + '\n');         
+             for var in bus.vars:
+                l = ",".join([var.name, var.width, var.msb, var.lsb, var.decb])
+                l = l.replace('_', '\\_');
                 fobj.write(l + '\n');
 
 

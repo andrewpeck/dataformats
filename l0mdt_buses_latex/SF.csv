@@ -1,6 +1,7 @@
+Name,Width,MSB index,LSB index,DECB
 segquality,1,54,54,0
-segangle,11,43,53,0
-segpos,16,27,42,2
+segangle,11,53,43,0
+segpos,16,42,27,2
 segvalid,1,26,26,0
-vec_mdtid,6,20,25,0
-SLC_MUID,20,0,19,0
+vec\_mdtid,6,25,20,0
+SLC\_MUID,20,19,0,0

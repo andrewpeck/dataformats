@@ -1,5 +1,6 @@
-pulsewidth,8,24,31,0
-finetime,5,19,23,0
-coarsetime,12,7,18,0
-edgemode,2,5,6,0
-chanid,5,0,4,0
+Name,Width,MSB index,LSB index,DECB
+pulsewidth,8,31,24,0
+finetime,5,23,19,0
+coarsetime,12,18,7,0
+edgemode,2,6,5,0
+chanid,5,4,0,0

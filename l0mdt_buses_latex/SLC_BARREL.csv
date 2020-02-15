@@ -1,6 +1,7 @@
-cointype,2,82,83,0
-rpc3_posz,10,72,81,0
-rpc2_posz,10,62,71,0
-rpc1_posz,10,52,61,0
-rpc0_posz,10,42,51,0
-SLC_COMMON,42,0,41,0
+Name,Width,MSB index,LSB index,DECB
+cointype,2,83,82,0
+rpc3\_posz,10,81,72,0
+rpc2\_posz,10,71,62,0
+rpc1\_posz,10,61,52,0
+rpc0\_posz,10,51,42,0
+SLC\_COMMON,42,41,0,0

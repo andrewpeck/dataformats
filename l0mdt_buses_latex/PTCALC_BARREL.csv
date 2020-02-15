@@ -1,7 +1,8 @@
-mtc_quality,1,103,103,0
-mtc_nsegments,2,101,102,0
-mtc_charge,1,100,100,0
-mtc_procflags,4,96,99,0
-mtc_pt,8,88,95,1
-mtc_ptthresh,4,84,87,0
-SLC_BARREL,84,0,83,0
+Name,Width,MSB index,LSB index,DECB
+mtc\_quality,1,103,103,0
+mtc\_nsegments,2,102,101,0
+mtc\_charge,1,100,100,0
+mtc\_procflags,4,99,96,0
+mtc\_pt,8,95,88,1
+mtc\_ptthresh,4,87,84,0
+SLC\_BARREL,84,83,0,0

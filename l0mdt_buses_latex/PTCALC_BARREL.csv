@@ -1,0 +1,7 @@
+mtc_quality,1,103,103,0
+mtc_nsegments,2,101,102,0
+mtc_charge,1,100,100,0
+mtc_procflags,4,96,99,0
+mtc_pt,8,88,95,1
+mtc_ptthresh,4,84,87,0
+SLC_BARREL,84,0,83,0

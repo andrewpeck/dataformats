@@ -1,7 +1,8 @@
 import csv
 from typing import NamedTuple
-import sys, getopt, csv
+import sys, getopt, csv, os
 from datetime import datetime, timezone
+from pathlib import Path
 
 #declare variable class
 class Var(NamedTuple):
@@ -163,8 +164,19 @@ def write_vhdl_file(vhdl_name) :
   
   print('VHDL file written')
 
+# LaTeX friendly writer
+def write_latex_files(out):
+    latex_name = out + '_latex'
+    Path(latex_name).mkdir(parents=True, exist_ok=True)
+    for bus in buses:
+        fname = os.path.join(latex_name, bus.name + '.csv')
+        with open(fname, 'w') as fobj:
+            for var in bus.vars:
+                l = ",".join([var.name, var.width, var.lsb, var.msb, var.decb])
+                fobj.write(l + '\n');
 
 
+ 
 #main function
 def main(argv):
    inputfile = ''
@@ -189,6 +201,7 @@ def main(argv):
    write_c_file(outputfile)
    write_sv_file(outputfile)
    write_vhdl_file(outputfile)
+   write_latex_files(outputfile)
 
 if __name__ == "__main__":
    main(sys.argv[1:])

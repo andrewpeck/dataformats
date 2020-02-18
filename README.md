@@ -1,5 +1,4 @@
 # DataFormats
-=============
 
 Package to create common types header files from the L0MDT data format [spreadsheet](https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770)
 

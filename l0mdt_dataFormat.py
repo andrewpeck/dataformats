@@ -78,6 +78,9 @@ def write_c_file(c_name) :
   f_constants.write("\n");
   f_constants.write("\n");
 
+  f_constants.write("#ifndef LOMDT_BUSES_CONSTANTS_H\n")
+  f_constants.write("#define LOMDT_BUSES_CONSTANTS_H\n")
+
   for bus in buses:
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("const int "+bus.name+"_width = "+bus.width+";\n")
@@ -92,6 +95,7 @@ def write_c_file(c_name) :
      f_constants.write("\n");
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("\n")
+  f_constants.write("#endif // LOMDT_BUSES_CONSTANTS_H\n")
   f_constants.close()
   
   print('C file written')
@@ -103,7 +107,7 @@ def write_sv_file(sv_name) :
   dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
   #constants
-  f_constants = open(sv_name+"_constants.sv","w")
+  f_constants = open(sv_name+"_constants.svh","w")
   
   f_constants.write("//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("// Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
@@ -114,15 +118,15 @@ def write_sv_file(sv_name) :
   
   for bus in buses:
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
-   f_constants.write("'define "+bus.name+"_width "+bus.width+";\n")
+   f_constants.write("`define "+bus.name+"_width "+bus.width+";\n")
    f_constants.write("\n")
    for var in bus.vars:
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("// "+var.parameter+"\n")
-     f_constants.write("'define "+bus.name+"_"+var.name+"_width "+var.width+";\n")
-     #f_constants.write("'define "+bus.name+"_"+var.name+"_msb "+var.msb+";\n")
-     f_constants.write("'define "+bus.name+"_"+var.name+"_lsb "+var.lsb+";\n")
-     f_constants.write("'define "+bus.name+"_"+var.name+"_decb "+var.decb+";\n")
+     f_constants.write("`define "+bus.name+"_"+var.name+"_width "+var.width+";\n")
+     #f_constants.write("`define "+bus.name+"_"+var.name+"_msb "+var.msb+";\n")
+     f_constants.write("`define "+bus.name+"_"+var.name+"_lsb "+var.lsb+";\n")
+     f_constants.write("`define "+bus.name+"_"+var.name+"_decb "+var.decb+";\n")
      f_constants.write("\n")
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("\n")
@@ -148,7 +152,7 @@ def write_vhdl_file(vhdl_name) :
 
   for bus in buses:
    f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
-   f_constants.write("const "+bus.name+"_width : natural := "+bus.width+";\n")
+   f_constants.write("constant"+bus.name+"_width : natural := "+bus.width+";\n")
    f_constants.write("\n")
    for var in bus.vars:
     if var.type!="struct" and var.parameter!="(COPY)":

@@ -4,7 +4,7 @@
 
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLC_MUID_width : natural := 20;
+constantSLC_MUID_width : natural := 20;
 
 -- 
 constant SLC_MUID_bcid_width : natural := 12;
@@ -24,7 +24,7 @@ constant SLC_MUID_slcid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLC_COMMON_width : natural := 42;
+constantSLC_COMMON_width : natural := 42;
 
 -- SLc BCID
 constant SLC_COMMON_bcid_width : natural := 12;
@@ -59,7 +59,7 @@ constant SLC_COMMON_slcid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLC_ENDCAP_width : natural := 80;
+constantSLC_ENDCAP_width : natural := 80;
 
 -- NSW segment angle wrt Eta position
 constant SLC_ENDCAP_nswseg_angdtheta_width : natural := 5;
@@ -89,7 +89,7 @@ constant SLC_ENDCAP_seg_angdtheta_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLC_BARREL_width : natural := 84;
+constantSLC_BARREL_width : natural := 84;
 
 -- SLc coincidence type
 constant SLC_BARREL_cointype_width : natural := 2;
@@ -119,7 +119,7 @@ constant SLC_BARREL_rpc0_posz_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLCPROC_CAND_width : natural := 54;
+constantSLCPROC_CAND_width : natural := 54;
 
 -- SLc board destination
 constant SLCPROC_CAND_destsl_width : natural := 2;
@@ -154,7 +154,7 @@ constant SLCPROC_CAND_vec_mdtid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const CSM_width : natural := 32;
+constantCSM_width : natural := 32;
 
 -- Pulse width
 constant CSM_pulsewidth_width : natural := 8;
@@ -184,7 +184,7 @@ constant CSM_chanid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const TUBEREMAP_IN_width : natural := 44;
+constantTUBEREMAP_IN_width : natural := 44;
 
 -- 
 constant TUBEREMAP_IN_station_id_width : natural := 2;
@@ -209,7 +209,7 @@ constant TUBEREMAP_IN_fiber_id_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLCPROC_SEG_width : natural := 48;
+constantSLCPROC_SEG_width : natural := 48;
 
 -- SLc inner vector theta angle
 constant SLCPROC_SEG_vec_ang_width : natural := 10;
@@ -239,7 +239,7 @@ constant SLCPROC_SEG_SLC_MUID_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const TUBEREMAP_width : natural := 74;
+constantTUBEREMAP_width : natural := 74;
 
 -- Tube (uncalibrated) time
 constant TUBEREMAP_mdt_tube_time_width : natural := 21;
@@ -269,7 +269,7 @@ constant TUBEREMAP_mdt_tube_layer_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const HE_LSF_width : natural := 39;
+constantHE_LSF_width : natural := 39;
 
 -- Tube drift radius
 constant HE_LSF_mdt_radius_width : natural := 9;
@@ -299,7 +299,7 @@ constant HE_LSF_mdt_valid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const HE_CSF_width : natural := 39;
+constantHE_CSF_width : natural := 39;
 
 -- Tube drift radius
 constant HE_CSF_mdt_radius_width : natural := 9;
@@ -329,12 +329,12 @@ constant HE_CSF_mdt_valid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SLCPIPELINE_width : natural := 53;
+constantSLCPIPELINE_width : natural := 53;
 
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const SF_width : natural := 55;
+constantSF_width : natural := 55;
 
 -- SF MDT segment qualiry
 constant SF_segquality_width : natural := 1;
@@ -359,7 +359,7 @@ constant SF_segvalid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const PTCALC_ENDCAP_width : natural := 100;
+constantPTCALC_ENDCAP_width : natural := 100;
 
 -- quality of the MDT TC (TBC how this is defined)
 constant PTCALC_ENDCAP_mtc_quality_width : natural := 1;
@@ -394,7 +394,7 @@ constant PTCALC_ENDCAP_mtc_ptthresh_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-const PTCALC_BARREL_width : natural := 104;
+constantPTCALC_BARREL_width : natural := 104;
 
 -- quality of the MDT TC (TBC how this is defined)
 constant PTCALC_BARREL_mtc_quality_width : natural := 1;

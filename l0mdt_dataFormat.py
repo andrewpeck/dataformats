@@ -152,7 +152,7 @@ def write_vhdl_file(vhdl_name) :
 
   for bus in buses:
    f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
-   f_constants.write("constant"+bus.name+"_width : natural := "+bus.width+";\n")
+   f_constants.write("constant "+bus.name+"_width : natural := "+bus.width+";\n")
    f_constants.write("\n")
    for var in bus.vars:
     if var.type!="struct" and var.parameter!="(COPY)":

@@ -1,0 +1,7 @@
+Name,Width,MSB index,LSB index,DECB
+cointype,2,83,82,0
+rpc3\_posz,10,81,72,0
+rpc2\_posz,10,71,62,0
+rpc1\_posz,10,61,52,0
+rpc0\_posz,10,51,42,0
+SLC\_COMMON,42,41,0,0

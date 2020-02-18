@@ -1,0 +1,8 @@
+Name,Width,MSB index,LSB index,DECB
+mtc\_quality,1,99,99,0
+mtc\_nsegments,2,98,97,0
+mtc\_charge,1,96,96,0
+mtc\_procflags,4,95,92,0
+mtc\_pt,8,91,84,1
+mtc\_ptthresh,4,83,80,0
+SLC\_ENDCAP,80,79,0,0

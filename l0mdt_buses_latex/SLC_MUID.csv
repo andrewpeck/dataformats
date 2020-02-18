@@ -1,0 +1,4 @@
+Name,Width,MSB index,LSB index,DECB
+bcid,12,19,8,0
+slid,6,7,2,0
+slcid,2,1,0,0

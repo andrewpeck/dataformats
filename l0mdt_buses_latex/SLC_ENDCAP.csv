@@ -1,0 +1,7 @@
+Name,Width,MSB index,LSB index,DECB
+nswseg\_angdtheta,5,79,75,0
+nswseg\_posphi,8,74,67,0
+nswseg\_poseta,14,66,53,13
+seg\_angdphi,4,52,49,0
+seg\_angdtheta,7,48,42,0
+SLC\_COMMON,42,41,0,0

@@ -86,8 +86,8 @@ def write_c_file(c_name) :
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("// "+var.parameter+"\n")
      f_constants.write("const int "+bus.name+"_"+var.name+"_width = "+var.width+";\n")
+     #f_constants.write("const int "+bus.name+"_"+var.name+"_msb = "+var.msb+";\n")
      f_constants.write("const int "+bus.name+"_"+var.name+"_lsb = "+var.lsb+";\n")
-     f_constants.write("const int "+bus.name+"_"+var.name+"_msb = "+var.msb+";\n")
      f_constants.write("const int "+bus.name+"_"+var.name+"_decb = "+var.decb+";\n")
      f_constants.write("\n");
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
@@ -120,8 +120,8 @@ def write_sv_file(sv_name) :
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("// "+var.parameter+"\n")
      f_constants.write("'define "+bus.name+"_"+var.name+"_width "+var.width+";\n")
+     #f_constants.write("'define "+bus.name+"_"+var.name+"_msb "+var.msb+";\n")
      f_constants.write("'define "+bus.name+"_"+var.name+"_lsb "+var.lsb+";\n")
-     f_constants.write("'define "+bus.name+"_"+var.name+"_msb "+var.msb+";\n")
      f_constants.write("'define "+bus.name+"_"+var.name+"_decb "+var.decb+";\n")
      f_constants.write("\n")
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
@@ -154,8 +154,8 @@ def write_vhdl_file(vhdl_name) :
     if var.type!="struct" and var.parameter!="(COPY)":
      f_constants.write("-- "+var.parameter+"\n")
      f_constants.write("constant "+bus.name+"_"+var.name+"_width : natural := "+var.width+";\n")
+     #f_constants.write("constant "+bus.name+"_"+var.name+"_msb : natural := "+var.msb+";\n")
      f_constants.write("constant "+bus.name+"_"+var.name+"_lsb : natural := "+var.lsb+";\n")
-     f_constants.write("constant "+bus.name+"_"+var.name+"_msb : natural := "+var.msb+";\n")
      f_constants.write("constant "+bus.name+"_"+var.name+"_decb : natural := "+var.decb+";\n")
      f_constants.write("\n")
    f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")

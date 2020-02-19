@@ -137,36 +137,62 @@ def write_sv_file(sv_name) :
 #vhdl file writer
 def write_vhdl_file(vhdl_name) :
   
-  now = datetime.now(tz=None) 
-  dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    now = datetime.now(tz=None) 
+    dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+    date_now = datetime.now(timezone.utc).astimezone().tzname()
 
-  #constants
-  f_constants = open(vhdl_name+"_constants.vhdl","w")
-  
-  f_constants.write("--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-  f_constants.write("-- Auto-generated from https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s/edit#gid=1745105770\n")
-  #f_constants.write("-- Date : "+dt_string+" "+datetime.now(timezone.utc).astimezone().tzname()+"\n")
-  f_constants.write("--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-  f_constants.write("\n");
-  f_constants.write("\n");
+    url_base = "https://docs.google.com/spreadsheets"
+    url_spec = "d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s"
 
-  for bus in buses:
-   f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
-   f_constants.write("constant "+bus.name+"_width : natural := "+bus.width+";\n")
-   f_constants.write("\n")
-   for var in bus.vars:
-    if var.type!="struct" and var.parameter!="(COPY)":
-     f_constants.write("-- "+var.parameter+"\n")
-     f_constants.write("constant "+bus.name+"_"+var.name+"_width : natural := "+var.width+";\n")
-     #f_constants.write("constant "+bus.name+"_"+var.name+"_msb : natural := "+var.msb+";\n")
-     f_constants.write("constant "+bus.name+"_"+var.name+"_lsb : natural := "+var.lsb+";\n")
-     f_constants.write("constant "+bus.name+"_"+var.name+"_decb : natural := "+var.decb+";\n")
-     f_constants.write("\n")
-   f_constants.write("-----------------------------------------------------------------------------------------------------------------------------\n")
-   f_constants.write("\n")
-  f_constants.close()
-  
-  print('VHDL file written')
+    #constants
+    f_constants = open(vhdl_name+"_constants.vhdl", "w")
+
+    def write_ln(line):
+        f_constants.write(f"{line}\n");
+
+    write_ln("-" * 100)
+    write_ln(f"-- Auto-generated from:")
+    write_ln(f"-- {url_base}/{url_spec}")
+    # write_ln(f"-- Date: {dt_string} {date_now}"))
+    write_ln("-" * 100)
+    write_ln("")
+
+    write_ln("library ieee;")
+    write_ln("use ieee.std_logic_1164.all;")
+    write_ln("use ieee.numeric_std.all;")
+    write_ln("")
+
+    write_ln("package mdttp_pkg is")
+
+    for bus in buses:
+        write_ln("")
+        write_ln("  " + "-" * 70)
+
+        write_ln(f"  constant {bus.name} : natural := {bus.width};")
+
+        for var in bus.vars:
+            if var.type == "struct":
+                continue
+
+            if var.parameter == "(COPY)":
+                continue
+
+            write_ln("")
+            write_ln(f"  -- {var.parameter}")
+
+            const_tpl = "  constant %s : natural := %s"
+            var_prefix = f"{bus.name}_{var.name}"
+
+            write_ln(const_tpl %(f"{var_prefix}_width", var.width))
+            write_ln(const_tpl %(f"{var_prefix}_lsb", var.lsb))
+            write_ln(const_tpl %(f"{var_prefix}_decb", var.decb))
+
+    write_ln("  " + "-" * 70)    
+    write_ln("")
+    write_ln("end package mdttp_pkg;")
+    f_constants.close()
+
+    print('VHDL file written')
 
 # LaTeX friendly writer
 def write_latex_files(out):

@@ -6,17 +6,17 @@
 //---------------------------------------------------------------------------------------------------------------------------
 `define SLC_MUID_width 20;
 
-// 
+// SLc Identification (up to 3)
 `define SLC_MUID_slcid_width 2;
 `define SLC_MUID_slcid_lsb 18;
 `define SLC_MUID_slcid_decb 0;
 
-// 
+// SL board ID (based on the fiber ID)
 `define SLC_MUID_slid_width 6;
 `define SLC_MUID_slid_lsb 12;
 `define SLC_MUID_slid_decb 0;
 
-// 
+// BCID from SLC
 `define SLC_MUID_bcid_width 12;
 `define SLC_MUID_bcid_lsb 0;
 `define SLC_MUID_bcid_decb 0;
@@ -339,7 +339,7 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLCPIPELINE_width 53;
+`define SLCPIPELINE_PTCALC_width 53;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -369,82 +369,42 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define PTCALC_ENDCAP_width 114;
+`define PTCALC_width 54;
 
 // eta of the innermost MDT station segment position
-`define PTCALC_ENDCAP_mtc_eta_width 14;
-`define PTCALC_ENDCAP_mtc_eta_lsb 20;
-`define PTCALC_ENDCAP_mtc_eta_decb 11;
+`define PTCALC_mtc_eta_width 14;
+`define PTCALC_mtc_eta_lsb 20;
+`define PTCALC_mtc_eta_decb 11;
 
 // pT calculated by the pT Calc
-`define PTCALC_ENDCAP_mtc_pt_width 8;
-`define PTCALC_ENDCAP_mtc_pt_lsb 12;
-`define PTCALC_ENDCAP_mtc_pt_decb 1;
+`define PTCALC_mtc_pt_width 8;
+`define PTCALC_mtc_pt_lsb 12;
+`define PTCALC_mtc_pt_decb 1;
 
 // pT threshold satisfied by the MDT TC
-`define PTCALC_ENDCAP_mtc_ptthresh_width 4;
-`define PTCALC_ENDCAP_mtc_ptthresh_lsb 8;
-`define PTCALC_ENDCAP_mtc_ptthresh_decb 0;
+`define PTCALC_mtc_ptthresh_width 4;
+`define PTCALC_mtc_ptthresh_lsb 8;
+`define PTCALC_mtc_ptthresh_decb 0;
 
 // charge determined from the pT calc
-`define PTCALC_ENDCAP_mtc_charge_width 1;
-`define PTCALC_ENDCAP_mtc_charge_lsb 7;
-`define PTCALC_ENDCAP_mtc_charge_decb 0;
+`define PTCALC_mtc_charge_width 1;
+`define PTCALC_mtc_charge_lsb 7;
+`define PTCALC_mtc_charge_decb 0;
 
 // MDT processing flags
-`define PTCALC_ENDCAP_mtc_procflags_width 4;
-`define PTCALC_ENDCAP_mtc_procflags_lsb 3;
-`define PTCALC_ENDCAP_mtc_procflags_decb 0;
+`define PTCALC_mtc_procflags_width 4;
+`define PTCALC_mtc_procflags_lsb 3;
+`define PTCALC_mtc_procflags_decb 0;
 
 // # of segments used for calculating the pT
-`define PTCALC_ENDCAP_mtc_nsegments_width 2;
-`define PTCALC_ENDCAP_mtc_nsegments_lsb 1;
-`define PTCALC_ENDCAP_mtc_nsegments_decb 0;
+`define PTCALC_mtc_nsegments_width 2;
+`define PTCALC_mtc_nsegments_lsb 1;
+`define PTCALC_mtc_nsegments_decb 0;
 
 // quality of the MDT TC (TBC how this is defined)
-`define PTCALC_ENDCAP_mtc_quality_width 1;
-`define PTCALC_ENDCAP_mtc_quality_lsb 0;
-`define PTCALC_ENDCAP_mtc_quality_decb 0;
-
-//---------------------------------------------------------------------------------------------------------------------------
-
-//---------------------------------------------------------------------------------------------------------------------------
-`define PTCALC_BARREL_width 118;
-
-// eta of the innermost MDT station segment position
-`define PTCALC_BARREL_mtc_eta_width 14;
-`define PTCALC_BARREL_mtc_eta_lsb 20;
-`define PTCALC_BARREL_mtc_eta_decb 11;
-
-// pT calculated by the pT Calc
-`define PTCALC_BARREL_mtc_pt_width 8;
-`define PTCALC_BARREL_mtc_pt_lsb 12;
-`define PTCALC_BARREL_mtc_pt_decb 1;
-
-// pT threshold satisfied by the MDT TC
-`define PTCALC_BARREL_mtc_ptthresh_width 4;
-`define PTCALC_BARREL_mtc_ptthresh_lsb 8;
-`define PTCALC_BARREL_mtc_ptthresh_decb 0;
-
-// charge determined from the pT calc
-`define PTCALC_BARREL_mtc_charge_width 1;
-`define PTCALC_BARREL_mtc_charge_lsb 7;
-`define PTCALC_BARREL_mtc_charge_decb 0;
-
-// MDT processing flags
-`define PTCALC_BARREL_mtc_procflags_width 4;
-`define PTCALC_BARREL_mtc_procflags_lsb 3;
-`define PTCALC_BARREL_mtc_procflags_decb 0;
-
-// # of segments used for calculating the pT
-`define PTCALC_BARREL_mtc_nsegments_width 2;
-`define PTCALC_BARREL_mtc_nsegments_lsb 1;
-`define PTCALC_BARREL_mtc_nsegments_decb 0;
-
-// quality of the MDT TC (TBC how this is defined)
-`define PTCALC_BARREL_mtc_quality_width 1;
-`define PTCALC_BARREL_mtc_quality_lsb 0;
-`define PTCALC_BARREL_mtc_quality_decb 0;
+`define PTCALC_mtc_quality_width 1;
+`define PTCALC_mtc_quality_lsb 0;
+`define PTCALC_mtc_quality_decb 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 

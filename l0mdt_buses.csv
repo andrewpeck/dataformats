@@ -1,7 +1,7 @@
 SLC_MUID,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,Use,Comments
-slcid,,2,19,18,0,0,3,1,#,,,SLc Processor,,var,,
-slid,,6,17,12,0,0,63,1,#,,,SLc Processor,,var,,
-bcid,,12,11,0,0,0,102375,25,ns,,,SLc Processor,,var,,
+slcid,,2,19,18,0,0,3,1,#,,,SLc Processor,SLc Identification (up to 3),var,,
+slid,,6,17,12,0,0,63,1,#,,,SLc Processor,SL board ID (based on the fiber ID),var,,
+bcid,,12,11,0,0,0,102375,25,ns,,,SLc Processor,BCID from SLC,var,,
 TOTAL,,20,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLC_COMMON,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,Use,Comments
@@ -100,7 +100,7 @@ mdt_localy,,14,22,9,4,0,512,0.05000,mm,,SF,HE,Tube local position along second c
 mdt_radius,,9,8,0,4,0,16,0.05000,mm,,SF,HE,Tube drift radius,var,,csf
 TOTAL,,39,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPIPELINE,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPIPELINE_PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,52,33,0,,,1,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,
 vec_mdtid,INN,6,32,27,0,0,63,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
 vec_mdtid,MID,6,26,21,0,0,63,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
@@ -119,8 +119,8 @@ segangle,,11,11,1,0,0,1570,1.00000,mrad,,Pt Calc,SF,SF MDT segment angle along t
 segquality,,1,0,0,0,0,1,1,#,,Pt Calc,SF,SF MDT segment qualiry,var,,
 TOTAL,,55,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-PTCALC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_ENDCAP,,80,113,34,0,,,,,,mTC_Builder,SLC Processor,(COPY),SLC_ENDCAP,,
+PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLC_MUID,,20,53,34,0,,,,,,mTC_Builder,SLC Processor,(COPY),SLC_MUID,,
 mtc_eta,,14,33,20,11,-2.7,2.7,0.00033,#,,mTC_Builder,Pt Calc,eta of the innermost MDT station segment position,var,,
 mtc_pt,,8,19,12,1,4,80,0.30000,GeV,,mTC_Builder,Pt Calc,pT calculated by the pT Calc,var,,
 mtc_ptthresh,,4,11,8,0,4,80,5.10000,GeV,,mTC_Builder,Pt Calc,pT threshold satisfied by the MDT TC,var,,
@@ -128,15 +128,4 @@ mtc_charge,,1,7,7,0,0,1,1,sign,,mTC_Builder,Pt Calc,charge determined from the p
 mtc_procflags,,4,6,3,0,,,,,,mTC_Builder,Pt Calc,MDT processing flags,var,,
 mtc_nsegments,,2,2,1,0,0,3,1,#,,mTC_Builder,Pt Calc,# of segments used for calculating the pT,var,,
 mtc_quality,,1,0,0,0,0,1,1,#,,mTC_Builder,Pt Calc,quality of the MDT TC (TBC how this is defined),var,,
-TOTAL,,114,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-PTCALC_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_BARREL,,84,117,34,0,,,,,,mTC_Builder,SLC Processor,(COPY),SLC_BARREL,,
-mtc_eta,,14,33,20,11,-2.7,2.7,0.00033,#,,mTC_Builder,Pt Calc,eta of the innermost MDT station segment position,var,,
-mtc_pt,,8,19,12,1,4,80,0.30000,GeV,,mTC_Builder,Pt Calc,pT calculated by the pT Calc,var,,
-mtc_ptthresh,,4,11,8,0,4,80,5.10000,GeV,,mTC_Builder,Pt Calc,pT threshold satisfied by the MDT TC,var,,
-mtc_charge,,1,7,7,0,0,1,1,sign,,mTC_Builder,Pt Calc,charge determined from the pT calc,var,,
-mtc_procflags,,4,6,3,0,,,,,,mTC_Builder,Pt Calc,MDT processing flags,var,,
-mtc_nsegments,,2,2,1,0,0,3,1,#,,mTC_Builder,Pt Calc,# of segments used for calculating the pT,var,,
-mtc_quality,,1,0,0,0,0,1,1,#,,mTC_Builder,Pt Calc,quality of the MDT TC (TBC how this is defined),var,,
-TOTAL,,118,,,,,,,,,,,,,,
+TOTAL,,54,,,,,,,,,,,,,,

@@ -8,17 +8,17 @@
 //---------------------------------------------------------------------------------------------------------------------------
 const int SLC_MUID_width = 20;
 
-// 
+// SLc Identification (up to 3)
 const int SLC_MUID_slcid_width = 2;
 const int SLC_MUID_slcid_lsb = 18;
 const int SLC_MUID_slcid_decb = 0;
 
-// 
+// SL board ID (based on the fiber ID)
 const int SLC_MUID_slid_width = 6;
 const int SLC_MUID_slid_lsb = 12;
 const int SLC_MUID_slid_decb = 0;
 
-// 
+// BCID from SLC
 const int SLC_MUID_bcid_width = 12;
 const int SLC_MUID_bcid_lsb = 0;
 const int SLC_MUID_bcid_decb = 0;
@@ -341,7 +341,7 @@ const int HE_CSF_mdt_radius_decb = 4;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLCPIPELINE_width = 53;
+const int SLCPIPELINE_PTCALC_width = 53;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -371,82 +371,42 @@ const int SF_segquality_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int PTCALC_ENDCAP_width = 114;
+const int PTCALC_width = 54;
 
 // eta of the innermost MDT station segment position
-const int PTCALC_ENDCAP_mtc_eta_width = 14;
-const int PTCALC_ENDCAP_mtc_eta_lsb = 20;
-const int PTCALC_ENDCAP_mtc_eta_decb = 11;
+const int PTCALC_mtc_eta_width = 14;
+const int PTCALC_mtc_eta_lsb = 20;
+const int PTCALC_mtc_eta_decb = 11;
 
 // pT calculated by the pT Calc
-const int PTCALC_ENDCAP_mtc_pt_width = 8;
-const int PTCALC_ENDCAP_mtc_pt_lsb = 12;
-const int PTCALC_ENDCAP_mtc_pt_decb = 1;
+const int PTCALC_mtc_pt_width = 8;
+const int PTCALC_mtc_pt_lsb = 12;
+const int PTCALC_mtc_pt_decb = 1;
 
 // pT threshold satisfied by the MDT TC
-const int PTCALC_ENDCAP_mtc_ptthresh_width = 4;
-const int PTCALC_ENDCAP_mtc_ptthresh_lsb = 8;
-const int PTCALC_ENDCAP_mtc_ptthresh_decb = 0;
+const int PTCALC_mtc_ptthresh_width = 4;
+const int PTCALC_mtc_ptthresh_lsb = 8;
+const int PTCALC_mtc_ptthresh_decb = 0;
 
 // charge determined from the pT calc
-const int PTCALC_ENDCAP_mtc_charge_width = 1;
-const int PTCALC_ENDCAP_mtc_charge_lsb = 7;
-const int PTCALC_ENDCAP_mtc_charge_decb = 0;
+const int PTCALC_mtc_charge_width = 1;
+const int PTCALC_mtc_charge_lsb = 7;
+const int PTCALC_mtc_charge_decb = 0;
 
 // MDT processing flags
-const int PTCALC_ENDCAP_mtc_procflags_width = 4;
-const int PTCALC_ENDCAP_mtc_procflags_lsb = 3;
-const int PTCALC_ENDCAP_mtc_procflags_decb = 0;
+const int PTCALC_mtc_procflags_width = 4;
+const int PTCALC_mtc_procflags_lsb = 3;
+const int PTCALC_mtc_procflags_decb = 0;
 
 // # of segments used for calculating the pT
-const int PTCALC_ENDCAP_mtc_nsegments_width = 2;
-const int PTCALC_ENDCAP_mtc_nsegments_lsb = 1;
-const int PTCALC_ENDCAP_mtc_nsegments_decb = 0;
+const int PTCALC_mtc_nsegments_width = 2;
+const int PTCALC_mtc_nsegments_lsb = 1;
+const int PTCALC_mtc_nsegments_decb = 0;
 
 // quality of the MDT TC (TBC how this is defined)
-const int PTCALC_ENDCAP_mtc_quality_width = 1;
-const int PTCALC_ENDCAP_mtc_quality_lsb = 0;
-const int PTCALC_ENDCAP_mtc_quality_decb = 0;
-
-//---------------------------------------------------------------------------------------------------------------------------
-
-//---------------------------------------------------------------------------------------------------------------------------
-const int PTCALC_BARREL_width = 118;
-
-// eta of the innermost MDT station segment position
-const int PTCALC_BARREL_mtc_eta_width = 14;
-const int PTCALC_BARREL_mtc_eta_lsb = 20;
-const int PTCALC_BARREL_mtc_eta_decb = 11;
-
-// pT calculated by the pT Calc
-const int PTCALC_BARREL_mtc_pt_width = 8;
-const int PTCALC_BARREL_mtc_pt_lsb = 12;
-const int PTCALC_BARREL_mtc_pt_decb = 1;
-
-// pT threshold satisfied by the MDT TC
-const int PTCALC_BARREL_mtc_ptthresh_width = 4;
-const int PTCALC_BARREL_mtc_ptthresh_lsb = 8;
-const int PTCALC_BARREL_mtc_ptthresh_decb = 0;
-
-// charge determined from the pT calc
-const int PTCALC_BARREL_mtc_charge_width = 1;
-const int PTCALC_BARREL_mtc_charge_lsb = 7;
-const int PTCALC_BARREL_mtc_charge_decb = 0;
-
-// MDT processing flags
-const int PTCALC_BARREL_mtc_procflags_width = 4;
-const int PTCALC_BARREL_mtc_procflags_lsb = 3;
-const int PTCALC_BARREL_mtc_procflags_decb = 0;
-
-// # of segments used for calculating the pT
-const int PTCALC_BARREL_mtc_nsegments_width = 2;
-const int PTCALC_BARREL_mtc_nsegments_lsb = 1;
-const int PTCALC_BARREL_mtc_nsegments_decb = 0;
-
-// quality of the MDT TC (TBC how this is defined)
-const int PTCALC_BARREL_mtc_quality_width = 1;
-const int PTCALC_BARREL_mtc_quality_lsb = 0;
-const int PTCALC_BARREL_mtc_quality_decb = 0;
+const int PTCALC_mtc_quality_width = 1;
+const int PTCALC_mtc_quality_lsb = 0;
+const int PTCALC_mtc_quality_decb = 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 

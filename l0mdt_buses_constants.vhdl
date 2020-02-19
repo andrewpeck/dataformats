@@ -6,17 +6,17 @@
 -----------------------------------------------------------------------------------------------------------------------------
 constant SLC_MUID_width : natural := 20;
 
--- 
+-- SLc Identification (up to 3)
 constant SLC_MUID_slcid_width : natural := 2;
 constant SLC_MUID_slcid_lsb : natural := 18;
 constant SLC_MUID_slcid_decb : natural := 0;
 
--- 
+-- SL board ID (based on the fiber ID)
 constant SLC_MUID_slid_width : natural := 6;
 constant SLC_MUID_slid_lsb : natural := 12;
 constant SLC_MUID_slid_decb : natural := 0;
 
--- 
+-- BCID from SLC
 constant SLC_MUID_bcid_width : natural := 12;
 constant SLC_MUID_bcid_lsb : natural := 0;
 constant SLC_MUID_bcid_decb : natural := 0;
@@ -339,7 +339,7 @@ constant HE_CSF_mdt_radius_decb : natural := 4;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-constant SLCPIPELINE_width : natural := 53;
+constant SLCPIPELINE_PTCALC_width : natural := 53;
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -369,82 +369,42 @@ constant SF_segquality_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-constant PTCALC_ENDCAP_width : natural := 114;
+constant PTCALC_width : natural := 54;
 
 -- eta of the innermost MDT station segment position
-constant PTCALC_ENDCAP_mtc_eta_width : natural := 14;
-constant PTCALC_ENDCAP_mtc_eta_lsb : natural := 20;
-constant PTCALC_ENDCAP_mtc_eta_decb : natural := 11;
+constant PTCALC_mtc_eta_width : natural := 14;
+constant PTCALC_mtc_eta_lsb : natural := 20;
+constant PTCALC_mtc_eta_decb : natural := 11;
 
 -- pT calculated by the pT Calc
-constant PTCALC_ENDCAP_mtc_pt_width : natural := 8;
-constant PTCALC_ENDCAP_mtc_pt_lsb : natural := 12;
-constant PTCALC_ENDCAP_mtc_pt_decb : natural := 1;
+constant PTCALC_mtc_pt_width : natural := 8;
+constant PTCALC_mtc_pt_lsb : natural := 12;
+constant PTCALC_mtc_pt_decb : natural := 1;
 
 -- pT threshold satisfied by the MDT TC
-constant PTCALC_ENDCAP_mtc_ptthresh_width : natural := 4;
-constant PTCALC_ENDCAP_mtc_ptthresh_lsb : natural := 8;
-constant PTCALC_ENDCAP_mtc_ptthresh_decb : natural := 0;
+constant PTCALC_mtc_ptthresh_width : natural := 4;
+constant PTCALC_mtc_ptthresh_lsb : natural := 8;
+constant PTCALC_mtc_ptthresh_decb : natural := 0;
 
 -- charge determined from the pT calc
-constant PTCALC_ENDCAP_mtc_charge_width : natural := 1;
-constant PTCALC_ENDCAP_mtc_charge_lsb : natural := 7;
-constant PTCALC_ENDCAP_mtc_charge_decb : natural := 0;
+constant PTCALC_mtc_charge_width : natural := 1;
+constant PTCALC_mtc_charge_lsb : natural := 7;
+constant PTCALC_mtc_charge_decb : natural := 0;
 
 -- MDT processing flags
-constant PTCALC_ENDCAP_mtc_procflags_width : natural := 4;
-constant PTCALC_ENDCAP_mtc_procflags_lsb : natural := 3;
-constant PTCALC_ENDCAP_mtc_procflags_decb : natural := 0;
+constant PTCALC_mtc_procflags_width : natural := 4;
+constant PTCALC_mtc_procflags_lsb : natural := 3;
+constant PTCALC_mtc_procflags_decb : natural := 0;
 
 -- # of segments used for calculating the pT
-constant PTCALC_ENDCAP_mtc_nsegments_width : natural := 2;
-constant PTCALC_ENDCAP_mtc_nsegments_lsb : natural := 1;
-constant PTCALC_ENDCAP_mtc_nsegments_decb : natural := 0;
+constant PTCALC_mtc_nsegments_width : natural := 2;
+constant PTCALC_mtc_nsegments_lsb : natural := 1;
+constant PTCALC_mtc_nsegments_decb : natural := 0;
 
 -- quality of the MDT TC (TBC how this is defined)
-constant PTCALC_ENDCAP_mtc_quality_width : natural := 1;
-constant PTCALC_ENDCAP_mtc_quality_lsb : natural := 0;
-constant PTCALC_ENDCAP_mtc_quality_decb : natural := 0;
-
------------------------------------------------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------------------------------------------------
-constant PTCALC_BARREL_width : natural := 118;
-
--- eta of the innermost MDT station segment position
-constant PTCALC_BARREL_mtc_eta_width : natural := 14;
-constant PTCALC_BARREL_mtc_eta_lsb : natural := 20;
-constant PTCALC_BARREL_mtc_eta_decb : natural := 11;
-
--- pT calculated by the pT Calc
-constant PTCALC_BARREL_mtc_pt_width : natural := 8;
-constant PTCALC_BARREL_mtc_pt_lsb : natural := 12;
-constant PTCALC_BARREL_mtc_pt_decb : natural := 1;
-
--- pT threshold satisfied by the MDT TC
-constant PTCALC_BARREL_mtc_ptthresh_width : natural := 4;
-constant PTCALC_BARREL_mtc_ptthresh_lsb : natural := 8;
-constant PTCALC_BARREL_mtc_ptthresh_decb : natural := 0;
-
--- charge determined from the pT calc
-constant PTCALC_BARREL_mtc_charge_width : natural := 1;
-constant PTCALC_BARREL_mtc_charge_lsb : natural := 7;
-constant PTCALC_BARREL_mtc_charge_decb : natural := 0;
-
--- MDT processing flags
-constant PTCALC_BARREL_mtc_procflags_width : natural := 4;
-constant PTCALC_BARREL_mtc_procflags_lsb : natural := 3;
-constant PTCALC_BARREL_mtc_procflags_decb : natural := 0;
-
--- # of segments used for calculating the pT
-constant PTCALC_BARREL_mtc_nsegments_width : natural := 2;
-constant PTCALC_BARREL_mtc_nsegments_lsb : natural := 1;
-constant PTCALC_BARREL_mtc_nsegments_decb : natural := 0;
-
--- quality of the MDT TC (TBC how this is defined)
-constant PTCALC_BARREL_mtc_quality_width : natural := 1;
-constant PTCALC_BARREL_mtc_quality_lsb : natural := 0;
-constant PTCALC_BARREL_mtc_quality_decb : natural := 0;
+constant PTCALC_mtc_quality_width : natural := 1;
+constant PTCALC_mtc_quality_lsb : natural := 0;
+constant PTCALC_mtc_quality_decb : natural := 0;
 
 -----------------------------------------------------------------------------------------------------------------------------
 

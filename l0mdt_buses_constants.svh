@@ -119,37 +119,47 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLCPROC_CAND_width 54;
+`define SLCPROC_CAND_COMMON_width 34;
 
 // SLc board destination
-`define SLCPROC_CAND_destsl_width 2;
-`define SLCPROC_CAND_destsl_lsb 52;
-`define SLCPROC_CAND_destsl_decb 0;
+`define SLCPROC_CAND_COMMON_destsl_width 2;
+`define SLCPROC_CAND_COMMON_destsl_lsb 32;
+`define SLCPROC_CAND_COMMON_destsl_decb 0;
 
 // SLc phimod
-`define SLCPROC_CAND_phimod_width 8;
-`define SLCPROC_CAND_phimod_lsb 44;
-`define SLCPROC_CAND_phimod_decb 0;
+`define SLCPROC_CAND_COMMON_phimod_width 8;
+`define SLCPROC_CAND_COMMON_phimod_lsb 24;
+`define SLCPROC_CAND_COMMON_phimod_decb 0;
 
 // SLc Extra Vector MDT chamber ID
-`define SLCPROC_CAND_vec_mdtid_width 6;
-`define SLCPROC_CAND_vec_mdtid_lsb 38;
-`define SLCPROC_CAND_vec_mdtid_decb 0;
+`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
+`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 18;
+`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
 
 // SLc Outer Vector MDT chamber ID
-`define SLCPROC_CAND_vec_mdtid_width 6;
-`define SLCPROC_CAND_vec_mdtid_lsb 32;
-`define SLCPROC_CAND_vec_mdtid_decb 0;
+`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
+`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 12;
+`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
 
 // SLc Middle Vector MDT chamber ID
-`define SLCPROC_CAND_vec_mdtid_width 6;
-`define SLCPROC_CAND_vec_mdtid_lsb 26;
-`define SLCPROC_CAND_vec_mdtid_decb 0;
+`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
+`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 6;
+`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
 
 // SLc Inner Vector MDT chamber ID
-`define SLCPROC_CAND_vec_mdtid_width 6;
-`define SLCPROC_CAND_vec_mdtid_lsb 20;
-`define SLCPROC_CAND_vec_mdtid_decb 0;
+`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
+`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 0;
+`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+`define SLCPROC_CAND_ENDCAP_width 134;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+`define SLCPROC_CAND_BARREL_width 138;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -184,27 +194,27 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define TUBEREMAP_IN_width 44;
+`define TDCFORMAT_width 44;
 
 // 
-`define TUBEREMAP_IN_station_id_width 2;
-`define TUBEREMAP_IN_station_id_lsb 42;
-`define TUBEREMAP_IN_station_id_decb 0;
+`define TDCFORMAT_station_id_width 2;
+`define TDCFORMAT_station_id_lsb 42;
+`define TDCFORMAT_station_id_decb 0;
 
 // Valid bit
-`define TUBEREMAP_IN_data_valid_width 1;
-`define TUBEREMAP_IN_data_valid_lsb 41;
-`define TUBEREMAP_IN_data_valid_decb 0;
+`define TDCFORMAT_data_valid_width 1;
+`define TDCFORMAT_data_valid_lsb 41;
+`define TDCFORMAT_data_valid_decb 0;
 
 // Elink ID within fiber
-`define TUBEREMAP_IN_elink_id_width 4;
-`define TUBEREMAP_IN_elink_id_lsb 37;
-`define TUBEREMAP_IN_elink_id_decb 0;
+`define TDCFORMAT_elink_id_width 4;
+`define TDCFORMAT_elink_id_lsb 37;
+`define TDCFORMAT_elink_id_decb 0;
 
 // Fiber ID within board
-`define TUBEREMAP_IN_fiber_id_width 5;
-`define TUBEREMAP_IN_fiber_id_lsb 32;
-`define TUBEREMAP_IN_fiber_id_decb 0;
+`define TDCFORMAT_fiber_id_width 5;
+`define TDCFORMAT_fiber_id_lsb 32;
+`define TDCFORMAT_fiber_id_decb 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -359,17 +369,22 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define PTCALC_ENDCAP_width 100;
+`define PTCALC_ENDCAP_width 114;
 
 // quality of the MDT TC (TBC how this is defined)
 `define PTCALC_ENDCAP_mtc_quality_width 1;
-`define PTCALC_ENDCAP_mtc_quality_lsb 99;
+`define PTCALC_ENDCAP_mtc_quality_lsb 113;
 `define PTCALC_ENDCAP_mtc_quality_decb 0;
 
 // # of segments used for calculating the pT
 `define PTCALC_ENDCAP_mtc_nsegments_width 2;
-`define PTCALC_ENDCAP_mtc_nsegments_lsb 97;
+`define PTCALC_ENDCAP_mtc_nsegments_lsb 111;
 `define PTCALC_ENDCAP_mtc_nsegments_decb 0;
+
+// eta of the innermost MDT station segment position
+`define PTCALC_ENDCAP_mtc_eta_width 14;
+`define PTCALC_ENDCAP_mtc_eta_lsb 97;
+`define PTCALC_ENDCAP_mtc_eta_decb 11;
 
 // charge determined from the pT calc
 `define PTCALC_ENDCAP_mtc_charge_width 1;
@@ -394,17 +409,22 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define PTCALC_BARREL_width 104;
+`define PTCALC_BARREL_width 118;
 
 // quality of the MDT TC (TBC how this is defined)
 `define PTCALC_BARREL_mtc_quality_width 1;
-`define PTCALC_BARREL_mtc_quality_lsb 103;
+`define PTCALC_BARREL_mtc_quality_lsb 117;
 `define PTCALC_BARREL_mtc_quality_decb 0;
 
 // # of segments used for calculating the pT
 `define PTCALC_BARREL_mtc_nsegments_width 2;
-`define PTCALC_BARREL_mtc_nsegments_lsb 101;
+`define PTCALC_BARREL_mtc_nsegments_lsb 115;
 `define PTCALC_BARREL_mtc_nsegments_decb 0;
+
+// eta of the innermost MDT station segment position
+`define PTCALC_BARREL_mtc_eta_width 14;
+`define PTCALC_BARREL_mtc_eta_lsb 101;
+`define PTCALC_BARREL_mtc_eta_decb 11;
 
 // charge determined from the pT calc
 `define PTCALC_BARREL_mtc_charge_width 1;

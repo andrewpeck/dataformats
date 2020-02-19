@@ -121,37 +121,47 @@ const int SLC_BARREL_rpc0_posz_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLCPROC_CAND_width = 54;
+const int SLCPROC_CAND_COMMON_width = 34;
 
 // SLc board destination
-const int SLCPROC_CAND_destsl_width = 2;
-const int SLCPROC_CAND_destsl_lsb = 52;
-const int SLCPROC_CAND_destsl_decb = 0;
+const int SLCPROC_CAND_COMMON_destsl_width = 2;
+const int SLCPROC_CAND_COMMON_destsl_lsb = 32;
+const int SLCPROC_CAND_COMMON_destsl_decb = 0;
 
 // SLc phimod
-const int SLCPROC_CAND_phimod_width = 8;
-const int SLCPROC_CAND_phimod_lsb = 44;
-const int SLCPROC_CAND_phimod_decb = 0;
+const int SLCPROC_CAND_COMMON_phimod_width = 8;
+const int SLCPROC_CAND_COMMON_phimod_lsb = 24;
+const int SLCPROC_CAND_COMMON_phimod_decb = 0;
 
 // SLc Extra Vector MDT chamber ID
-const int SLCPROC_CAND_vec_mdtid_width = 6;
-const int SLCPROC_CAND_vec_mdtid_lsb = 38;
-const int SLCPROC_CAND_vec_mdtid_decb = 0;
+const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 18;
+const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
 
 // SLc Outer Vector MDT chamber ID
-const int SLCPROC_CAND_vec_mdtid_width = 6;
-const int SLCPROC_CAND_vec_mdtid_lsb = 32;
-const int SLCPROC_CAND_vec_mdtid_decb = 0;
+const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 12;
+const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
 
 // SLc Middle Vector MDT chamber ID
-const int SLCPROC_CAND_vec_mdtid_width = 6;
-const int SLCPROC_CAND_vec_mdtid_lsb = 26;
-const int SLCPROC_CAND_vec_mdtid_decb = 0;
+const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 6;
+const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
 
 // SLc Inner Vector MDT chamber ID
-const int SLCPROC_CAND_vec_mdtid_width = 6;
-const int SLCPROC_CAND_vec_mdtid_lsb = 20;
-const int SLCPROC_CAND_vec_mdtid_decb = 0;
+const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 0;
+const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+const int SLCPROC_CAND_ENDCAP_width = 134;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+const int SLCPROC_CAND_BARREL_width = 138;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -186,27 +196,27 @@ const int CSM_chanid_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int TUBEREMAP_IN_width = 44;
+const int TDCFORMAT_width = 44;
 
 // 
-const int TUBEREMAP_IN_station_id_width = 2;
-const int TUBEREMAP_IN_station_id_lsb = 42;
-const int TUBEREMAP_IN_station_id_decb = 0;
+const int TDCFORMAT_station_id_width = 2;
+const int TDCFORMAT_station_id_lsb = 42;
+const int TDCFORMAT_station_id_decb = 0;
 
 // Valid bit
-const int TUBEREMAP_IN_data_valid_width = 1;
-const int TUBEREMAP_IN_data_valid_lsb = 41;
-const int TUBEREMAP_IN_data_valid_decb = 0;
+const int TDCFORMAT_data_valid_width = 1;
+const int TDCFORMAT_data_valid_lsb = 41;
+const int TDCFORMAT_data_valid_decb = 0;
 
 // Elink ID within fiber
-const int TUBEREMAP_IN_elink_id_width = 4;
-const int TUBEREMAP_IN_elink_id_lsb = 37;
-const int TUBEREMAP_IN_elink_id_decb = 0;
+const int TDCFORMAT_elink_id_width = 4;
+const int TDCFORMAT_elink_id_lsb = 37;
+const int TDCFORMAT_elink_id_decb = 0;
 
 // Fiber ID within board
-const int TUBEREMAP_IN_fiber_id_width = 5;
-const int TUBEREMAP_IN_fiber_id_lsb = 32;
-const int TUBEREMAP_IN_fiber_id_decb = 0;
+const int TDCFORMAT_fiber_id_width = 5;
+const int TDCFORMAT_fiber_id_lsb = 32;
+const int TDCFORMAT_fiber_id_decb = 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -361,17 +371,22 @@ const int SF_segvalid_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int PTCALC_ENDCAP_width = 100;
+const int PTCALC_ENDCAP_width = 114;
 
 // quality of the MDT TC (TBC how this is defined)
 const int PTCALC_ENDCAP_mtc_quality_width = 1;
-const int PTCALC_ENDCAP_mtc_quality_lsb = 99;
+const int PTCALC_ENDCAP_mtc_quality_lsb = 113;
 const int PTCALC_ENDCAP_mtc_quality_decb = 0;
 
 // # of segments used for calculating the pT
 const int PTCALC_ENDCAP_mtc_nsegments_width = 2;
-const int PTCALC_ENDCAP_mtc_nsegments_lsb = 97;
+const int PTCALC_ENDCAP_mtc_nsegments_lsb = 111;
 const int PTCALC_ENDCAP_mtc_nsegments_decb = 0;
+
+// eta of the innermost MDT station segment position
+const int PTCALC_ENDCAP_mtc_eta_width = 14;
+const int PTCALC_ENDCAP_mtc_eta_lsb = 97;
+const int PTCALC_ENDCAP_mtc_eta_decb = 11;
 
 // charge determined from the pT calc
 const int PTCALC_ENDCAP_mtc_charge_width = 1;
@@ -396,17 +411,22 @@ const int PTCALC_ENDCAP_mtc_ptthresh_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int PTCALC_BARREL_width = 104;
+const int PTCALC_BARREL_width = 118;
 
 // quality of the MDT TC (TBC how this is defined)
 const int PTCALC_BARREL_mtc_quality_width = 1;
-const int PTCALC_BARREL_mtc_quality_lsb = 103;
+const int PTCALC_BARREL_mtc_quality_lsb = 117;
 const int PTCALC_BARREL_mtc_quality_decb = 0;
 
 // # of segments used for calculating the pT
 const int PTCALC_BARREL_mtc_nsegments_width = 2;
-const int PTCALC_BARREL_mtc_nsegments_lsb = 101;
+const int PTCALC_BARREL_mtc_nsegments_lsb = 115;
 const int PTCALC_BARREL_mtc_nsegments_decb = 0;
+
+// eta of the innermost MDT station segment position
+const int PTCALC_BARREL_mtc_eta_width = 14;
+const int PTCALC_BARREL_mtc_eta_lsb = 101;
+const int PTCALC_BARREL_mtc_eta_decb = 11;
 
 // charge determined from the pT calc
 const int PTCALC_BARREL_mtc_charge_width = 1;

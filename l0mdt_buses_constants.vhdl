@@ -119,37 +119,47 @@ constant SLC_BARREL_rpc0_posz_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-constant SLCPROC_CAND_width : natural := 54;
+constant SLCPROC_CAND_COMMON_width : natural := 34;
 
 -- SLc board destination
-constant SLCPROC_CAND_destsl_width : natural := 2;
-constant SLCPROC_CAND_destsl_lsb : natural := 52;
-constant SLCPROC_CAND_destsl_decb : natural := 0;
+constant SLCPROC_CAND_COMMON_destsl_width : natural := 2;
+constant SLCPROC_CAND_COMMON_destsl_lsb : natural := 32;
+constant SLCPROC_CAND_COMMON_destsl_decb : natural := 0;
 
 -- SLc phimod
-constant SLCPROC_CAND_phimod_width : natural := 8;
-constant SLCPROC_CAND_phimod_lsb : natural := 44;
-constant SLCPROC_CAND_phimod_decb : natural := 0;
+constant SLCPROC_CAND_COMMON_phimod_width : natural := 8;
+constant SLCPROC_CAND_COMMON_phimod_lsb : natural := 24;
+constant SLCPROC_CAND_COMMON_phimod_decb : natural := 0;
 
 -- SLc Extra Vector MDT chamber ID
-constant SLCPROC_CAND_vec_mdtid_width : natural := 6;
-constant SLCPROC_CAND_vec_mdtid_lsb : natural := 38;
-constant SLCPROC_CAND_vec_mdtid_decb : natural := 0;
+constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6;
+constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 18;
+constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0;
 
 -- SLc Outer Vector MDT chamber ID
-constant SLCPROC_CAND_vec_mdtid_width : natural := 6;
-constant SLCPROC_CAND_vec_mdtid_lsb : natural := 32;
-constant SLCPROC_CAND_vec_mdtid_decb : natural := 0;
+constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6;
+constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 12;
+constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0;
 
 -- SLc Middle Vector MDT chamber ID
-constant SLCPROC_CAND_vec_mdtid_width : natural := 6;
-constant SLCPROC_CAND_vec_mdtid_lsb : natural := 26;
-constant SLCPROC_CAND_vec_mdtid_decb : natural := 0;
+constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6;
+constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 6;
+constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0;
 
 -- SLc Inner Vector MDT chamber ID
-constant SLCPROC_CAND_vec_mdtid_width : natural := 6;
-constant SLCPROC_CAND_vec_mdtid_lsb : natural := 20;
-constant SLCPROC_CAND_vec_mdtid_decb : natural := 0;
+constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6;
+constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 0;
+constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0;
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------
+constant SLCPROC_CAND_ENDCAP_width : natural := 134;
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------
+constant SLCPROC_CAND_BARREL_width : natural := 138;
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -184,27 +194,27 @@ constant CSM_chanid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-constant TUBEREMAP_IN_width : natural := 44;
+constant TDCFORMAT_width : natural := 44;
 
 -- 
-constant TUBEREMAP_IN_station_id_width : natural := 2;
-constant TUBEREMAP_IN_station_id_lsb : natural := 42;
-constant TUBEREMAP_IN_station_id_decb : natural := 0;
+constant TDCFORMAT_station_id_width : natural := 2;
+constant TDCFORMAT_station_id_lsb : natural := 42;
+constant TDCFORMAT_station_id_decb : natural := 0;
 
 -- Valid bit
-constant TUBEREMAP_IN_data_valid_width : natural := 1;
-constant TUBEREMAP_IN_data_valid_lsb : natural := 41;
-constant TUBEREMAP_IN_data_valid_decb : natural := 0;
+constant TDCFORMAT_data_valid_width : natural := 1;
+constant TDCFORMAT_data_valid_lsb : natural := 41;
+constant TDCFORMAT_data_valid_decb : natural := 0;
 
 -- Elink ID within fiber
-constant TUBEREMAP_IN_elink_id_width : natural := 4;
-constant TUBEREMAP_IN_elink_id_lsb : natural := 37;
-constant TUBEREMAP_IN_elink_id_decb : natural := 0;
+constant TDCFORMAT_elink_id_width : natural := 4;
+constant TDCFORMAT_elink_id_lsb : natural := 37;
+constant TDCFORMAT_elink_id_decb : natural := 0;
 
 -- Fiber ID within board
-constant TUBEREMAP_IN_fiber_id_width : natural := 5;
-constant TUBEREMAP_IN_fiber_id_lsb : natural := 32;
-constant TUBEREMAP_IN_fiber_id_decb : natural := 0;
+constant TDCFORMAT_fiber_id_width : natural := 5;
+constant TDCFORMAT_fiber_id_lsb : natural := 32;
+constant TDCFORMAT_fiber_id_decb : natural := 0;
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -359,17 +369,22 @@ constant SF_segvalid_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-constant PTCALC_ENDCAP_width : natural := 100;
+constant PTCALC_ENDCAP_width : natural := 114;
 
 -- quality of the MDT TC (TBC how this is defined)
 constant PTCALC_ENDCAP_mtc_quality_width : natural := 1;
-constant PTCALC_ENDCAP_mtc_quality_lsb : natural := 99;
+constant PTCALC_ENDCAP_mtc_quality_lsb : natural := 113;
 constant PTCALC_ENDCAP_mtc_quality_decb : natural := 0;
 
 -- # of segments used for calculating the pT
 constant PTCALC_ENDCAP_mtc_nsegments_width : natural := 2;
-constant PTCALC_ENDCAP_mtc_nsegments_lsb : natural := 97;
+constant PTCALC_ENDCAP_mtc_nsegments_lsb : natural := 111;
 constant PTCALC_ENDCAP_mtc_nsegments_decb : natural := 0;
+
+-- eta of the innermost MDT station segment position
+constant PTCALC_ENDCAP_mtc_eta_width : natural := 14;
+constant PTCALC_ENDCAP_mtc_eta_lsb : natural := 97;
+constant PTCALC_ENDCAP_mtc_eta_decb : natural := 11;
 
 -- charge determined from the pT calc
 constant PTCALC_ENDCAP_mtc_charge_width : natural := 1;
@@ -394,17 +409,22 @@ constant PTCALC_ENDCAP_mtc_ptthresh_decb : natural := 0;
 -----------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------
-constant PTCALC_BARREL_width : natural := 104;
+constant PTCALC_BARREL_width : natural := 118;
 
 -- quality of the MDT TC (TBC how this is defined)
 constant PTCALC_BARREL_mtc_quality_width : natural := 1;
-constant PTCALC_BARREL_mtc_quality_lsb : natural := 103;
+constant PTCALC_BARREL_mtc_quality_lsb : natural := 117;
 constant PTCALC_BARREL_mtc_quality_decb : natural := 0;
 
 -- # of segments used for calculating the pT
 constant PTCALC_BARREL_mtc_nsegments_width : natural := 2;
-constant PTCALC_BARREL_mtc_nsegments_lsb : natural := 101;
+constant PTCALC_BARREL_mtc_nsegments_lsb : natural := 115;
 constant PTCALC_BARREL_mtc_nsegments_decb : natural := 0;
+
+-- eta of the innermost MDT station segment position
+constant PTCALC_BARREL_mtc_eta_width : natural := 14;
+constant PTCALC_BARREL_mtc_eta_lsb : natural := 101;
+constant PTCALC_BARREL_mtc_eta_decb : natural := 11;
 
 -- charge determined from the pT calc
 constant PTCALC_BARREL_mtc_charge_width : natural := 1;

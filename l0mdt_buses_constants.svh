@@ -24,42 +24,37 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLC_COMMON_width 42;
+`define SLC_COMMON_width 30;
 
 // SLc Identification (up to 3)
 `define SLC_COMMON_slcid_width 2;
-`define SLC_COMMON_slcid_lsb 40;
+`define SLC_COMMON_slcid_lsb 28;
 `define SLC_COMMON_slcid_decb 0;
 
 // SLc Eta Position
 `define SLC_COMMON_poseta_width 14;
-`define SLC_COMMON_poseta_lsb 26;
+`define SLC_COMMON_poseta_lsb 14;
 `define SLC_COMMON_poseta_decb 11;
 
 // SLc Phi Position
 `define SLC_COMMON_posphi_width 9;
-`define SLC_COMMON_posphi_lsb 17;
+`define SLC_COMMON_posphi_lsb 5;
 `define SLC_COMMON_posphi_decb 0;
 
 // SLc highest pT threshold passed
 `define SLC_COMMON_ptthresh_width 4;
-`define SLC_COMMON_ptthresh_lsb 13;
+`define SLC_COMMON_ptthresh_lsb 1;
 `define SLC_COMMON_ptthresh_decb 0;
 
 // SLc charge
 `define SLC_COMMON_charge_width 1;
-`define SLC_COMMON_charge_lsb 12;
+`define SLC_COMMON_charge_lsb 0;
 `define SLC_COMMON_charge_decb 0;
 
-// SLc BCID
-`define SLC_COMMON_bcid_width 12;
-`define SLC_COMMON_bcid_lsb 0;
-`define SLC_COMMON_bcid_decb 0;
-
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLC_ENDCAP_width 80;
+`define SLC_ENDCAP_width 68;
 
 // SLc Segment Angle wrt Eta position
 `define SLC_ENDCAP_seg_angdtheta_width 7;
@@ -89,77 +84,82 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLC_BARREL_width 84;
+`define SLC_BARREL_width 73;
 
 // SLc Hit Z Position in RPC0
 `define SLC_BARREL_rpc0_posz_width 10;
-`define SLC_BARREL_rpc0_posz_lsb 32;
+`define SLC_BARREL_rpc0_posz_lsb 33;
 `define SLC_BARREL_rpc0_posz_decb 0;
 
 // SLc Hit Z Position in RPC1
 `define SLC_BARREL_rpc1_posz_width 10;
-`define SLC_BARREL_rpc1_posz_lsb 22;
+`define SLC_BARREL_rpc1_posz_lsb 23;
 `define SLC_BARREL_rpc1_posz_decb 0;
 
 // SLc Hit Z Position in RPC2
 `define SLC_BARREL_rpc2_posz_width 10;
-`define SLC_BARREL_rpc2_posz_lsb 12;
+`define SLC_BARREL_rpc2_posz_lsb 13;
 `define SLC_BARREL_rpc2_posz_decb 0;
 
 // SLc Hit Z Position in RPC3
 `define SLC_BARREL_rpc3_posz_width 10;
-`define SLC_BARREL_rpc3_posz_lsb 2;
+`define SLC_BARREL_rpc3_posz_lsb 3;
 `define SLC_BARREL_rpc3_posz_decb 0;
 
 // SLc coincidence type
-`define SLC_BARREL_cointype_width 2;
+`define SLC_BARREL_cointype_width 3;
 `define SLC_BARREL_cointype_lsb 0;
 `define SLC_BARREL_cointype_decb 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLCPROC_CAND_COMMON_width 34;
+`define SLCPROC_PIPELINE_COMMON_width 35;
+
+// SLc busy flag
+`define SLCPROC_PIPELINE_COMMON_busy_width 1;
+`define SLCPROC_PIPELINE_COMMON_busy_lsb 34;
+`define SLCPROC_PIPELINE_COMMON_busy_decb 0;
 
 // SLc board destination
-`define SLCPROC_CAND_COMMON_destsl_width 2;
-`define SLCPROC_CAND_COMMON_destsl_lsb 32;
-`define SLCPROC_CAND_COMMON_destsl_decb 0;
+`define SLCPROC_PIPELINE_COMMON_destsl_width 2;
+`define SLCPROC_PIPELINE_COMMON_destsl_lsb 32;
+`define SLCPROC_PIPELINE_COMMON_destsl_decb 0;
 
 // SLc phimod
-`define SLCPROC_CAND_COMMON_phimod_width 8;
-`define SLCPROC_CAND_COMMON_phimod_lsb 24;
-`define SLCPROC_CAND_COMMON_phimod_decb 0;
+`define SLCPROC_PIPELINE_COMMON_phimod_width 8;
+`define SLCPROC_PIPELINE_COMMON_phimod_lsb 24;
+`define SLCPROC_PIPELINE_COMMON_phimod_decb 0;
 
 // SLc Inner Vector MDT chamber ID
-`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
-`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 18;
-`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 18;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0;
 
 // SLc Middle Vector MDT chamber ID
-`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
-`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 12;
-`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 12;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0;
 
 // SLc Outer Vector MDT chamber ID
-`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
-`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 6;
-`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 6;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0;
 
 // SLc Extra Vector MDT chamber ID
-`define SLCPROC_CAND_COMMON_vec_mdtid_width 6;
-`define SLCPROC_CAND_COMMON_vec_mdtid_lsb 0;
-`define SLCPROC_CAND_COMMON_vec_mdtid_decb 0;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 0;
+`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLCPROC_CAND_ENDCAP_width 134;
+`define SLCPROC_PIPELINE_ENDCAP_width 123;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLCPROC_CAND_BARREL_width 138;
+`define SLCPROC_PIPELINE_BARREL_width 128;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -219,32 +219,32 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define SLCPROC_SEG_width 48;
+`define SLCPROC_HESF_width 48;
 
 // SLc Muon Unique Identifier
-`define SLCPROC_SEG_SLC_MUID_width 20;
-`define SLCPROC_SEG_SLC_MUID_lsb 28;
-`define SLCPROC_SEG_SLC_MUID_decb 0;
+`define SLCPROC_HESF_SLC_MUID_width 20;
+`define SLCPROC_HESF_SLC_MUID_lsb 28;
+`define SLCPROC_HESF_SLC_MUID_decb 0;
 
 // inner MDT segment chip destination
-`define SLCPROC_SEG_mdtseg_dest_width 2;
-`define SLCPROC_SEG_mdtseg_dest_lsb 26;
-`define SLCPROC_SEG_mdtseg_dest_decb 0;
+`define SLCPROC_HESF_mdtseg_dest_width 2;
+`define SLCPROC_HESF_mdtseg_dest_lsb 26;
+`define SLCPROC_HESF_mdtseg_dest_decb 0;
 
 // SLc Inner Vector MDT chamber ID
-`define SLCPROC_SEG_vec_mdtid_width 6;
-`define SLCPROC_SEG_vec_mdtid_lsb 20;
-`define SLCPROC_SEG_vec_mdtid_decb 0;
+`define SLCPROC_HESF_vec_mdtid_width 6;
+`define SLCPROC_HESF_vec_mdtid_lsb 20;
+`define SLCPROC_HESF_vec_mdtid_decb 0;
 
 // SLc inner vector rho position
-`define SLCPROC_SEG_vec_pos_width 10;
-`define SLCPROC_SEG_vec_pos_lsb 10;
-`define SLCPROC_SEG_vec_pos_decb 0;
+`define SLCPROC_HESF_vec_pos_width 10;
+`define SLCPROC_HESF_vec_pos_lsb 10;
+`define SLCPROC_HESF_vec_pos_decb 0;
 
 // SLc inner vector theta angle
-`define SLCPROC_SEG_vec_ang_width 10;
-`define SLCPROC_SEG_vec_ang_lsb 0;
-`define SLCPROC_SEG_vec_ang_decb 0;
+`define SLCPROC_HESF_vec_ang_width 10;
+`define SLCPROC_HESF_vec_ang_lsb 0;
+`define SLCPROC_HESF_vec_ang_decb 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -369,7 +369,7 @@
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-`define PTCALC_width 54;
+`define PTCALC_width 50;
 
 // eta of the innermost MDT station segment position
 `define PTCALC_mtc_eta_width 14;
@@ -391,11 +391,6 @@
 `define PTCALC_mtc_charge_lsb 7;
 `define PTCALC_mtc_charge_decb 0;
 
-// MDT processing flags
-`define PTCALC_mtc_procflags_width 4;
-`define PTCALC_mtc_procflags_lsb 3;
-`define PTCALC_mtc_procflags_decb 0;
-
 // # of segments used for calculating the pT
 `define PTCALC_mtc_nsegments_width 2;
 `define PTCALC_mtc_nsegments_lsb 1;
@@ -405,6 +400,26 @@
 `define PTCALC_mtc_quality_width 1;
 `define PTCALC_mtc_quality_lsb 0;
 `define PTCALC_mtc_quality_decb 0;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+`define SLCPIPELINE_MTC_ENDCAP_width 123;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+`define SLCPIPELINE_MTC_BARREL_width 128;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+`define MTC_width 64;
+
+// MDT processing flags
+`define MTC_mtc_procflags_width 4;
+`define MTC_mtc_procflags_lsb 3;
+`define MTC_mtc_procflags_decb 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 

@@ -26,42 +26,37 @@ const int SLC_MUID_bcid_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLC_COMMON_width = 42;
+const int SLC_COMMON_width = 30;
 
 // SLc Identification (up to 3)
 const int SLC_COMMON_slcid_width = 2;
-const int SLC_COMMON_slcid_lsb = 40;
+const int SLC_COMMON_slcid_lsb = 28;
 const int SLC_COMMON_slcid_decb = 0;
 
 // SLc Eta Position
 const int SLC_COMMON_poseta_width = 14;
-const int SLC_COMMON_poseta_lsb = 26;
+const int SLC_COMMON_poseta_lsb = 14;
 const int SLC_COMMON_poseta_decb = 11;
 
 // SLc Phi Position
 const int SLC_COMMON_posphi_width = 9;
-const int SLC_COMMON_posphi_lsb = 17;
+const int SLC_COMMON_posphi_lsb = 5;
 const int SLC_COMMON_posphi_decb = 0;
 
 // SLc highest pT threshold passed
 const int SLC_COMMON_ptthresh_width = 4;
-const int SLC_COMMON_ptthresh_lsb = 13;
+const int SLC_COMMON_ptthresh_lsb = 1;
 const int SLC_COMMON_ptthresh_decb = 0;
 
 // SLc charge
 const int SLC_COMMON_charge_width = 1;
-const int SLC_COMMON_charge_lsb = 12;
+const int SLC_COMMON_charge_lsb = 0;
 const int SLC_COMMON_charge_decb = 0;
 
-// SLc BCID
-const int SLC_COMMON_bcid_width = 12;
-const int SLC_COMMON_bcid_lsb = 0;
-const int SLC_COMMON_bcid_decb = 0;
-
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLC_ENDCAP_width = 80;
+const int SLC_ENDCAP_width = 68;
 
 // SLc Segment Angle wrt Eta position
 const int SLC_ENDCAP_seg_angdtheta_width = 7;
@@ -91,77 +86,82 @@ const int SLC_ENDCAP_nswseg_angdtheta_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLC_BARREL_width = 84;
+const int SLC_BARREL_width = 73;
 
 // SLc Hit Z Position in RPC0
 const int SLC_BARREL_rpc0_posz_width = 10;
-const int SLC_BARREL_rpc0_posz_lsb = 32;
+const int SLC_BARREL_rpc0_posz_lsb = 33;
 const int SLC_BARREL_rpc0_posz_decb = 0;
 
 // SLc Hit Z Position in RPC1
 const int SLC_BARREL_rpc1_posz_width = 10;
-const int SLC_BARREL_rpc1_posz_lsb = 22;
+const int SLC_BARREL_rpc1_posz_lsb = 23;
 const int SLC_BARREL_rpc1_posz_decb = 0;
 
 // SLc Hit Z Position in RPC2
 const int SLC_BARREL_rpc2_posz_width = 10;
-const int SLC_BARREL_rpc2_posz_lsb = 12;
+const int SLC_BARREL_rpc2_posz_lsb = 13;
 const int SLC_BARREL_rpc2_posz_decb = 0;
 
 // SLc Hit Z Position in RPC3
 const int SLC_BARREL_rpc3_posz_width = 10;
-const int SLC_BARREL_rpc3_posz_lsb = 2;
+const int SLC_BARREL_rpc3_posz_lsb = 3;
 const int SLC_BARREL_rpc3_posz_decb = 0;
 
 // SLc coincidence type
-const int SLC_BARREL_cointype_width = 2;
+const int SLC_BARREL_cointype_width = 3;
 const int SLC_BARREL_cointype_lsb = 0;
 const int SLC_BARREL_cointype_decb = 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLCPROC_CAND_COMMON_width = 34;
+const int SLCPROC_PIPELINE_COMMON_width = 35;
+
+// SLc busy flag
+const int SLCPROC_PIPELINE_COMMON_busy_width = 1;
+const int SLCPROC_PIPELINE_COMMON_busy_lsb = 34;
+const int SLCPROC_PIPELINE_COMMON_busy_decb = 0;
 
 // SLc board destination
-const int SLCPROC_CAND_COMMON_destsl_width = 2;
-const int SLCPROC_CAND_COMMON_destsl_lsb = 32;
-const int SLCPROC_CAND_COMMON_destsl_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_destsl_width = 2;
+const int SLCPROC_PIPELINE_COMMON_destsl_lsb = 32;
+const int SLCPROC_PIPELINE_COMMON_destsl_decb = 0;
 
 // SLc phimod
-const int SLCPROC_CAND_COMMON_phimod_width = 8;
-const int SLCPROC_CAND_COMMON_phimod_lsb = 24;
-const int SLCPROC_CAND_COMMON_phimod_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_phimod_width = 8;
+const int SLCPROC_PIPELINE_COMMON_phimod_lsb = 24;
+const int SLCPROC_PIPELINE_COMMON_phimod_decb = 0;
 
 // SLc Inner Vector MDT chamber ID
-const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
-const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 18;
-const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb = 18;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_decb = 0;
 
 // SLc Middle Vector MDT chamber ID
-const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
-const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 12;
-const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb = 12;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_decb = 0;
 
 // SLc Outer Vector MDT chamber ID
-const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
-const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 6;
-const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb = 6;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_decb = 0;
 
 // SLc Extra Vector MDT chamber ID
-const int SLCPROC_CAND_COMMON_vec_mdtid_width = 6;
-const int SLCPROC_CAND_COMMON_vec_mdtid_lsb = 0;
-const int SLCPROC_CAND_COMMON_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_width = 6;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb = 0;
+const int SLCPROC_PIPELINE_COMMON_vec_mdtid_decb = 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLCPROC_CAND_ENDCAP_width = 134;
+const int SLCPROC_PIPELINE_ENDCAP_width = 123;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLCPROC_CAND_BARREL_width = 138;
+const int SLCPROC_PIPELINE_BARREL_width = 128;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -221,32 +221,32 @@ const int TDCFORMAT_stationid_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int SLCPROC_SEG_width = 48;
+const int SLCPROC_HESF_width = 48;
 
 // SLc Muon Unique Identifier
-const int SLCPROC_SEG_SLC_MUID_width = 20;
-const int SLCPROC_SEG_SLC_MUID_lsb = 28;
-const int SLCPROC_SEG_SLC_MUID_decb = 0;
+const int SLCPROC_HESF_SLC_MUID_width = 20;
+const int SLCPROC_HESF_SLC_MUID_lsb = 28;
+const int SLCPROC_HESF_SLC_MUID_decb = 0;
 
 // inner MDT segment chip destination
-const int SLCPROC_SEG_mdtseg_dest_width = 2;
-const int SLCPROC_SEG_mdtseg_dest_lsb = 26;
-const int SLCPROC_SEG_mdtseg_dest_decb = 0;
+const int SLCPROC_HESF_mdtseg_dest_width = 2;
+const int SLCPROC_HESF_mdtseg_dest_lsb = 26;
+const int SLCPROC_HESF_mdtseg_dest_decb = 0;
 
 // SLc Inner Vector MDT chamber ID
-const int SLCPROC_SEG_vec_mdtid_width = 6;
-const int SLCPROC_SEG_vec_mdtid_lsb = 20;
-const int SLCPROC_SEG_vec_mdtid_decb = 0;
+const int SLCPROC_HESF_vec_mdtid_width = 6;
+const int SLCPROC_HESF_vec_mdtid_lsb = 20;
+const int SLCPROC_HESF_vec_mdtid_decb = 0;
 
 // SLc inner vector rho position
-const int SLCPROC_SEG_vec_pos_width = 10;
-const int SLCPROC_SEG_vec_pos_lsb = 10;
-const int SLCPROC_SEG_vec_pos_decb = 0;
+const int SLCPROC_HESF_vec_pos_width = 10;
+const int SLCPROC_HESF_vec_pos_lsb = 10;
+const int SLCPROC_HESF_vec_pos_decb = 0;
 
 // SLc inner vector theta angle
-const int SLCPROC_SEG_vec_ang_width = 10;
-const int SLCPROC_SEG_vec_ang_lsb = 0;
-const int SLCPROC_SEG_vec_ang_decb = 0;
+const int SLCPROC_HESF_vec_ang_width = 10;
+const int SLCPROC_HESF_vec_ang_lsb = 0;
+const int SLCPROC_HESF_vec_ang_decb = 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 
@@ -371,7 +371,7 @@ const int SF_segquality_decb = 0;
 //---------------------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------------------------------------------
-const int PTCALC_width = 54;
+const int PTCALC_width = 50;
 
 // eta of the innermost MDT station segment position
 const int PTCALC_mtc_eta_width = 14;
@@ -393,11 +393,6 @@ const int PTCALC_mtc_charge_width = 1;
 const int PTCALC_mtc_charge_lsb = 7;
 const int PTCALC_mtc_charge_decb = 0;
 
-// MDT processing flags
-const int PTCALC_mtc_procflags_width = 4;
-const int PTCALC_mtc_procflags_lsb = 3;
-const int PTCALC_mtc_procflags_decb = 0;
-
 // # of segments used for calculating the pT
 const int PTCALC_mtc_nsegments_width = 2;
 const int PTCALC_mtc_nsegments_lsb = 1;
@@ -407,6 +402,26 @@ const int PTCALC_mtc_nsegments_decb = 0;
 const int PTCALC_mtc_quality_width = 1;
 const int PTCALC_mtc_quality_lsb = 0;
 const int PTCALC_mtc_quality_decb = 0;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+const int SLCPIPELINE_MTC_ENDCAP_width = 123;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+const int SLCPIPELINE_MTC_BARREL_width = 128;
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------------------------
+const int MTC_width = 64;
+
+// MDT processing flags
+const int MTC_mtc_procflags_width = 4;
+const int MTC_mtc_procflags_lsb = 3;
+const int MTC_mtc_procflags_decb = 0;
 
 //---------------------------------------------------------------------------------------------------------------------------
 

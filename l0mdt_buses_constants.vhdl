@@ -28,40 +28,35 @@ package mdttp_pkg is
   constant SLC_MUID_bcid_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLC_COMMON : natural := 42;
+  constant SLC_COMMON : natural := 30;
 
   -- SLc Identification (up to 3)
   constant SLC_COMMON_slcid_width : natural := 2
-  constant SLC_COMMON_slcid_lsb : natural := 40
+  constant SLC_COMMON_slcid_lsb : natural := 28
   constant SLC_COMMON_slcid_decb : natural := 0
 
   -- SLc Eta Position
   constant SLC_COMMON_poseta_width : natural := 14
-  constant SLC_COMMON_poseta_lsb : natural := 26
+  constant SLC_COMMON_poseta_lsb : natural := 14
   constant SLC_COMMON_poseta_decb : natural := 11
 
   -- SLc Phi Position
   constant SLC_COMMON_posphi_width : natural := 9
-  constant SLC_COMMON_posphi_lsb : natural := 17
+  constant SLC_COMMON_posphi_lsb : natural := 5
   constant SLC_COMMON_posphi_decb : natural := 0
 
   -- SLc highest pT threshold passed
   constant SLC_COMMON_ptthresh_width : natural := 4
-  constant SLC_COMMON_ptthresh_lsb : natural := 13
+  constant SLC_COMMON_ptthresh_lsb : natural := 1
   constant SLC_COMMON_ptthresh_decb : natural := 0
 
   -- SLc charge
   constant SLC_COMMON_charge_width : natural := 1
-  constant SLC_COMMON_charge_lsb : natural := 12
+  constant SLC_COMMON_charge_lsb : natural := 0
   constant SLC_COMMON_charge_decb : natural := 0
 
-  -- SLc BCID
-  constant SLC_COMMON_bcid_width : natural := 12
-  constant SLC_COMMON_bcid_lsb : natural := 0
-  constant SLC_COMMON_bcid_decb : natural := 0
-
   ----------------------------------------------------------------------
-  constant SLC_ENDCAP : natural := 80;
+  constant SLC_ENDCAP : natural := 68;
 
   -- SLc Segment Angle wrt Eta position
   constant SLC_ENDCAP_seg_angdtheta_width : natural := 7
@@ -89,71 +84,76 @@ package mdttp_pkg is
   constant SLC_ENDCAP_nswseg_angdtheta_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLC_BARREL : natural := 84;
+  constant SLC_BARREL : natural := 73;
 
   -- SLc Hit Z Position in RPC0
   constant SLC_BARREL_rpc0_posz_width : natural := 10
-  constant SLC_BARREL_rpc0_posz_lsb : natural := 32
+  constant SLC_BARREL_rpc0_posz_lsb : natural := 33
   constant SLC_BARREL_rpc0_posz_decb : natural := 0
 
   -- SLc Hit Z Position in RPC1
   constant SLC_BARREL_rpc1_posz_width : natural := 10
-  constant SLC_BARREL_rpc1_posz_lsb : natural := 22
+  constant SLC_BARREL_rpc1_posz_lsb : natural := 23
   constant SLC_BARREL_rpc1_posz_decb : natural := 0
 
   -- SLc Hit Z Position in RPC2
   constant SLC_BARREL_rpc2_posz_width : natural := 10
-  constant SLC_BARREL_rpc2_posz_lsb : natural := 12
+  constant SLC_BARREL_rpc2_posz_lsb : natural := 13
   constant SLC_BARREL_rpc2_posz_decb : natural := 0
 
   -- SLc Hit Z Position in RPC3
   constant SLC_BARREL_rpc3_posz_width : natural := 10
-  constant SLC_BARREL_rpc3_posz_lsb : natural := 2
+  constant SLC_BARREL_rpc3_posz_lsb : natural := 3
   constant SLC_BARREL_rpc3_posz_decb : natural := 0
 
   -- SLc coincidence type
-  constant SLC_BARREL_cointype_width : natural := 2
+  constant SLC_BARREL_cointype_width : natural := 3
   constant SLC_BARREL_cointype_lsb : natural := 0
   constant SLC_BARREL_cointype_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPROC_CAND_COMMON : natural := 34;
+  constant SLCPROC_PIPELINE_COMMON : natural := 35;
+
+  -- SLc busy flag
+  constant SLCPROC_PIPELINE_COMMON_busy_width : natural := 1
+  constant SLCPROC_PIPELINE_COMMON_busy_lsb : natural := 34
+  constant SLCPROC_PIPELINE_COMMON_busy_decb : natural := 0
 
   -- SLc board destination
-  constant SLCPROC_CAND_COMMON_destsl_width : natural := 2
-  constant SLCPROC_CAND_COMMON_destsl_lsb : natural := 32
-  constant SLCPROC_CAND_COMMON_destsl_decb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_destsl_width : natural := 2
+  constant SLCPROC_PIPELINE_COMMON_destsl_lsb : natural := 32
+  constant SLCPROC_PIPELINE_COMMON_destsl_decb : natural := 0
 
   -- SLc phimod
-  constant SLCPROC_CAND_COMMON_phimod_width : natural := 8
-  constant SLCPROC_CAND_COMMON_phimod_lsb : natural := 24
-  constant SLCPROC_CAND_COMMON_phimod_decb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_phimod_width : natural := 8
+  constant SLCPROC_PIPELINE_COMMON_phimod_lsb : natural := 24
+  constant SLCPROC_PIPELINE_COMMON_phimod_decb : natural := 0
 
   -- SLc Inner Vector MDT chamber ID
-  constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6
-  constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 18
-  constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_width : natural := 6
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb : natural := 18
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_decb : natural := 0
 
   -- SLc Middle Vector MDT chamber ID
-  constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6
-  constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 12
-  constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_width : natural := 6
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb : natural := 12
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_decb : natural := 0
 
   -- SLc Outer Vector MDT chamber ID
-  constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6
-  constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 6
-  constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_width : natural := 6
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb : natural := 6
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_decb : natural := 0
 
   -- SLc Extra Vector MDT chamber ID
-  constant SLCPROC_CAND_COMMON_vec_mdtid_width : natural := 6
-  constant SLCPROC_CAND_COMMON_vec_mdtid_lsb : natural := 0
-  constant SLCPROC_CAND_COMMON_vec_mdtid_decb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_width : natural := 6
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb : natural := 0
+  constant SLCPROC_PIPELINE_COMMON_vec_mdtid_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPROC_CAND_ENDCAP : natural := 134;
+  constant SLCPROC_PIPELINE_ENDCAP : natural := 123;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_CAND_BARREL : natural := 138;
+  constant SLCPROC_PIPELINE_BARREL : natural := 128;
 
   ----------------------------------------------------------------------
   constant CSM : natural := 32;
@@ -207,32 +207,32 @@ package mdttp_pkg is
   constant TDCFORMAT_stationid_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPROC_SEG : natural := 48;
+  constant SLCPROC_HESF : natural := 48;
 
   -- SLc Muon Unique Identifier
-  constant SLCPROC_SEG_SLC_MUID_width : natural := 20
-  constant SLCPROC_SEG_SLC_MUID_lsb : natural := 28
-  constant SLCPROC_SEG_SLC_MUID_decb : natural := 0
+  constant SLCPROC_HESF_SLC_MUID_width : natural := 20
+  constant SLCPROC_HESF_SLC_MUID_lsb : natural := 28
+  constant SLCPROC_HESF_SLC_MUID_decb : natural := 0
 
   -- inner MDT segment chip destination
-  constant SLCPROC_SEG_mdtseg_dest_width : natural := 2
-  constant SLCPROC_SEG_mdtseg_dest_lsb : natural := 26
-  constant SLCPROC_SEG_mdtseg_dest_decb : natural := 0
+  constant SLCPROC_HESF_mdtseg_dest_width : natural := 2
+  constant SLCPROC_HESF_mdtseg_dest_lsb : natural := 26
+  constant SLCPROC_HESF_mdtseg_dest_decb : natural := 0
 
   -- SLc Inner Vector MDT chamber ID
-  constant SLCPROC_SEG_vec_mdtid_width : natural := 6
-  constant SLCPROC_SEG_vec_mdtid_lsb : natural := 20
-  constant SLCPROC_SEG_vec_mdtid_decb : natural := 0
+  constant SLCPROC_HESF_vec_mdtid_width : natural := 6
+  constant SLCPROC_HESF_vec_mdtid_lsb : natural := 20
+  constant SLCPROC_HESF_vec_mdtid_decb : natural := 0
 
   -- SLc inner vector rho position
-  constant SLCPROC_SEG_vec_pos_width : natural := 10
-  constant SLCPROC_SEG_vec_pos_lsb : natural := 10
-  constant SLCPROC_SEG_vec_pos_decb : natural := 0
+  constant SLCPROC_HESF_vec_pos_width : natural := 10
+  constant SLCPROC_HESF_vec_pos_lsb : natural := 10
+  constant SLCPROC_HESF_vec_pos_decb : natural := 0
 
   -- SLc inner vector theta angle
-  constant SLCPROC_SEG_vec_ang_width : natural := 10
-  constant SLCPROC_SEG_vec_ang_lsb : natural := 0
-  constant SLCPROC_SEG_vec_ang_decb : natural := 0
+  constant SLCPROC_HESF_vec_ang_width : natural := 10
+  constant SLCPROC_HESF_vec_ang_lsb : natural := 0
+  constant SLCPROC_HESF_vec_ang_decb : natural := 0
 
   ----------------------------------------------------------------------
   constant TUBEREMAP : natural := 74;
@@ -345,7 +345,7 @@ package mdttp_pkg is
   constant SF_segquality_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant PTCALC : natural := 54;
+  constant PTCALC : natural := 50;
 
   -- eta of the innermost MDT station segment position
   constant PTCALC_mtc_eta_width : natural := 14
@@ -367,11 +367,6 @@ package mdttp_pkg is
   constant PTCALC_mtc_charge_lsb : natural := 7
   constant PTCALC_mtc_charge_decb : natural := 0
 
-  -- MDT processing flags
-  constant PTCALC_mtc_procflags_width : natural := 4
-  constant PTCALC_mtc_procflags_lsb : natural := 3
-  constant PTCALC_mtc_procflags_decb : natural := 0
-
   -- # of segments used for calculating the pT
   constant PTCALC_mtc_nsegments_width : natural := 2
   constant PTCALC_mtc_nsegments_lsb : natural := 1
@@ -381,6 +376,20 @@ package mdttp_pkg is
   constant PTCALC_mtc_quality_width : natural := 1
   constant PTCALC_mtc_quality_lsb : natural := 0
   constant PTCALC_mtc_quality_decb : natural := 0
+
+  ----------------------------------------------------------------------
+  constant SLCPIPELINE_MTC_ENDCAP : natural := 123;
+
+  ----------------------------------------------------------------------
+  constant SLCPIPELINE_MTC_BARREL : natural := 128;
+
+  ----------------------------------------------------------------------
+  constant MTC : natural := 64;
+
+  -- MDT processing flags
+  constant MTC_mtc_procflags_width : natural := 4
+  constant MTC_mtc_procflags_lsb : natural := 3
+  constant MTC_mtc_procflags_decb : natural := 0
   ----------------------------------------------------------------------
 
 end package mdttp_pkg;

@@ -63,7 +63,7 @@ def read_csv(input_file) :
    vars.append(Var(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15],row[16]))
 
 #C file writer
-def write_c_file(c_name) :
+def write_c_file(c_name, df_hash) :
   
   now = datetime.now(tz=None) 
   dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -80,6 +80,10 @@ def write_c_file(c_name) :
 
   f_constants.write("#ifndef LOMDT_BUSES_CONSTANTS_H\n")
   f_constants.write("#define LOMDT_BUSES_CONSTANTS_H\n")
+
+  f_constants.write("\n");
+  f_constants.write(f"const char df_hash[] = {df_hash};\n")
+  f_constants.write("\n");
 
   for bus in buses:
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
@@ -101,7 +105,7 @@ def write_c_file(c_name) :
   print('C file written')
 
 #system-verilog file writer
-def write_sv_file(sv_name) :
+def write_sv_file(sv_name, df_hash):
   
   now = datetime.now(tz=None) 
   dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -115,7 +119,11 @@ def write_sv_file(sv_name) :
   f_constants.write("//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
   f_constants.write("\n");
   f_constants.write("\n");
-  
+
+  f_constants.write("\n");
+  f_constants.write(f"`define DF_HASH {df_hash};\n")
+  f_constants.write("\n");
+
   for bus in buses:
    f_constants.write("//---------------------------------------------------------------------------------------------------------------------------\n")
    f_constants.write("`define "+bus.name+"_width "+bus.width+";\n")
@@ -135,7 +143,7 @@ def write_sv_file(sv_name) :
   print('SV file written')
 
 #vhdl file writer
-def write_vhdl_file(vhdl_name) :
+def write_vhdl_file(vhdl_name, df_hash) :
   
     now = datetime.now(tz=None) 
     dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -164,6 +172,11 @@ def write_vhdl_file(vhdl_name) :
 
     write_ln("package mdttp_pkg is")
 
+    write_ln("")
+    msb = len(df_hash)*4-1
+    tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+    write_ln(f'  {tpl}' %(msb, df_hash))
+    
     for bus in buses:
         write_ln("")
         write_ln("  " + "-" * 70)
@@ -187,6 +200,7 @@ def write_vhdl_file(vhdl_name) :
             write_ln(const_tpl %(f"{var_prefix}_lsb", var.lsb))
             write_ln(const_tpl %(f"{var_prefix}_decb", var.decb))
 
+    write_ln("")
     write_ln("  " + "-" * 70)    
     write_ln("")
     write_ln("end package mdttp_pkg;")
@@ -195,46 +209,62 @@ def write_vhdl_file(vhdl_name) :
     print('VHDL file written')
 
 # LaTeX friendly writer
-def write_latex_files(out):
+def write_latex_files(out, df_hash):
     latex_name = out + '_latex'
     Path(latex_name).mkdir(parents=True, exist_ok=True)
+
+    fname = os.path.join(latex_name, 'df_hash.csv')
+    with open(fname, 'w') as fobj:
+        fobj.write(f"{df_hash}\n")
+    
     for bus in buses:
         fname = os.path.join(latex_name, bus.name + '.csv')
         with open(fname, 'w') as fobj:
              l = ",".join(["Name", "Width", "MSB index", "LSB index", "DECB"])
-             fobj.write(l + '\n');         
+             fobj.write(l + '\n')
              for var in bus.vars:
                 l = ",".join([var.name, var.width, var.msb, var.lsb, var.decb])
-                l = l.replace('_', '\\_');
-                fobj.write(l + '\n');
+                l = l.replace('_', '\\_')
+                fobj.write(l + '\n')
 
 
  
 #main function
 def main(argv):
-   inputfile = ''
-   try:
-      opts, args = getopt.getopt(argv,"hi:o:",["ifile="])
-   except getopt.GetoptError:
-      print('test.py -i <inputfile>')
-      sys.exit(2)
-   for opt, arg in opts:
-      if opt == '-h':
-         print('l0mdt_dataFormat.py -i <inputfile>')
-         sys.exit()
-      elif opt in ("-i", "--ifile"):
-         inputfile = arg
-   print('Input file is "', inputfile)
 
-   read_csv(inputfile)
-   print(buses)
+    inputfile = ''
+    df_hash = ''
+    
+    try:
+        opts, args = getopt.getopt(argv,
+                                   "i:r:",
+                                   ["ifile=", "ref="])
+        print(opts)
+        print(args)
+    except getopt.GetoptError:
+        print(f'{argv[0]} -i <inputfile> -r <df_hash>')
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            print('l0mdt_dataFormat.py -i <inputfile>')
+            sys.exit()
+        elif opt in ("-i", "--ifile"):
+            inputfile = arg
+        elif opt in ("-r", "--ref"):
+            df_hash = arg[:8]
 
-   outputfile = inputfile[:-4]
-
-   write_c_file(outputfile)
-   write_sv_file(outputfile)
-   write_vhdl_file(outputfile)
-   write_latex_files(outputfile)
+    print(f'Input file: {inputfile}.')
+    print(f'Commit hash: {df_hash}.')
+    
+    read_csv(inputfile)
+    print(buses)
+    
+    outputfile = inputfile[:-4]
+    
+    write_c_file(outputfile, df_hash)
+    write_sv_file(outputfile, df_hash)
+    write_vhdl_file(outputfile, df_hash)
+    write_latex_files(outputfile, df_hash)
 
 if __name__ == "__main__":
-   main(sys.argv[1:])
+    main(sys.argv[1:])

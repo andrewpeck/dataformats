@@ -53,7 +53,7 @@ SLC_MUID,,20,19,0,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_MUID,,
 TOTAL,,128,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 CSM,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-chanid,,6,32,27,0,0,32,1,#,,TDC Formatter,CSM,Channel number within TDC,var,,
+chanid,,6,32,27,0,0,33,1,#,,TDC Formatter,CSM,Channel number within TDC,var,,
 edgemode,,2,26,25,0,0,3,1,#,,TDC Formatter,CSM,Edge or pair mode,var,,
 coarsetime,,12,24,13,0,0,102375,25.00000,ns,,TDC Formatter,CSM,TDC BCID,var,,
 finetime,,5,12,8,0,0.78125,25,0.78125,ns,,TDC Formatter,CSM,TDC fine time with BCID,var,,

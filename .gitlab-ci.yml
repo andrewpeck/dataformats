@@ -1,6 +1,6 @@
 stages:
-    - build
     - deploy
+    - build
 
 commit_csv:
   stage: build

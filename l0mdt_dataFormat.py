@@ -60,9 +60,9 @@ def read_csv(input_file) :
          elif row[0] == '':
              continue
 
-         vars.append(Var(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7],row[8],row[9],row[10],row[11],row[12],row[13],row[14],row[15],row[16]))
+         vars.append(Var(*row))
 
-
+         
 now = datetime.now(tz=None)
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 date_now = datetime.now(timezone.utc).astimezone().tzname()

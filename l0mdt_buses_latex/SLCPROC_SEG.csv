@@ -1,6 +1,0 @@
-Name,Width,MSB index,LSB index,DECB
-vec\_ang,10,47,38,0
-vec\_pos,10,37,28,0
-vec\_mdtid,6,27,22,0
-mdtseg\_dest,2,21,20,0
-SLC\_MUID,20,19,0,0

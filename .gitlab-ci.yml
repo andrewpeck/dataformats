@@ -40,11 +40,11 @@ generate_outputs:
     - source tools/run.sh
   artifacts:
     paths:
-      - l0mdt_buses_constants.svh
-      - l0mdt_buses_types.svh
-      - l0mdt_buses_constants_pkg.vhd
-      - l0mdt_buses_types_pkg.vhd
       - l0mdt_buses_constants.h
+      - l0mdt_buses_constants.svh
+      - l0mdt_buses_constants_pkg.vhd
       - l0mdt_buses_types.h
+      - l0mdt_buses_types.svh
+      - l0mdt_buses_types_pkg.vhd
       - l0mdt_buses_latex/*.csv
     expire_in: 6 mos

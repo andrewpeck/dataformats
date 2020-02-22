@@ -168,7 +168,14 @@ def write_c_file(c_name, df_hash) :
         write_ln(f"// {'-'*67}")
         write_ln(f"typedef struct {bus.name}_n {{")
 
+        included = []
         for var in bus.vars:
+
+            if var.name in included:
+                continue
+
+            included.append(var.name)
+
             if var.type != 'var':
                 write_ln(f"    // struct {var.name}")
             elif var.type == 'var':
@@ -251,7 +258,14 @@ def write_sv_file(sv_name, df_hash):
         write_ln(f"// {'-'*67}")
         write_ln(f"typedef struct {bus.name}_n {{")
 
+        included = []
         for var in bus.vars:
+
+            if var.name in included:
+                continue
+
+            included.append(var.name)
+
             if var.type != 'var':
                 write_ln(f"    // struct {var.name}")
             elif var.type == 'var':
@@ -348,7 +362,14 @@ def write_vhdl_file(vhdl_name, df_hash) :
         write_ln(f"-- {'-'*67}")
         write_ln(f"  type {bus.name}_rt is record")
 
+        included = []
         for var in bus.vars:
+            
+            if var.name in included:
+                continue
+
+            included.append(var.name)
+            
             if var.type != 'var':
                 write_ln(f"    -- struct {var.name}")
             elif var.type == 'var':

@@ -42,8 +42,8 @@ generate_outputs:
     paths:
       - l0mdt_buses_constants.svh
       - l0mdt_buses_types.svh
-      - l0mdt_buses_constants_pkg.vhdl
-      - l0mdt_buses_types_pkg.vhdl
+      - l0mdt_buses_constants_pkg.vhd
+      - l0mdt_buses_types_pkg.vhd
       - l0mdt_buses_constants.h
       - l0mdt_buses_types.h
       - l0mdt_buses_latex/*.csv

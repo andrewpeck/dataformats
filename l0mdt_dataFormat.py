@@ -40,27 +40,27 @@ total = 0
 #csv file reader
 def read_csv(input_file) :
 
- with open(input_file) as csv_file:
-     #read csv file
-     readCSV = csv.reader(csv_file, delimiter=',')
-     vars = []
-
-     #loop over csv rows
-     for row in readCSV:
-
-         if len(row) == 0:
-             continue
-         elif row[1] == 'Station':
-             bus_name = row[0]
-             continue
-         elif row[0] == 'TOTAL':
-             buses.append(Bus(bus_name,row[2],vars));
-             vars=[]
-             continue
-         elif row[0] == '':
-             continue
-
-         vars.append(Var(*row))
+    with open(input_file) as csv_file:
+        #read csv file
+        readCSV = csv.reader(csv_file, delimiter=',')
+        vars = []
+    
+        #loop over csv rows
+        for row in readCSV:
+    
+            if len(row) == 0:
+                continue
+            elif row[1] == 'Station':
+                bus_name = row[0]
+                continue
+            elif row[0] == 'TOTAL':
+                buses.append(Bus(bus_name,row[2],vars));
+                vars=[]
+                continue
+            elif row[0] == '':
+                continue
+    
+            vars.append(Var(*row))
 
          
 now = datetime.now(tz=None)
@@ -87,8 +87,8 @@ def insert_header_notes(file_obj, comment):
 #C file writer
 def write_c_file(c_name, df_hash) :
 
-    #constants
-    f_constants = open(c_name+"_constants.h","w")
+    #constants ---------------------------------------------
+    f_constants = open(c_name+"_constants.h", "w")
     insert_header_notes(f_constants, "//")
 
     def write_ln(line):
@@ -99,7 +99,7 @@ def write_c_file(c_name, df_hash) :
     write_ln("#define LOMDT_BUSES_CONSTANTS_H")
 
     write_ln("");
-    write_ln(f"const char df_hash[] = {df_hash};")
+    write_ln(f'const char df_hash[] = "{df_hash}";')
 
     for bus in buses:
         write_ln("");
@@ -130,13 +130,73 @@ def write_c_file(c_name, df_hash) :
     write_ln("#endif // LOMDT_BUSES_CONSTANTS_H")
     f_constants.close()
 
-    print('C file written')
+    print('C: constants file generated.')
 
+
+    # types ------------------------------------------------
+    f_types = open(c_name+"_types.h", "w")
+    insert_header_notes(f_types, "//")
+
+    def write_ln(line):
+        f_types.write(f"{line}\n");
+
+    write_ln("");
+    write_ln("#ifndef LOMDT_BUS_TYPES_H")
+    write_ln("#define LOMDT_BUS_TYPES_H")
+
+    macro=([
+        "#define GETVAL(dest,orig,nbits) \\"
+        , "    dest = 0; \\"
+        , "    for (int i=0; i <= nbits/8; i++){\\"
+        , "        dest |= orig[i] << i*8;\\"
+        , "    }"
+    ])
+
+    write_ln("");
+    ex = []
+    ex += ["// Usage:"                              ]
+    ex += ["//   uint16_t bcid;"                  ]
+    ex += ["//   GETVAL(bcid, SLC_MUID.bcid, 12);"]
+    for line in ex: write_ln(line)
+    for line in macro: write_ln(line)
+
+    write_ln("");
+    write_ln(f'const char df_hash[] = "{df_hash}";')
+
+    for bus in buses:
+        write_ln("");
+        write_ln(f"// {'-'*67}")
+        write_ln(f"typedef struct {bus.name}_n {{")
+
+        for var in bus.vars:
+            if var.type != 'var':
+                write_ln(f"    // struct {var.name}")
+            elif var.type == 'var':
+                write_ln(f"    // {var.parameter}")
+
+            l = ((int(var.width)-1) // 8) + 1
+            l_fmt = f"[{l}]" if l > 1 else ""
+            write_ln(f"    char {var.name}{l_fmt}; // {var.width} bits")
+
+        write_ln(f"}} {bus.name}_rt;")
+        
+    write_ln("")
+    write_ln(f"// {'-'*67}")
+    write_ln("")
+    write_ln("#endif // LOMDT_BUS_TYPES_H")
+    f_constants.close()
+
+    print('C: types file generated.')
+
+
+
+
+    
 #system-verilog file writer
 def write_sv_file(sv_name, df_hash):
 
-    #constants
-    f_constants = open(sv_name+"_constants.svh","w")
+    #constants ---------------------------------------------
+    f_constants = open(sv_name+"_constants.svh", "w")
     insert_header_notes(f_constants, "//")
 
     def write_ln(line):
@@ -170,13 +230,50 @@ def write_sv_file(sv_name, df_hash):
 
     f_constants.close()
 
-    print('SV file written')
+    print('SV: constants file written.')
+
+    # types ------------------------------------------------
+    f_types = open(sv_name+"_types.svh", "w")
+    insert_header_notes(f_types, "//")
+
+    def write_ln(line):
+        f_types.write(f"{line}\n");
+
+    write_ln("");
+    write_ln("#ifndef LOMDT_BUS_TYPES_H")
+    write_ln("#define LOMDT_BUS_TYPES_H")
+
+    write_ln("");
+    write_ln(f'const char df_hash[] = "{df_hash}";')
+
+    for bus in buses:
+        write_ln("");
+        write_ln(f"// {'-'*67}")
+        write_ln(f"typedef struct {bus.name}_n {{")
+
+        for var in bus.vars:
+            if var.type != 'var':
+                write_ln(f"    // struct {var.name}")
+            elif var.type == 'var':
+                write_ln(f"    // {var.parameter}")
+            msb = int(var.width)-1
+            write_ln(f"    logic [{msb}:0] {var.name};")
+
+        write_ln(f"}} {bus.name}_rt;")
+        
+    write_ln("")
+    write_ln(f"// {'-'*67}")
+    write_ln("")
+    write_ln("#endif // LOMDT_BUS_TYPES_H")
+    f_constants.close()
+
+    print('SV: types file written.')
 
 #vhdl file writer
 def write_vhdl_file(vhdl_name, df_hash) :
 
-    #constants
-    f_constants = open(vhdl_name+"_constants.vhdl", "w")
+    # constants --------------------------------------------
+    f_constants = open(vhdl_name+"_constants_pkg.vhd", "w")
     insert_header_notes(f_constants, "--")
 
     def write_ln(line):
@@ -224,7 +321,53 @@ def write_vhdl_file(vhdl_name, df_hash) :
     write_ln("end package mdttp_pkg;")
     f_constants.close()
 
-    print('VHDL file written')
+    print('VHDL: constants file written')
+
+    # types ------------------------------------------------
+    f_types = open(vhdl_name+"_types_pkg.vhd", "w")
+    insert_header_notes(f_types, "--")
+
+    def write_ln(line):
+        f_types.write(f"{line}\n");
+
+    write_ln("");
+    write_ln("library ieee;")
+    write_ln("use ieee.std_logic_1164.all;")
+    write_ln("use ieee.numeric_std.all;")
+
+    write_ln("")
+    write_ln("package mdttp_pkg is")
+
+    write_ln("")
+    msb = len(df_hash)*4-1
+    tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+    write_ln(f'  {tpl}' %(msb, df_hash))
+
+    for bus in buses:
+        write_ln("");
+        write_ln(f"-- {'-'*67}")
+        write_ln(f"  type {bus.name}_rt is record")
+
+        for var in bus.vars:
+            if var.type != 'var':
+                write_ln(f"    -- struct {var.name}")
+            elif var.type == 'var':
+                write_ln(f"    -- {var.parameter}")
+            msb = int(var.width)-1
+            if msb > 0:
+                write_ln(f"    {var.name} : std_logic_vector({msb} downto 0);")
+            else:
+                write_ln(f"    {var.name} : std_logic;")
+
+        write_ln(f"  end record {bus.name}_rt;")
+        
+    write_ln("")
+    write_ln(f"// {'-'*67}")
+    write_ln("")
+    write_ln("#endif // LOMDT_BUS_TYPES_H")
+    f_constants.close()
+
+    print('VHDL: types file written.')
 
 
 # LaTeX friendly writer

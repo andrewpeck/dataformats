@@ -19,7 +19,7 @@ commit_csv:
     - echo $CI_USER_PASSWORD | kinit $CI_USER
     - wget --output-document=l0mdt_buses.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vSylQoq9qcxKz2dhXTtZpDkz00jicsuqYw_u6hopU_zs0gtBy5pBBD10hlvqPQ6ShLH5MP3eNKenzAO/pub?gid=1745105770&single=true&output=csv"
     - git add *.csv 
-    - git commit -m "CSV updated $(date +'%Y-%m-%d %H:%M:%S') [ci skip]" || rm l0mdt_buses.csv
+    - git commit -m "CSV updated $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes, nothing to commit!"
     - git status
     - echo $CI_COMMIT_REF_NAME
     - git push origin $CI_COMMIT_REF_NAME

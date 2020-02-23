@@ -5,3 +5,5 @@ l0mdt_buses_latex
 *.vhd
 *.bup
 *\#*
+tmp.*
+*.zip

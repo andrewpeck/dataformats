@@ -6,9 +6,9 @@ full:
   stage: build
   
   image: rootproject/root-conda
-  
+
   script:
-    - env
+    - apt-get install -y zip
     - echo $CI_USER_PASSWORD | kinit $CI_USER@CERN.CH
     - export SRC="l0mdt_buses.csv"
     - git pull origin $CI_COMMIT_REF_NAME
@@ -24,21 +24,17 @@ full:
         && exit 0
         || true
     - test -z $(git tag -l "done-$CI_COMMIT_SHORT_SHA") ||  exit 0
-    - python l0mdt_dataFormat.py -i l0mdt_buses.csv -r "$CI_COMMIT_SHA"
+    - mkdir -p output
+    - python l0mdt_dataFormat.py -i l0mdt_buses.csv -r "$CI_COMMIT_SHA" -o output
     - git tag done-$CI_COMMIT_SHORT_SHA
     - git push origin done-$CI_COMMIT_SHORT_SHA
-
+    - zip output -r output
+    - python tools/create_release.py
+ 
   except:
-    - /^done-.*$/
+    refs:
+      - /^done-.*$/
+    changes:
+      - README.md
 
 
-  artifacts:
-    paths:
-      - l0mdt_buses_constants.h
-      - l0mdt_buses_constants.svh
-      - l0mdt_buses_constants_pkg.vhd
-      - l0mdt_buses_types.h
-      - l0mdt_buses_types.svh
-      - l0mdt_buses_types_pkg.vhd
-      - l0mdt_buses_latex/*.csv
-    expire_in: 6 mos

@@ -85,10 +85,11 @@ def insert_header_notes(file_obj, comment):
 
 
 #C file writer
-def write_c_file(c_name, df_hash) :
+def write_c_file(c_name, df_hash, o_dir) :
 
     #constants ---------------------------------------------
-    f_constants = open(c_name+"_constants.h", "w")
+    p = os.path.join(o_dir, c_name+"_constants.h")
+    f_constants = open(p, "w")
     insert_header_notes(f_constants, "//")
 
     def write_ln(line):
@@ -134,7 +135,8 @@ def write_c_file(c_name, df_hash) :
 
 
     # types ------------------------------------------------
-    f_types = open(c_name+"_types.h", "w")
+    p = os.path.join(o_dir, c_name+"_types.h")
+    f_types = open(p, "w")
     insert_header_notes(f_types, "//")
 
     def write_ln(line):
@@ -200,10 +202,11 @@ def write_c_file(c_name, df_hash) :
 
     
 #system-verilog file writer
-def write_sv_file(sv_name, df_hash):
+def write_sv_file(sv_name, df_hash, o_dir):
 
     #constants ---------------------------------------------
-    f_constants = open(sv_name+"_constants.svh", "w")
+    p = os.path.join(o_dir, sv_name+"_constants.svh")
+    f_constants = open(p, "w")
     insert_header_notes(f_constants, "//")
 
     def write_ln(line):
@@ -240,7 +243,8 @@ def write_sv_file(sv_name, df_hash):
     print('SV: constants file written.')
 
     # types ------------------------------------------------
-    f_types = open(sv_name+"_types.svh", "w")
+    p = os.path.join(o_dir, f"{sv_name}_types.svh")
+    f_types = open(p, "w")
     insert_header_notes(f_types, "//")
 
     def write_ln(line):
@@ -284,10 +288,11 @@ def write_sv_file(sv_name, df_hash):
     print('SV: types file written.')
 
 #vhdl file writer
-def write_vhdl_file(vhdl_name, df_hash) :
+def write_vhdl_file(vhdl_name, df_hash, o_dir) :
 
     # constants --------------------------------------------
-    f_constants = open(vhdl_name+"_constants_pkg.vhd", "w")
+    p = os.path.join(o_dir, f"{vhdl_name}_constants_pkg.vhd")
+    f_constants = open(p, "w")
     insert_header_notes(f_constants, "--")
 
     def write_ln(line):
@@ -338,7 +343,8 @@ def write_vhdl_file(vhdl_name, df_hash) :
     print('VHDL: constants file written')
 
     # types ------------------------------------------------
-    f_types = open(vhdl_name+"_types_pkg.vhd", "w")
+    p = os.path.join(o_dir, f"{vhdl_name}_types_pkg.vhd")
+    f_types = open(p, "w")
     insert_header_notes(f_types, "--")
 
     def write_ln(line):
@@ -392,17 +398,18 @@ def write_vhdl_file(vhdl_name, df_hash) :
 
 
 # LaTeX friendly writer
-def write_latex_files(out, df_hash):
+def write_latex_files(out, df_hash, o_dir):
     latex_name = out + '_latex'
-    Path(latex_name).mkdir(parents=True, exist_ok=True)
+    latex_dir = os.path.join(o_dir, latex_name)
+    Path(latex_dir).mkdir(parents=True, exist_ok=True)
 
-    fname = os.path.join(latex_name, 'df_hash.csv')
-    with open(fname, 'w') as fobj:
+    p = os.path.join(latex_dir, f"hash.csv")
+    with open(p, 'w') as fobj:
         fobj.write(f"{df_hash}\n")
 
     for bus in buses:
-        fname = os.path.join(latex_name, bus.name + '.csv')
-        with open(fname, 'w') as fobj:
+        p = os.path.join(latex_dir, f'{bus.name}.csv')
+        with open(p, 'w') as fobj:
             def write_ln(line):
                 fobj.write(f"{line}\n");
             l = ",".join(["Name", "Width", "MSB index", "LSB index", "DECB"])
@@ -418,37 +425,43 @@ def main(argv):
 
     inputfile = ''
     df_hash = ''
+    o_dir=""
 
     try:
         opts, args = getopt.getopt(argv,
-                                   "i:r:",
-                                   ["ifile=", "ref="])
-        print(opts)
-        print(args)
+                                   "i:r:o:",
+                                   ["ifile=", "ref=", "odir="])
+        print(f"opts: {opts}")
+        print(f"args: {args}")
     except getopt.GetoptError:
         print(f'{argv[0]} -i <inputfile> -r <df_hash>')
         sys.exit(2)
     for opt, arg in opts:
-        if opt == '-h':
-            print('l0mdt_dataFormat.py -i <inputfile>')
-            sys.exit()
-        elif opt in ("-i", "--ifile"):
+        if opt in ("-i", "--ifile"):
             inputfile = arg
         elif opt in ("-r", "--ref"):
             df_hash = arg[:8]
+        elif opt in ("-o", "--odir"):
+            o_dir = arg
+        else:
+            print('l0mdt_dataFormat.py -i <input file> -r <dt hash> -o <output dir>')
+            sys.exit()
 
-    print(f'Input file: {inputfile}.')
-    print(f'Commit hash: {df_hash}.')
+    print(f'Input file: "{inputfile}".')
+    print(f'Commit hash: "{df_hash}".')
+    print(f'Output dir: "{o_dir}".')
 
     read_csv(inputfile)
-    print(buses)
+    # print(buses)
 
     outputfile = inputfile[:-4]
 
-    write_c_file(outputfile, df_hash)
-    write_sv_file(outputfile, df_hash)
-    write_vhdl_file(outputfile, df_hash)
-    write_latex_files(outputfile, df_hash)
+    Path(o_dir).mkdir(parents=True, exist_ok=True)
+
+    write_c_file     (outputfile, df_hash, o_dir)
+    write_sv_file    (outputfile, df_hash, o_dir)
+    write_vhdl_file  (outputfile, df_hash, o_dir)
+    write_latex_files(outputfile, df_hash, o_dir)
 
 if __name__ == "__main__":
     main(sys.argv[1:])

@@ -1,47 +1,44 @@
 stages:
     - build
-    - deploy
 
-commit_csv:
+full:
+
   stage: build
+  
+  image: rootproject/root-conda
+  
   script:
     - env
-    - export REPO=`echo $CI_PROJECT_URL | sed -e s#https://##`
-    - git --version
-    - git remote set-url origin https://${CI_USER}:${CI_PUSH_TOKEN}@$REPO.git
-    - git config --global user.email ${CI_EMAIL}
-    - git config --global user.name ${CI_USER}
-    - git config --global http.postBuffer 157286400
-    - git fetch
-    - git fetch origin $CI_COMMIT_REF_NAME    
-    - git fetch origin $CI_MERGE_REQUEST_TARGET_BRANCH_NAME
+    - echo $CI_USER_PASSWORD | kinit $CI_USER@CERN.CH
+    - export SRC="l0mdt_buses.csv"
+    - git pull origin $CI_COMMIT_REF_NAME
     - git checkout $CI_COMMIT_REF_NAME
-    - echo $CI_USER_PASSWORD | kinit $CI_USER
-    - wget --output-document=l0mdt_buses.csv "https://docs.google.com/spreadsheets/d/e/2PACX-1vSylQoq9qcxKz2dhXTtZpDkz00jicsuqYw_u6hopU_zs0gtBy5pBBD10hlvqPQ6ShLH5MP3eNKenzAO/pub?gid=1745105770&single=true&output=csv"
-    - git add *.csv 
-    - git commit -m "CSV updated $(date +'%Y-%m-%d %H:%M:%S')" || echo "No changes, nothing to commit!"
-    - git status
-    - echo $CI_COMMIT_REF_NAME
-    - git push origin $CI_COMMIT_REF_NAME
-  variables:
-    GIT_SSL_NO_VERIFY: "true"
-    
-generate_outputs:
-  stage: deploy
-  image: "python:3.8"
-  script:
+    - wget --output-document=$SRC "https://docs.google.com/spreadsheets/d/e/2PACX-1vSylQoq9qcxKz2dhXTtZpDkz00jicsuqYw_u6hopU_zs0gtBy5pBBD10hlvqPQ6ShLH5MP3eNKenzAO/pub?gid=1745105770&single=true&output=csv"
     - export REPO=`echo $CI_PROJECT_URL | sed -e s#https://##`
     - git remote set-url origin https://${CI_USER}:${CI_PUSH_TOKEN}@$REPO.git
-    - git fetch origin $CI_COMMIT_REF_NAME    
-    - git checkout $CI_COMMIT_REF_NAME
-    - python --version
-    - pwd
-    - ls -l
-    - source tools/run.sh
+    - git config user.email ${CI_EMAIL}
+    - git config user.name ${CI_USER}
+    - git add $SRC
+    - git commit -m "CSV updated $(date +'%Y-%m-%d %H:%M:%S')" 
+        && git push origin $CI_COMMIT_REF_NAME
+        && exit 0
+        || true
+    - test -z $(git tag -l "done-$CI_COMMIT_SHORT_SHA") ||  exit 0
+    - python l0mdt_dataFormat.py -i l0mdt_buses.csv -r "$CI_COMMIT_SHA"
+    - git tag done-$CI_COMMIT_SHORT_SHA
+    - git push origin done-$CI_COMMIT_SHORT_SHA
+
+  except:
+    - /^done-.*$/
+
+
   artifacts:
     paths:
-      - l0mdt_buses_constants.svh
-      - l0mdt_buses_constants.vhdl
       - l0mdt_buses_constants.h
+      - l0mdt_buses_constants.svh
+      - l0mdt_buses_constants_pkg.vhd
+      - l0mdt_buses_types.h
+      - l0mdt_buses_types.svh
+      - l0mdt_buses_types_pkg.vhd
       - l0mdt_buses_latex/*.csv
     expire_in: 6 mos

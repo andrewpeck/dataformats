@@ -3,3 +3,5 @@ l0mdt_buses_latex
 *.svh
 *.vhdl
 *.vhd
+*.bup
+*\#*

@@ -15,3 +15,4 @@ The output files are available as releases [here][0]. Please look for the `outpu
 
 Output files cannot be include in the repository, because then the commit hash used would be displaced.
 
+[0]: https://gitlab.cern.ch/atlas-tdaq-phase2-l0mdt-electronics/dataformats/-/releases

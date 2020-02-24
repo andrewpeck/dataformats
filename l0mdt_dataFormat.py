@@ -292,109 +292,176 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
 
     # constants --------------------------------------------
     p = os.path.join(o_dir, f"{vhdl_name}_constants_pkg.vhd")
-    f_constants = open(p, "w")
-    insert_header_notes(f_constants, "--")
-
-    def write_ln(line):
-        f_constants.write(f"{line}\n");
-
-    write_ln("library ieee;")
-    write_ln("use ieee.std_logic_1164.all;")
-    write_ln("use ieee.numeric_std.all;")
-    write_ln("")
-
-    write_ln("package mdttp_pkg is")
-
-    write_ln("")
-    msb = len(df_hash)*4-1
-    tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
-    write_ln(f'  {tpl}' %(msb, df_hash))
-
-    for bus in buses:
+    with open(p, "w") as f_constants:
+        insert_header_notes(f_constants, "--")
+        
+        def write_ln(line):
+            f_constants.write(f"{line}\n");
+        
+        write_ln("");
+        write_ln("library ieee;")
+        write_ln("use ieee.std_logic_1164.all;")
+        write_ln("use ieee.numeric_std.all;")
+        write_ln("")
+        
+        write_ln("package mdttp_constants_pkg is")
+        
+        write_ln("")
+        msb = len(df_hash)*4-1
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+        write_ln(f'  {tpl}' %(msb, df_hash))
+        
+        for bus in buses:
+            write_ln("")
+            write_ln("  " + "-" * 70)
+        
+            write_ln(f"  constant {bus.name}_width : natural := {bus.width};")
+        
+            for var in bus.vars:
+                if var.type == "struct":
+                    continue
+        
+                if var.parameter == "(COPY)":
+                    continue
+        
+                write_ln("")
+                write_ln(f"  -- {var.parameter}")
+        
+                tpl = "  constant %s : natural := %s"
+                var_prefix = f"{bus.name}_{var.name}"
+        
+                write_ln(tpl %(f"{var_prefix}_width", var.width))
+                write_ln(tpl %(f"{var_prefix}_msb", var.msb))
+                write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
+                write_ln(tpl %(f"{var_prefix}_decb", var.decb))
+        
         write_ln("")
         write_ln("  " + "-" * 70)
-
-        write_ln(f"  constant {bus.name}_width : natural := {bus.width};")
-
-        for var in bus.vars:
-            if var.type == "struct":
-                continue
-
-            if var.parameter == "(COPY)":
-                continue
-
-            write_ln("")
-            write_ln(f"  -- {var.parameter}")
-
-            tpl = "  constant %s : natural := %s"
-            var_prefix = f"{bus.name}_{var.name}"
-
-            write_ln(tpl %(f"{var_prefix}_width", var.width))
-            # write_ln(tpl %(f"{var_prefix}_msb", var.msb))
-            write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
-            write_ln(tpl %(f"{var_prefix}_decb", var.decb))
-
-    write_ln("")
-    write_ln("  " + "-" * 70)
-    write_ln("")
-    write_ln("end package mdttp_pkg;")
-    f_constants.close()
+        write_ln("")
+        write_ln("end package mdttp_constants_pkg;")
 
     print('VHDL: constants file written')
 
     # types ------------------------------------------------
     p = os.path.join(o_dir, f"{vhdl_name}_types_pkg.vhd")
-    f_types = open(p, "w")
-    insert_header_notes(f_types, "--")
-
-    def write_ln(line):
-        f_types.write(f"{line}\n");
-
-    write_ln("");
-    write_ln("library ieee;")
-    write_ln("use ieee.std_logic_1164.all;")
-    write_ln("use ieee.numeric_std.all;")
-
-    write_ln("")
-    write_ln("package mdttp_pkg is")
-
-    write_ln("")
-    msb = len(df_hash)*4-1
-    tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
-    write_ln(f'  {tpl}' %(msb, df_hash))
-
-    for bus in buses:
-        write_ln("");
-        write_ln(f"-- {'-'*67}")
-        write_ln(f"  type {bus.name}_rt is record")
-
-        included = []
-        for var in bus.vars:
-            
-            if var.name in included:
-                continue
-
-            included.append(var.name)
-            
-            if var.type != 'var':
-                write_ln(f"    -- struct {var.name}")
-            elif var.type == 'var':
-                write_ln(f"    -- {var.parameter}")
-            msb = int(var.width)-1
-            if msb > 0:
-                write_ln(f"    {var.name} : std_logic_vector({msb} downto 0);")
-            else:
-                write_ln(f"    {var.name} : std_logic;")
-
-        write_ln(f"  end record {bus.name}_rt;")
+    with open(p, "w") as f_types:
+        insert_header_notes(f_types, "--")
         
-    write_ln("")
-    write_ln(f"// {'-'*67}")
-    write_ln("")
-    write_ln("#endif // LOMDT_BUS_TYPES_H")
-    f_constants.close()
+        def write_ln(line):
+            f_types.write(f"{line}\n");
+        
+        write_ln("");
+        write_ln("library ieee;")
+        write_ln("use ieee.std_logic_1164.all;")
+        write_ln("use ieee.numeric_std.all;")
+        
+        write_ln("")
+        write_ln("package mdttp_types_pkg is")
+        
+        write_ln("")
+        msb = len(df_hash)*4-1
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+        write_ln(f'  {tpl}' %(msb, df_hash))
+        
+        for bus in buses:
+            write_ln("");
+            write_ln(f"  -- {'-'*65}")
+            write_ln(f"  type {bus.name}_rt is record")
+        
+            included = []
+            for var in bus.vars:
+                
+                if var.name in included:
+                    continue
+        
+                included.append(var.name)
+                
+                if var.type != 'var':
+                    write_ln(f"    -- struct {var.name}")
+                elif var.type == 'var':
+                    write_ln(f"    -- {var.parameter}")
+                msb = int(var.width)-1
+                if msb > 0:
+                    write_ln(f"    {var.name} : std_logic_vector({msb} downto 0);")
+                else:
+                    write_ln(f"    {var.name} : std_logic;")
+        
+            write_ln(f"  end record {bus.name}_rt;")
+            
+        write_ln("")
+        write_ln(f"-- {'-'*67}")
+        write_ln("")
+        write_ln("end package mdttp_types_pkg;")
+
 
     print('VHDL: types file written.')
+
+    # functions --------------------------------------------
+    p = os.path.join(o_dir, f"{vhdl_name}_functions_pkg.vhd")
+    with open(p, "w") as f_types:
+        insert_header_notes(f_types, "--")
+        
+        def write_ln(line):
+            f_types.write(f"{line}\n");
+        
+        write_ln("");
+        write_ln("library ieee;")
+        write_ln("use ieee.std_logic_1164.all;")
+        write_ln("use ieee.numeric_std.all;")
+        
+        write_ln("")
+        write_ln("package mdttp_functions_pkg is")
+        
+        write_ln("")
+        msb = len(df_hash)*4-1
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+        write_ln(f'  {tpl}' %(msb, df_hash))
+        
+        for bus in buses:
+            write_ln("");
+            write_ln(f"  -- {'-'*65}")
+
+            included = []
+            for var in bus.vars:
+                if var.name in included:
+                    continue
+                included.append(var.name)
+
+            ## to vector
+            write_ln(f'  function {bus.name}_toVector (d: in {bus.name}_rt)')
+            write_ln(f'  return std_logic_vector is')
+            write_ln(f'    variable v : std_logic_vector({bus.name}_msb downto 0);')
+            write_ln(f'  begin')
+            c = ["d." + x for x in included]
+            r_side = "\n         & ".join(c).strip()
+            write_ln(f'    v := {r_side};')
+            write_ln(f'    return v ;')
+            write_ln(f'  end function {bus.name}_toVector;')
+
+            write_ln("")
+            
+            # from vector
+            write_ln(f'  function {bus.name}_fromVector (v: in std_logic_vector)')
+            write_ln(f'  return {bus.name}_rt is')
+            write_ln(f'    variable b : {bus.name}_rt;')
+            write_ln(f'  begin')
+
+            included = []
+            for var in bus.vars:
+                if var.name in included:
+                    continue
+                included.append(var.name)
+                write_ln(f'    b.{var.name} := v({var.msb} downto {var.lsb});')
+
+            write_ln(f'    return b ;')
+            write_ln(f'  end function {bus.name}_fromVector;')
+
+        write_ln("")
+        write_ln(f"  -- {'-'*67}")
+        write_ln("")
+        write_ln("end package mdttp_functions_pkg;")
+
+    print('VHDL: functions file written.')
 
 
 # LaTeX friendly writer

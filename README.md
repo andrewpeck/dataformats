@@ -11,7 +11,7 @@ To trigger the pipeline that exports the spreadsheet in .csv and creates the hea
 
 Output files are generated only when the spreadsheet is changed. This will cause a new commit to the repository, and its hash will be incorporated in the output files as a constant value.
 
-The output files are available only as `artifacts`, and they can be obtained in `CI/CD > Pipelines`. As explained above, there will be an attachement to the pipeline only when there was a change in the spreadsheet. Artifacts are kept in the pipeline for 6 months unless they are marked to be kept using the webinterface.
+The output files are available as releases [here][0]. Please look for the `output` link on the description of the release.
 
 Output files cannot be include in the repository, because then the commit hash used would be displaced.
 

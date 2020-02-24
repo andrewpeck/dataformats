@@ -80,7 +80,7 @@ def insert_header_notes(file_obj, comment):
     write_ln(f"{comment} {'-'*97}")
     write_ln(f"{comment} Auto-generated from:")
     write_ln(f"{comment} {url}")
-    write_ln(f"{comment} Date: {dt_string} {date_now}")
+    # write_ln(f"{comment} Date: {dt_string} {date_now}")
     write_ln(f"{comment} {'-'*97}")
 
 

@@ -1,0 +1,6 @@
+Name,Width,MSB index,LSB index,DECB
+mdt\_tube\_layer,6,73,68,0
+mdt\_tube\_num,10,67,58,0
+mdt\_tube\_rho,18,57,40,4
+mdt\_tube\_z,19,39,21,4
+mdt\_tube\_time,21,20,0,4

@@ -308,7 +308,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         
         write_ln("")
         msb = len(df_hash)*4-1
-        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s;"'
         write_ln(f'  {tpl}' %(msb, df_hash))
         
         for bus in buses:
@@ -330,10 +330,10 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 tpl = "  constant %s : natural := %s"
                 var_prefix = f"{bus.name}_{var.name}"
         
-                write_ln(tpl %(f"{var_prefix}_width", var.width))
-                write_ln(tpl %(f"{var_prefix}_msb", var.msb))
-                write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
-                write_ln(tpl %(f"{var_prefix}_decb", var.decb))
+                write_ln(tpl %(f"{var_prefix}_width;", var.width))
+                write_ln(tpl %(f"{var_prefix}_msb;", var.msb))
+                write_ln(tpl %(f"{var_prefix}_lsb;", var.lsb))
+                write_ln(tpl %(f"{var_prefix}_decb;", var.decb))
         
         write_ln("")
         write_ln("  " + "-" * 70)
@@ -435,7 +435,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
             c = ["d." + x for x in included]
             r_side = "\n         & ".join(c).strip()
             write_ln(f'    v := {r_side};')
-            write_ln(f'    return v ;')
+            write_ln(f'    return v;')
             write_ln(f'  end function {bus.name}_toVector;')
 
             write_ln("")
@@ -453,7 +453,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 included.append(var.name)
                 write_ln(f'    b.{var.name} := v({var.msb} downto {var.lsb});')
 
-            write_ln(f'    return b ;')
+            write_ln(f'    return b;')
             write_ln(f'  end function {bus.name}_fromVector;')
 
         write_ln("")

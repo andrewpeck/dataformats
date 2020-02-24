@@ -330,10 +330,10 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 tpl = "  constant %s : natural := %s"
                 var_prefix = f"{bus.name}_{var.name}"
         
-                write_ln(tpl %(f"{var_prefix}_width;", var.width))
-                write_ln(tpl %(f"{var_prefix}_msb;", var.msb))
-                write_ln(tpl %(f"{var_prefix}_lsb;", var.lsb))
-                write_ln(tpl %(f"{var_prefix}_decb;", var.decb))
+                write_ln(tpl %(f"{var_prefix}_width", var.width))
+                write_ln(tpl %(f"{var_prefix}_msb", var.msb))
+                write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
+                write_ln(tpl %(f"{var_prefix}_decb", var.decb))
         
         write_ln("")
         write_ln("  " + "-" * 70)

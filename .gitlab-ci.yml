@@ -8,7 +8,6 @@ full:
   image: rootproject/root-conda
 
   script:
-    - apt-get install -y zip
     - echo $CI_USER_PASSWORD | kinit $CI_USER@CERN.CH
     - export SRC="l0mdt_buses.csv"
     - git pull origin $CI_COMMIT_REF_NAME
@@ -21,19 +20,21 @@ full:
     - git add $SRC
     - git commit -m "CSV updated $(date +'%Y-%m-%d %H:%M:%S')" 
         && git push origin $CI_COMMIT_REF_NAME
-        && exit 0
+        && git push origin :refs/tags/csv
+        && git tag --force csv
+        && git push origin csv
         || true
-    - test -z $(git tag -l "done-$CI_COMMIT_SHORT_SHA") ||  exit 0
-    - mkdir -p output
-    - python l0mdt_dataFormat.py -i l0mdt_buses.csv -r "$CI_COMMIT_SHA" -o output
-    - git tag done-$CI_COMMIT_SHORT_SHA
-    - git push origin done-$CI_COMMIT_SHORT_SHA
-    - zip output -r output
-    - python tools/create_release.py
- 
+    - export CSV_SHA=$(git rev-parse csv)
+        || git tag --force csv
+        && git push origin csv
+        && export CSV_SHA=$(git rev-parse csv)
+    - python l0mdt_dataFormat.py -i l0mdt_buses.csv -r "${CSV_SHA}"
+    - git add *.h *.svh *.vhd l0mdt_buses_latex/*.csv
+    - git commit -m "Output files updated $(date +'%Y-%m-%d %H:%M:%S')"
+        && git push origin $CI_COMMIT_REF_NAME
+        || exit 0
+
   except:
-    refs:
-      - /^done-.*$/
     changes:
       - README.md
 

@@ -1,0 +1,6 @@
+Name,Width,MSB index,LSB index,DECB
+mdt\_valid,1,38,38,0
+data\_valid,1,37,37,0
+mdt\_localx,14,13,0,4
+mdt\_localy,14,27,14,4
+mdt\_radius,9,36,28,5

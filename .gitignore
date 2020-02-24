@@ -1,8 +1,3 @@
-l0mdt_buses_latex
-*.h
-*.svh
-*.vhdl
-*.vhd
 *.bup
 *\#*
 tmp.*

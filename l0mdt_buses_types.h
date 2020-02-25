@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "8fa6713a";
+const char df_hash[] = "a04a67a6";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -31,7 +31,7 @@ typedef struct SLC_MUID_n {
 typedef struct SLC_COMMON_n {
     // SLc Identification (up to 3)
     char slcid; // 2 bits
-    // struct tcsent
+    // TC sent to MDT TP
     char tcsent; // 1 bits
     // SLc Eta Position
     char poseta[2]; // 14 bits
@@ -241,21 +241,21 @@ typedef struct PTCALC_n {
 typedef struct SLCPIPELINE_MTC_ENDCAP_n {
     // struct SLC_COMMON
     char SLC_COMMON[4]; // 31 bits
-    // struct busy
+    // (COPY)
     char busy; // 1 bits
-    // struct destsl
+    // (COPY)
     char destsl; // 2 bits
 } SLCPIPELINE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPELINE_MTC_BARREL_n {
-    // struct cointype
+    // (COPY)
     char cointype; // 3 bits
     // struct SLC_COMMON
     char SLC_COMMON[4]; // 31 bits
-    // struct busy
+    // (COPY)
     char busy; // 1 bits
-    // struct destsl
+    // (COPY)
     char destsl; // 2 bits
 } SLCPIPELINE_MTC_BARREL_rt;
 

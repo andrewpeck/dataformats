@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 8fa6713a;
+`define DF_HASH a04a67a6;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -31,7 +31,7 @@
 `define SLC_COMMON_slcid_lsb 28
 `define SLC_COMMON_slcid_decb 0
 
-// 
+// TC sent to MDT TP
 `define SLC_COMMON_tcsent_width 1
 `define SLC_COMMON_tcsent_lsb 28
 `define SLC_COMMON_tcsent_decb 0
@@ -381,33 +381,8 @@
 // -------------------------------------------------------------------
 `define SLCPIPELINE_MTC_ENDCAP_width 34
 
-// 
-`define SLCPIPELINE_MTC_ENDCAP_busy_width 1
-`define SLCPIPELINE_MTC_ENDCAP_busy_lsb 2
-`define SLCPIPELINE_MTC_ENDCAP_busy_decb 0
-
-// 
-`define SLCPIPELINE_MTC_ENDCAP_destsl_width 2
-`define SLCPIPELINE_MTC_ENDCAP_destsl_lsb 0
-`define SLCPIPELINE_MTC_ENDCAP_destsl_decb 0
-
 // -------------------------------------------------------------------
 `define SLCPIPELINE_MTC_BARREL_width 34
-
-// 
-`define SLCPIPELINE_MTC_BARREL_cointype_width 3
-`define SLCPIPELINE_MTC_BARREL_cointype_lsb 34
-`define SLCPIPELINE_MTC_BARREL_cointype_decb 0
-
-// 
-`define SLCPIPELINE_MTC_BARREL_busy_width 1
-`define SLCPIPELINE_MTC_BARREL_busy_lsb 2
-`define SLCPIPELINE_MTC_BARREL_busy_decb 0
-
-// 
-`define SLCPIPELINE_MTC_BARREL_destsl_width 2
-`define SLCPIPELINE_MTC_BARREL_destsl_lsb 0
-`define SLCPIPELINE_MTC_BARREL_destsl_decb 0
 
 // -------------------------------------------------------------------
 `define MTC_width 67

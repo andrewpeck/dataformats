@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "8fa6713a";
+const char df_hash[] = "a04a67a6";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -34,7 +34,7 @@ const int SLC_COMMON_slcid_width = 2;
 const int SLC_COMMON_slcid_lsb = 28;
 const int SLC_COMMON_slcid_decb = 0;
 
-// 
+// TC sent to MDT TP
 const int SLC_COMMON_tcsent_width = 1;
 const int SLC_COMMON_tcsent_lsb = 28;
 const int SLC_COMMON_tcsent_decb = 0;
@@ -384,33 +384,8 @@ const int PTCALC_mtc_quality_decb = 0;
 // -------------------------------------------------------------------
 const int SLCPIPELINE_MTC_ENDCAP_width = 34;
 
-// 
-const int SLCPIPELINE_MTC_ENDCAP_busy_width = 1;
-const int SLCPIPELINE_MTC_ENDCAP_busy_lsb = 2;
-const int SLCPIPELINE_MTC_ENDCAP_busy_decb = 0;
-
-// 
-const int SLCPIPELINE_MTC_ENDCAP_destsl_width = 2;
-const int SLCPIPELINE_MTC_ENDCAP_destsl_lsb = 0;
-const int SLCPIPELINE_MTC_ENDCAP_destsl_decb = 0;
-
 // -------------------------------------------------------------------
 const int SLCPIPELINE_MTC_BARREL_width = 34;
-
-// 
-const int SLCPIPELINE_MTC_BARREL_cointype_width = 3;
-const int SLCPIPELINE_MTC_BARREL_cointype_lsb = 34;
-const int SLCPIPELINE_MTC_BARREL_cointype_decb = 0;
-
-// 
-const int SLCPIPELINE_MTC_BARREL_busy_width = 1;
-const int SLCPIPELINE_MTC_BARREL_busy_lsb = 2;
-const int SLCPIPELINE_MTC_BARREL_busy_decb = 0;
-
-// 
-const int SLCPIPELINE_MTC_BARREL_destsl_width = 2;
-const int SLCPIPELINE_MTC_BARREL_destsl_lsb = 0;
-const int SLCPIPELINE_MTC_BARREL_destsl_decb = 0;
 
 // -------------------------------------------------------------------
 const int MTC_width = 67;

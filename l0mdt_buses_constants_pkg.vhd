@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"8fa6713a;"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"a04a67a6;"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -41,7 +41,7 @@ package mdttp_constants_pkg is
   constant SLC_COMMON_slcid_lsb : natural := 28
   constant SLC_COMMON_slcid_decb : natural := 0
 
-  -- 
+  -- TC sent to MDT TP
   constant SLC_COMMON_tcsent_width : natural := 1
   constant SLC_COMMON_tcsent_msb : natural := 28
   constant SLC_COMMON_tcsent_lsb : natural := 28
@@ -452,38 +452,8 @@ package mdttp_constants_pkg is
   ----------------------------------------------------------------------
   constant SLCPIPELINE_MTC_ENDCAP_width : natural := 34;
 
-  -- 
-  constant SLCPIPELINE_MTC_ENDCAP_busy_width : natural := 1
-  constant SLCPIPELINE_MTC_ENDCAP_busy_msb : natural := 2
-  constant SLCPIPELINE_MTC_ENDCAP_busy_lsb : natural := 2
-  constant SLCPIPELINE_MTC_ENDCAP_busy_decb : natural := 0
-
-  -- 
-  constant SLCPIPELINE_MTC_ENDCAP_destsl_width : natural := 2
-  constant SLCPIPELINE_MTC_ENDCAP_destsl_msb : natural := 1
-  constant SLCPIPELINE_MTC_ENDCAP_destsl_lsb : natural := 0
-  constant SLCPIPELINE_MTC_ENDCAP_destsl_decb : natural := 0
-
   ----------------------------------------------------------------------
   constant SLCPIPELINE_MTC_BARREL_width : natural := 34;
-
-  -- 
-  constant SLCPIPELINE_MTC_BARREL_cointype_width : natural := 3
-  constant SLCPIPELINE_MTC_BARREL_cointype_msb : natural := 36
-  constant SLCPIPELINE_MTC_BARREL_cointype_lsb : natural := 34
-  constant SLCPIPELINE_MTC_BARREL_cointype_decb : natural := 0
-
-  -- 
-  constant SLCPIPELINE_MTC_BARREL_busy_width : natural := 1
-  constant SLCPIPELINE_MTC_BARREL_busy_msb : natural := 2
-  constant SLCPIPELINE_MTC_BARREL_busy_lsb : natural := 2
-  constant SLCPIPELINE_MTC_BARREL_busy_decb : natural := 0
-
-  -- 
-  constant SLCPIPELINE_MTC_BARREL_destsl_width : natural := 2
-  constant SLCPIPELINE_MTC_BARREL_destsl_msb : natural := 1
-  constant SLCPIPELINE_MTC_BARREL_destsl_lsb : natural := 0
-  constant SLCPIPELINE_MTC_BARREL_destsl_decb : natural := 0
 
   ----------------------------------------------------------------------
   constant MTC_width : natural := 67;

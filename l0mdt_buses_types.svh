@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "8fa6713a";
+const char df_hash[] = "a04a67a6";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -22,7 +22,7 @@ typedef struct SLC_MUID_n {
 typedef struct SLC_COMMON_n {
     // SLc Identification (up to 3)
     logic [1:0] slcid;
-    // struct tcsent
+    // TC sent to MDT TP
     logic [0:0] tcsent;
     // SLc Eta Position
     logic [13:0] poseta;
@@ -232,21 +232,21 @@ typedef struct PTCALC_n {
 typedef struct SLCPIPELINE_MTC_ENDCAP_n {
     // struct SLC_COMMON
     logic [30:0] SLC_COMMON;
-    // struct busy
+    // (COPY)
     logic [0:0] busy;
-    // struct destsl
+    // (COPY)
     logic [1:0] destsl;
 } SLCPIPELINE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPELINE_MTC_BARREL_n {
-    // struct cointype
+    // (COPY)
     logic [2:0] cointype;
     // struct SLC_COMMON
     logic [30:0] SLC_COMMON;
-    // struct busy
+    // (COPY)
     logic [0:0] busy;
-    // struct destsl
+    // (COPY)
     logic [1:0] destsl;
 } SLCPIPELINE_MTC_BARREL_rt;
 

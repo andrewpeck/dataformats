@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(11 downto 0) := x"csv;"
+  constant DF_HASH : std_logic_vector(-1 downto 0) := x";"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;

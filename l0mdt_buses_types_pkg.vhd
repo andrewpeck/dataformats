@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(-1 downto 0) := x""
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"5bf8a34a"
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record

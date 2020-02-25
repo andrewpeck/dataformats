@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "";
+const char df_hash[] = "5bf8a34a";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {

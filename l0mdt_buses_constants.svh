@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 4ce208b8;
+`define DF_HASH csv;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20

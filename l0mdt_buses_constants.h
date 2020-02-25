@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "4ce208b8";
+const char df_hash[] = "csv";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;

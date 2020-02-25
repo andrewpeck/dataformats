@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"d6275d1b"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"8fa6713a"
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -25,6 +25,8 @@ package mdttp_types_pkg is
   type SLC_COMMON_rt is record
     -- SLc Identification (up to 3)
     slcid : std_logic_vector(1 downto 0);
+    -- struct tcsent
+    tcsent : std_logic;
     -- SLc Eta Position
     poseta : std_logic_vector(13 downto 0);
     -- SLc Phi Position
@@ -38,7 +40,7 @@ package mdttp_types_pkg is
   -- -----------------------------------------------------------------
   type SLC_ENDCAP_rt is record
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(29 downto 0);
+    SLC_COMMON : std_logic_vector(30 downto 0);
     -- SLc Segment Angle wrt Eta position
     seg_angdtheta : std_logic_vector(6 downto 0);
     -- SLc Segment Angle wrt Phi position
@@ -54,7 +56,7 @@ package mdttp_types_pkg is
   -- -----------------------------------------------------------------
   type SLC_BARREL_rt is record
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(29 downto 0);
+    SLC_COMMON : std_logic_vector(30 downto 0);
     -- SLc Hit Z Position in RPC0
     rpc0_posz : std_logic_vector(9 downto 0);
     -- SLc Hit Z Position in RPC1
@@ -84,7 +86,7 @@ package mdttp_types_pkg is
     -- struct SLCPROC_PIPELINE_COMMON
     SLCPROC_PIPELINE_COMMON : std_logic_vector(34 downto 0);
     -- struct SLC_ENDCAP
-    SLC_ENDCAP : std_logic_vector(67 downto 0);
+    SLC_ENDCAP : std_logic_vector(68 downto 0);
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
   end record SLCPROC_PIPELINE_ENDCAP_rt;
@@ -94,7 +96,7 @@ package mdttp_types_pkg is
     -- struct SLCPROC_PIPELINE_COMMON
     SLCPROC_PIPELINE_COMMON : std_logic_vector(34 downto 0);
     -- struct SLC_BARREL
-    SLC_BARREL : std_logic_vector(72 downto 0);
+    SLC_BARREL : std_logic_vector(73 downto 0);
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
   end record SLCPROC_PIPELINE_BARREL_rt;
@@ -207,7 +209,7 @@ package mdttp_types_pkg is
     segpos : std_logic_vector(15 downto 0);
     -- SF MDT segment angle along the precision coord
     segangle : std_logic_vector(10 downto 0);
-    -- SF MDT segment qualiry
+    -- SF MDT segment quality
     segquality : std_logic;
   end record SF_rt;
 
@@ -226,25 +228,35 @@ package mdttp_types_pkg is
     -- # of segments used for calculating the pT
     mtc_nsegments : std_logic_vector(1 downto 0);
     -- quality of the MDT TC (TBC how this is defined)
-    mtc_quality : std_logic;
+    mtc_quality : std_logic_vector(2 downto 0);
   end record PTCALC_rt;
 
   -- -----------------------------------------------------------------
   type SLCPIPELINE_MTC_ENDCAP_rt is record
-    -- struct SLCPROC_PIPELINE_ENDCAP
-    SLCPROC_PIPELINE_ENDCAP : std_logic_vector(19 downto 0);
+    -- struct SLC_COMMON
+    SLC_COMMON : std_logic_vector(30 downto 0);
+    -- struct busy
+    busy : std_logic;
+    -- struct destsl
+    destsl : std_logic_vector(1 downto 0);
   end record SLCPIPELINE_MTC_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
   type SLCPIPELINE_MTC_BARREL_rt is record
-    -- struct SLCPROC_PIPELINE_BARREL
-    SLCPROC_PIPELINE_BARREL : std_logic_vector(13 downto 0);
+    -- struct cointype
+    cointype : std_logic_vector(2 downto 0);
+    -- struct SLC_COMMON
+    SLC_COMMON : std_logic_vector(30 downto 0);
+    -- struct busy
+    busy : std_logic;
+    -- struct destsl
+    destsl : std_logic_vector(1 downto 0);
   end record SLCPIPELINE_MTC_BARREL_rt;
 
   -- -----------------------------------------------------------------
   type MTC_rt is record
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(29 downto 0);
+    SLC_COMMON : std_logic_vector(30 downto 0);
     -- (COPY)
     mtc_eta : std_logic_vector(13 downto 0);
     -- (COPY)
@@ -258,7 +270,7 @@ package mdttp_types_pkg is
     -- (COPY)
     mtc_nsegments : std_logic_vector(1 downto 0);
     -- (COPY)
-    mtc_quality : std_logic;
+    mtc_quality : std_logic_vector(2 downto 0);
   end record MTC_rt;
 
 -- -------------------------------------------------------------------

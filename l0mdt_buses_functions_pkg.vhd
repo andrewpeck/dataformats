@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"d6275d1b"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"8fa6713a"
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -38,6 +38,7 @@ package mdttp_functions_pkg is
     variable v : std_logic_vector(SLC_COMMON_msb downto 0);
   begin
     v := d.slcid
+         & d.tcsent
          & d.poseta
          & d.posphi
          & d.ptthresh
@@ -50,6 +51,7 @@ package mdttp_functions_pkg is
     variable b : SLC_COMMON_rt;
   begin
     b.slcid := v(29 downto 28);
+    b.tcsent := v(28 downto 28);
     b.poseta := v(27 downto 14);
     b.posphi := v(13 downto 5);
     b.ptthresh := v(4 downto 1);
@@ -75,7 +77,7 @@ package mdttp_functions_pkg is
   return SLC_ENDCAP_rt is
     variable b : SLC_ENDCAP_rt;
   begin
-    b.SLC_COMMON := v(67 downto 38);
+    b.SLC_COMMON := v(68 downto 38);
     b.seg_angdtheta := v(37 downto 31);
     b.seg_angdphi := v(30 downto 27);
     b.nswseg_poseta := v(26 downto 13);
@@ -102,7 +104,7 @@ package mdttp_functions_pkg is
   return SLC_BARREL_rt is
     variable b : SLC_BARREL_rt;
   begin
-    b.SLC_COMMON := v(72 downto 43);
+    b.SLC_COMMON := v(73 downto 43);
     b.rpc0_posz := v(42 downto 33);
     b.rpc1_posz := v(32 downto 23);
     b.rpc2_posz := v(22 downto 13);
@@ -149,8 +151,8 @@ package mdttp_functions_pkg is
   return SLCPROC_PIPELINE_ENDCAP_rt is
     variable b : SLCPROC_PIPELINE_ENDCAP_rt;
   begin
-    b.SLCPROC_PIPELINE_COMMON := v(122 downto 88);
-    b.SLC_ENDCAP := v(87 downto 20);
+    b.SLCPROC_PIPELINE_COMMON := v(123 downto 89);
+    b.SLC_ENDCAP := v(88 downto 20);
     b.SLC_MUID := v(19 downto 0);
     return b;
   end function SLCPROC_PIPELINE_ENDCAP_fromVector;
@@ -170,8 +172,8 @@ package mdttp_functions_pkg is
   return SLCPROC_PIPELINE_BARREL_rt is
     variable b : SLCPROC_PIPELINE_BARREL_rt;
   begin
-    b.SLCPROC_PIPELINE_COMMON := v(127 downto 93);
-    b.SLC_BARREL := v(92 downto 20);
+    b.SLCPROC_PIPELINE_COMMON := v(128 downto 94);
+    b.SLC_BARREL := v(93 downto 20);
     b.SLC_MUID := v(19 downto 0);
     return b;
   end function SLCPROC_PIPELINE_BARREL_fromVector;
@@ -395,13 +397,13 @@ package mdttp_functions_pkg is
   return PTCALC_rt is
     variable b : PTCALC_rt;
   begin
-    b.SLC_MUID := v(53 downto 34);
-    b.mtc_eta := v(33 downto 20);
-    b.mtc_pt := v(19 downto 12);
-    b.mtc_ptthresh := v(11 downto 8);
-    b.mtc_charge := v(7 downto 7);
-    b.mtc_nsegments := v(2 downto 1);
-    b.mtc_quality := v(0 downto 0);
+    b.SLC_MUID := v(55 downto 36);
+    b.mtc_eta := v(35 downto 22);
+    b.mtc_pt := v(21 downto 14);
+    b.mtc_ptthresh := v(13 downto 10);
+    b.mtc_charge := v(9 downto 9);
+    b.mtc_nsegments := v(4 downto 3);
+    b.mtc_quality := v(2 downto 0);
     return b;
   end function PTCALC_fromVector;
 
@@ -410,7 +412,9 @@ package mdttp_functions_pkg is
   return std_logic_vector is
     variable v : std_logic_vector(SLCPIPELINE_MTC_ENDCAP_msb downto 0);
   begin
-    v := d.SLCPROC_PIPELINE_ENDCAP;
+    v := d.SLC_COMMON
+         & d.busy
+         & d.destsl;
     return v;
   end function SLCPIPELINE_MTC_ENDCAP_toVector;
 
@@ -418,7 +422,9 @@ package mdttp_functions_pkg is
   return SLCPIPELINE_MTC_ENDCAP_rt is
     variable b : SLCPIPELINE_MTC_ENDCAP_rt;
   begin
-    b.SLCPROC_PIPELINE_ENDCAP := v(19 downto 0);
+    b.SLC_COMMON := v(33 downto 3);
+    b.busy := v(2 downto 2);
+    b.destsl := v(1 downto 0);
     return b;
   end function SLCPIPELINE_MTC_ENDCAP_fromVector;
 
@@ -427,7 +433,10 @@ package mdttp_functions_pkg is
   return std_logic_vector is
     variable v : std_logic_vector(SLCPIPELINE_MTC_BARREL_msb downto 0);
   begin
-    v := d.SLCPROC_PIPELINE_BARREL;
+    v := d.cointype
+         & d.SLC_COMMON
+         & d.busy
+         & d.destsl;
     return v;
   end function SLCPIPELINE_MTC_BARREL_toVector;
 
@@ -435,7 +444,10 @@ package mdttp_functions_pkg is
   return SLCPIPELINE_MTC_BARREL_rt is
     variable b : SLCPIPELINE_MTC_BARREL_rt;
   begin
-    b.SLCPROC_PIPELINE_BARREL := v(13 downto 0);
+    b.cointype := v(36 downto 34);
+    b.SLC_COMMON := v(33 downto 3);
+    b.busy := v(2 downto 2);
+    b.destsl := v(1 downto 0);
     return b;
   end function SLCPIPELINE_MTC_BARREL_fromVector;
 
@@ -459,14 +471,14 @@ package mdttp_functions_pkg is
   return MTC_rt is
     variable b : MTC_rt;
   begin
-    b.SLC_COMMON := v(63 downto 34);
-    b.mtc_eta := v(33 downto 20);
-    b.mtc_pt := v(19 downto 12);
-    b.mtc_ptthresh := v(11 downto 8);
-    b.mtc_charge := v(7 downto 7);
-    b.mtc_procflags := v(6 downto 3);
-    b.mtc_nsegments := v(2 downto 1);
-    b.mtc_quality := v(0 downto 0);
+    b.SLC_COMMON := v(66 downto 36);
+    b.mtc_eta := v(35 downto 22);
+    b.mtc_pt := v(21 downto 14);
+    b.mtc_ptthresh := v(13 downto 10);
+    b.mtc_charge := v(9 downto 9);
+    b.mtc_procflags := v(8 downto 5);
+    b.mtc_nsegments := v(4 downto 3);
+    b.mtc_quality := v(2 downto 0);
     return b;
   end function MTC_fromVector;
 

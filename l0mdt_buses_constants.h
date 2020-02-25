@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "d6275d1b";
+const char df_hash[] = "8fa6713a";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -27,12 +27,17 @@ const int SLC_MUID_bcid_lsb = 0;
 const int SLC_MUID_bcid_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLC_COMMON_width = 30;
+const int SLC_COMMON_width = 31;
 
 // SLc Identification (up to 3)
 const int SLC_COMMON_slcid_width = 2;
 const int SLC_COMMON_slcid_lsb = 28;
 const int SLC_COMMON_slcid_decb = 0;
+
+// 
+const int SLC_COMMON_tcsent_width = 1;
+const int SLC_COMMON_tcsent_lsb = 28;
+const int SLC_COMMON_tcsent_decb = 0;
 
 // SLc Eta Position
 const int SLC_COMMON_poseta_width = 14;
@@ -55,7 +60,7 @@ const int SLC_COMMON_charge_lsb = 0;
 const int SLC_COMMON_charge_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLC_ENDCAP_width = 68;
+const int SLC_ENDCAP_width = 69;
 
 // SLc Segment Angle wrt Eta position
 const int SLC_ENDCAP_seg_angdtheta_width = 7;
@@ -83,7 +88,7 @@ const int SLC_ENDCAP_nswseg_angdtheta_lsb = 0;
 const int SLC_ENDCAP_nswseg_angdtheta_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLC_BARREL_width = 73;
+const int SLC_BARREL_width = 74;
 
 // SLc Hit Z Position in RPC0
 const int SLC_BARREL_rpc0_posz_width = 10;
@@ -149,10 +154,10 @@ const int SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb = 0;
 const int SLCPROC_PIPELINE_COMMON_vec_mdtid_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_ENDCAP_width = 123;
+const int SLCPROC_PIPELINE_ENDCAP_width = 124;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_BARREL_width = 128;
+const int SLCPROC_PIPELINE_BARREL_width = 129;
 
 // -------------------------------------------------------------------
 const int CSM_width = 32;
@@ -338,56 +343,81 @@ const int SF_segangle_width = 11;
 const int SF_segangle_lsb = 1;
 const int SF_segangle_decb = 0;
 
-// SF MDT segment qualiry
+// SF MDT segment quality
 const int SF_segquality_width = 1;
 const int SF_segquality_lsb = 0;
 const int SF_segquality_decb = 0;
 
 // -------------------------------------------------------------------
-const int PTCALC_width = 50;
+const int PTCALC_width = 52;
 
 // eta of the innermost MDT station segment position
 const int PTCALC_mtc_eta_width = 14;
-const int PTCALC_mtc_eta_lsb = 20;
+const int PTCALC_mtc_eta_lsb = 22;
 const int PTCALC_mtc_eta_decb = 11;
 
 // pT calculated by the pT Calc
 const int PTCALC_mtc_pt_width = 8;
-const int PTCALC_mtc_pt_lsb = 12;
+const int PTCALC_mtc_pt_lsb = 14;
 const int PTCALC_mtc_pt_decb = 1;
 
 // pT threshold satisfied by the MDT TC
 const int PTCALC_mtc_ptthresh_width = 4;
-const int PTCALC_mtc_ptthresh_lsb = 8;
+const int PTCALC_mtc_ptthresh_lsb = 10;
 const int PTCALC_mtc_ptthresh_decb = 0;
 
 // charge determined from the pT calc
 const int PTCALC_mtc_charge_width = 1;
-const int PTCALC_mtc_charge_lsb = 7;
+const int PTCALC_mtc_charge_lsb = 9;
 const int PTCALC_mtc_charge_decb = 0;
 
 // # of segments used for calculating the pT
 const int PTCALC_mtc_nsegments_width = 2;
-const int PTCALC_mtc_nsegments_lsb = 1;
+const int PTCALC_mtc_nsegments_lsb = 3;
 const int PTCALC_mtc_nsegments_decb = 0;
 
 // quality of the MDT TC (TBC how this is defined)
-const int PTCALC_mtc_quality_width = 1;
+const int PTCALC_mtc_quality_width = 3;
 const int PTCALC_mtc_quality_lsb = 0;
 const int PTCALC_mtc_quality_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPELINE_MTC_ENDCAP_width = 123;
+const int SLCPIPELINE_MTC_ENDCAP_width = 34;
+
+// 
+const int SLCPIPELINE_MTC_ENDCAP_busy_width = 1;
+const int SLCPIPELINE_MTC_ENDCAP_busy_lsb = 2;
+const int SLCPIPELINE_MTC_ENDCAP_busy_decb = 0;
+
+// 
+const int SLCPIPELINE_MTC_ENDCAP_destsl_width = 2;
+const int SLCPIPELINE_MTC_ENDCAP_destsl_lsb = 0;
+const int SLCPIPELINE_MTC_ENDCAP_destsl_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPELINE_MTC_BARREL_width = 128;
+const int SLCPIPELINE_MTC_BARREL_width = 34;
+
+// 
+const int SLCPIPELINE_MTC_BARREL_cointype_width = 3;
+const int SLCPIPELINE_MTC_BARREL_cointype_lsb = 34;
+const int SLCPIPELINE_MTC_BARREL_cointype_decb = 0;
+
+// 
+const int SLCPIPELINE_MTC_BARREL_busy_width = 1;
+const int SLCPIPELINE_MTC_BARREL_busy_lsb = 2;
+const int SLCPIPELINE_MTC_BARREL_busy_decb = 0;
+
+// 
+const int SLCPIPELINE_MTC_BARREL_destsl_width = 2;
+const int SLCPIPELINE_MTC_BARREL_destsl_lsb = 0;
+const int SLCPIPELINE_MTC_BARREL_destsl_decb = 0;
 
 // -------------------------------------------------------------------
-const int MTC_width = 64;
+const int MTC_width = 67;
 
 // MDT processing flags
 const int MTC_mtc_procflags_width = 4;
-const int MTC_mtc_procflags_lsb = 3;
+const int MTC_mtc_procflags_lsb = 5;
 const int MTC_mtc_procflags_decb = 0;
 
 // -------------------------------------------------------------------

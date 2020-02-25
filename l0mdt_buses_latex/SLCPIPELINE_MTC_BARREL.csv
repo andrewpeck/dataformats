@@ -1,2 +1,5 @@
 Name,Width,MSB index,LSB index,DECB
-SLCPROC\_PIPELINE\_BARREL,14,13,0,0
+cointype,3,36,34,0
+SLC\_COMMON,31,33,3,0
+busy,1,2,2,0
+destsl,2,1,0,0

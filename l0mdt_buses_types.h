@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "d6275d1b";
+const char df_hash[] = "8fa6713a";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -31,6 +31,8 @@ typedef struct SLC_MUID_n {
 typedef struct SLC_COMMON_n {
     // SLc Identification (up to 3)
     char slcid; // 2 bits
+    // struct tcsent
+    char tcsent; // 1 bits
     // SLc Eta Position
     char poseta[2]; // 14 bits
     // SLc Phi Position
@@ -44,7 +46,7 @@ typedef struct SLC_COMMON_n {
 // -------------------------------------------------------------------
 typedef struct SLC_ENDCAP_n {
     // struct SLC_COMMON
-    char SLC_COMMON[4]; // 30 bits
+    char SLC_COMMON[4]; // 31 bits
     // SLc Segment Angle wrt Eta position
     char seg_angdtheta; // 7 bits
     // SLc Segment Angle wrt Phi position
@@ -60,7 +62,7 @@ typedef struct SLC_ENDCAP_n {
 // -------------------------------------------------------------------
 typedef struct SLC_BARREL_n {
     // struct SLC_COMMON
-    char SLC_COMMON[4]; // 30 bits
+    char SLC_COMMON[4]; // 31 bits
     // SLc Hit Z Position in RPC0
     char rpc0_posz[2]; // 10 bits
     // SLc Hit Z Position in RPC1
@@ -90,7 +92,7 @@ typedef struct SLCPROC_PIPELINE_ENDCAP_n {
     // struct SLCPROC_PIPELINE_COMMON
     char SLCPROC_PIPELINE_COMMON[5]; // 35 bits
     // struct SLC_ENDCAP
-    char SLC_ENDCAP[9]; // 68 bits
+    char SLC_ENDCAP[9]; // 69 bits
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
 } SLCPROC_PIPELINE_ENDCAP_rt;
@@ -100,7 +102,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
     // struct SLCPROC_PIPELINE_COMMON
     char SLCPROC_PIPELINE_COMMON[5]; // 35 bits
     // struct SLC_BARREL
-    char SLC_BARREL[10]; // 73 bits
+    char SLC_BARREL[10]; // 74 bits
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
 } SLCPROC_PIPELINE_BARREL_rt;
@@ -213,7 +215,7 @@ typedef struct SF_n {
     char segpos[2]; // 16 bits
     // SF MDT segment angle along the precision coord
     char segangle[2]; // 11 bits
-    // SF MDT segment qualiry
+    // SF MDT segment quality
     char segquality; // 1 bits
 } SF_rt;
 
@@ -232,25 +234,35 @@ typedef struct PTCALC_n {
     // # of segments used for calculating the pT
     char mtc_nsegments; // 2 bits
     // quality of the MDT TC (TBC how this is defined)
-    char mtc_quality; // 1 bits
+    char mtc_quality; // 3 bits
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPELINE_MTC_ENDCAP_n {
-    // struct SLCPROC_PIPELINE_ENDCAP
-    char SLCPROC_PIPELINE_ENDCAP[3]; // 20 bits
+    // struct SLC_COMMON
+    char SLC_COMMON[4]; // 31 bits
+    // struct busy
+    char busy; // 1 bits
+    // struct destsl
+    char destsl; // 2 bits
 } SLCPIPELINE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPELINE_MTC_BARREL_n {
-    // struct SLCPROC_PIPELINE_BARREL
-    char SLCPROC_PIPELINE_BARREL[2]; // 14 bits
+    // struct cointype
+    char cointype; // 3 bits
+    // struct SLC_COMMON
+    char SLC_COMMON[4]; // 31 bits
+    // struct busy
+    char busy; // 1 bits
+    // struct destsl
+    char destsl; // 2 bits
 } SLCPIPELINE_MTC_BARREL_rt;
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {
     // struct SLC_COMMON
-    char SLC_COMMON[4]; // 30 bits
+    char SLC_COMMON[4]; // 31 bits
     // (COPY)
     char mtc_eta[2]; // 14 bits
     // (COPY)
@@ -264,7 +276,7 @@ typedef struct MTC_n {
     // (COPY)
     char mtc_nsegments; // 2 bits
     // (COPY)
-    char mtc_quality; // 1 bits
+    char mtc_quality; // 3 bits
 } MTC_rt;
 
 // -------------------------------------------------------------------

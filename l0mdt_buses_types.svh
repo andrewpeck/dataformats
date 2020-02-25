@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "d6275d1b";
+const char df_hash[] = "8fa6713a";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -22,6 +22,8 @@ typedef struct SLC_MUID_n {
 typedef struct SLC_COMMON_n {
     // SLc Identification (up to 3)
     logic [1:0] slcid;
+    // struct tcsent
+    logic [0:0] tcsent;
     // SLc Eta Position
     logic [13:0] poseta;
     // SLc Phi Position
@@ -35,7 +37,7 @@ typedef struct SLC_COMMON_n {
 // -------------------------------------------------------------------
 typedef struct SLC_ENDCAP_n {
     // struct SLC_COMMON
-    logic [29:0] SLC_COMMON;
+    logic [30:0] SLC_COMMON;
     // SLc Segment Angle wrt Eta position
     logic [6:0] seg_angdtheta;
     // SLc Segment Angle wrt Phi position
@@ -51,7 +53,7 @@ typedef struct SLC_ENDCAP_n {
 // -------------------------------------------------------------------
 typedef struct SLC_BARREL_n {
     // struct SLC_COMMON
-    logic [29:0] SLC_COMMON;
+    logic [30:0] SLC_COMMON;
     // SLc Hit Z Position in RPC0
     logic [9:0] rpc0_posz;
     // SLc Hit Z Position in RPC1
@@ -81,7 +83,7 @@ typedef struct SLCPROC_PIPELINE_ENDCAP_n {
     // struct SLCPROC_PIPELINE_COMMON
     logic [34:0] SLCPROC_PIPELINE_COMMON;
     // struct SLC_ENDCAP
-    logic [67:0] SLC_ENDCAP;
+    logic [68:0] SLC_ENDCAP;
     // struct SLC_MUID
     logic [19:0] SLC_MUID;
 } SLCPROC_PIPELINE_ENDCAP_rt;
@@ -91,7 +93,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
     // struct SLCPROC_PIPELINE_COMMON
     logic [34:0] SLCPROC_PIPELINE_COMMON;
     // struct SLC_BARREL
-    logic [72:0] SLC_BARREL;
+    logic [73:0] SLC_BARREL;
     // struct SLC_MUID
     logic [19:0] SLC_MUID;
 } SLCPROC_PIPELINE_BARREL_rt;
@@ -204,7 +206,7 @@ typedef struct SF_n {
     logic [15:0] segpos;
     // SF MDT segment angle along the precision coord
     logic [10:0] segangle;
-    // SF MDT segment qualiry
+    // SF MDT segment quality
     logic [0:0] segquality;
 } SF_rt;
 
@@ -223,25 +225,35 @@ typedef struct PTCALC_n {
     // # of segments used for calculating the pT
     logic [1:0] mtc_nsegments;
     // quality of the MDT TC (TBC how this is defined)
-    logic [0:0] mtc_quality;
+    logic [2:0] mtc_quality;
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPELINE_MTC_ENDCAP_n {
-    // struct SLCPROC_PIPELINE_ENDCAP
-    logic [19:0] SLCPROC_PIPELINE_ENDCAP;
+    // struct SLC_COMMON
+    logic [30:0] SLC_COMMON;
+    // struct busy
+    logic [0:0] busy;
+    // struct destsl
+    logic [1:0] destsl;
 } SLCPIPELINE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPELINE_MTC_BARREL_n {
-    // struct SLCPROC_PIPELINE_BARREL
-    logic [13:0] SLCPROC_PIPELINE_BARREL;
+    // struct cointype
+    logic [2:0] cointype;
+    // struct SLC_COMMON
+    logic [30:0] SLC_COMMON;
+    // struct busy
+    logic [0:0] busy;
+    // struct destsl
+    logic [1:0] destsl;
 } SLCPIPELINE_MTC_BARREL_rt;
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {
     // struct SLC_COMMON
-    logic [29:0] SLC_COMMON;
+    logic [30:0] SLC_COMMON;
     // (COPY)
     logic [13:0] mtc_eta;
     // (COPY)
@@ -255,7 +267,7 @@ typedef struct MTC_n {
     // (COPY)
     logic [1:0] mtc_nsegments;
     // (COPY)
-    logic [0:0] mtc_quality;
+    logic [2:0] mtc_quality;
 } MTC_rt;
 
 // -------------------------------------------------------------------

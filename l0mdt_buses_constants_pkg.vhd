@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"d6275d1b;"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"8fa6713a;"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -33,13 +33,19 @@ package mdttp_constants_pkg is
   constant SLC_MUID_bcid_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLC_COMMON_width : natural := 30;
+  constant SLC_COMMON_width : natural := 31;
 
   -- SLc Identification (up to 3)
   constant SLC_COMMON_slcid_width : natural := 2
   constant SLC_COMMON_slcid_msb : natural := 29
   constant SLC_COMMON_slcid_lsb : natural := 28
   constant SLC_COMMON_slcid_decb : natural := 0
+
+  -- 
+  constant SLC_COMMON_tcsent_width : natural := 1
+  constant SLC_COMMON_tcsent_msb : natural := 28
+  constant SLC_COMMON_tcsent_lsb : natural := 28
+  constant SLC_COMMON_tcsent_decb : natural := 0
 
   -- SLc Eta Position
   constant SLC_COMMON_poseta_width : natural := 14
@@ -66,7 +72,7 @@ package mdttp_constants_pkg is
   constant SLC_COMMON_charge_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLC_ENDCAP_width : natural := 68;
+  constant SLC_ENDCAP_width : natural := 69;
 
   -- SLc Segment Angle wrt Eta position
   constant SLC_ENDCAP_seg_angdtheta_width : natural := 7
@@ -99,7 +105,7 @@ package mdttp_constants_pkg is
   constant SLC_ENDCAP_nswseg_angdtheta_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLC_BARREL_width : natural := 73;
+  constant SLC_BARREL_width : natural := 74;
 
   -- SLc Hit Z Position in RPC0
   constant SLC_BARREL_rpc0_posz_width : natural := 10
@@ -177,10 +183,10 @@ package mdttp_constants_pkg is
   constant SLCPROC_PIPELINE_COMMON_vec_mdtid_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPROC_PIPELINE_ENDCAP_width : natural := 123;
+  constant SLCPROC_PIPELINE_ENDCAP_width : natural := 124;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_PIPELINE_BARREL_width : natural := 128;
+  constant SLCPROC_PIPELINE_BARREL_width : natural := 129;
 
   ----------------------------------------------------------------------
   constant CSM_width : natural := 32;
@@ -398,64 +404,94 @@ package mdttp_constants_pkg is
   constant SF_segangle_lsb : natural := 1
   constant SF_segangle_decb : natural := 0
 
-  -- SF MDT segment qualiry
+  -- SF MDT segment quality
   constant SF_segquality_width : natural := 1
   constant SF_segquality_msb : natural := 0
   constant SF_segquality_lsb : natural := 0
   constant SF_segquality_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant PTCALC_width : natural := 50;
+  constant PTCALC_width : natural := 52;
 
   -- eta of the innermost MDT station segment position
   constant PTCALC_mtc_eta_width : natural := 14
-  constant PTCALC_mtc_eta_msb : natural := 33
-  constant PTCALC_mtc_eta_lsb : natural := 20
+  constant PTCALC_mtc_eta_msb : natural := 35
+  constant PTCALC_mtc_eta_lsb : natural := 22
   constant PTCALC_mtc_eta_decb : natural := 11
 
   -- pT calculated by the pT Calc
   constant PTCALC_mtc_pt_width : natural := 8
-  constant PTCALC_mtc_pt_msb : natural := 19
-  constant PTCALC_mtc_pt_lsb : natural := 12
+  constant PTCALC_mtc_pt_msb : natural := 21
+  constant PTCALC_mtc_pt_lsb : natural := 14
   constant PTCALC_mtc_pt_decb : natural := 1
 
   -- pT threshold satisfied by the MDT TC
   constant PTCALC_mtc_ptthresh_width : natural := 4
-  constant PTCALC_mtc_ptthresh_msb : natural := 11
-  constant PTCALC_mtc_ptthresh_lsb : natural := 8
+  constant PTCALC_mtc_ptthresh_msb : natural := 13
+  constant PTCALC_mtc_ptthresh_lsb : natural := 10
   constant PTCALC_mtc_ptthresh_decb : natural := 0
 
   -- charge determined from the pT calc
   constant PTCALC_mtc_charge_width : natural := 1
-  constant PTCALC_mtc_charge_msb : natural := 7
-  constant PTCALC_mtc_charge_lsb : natural := 7
+  constant PTCALC_mtc_charge_msb : natural := 9
+  constant PTCALC_mtc_charge_lsb : natural := 9
   constant PTCALC_mtc_charge_decb : natural := 0
 
   -- # of segments used for calculating the pT
   constant PTCALC_mtc_nsegments_width : natural := 2
-  constant PTCALC_mtc_nsegments_msb : natural := 2
-  constant PTCALC_mtc_nsegments_lsb : natural := 1
+  constant PTCALC_mtc_nsegments_msb : natural := 4
+  constant PTCALC_mtc_nsegments_lsb : natural := 3
   constant PTCALC_mtc_nsegments_decb : natural := 0
 
   -- quality of the MDT TC (TBC how this is defined)
-  constant PTCALC_mtc_quality_width : natural := 1
-  constant PTCALC_mtc_quality_msb : natural := 0
+  constant PTCALC_mtc_quality_width : natural := 3
+  constant PTCALC_mtc_quality_msb : natural := 2
   constant PTCALC_mtc_quality_lsb : natural := 0
   constant PTCALC_mtc_quality_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPIPELINE_MTC_ENDCAP_width : natural := 123;
+  constant SLCPIPELINE_MTC_ENDCAP_width : natural := 34;
+
+  -- 
+  constant SLCPIPELINE_MTC_ENDCAP_busy_width : natural := 1
+  constant SLCPIPELINE_MTC_ENDCAP_busy_msb : natural := 2
+  constant SLCPIPELINE_MTC_ENDCAP_busy_lsb : natural := 2
+  constant SLCPIPELINE_MTC_ENDCAP_busy_decb : natural := 0
+
+  -- 
+  constant SLCPIPELINE_MTC_ENDCAP_destsl_width : natural := 2
+  constant SLCPIPELINE_MTC_ENDCAP_destsl_msb : natural := 1
+  constant SLCPIPELINE_MTC_ENDCAP_destsl_lsb : natural := 0
+  constant SLCPIPELINE_MTC_ENDCAP_destsl_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPIPELINE_MTC_BARREL_width : natural := 128;
+  constant SLCPIPELINE_MTC_BARREL_width : natural := 34;
+
+  -- 
+  constant SLCPIPELINE_MTC_BARREL_cointype_width : natural := 3
+  constant SLCPIPELINE_MTC_BARREL_cointype_msb : natural := 36
+  constant SLCPIPELINE_MTC_BARREL_cointype_lsb : natural := 34
+  constant SLCPIPELINE_MTC_BARREL_cointype_decb : natural := 0
+
+  -- 
+  constant SLCPIPELINE_MTC_BARREL_busy_width : natural := 1
+  constant SLCPIPELINE_MTC_BARREL_busy_msb : natural := 2
+  constant SLCPIPELINE_MTC_BARREL_busy_lsb : natural := 2
+  constant SLCPIPELINE_MTC_BARREL_busy_decb : natural := 0
+
+  -- 
+  constant SLCPIPELINE_MTC_BARREL_destsl_width : natural := 2
+  constant SLCPIPELINE_MTC_BARREL_destsl_msb : natural := 1
+  constant SLCPIPELINE_MTC_BARREL_destsl_lsb : natural := 0
+  constant SLCPIPELINE_MTC_BARREL_destsl_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant MTC_width : natural := 64;
+  constant MTC_width : natural := 67;
 
   -- MDT processing flags
   constant MTC_mtc_procflags_width : natural := 4
-  constant MTC_mtc_procflags_msb : natural := 6
-  constant MTC_mtc_procflags_lsb : natural := 3
+  constant MTC_mtc_procflags_msb : natural := 8
+  constant MTC_mtc_procflags_lsb : natural := 5
   constant MTC_mtc_procflags_decb : natural := 0
 
   ----------------------------------------------------------------------

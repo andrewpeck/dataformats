@@ -24,6 +24,7 @@ full:
         && git tag --force csv
         && git push origin csv
         || true
+    - git pull --tags
     - export CSV_SHA=$(git rev-parse --quiet --verify csv)
         || git push origin :refs/tags/csv
         && git tag --force csv

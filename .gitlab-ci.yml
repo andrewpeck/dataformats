@@ -8,7 +8,6 @@ full:
   image: rootproject/root-conda
 
   script:
-    - apt-get install -y zip
     - echo $CI_USER_PASSWORD | kinit $CI_USER@CERN.CH
     - export SRC="l0mdt_buses.csv"
     - git pull origin $CI_COMMIT_REF_NAME
@@ -21,7 +20,9 @@ full:
     - git add $SRC
     - git commit -m "CSV updated $(date +'%Y-%m-%d %H:%M:%S')" 
         && git push origin $CI_COMMIT_REF_NAME
-        && exit 0
+        && git push origin :refs/tags/csv
+        && git tag --force csv
+        && git push origin csv
         || true
     - export CSV_SHA=$(git rev-parse csv)
         || git tag --force csv

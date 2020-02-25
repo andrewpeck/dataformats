@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "5bf8a34a";
+const char df_hash[] = "d6275d1b";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -155,10 +155,10 @@ const int SLCPROC_PIPELINE_ENDCAP_width = 123;
 const int SLCPROC_PIPELINE_BARREL_width = 128;
 
 // -------------------------------------------------------------------
-const int CSM_width = 34;
+const int CSM_width = 32;
 
 // Channel number within TDC
-const int CSM_chanid_width = 7;
+const int CSM_chanid_width = 5;
 const int CSM_chanid_lsb = 27;
 const int CSM_chanid_decb = 0;
 
@@ -183,7 +183,7 @@ const int CSM_pulsewidth_lsb = 0;
 const int CSM_pulsewidth_decb = 0;
 
 // -------------------------------------------------------------------
-const int TDCFORMAT_width = 46;
+const int TDCFORMAT_width = 44;
 
 // Fiber ID within board
 const int TDCFORMAT_fiberid_width = 5;

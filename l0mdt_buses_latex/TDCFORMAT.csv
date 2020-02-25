@@ -1,5 +1,5 @@
 Name,Width,MSB index,LSB index,DECB
-CSM,34,45,12,0
+CSM,32,43,12,0
 fiberid,5,11,7,0
 elinkid,4,6,3,0
 datavalid,1,2,2,0

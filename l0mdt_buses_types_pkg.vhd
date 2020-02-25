@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"5bf8a34a"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"d6275d1b"
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -102,7 +102,7 @@ package mdttp_types_pkg is
   -- -----------------------------------------------------------------
   type CSM_rt is record
     -- Channel number within TDC
-    chanid : std_logic_vector(6 downto 0);
+    chanid : std_logic_vector(4 downto 0);
     -- Edge or pair mode
     edgemode : std_logic_vector(1 downto 0);
     -- TDC BCID
@@ -116,7 +116,7 @@ package mdttp_types_pkg is
   -- -----------------------------------------------------------------
   type TDCFORMAT_rt is record
     -- struct CSM
-    CSM : std_logic_vector(33 downto 0);
+    CSM : std_logic_vector(31 downto 0);
     -- Fiber ID within board
     fiberid : std_logic_vector(4 downto 0);
     -- Elink ID within fiber

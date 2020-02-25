@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 5bf8a34a;
+`define DF_HASH d6275d1b;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -152,10 +152,10 @@
 `define SLCPROC_PIPELINE_BARREL_width 128
 
 // -------------------------------------------------------------------
-`define CSM_width 34
+`define CSM_width 32
 
 // Channel number within TDC
-`define CSM_chanid_width 7
+`define CSM_chanid_width 5
 `define CSM_chanid_lsb 27
 `define CSM_chanid_decb 0
 
@@ -180,7 +180,7 @@
 `define CSM_pulsewidth_decb 0
 
 // -------------------------------------------------------------------
-`define TDCFORMAT_width 46
+`define TDCFORMAT_width 44
 
 // Fiber ID within board
 `define TDCFORMAT_fiberid_width 5

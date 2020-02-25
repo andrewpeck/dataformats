@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"5bf8a34a"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"d6275d1b"
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -193,7 +193,7 @@ package mdttp_functions_pkg is
   return CSM_rt is
     variable b : CSM_rt;
   begin
-    b.chanid := v(33 downto 27);
+    b.chanid := v(31 downto 27);
     b.edgemode := v(26 downto 25);
     b.coarsetime := v(24 downto 13);
     b.finetime := v(12 downto 8);
@@ -218,7 +218,7 @@ package mdttp_functions_pkg is
   return TDCFORMAT_rt is
     variable b : TDCFORMAT_rt;
   begin
-    b.CSM := v(45 downto 12);
+    b.CSM := v(43 downto 12);
     b.fiberid := v(11 downto 7);
     b.elinkid := v(6 downto 3);
     b.datavalid := v(2 downto 2);

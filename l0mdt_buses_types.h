@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "5bf8a34a";
+const char df_hash[] = "d6275d1b";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -108,7 +108,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
 // -------------------------------------------------------------------
 typedef struct CSM_n {
     // Channel number within TDC
-    char chanid; // 7 bits
+    char chanid; // 5 bits
     // Edge or pair mode
     char edgemode; // 2 bits
     // TDC BCID
@@ -122,7 +122,7 @@ typedef struct CSM_n {
 // -------------------------------------------------------------------
 typedef struct TDCFORMAT_n {
     // struct CSM
-    char CSM[5]; // 34 bits
+    char CSM[4]; // 32 bits
     // Fiber ID within board
     char fiberid; // 5 bits
     // Elink ID within fiber

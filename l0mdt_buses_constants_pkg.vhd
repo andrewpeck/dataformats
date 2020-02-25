@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"5bf8a34a;"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"d6275d1b;"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -183,11 +183,11 @@ package mdttp_constants_pkg is
   constant SLCPROC_PIPELINE_BARREL_width : natural := 128;
 
   ----------------------------------------------------------------------
-  constant CSM_width : natural := 34;
+  constant CSM_width : natural := 32;
 
   -- Channel number within TDC
-  constant CSM_chanid_width : natural := 7
-  constant CSM_chanid_msb : natural := 33
+  constant CSM_chanid_width : natural := 5
+  constant CSM_chanid_msb : natural := 31
   constant CSM_chanid_lsb : natural := 27
   constant CSM_chanid_decb : natural := 0
 
@@ -216,7 +216,7 @@ package mdttp_constants_pkg is
   constant CSM_pulsewidth_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant TDCFORMAT_width : natural := 46;
+  constant TDCFORMAT_width : natural := 44;
 
   -- Fiber ID within board
   constant TDCFORMAT_fiberid_width : natural := 5

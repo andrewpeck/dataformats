@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a04a67a6"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"1f665651"
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -209,7 +209,7 @@ package mdttp_types_pkg is
     segpos : std_logic_vector(15 downto 0);
     -- SF MDT segment angle along the precision coord
     segangle : std_logic_vector(10 downto 0);
-    -- SF MDT segment quality
+    -- SF MDT segment qualiry
     segquality : std_logic;
   end record SF_rt;
 
@@ -233,6 +233,8 @@ package mdttp_types_pkg is
 
   -- -----------------------------------------------------------------
   type SLCPIPELINE_MTC_ENDCAP_rt is record
+    -- struct SLC_MUID
+    SLC_MUID : std_logic_vector(19 downto 0);
     -- struct SLC_COMMON
     SLC_COMMON : std_logic_vector(30 downto 0);
     -- (COPY)
@@ -245,6 +247,8 @@ package mdttp_types_pkg is
   type SLCPIPELINE_MTC_BARREL_rt is record
     -- (COPY)
     cointype : std_logic_vector(2 downto 0);
+    -- struct SLC_MUID
+    SLC_MUID : std_logic_vector(19 downto 0);
     -- struct SLC_COMMON
     SLC_COMMON : std_logic_vector(30 downto 0);
     -- (COPY)

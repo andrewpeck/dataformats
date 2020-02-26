@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a04a67a6;"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"1f665651;"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -404,7 +404,7 @@ package mdttp_constants_pkg is
   constant SF_segangle_lsb : natural := 1
   constant SF_segangle_decb : natural := 0
 
-  -- SF MDT segment quality
+  -- SF MDT segment qualiry
   constant SF_segquality_width : natural := 1
   constant SF_segquality_msb : natural := 0
   constant SF_segquality_lsb : natural := 0
@@ -450,10 +450,22 @@ package mdttp_constants_pkg is
   constant PTCALC_mtc_quality_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPIPELINE_MTC_ENDCAP_width : natural := 34;
+  constant SLCPIPELINE_MTC_ENDCAP_width : natural := 54;
+
+  -- 
+  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width : natural := 20
+  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_msb : natural := 53
+  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb : natural := 34
+  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb : natural := 0
 
   ----------------------------------------------------------------------
-  constant SLCPIPELINE_MTC_BARREL_width : natural := 34;
+  constant SLCPIPELINE_MTC_BARREL_width : natural := 57;
+
+  -- 
+  constant SLCPIPELINE_MTC_BARREL_SLC_MUID_width : natural := 20
+  constant SLCPIPELINE_MTC_BARREL_SLC_MUID_msb : natural := 53
+  constant SLCPIPELINE_MTC_BARREL_SLC_MUID_lsb : natural := 34
+  constant SLCPIPELINE_MTC_BARREL_SLC_MUID_decb : natural := 0
 
   ----------------------------------------------------------------------
   constant MTC_width : natural := 67;

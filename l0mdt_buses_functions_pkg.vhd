@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a04a67a6"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"1f665651"
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -412,7 +412,8 @@ package mdttp_functions_pkg is
   return std_logic_vector is
     variable v : std_logic_vector(SLCPIPELINE_MTC_ENDCAP_msb downto 0);
   begin
-    v := d.SLC_COMMON
+    v := d.SLC_MUID
+         & d.SLC_COMMON
          & d.busy
          & d.destsl;
     return v;
@@ -422,6 +423,7 @@ package mdttp_functions_pkg is
   return SLCPIPELINE_MTC_ENDCAP_rt is
     variable b : SLCPIPELINE_MTC_ENDCAP_rt;
   begin
+    b.SLC_MUID := v(53 downto 34);
     b.SLC_COMMON := v(33 downto 3);
     b.busy := v(2 downto 2);
     b.destsl := v(1 downto 0);
@@ -434,6 +436,7 @@ package mdttp_functions_pkg is
     variable v : std_logic_vector(SLCPIPELINE_MTC_BARREL_msb downto 0);
   begin
     v := d.cointype
+         & d.SLC_MUID
          & d.SLC_COMMON
          & d.busy
          & d.destsl;
@@ -444,7 +447,8 @@ package mdttp_functions_pkg is
   return SLCPIPELINE_MTC_BARREL_rt is
     variable b : SLCPIPELINE_MTC_BARREL_rt;
   begin
-    b.cointype := v(36 downto 34);
+    b.cointype := v(56 downto 54);
+    b.SLC_MUID := v(53 downto 34);
     b.SLC_COMMON := v(33 downto 3);
     b.busy := v(2 downto 2);
     b.destsl := v(1 downto 0);

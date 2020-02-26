@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH a04a67a6;
+`define DF_HASH 1f665651;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -340,7 +340,7 @@
 `define SF_segangle_lsb 1
 `define SF_segangle_decb 0
 
-// SF MDT segment quality
+// SF MDT segment qualiry
 `define SF_segquality_width 1
 `define SF_segquality_lsb 0
 `define SF_segquality_decb 0
@@ -379,10 +379,20 @@
 `define PTCALC_mtc_quality_decb 0
 
 // -------------------------------------------------------------------
-`define SLCPIPELINE_MTC_ENDCAP_width 34
+`define SLCPIPELINE_MTC_ENDCAP_width 54
+
+// 
+`define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width 20
+`define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb 34
+`define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb 0
 
 // -------------------------------------------------------------------
-`define SLCPIPELINE_MTC_BARREL_width 34
+`define SLCPIPELINE_MTC_BARREL_width 57
+
+// 
+`define SLCPIPELINE_MTC_BARREL_SLC_MUID_width 20
+`define SLCPIPELINE_MTC_BARREL_SLC_MUID_lsb 34
+`define SLCPIPELINE_MTC_BARREL_SLC_MUID_decb 0
 
 // -------------------------------------------------------------------
 `define MTC_width 67

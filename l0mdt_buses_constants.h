@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "a04a67a6";
+const char df_hash[] = "1f665651";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -343,7 +343,7 @@ const int SF_segangle_width = 11;
 const int SF_segangle_lsb = 1;
 const int SF_segangle_decb = 0;
 
-// SF MDT segment quality
+// SF MDT segment qualiry
 const int SF_segquality_width = 1;
 const int SF_segquality_lsb = 0;
 const int SF_segquality_decb = 0;
@@ -382,10 +382,20 @@ const int PTCALC_mtc_quality_lsb = 0;
 const int PTCALC_mtc_quality_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPELINE_MTC_ENDCAP_width = 34;
+const int SLCPIPELINE_MTC_ENDCAP_width = 54;
+
+// 
+const int SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width = 20;
+const int SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb = 34;
+const int SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPELINE_MTC_BARREL_width = 34;
+const int SLCPIPELINE_MTC_BARREL_width = 57;
+
+// 
+const int SLCPIPELINE_MTC_BARREL_SLC_MUID_width = 20;
+const int SLCPIPELINE_MTC_BARREL_SLC_MUID_lsb = 34;
+const int SLCPIPELINE_MTC_BARREL_SLC_MUID_decb = 0;
 
 // -------------------------------------------------------------------
 const int MTC_width = 67;

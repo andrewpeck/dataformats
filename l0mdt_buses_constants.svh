@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 1f665651;
+`define DF_HASH 4b00b0c8;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -28,7 +28,7 @@
 
 // SLc Identification (up to 3)
 `define SLC_COMMON_slcid_width 2
-`define SLC_COMMON_slcid_lsb 28
+`define SLC_COMMON_slcid_lsb 29
 `define SLC_COMMON_slcid_decb 0
 
 // TC sent to MDT TP

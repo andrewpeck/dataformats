@@ -1,5 +1,5 @@
 Name,Width,MSB index,LSB index,DECB
-slcid,2,29,28,0
+slcid,2,30,29,0
 tcsent,1,28,28,0
 poseta,14,27,14,11
 posphi,9,13,5,0

@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"1f665651"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"4b00b0c8"
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -50,7 +50,7 @@ package mdttp_functions_pkg is
   return SLC_COMMON_rt is
     variable b : SLC_COMMON_rt;
   begin
-    b.slcid := v(29 downto 28);
+    b.slcid := v(30 downto 29);
     b.tcsent := v(28 downto 28);
     b.poseta := v(27 downto 14);
     b.posphi := v(13 downto 5);

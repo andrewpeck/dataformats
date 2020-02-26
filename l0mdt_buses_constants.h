@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "1f665651";
+const char df_hash[] = "4b00b0c8";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -31,7 +31,7 @@ const int SLC_COMMON_width = 31;
 
 // SLc Identification (up to 3)
 const int SLC_COMMON_slcid_width = 2;
-const int SLC_COMMON_slcid_lsb = 28;
+const int SLC_COMMON_slcid_lsb = 29;
 const int SLC_COMMON_slcid_decb = 0;
 
 // TC sent to MDT TP

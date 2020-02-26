@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"1f665651;"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"4b00b0c8;"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -37,8 +37,8 @@ package mdttp_constants_pkg is
 
   -- SLc Identification (up to 3)
   constant SLC_COMMON_slcid_width : natural := 2
-  constant SLC_COMMON_slcid_msb : natural := 29
-  constant SLC_COMMON_slcid_lsb : natural := 28
+  constant SLC_COMMON_slcid_msb : natural := 30
+  constant SLC_COMMON_slcid_lsb : natural := 29
   constant SLC_COMMON_slcid_decb : natural := 0
 
   -- TC sent to MDT TP

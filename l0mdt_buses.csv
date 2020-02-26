@@ -5,12 +5,12 @@ bcid,,12,11,0,0,0,102375,25,ns,,,SLc Processor,BCID from SLC,var,,
 TOTAL,,20,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLC_COMMON,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,Use,Comments
-slcid,,2,29,28,0,0,3,1,#,,SLc Processor,Endcap SL,SLc Identification (up to 3),var,,
-tcsent,,1,28,28,0,0,1,1,#,,SLc Processor,Endcap SL,TC sent to MDT TP,var,,
-poseta,,14,27,14,11,-2.7,2.7,0.00033,#,,SLc Processor,Endcap SL,SLc Eta Position,var,,
-posphi,,9,13,5,0,0,6280,24.00000,mrad,,SLc Processor,Endcap SL,SLc Phi Position,var,,
-ptthresh,,4,4,1,0,4,80,5.10000,GeV,,SLc Processor,Endcap SL,SLc highest pT threshold passed,var,,[4-80GeV]
-charge,,1,0,0,0,0,1,1,sign,,SLc Processor,Endcap SL,SLc charge,var,,
+slcid,,2,30,29,0,0,3,1,#,,SLc Processor,SL,SLc Identification (up to 3),var,,
+tcsent,,1,28,28,0,0,1,1,#,,SLc Processor,SL,TC sent to MDT TP,var,,
+poseta,,14,27,14,11,-2.7,2.7,0.00033,#,,SLc Processor,SL,SLc Eta Position,var,,
+posphi,,9,13,5,0,0,6280,24.00000,mrad,,SLc Processor,SL,SLc Phi Position,var,,
+ptthresh,,4,4,1,0,4,80,5.10000,GeV,,SLc Processor,SL,SLc highest pT threshold passed,var,,[4-80GeV]
+charge,,1,0,0,0,0,1,1,sign,,SLc Processor,SL,SLc charge,var,,
 TOTAL,,31,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments

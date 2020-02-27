@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "0e69e58c";
+const char df_hash[] = "8e8e9b54";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -281,17 +281,17 @@ const int HE_LSF_data_valid_decb = 0;
 
 // Tube local position along precision coord
 const int HE_LSF_mdt_localx_width = 14;
-const int HE_LSF_mdt_localx_lsb = 0;
+const int HE_LSF_mdt_localx_lsb = 23;
 const int HE_LSF_mdt_localx_decb = 4;
 
 // Tube local position along second coord
 const int HE_LSF_mdt_localy_width = 14;
-const int HE_LSF_mdt_localy_lsb = 14;
+const int HE_LSF_mdt_localy_lsb = 9;
 const int HE_LSF_mdt_localy_decb = 4;
 
 // Tube drift radius
 const int HE_LSF_mdt_radius_width = 9;
-const int HE_LSF_mdt_radius_lsb = 28;
+const int HE_LSF_mdt_radius_lsb = 0;
 const int HE_LSF_mdt_radius_decb = 5;
 
 // -------------------------------------------------------------------
@@ -353,22 +353,22 @@ const int PTCALC_width = 52;
 
 // eta of the innermost MDT station segment position
 const int PTCALC_mtc_eta_width = 14;
-const int PTCALC_mtc_eta_lsb = 22;
+const int PTCALC_mtc_eta_lsb = 18;
 const int PTCALC_mtc_eta_decb = 11;
 
 // pT calculated by the pT Calc
 const int PTCALC_mtc_pt_width = 8;
-const int PTCALC_mtc_pt_lsb = 14;
+const int PTCALC_mtc_pt_lsb = 10;
 const int PTCALC_mtc_pt_decb = 1;
 
 // pT threshold satisfied by the MDT TC
 const int PTCALC_mtc_ptthresh_width = 4;
-const int PTCALC_mtc_ptthresh_lsb = 10;
+const int PTCALC_mtc_ptthresh_lsb = 6;
 const int PTCALC_mtc_ptthresh_decb = 0;
 
 // charge determined from the pT calc
 const int PTCALC_mtc_charge_width = 1;
-const int PTCALC_mtc_charge_lsb = 9;
+const int PTCALC_mtc_charge_lsb = 5;
 const int PTCALC_mtc_charge_decb = 0;
 
 // # of segments used for calculating the pT

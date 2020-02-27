@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"0e69e58c"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"8e8e9b54"
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -297,9 +297,9 @@ package mdttp_functions_pkg is
   begin
     b.mdt_valid := v(38 downto 38);
     b.data_valid := v(37 downto 37);
-    b.mdt_localx := v(13 downto 0);
-    b.mdt_localy := v(27 downto 14);
-    b.mdt_radius := v(36 downto 28);
+    b.mdt_localx := v(36 downto 23);
+    b.mdt_localy := v(22 downto 9);
+    b.mdt_radius := v(8 downto 0);
     return b;
   end function HE_LSF_fromVector;
 
@@ -397,11 +397,11 @@ package mdttp_functions_pkg is
   return PTCALC_rt is
     variable b : PTCALC_rt;
   begin
-    b.SLC_MUID := v(55 downto 36);
-    b.mtc_eta := v(35 downto 22);
-    b.mtc_pt := v(21 downto 14);
-    b.mtc_ptthresh := v(13 downto 10);
-    b.mtc_charge := v(9 downto 9);
+    b.SLC_MUID := v(51 downto 32);
+    b.mtc_eta := v(31 downto 18);
+    b.mtc_pt := v(17 downto 10);
+    b.mtc_ptthresh := v(9 downto 6);
+    b.mtc_charge := v(5 downto 5);
     b.mtc_nsegments := v(4 downto 3);
     b.mtc_quality := v(2 downto 0);
     return b;

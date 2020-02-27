@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 0e69e58c;
+`define DF_HASH 8e8e9b54;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -278,17 +278,17 @@
 
 // Tube local position along precision coord
 `define HE_LSF_mdt_localx_width 14
-`define HE_LSF_mdt_localx_lsb 0
+`define HE_LSF_mdt_localx_lsb 23
 `define HE_LSF_mdt_localx_decb 4
 
 // Tube local position along second coord
 `define HE_LSF_mdt_localy_width 14
-`define HE_LSF_mdt_localy_lsb 14
+`define HE_LSF_mdt_localy_lsb 9
 `define HE_LSF_mdt_localy_decb 4
 
 // Tube drift radius
 `define HE_LSF_mdt_radius_width 9
-`define HE_LSF_mdt_radius_lsb 28
+`define HE_LSF_mdt_radius_lsb 0
 `define HE_LSF_mdt_radius_decb 5
 
 // -------------------------------------------------------------------
@@ -350,22 +350,22 @@
 
 // eta of the innermost MDT station segment position
 `define PTCALC_mtc_eta_width 14
-`define PTCALC_mtc_eta_lsb 22
+`define PTCALC_mtc_eta_lsb 18
 `define PTCALC_mtc_eta_decb 11
 
 // pT calculated by the pT Calc
 `define PTCALC_mtc_pt_width 8
-`define PTCALC_mtc_pt_lsb 14
+`define PTCALC_mtc_pt_lsb 10
 `define PTCALC_mtc_pt_decb 1
 
 // pT threshold satisfied by the MDT TC
 `define PTCALC_mtc_ptthresh_width 4
-`define PTCALC_mtc_ptthresh_lsb 10
+`define PTCALC_mtc_ptthresh_lsb 6
 `define PTCALC_mtc_ptthresh_decb 0
 
 // charge determined from the pT calc
 `define PTCALC_mtc_charge_width 1
-`define PTCALC_mtc_charge_lsb 9
+`define PTCALC_mtc_charge_lsb 5
 `define PTCALC_mtc_charge_decb 0
 
 // # of segments used for calculating the pT

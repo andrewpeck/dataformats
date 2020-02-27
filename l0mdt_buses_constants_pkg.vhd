@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"0e69e58c;"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"8e8e9b54;"
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -331,20 +331,20 @@ package mdttp_constants_pkg is
 
   -- Tube local position along precision coord
   constant HE_LSF_mdt_localx_width : natural := 14
-  constant HE_LSF_mdt_localx_msb : natural := 13
-  constant HE_LSF_mdt_localx_lsb : natural := 0
+  constant HE_LSF_mdt_localx_msb : natural := 36
+  constant HE_LSF_mdt_localx_lsb : natural := 23
   constant HE_LSF_mdt_localx_decb : natural := 4
 
   -- Tube local position along second coord
   constant HE_LSF_mdt_localy_width : natural := 14
-  constant HE_LSF_mdt_localy_msb : natural := 27
-  constant HE_LSF_mdt_localy_lsb : natural := 14
+  constant HE_LSF_mdt_localy_msb : natural := 22
+  constant HE_LSF_mdt_localy_lsb : natural := 9
   constant HE_LSF_mdt_localy_decb : natural := 4
 
   -- Tube drift radius
   constant HE_LSF_mdt_radius_width : natural := 9
-  constant HE_LSF_mdt_radius_msb : natural := 36
-  constant HE_LSF_mdt_radius_lsb : natural := 28
+  constant HE_LSF_mdt_radius_msb : natural := 8
+  constant HE_LSF_mdt_radius_lsb : natural := 0
   constant HE_LSF_mdt_radius_decb : natural := 5
 
   ----------------------------------------------------------------------
@@ -415,26 +415,26 @@ package mdttp_constants_pkg is
 
   -- eta of the innermost MDT station segment position
   constant PTCALC_mtc_eta_width : natural := 14
-  constant PTCALC_mtc_eta_msb : natural := 35
-  constant PTCALC_mtc_eta_lsb : natural := 22
+  constant PTCALC_mtc_eta_msb : natural := 31
+  constant PTCALC_mtc_eta_lsb : natural := 18
   constant PTCALC_mtc_eta_decb : natural := 11
 
   -- pT calculated by the pT Calc
   constant PTCALC_mtc_pt_width : natural := 8
-  constant PTCALC_mtc_pt_msb : natural := 21
-  constant PTCALC_mtc_pt_lsb : natural := 14
+  constant PTCALC_mtc_pt_msb : natural := 17
+  constant PTCALC_mtc_pt_lsb : natural := 10
   constant PTCALC_mtc_pt_decb : natural := 1
 
   -- pT threshold satisfied by the MDT TC
   constant PTCALC_mtc_ptthresh_width : natural := 4
-  constant PTCALC_mtc_ptthresh_msb : natural := 13
-  constant PTCALC_mtc_ptthresh_lsb : natural := 10
+  constant PTCALC_mtc_ptthresh_msb : natural := 9
+  constant PTCALC_mtc_ptthresh_lsb : natural := 6
   constant PTCALC_mtc_ptthresh_decb : natural := 0
 
   -- charge determined from the pT calc
   constant PTCALC_mtc_charge_width : natural := 1
-  constant PTCALC_mtc_charge_msb : natural := 9
-  constant PTCALC_mtc_charge_lsb : natural := 9
+  constant PTCALC_mtc_charge_msb : natural := 5
+  constant PTCALC_mtc_charge_lsb : natural := 5
   constant PTCALC_mtc_charge_decb : natural := 0
 
   -- # of segments used for calculating the pT

@@ -1,8 +1,8 @@
 Name,Width,MSB index,LSB index,DECB
-SLC\_MUID,20,55,36,0
-mtc\_eta,14,35,22,11
-mtc\_pt,8,21,14,1
-mtc\_ptthresh,4,13,10,0
-mtc\_charge,1,9,9,0
+SLC\_MUID,20,51,32,0
+mtc\_eta,14,31,18,11
+mtc\_pt,8,17,10,1
+mtc\_ptthresh,4,9,6,0
+mtc\_charge,1,5,5,0
 mtc\_nsegments,2,4,3,0
 mtc\_quality,3,2,0,0

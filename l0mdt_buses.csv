@@ -137,8 +137,8 @@ busy,,1,2,2,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
 destsl,,2,1,0,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
 TOTAL,,54,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPIPELINE_MTC_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-cointype,,3,56,54,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
+,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPIPELINE_MTC_BARREL,,3,56,54,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
 SLC_MUID,,20,53,34,0,,,,sign,,mTC_builder,,,,,
 SLC_COMMON,,31,33,3,0,,,,,,mTC_builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_BARREL,,
 busy,,1,2,2,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,

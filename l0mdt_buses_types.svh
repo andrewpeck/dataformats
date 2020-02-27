@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "4b00b0c8";
+const char df_hash[] = "0e69e58c";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -241,9 +241,9 @@ typedef struct SLCPIPELINE_MTC_ENDCAP_n {
 } SLCPIPELINE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPIPELINE_MTC_BARREL_n {
+typedef struct _n {
     // (COPY)
-    logic [2:0] cointype;
+    logic [2:0] SLCPIPELINE_MTC_BARREL;
     // struct SLC_MUID
     logic [19:0] SLC_MUID;
     // struct SLC_COMMON
@@ -252,7 +252,7 @@ typedef struct SLCPIPELINE_MTC_BARREL_n {
     logic [0:0] busy;
     // (COPY)
     logic [1:0] destsl;
-} SLCPIPELINE_MTC_BARREL_rt;
+} _rt;
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {

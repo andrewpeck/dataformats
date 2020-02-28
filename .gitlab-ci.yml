@@ -36,6 +36,5 @@ full:
     - git commit -m "Output files updated $(date +'%Y-%m-%d %H:%M:%S')"
         && git push origin $CI_COMMIT_REF_NAME
         && test "$CI_COMMIT_REF_NAME" = "master"
-        && "curl -X POST -F token=fad2e760d00c70b2b66d0e885520fd -F ref=master 
-           https://gitlab.cern.ch/api/v4/projects/86471/trigger/pipeline"
+        && curl -X POST -F token=fad2e760d00c70b2b66d0e885520fd -F ref=master "https://gitlab.cern.ch/api/v4/projects/86471/trigger/pipeline"
         || exit 0

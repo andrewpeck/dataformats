@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "e47d82cc";
+const char df_hash[] = "33b31c36";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -110,7 +110,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
 // -------------------------------------------------------------------
 typedef struct CSM_n {
     // Channel number within TDC
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanid; // 6 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanid; // 5 bits
     // Edge or pair mode
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemode; // 2 bits
     // TDC BCID
@@ -124,7 +124,7 @@ typedef struct CSM_n {
 // -------------------------------------------------------------------
 typedef struct TDCFORMAT_n {
     // struct CSM
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSM[5]; // 33 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSM[4]; // 32 bits
     // Fiber ID within board
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberid; // 5 bits
     // Elink ID within fiber

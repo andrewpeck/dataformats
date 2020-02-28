@@ -557,6 +557,7 @@ def write_latex_files(out, df_hash, o_dir):
                 l = l.replace('_', '\\_')
                 write_ln(l)
 
+    write_ln()
     print('LaTeX: table files written.')
 
 #main function

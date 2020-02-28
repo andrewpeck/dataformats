@@ -8,6 +8,7 @@ full:
   image: rootproject/root-conda
 
   script:
+    - yum install -y curl
     - echo $CI_USER_PASSWORD | kinit $CI_USER@CERN.CH
     - export SRC="l0mdt_buses.csv"
     - git pull origin $CI_COMMIT_REF_NAME

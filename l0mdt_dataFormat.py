@@ -471,7 +471,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         
         write_ln("")
         msb = len(df_hash)*4-1
-        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s";'
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s" ;'
         write_ln(f'  {tpl}' %(msb, df_hash))
         
         for bus in buses:

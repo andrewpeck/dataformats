@@ -1,8 +1,8 @@
-Name,Width,MSB index,LSB index,DECB
-busy,1,34,34,0
-destsl,2,33,32,0
-phimod,8,31,24,0
-vec\_mdtid,6,23,18,0
-vec\_mdtid,6,17,12,0
-vec\_mdtid,6,11,6,0
-vec\_mdtid,6,5,0,0
+Name,Station,Width,MSB index,LSB index,DECB
+busy,,1,34,34,0
+destsl,,2,33,32,0
+phimod,,8,31,24,0
+vec\_mdtid,INN,6,23,18,0
+vec\_mdtid,MID,6,17,12,0
+vec\_mdtid,OUT,6,11,6,0
+vec\_mdtid,EXT,6,5,0,0

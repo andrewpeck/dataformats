@@ -131,24 +131,24 @@
 `define SLCPROC_PIPELINE_COMMON_phimod_decb 0
 
 // SLc Inner Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 18
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0
+`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_width 6
+`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_lsb 18
+`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_decb 0
 
 // SLc Middle Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 12
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0
+`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_width 6
+`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_lsb 12
+`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_decb 0
 
 // SLc Outer Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 6
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0
+`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_width 6
+`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_lsb 6
+`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_decb 0
 
 // SLc Extra Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_width 6
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_lsb 0
-`define SLCPROC_PIPELINE_COMMON_vec_mdtid_decb 0
+`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_width 6
+`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_lsb 0
+`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_decb 0
 
 // -------------------------------------------------------------------
 `define SLCPROC_PIPELINE_ENDCAP_width 124
@@ -385,14 +385,6 @@
 `define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width 20
 `define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb 34
 `define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb 0
-
-// -------------------------------------------------------------------
-`define _width 57
-
-// 
-`define _SLC_MUID_width 20
-`define _SLC_MUID_lsb 34
-`define _SLC_MUID_decb 0
 
 // -------------------------------------------------------------------
 `define MTC_width 67

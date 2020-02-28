@@ -1,7 +1,7 @@
-Name,Width,MSB index,LSB index,DECB
-SLC\_COMMON,31,68,38,0
-seg\_angdtheta,7,37,31,0
-seg\_angdphi,4,30,27,0
-nswseg\_poseta,14,26,13,13
-nswseg\_posphi,8,12,5,0
-nswseg\_angdtheta,5,4,0,0
+Name,Station,Width,MSB index,LSB index,DECB
+SLC\_COMMON,,31,68,38,0
+seg\_angdtheta,,7,37,31,0
+seg\_angdphi,,4,30,27,0
+nswseg\_poseta,,14,26,13,13
+nswseg\_posphi,,8,12,5,0
+nswseg\_angdtheta,,5,4,0,0

@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "8e8e9b54";
+const char df_hash[] = "e47d82cc";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -101,7 +101,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
 // -------------------------------------------------------------------
 typedef struct CSM_n {
     // Channel number within TDC
-    logic [4:0] chanid;
+    logic [5:0] chanid;
     // Edge or pair mode
     logic [1:0] edgemode;
     // TDC BCID
@@ -115,7 +115,7 @@ typedef struct CSM_n {
 // -------------------------------------------------------------------
 typedef struct TDCFORMAT_n {
     // struct CSM
-    logic [31:0] CSM;
+    logic [32:0] CSM;
     // Fiber ID within board
     logic [4:0] fiberid;
     // Elink ID within fiber

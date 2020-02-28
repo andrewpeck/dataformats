@@ -470,9 +470,9 @@ def write_latex_files(out, df_hash, o_dir):
     latex_dir = os.path.join(o_dir, latex_name)
     Path(latex_dir).mkdir(parents=True, exist_ok=True)
 
-    p = os.path.join(latex_dir, f"hash.csv")
+    p = os.path.join(latex_dir, f"hash.tex")
     with open(p, 'w') as fobj:
-        fobj.write(f"{df_hash}\n")
+        fobj.write(f"{df_hash}")
 
     for bus in buses:
         p = os.path.join(latex_dir, f'{bus.name}.csv')

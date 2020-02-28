@@ -30,7 +30,7 @@ full:
         && git tag --force csv
         && git push origin csv
         && export CSV_SHA=$(git rev-parse --quiet --verify csv)
-    - rm -r l0mdt_buses_latex/*
+    - rm -r l0mdt_buses_latex
     - python l0mdt_dataFormat.py -i l0mdt_buses.csv -r "${CSV_SHA}"
     - git add *.h *.svh *.vhd l0mdt_buses_latex/*
     - git commit -m "Output files updated $(date +'%Y-%m-%d %H:%M:%S')"

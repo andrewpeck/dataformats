@@ -475,6 +475,10 @@ def write_latex_files(out, df_hash, o_dir):
         fobj.write(f"{df_hash}")
 
     for bus in buses:
+        if not f'{bus.name}':
+            ## somehow we have a bus name empty...
+            continue
+        
         p = os.path.join(latex_dir, f'{bus.name}.csv')
         with open(p, 'w') as fobj:
             def write_ln(line):
@@ -486,6 +490,7 @@ def write_latex_files(out, df_hash, o_dir):
                 l = l.replace('_', '\\_')
                 write_ln(l)
 
+    print('LaTeX: table files written.')
 
 #main function
 def main(argv):

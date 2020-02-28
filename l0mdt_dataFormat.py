@@ -103,6 +103,10 @@ def write_c_file(c_name, df_hash, o_dir) :
     write_ln(f'const char df_hash[] = "{df_hash}";')
 
     for bus in buses:
+        if not f'{bus.name}':
+            ## somehow we have an empty bus name...
+            continue
+
         write_ln("");
         write_ln(f"// {'-'*67}")
         write_ln(f"const int {bus.name}_width = {bus.width};")
@@ -118,7 +122,12 @@ def write_c_file(c_name, df_hash, o_dir) :
             write_ln(f"// {var.parameter}")
 
             tpl = "const int %s = %s;"
-            var_prefix = f"{bus.name}_{var.name}"
+
+            
+            if var.station:
+                var_prefix = f"{bus.name}_{var.station}_{var.name}"
+            else:
+                var_prefix = f"{bus.name}_{var.name}"
 
             write_ln(tpl %(f"{var_prefix}_width", var.width))
             # write_ln(tpl %(f"{var_prefix}_msb", var.msb))
@@ -166,6 +175,10 @@ def write_c_file(c_name, df_hash, o_dir) :
     write_ln(f'const char df_hash[] = "{df_hash}";')
 
     for bus in buses:
+        if not f'{bus.name}':
+            ## somehow we have an empty bus name...
+            continue
+
         write_ln("");
         write_ln(f"// {'-'*67}")
         write_ln(f"typedef struct {bus.name}_n {{")
@@ -185,7 +198,13 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             l = ((int(var.width)-1) // 8) + 1
             l_fmt = f"[{l}]" if l > 1 else ""
-            write_ln(f"    char {var.name}{l_fmt}; // {var.width} bits")
+            
+            if var.station:
+                var_prefix = f"{var.station}_{var.name}"
+            else:
+                var_prefix += f"{var.name}"
+
+            write_ln(f"    char {var_prefix}{l_fmt}; // {var.width} bits")
 
         write_ln(f"}} {bus.name}_rt;")
         
@@ -216,6 +235,10 @@ def write_sv_file(sv_name, df_hash, o_dir):
     write_ln(f"`define DF_HASH {df_hash};")
 
     for bus in buses:
+        if not f'{bus.name}':
+            ## somehow we have an empty bus name...
+            continue
+
         write_ln("");
         write_ln(f"// {'-'*67}")
         write_ln(f"`define {bus.name}_width {bus.width}")
@@ -231,8 +254,13 @@ def write_sv_file(sv_name, df_hash, o_dir):
             write_ln(f"// {var.parameter}")
 
             tpl = "`define %s %s"
-            var_prefix = f"{bus.name}_{var.name}"
 
+            
+            if var.station:
+                var_prefix = f"{bus.name}_{var.station}_{var.name}"
+            else:
+                var_prefix = f"{bus.name}_{var.name}"
+            
             write_ln(tpl %(f"{var_prefix}_width", var.width))
             # write_ln(tpl %(f"{var_prefix}_msb", var.msb))
             write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
@@ -258,6 +286,10 @@ def write_sv_file(sv_name, df_hash, o_dir):
     write_ln(f'const char df_hash[] = "{df_hash}";')
 
     for bus in buses:
+        if not f'{bus.name}':
+            ## somehow we have an empty bus name...
+            continue
+
         write_ln("");
         write_ln(f"// {'-'*67}")
         write_ln(f"typedef struct {bus.name}_n {{")
@@ -275,7 +307,13 @@ def write_sv_file(sv_name, df_hash, o_dir):
             elif var.type == 'var':
                 write_ln(f"    // {var.parameter}")
             msb = int(var.width)-1
-            write_ln(f"    logic [{msb}:0] {var.name};")
+
+            if var.station:
+                var_prefix = f"{var.station}_{var.name}"
+            else:
+                var_prefix = f"{var.name}"
+
+            write_ln(f"    logic [{msb}:0] {var_prefix};")
 
         write_ln(f"}} {bus.name}_rt;")
         
@@ -308,10 +346,14 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         
         write_ln("")
         msb = len(df_hash)*4-1
-        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s;"'
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s";'
         write_ln(f'  {tpl}' %(msb, df_hash))
         
         for bus in buses:
+            if not f'{bus.name}':
+                ## somehow we have an empty bus name...
+                continue
+
             write_ln("")
             write_ln("  " + "-" * 70)
         
@@ -327,8 +369,13 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 write_ln("")
                 write_ln(f"  -- {var.parameter}")
         
-                tpl = "  constant %s : natural := %s"
-                var_prefix = f"{bus.name}_{var.name}"
+                tpl = "  constant %s : natural := %s;"
+
+
+                if var.station:
+                    var_prefix = f"{bus.name}_{var.station}_{var.name}"
+                else:
+                    var_prefix = f"{bus.name}_{var.name}"
         
                 write_ln(tpl %(f"{var_prefix}_width", var.width))
                 write_ln(tpl %(f"{var_prefix}_msb", var.msb))
@@ -360,10 +407,14 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         
         write_ln("")
         msb = len(df_hash)*4-1
-        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s";'
         write_ln(f'  {tpl}' %(msb, df_hash))
         
         for bus in buses:
+            if not f'{bus.name}':
+                ## somehow we have an empty bus name...
+                continue
+
             write_ln("");
             write_ln(f"  -- {'-'*65}")
             write_ln(f"  type {bus.name}_rt is record")
@@ -380,11 +431,17 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                     write_ln(f"    -- struct {var.name}")
                 elif var.type == 'var':
                     write_ln(f"    -- {var.parameter}")
+
+                if var.station:
+                    var_prefix = f"{var.station}_{var.name}"
+                else:
+                    var_prefix = f"{var.name}"
+
                 msb = int(var.width)-1
                 if msb > 0:
-                    write_ln(f"    {var.name} : std_logic_vector({msb} downto 0);")
+                    write_ln(f"    {var_prefix} : std_logic_vector({msb} downto 0);")
                 else:
-                    write_ln(f"    {var.name} : std_logic;")
+                    write_ln(f"    {var_prefix} : std_logic;")
         
             write_ln(f"  end record {bus.name}_rt;")
             
@@ -414,10 +471,14 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         
         write_ln("")
         msb = len(df_hash)*4-1
-        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s"'
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0) := x"%s";'
         write_ln(f'  {tpl}' %(msb, df_hash))
         
         for bus in buses:
+            if not f'{bus.name}':
+                ## somehow we have an empty bus name...
+                continue
+            
             write_ln("");
             write_ln(f"  -- {'-'*65}")
 
@@ -451,7 +512,13 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 if var.name in included:
                     continue
                 included.append(var.name)
-                write_ln(f'    b.{var.name} := v({var.msb} downto {var.lsb});')
+
+                if var.station:
+                    var_prefix = f"{var.station}_{var.name}"
+                else:
+                    var_prefix = f"{var.name}"
+                    
+                write_ln(f'    b.{var_prefix} := v({var.msb} downto {var.lsb});')
 
             write_ln(f'    return b;')
             write_ln(f'  end function {bus.name}_fromVector;')
@@ -476,17 +543,17 @@ def write_latex_files(out, df_hash, o_dir):
 
     for bus in buses:
         if not f'{bus.name}':
-            ## somehow we have a bus name empty...
+            ## somehow we have an empty bus name...
             continue
         
         p = os.path.join(latex_dir, f'{bus.name}.csv')
         with open(p, 'w') as fobj:
             def write_ln(line):
                 fobj.write(f"{line}\n");
-            l = ",".join(["Name", "Width", "MSB index", "LSB index", "DECB"])
+            l = ",".join(["Name", "Station", "Width", "MSB index", "LSB index", "DECB"])
             write_ln(l)
             for var in bus.vars:
-                l = ",".join([var.name, var.width, var.msb, var.lsb, var.decb])
+                l = ",".join([var.name, var.station, var.width, var.msb, var.lsb, var.decb])
                 l = l.replace('_', '\\_')
                 write_ln(l)
 

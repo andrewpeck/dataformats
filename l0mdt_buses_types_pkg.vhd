@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"8e8e9b54"
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"8e8e9b54";
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -78,7 +78,7 @@ package mdttp_types_pkg is
     -- SLc phimod
     phimod : std_logic_vector(7 downto 0);
     -- SLc Inner Vector MDT chamber ID
-    vec_mdtid : std_logic_vector(5 downto 0);
+    INN_vec_mdtid : std_logic_vector(5 downto 0);
   end record SLCPROC_PIPELINE_COMMON_rt;
 
   -- -----------------------------------------------------------------
@@ -190,7 +190,7 @@ package mdttp_types_pkg is
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
     -- (COPY)
-    vec_mdtid : std_logic_vector(5 downto 0);
+    INN_vec_mdtid : std_logic_vector(5 downto 0);
     -- (COPY)
     phimod : std_logic_vector(7 downto 0);
     -- (COPY)
@@ -242,20 +242,6 @@ package mdttp_types_pkg is
     -- (COPY)
     destsl : std_logic_vector(1 downto 0);
   end record SLCPIPELINE_MTC_ENDCAP_rt;
-
-  -- -----------------------------------------------------------------
-  type _rt is record
-    -- (COPY)
-    SLCPIPELINE_MTC_BARREL : std_logic_vector(2 downto 0);
-    -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
-    -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(30 downto 0);
-    -- (COPY)
-    busy : std_logic;
-    -- (COPY)
-    destsl : std_logic_vector(1 downto 0);
-  end record _rt;
 
   -- -----------------------------------------------------------------
   type MTC_rt is record

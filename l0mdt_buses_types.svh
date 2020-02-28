@@ -75,7 +75,7 @@ typedef struct SLCPROC_PIPELINE_COMMON_n {
     // SLc phimod
     logic [7:0] phimod;
     // SLc Inner Vector MDT chamber ID
-    logic [5:0] vec_mdtid;
+    logic [5:0] INN_vec_mdtid;
 } SLCPROC_PIPELINE_COMMON_rt;
 
 // -------------------------------------------------------------------
@@ -187,7 +187,7 @@ typedef struct SLCPIPELINE_PTCALC_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUID;
     // (COPY)
-    logic [5:0] vec_mdtid;
+    logic [5:0] INN_vec_mdtid;
     // (COPY)
     logic [7:0] phimod;
     // (COPY)
@@ -239,20 +239,6 @@ typedef struct SLCPIPELINE_MTC_ENDCAP_n {
     // (COPY)
     logic [1:0] destsl;
 } SLCPIPELINE_MTC_ENDCAP_rt;
-
-// -------------------------------------------------------------------
-typedef struct _n {
-    // (COPY)
-    logic [2:0] SLCPIPELINE_MTC_BARREL;
-    // struct SLC_MUID
-    logic [19:0] SLC_MUID;
-    // struct SLC_COMMON
-    logic [30:0] SLC_COMMON;
-    // (COPY)
-    logic [0:0] busy;
-    // (COPY)
-    logic [1:0] destsl;
-} _rt;
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {

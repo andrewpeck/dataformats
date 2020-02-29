@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"33b31c36";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"285fd47d";
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -179,9 +179,9 @@ package mdttp_functions_pkg is
   end function SLCPROC_PIPELINE_BARREL_fromVector;
 
   -- -----------------------------------------------------------------
-  function CSM_toVector (d: in CSM_rt)
+  function TDC_toVector (d: in TDC_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(CSM_msb downto 0);
+    variable v : std_logic_vector(TDC_msb downto 0);
   begin
     v := d.chanid
          & d.edgemode
@@ -189,11 +189,11 @@ package mdttp_functions_pkg is
          & d.finetime
          & d.pulsewidth;
     return v;
-  end function CSM_toVector;
+  end function TDC_toVector;
 
-  function CSM_fromVector (v: in std_logic_vector)
-  return CSM_rt is
-    variable b : CSM_rt;
+  function TDC_fromVector (v: in std_logic_vector)
+  return TDC_rt is
+    variable b : TDC_rt;
   begin
     b.chanid := v(31 downto 27);
     b.edgemode := v(26 downto 25);
@@ -201,14 +201,14 @@ package mdttp_functions_pkg is
     b.finetime := v(12 downto 8);
     b.pulsewidth := v(7 downto 0);
     return b;
-  end function CSM_fromVector;
+  end function TDC_fromVector;
 
   -- -----------------------------------------------------------------
   function TDCFORMAT_toVector (d: in TDCFORMAT_rt)
   return std_logic_vector is
     variable v : std_logic_vector(TDCFORMAT_msb downto 0);
   begin
-    v := d.CSM
+    v := d.TDC
          & d.fiberid
          & d.elinkid
          & d.datavalid
@@ -220,7 +220,7 @@ package mdttp_functions_pkg is
   return TDCFORMAT_rt is
     variable b : TDCFORMAT_rt;
   begin
-    b.CSM := v(43 downto 12);
+    b.TDC := v(43 downto 12);
     b.fiberid := v(11 downto 7);
     b.elinkid := v(6 downto 3);
     b.datavalid := v(2 downto 2);
@@ -329,27 +329,27 @@ package mdttp_functions_pkg is
   end function HE_CSF_fromVector;
 
   -- -----------------------------------------------------------------
-  function SLCPIPELINE_PTCALC_toVector (d: in SLCPIPELINE_PTCALC_rt)
+  function SLCPIPE_PTCALC_toVector (d: in SLCPIPE_PTCALC_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPIPELINE_PTCALC_msb downto 0);
+    variable v : std_logic_vector(SLCPIPE_PTCALC_msb downto 0);
   begin
     v := d.SLC_MUID
          & d.vec_mdtid
          & d.phimod
          & d.charge;
     return v;
-  end function SLCPIPELINE_PTCALC_toVector;
+  end function SLCPIPE_PTCALC_toVector;
 
-  function SLCPIPELINE_PTCALC_fromVector (v: in std_logic_vector)
-  return SLCPIPELINE_PTCALC_rt is
-    variable b : SLCPIPELINE_PTCALC_rt;
+  function SLCPIPE_PTCALC_fromVector (v: in std_logic_vector)
+  return SLCPIPE_PTCALC_rt is
+    variable b : SLCPIPE_PTCALC_rt;
   begin
     b.SLC_MUID := v(52 downto 33);
     b.INN_vec_mdtid := v(32 downto 27);
     b.phimod := v(8 downto 1);
     b.charge := v(0 downto 0);
     return b;
-  end function SLCPIPELINE_PTCALC_fromVector;
+  end function SLCPIPE_PTCALC_fromVector;
 
   -- -----------------------------------------------------------------
   function SF_toVector (d: in SF_rt)
@@ -408,27 +408,27 @@ package mdttp_functions_pkg is
   end function PTCALC_fromVector;
 
   -- -----------------------------------------------------------------
-  function SLCPIPELINE_MTC_ENDCAP_toVector (d: in SLCPIPELINE_MTC_ENDCAP_rt)
+  function SLCPIPE_MTC_ENDCAP_toVector (d: in SLCPIPE_MTC_ENDCAP_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPIPELINE_MTC_ENDCAP_msb downto 0);
+    variable v : std_logic_vector(SLCPIPE_MTC_ENDCAP_msb downto 0);
   begin
     v := d.SLC_MUID
          & d.SLC_COMMON
          & d.busy
          & d.destsl;
     return v;
-  end function SLCPIPELINE_MTC_ENDCAP_toVector;
+  end function SLCPIPE_MTC_ENDCAP_toVector;
 
-  function SLCPIPELINE_MTC_ENDCAP_fromVector (v: in std_logic_vector)
-  return SLCPIPELINE_MTC_ENDCAP_rt is
-    variable b : SLCPIPELINE_MTC_ENDCAP_rt;
+  function SLCPIPE_MTC_ENDCAP_fromVector (v: in std_logic_vector)
+  return SLCPIPE_MTC_ENDCAP_rt is
+    variable b : SLCPIPE_MTC_ENDCAP_rt;
   begin
     b.SLC_MUID := v(53 downto 34);
     b.SLC_COMMON := v(33 downto 3);
     b.busy := v(2 downto 2);
     b.destsl := v(1 downto 0);
     return b;
-  end function SLCPIPELINE_MTC_ENDCAP_fromVector;
+  end function SLCPIPE_MTC_ENDCAP_fromVector;
 
   -- -----------------------------------------------------------------
   function MTC_toVector (d: in MTC_rt)

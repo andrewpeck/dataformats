@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "33b31c36";
+const char df_hash[] = "285fd47d";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -108,7 +108,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
 } SLCPROC_PIPELINE_BARREL_rt;
 
 // -------------------------------------------------------------------
-typedef struct CSM_n {
+typedef struct TDC_n {
     // Channel number within TDC
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanid; // 5 bits
     // Edge or pair mode
@@ -119,89 +119,89 @@ typedef struct CSM_n {
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetime; // 5 bits
     // Pulse width
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidth; // 8 bits
-} CSM_rt;
+} TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCFORMAT_n {
-    // struct CSM
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSM[4]; // 32 bits
+    // struct TDC
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDC[4]; // 32 bits
     // Fiber ID within board
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberid; // 5 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberid; // 5 bits
     // Elink ID within fiber
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkid; // 4 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkid; // 4 bits
     // Valid bit
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalid; // 1 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalid; // 1 bits
     // MDT Station Type (Inner, Middle, Outer, Extra)
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationid; // 2 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationid; // 2 bits
 } TDCFORMAT_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPROC_HESF_n {
     // struct SLC_MUID
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUID[3]; // 20 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUID[3]; // 20 bits
     // inner MDT segment chip destination
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_dest; // 2 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_dest; // 2 bits
     // SLc Inner Vector MDT chamber ID
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtid; // 6 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtid; // 6 bits
     // SLc inner vector rho position
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_pos[2]; // 10 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_pos[2]; // 10 bits
     // SLc inner vector theta angle
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_ang[2]; // 10 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_ang[2]; // 10 bits
 } SLCPROC_HESF_rt;
 
 // -------------------------------------------------------------------
 typedef struct TUBEREMAP_n {
     // Tube layer within one station
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layer; // 6 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layer; // 6 bits
     // Tube number within one station
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_num[2]; // 10 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_num[2]; // 10 bits
     // Tube radial position
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rho[3]; // 18 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rho[3]; // 18 bits
     // Tube position along z
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_z[3]; // 19 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_z[3]; // 19 bits
     // Tube (uncalibrated) time
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_time[3]; // 21 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_time[3]; // 21 bits
 } TUBEREMAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct HE_LSF_n {
     // Hit Valid bit
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_valid; // 1 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_valid; // 1 bits
     // Data Valid bit
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_valid; // 1 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localx[2]; // 14 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localx[2]; // 14 bits
     // Tube local position along second coord
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localy[2]; // 14 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localy[2]; // 14 bits
     // Tube drift radius
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radius[2]; // 9 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radius[2]; // 9 bits
 } HE_LSF_rt;
 
 // -------------------------------------------------------------------
 typedef struct HE_CSF_n {
     // Hit Valid bit
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_valid; // 1 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_valid; // 1 bits
     // Data Valid bit
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_valid; // 1 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localx[2]; // 15 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localx[2]; // 15 bits
     // Tube local position along second coord
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localy[2]; // 15 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localy[2]; // 15 bits
     // Tube drift radius
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localymdt_radius[2]; // 9 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localymdt_radius[2]; // 9 bits
 } HE_CSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPIPELINE_PTCALC_n {
+typedef struct SLCPIPE_PTCALC_n {
     // struct SLC_MUID
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthCSMfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localymdt_radiusSLC_MUID[3]; // 20 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localymdt_radiusSLC_MUID[3]; // 20 bits
     // (COPY)
     char INN_vec_mdtid; // 6 bits
     // (COPY)
     char INN_vec_mdtidphimod; // 8 bits
     // (COPY)
     char INN_vec_mdtidphimodcharge; // 1 bits
-} SLCPIPELINE_PTCALC_rt;
+} SLCPIPE_PTCALC_rt;
 
 // -------------------------------------------------------------------
 typedef struct SF_n {
@@ -238,7 +238,7 @@ typedef struct PTCALC_n {
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPIPELINE_MTC_ENDCAP_n {
+typedef struct SLCPIPE_MTC_ENDCAP_n {
     // struct SLC_MUID
     char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
@@ -247,7 +247,7 @@ typedef struct SLCPIPELINE_MTC_ENDCAP_n {
     char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusy; // 1 bits
     // (COPY)
     char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestsl; // 2 bits
-} SLCPIPELINE_MTC_ENDCAP_rt;
+} SLCPIPE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {

@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "33b31c36";
+const char df_hash[] = "285fd47d";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -160,32 +160,32 @@ const int SLCPROC_PIPELINE_ENDCAP_width = 124;
 const int SLCPROC_PIPELINE_BARREL_width = 129;
 
 // -------------------------------------------------------------------
-const int CSM_width = 32;
+const int TDC_width = 32;
 
 // Channel number within TDC
-const int CSM_chanid_width = 5;
-const int CSM_chanid_lsb = 27;
-const int CSM_chanid_decb = 0;
+const int TDC_chanid_width = 5;
+const int TDC_chanid_lsb = 27;
+const int TDC_chanid_decb = 0;
 
 // Edge or pair mode
-const int CSM_edgemode_width = 2;
-const int CSM_edgemode_lsb = 25;
-const int CSM_edgemode_decb = 0;
+const int TDC_edgemode_width = 2;
+const int TDC_edgemode_lsb = 25;
+const int TDC_edgemode_decb = 0;
 
 // TDC BCID
-const int CSM_coarsetime_width = 12;
-const int CSM_coarsetime_lsb = 13;
-const int CSM_coarsetime_decb = 0;
+const int TDC_coarsetime_width = 12;
+const int TDC_coarsetime_lsb = 13;
+const int TDC_coarsetime_decb = 0;
 
 // TDC fine time with BCID
-const int CSM_finetime_width = 5;
-const int CSM_finetime_lsb = 8;
-const int CSM_finetime_decb = 0;
+const int TDC_finetime_width = 5;
+const int TDC_finetime_lsb = 8;
+const int TDC_finetime_decb = 0;
 
 // Pulse width
-const int CSM_pulsewidth_width = 8;
-const int CSM_pulsewidth_lsb = 0;
-const int CSM_pulsewidth_decb = 0;
+const int TDC_pulsewidth_width = 8;
+const int TDC_pulsewidth_lsb = 0;
+const int TDC_pulsewidth_decb = 0;
 
 // -------------------------------------------------------------------
 const int TDCFORMAT_width = 44;
@@ -323,7 +323,7 @@ const int HE_CSF_mdt_radius_lsb = 0;
 const int HE_CSF_mdt_radius_decb = 4;
 
 // -------------------------------------------------------------------
-const int SLCPIPELINE_PTCALC_width = 53;
+const int SLCPIPE_PTCALC_width = 53;
 
 // -------------------------------------------------------------------
 const int SF_width = 55;
@@ -382,12 +382,12 @@ const int PTCALC_mtc_quality_lsb = 0;
 const int PTCALC_mtc_quality_decb = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPELINE_MTC_ENDCAP_width = 54;
+const int SLCPIPE_MTC_ENDCAP_width = 54;
 
 // 
-const int SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width = 20;
-const int SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb = 34;
-const int SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb = 0;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUID_width = 20;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb = 34;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUID_decb = 0;
 
 // -------------------------------------------------------------------
 const int MTC_width = 67;

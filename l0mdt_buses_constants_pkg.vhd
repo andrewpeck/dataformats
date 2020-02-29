@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"33b31c36";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"285fd47d";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -189,37 +189,37 @@ package mdttp_constants_pkg is
   constant SLCPROC_PIPELINE_BARREL_width : natural := 129;
 
   ----------------------------------------------------------------------
-  constant CSM_width : natural := 32;
+  constant TDC_width : natural := 32;
 
   -- Channel number within TDC
-  constant CSM_chanid_width : natural := 5;
-  constant CSM_chanid_msb : natural := 31;
-  constant CSM_chanid_lsb : natural := 27;
-  constant CSM_chanid_decb : natural := 0;
+  constant TDC_chanid_width : natural := 5;
+  constant TDC_chanid_msb : natural := 31;
+  constant TDC_chanid_lsb : natural := 27;
+  constant TDC_chanid_decb : natural := 0;
 
   -- Edge or pair mode
-  constant CSM_edgemode_width : natural := 2;
-  constant CSM_edgemode_msb : natural := 26;
-  constant CSM_edgemode_lsb : natural := 25;
-  constant CSM_edgemode_decb : natural := 0;
+  constant TDC_edgemode_width : natural := 2;
+  constant TDC_edgemode_msb : natural := 26;
+  constant TDC_edgemode_lsb : natural := 25;
+  constant TDC_edgemode_decb : natural := 0;
 
   -- TDC BCID
-  constant CSM_coarsetime_width : natural := 12;
-  constant CSM_coarsetime_msb : natural := 24;
-  constant CSM_coarsetime_lsb : natural := 13;
-  constant CSM_coarsetime_decb : natural := 0;
+  constant TDC_coarsetime_width : natural := 12;
+  constant TDC_coarsetime_msb : natural := 24;
+  constant TDC_coarsetime_lsb : natural := 13;
+  constant TDC_coarsetime_decb : natural := 0;
 
   -- TDC fine time with BCID
-  constant CSM_finetime_width : natural := 5;
-  constant CSM_finetime_msb : natural := 12;
-  constant CSM_finetime_lsb : natural := 8;
-  constant CSM_finetime_decb : natural := 0;
+  constant TDC_finetime_width : natural := 5;
+  constant TDC_finetime_msb : natural := 12;
+  constant TDC_finetime_lsb : natural := 8;
+  constant TDC_finetime_decb : natural := 0;
 
   -- Pulse width
-  constant CSM_pulsewidth_width : natural := 8;
-  constant CSM_pulsewidth_msb : natural := 7;
-  constant CSM_pulsewidth_lsb : natural := 0;
-  constant CSM_pulsewidth_decb : natural := 0;
+  constant TDC_pulsewidth_width : natural := 8;
+  constant TDC_pulsewidth_msb : natural := 7;
+  constant TDC_pulsewidth_lsb : natural := 0;
+  constant TDC_pulsewidth_decb : natural := 0;
 
   ----------------------------------------------------------------------
   constant TDCFORMAT_width : natural := 44;
@@ -381,7 +381,7 @@ package mdttp_constants_pkg is
   constant HE_CSF_mdt_radius_decb : natural := 4;
 
   ----------------------------------------------------------------------
-  constant SLCPIPELINE_PTCALC_width : natural := 53;
+  constant SLCPIPE_PTCALC_width : natural := 53;
 
   ----------------------------------------------------------------------
   constant SF_width : natural := 55;
@@ -450,13 +450,13 @@ package mdttp_constants_pkg is
   constant PTCALC_mtc_quality_decb : natural := 0;
 
   ----------------------------------------------------------------------
-  constant SLCPIPELINE_MTC_ENDCAP_width : natural := 54;
+  constant SLCPIPE_MTC_ENDCAP_width : natural := 54;
 
   -- 
-  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width : natural := 20;
-  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_msb : natural := 53;
-  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb : natural := 34;
-  constant SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb : natural := 0;
+  constant SLCPIPE_MTC_ENDCAP_SLC_MUID_width : natural := 20;
+  constant SLCPIPE_MTC_ENDCAP_SLC_MUID_msb : natural := 53;
+  constant SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb : natural := 34;
+  constant SLCPIPE_MTC_ENDCAP_SLC_MUID_decb : natural := 0;
 
   ----------------------------------------------------------------------
   constant MTC_width : natural := 67;

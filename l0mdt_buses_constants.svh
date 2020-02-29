@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 33b31c36;
+`define DF_HASH 285fd47d;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -157,32 +157,32 @@
 `define SLCPROC_PIPELINE_BARREL_width 129
 
 // -------------------------------------------------------------------
-`define CSM_width 32
+`define TDC_width 32
 
 // Channel number within TDC
-`define CSM_chanid_width 5
-`define CSM_chanid_lsb 27
-`define CSM_chanid_decb 0
+`define TDC_chanid_width 5
+`define TDC_chanid_lsb 27
+`define TDC_chanid_decb 0
 
 // Edge or pair mode
-`define CSM_edgemode_width 2
-`define CSM_edgemode_lsb 25
-`define CSM_edgemode_decb 0
+`define TDC_edgemode_width 2
+`define TDC_edgemode_lsb 25
+`define TDC_edgemode_decb 0
 
 // TDC BCID
-`define CSM_coarsetime_width 12
-`define CSM_coarsetime_lsb 13
-`define CSM_coarsetime_decb 0
+`define TDC_coarsetime_width 12
+`define TDC_coarsetime_lsb 13
+`define TDC_coarsetime_decb 0
 
 // TDC fine time with BCID
-`define CSM_finetime_width 5
-`define CSM_finetime_lsb 8
-`define CSM_finetime_decb 0
+`define TDC_finetime_width 5
+`define TDC_finetime_lsb 8
+`define TDC_finetime_decb 0
 
 // Pulse width
-`define CSM_pulsewidth_width 8
-`define CSM_pulsewidth_lsb 0
-`define CSM_pulsewidth_decb 0
+`define TDC_pulsewidth_width 8
+`define TDC_pulsewidth_lsb 0
+`define TDC_pulsewidth_decb 0
 
 // -------------------------------------------------------------------
 `define TDCFORMAT_width 44
@@ -320,7 +320,7 @@
 `define HE_CSF_mdt_radius_decb 4
 
 // -------------------------------------------------------------------
-`define SLCPIPELINE_PTCALC_width 53
+`define SLCPIPE_PTCALC_width 53
 
 // -------------------------------------------------------------------
 `define SF_width 55
@@ -379,12 +379,12 @@
 `define PTCALC_mtc_quality_decb 0
 
 // -------------------------------------------------------------------
-`define SLCPIPELINE_MTC_ENDCAP_width 54
+`define SLCPIPE_MTC_ENDCAP_width 54
 
 // 
-`define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_width 20
-`define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_lsb 34
-`define SLCPIPELINE_MTC_ENDCAP_SLC_MUID_decb 0
+`define SLCPIPE_MTC_ENDCAP_SLC_MUID_width 20
+`define SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb 34
+`define SLCPIPE_MTC_ENDCAP_SLC_MUID_decb 0
 
 // -------------------------------------------------------------------
 `define MTC_width 67

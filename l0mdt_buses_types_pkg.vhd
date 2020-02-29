@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"33b31c36";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"285fd47d";
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -102,7 +102,7 @@ package mdttp_types_pkg is
   end record SLCPROC_PIPELINE_BARREL_rt;
 
   -- -----------------------------------------------------------------
-  type CSM_rt is record
+  type TDC_rt is record
     -- Channel number within TDC
     chanid : std_logic_vector(4 downto 0);
     -- Edge or pair mode
@@ -113,12 +113,12 @@ package mdttp_types_pkg is
     finetime : std_logic_vector(4 downto 0);
     -- Pulse width
     pulsewidth : std_logic_vector(7 downto 0);
-  end record CSM_rt;
+  end record TDC_rt;
 
   -- -----------------------------------------------------------------
   type TDCFORMAT_rt is record
-    -- struct CSM
-    CSM : std_logic_vector(31 downto 0);
+    -- struct TDC
+    TDC : std_logic_vector(31 downto 0);
     -- Fiber ID within board
     fiberid : std_logic_vector(4 downto 0);
     -- Elink ID within fiber
@@ -186,7 +186,7 @@ package mdttp_types_pkg is
   end record HE_CSF_rt;
 
   -- -----------------------------------------------------------------
-  type SLCPIPELINE_PTCALC_rt is record
+  type SLCPIPE_PTCALC_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
     -- (COPY)
@@ -195,7 +195,7 @@ package mdttp_types_pkg is
     phimod : std_logic_vector(7 downto 0);
     -- (COPY)
     charge : std_logic;
-  end record SLCPIPELINE_PTCALC_rt;
+  end record SLCPIPE_PTCALC_rt;
 
   -- -----------------------------------------------------------------
   type SF_rt is record
@@ -232,7 +232,7 @@ package mdttp_types_pkg is
   end record PTCALC_rt;
 
   -- -----------------------------------------------------------------
-  type SLCPIPELINE_MTC_ENDCAP_rt is record
+  type SLCPIPE_MTC_ENDCAP_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
     -- struct SLC_COMMON
@@ -241,7 +241,7 @@ package mdttp_types_pkg is
     busy : std_logic;
     -- (COPY)
     destsl : std_logic_vector(1 downto 0);
-  end record SLCPIPELINE_MTC_ENDCAP_rt;
+  end record SLCPIPE_MTC_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
   type MTC_rt is record

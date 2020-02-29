@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "33b31c36";
+const char df_hash[] = "285fd47d";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -99,7 +99,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
 } SLCPROC_PIPELINE_BARREL_rt;
 
 // -------------------------------------------------------------------
-typedef struct CSM_n {
+typedef struct TDC_n {
     // Channel number within TDC
     logic [4:0] chanid;
     // Edge or pair mode
@@ -110,12 +110,12 @@ typedef struct CSM_n {
     logic [4:0] finetime;
     // Pulse width
     logic [7:0] pulsewidth;
-} CSM_rt;
+} TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCFORMAT_n {
-    // struct CSM
-    logic [31:0] CSM;
+    // struct TDC
+    logic [31:0] TDC;
     // Fiber ID within board
     logic [4:0] fiberid;
     // Elink ID within fiber
@@ -183,7 +183,7 @@ typedef struct HE_CSF_n {
 } HE_CSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPIPELINE_PTCALC_n {
+typedef struct SLCPIPE_PTCALC_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUID;
     // (COPY)
@@ -192,7 +192,7 @@ typedef struct SLCPIPELINE_PTCALC_n {
     logic [7:0] phimod;
     // (COPY)
     logic [0:0] charge;
-} SLCPIPELINE_PTCALC_rt;
+} SLCPIPE_PTCALC_rt;
 
 // -------------------------------------------------------------------
 typedef struct SF_n {
@@ -229,7 +229,7 @@ typedef struct PTCALC_n {
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPIPELINE_MTC_ENDCAP_n {
+typedef struct SLCPIPE_MTC_ENDCAP_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUID;
     // struct SLC_COMMON
@@ -238,7 +238,7 @@ typedef struct SLCPIPELINE_MTC_ENDCAP_n {
     logic [0:0] busy;
     // (COPY)
     logic [1:0] destsl;
-} SLCPIPELINE_MTC_ENDCAP_rt;
+} SLCPIPE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {

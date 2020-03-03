@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "285fd47d";
+const char df_hash[] = "b283c9bb";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -295,27 +295,27 @@ const int HE_LSF_mdt_radius_lsb = 0;
 const int HE_LSF_mdt_radius_decb = 5;
 
 // -------------------------------------------------------------------
-const int HE_CSF_width = 41;
+const int HE_CSF_width = 39;
 
 // Hit Valid bit
 const int HE_CSF_mdt_valid_width = 1;
-const int HE_CSF_mdt_valid_lsb = 40;
+const int HE_CSF_mdt_valid_lsb = 38;
 const int HE_CSF_mdt_valid_decb = 0;
 
 // Data Valid bit
 const int HE_CSF_data_valid_width = 1;
-const int HE_CSF_data_valid_lsb = 39;
+const int HE_CSF_data_valid_lsb = 37;
 const int HE_CSF_data_valid_decb = 0;
 
 // Tube local position along precision coord
-const int HE_CSF_mdt_localx_width = 15;
-const int HE_CSF_mdt_localx_lsb = 24;
-const int HE_CSF_mdt_localx_decb = 4;
+const int HE_CSF_mdt_localx_width = 14;
+const int HE_CSF_mdt_localx_lsb = 23;
+const int HE_CSF_mdt_localx_decb = 3;
 
 // Tube local position along second coord
-const int HE_CSF_mdt_localy_width = 15;
+const int HE_CSF_mdt_localy_width = 14;
 const int HE_CSF_mdt_localy_lsb = 9;
-const int HE_CSF_mdt_localy_decb = 4;
+const int HE_CSF_mdt_localy_decb = 3;
 
 // Tube drift radius
 const int HE_CSF_mdt_radius_width = 9;

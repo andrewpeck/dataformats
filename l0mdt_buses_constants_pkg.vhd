@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"285fd47d";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"b283c9bb";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -398,35 +398,35 @@ package mdttp_constants_pkg is
   constant HE_LSF_mdt_radius_decb : natural := 5;
 
   ----------------------------------------------------------------------
-  constant HE_CSF_width : natural := 41;
+  constant HE_CSF_width : natural := 39;
 
   -- Hit Valid bit
   constant HE_CSF_mdt_valid_width : natural := 1;
   constant HE_CSF_mdt_valid_mult : real := 2;
-  constant HE_CSF_mdt_valid_msb : natural := 40;
-  constant HE_CSF_mdt_valid_lsb : natural := 40;
+  constant HE_CSF_mdt_valid_msb : natural := 38;
+  constant HE_CSF_mdt_valid_lsb : natural := 38;
   constant HE_CSF_mdt_valid_decb : natural := 0;
 
   -- Data Valid bit
   constant HE_CSF_data_valid_width : natural := 1;
   constant HE_CSF_data_valid_mult : real := 2;
-  constant HE_CSF_data_valid_msb : natural := 39;
-  constant HE_CSF_data_valid_lsb : natural := 39;
+  constant HE_CSF_data_valid_msb : natural := 37;
+  constant HE_CSF_data_valid_lsb : natural := 37;
   constant HE_CSF_data_valid_decb : natural := 0;
 
   -- Tube local position along precision coord
-  constant HE_CSF_mdt_localx_width : natural := 15;
-  constant HE_CSF_mdt_localx_mult : real := 32;
-  constant HE_CSF_mdt_localx_msb : natural := 38;
-  constant HE_CSF_mdt_localx_lsb : natural := 24;
-  constant HE_CSF_mdt_localx_decb : natural := 4;
+  constant HE_CSF_mdt_localx_width : natural := 14;
+  constant HE_CSF_mdt_localx_mult : real := 16;
+  constant HE_CSF_mdt_localx_msb : natural := 36;
+  constant HE_CSF_mdt_localx_lsb : natural := 23;
+  constant HE_CSF_mdt_localx_decb : natural := 3;
 
   -- Tube local position along second coord
-  constant HE_CSF_mdt_localy_width : natural := 15;
-  constant HE_CSF_mdt_localy_mult : real := 32;
-  constant HE_CSF_mdt_localy_msb : natural := 23;
+  constant HE_CSF_mdt_localy_width : natural := 14;
+  constant HE_CSF_mdt_localy_mult : real := 16;
+  constant HE_CSF_mdt_localy_msb : natural := 22;
   constant HE_CSF_mdt_localy_lsb : natural := 9;
-  constant HE_CSF_mdt_localy_decb : natural := 4;
+  constant HE_CSF_mdt_localy_decb : natural := 3;
 
   -- Tube drift radius
   constant HE_CSF_mdt_radius_width : natural := 9;

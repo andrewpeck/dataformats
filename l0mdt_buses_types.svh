@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "285fd47d";
+const char df_hash[] = "b283c9bb";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -175,9 +175,9 @@ typedef struct HE_CSF_n {
     // Data Valid bit
     logic [0:0] data_valid;
     // Tube local position along precision coord
-    logic [14:0] mdt_localx;
+    logic [13:0] mdt_localx;
     // Tube local position along second coord
-    logic [14:0] mdt_localy;
+    logic [13:0] mdt_localy;
     // Tube drift radius
     logic [8:0] mdt_radius;
 } HE_CSF_rt;

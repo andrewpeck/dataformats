@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 285fd47d;
+`define DF_HASH b283c9bb;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -292,27 +292,27 @@
 `define HE_LSF_mdt_radius_decb 5
 
 // -------------------------------------------------------------------
-`define HE_CSF_width 41
+`define HE_CSF_width 39
 
 // Hit Valid bit
 `define HE_CSF_mdt_valid_width 1
-`define HE_CSF_mdt_valid_lsb 40
+`define HE_CSF_mdt_valid_lsb 38
 `define HE_CSF_mdt_valid_decb 0
 
 // Data Valid bit
 `define HE_CSF_data_valid_width 1
-`define HE_CSF_data_valid_lsb 39
+`define HE_CSF_data_valid_lsb 37
 `define HE_CSF_data_valid_decb 0
 
 // Tube local position along precision coord
-`define HE_CSF_mdt_localx_width 15
-`define HE_CSF_mdt_localx_lsb 24
-`define HE_CSF_mdt_localx_decb 4
+`define HE_CSF_mdt_localx_width 14
+`define HE_CSF_mdt_localx_lsb 23
+`define HE_CSF_mdt_localx_decb 3
 
 // Tube local position along second coord
-`define HE_CSF_mdt_localy_width 15
+`define HE_CSF_mdt_localy_width 14
 `define HE_CSF_mdt_localy_lsb 9
-`define HE_CSF_mdt_localy_decb 4
+`define HE_CSF_mdt_localy_decb 3
 
 // Tube drift radius
 `define HE_CSF_mdt_radius_width 9

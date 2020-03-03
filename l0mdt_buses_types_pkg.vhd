@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"285fd47d";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"b283c9bb";
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -178,9 +178,9 @@ package mdttp_types_pkg is
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(14 downto 0);
+    mdt_localx : std_logic_vector(13 downto 0);
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(14 downto 0);
+    mdt_localy : std_logic_vector(13 downto 0);
     -- Tube drift radius
     mdt_radius : std_logic_vector(8 downto 0);
   end record HE_CSF_rt;

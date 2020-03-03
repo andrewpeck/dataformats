@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "285fd47d";
+const char df_hash[] = "b283c9bb";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -184,9 +184,9 @@ typedef struct HE_CSF_n {
     // Data Valid bit
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localx[2]; // 15 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localx[2]; // 14 bits
     // Tube local position along second coord
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localy[2]; // 15 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localy[2]; // 14 bits
     // Tube drift radius
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_timemdt_validdata_validmdt_localxmdt_localymdt_radiusmdt_validdata_validmdt_localxmdt_localymdt_radius[2]; // 9 bits
 } HE_CSF_rt;

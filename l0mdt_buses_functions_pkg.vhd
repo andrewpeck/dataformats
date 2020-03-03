@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"285fd47d";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"b283c9bb";
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -320,10 +320,10 @@ package mdttp_functions_pkg is
   return HE_CSF_rt is
     variable b : HE_CSF_rt;
   begin
-    b.mdt_valid := v(40 downto 40);
-    b.data_valid := v(39 downto 39);
-    b.mdt_localx := v(38 downto 24);
-    b.mdt_localy := v(23 downto 9);
+    b.mdt_valid := v(38 downto 38);
+    b.data_valid := v(37 downto 37);
+    b.mdt_localx := v(36 downto 23);
+    b.mdt_localy := v(22 downto 9);
     b.mdt_radius := v(8 downto 0);
     return b;
   end function HE_CSF_fromVector;

@@ -94,12 +94,12 @@ mdt_radius,,9,8,0,5,0,15,0.05000,mm,,SF,HE,Tube drift radius,var,,LSF
 TOTAL,,39,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 HE_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_valid,,1,40,40,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
-data_valid,,1,39,39,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
-mdt_localx,,15,38,24,4,0,1024,0.05000,mm,,SF,HE,Tube local position along precision coord,var,,csf
-mdt_localy,,15,23,9,4,-512,512,0.05000,mm,,SF,HE,Tube local position along second coord,var,,csf
+mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
+data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
+mdt_localx,,14,36,23,3,0,1024,0.06500,mm,,SF,HE,Tube local position along precision coord,var,,csf
+mdt_localy,,14,22,9,3,-512,512,0.06500,mm,,SF,HE,Tube local position along second coord,var,,csf
 mdt_radius,,9,8,0,4,0,16,0.05000,mm,,SF,HE,Tube drift radius,var,,csf
-TOTAL,,41,,,,,,,,,,,,,,
+TOTAL,,39,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,52,33,0,,,,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,

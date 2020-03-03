@@ -12,8 +12,8 @@ class Var(NamedTuple):
     msb: int
     lsb: int
     decb: int
-    low: int
-    high: int
+    low: float
+    high: float
     prec: int
     units: str
     destination_chip: str
@@ -61,8 +61,8 @@ def read_csv(input_file) :
                 continue
     
             vars.append(Var(*row))
-
          
+
 now = datetime.now(tz=None)
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 date_now = datetime.now(timezone.utc).astimezone().tzname()
@@ -370,14 +370,19 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 write_ln(f"  -- {var.parameter}")
         
                 tpl = "  constant %s : natural := %s;"
-
-
+                tpl_real = "  constant %s : real := %s;"
+                
                 if var.station:
                     var_prefix = f"{bus.name}_{var.station}_{var.name}"
-                else:
+       	        else:
                     var_prefix = f"{bus.name}_{var.name}"
-        
+			 
+                mult = 0
+                if var.high != '' and var.low!= '':
+                    mult = round((2**int(var.width))/(float(var.high)-float(var.low)))
+
                 write_ln(tpl %(f"{var_prefix}_width", var.width))
+                write_ln(tpl_real %(f"{var_prefix}_mult", mult))
                 write_ln(tpl %(f"{var_prefix}_msb", var.msb))
                 write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
                 write_ln(tpl %(f"{var_prefix}_decb", var.decb))

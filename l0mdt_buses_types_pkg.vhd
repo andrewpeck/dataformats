@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"b283c9bb";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"d65caa76";
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -242,6 +242,20 @@ package mdttp_types_pkg is
     -- (COPY)
     destsl : std_logic_vector(1 downto 0);
   end record SLCPIPE_MTC_ENDCAP_rt;
+
+  -- -----------------------------------------------------------------
+  type SLCPIPE_MTC_BARREL_rt is record
+    -- (COPY)
+    cointype : std_logic_vector(2 downto 0);
+    -- struct SLC_MUID
+    SLC_MUID : std_logic_vector(19 downto 0);
+    -- struct SLC_COMMON
+    SLC_COMMON : std_logic_vector(30 downto 0);
+    -- (COPY)
+    busy : std_logic;
+    -- (COPY)
+    destsl : std_logic_vector(1 downto 0);
+  end record SLCPIPE_MTC_BARREL_rt;
 
   -- -----------------------------------------------------------------
   type MTC_rt is record

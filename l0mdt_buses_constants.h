@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "b283c9bb";
+const char df_hash[] = "d65caa76";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_width = 20;
@@ -388,6 +388,14 @@ const int SLCPIPE_MTC_ENDCAP_width = 54;
 const int SLCPIPE_MTC_ENDCAP_SLC_MUID_width = 20;
 const int SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb = 34;
 const int SLCPIPE_MTC_ENDCAP_SLC_MUID_decb = 0;
+
+// -------------------------------------------------------------------
+const int SLCPIPE_MTC_BARREL_width = 57;
+
+// 
+const int SLCPIPE_MTC_BARREL_SLC_MUID_width = 20;
+const int SLCPIPE_MTC_BARREL_SLC_MUID_lsb = 34;
+const int SLCPIPE_MTC_BARREL_SLC_MUID_decb = 0;
 
 // -------------------------------------------------------------------
 const int MTC_width = 67;

@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH b283c9bb;
+`define DF_HASH d65caa76;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -385,6 +385,14 @@
 `define SLCPIPE_MTC_ENDCAP_SLC_MUID_width 20
 `define SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb 34
 `define SLCPIPE_MTC_ENDCAP_SLC_MUID_decb 0
+
+// -------------------------------------------------------------------
+`define SLCPIPE_MTC_BARREL_width 57
+
+// 
+`define SLCPIPE_MTC_BARREL_SLC_MUID_width 20
+`define SLCPIPE_MTC_BARREL_SLC_MUID_lsb 34
+`define SLCPIPE_MTC_BARREL_SLC_MUID_decb 0
 
 // -------------------------------------------------------------------
 `define MTC_width 67

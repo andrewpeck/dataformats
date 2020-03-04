@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"b283c9bb";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"d65caa76";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -523,6 +523,16 @@ package mdttp_constants_pkg is
   constant SLCPIPE_MTC_ENDCAP_SLC_MUID_msb : natural := 53;
   constant SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb : natural := 34;
   constant SLCPIPE_MTC_ENDCAP_SLC_MUID_decb : natural := 0;
+
+  ----------------------------------------------------------------------
+  constant SLCPIPE_MTC_BARREL_width : natural := 57;
+
+  -- 
+  constant SLCPIPE_MTC_BARREL_SLC_MUID_width : natural := 20;
+  constant SLCPIPE_MTC_BARREL_SLC_MUID_mult : real := 0;
+  constant SLCPIPE_MTC_BARREL_SLC_MUID_msb : natural := 53;
+  constant SLCPIPE_MTC_BARREL_SLC_MUID_lsb : natural := 34;
+  constant SLCPIPE_MTC_BARREL_SLC_MUID_decb : natural := 0;
 
   ----------------------------------------------------------------------
   constant MTC_width : natural := 67;

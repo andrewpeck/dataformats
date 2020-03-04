@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"b283c9bb";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"d65caa76";
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -429,6 +429,31 @@ package mdttp_functions_pkg is
     b.destsl := v(1 downto 0);
     return b;
   end function SLCPIPE_MTC_ENDCAP_fromVector;
+
+  -- -----------------------------------------------------------------
+  function SLCPIPE_MTC_BARREL_toVector (d: in SLCPIPE_MTC_BARREL_rt)
+  return std_logic_vector is
+    variable v : std_logic_vector(SLCPIPE_MTC_BARREL_msb downto 0);
+  begin
+    v := d.cointype
+         & d.SLC_MUID
+         & d.SLC_COMMON
+         & d.busy
+         & d.destsl;
+    return v;
+  end function SLCPIPE_MTC_BARREL_toVector;
+
+  function SLCPIPE_MTC_BARREL_fromVector (v: in std_logic_vector)
+  return SLCPIPE_MTC_BARREL_rt is
+    variable b : SLCPIPE_MTC_BARREL_rt;
+  begin
+    b.cointype := v(56 downto 54);
+    b.SLC_MUID := v(53 downto 34);
+    b.SLC_COMMON := v(33 downto 3);
+    b.busy := v(2 downto 2);
+    b.destsl := v(1 downto 0);
+    return b;
+  end function SLCPIPE_MTC_BARREL_fromVector;
 
   -- -----------------------------------------------------------------
   function MTC_toVector (d: in MTC_rt)

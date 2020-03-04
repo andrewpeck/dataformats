@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "b283c9bb";
+const char df_hash[] = "d65caa76";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -250,23 +250,37 @@ typedef struct SLCPIPE_MTC_ENDCAP_n {
 } SLCPIPE_MTC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
+typedef struct SLCPIPE_MTC_BARREL_n {
+    // (COPY)
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointype; // 3 bits
+    // struct SLC_MUID
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUID[3]; // 20 bits
+    // struct SLC_COMMON
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMON[4]; // 31 bits
+    // (COPY)
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusy; // 1 bits
+    // (COPY)
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestsl; // 2 bits
+} SLCPIPE_MTC_BARREL_rt;
+
+// -------------------------------------------------------------------
 typedef struct MTC_n {
     // struct SLC_COMMON
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMON[4]; // 31 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMON[4]; // 31 bits
     // (COPY)
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_eta[2]; // 14 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_eta[2]; // 14 bits
     // (COPY)
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_pt; // 8 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_pt; // 8 bits
     // (COPY)
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthresh; // 4 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthresh; // 4 bits
     // (COPY)
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_charge; // 1 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_charge; // 1 bits
     // MDT processing flags
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_procflags; // 4 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_procflags; // 4 bits
     // (COPY)
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_procflagsmtc_nsegments; // 2 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_procflagsmtc_nsegments; // 2 bits
     // (COPY)
-    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_procflagsmtc_nsegmentsmtc_quality; // 3 bits
+    char INN_vec_mdtidphimodchargeSLC_MUIDvec_mdtidsegvalidsegposseganglesegqualitySLC_MUIDmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_nsegmentsmtc_qualitySLC_MUIDSLC_COMMONbusydestslcointypeSLC_MUIDSLC_COMMONbusydestslSLC_COMMONmtc_etamtc_ptmtc_ptthreshmtc_chargemtc_procflagsmtc_nsegmentsmtc_quality; // 3 bits
 } MTC_rt;
 
 // -------------------------------------------------------------------

@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"d65caa76";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
 
   -- -----------------------------------------------------------------
   function SLC_MUID_toVector (d: in SLC_MUID_rt)
@@ -270,11 +270,11 @@ package mdttp_functions_pkg is
   return TUBEREMAP_rt is
     variable b : TUBEREMAP_rt;
   begin
-    b.mdt_tube_layer := v(73 downto 68);
-    b.mdt_tube_num := v(67 downto 58);
-    b.mdt_tube_rho := v(57 downto 40);
-    b.mdt_tube_z := v(39 downto 21);
-    b.mdt_tube_time := v(20 downto 0);
+    b.mdt_tube_layer := v(68 downto 64);
+    b.mdt_tube_num := v(63 downto 55);
+    b.mdt_tube_rho := v(54 downto 37);
+    b.mdt_tube_z := v(36 downto 18);
+    b.mdt_tube_time := v(17 downto 0);
     return b;
   end function TUBEREMAP_fromVector;
 

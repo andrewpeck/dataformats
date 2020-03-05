@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "d65caa76";
+const char df_hash[] = "a34aee13";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -143,15 +143,15 @@ typedef struct SLCPROC_HESF_n {
 // -------------------------------------------------------------------
 typedef struct TUBEREMAP_n {
     // Tube layer within one station
-    logic [5:0] mdt_tube_layer;
+    logic [4:0] mdt_tube_layer;
     // Tube number within one station
-    logic [9:0] mdt_tube_num;
+    logic [8:0] mdt_tube_num;
     // Tube radial position
     logic [17:0] mdt_tube_rho;
     // Tube position along z
     logic [18:0] mdt_tube_z;
     // Tube (uncalibrated) time
-    logic [20:0] mdt_tube_time;
+    logic [17:0] mdt_tube_time;
 } TUBEREMAP_rt;
 
 // -------------------------------------------------------------------

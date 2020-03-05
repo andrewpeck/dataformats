@@ -1,7 +1,7 @@
 Name,Station,Width,MSB index,LSB index,DECB
 mdt\_valid,,1,38,38,0
 data\_valid,,1,37,37,0
-mdt\_localx,,14,36,23,3
-mdt\_localy,,14,22,9,3
-mdt\_radius,,9,8,0,4
+mdt\_localx,,14,36,23,4
+mdt\_localy,,14,22,9,4
+mdt\_radius,,9,8,0,5
 

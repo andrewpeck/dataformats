@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "d65caa76";
+const char df_hash[] = "a34aee13";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -152,15 +152,15 @@ typedef struct SLCPROC_HESF_n {
 // -------------------------------------------------------------------
 typedef struct TUBEREMAP_n {
     // Tube layer within one station
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layer; // 6 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layer; // 5 bits
     // Tube number within one station
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_num[2]; // 10 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_num[2]; // 9 bits
     // Tube radial position
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rho[3]; // 18 bits
     // Tube position along z
     char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_z[3]; // 19 bits
     // Tube (uncalibrated) time
-    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_time[3]; // 21 bits
+    char INN_vec_mdtidSLCPROC_PIPELINE_COMMONSLC_ENDCAPSLC_MUIDSLCPROC_PIPELINE_COMMONSLC_BARRELSLC_MUIDchanidedgemodecoarsetimefinetimepulsewidthTDCfiberidelinkiddatavalidstationidSLC_MUIDmdtseg_destvec_mdtidvec_posvec_angmdt_tube_layermdt_tube_nummdt_tube_rhomdt_tube_zmdt_tube_time[3]; // 18 bits
 } TUBEREMAP_rt;
 
 // -------------------------------------------------------------------

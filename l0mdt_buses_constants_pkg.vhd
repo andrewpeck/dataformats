@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"d65caa76";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_width : natural := 20;
@@ -57,7 +57,7 @@ package mdttp_constants_pkg is
   constant SLC_COMMON_poseta_mult : real := 3034;
   constant SLC_COMMON_poseta_msb : natural := 27;
   constant SLC_COMMON_poseta_lsb : natural := 14;
-  constant SLC_COMMON_poseta_decb : natural := 11;
+  constant SLC_COMMON_poseta_decb : natural := 12;
 
   -- SLc Phi Position
   constant SLC_COMMON_posphi_width : natural := 9;
@@ -243,14 +243,14 @@ package mdttp_constants_pkg is
   constant TDC_finetime_mult : real := 1;
   constant TDC_finetime_msb : natural := 12;
   constant TDC_finetime_lsb : natural := 8;
-  constant TDC_finetime_decb : natural := 0;
+  constant TDC_finetime_decb : natural := 1;
 
   -- Pulse width
   constant TDC_pulsewidth_width : natural := 8;
   constant TDC_pulsewidth_mult : real := 1;
   constant TDC_pulsewidth_msb : natural := 7;
   constant TDC_pulsewidth_lsb : natural := 0;
-  constant TDC_pulsewidth_decb : natural := 0;
+  constant TDC_pulsewidth_decb : natural := 1;
 
   ----------------------------------------------------------------------
   constant TDCFORMAT_width : natural := 44;
@@ -322,42 +322,42 @@ package mdttp_constants_pkg is
   constant SLCPROC_HESF_vec_ang_decb : natural := 0;
 
   ----------------------------------------------------------------------
-  constant TUBEREMAP_width : natural := 74;
+  constant TUBEREMAP_width : natural := 69;
 
   -- Tube layer within one station
-  constant TUBEREMAP_mdt_tube_layer_width : natural := 6;
-  constant TUBEREMAP_mdt_tube_layer_mult : real := 2;
-  constant TUBEREMAP_mdt_tube_layer_msb : natural := 73;
-  constant TUBEREMAP_mdt_tube_layer_lsb : natural := 68;
+  constant TUBEREMAP_mdt_tube_layer_width : natural := 5;
+  constant TUBEREMAP_mdt_tube_layer_mult : real := 1;
+  constant TUBEREMAP_mdt_tube_layer_msb : natural := 68;
+  constant TUBEREMAP_mdt_tube_layer_lsb : natural := 64;
   constant TUBEREMAP_mdt_tube_layer_decb : natural := 0;
 
   -- Tube number within one station
-  constant TUBEREMAP_mdt_tube_num_width : natural := 10;
-  constant TUBEREMAP_mdt_tube_num_mult : real := 2;
-  constant TUBEREMAP_mdt_tube_num_msb : natural := 67;
-  constant TUBEREMAP_mdt_tube_num_lsb : natural := 58;
+  constant TUBEREMAP_mdt_tube_num_width : natural := 9;
+  constant TUBEREMAP_mdt_tube_num_mult : real := 1;
+  constant TUBEREMAP_mdt_tube_num_msb : natural := 63;
+  constant TUBEREMAP_mdt_tube_num_lsb : natural := 55;
   constant TUBEREMAP_mdt_tube_num_decb : natural := 0;
 
   -- Tube radial position
   constant TUBEREMAP_mdt_tube_rho_width : natural := 18;
   constant TUBEREMAP_mdt_tube_rho_mult : real := 22;
-  constant TUBEREMAP_mdt_tube_rho_msb : natural := 57;
-  constant TUBEREMAP_mdt_tube_rho_lsb : natural := 40;
-  constant TUBEREMAP_mdt_tube_rho_decb : natural := 4;
+  constant TUBEREMAP_mdt_tube_rho_msb : natural := 54;
+  constant TUBEREMAP_mdt_tube_rho_lsb : natural := 37;
+  constant TUBEREMAP_mdt_tube_rho_decb : natural := 5;
 
   -- Tube position along z
   constant TUBEREMAP_mdt_tube_z_width : natural := 19;
   constant TUBEREMAP_mdt_tube_z_mult : real := 21;
-  constant TUBEREMAP_mdt_tube_z_msb : natural := 39;
-  constant TUBEREMAP_mdt_tube_z_lsb : natural := 21;
-  constant TUBEREMAP_mdt_tube_z_decb : natural := 4;
+  constant TUBEREMAP_mdt_tube_z_msb : natural := 36;
+  constant TUBEREMAP_mdt_tube_z_lsb : natural := 18;
+  constant TUBEREMAP_mdt_tube_z_decb : natural := 5;
 
   -- Tube (uncalibrated) time
-  constant TUBEREMAP_mdt_tube_time_width : natural := 21;
-  constant TUBEREMAP_mdt_tube_time_mult : real := 20;
-  constant TUBEREMAP_mdt_tube_time_msb : natural := 20;
+  constant TUBEREMAP_mdt_tube_time_width : natural := 18;
+  constant TUBEREMAP_mdt_tube_time_mult : real := 3;
+  constant TUBEREMAP_mdt_tube_time_msb : natural := 17;
   constant TUBEREMAP_mdt_tube_time_lsb : natural := 0;
-  constant TUBEREMAP_mdt_tube_time_decb : natural := 4;
+  constant TUBEREMAP_mdt_tube_time_decb : natural := 1;
 
   ----------------------------------------------------------------------
   constant HE_LSF_width : natural := 39;
@@ -381,14 +381,14 @@ package mdttp_constants_pkg is
   constant HE_LSF_mdt_localx_mult : real := 21;
   constant HE_LSF_mdt_localx_msb : natural := 36;
   constant HE_LSF_mdt_localx_lsb : natural := 23;
-  constant HE_LSF_mdt_localx_decb : natural := 4;
+  constant HE_LSF_mdt_localx_decb : natural := 5;
 
   -- Tube local position along second coord
   constant HE_LSF_mdt_localy_width : natural := 14;
   constant HE_LSF_mdt_localy_mult : real := 23;
   constant HE_LSF_mdt_localy_msb : natural := 22;
   constant HE_LSF_mdt_localy_lsb : natural := 9;
-  constant HE_LSF_mdt_localy_decb : natural := 4;
+  constant HE_LSF_mdt_localy_decb : natural := 5;
 
   -- Tube drift radius
   constant HE_LSF_mdt_radius_width : natural := 9;
@@ -419,21 +419,21 @@ package mdttp_constants_pkg is
   constant HE_CSF_mdt_localx_mult : real := 16;
   constant HE_CSF_mdt_localx_msb : natural := 36;
   constant HE_CSF_mdt_localx_lsb : natural := 23;
-  constant HE_CSF_mdt_localx_decb : natural := 3;
+  constant HE_CSF_mdt_localx_decb : natural := 4;
 
   -- Tube local position along second coord
   constant HE_CSF_mdt_localy_width : natural := 14;
   constant HE_CSF_mdt_localy_mult : real := 16;
   constant HE_CSF_mdt_localy_msb : natural := 22;
   constant HE_CSF_mdt_localy_lsb : natural := 9;
-  constant HE_CSF_mdt_localy_decb : natural := 3;
+  constant HE_CSF_mdt_localy_decb : natural := 4;
 
   -- Tube drift radius
   constant HE_CSF_mdt_radius_width : natural := 9;
   constant HE_CSF_mdt_radius_mult : real := 32;
   constant HE_CSF_mdt_radius_msb : natural := 8;
   constant HE_CSF_mdt_radius_lsb : natural := 0;
-  constant HE_CSF_mdt_radius_decb : natural := 4;
+  constant HE_CSF_mdt_radius_decb : natural := 5;
 
   ----------------------------------------------------------------------
   constant SLCPIPE_PTCALC_width : natural := 53;
@@ -453,7 +453,7 @@ package mdttp_constants_pkg is
   constant SF_segpos_mult : real := 5;
   constant SF_segpos_msb : natural := 27;
   constant SF_segpos_lsb : natural := 12;
-  constant SF_segpos_decb : natural := 2;
+  constant SF_segpos_decb : natural := 3;
 
   -- SF MDT segment angle along the precision coord
   constant SF_segangle_width : natural := 11;
@@ -477,14 +477,14 @@ package mdttp_constants_pkg is
   constant PTCALC_mtc_eta_mult : real := 3034;
   constant PTCALC_mtc_eta_msb : natural := 31;
   constant PTCALC_mtc_eta_lsb : natural := 18;
-  constant PTCALC_mtc_eta_decb : natural := 11;
+  constant PTCALC_mtc_eta_decb : natural := 12;
 
   -- pT calculated by the pT Calc
   constant PTCALC_mtc_pt_width : natural := 8;
   constant PTCALC_mtc_pt_mult : real := 3;
   constant PTCALC_mtc_pt_msb : natural := 17;
   constant PTCALC_mtc_pt_lsb : natural := 10;
-  constant PTCALC_mtc_pt_decb : natural := 1;
+  constant PTCALC_mtc_pt_decb : natural := 2;
 
   -- pT threshold satisfied by the MDT TC
   constant PTCALC_mtc_ptthresh_width : natural := 4;

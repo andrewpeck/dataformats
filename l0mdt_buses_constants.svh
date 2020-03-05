@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH d65caa76;
+`define DF_HASH a34aee13;
 
 // -------------------------------------------------------------------
 `define SLC_MUID_width 20
@@ -39,7 +39,7 @@
 // SLc Eta Position
 `define SLC_COMMON_poseta_width 14
 `define SLC_COMMON_poseta_lsb 14
-`define SLC_COMMON_poseta_decb 11
+`define SLC_COMMON_poseta_decb 12
 
 // SLc Phi Position
 `define SLC_COMMON_posphi_width 9
@@ -177,12 +177,12 @@
 // TDC fine time with BCID
 `define TDC_finetime_width 5
 `define TDC_finetime_lsb 8
-`define TDC_finetime_decb 0
+`define TDC_finetime_decb 1
 
 // Pulse width
 `define TDC_pulsewidth_width 8
 `define TDC_pulsewidth_lsb 0
-`define TDC_pulsewidth_decb 0
+`define TDC_pulsewidth_decb 1
 
 // -------------------------------------------------------------------
 `define TDCFORMAT_width 44
@@ -236,32 +236,32 @@
 `define SLCPROC_HESF_vec_ang_decb 0
 
 // -------------------------------------------------------------------
-`define TUBEREMAP_width 74
+`define TUBEREMAP_width 69
 
 // Tube layer within one station
-`define TUBEREMAP_mdt_tube_layer_width 6
-`define TUBEREMAP_mdt_tube_layer_lsb 68
+`define TUBEREMAP_mdt_tube_layer_width 5
+`define TUBEREMAP_mdt_tube_layer_lsb 64
 `define TUBEREMAP_mdt_tube_layer_decb 0
 
 // Tube number within one station
-`define TUBEREMAP_mdt_tube_num_width 10
-`define TUBEREMAP_mdt_tube_num_lsb 58
+`define TUBEREMAP_mdt_tube_num_width 9
+`define TUBEREMAP_mdt_tube_num_lsb 55
 `define TUBEREMAP_mdt_tube_num_decb 0
 
 // Tube radial position
 `define TUBEREMAP_mdt_tube_rho_width 18
-`define TUBEREMAP_mdt_tube_rho_lsb 40
-`define TUBEREMAP_mdt_tube_rho_decb 4
+`define TUBEREMAP_mdt_tube_rho_lsb 37
+`define TUBEREMAP_mdt_tube_rho_decb 5
 
 // Tube position along z
 `define TUBEREMAP_mdt_tube_z_width 19
-`define TUBEREMAP_mdt_tube_z_lsb 21
-`define TUBEREMAP_mdt_tube_z_decb 4
+`define TUBEREMAP_mdt_tube_z_lsb 18
+`define TUBEREMAP_mdt_tube_z_decb 5
 
 // Tube (uncalibrated) time
-`define TUBEREMAP_mdt_tube_time_width 21
+`define TUBEREMAP_mdt_tube_time_width 18
 `define TUBEREMAP_mdt_tube_time_lsb 0
-`define TUBEREMAP_mdt_tube_time_decb 4
+`define TUBEREMAP_mdt_tube_time_decb 1
 
 // -------------------------------------------------------------------
 `define HE_LSF_width 39
@@ -279,12 +279,12 @@
 // Tube local position along precision coord
 `define HE_LSF_mdt_localx_width 14
 `define HE_LSF_mdt_localx_lsb 23
-`define HE_LSF_mdt_localx_decb 4
+`define HE_LSF_mdt_localx_decb 5
 
 // Tube local position along second coord
 `define HE_LSF_mdt_localy_width 14
 `define HE_LSF_mdt_localy_lsb 9
-`define HE_LSF_mdt_localy_decb 4
+`define HE_LSF_mdt_localy_decb 5
 
 // Tube drift radius
 `define HE_LSF_mdt_radius_width 9
@@ -307,17 +307,17 @@
 // Tube local position along precision coord
 `define HE_CSF_mdt_localx_width 14
 `define HE_CSF_mdt_localx_lsb 23
-`define HE_CSF_mdt_localx_decb 3
+`define HE_CSF_mdt_localx_decb 4
 
 // Tube local position along second coord
 `define HE_CSF_mdt_localy_width 14
 `define HE_CSF_mdt_localy_lsb 9
-`define HE_CSF_mdt_localy_decb 3
+`define HE_CSF_mdt_localy_decb 4
 
 // Tube drift radius
 `define HE_CSF_mdt_radius_width 9
 `define HE_CSF_mdt_radius_lsb 0
-`define HE_CSF_mdt_radius_decb 4
+`define HE_CSF_mdt_radius_decb 5
 
 // -------------------------------------------------------------------
 `define SLCPIPE_PTCALC_width 53
@@ -333,7 +333,7 @@
 // SF MDT segment position along the precision coord
 `define SF_segpos_width 16
 `define SF_segpos_lsb 12
-`define SF_segpos_decb 2
+`define SF_segpos_decb 3
 
 // SF MDT segment angle along the precision coord
 `define SF_segangle_width 11
@@ -351,12 +351,12 @@
 // eta of the innermost MDT station segment position
 `define PTCALC_mtc_eta_width 14
 `define PTCALC_mtc_eta_lsb 18
-`define PTCALC_mtc_eta_decb 11
+`define PTCALC_mtc_eta_decb 12
 
 // pT calculated by the pT Calc
 `define PTCALC_mtc_pt_width 8
 `define PTCALC_mtc_pt_lsb 10
-`define PTCALC_mtc_pt_decb 1
+`define PTCALC_mtc_pt_decb 2
 
 // pT threshold satisfied by the MDT TC
 `define PTCALC_mtc_ptthresh_width 4

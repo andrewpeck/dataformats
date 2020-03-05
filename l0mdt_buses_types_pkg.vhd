@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"d65caa76";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
 
   -- -----------------------------------------------------------------
   type SLC_MUID_rt is record
@@ -146,15 +146,15 @@ package mdttp_types_pkg is
   -- -----------------------------------------------------------------
   type TUBEREMAP_rt is record
     -- Tube layer within one station
-    mdt_tube_layer : std_logic_vector(5 downto 0);
+    mdt_tube_layer : std_logic_vector(4 downto 0);
     -- Tube number within one station
-    mdt_tube_num : std_logic_vector(9 downto 0);
+    mdt_tube_num : std_logic_vector(8 downto 0);
     -- Tube radial position
     mdt_tube_rho : std_logic_vector(17 downto 0);
     -- Tube position along z
     mdt_tube_z : std_logic_vector(18 downto 0);
     -- Tube (uncalibrated) time
-    mdt_tube_time : std_logic_vector(20 downto 0);
+    mdt_tube_time : std_logic_vector(17 downto 0);
   end record TUBEREMAP_rt;
 
   -- -----------------------------------------------------------------

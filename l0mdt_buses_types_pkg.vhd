@@ -46,7 +46,7 @@ package mdttp_types_pkg is
 
   type SLC_ENDCAP_rt is record
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(30 downto 0);
+    SLC_COMMON_v : std_logic_vector(30 downto 0);
     -- SLc Segment Angle wrt Eta position
     seg_angdtheta : std_logic_vector(6 downto 0);
     -- SLc Segment Angle wrt Phi position
@@ -64,7 +64,7 @@ package mdttp_types_pkg is
 
   type SLC_BARREL_rt is record
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(30 downto 0);
+    SLC_COMMON_v : std_logic_vector(30 downto 0);
     -- SLc Hit Z Position in RPC0
     rpc0_posz : std_logic_vector(9 downto 0);
     -- SLc Hit Z Position in RPC1
@@ -96,11 +96,11 @@ package mdttp_types_pkg is
 
   type SLCPROC_PIPELINE_ENDCAP_rt is record
     -- struct SLCPROC_PIPELINE_COMMON
-    SLCPROC_PIPELINE_COMMON : std_logic_vector(34 downto 0);
+    SLCPROC_PIPELINE_COMMON_v : std_logic_vector(34 downto 0);
     -- struct SLC_ENDCAP
-    SLC_ENDCAP : std_logic_vector(68 downto 0);
+    SLC_ENDCAP_v : std_logic_vector(68 downto 0);
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
   end record SLCPROC_PIPELINE_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
@@ -108,11 +108,11 @@ package mdttp_types_pkg is
 
   type SLCPROC_PIPELINE_BARREL_rt is record
     -- struct SLCPROC_PIPELINE_COMMON
-    SLCPROC_PIPELINE_COMMON : std_logic_vector(34 downto 0);
+    SLCPROC_PIPELINE_COMMON_v : std_logic_vector(34 downto 0);
     -- struct SLC_BARREL
-    SLC_BARREL : std_logic_vector(73 downto 0);
+    SLC_BARREL_v : std_logic_vector(73 downto 0);
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
   end record SLCPROC_PIPELINE_BARREL_rt;
 
   -- -----------------------------------------------------------------
@@ -136,7 +136,7 @@ package mdttp_types_pkg is
 
   type TDCFORMAT_rt is record
     -- struct TDC
-    TDC : std_logic_vector(31 downto 0);
+    TDC_v : std_logic_vector(31 downto 0);
     -- Fiber ID within board
     fiberid : std_logic_vector(4 downto 0);
     -- Elink ID within fiber
@@ -152,7 +152,7 @@ package mdttp_types_pkg is
 
   type SLCPROC_HESF_rt is record
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
     -- inner MDT segment chip destination
     mdtseg_dest : std_logic_vector(1 downto 0);
     -- SLc Inner Vector MDT chamber ID
@@ -216,7 +216,7 @@ package mdttp_types_pkg is
 
   type SLCPIPE_PTCALC_rt is record
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
     -- (COPY)
     INN_vec_mdtid : std_logic_vector(5 downto 0);
     -- (COPY)
@@ -230,7 +230,7 @@ package mdttp_types_pkg is
 
   type SF_rt is record
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
     -- (COPY)
     vec_mdtid : std_logic_vector(5 downto 0);
     -- SF MDT segment valid bit
@@ -248,7 +248,7 @@ package mdttp_types_pkg is
 
   type PTCALC_rt is record
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
     -- eta of the innermost MDT station segment position
     mtc_eta : std_logic_vector(13 downto 0);
     -- pT calculated by the pT Calc
@@ -268,9 +268,9 @@ package mdttp_types_pkg is
 
   type SLCPIPE_MTC_ENDCAP_rt is record
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(30 downto 0);
+    SLC_COMMON_v : std_logic_vector(30 downto 0);
     -- (COPY)
     busy : std_logic;
     -- (COPY)
@@ -284,9 +284,9 @@ package mdttp_types_pkg is
     -- (COPY)
     cointype : std_logic_vector(2 downto 0);
     -- struct SLC_MUID
-    SLC_MUID : std_logic_vector(19 downto 0);
+    SLC_MUID_v : std_logic_vector(19 downto 0);
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(30 downto 0);
+    SLC_COMMON_v : std_logic_vector(30 downto 0);
     -- (COPY)
     busy : std_logic;
     -- (COPY)
@@ -298,7 +298,7 @@ package mdttp_types_pkg is
 
   type MTC_rt is record
     -- struct SLC_COMMON
-    SLC_COMMON : std_logic_vector(30 downto 0);
+    SLC_COMMON_v : std_logic_vector(30 downto 0);
     -- (COPY)
     mtc_eta : std_logic_vector(13 downto 0);
     -- (COPY)

@@ -500,7 +500,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 included.append(var.name)
 
             ## to vector
-            write_ln(f'  function {bus.name}_toVector (d: in {bus.name}_rt)')
+            write_ln(f'  function {bus.name}_toV (d: in {bus.name}_rt)')
             write_ln(f'  return std_logic_vector is')
             write_ln(f'    variable v : std_logic_vector({bus.name}_msb downto 0);')
             write_ln(f'  begin')
@@ -508,12 +508,12 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
             r_side = "\n         & ".join(c).strip()
             write_ln(f'    v := {r_side};')
             write_ln(f'    return v;')
-            write_ln(f'  end function {bus.name}_toVector;')
+            write_ln(f'  end function {bus.name}_toV;')
 
             write_ln("")
             
             # from vector
-            write_ln(f'  function {bus.name}_fromVector (v: in std_logic_vector)')
+            write_ln(f'  function {bus.name}_fromV (v: in std_logic_vector)')
             write_ln(f'  return {bus.name}_rt is')
             write_ln(f'    variable b : {bus.name}_rt;')
             write_ln(f'  begin')
@@ -532,7 +532,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 write_ln(f'    b.{var_prefix} := v({var.msb} downto {var.lsb});')
 
             write_ln(f'    return b;')
-            write_ln(f'  end function {bus.name}_fromVector;')
+            write_ln(f'  end function {bus.name}_fromV;')
 
         write_ln("")
         write_ln(f"  -- {'-'*67}")

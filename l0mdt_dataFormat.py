@@ -420,8 +420,14 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 ## somehow we have an empty bus name...
                 continue
 
+            
             write_ln("");
             write_ln(f"  -- {'-'*65}")
+
+            tpl = f"  subtype %s_vt is std_logic_vector(%s downto 0);"
+            write_ln(tpl %(bus.name, int(bus.width)-1))
+            
+            write_ln("");
             write_ln(f"  type {bus.name}_rt is record")
         
             included = []

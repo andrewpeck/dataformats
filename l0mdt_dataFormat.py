@@ -440,19 +440,23 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 
                 if var.type != 'var':
                     write_ln(f"    -- struct {var.name}")
+                    suffix = "_v"
                 elif var.type == 'var':
                     write_ln(f"    -- {var.parameter}")
+                    suffix = ""
 
                 if var.station:
-                    var_prefix = f"{var.station}_{var.name}"
+                    var_prefix = f"{var.station}_"
                 else:
-                    var_prefix = f"{var.name}"
+                    var_prefix = f""
 
+                var_name = f"{var_prefix}{var.name}{suffix}"
+                    
                 msb = int(var.width)-1
                 if msb > 0:
-                    write_ln(f"    {var_prefix} : std_logic_vector({msb} downto 0);")
+                    write_ln(f"    {var_name} : std_logic_vector({msb} downto 0);")
                 else:
-                    write_ln(f"    {var_prefix} : std_logic;")
+                    write_ln(f"    {var_name} : std_logic;")
         
             write_ln(f"  end record {bus.name}_rt;")
             

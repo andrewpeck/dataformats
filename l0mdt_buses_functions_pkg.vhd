@@ -12,7 +12,7 @@ package mdttp_functions_pkg is
   constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
 
   -- -----------------------------------------------------------------
-  function SLC_MUID_toV (d: in SLC_MUID_rt)
+  function SLC_MUID_2vf (d: in SLC_MUID_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLC_MUID_msb downto 0);
   begin
@@ -20,9 +20,9 @@ package mdttp_functions_pkg is
          & d.slid
          & d.bcid;
     return v;
-  end function SLC_MUID_toV;
+  end function SLC_MUID_2vf;
 
-  function SLC_MUID_fromV (v: in std_logic_vector)
+  function SLC_MUID_2rf (v: in std_logic_vector)
   return SLC_MUID_rt is
     variable b : SLC_MUID_rt;
   begin
@@ -30,10 +30,10 @@ package mdttp_functions_pkg is
     b.slid := v(17 downto 12);
     b.bcid := v(11 downto 0);
     return b;
-  end function SLC_MUID_fromV;
+  end function SLC_MUID_2rf;
 
   -- -----------------------------------------------------------------
-  function SLC_COMMON_toV (d: in SLC_COMMON_rt)
+  function SLC_COMMON_2vf (d: in SLC_COMMON_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLC_COMMON_msb downto 0);
   begin
@@ -44,9 +44,9 @@ package mdttp_functions_pkg is
          & d.ptthresh
          & d.charge;
     return v;
-  end function SLC_COMMON_toV;
+  end function SLC_COMMON_2vf;
 
-  function SLC_COMMON_fromV (v: in std_logic_vector)
+  function SLC_COMMON_2rf (v: in std_logic_vector)
   return SLC_COMMON_rt is
     variable b : SLC_COMMON_rt;
   begin
@@ -57,10 +57,10 @@ package mdttp_functions_pkg is
     b.ptthresh := v(4 downto 1);
     b.charge := v(0 downto 0);
     return b;
-  end function SLC_COMMON_fromV;
+  end function SLC_COMMON_2rf;
 
   -- -----------------------------------------------------------------
-  function SLC_ENDCAP_toV (d: in SLC_ENDCAP_rt)
+  function SLC_ENDCAP_2vf (d: in SLC_ENDCAP_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLC_ENDCAP_msb downto 0);
   begin
@@ -71,9 +71,9 @@ package mdttp_functions_pkg is
          & d.nswseg_posphi
          & d.nswseg_angdtheta;
     return v;
-  end function SLC_ENDCAP_toV;
+  end function SLC_ENDCAP_2vf;
 
-  function SLC_ENDCAP_fromV (v: in std_logic_vector)
+  function SLC_ENDCAP_2rf (v: in std_logic_vector)
   return SLC_ENDCAP_rt is
     variable b : SLC_ENDCAP_rt;
   begin
@@ -84,10 +84,10 @@ package mdttp_functions_pkg is
     b.nswseg_posphi := v(12 downto 5);
     b.nswseg_angdtheta := v(4 downto 0);
     return b;
-  end function SLC_ENDCAP_fromV;
+  end function SLC_ENDCAP_2rf;
 
   -- -----------------------------------------------------------------
-  function SLC_BARREL_toV (d: in SLC_BARREL_rt)
+  function SLC_BARREL_2vf (d: in SLC_BARREL_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLC_BARREL_msb downto 0);
   begin
@@ -98,9 +98,9 @@ package mdttp_functions_pkg is
          & d.rpc3_posz
          & d.cointype;
     return v;
-  end function SLC_BARREL_toV;
+  end function SLC_BARREL_2vf;
 
-  function SLC_BARREL_fromV (v: in std_logic_vector)
+  function SLC_BARREL_2rf (v: in std_logic_vector)
   return SLC_BARREL_rt is
     variable b : SLC_BARREL_rt;
   begin
@@ -111,10 +111,10 @@ package mdttp_functions_pkg is
     b.rpc3_posz := v(12 downto 3);
     b.cointype := v(2 downto 0);
     return b;
-  end function SLC_BARREL_fromV;
+  end function SLC_BARREL_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_PIPELINE_COMMON_toV (d: in SLCPROC_PIPELINE_COMMON_rt)
+  function SLCPROC_PIPELINE_COMMON_2vf (d: in SLCPROC_PIPELINE_COMMON_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPROC_PIPELINE_COMMON_msb downto 0);
   begin
@@ -123,9 +123,9 @@ package mdttp_functions_pkg is
          & d.phimod
          & d.vec_mdtid;
     return v;
-  end function SLCPROC_PIPELINE_COMMON_toV;
+  end function SLCPROC_PIPELINE_COMMON_2vf;
 
-  function SLCPROC_PIPELINE_COMMON_fromV (v: in std_logic_vector)
+  function SLCPROC_PIPELINE_COMMON_2rf (v: in std_logic_vector)
   return SLCPROC_PIPELINE_COMMON_rt is
     variable b : SLCPROC_PIPELINE_COMMON_rt;
   begin
@@ -134,10 +134,10 @@ package mdttp_functions_pkg is
     b.phimod := v(31 downto 24);
     b.INN_vec_mdtid := v(23 downto 18);
     return b;
-  end function SLCPROC_PIPELINE_COMMON_fromV;
+  end function SLCPROC_PIPELINE_COMMON_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_PIPELINE_ENDCAP_toV (d: in SLCPROC_PIPELINE_ENDCAP_rt)
+  function SLCPROC_PIPELINE_ENDCAP_2vf (d: in SLCPROC_PIPELINE_ENDCAP_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPROC_PIPELINE_ENDCAP_msb downto 0);
   begin
@@ -145,9 +145,9 @@ package mdttp_functions_pkg is
          & d.SLC_ENDCAP
          & d.SLC_MUID;
     return v;
-  end function SLCPROC_PIPELINE_ENDCAP_toV;
+  end function SLCPROC_PIPELINE_ENDCAP_2vf;
 
-  function SLCPROC_PIPELINE_ENDCAP_fromV (v: in std_logic_vector)
+  function SLCPROC_PIPELINE_ENDCAP_2rf (v: in std_logic_vector)
   return SLCPROC_PIPELINE_ENDCAP_rt is
     variable b : SLCPROC_PIPELINE_ENDCAP_rt;
   begin
@@ -155,10 +155,10 @@ package mdttp_functions_pkg is
     b.SLC_ENDCAP := v(88 downto 20);
     b.SLC_MUID := v(19 downto 0);
     return b;
-  end function SLCPROC_PIPELINE_ENDCAP_fromV;
+  end function SLCPROC_PIPELINE_ENDCAP_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_PIPELINE_BARREL_toV (d: in SLCPROC_PIPELINE_BARREL_rt)
+  function SLCPROC_PIPELINE_BARREL_2vf (d: in SLCPROC_PIPELINE_BARREL_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPROC_PIPELINE_BARREL_msb downto 0);
   begin
@@ -166,9 +166,9 @@ package mdttp_functions_pkg is
          & d.SLC_BARREL
          & d.SLC_MUID;
     return v;
-  end function SLCPROC_PIPELINE_BARREL_toV;
+  end function SLCPROC_PIPELINE_BARREL_2vf;
 
-  function SLCPROC_PIPELINE_BARREL_fromV (v: in std_logic_vector)
+  function SLCPROC_PIPELINE_BARREL_2rf (v: in std_logic_vector)
   return SLCPROC_PIPELINE_BARREL_rt is
     variable b : SLCPROC_PIPELINE_BARREL_rt;
   begin
@@ -176,10 +176,10 @@ package mdttp_functions_pkg is
     b.SLC_BARREL := v(93 downto 20);
     b.SLC_MUID := v(19 downto 0);
     return b;
-  end function SLCPROC_PIPELINE_BARREL_fromV;
+  end function SLCPROC_PIPELINE_BARREL_2rf;
 
   -- -----------------------------------------------------------------
-  function TDC_toV (d: in TDC_rt)
+  function TDC_2vf (d: in TDC_rt)
   return std_logic_vector is
     variable v : std_logic_vector(TDC_msb downto 0);
   begin
@@ -189,9 +189,9 @@ package mdttp_functions_pkg is
          & d.finetime
          & d.pulsewidth;
     return v;
-  end function TDC_toV;
+  end function TDC_2vf;
 
-  function TDC_fromV (v: in std_logic_vector)
+  function TDC_2rf (v: in std_logic_vector)
   return TDC_rt is
     variable b : TDC_rt;
   begin
@@ -201,10 +201,10 @@ package mdttp_functions_pkg is
     b.finetime := v(12 downto 8);
     b.pulsewidth := v(7 downto 0);
     return b;
-  end function TDC_fromV;
+  end function TDC_2rf;
 
   -- -----------------------------------------------------------------
-  function TDCFORMAT_toV (d: in TDCFORMAT_rt)
+  function TDCFORMAT_2vf (d: in TDCFORMAT_rt)
   return std_logic_vector is
     variable v : std_logic_vector(TDCFORMAT_msb downto 0);
   begin
@@ -214,9 +214,9 @@ package mdttp_functions_pkg is
          & d.datavalid
          & d.stationid;
     return v;
-  end function TDCFORMAT_toV;
+  end function TDCFORMAT_2vf;
 
-  function TDCFORMAT_fromV (v: in std_logic_vector)
+  function TDCFORMAT_2rf (v: in std_logic_vector)
   return TDCFORMAT_rt is
     variable b : TDCFORMAT_rt;
   begin
@@ -226,10 +226,10 @@ package mdttp_functions_pkg is
     b.datavalid := v(2 downto 2);
     b.stationid := v(1 downto 0);
     return b;
-  end function TDCFORMAT_fromV;
+  end function TDCFORMAT_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_HESF_toV (d: in SLCPROC_HESF_rt)
+  function SLCPROC_HESF_2vf (d: in SLCPROC_HESF_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPROC_HESF_msb downto 0);
   begin
@@ -239,9 +239,9 @@ package mdttp_functions_pkg is
          & d.vec_pos
          & d.vec_ang;
     return v;
-  end function SLCPROC_HESF_toV;
+  end function SLCPROC_HESF_2vf;
 
-  function SLCPROC_HESF_fromV (v: in std_logic_vector)
+  function SLCPROC_HESF_2rf (v: in std_logic_vector)
   return SLCPROC_HESF_rt is
     variable b : SLCPROC_HESF_rt;
   begin
@@ -251,10 +251,10 @@ package mdttp_functions_pkg is
     b.vec_pos := v(19 downto 10);
     b.vec_ang := v(9 downto 0);
     return b;
-  end function SLCPROC_HESF_fromV;
+  end function SLCPROC_HESF_2rf;
 
   -- -----------------------------------------------------------------
-  function TUBEREMAP_toV (d: in TUBEREMAP_rt)
+  function TUBEREMAP_2vf (d: in TUBEREMAP_rt)
   return std_logic_vector is
     variable v : std_logic_vector(TUBEREMAP_msb downto 0);
   begin
@@ -264,9 +264,9 @@ package mdttp_functions_pkg is
          & d.mdt_tube_z
          & d.mdt_tube_time;
     return v;
-  end function TUBEREMAP_toV;
+  end function TUBEREMAP_2vf;
 
-  function TUBEREMAP_fromV (v: in std_logic_vector)
+  function TUBEREMAP_2rf (v: in std_logic_vector)
   return TUBEREMAP_rt is
     variable b : TUBEREMAP_rt;
   begin
@@ -276,10 +276,10 @@ package mdttp_functions_pkg is
     b.mdt_tube_z := v(36 downto 18);
     b.mdt_tube_time := v(17 downto 0);
     return b;
-  end function TUBEREMAP_fromV;
+  end function TUBEREMAP_2rf;
 
   -- -----------------------------------------------------------------
-  function HE_LSF_toV (d: in HE_LSF_rt)
+  function HE_LSF_2vf (d: in HE_LSF_rt)
   return std_logic_vector is
     variable v : std_logic_vector(HE_LSF_msb downto 0);
   begin
@@ -289,9 +289,9 @@ package mdttp_functions_pkg is
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function HE_LSF_toV;
+  end function HE_LSF_2vf;
 
-  function HE_LSF_fromV (v: in std_logic_vector)
+  function HE_LSF_2rf (v: in std_logic_vector)
   return HE_LSF_rt is
     variable b : HE_LSF_rt;
   begin
@@ -301,10 +301,10 @@ package mdttp_functions_pkg is
     b.mdt_localy := v(22 downto 9);
     b.mdt_radius := v(8 downto 0);
     return b;
-  end function HE_LSF_fromV;
+  end function HE_LSF_2rf;
 
   -- -----------------------------------------------------------------
-  function HE_CSF_toV (d: in HE_CSF_rt)
+  function HE_CSF_2vf (d: in HE_CSF_rt)
   return std_logic_vector is
     variable v : std_logic_vector(HE_CSF_msb downto 0);
   begin
@@ -314,9 +314,9 @@ package mdttp_functions_pkg is
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function HE_CSF_toV;
+  end function HE_CSF_2vf;
 
-  function HE_CSF_fromV (v: in std_logic_vector)
+  function HE_CSF_2rf (v: in std_logic_vector)
   return HE_CSF_rt is
     variable b : HE_CSF_rt;
   begin
@@ -326,10 +326,10 @@ package mdttp_functions_pkg is
     b.mdt_localy := v(22 downto 9);
     b.mdt_radius := v(8 downto 0);
     return b;
-  end function HE_CSF_fromV;
+  end function HE_CSF_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPIPE_PTCALC_toV (d: in SLCPIPE_PTCALC_rt)
+  function SLCPIPE_PTCALC_2vf (d: in SLCPIPE_PTCALC_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPIPE_PTCALC_msb downto 0);
   begin
@@ -338,9 +338,9 @@ package mdttp_functions_pkg is
          & d.phimod
          & d.charge;
     return v;
-  end function SLCPIPE_PTCALC_toV;
+  end function SLCPIPE_PTCALC_2vf;
 
-  function SLCPIPE_PTCALC_fromV (v: in std_logic_vector)
+  function SLCPIPE_PTCALC_2rf (v: in std_logic_vector)
   return SLCPIPE_PTCALC_rt is
     variable b : SLCPIPE_PTCALC_rt;
   begin
@@ -349,10 +349,10 @@ package mdttp_functions_pkg is
     b.phimod := v(8 downto 1);
     b.charge := v(0 downto 0);
     return b;
-  end function SLCPIPE_PTCALC_fromV;
+  end function SLCPIPE_PTCALC_2rf;
 
   -- -----------------------------------------------------------------
-  function SF_toV (d: in SF_rt)
+  function SF_2vf (d: in SF_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SF_msb downto 0);
   begin
@@ -363,9 +363,9 @@ package mdttp_functions_pkg is
          & d.segangle
          & d.segquality;
     return v;
-  end function SF_toV;
+  end function SF_2vf;
 
-  function SF_fromV (v: in std_logic_vector)
+  function SF_2rf (v: in std_logic_vector)
   return SF_rt is
     variable b : SF_rt;
   begin
@@ -376,10 +376,10 @@ package mdttp_functions_pkg is
     b.segangle := v(11 downto 1);
     b.segquality := v(0 downto 0);
     return b;
-  end function SF_fromV;
+  end function SF_2rf;
 
   -- -----------------------------------------------------------------
-  function PTCALC_toV (d: in PTCALC_rt)
+  function PTCALC_2vf (d: in PTCALC_rt)
   return std_logic_vector is
     variable v : std_logic_vector(PTCALC_msb downto 0);
   begin
@@ -391,9 +391,9 @@ package mdttp_functions_pkg is
          & d.mtc_nsegments
          & d.mtc_quality;
     return v;
-  end function PTCALC_toV;
+  end function PTCALC_2vf;
 
-  function PTCALC_fromV (v: in std_logic_vector)
+  function PTCALC_2rf (v: in std_logic_vector)
   return PTCALC_rt is
     variable b : PTCALC_rt;
   begin
@@ -405,10 +405,10 @@ package mdttp_functions_pkg is
     b.mtc_nsegments := v(4 downto 3);
     b.mtc_quality := v(2 downto 0);
     return b;
-  end function PTCALC_fromV;
+  end function PTCALC_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPIPE_MTC_ENDCAP_toV (d: in SLCPIPE_MTC_ENDCAP_rt)
+  function SLCPIPE_MTC_ENDCAP_2vf (d: in SLCPIPE_MTC_ENDCAP_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPIPE_MTC_ENDCAP_msb downto 0);
   begin
@@ -417,9 +417,9 @@ package mdttp_functions_pkg is
          & d.busy
          & d.destsl;
     return v;
-  end function SLCPIPE_MTC_ENDCAP_toV;
+  end function SLCPIPE_MTC_ENDCAP_2vf;
 
-  function SLCPIPE_MTC_ENDCAP_fromV (v: in std_logic_vector)
+  function SLCPIPE_MTC_ENDCAP_2rf (v: in std_logic_vector)
   return SLCPIPE_MTC_ENDCAP_rt is
     variable b : SLCPIPE_MTC_ENDCAP_rt;
   begin
@@ -428,10 +428,10 @@ package mdttp_functions_pkg is
     b.busy := v(2 downto 2);
     b.destsl := v(1 downto 0);
     return b;
-  end function SLCPIPE_MTC_ENDCAP_fromV;
+  end function SLCPIPE_MTC_ENDCAP_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPIPE_MTC_BARREL_toV (d: in SLCPIPE_MTC_BARREL_rt)
+  function SLCPIPE_MTC_BARREL_2vf (d: in SLCPIPE_MTC_BARREL_rt)
   return std_logic_vector is
     variable v : std_logic_vector(SLCPIPE_MTC_BARREL_msb downto 0);
   begin
@@ -441,9 +441,9 @@ package mdttp_functions_pkg is
          & d.busy
          & d.destsl;
     return v;
-  end function SLCPIPE_MTC_BARREL_toV;
+  end function SLCPIPE_MTC_BARREL_2vf;
 
-  function SLCPIPE_MTC_BARREL_fromV (v: in std_logic_vector)
+  function SLCPIPE_MTC_BARREL_2rf (v: in std_logic_vector)
   return SLCPIPE_MTC_BARREL_rt is
     variable b : SLCPIPE_MTC_BARREL_rt;
   begin
@@ -453,10 +453,10 @@ package mdttp_functions_pkg is
     b.busy := v(2 downto 2);
     b.destsl := v(1 downto 0);
     return b;
-  end function SLCPIPE_MTC_BARREL_fromV;
+  end function SLCPIPE_MTC_BARREL_2rf;
 
   -- -----------------------------------------------------------------
-  function MTC_toV (d: in MTC_rt)
+  function MTC_2vf (d: in MTC_rt)
   return std_logic_vector is
     variable v : std_logic_vector(MTC_msb downto 0);
   begin
@@ -469,9 +469,9 @@ package mdttp_functions_pkg is
          & d.mtc_nsegments
          & d.mtc_quality;
     return v;
-  end function MTC_toV;
+  end function MTC_2vf;
 
-  function MTC_fromV (v: in std_logic_vector)
+  function MTC_2rf (v: in std_logic_vector)
   return MTC_rt is
     variable b : MTC_rt;
   begin
@@ -484,7 +484,7 @@ package mdttp_functions_pkg is
     b.mtc_nsegments := v(4 downto 3);
     b.mtc_quality := v(2 downto 0);
     return b;
-  end function MTC_fromV;
+  end function MTC_2rf;
 
   -- -------------------------------------------------------------------
 

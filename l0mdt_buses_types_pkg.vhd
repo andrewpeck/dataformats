@@ -12,6 +12,8 @@ package mdttp_types_pkg is
   constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
 
   -- -----------------------------------------------------------------
+  subtype SLC_MUID_vt is std_logic_vector(19 downto 0);
+
   type SLC_MUID_rt is record
     -- SLc Identification (up to 3)
     slcid : std_logic_vector(1 downto 0);
@@ -22,6 +24,8 @@ package mdttp_types_pkg is
   end record SLC_MUID_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLC_COMMON_vt is std_logic_vector(30 downto 0);
+
   type SLC_COMMON_rt is record
     -- SLc Identification (up to 3)
     slcid : std_logic_vector(1 downto 0);
@@ -38,6 +42,8 @@ package mdttp_types_pkg is
   end record SLC_COMMON_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLC_ENDCAP_vt is std_logic_vector(68 downto 0);
+
   type SLC_ENDCAP_rt is record
     -- struct SLC_COMMON
     SLC_COMMON : std_logic_vector(30 downto 0);
@@ -54,6 +60,8 @@ package mdttp_types_pkg is
   end record SLC_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLC_BARREL_vt is std_logic_vector(73 downto 0);
+
   type SLC_BARREL_rt is record
     -- struct SLC_COMMON
     SLC_COMMON : std_logic_vector(30 downto 0);
@@ -70,6 +78,8 @@ package mdttp_types_pkg is
   end record SLC_BARREL_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPROC_PIPELINE_COMMON_vt is std_logic_vector(34 downto 0);
+
   type SLCPROC_PIPELINE_COMMON_rt is record
     -- SLc busy flag
     busy : std_logic;
@@ -82,6 +92,8 @@ package mdttp_types_pkg is
   end record SLCPROC_PIPELINE_COMMON_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPROC_PIPELINE_ENDCAP_vt is std_logic_vector(123 downto 0);
+
   type SLCPROC_PIPELINE_ENDCAP_rt is record
     -- struct SLCPROC_PIPELINE_COMMON
     SLCPROC_PIPELINE_COMMON : std_logic_vector(34 downto 0);
@@ -92,6 +104,8 @@ package mdttp_types_pkg is
   end record SLCPROC_PIPELINE_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPROC_PIPELINE_BARREL_vt is std_logic_vector(128 downto 0);
+
   type SLCPROC_PIPELINE_BARREL_rt is record
     -- struct SLCPROC_PIPELINE_COMMON
     SLCPROC_PIPELINE_COMMON : std_logic_vector(34 downto 0);
@@ -102,6 +116,8 @@ package mdttp_types_pkg is
   end record SLCPROC_PIPELINE_BARREL_rt;
 
   -- -----------------------------------------------------------------
+  subtype TDC_vt is std_logic_vector(31 downto 0);
+
   type TDC_rt is record
     -- Channel number within TDC
     chanid : std_logic_vector(4 downto 0);
@@ -116,6 +132,8 @@ package mdttp_types_pkg is
   end record TDC_rt;
 
   -- -----------------------------------------------------------------
+  subtype TDCFORMAT_vt is std_logic_vector(43 downto 0);
+
   type TDCFORMAT_rt is record
     -- struct TDC
     TDC : std_logic_vector(31 downto 0);
@@ -130,6 +148,8 @@ package mdttp_types_pkg is
   end record TDCFORMAT_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPROC_HESF_vt is std_logic_vector(47 downto 0);
+
   type SLCPROC_HESF_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
@@ -144,6 +164,8 @@ package mdttp_types_pkg is
   end record SLCPROC_HESF_rt;
 
   -- -----------------------------------------------------------------
+  subtype TUBEREMAP_vt is std_logic_vector(68 downto 0);
+
   type TUBEREMAP_rt is record
     -- Tube layer within one station
     mdt_tube_layer : std_logic_vector(4 downto 0);
@@ -158,6 +180,8 @@ package mdttp_types_pkg is
   end record TUBEREMAP_rt;
 
   -- -----------------------------------------------------------------
+  subtype HE_LSF_vt is std_logic_vector(38 downto 0);
+
   type HE_LSF_rt is record
     -- Hit Valid bit
     mdt_valid : std_logic;
@@ -172,6 +196,8 @@ package mdttp_types_pkg is
   end record HE_LSF_rt;
 
   -- -----------------------------------------------------------------
+  subtype HE_CSF_vt is std_logic_vector(38 downto 0);
+
   type HE_CSF_rt is record
     -- Hit Valid bit
     mdt_valid : std_logic;
@@ -186,6 +212,8 @@ package mdttp_types_pkg is
   end record HE_CSF_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPIPE_PTCALC_vt is std_logic_vector(52 downto 0);
+
   type SLCPIPE_PTCALC_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
@@ -198,6 +226,8 @@ package mdttp_types_pkg is
   end record SLCPIPE_PTCALC_rt;
 
   -- -----------------------------------------------------------------
+  subtype SF_vt is std_logic_vector(54 downto 0);
+
   type SF_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
@@ -214,6 +244,8 @@ package mdttp_types_pkg is
   end record SF_rt;
 
   -- -----------------------------------------------------------------
+  subtype PTCALC_vt is std_logic_vector(51 downto 0);
+
   type PTCALC_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
@@ -232,6 +264,8 @@ package mdttp_types_pkg is
   end record PTCALC_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPIPE_MTC_ENDCAP_vt is std_logic_vector(53 downto 0);
+
   type SLCPIPE_MTC_ENDCAP_rt is record
     -- struct SLC_MUID
     SLC_MUID : std_logic_vector(19 downto 0);
@@ -244,6 +278,8 @@ package mdttp_types_pkg is
   end record SLCPIPE_MTC_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
+  subtype SLCPIPE_MTC_BARREL_vt is std_logic_vector(56 downto 0);
+
   type SLCPIPE_MTC_BARREL_rt is record
     -- (COPY)
     cointype : std_logic_vector(2 downto 0);
@@ -258,6 +294,8 @@ package mdttp_types_pkg is
   end record SLCPIPE_MTC_BARREL_rt;
 
   -- -----------------------------------------------------------------
+  subtype MTC_vt is std_logic_vector(66 downto 0);
+
   type MTC_rt is record
     -- struct SLC_COMMON
     SLC_COMMON : std_logic_vector(30 downto 0);

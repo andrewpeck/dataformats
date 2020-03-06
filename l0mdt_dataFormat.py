@@ -500,7 +500,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
                 included.append(var.name)
 
             ## to vector
-            write_ln(f'  function {bus.name}_2vf (d: in {bus.name}_rt)')
+            write_ln(f'  function {bus.name}_2af (d: in {bus.name}_rt)')
             write_ln(f'  return std_logic_vector is')
             write_ln(f'    variable v : std_logic_vector({bus.name}_msb downto 0);')
             write_ln(f'  begin')
@@ -508,7 +508,7 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
             r_side = "\n         & ".join(c).strip()
             write_ln(f'    v := {r_side};')
             write_ln(f'    return v;')
-            write_ln(f'  end function {bus.name}_2vf;')
+            write_ln(f'  end function {bus.name}_2af;')
 
             write_ln("")
             

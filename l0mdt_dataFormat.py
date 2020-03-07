@@ -481,6 +481,10 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         write_ln("use ieee.std_logic_1164.all;")
         write_ln("use ieee.numeric_std.all;")
         
+        write_ln("");
+        write_ln("library l0mdt_lib;")
+        write_ln("use l0mdt_lib.mdttp_types_pkg.all;")
+        
         write_ln("")
         write_ln("package mdttp_functions_pkg is")
         

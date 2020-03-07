@@ -7,6 +7,9 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
+library l0mdt_lib;
+use l0mdt_lib.mdttp_types_pkg.all;
+
 package mdttp_functions_pkg is
 
   constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";

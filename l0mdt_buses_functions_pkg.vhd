@@ -8,37 +8,187 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 library l0mdt_lib;
+use l0mdt_lib.mdttp_constants_pkg.all;
 use l0mdt_lib.mdttp_types_pkg.all;
 
 package mdttp_functions_pkg is
 
+  constant DF_HASH : std_logic_vector(31 downto 0);
+
+  -- -----------------------------------------------------------------
+  function slc_muid_2af (d: SLC_MUID_rt)
+  return std_logic_vector;
+
+  function slc_muid_2rf (v: slc_muid_at)
+  return SLC_MUID_rt;
+
+  -- -----------------------------------------------------------------
+  function slc_common_2af (d: SLC_COMMON_rt)
+  return std_logic_vector;
+
+  function slc_common_2rf (v: slc_common_at)
+  return SLC_COMMON_rt;
+
+  -- -----------------------------------------------------------------
+  function slc_endcap_2af (d: SLC_ENDCAP_rt)
+  return std_logic_vector;
+
+  function slc_endcap_2rf (v: slc_endcap_at)
+  return SLC_ENDCAP_rt;
+
+  -- -----------------------------------------------------------------
+  function slc_barrel_2af (d: SLC_BARREL_rt)
+  return std_logic_vector;
+
+  function slc_barrel_2rf (v: slc_barrel_at)
+  return SLC_BARREL_rt;
+
+  -- -----------------------------------------------------------------
+  function slcproc_pipeline_common_2af (d: SLCPROC_PIPELINE_COMMON_rt)
+  return std_logic_vector;
+
+  function slcproc_pipeline_common_2rf (v: slcproc_pipeline_common_at)
+  return SLCPROC_PIPELINE_COMMON_rt;
+
+  -- -----------------------------------------------------------------
+  function slcproc_pipeline_endcap_2af (d: SLCPROC_PIPELINE_ENDCAP_rt)
+  return std_logic_vector;
+
+  function slcproc_pipeline_endcap_2rf (v: slcproc_pipeline_endcap_at)
+  return SLCPROC_PIPELINE_ENDCAP_rt;
+
+  -- -----------------------------------------------------------------
+  function slcproc_pipeline_barrel_2af (d: SLCPROC_PIPELINE_BARREL_rt)
+  return std_logic_vector;
+
+  function slcproc_pipeline_barrel_2rf (v: slcproc_pipeline_barrel_at)
+  return SLCPROC_PIPELINE_BARREL_rt;
+
+  -- -----------------------------------------------------------------
+  function tdc_2af (d: TDC_rt)
+  return std_logic_vector;
+
+  function tdc_2rf (v: tdc_at)
+  return TDC_rt;
+
+  -- -----------------------------------------------------------------
+  function tdcformat_2af (d: TDCFORMAT_rt)
+  return std_logic_vector;
+
+  function tdcformat_2rf (v: tdcformat_at)
+  return TDCFORMAT_rt;
+
+  -- -----------------------------------------------------------------
+  function slcproc_hesf_2af (d: SLCPROC_HESF_rt)
+  return std_logic_vector;
+
+  function slcproc_hesf_2rf (v: slcproc_hesf_at)
+  return SLCPROC_HESF_rt;
+
+  -- -----------------------------------------------------------------
+  function tuberemap_2af (d: TUBEREMAP_rt)
+  return std_logic_vector;
+
+  function tuberemap_2rf (v: tuberemap_at)
+  return TUBEREMAP_rt;
+
+  -- -----------------------------------------------------------------
+  function he_lsf_2af (d: HE_LSF_rt)
+  return std_logic_vector;
+
+  function he_lsf_2rf (v: he_lsf_at)
+  return HE_LSF_rt;
+
+  -- -----------------------------------------------------------------
+  function he_csf_2af (d: HE_CSF_rt)
+  return std_logic_vector;
+
+  function he_csf_2rf (v: he_csf_at)
+  return HE_CSF_rt;
+
+  -- -----------------------------------------------------------------
+  function slcpipe_ptcalc_2af (d: SLCPIPE_PTCALC_rt)
+  return std_logic_vector;
+
+  function slcpipe_ptcalc_2rf (v: slcpipe_ptcalc_at)
+  return SLCPIPE_PTCALC_rt;
+
+  -- -----------------------------------------------------------------
+  function sf_2af (d: SF_rt)
+  return std_logic_vector;
+
+  function sf_2rf (v: sf_at)
+  return SF_rt;
+
+  -- -----------------------------------------------------------------
+  function ptcalc_2af (d: PTCALC_rt)
+  return std_logic_vector;
+
+  function ptcalc_2rf (v: ptcalc_at)
+  return PTCALC_rt;
+
+  -- -----------------------------------------------------------------
+  function slcpipe_mtc_endcap_2af (d: SLCPIPE_MTC_ENDCAP_rt)
+  return std_logic_vector;
+
+  function slcpipe_mtc_endcap_2rf (v: slcpipe_mtc_endcap_at)
+  return SLCPIPE_MTC_ENDCAP_rt;
+
+  -- -----------------------------------------------------------------
+  function slcpipe_mtc_barrel_2af (d: SLCPIPE_MTC_BARREL_rt)
+  return std_logic_vector;
+
+  function slcpipe_mtc_barrel_2rf (v: slcpipe_mtc_barrel_at)
+  return SLCPIPE_MTC_BARREL_rt;
+
+  -- -----------------------------------------------------------------
+  function mtc_2af (d: MTC_rt)
+  return std_logic_vector;
+
+  function mtc_2rf (v: mtc_at)
+  return MTC_rt;
+
+  -- -------------------------------------------------------------------
+
+end package mdttp_functions_pkg;
+
+package body mdttp_functions_pkg is
+
   constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
 
   -- -----------------------------------------------------------------
-  function SLC_MUID_2af (d: in SLC_MUID_rt)
+  function slc_muid_2af (d: SLC_MUID_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLC_MUID_msb downto 0);
+    variable v : std_logic_vector(SLC_MUID_LEN-1 downto 0);
   begin
     v := d.slcid
          & d.slid
          & d.bcid;
     return v;
-  end function SLC_MUID_2af;
+  end function slc_muid_2af;
 
-  function SLC_MUID_2rf (v: in std_logic_vector)
+  function slc_muid_2rf (v: slc_muid_at)
   return SLC_MUID_rt is
     variable b : SLC_MUID_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.slcid := v(19 downto 18);
-    b.slid := v(17 downto 12);
-    b.bcid := v(11 downto 0);
+    msb := SLC_MUID_LEN - 1; -- 20
+    lsb := msb - SLC_MUID_SLCID_LEN + 1; -- 2
+    b.slcid := v(msb downto lsb); -- 19 18
+    msb := lsb - 1;
+    lsb := msb - SLC_MUID_SLID_LEN + 1; -- 6
+    b.slid := v(msb downto lsb); -- 17 12
+    msb := lsb - 1;
+    lsb := msb - SLC_MUID_BCID_LEN + 1; -- 12
+    b.bcid := v(msb downto lsb); -- 11 0
     return b;
-  end function SLC_MUID_2rf;
+  end function slc_muid_2rf;
 
   -- -----------------------------------------------------------------
-  function SLC_COMMON_2af (d: in SLC_COMMON_rt)
+  function slc_common_2af (d: SLC_COMMON_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLC_COMMON_msb downto 0);
+    variable v : std_logic_vector(SLC_COMMON_LEN-1 downto 0);
   begin
     v := d.slcid
          & d.tcsent
@@ -47,144 +197,224 @@ package mdttp_functions_pkg is
          & d.ptthresh
          & d.charge;
     return v;
-  end function SLC_COMMON_2af;
+  end function slc_common_2af;
 
-  function SLC_COMMON_2rf (v: in std_logic_vector)
+  function slc_common_2rf (v: slc_common_at)
   return SLC_COMMON_rt is
     variable b : SLC_COMMON_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.slcid := v(30 downto 29);
-    b.tcsent := v(28 downto 28);
-    b.poseta := v(27 downto 14);
-    b.posphi := v(13 downto 5);
-    b.ptthresh := v(4 downto 1);
-    b.charge := v(0 downto 0);
+    msb := SLC_COMMON_LEN - 1; -- 31
+    lsb := msb - SLC_COMMON_SLCID_LEN + 1; -- 2
+    b.slcid := v(msb downto lsb); -- 30 29
+    msb := lsb - 1;
+    lsb := msb - SLC_COMMON_TCSENT_LEN + 1; -- 1
+    b.tcsent := v(msb); -- 28
+    msb := lsb - 1;
+    lsb := msb - SLC_COMMON_POSETA_LEN + 1; -- 14
+    b.poseta := v(msb downto lsb); -- 27 14
+    msb := lsb - 1;
+    lsb := msb - SLC_COMMON_POSPHI_LEN + 1; -- 9
+    b.posphi := v(msb downto lsb); -- 13 5
+    msb := lsb - 1;
+    lsb := msb - SLC_COMMON_PTTHRESH_LEN + 1; -- 4
+    b.ptthresh := v(msb downto lsb); -- 4 1
+    msb := lsb - 1;
+    lsb := msb - SLC_COMMON_CHARGE_LEN + 1; -- 1
+    b.charge := v(msb); -- 0
     return b;
-  end function SLC_COMMON_2rf;
+  end function slc_common_2rf;
 
   -- -----------------------------------------------------------------
-  function SLC_ENDCAP_2af (d: in SLC_ENDCAP_rt)
+  function slc_endcap_2af (d: SLC_ENDCAP_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLC_ENDCAP_msb downto 0);
+    variable v : std_logic_vector(SLC_ENDCAP_LEN-1 downto 0);
   begin
-    v := d.SLC_COMMON
+    v := slc_common_2af(d.slc_common_r)
          & d.seg_angdtheta
          & d.seg_angdphi
          & d.nswseg_poseta
          & d.nswseg_posphi
          & d.nswseg_angdtheta;
     return v;
-  end function SLC_ENDCAP_2af;
+  end function slc_endcap_2af;
 
-  function SLC_ENDCAP_2rf (v: in std_logic_vector)
+  function slc_endcap_2rf (v: slc_endcap_at)
   return SLC_ENDCAP_rt is
     variable b : SLC_ENDCAP_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_COMMON := v(68 downto 38);
-    b.seg_angdtheta := v(37 downto 31);
-    b.seg_angdphi := v(30 downto 27);
-    b.nswseg_poseta := v(26 downto 13);
-    b.nswseg_posphi := v(12 downto 5);
-    b.nswseg_angdtheta := v(4 downto 0);
+    msb := SLC_ENDCAP_LEN - 1; -- 69
+    lsb := msb - SLC_ENDCAP_SLC_COMMON_LEN + 1; -- 31
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 68 38
+    msb := lsb - 1;
+    lsb := msb - SLC_ENDCAP_SEG_ANGDTHETA_LEN + 1; -- 7
+    b.seg_angdtheta := v(msb downto lsb); -- 37 31
+    msb := lsb - 1;
+    lsb := msb - SLC_ENDCAP_SEG_ANGDPHI_LEN + 1; -- 4
+    b.seg_angdphi := v(msb downto lsb); -- 30 27
+    msb := lsb - 1;
+    lsb := msb - SLC_ENDCAP_NSWSEG_POSETA_LEN + 1; -- 14
+    b.nswseg_poseta := v(msb downto lsb); -- 26 13
+    msb := lsb - 1;
+    lsb := msb - SLC_ENDCAP_NSWSEG_POSPHI_LEN + 1; -- 8
+    b.nswseg_posphi := v(msb downto lsb); -- 12 5
+    msb := lsb - 1;
+    lsb := msb - SLC_ENDCAP_NSWSEG_ANGDTHETA_LEN + 1; -- 5
+    b.nswseg_angdtheta := v(msb downto lsb); -- 4 0
     return b;
-  end function SLC_ENDCAP_2rf;
+  end function slc_endcap_2rf;
 
   -- -----------------------------------------------------------------
-  function SLC_BARREL_2af (d: in SLC_BARREL_rt)
+  function slc_barrel_2af (d: SLC_BARREL_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLC_BARREL_msb downto 0);
+    variable v : std_logic_vector(SLC_BARREL_LEN-1 downto 0);
   begin
-    v := d.SLC_COMMON
+    v := slc_common_2af(d.slc_common_r)
          & d.rpc0_posz
          & d.rpc1_posz
          & d.rpc2_posz
          & d.rpc3_posz
          & d.cointype;
     return v;
-  end function SLC_BARREL_2af;
+  end function slc_barrel_2af;
 
-  function SLC_BARREL_2rf (v: in std_logic_vector)
+  function slc_barrel_2rf (v: slc_barrel_at)
   return SLC_BARREL_rt is
     variable b : SLC_BARREL_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_COMMON := v(73 downto 43);
-    b.rpc0_posz := v(42 downto 33);
-    b.rpc1_posz := v(32 downto 23);
-    b.rpc2_posz := v(22 downto 13);
-    b.rpc3_posz := v(12 downto 3);
-    b.cointype := v(2 downto 0);
+    msb := SLC_BARREL_LEN - 1; -- 74
+    lsb := msb - SLC_BARREL_SLC_COMMON_LEN + 1; -- 31
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 73 43
+    msb := lsb - 1;
+    lsb := msb - SLC_BARREL_RPC0_POSZ_LEN + 1; -- 10
+    b.rpc0_posz := v(msb downto lsb); -- 42 33
+    msb := lsb - 1;
+    lsb := msb - SLC_BARREL_RPC1_POSZ_LEN + 1; -- 10
+    b.rpc1_posz := v(msb downto lsb); -- 32 23
+    msb := lsb - 1;
+    lsb := msb - SLC_BARREL_RPC2_POSZ_LEN + 1; -- 10
+    b.rpc2_posz := v(msb downto lsb); -- 22 13
+    msb := lsb - 1;
+    lsb := msb - SLC_BARREL_RPC3_POSZ_LEN + 1; -- 10
+    b.rpc3_posz := v(msb downto lsb); -- 12 3
+    msb := lsb - 1;
+    lsb := msb - SLC_BARREL_COINTYPE_LEN + 1; -- 3
+    b.cointype := v(msb downto lsb); -- 2 0
     return b;
-  end function SLC_BARREL_2rf;
+  end function slc_barrel_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_PIPELINE_COMMON_2af (d: in SLCPROC_PIPELINE_COMMON_rt)
+  function slcproc_pipeline_common_2af (d: SLCPROC_PIPELINE_COMMON_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_PIPELINE_COMMON_msb downto 0);
+    variable v : std_logic_vector(SLCPROC_PIPELINE_COMMON_LEN-1 downto 0);
   begin
     v := d.busy
          & d.destsl
          & d.phimod
-         & d.vec_mdtid;
+         & d.inn_vec_mdtid
+         & d.mid_vec_mdtid
+         & d.out_vec_mdtid
+         & d.ext_vec_mdtid;
     return v;
-  end function SLCPROC_PIPELINE_COMMON_2af;
+  end function slcproc_pipeline_common_2af;
 
-  function SLCPROC_PIPELINE_COMMON_2rf (v: in std_logic_vector)
+  function slcproc_pipeline_common_2rf (v: slcproc_pipeline_common_at)
   return SLCPROC_PIPELINE_COMMON_rt is
     variable b : SLCPROC_PIPELINE_COMMON_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.busy := v(34 downto 34);
-    b.destsl := v(33 downto 32);
-    b.phimod := v(31 downto 24);
-    b.INN_vec_mdtid := v(23 downto 18);
+    msb := SLCPROC_PIPELINE_COMMON_LEN - 1; -- 35
+    lsb := msb - SLCPROC_PIPELINE_COMMON_BUSY_LEN + 1; -- 1
+    b.busy := v(msb); -- 34
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_COMMON_DESTSL_LEN + 1; -- 2
+    b.destsl := v(msb downto lsb); -- 33 32
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_COMMON_PHIMOD_LEN + 1; -- 8
+    b.phimod := v(msb downto lsb); -- 31 24
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LEN + 1; -- 6
+    b.inn_vec_mdtid := v(msb downto lsb); -- 23 18
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LEN + 1; -- 6
+    b.mid_vec_mdtid := v(msb downto lsb); -- 17 12
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LEN + 1; -- 6
+    b.out_vec_mdtid := v(msb downto lsb); -- 11 6
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LEN + 1; -- 6
+    b.ext_vec_mdtid := v(msb downto lsb); -- 5 0
     return b;
-  end function SLCPROC_PIPELINE_COMMON_2rf;
+  end function slcproc_pipeline_common_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_PIPELINE_ENDCAP_2af (d: in SLCPROC_PIPELINE_ENDCAP_rt)
+  function slcproc_pipeline_endcap_2af (d: SLCPROC_PIPELINE_ENDCAP_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_PIPELINE_ENDCAP_msb downto 0);
+    variable v : std_logic_vector(SLCPROC_PIPELINE_ENDCAP_LEN-1 downto 0);
   begin
-    v := d.SLCPROC_PIPELINE_COMMON
-         & d.SLC_ENDCAP
-         & d.SLC_MUID;
+    v := slcproc_pipeline_common_2af(d.slcproc_pipeline_common_r)
+         & slc_endcap_2af(d.slc_endcap_r)
+         & slc_muid_2af(d.slc_muid_r);
     return v;
-  end function SLCPROC_PIPELINE_ENDCAP_2af;
+  end function slcproc_pipeline_endcap_2af;
 
-  function SLCPROC_PIPELINE_ENDCAP_2rf (v: in std_logic_vector)
+  function slcproc_pipeline_endcap_2rf (v: slcproc_pipeline_endcap_at)
   return SLCPROC_PIPELINE_ENDCAP_rt is
     variable b : SLCPROC_PIPELINE_ENDCAP_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLCPROC_PIPELINE_COMMON := v(123 downto 89);
-    b.SLC_ENDCAP := v(88 downto 20);
-    b.SLC_MUID := v(19 downto 0);
+    msb := SLCPROC_PIPELINE_ENDCAP_LEN - 1; -- 124
+    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN + 1; -- 35
+    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 123 89
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN + 1; -- 69
+    b.slc_endcap_r := slc_endcap_2rf(v(msb downto lsb)); -- 88 20
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 19 0
     return b;
-  end function SLCPROC_PIPELINE_ENDCAP_2rf;
+  end function slcproc_pipeline_endcap_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_PIPELINE_BARREL_2af (d: in SLCPROC_PIPELINE_BARREL_rt)
+  function slcproc_pipeline_barrel_2af (d: SLCPROC_PIPELINE_BARREL_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_PIPELINE_BARREL_msb downto 0);
+    variable v : std_logic_vector(SLCPROC_PIPELINE_BARREL_LEN-1 downto 0);
   begin
-    v := d.SLCPROC_PIPELINE_COMMON
-         & d.SLC_BARREL
-         & d.SLC_MUID;
+    v := slcproc_pipeline_common_2af(d.slcproc_pipeline_common_r)
+         & slc_barrel_2af(d.slc_barrel_r)
+         & slc_muid_2af(d.slc_muid_r);
     return v;
-  end function SLCPROC_PIPELINE_BARREL_2af;
+  end function slcproc_pipeline_barrel_2af;
 
-  function SLCPROC_PIPELINE_BARREL_2rf (v: in std_logic_vector)
+  function slcproc_pipeline_barrel_2rf (v: slcproc_pipeline_barrel_at)
   return SLCPROC_PIPELINE_BARREL_rt is
     variable b : SLCPROC_PIPELINE_BARREL_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLCPROC_PIPELINE_COMMON := v(128 downto 94);
-    b.SLC_BARREL := v(93 downto 20);
-    b.SLC_MUID := v(19 downto 0);
+    msb := SLCPROC_PIPELINE_BARREL_LEN - 1; -- 129
+    lsb := msb - SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN + 1; -- 35
+    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 128 94
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN + 1; -- 74
+    b.slc_barrel_r := slc_barrel_2rf(v(msb downto lsb)); -- 93 20
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 19 0
     return b;
-  end function SLCPROC_PIPELINE_BARREL_2rf;
+  end function slcproc_pipeline_barrel_2rf;
 
   -- -----------------------------------------------------------------
-  function TDC_2af (d: in TDC_rt)
+  function tdc_2af (d: TDC_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(TDC_msb downto 0);
+    variable v : std_logic_vector(TDC_LEN-1 downto 0);
   begin
     v := d.chanid
          & d.edgemode
@@ -192,74 +422,110 @@ package mdttp_functions_pkg is
          & d.finetime
          & d.pulsewidth;
     return v;
-  end function TDC_2af;
+  end function tdc_2af;
 
-  function TDC_2rf (v: in std_logic_vector)
+  function tdc_2rf (v: tdc_at)
   return TDC_rt is
     variable b : TDC_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.chanid := v(31 downto 27);
-    b.edgemode := v(26 downto 25);
-    b.coarsetime := v(24 downto 13);
-    b.finetime := v(12 downto 8);
-    b.pulsewidth := v(7 downto 0);
+    msb := TDC_LEN - 1; -- 32
+    lsb := msb - TDC_CHANID_LEN + 1; -- 5
+    b.chanid := v(msb downto lsb); -- 31 27
+    msb := lsb - 1;
+    lsb := msb - TDC_EDGEMODE_LEN + 1; -- 2
+    b.edgemode := v(msb downto lsb); -- 26 25
+    msb := lsb - 1;
+    lsb := msb - TDC_COARSETIME_LEN + 1; -- 12
+    b.coarsetime := v(msb downto lsb); -- 24 13
+    msb := lsb - 1;
+    lsb := msb - TDC_FINETIME_LEN + 1; -- 5
+    b.finetime := v(msb downto lsb); -- 12 8
+    msb := lsb - 1;
+    lsb := msb - TDC_PULSEWIDTH_LEN + 1; -- 8
+    b.pulsewidth := v(msb downto lsb); -- 7 0
     return b;
-  end function TDC_2rf;
+  end function tdc_2rf;
 
   -- -----------------------------------------------------------------
-  function TDCFORMAT_2af (d: in TDCFORMAT_rt)
+  function tdcformat_2af (d: TDCFORMAT_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(TDCFORMAT_msb downto 0);
+    variable v : std_logic_vector(TDCFORMAT_LEN-1 downto 0);
   begin
-    v := d.TDC
+    v := tdc_2af(d.tdc_r)
          & d.fiberid
          & d.elinkid
          & d.datavalid
          & d.stationid;
     return v;
-  end function TDCFORMAT_2af;
+  end function tdcformat_2af;
 
-  function TDCFORMAT_2rf (v: in std_logic_vector)
+  function tdcformat_2rf (v: tdcformat_at)
   return TDCFORMAT_rt is
     variable b : TDCFORMAT_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.TDC := v(43 downto 12);
-    b.fiberid := v(11 downto 7);
-    b.elinkid := v(6 downto 3);
-    b.datavalid := v(2 downto 2);
-    b.stationid := v(1 downto 0);
+    msb := TDCFORMAT_LEN - 1; -- 44
+    lsb := msb - TDCFORMAT_TDC_LEN + 1; -- 32
+    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 43 12
+    msb := lsb - 1;
+    lsb := msb - TDCFORMAT_FIBERID_LEN + 1; -- 5
+    b.fiberid := v(msb downto lsb); -- 11 7
+    msb := lsb - 1;
+    lsb := msb - TDCFORMAT_ELINKID_LEN + 1; -- 4
+    b.elinkid := v(msb downto lsb); -- 6 3
+    msb := lsb - 1;
+    lsb := msb - TDCFORMAT_DATAVALID_LEN + 1; -- 1
+    b.datavalid := v(msb); -- 2
+    msb := lsb - 1;
+    lsb := msb - TDCFORMAT_STATIONID_LEN + 1; -- 2
+    b.stationid := v(msb downto lsb); -- 1 0
     return b;
-  end function TDCFORMAT_2rf;
+  end function tdcformat_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPROC_HESF_2af (d: in SLCPROC_HESF_rt)
+  function slcproc_hesf_2af (d: SLCPROC_HESF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_HESF_msb downto 0);
+    variable v : std_logic_vector(SLCPROC_HESF_LEN-1 downto 0);
   begin
-    v := d.SLC_MUID
+    v := slc_muid_2af(d.slc_muid_r)
          & d.mdtseg_dest
          & d.vec_mdtid
          & d.vec_pos
          & d.vec_ang;
     return v;
-  end function SLCPROC_HESF_2af;
+  end function slcproc_hesf_2af;
 
-  function SLCPROC_HESF_2rf (v: in std_logic_vector)
+  function slcproc_hesf_2rf (v: slcproc_hesf_at)
   return SLCPROC_HESF_rt is
     variable b : SLCPROC_HESF_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_MUID := v(47 downto 28);
-    b.mdtseg_dest := v(27 downto 26);
-    b.vec_mdtid := v(25 downto 20);
-    b.vec_pos := v(19 downto 10);
-    b.vec_ang := v(9 downto 0);
+    msb := SLCPROC_HESF_LEN - 1; -- 48
+    lsb := msb - SLCPROC_HESF_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 47 28
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_HESF_MDTSEG_DEST_LEN + 1; -- 2
+    b.mdtseg_dest := v(msb downto lsb); -- 27 26
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_HESF_VEC_MDTID_LEN + 1; -- 6
+    b.vec_mdtid := v(msb downto lsb); -- 25 20
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_HESF_VEC_POS_LEN + 1; -- 10
+    b.vec_pos := v(msb downto lsb); -- 19 10
+    msb := lsb - 1;
+    lsb := msb - SLCPROC_HESF_VEC_ANG_LEN + 1; -- 10
+    b.vec_ang := v(msb downto lsb); -- 9 0
     return b;
-  end function SLCPROC_HESF_2rf;
+  end function slcproc_hesf_2rf;
 
   -- -----------------------------------------------------------------
-  function TUBEREMAP_2af (d: in TUBEREMAP_rt)
+  function tuberemap_2af (d: TUBEREMAP_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(TUBEREMAP_msb downto 0);
+    variable v : std_logic_vector(TUBEREMAP_LEN-1 downto 0);
   begin
     v := d.mdt_tube_layer
          & d.mdt_tube_num
@@ -267,24 +533,36 @@ package mdttp_functions_pkg is
          & d.mdt_tube_z
          & d.mdt_tube_time;
     return v;
-  end function TUBEREMAP_2af;
+  end function tuberemap_2af;
 
-  function TUBEREMAP_2rf (v: in std_logic_vector)
+  function tuberemap_2rf (v: tuberemap_at)
   return TUBEREMAP_rt is
     variable b : TUBEREMAP_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.mdt_tube_layer := v(68 downto 64);
-    b.mdt_tube_num := v(63 downto 55);
-    b.mdt_tube_rho := v(54 downto 37);
-    b.mdt_tube_z := v(36 downto 18);
-    b.mdt_tube_time := v(17 downto 0);
+    msb := TUBEREMAP_LEN - 1; -- 69
+    lsb := msb - TUBEREMAP_MDT_TUBE_LAYER_LEN + 1; -- 5
+    b.mdt_tube_layer := v(msb downto lsb); -- 68 64
+    msb := lsb - 1;
+    lsb := msb - TUBEREMAP_MDT_TUBE_NUM_LEN + 1; -- 9
+    b.mdt_tube_num := v(msb downto lsb); -- 63 55
+    msb := lsb - 1;
+    lsb := msb - TUBEREMAP_MDT_TUBE_RHO_LEN + 1; -- 18
+    b.mdt_tube_rho := v(msb downto lsb); -- 54 37
+    msb := lsb - 1;
+    lsb := msb - TUBEREMAP_MDT_TUBE_Z_LEN + 1; -- 19
+    b.mdt_tube_z := v(msb downto lsb); -- 36 18
+    msb := lsb - 1;
+    lsb := msb - TUBEREMAP_MDT_TUBE_TIME_LEN + 1; -- 18
+    b.mdt_tube_time := v(msb downto lsb); -- 17 0
     return b;
-  end function TUBEREMAP_2rf;
+  end function tuberemap_2rf;
 
   -- -----------------------------------------------------------------
-  function HE_LSF_2af (d: in HE_LSF_rt)
+  function he_lsf_2af (d: HE_LSF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(HE_LSF_msb downto 0);
+    variable v : std_logic_vector(HE_LSF_LEN-1 downto 0);
   begin
     v := d.mdt_valid
          & d.data_valid
@@ -292,24 +570,36 @@ package mdttp_functions_pkg is
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function HE_LSF_2af;
+  end function he_lsf_2af;
 
-  function HE_LSF_2rf (v: in std_logic_vector)
+  function he_lsf_2rf (v: he_lsf_at)
   return HE_LSF_rt is
     variable b : HE_LSF_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.mdt_valid := v(38 downto 38);
-    b.data_valid := v(37 downto 37);
-    b.mdt_localx := v(36 downto 23);
-    b.mdt_localy := v(22 downto 9);
-    b.mdt_radius := v(8 downto 0);
+    msb := HE_LSF_LEN - 1; -- 39
+    lsb := msb - HE_LSF_MDT_VALID_LEN + 1; -- 1
+    b.mdt_valid := v(msb); -- 38
+    msb := lsb - 1;
+    lsb := msb - HE_LSF_DATA_VALID_LEN + 1; -- 1
+    b.data_valid := v(msb); -- 37
+    msb := lsb - 1;
+    lsb := msb - HE_LSF_MDT_LOCALX_LEN + 1; -- 14
+    b.mdt_localx := v(msb downto lsb); -- 36 23
+    msb := lsb - 1;
+    lsb := msb - HE_LSF_MDT_LOCALY_LEN + 1; -- 14
+    b.mdt_localy := v(msb downto lsb); -- 22 9
+    msb := lsb - 1;
+    lsb := msb - HE_LSF_MDT_RADIUS_LEN + 1; -- 9
+    b.mdt_radius := v(msb downto lsb); -- 8 0
     return b;
-  end function HE_LSF_2rf;
+  end function he_lsf_2rf;
 
   -- -----------------------------------------------------------------
-  function HE_CSF_2af (d: in HE_CSF_rt)
+  function he_csf_2af (d: HE_CSF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(HE_CSF_msb downto 0);
+    variable v : std_logic_vector(HE_CSF_LEN-1 downto 0);
   begin
     v := d.mdt_valid
          & d.data_valid
@@ -317,76 +607,124 @@ package mdttp_functions_pkg is
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function HE_CSF_2af;
+  end function he_csf_2af;
 
-  function HE_CSF_2rf (v: in std_logic_vector)
+  function he_csf_2rf (v: he_csf_at)
   return HE_CSF_rt is
     variable b : HE_CSF_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.mdt_valid := v(38 downto 38);
-    b.data_valid := v(37 downto 37);
-    b.mdt_localx := v(36 downto 23);
-    b.mdt_localy := v(22 downto 9);
-    b.mdt_radius := v(8 downto 0);
+    msb := HE_CSF_LEN - 1; -- 39
+    lsb := msb - HE_CSF_MDT_VALID_LEN + 1; -- 1
+    b.mdt_valid := v(msb); -- 38
+    msb := lsb - 1;
+    lsb := msb - HE_CSF_DATA_VALID_LEN + 1; -- 1
+    b.data_valid := v(msb); -- 37
+    msb := lsb - 1;
+    lsb := msb - HE_CSF_MDT_LOCALX_LEN + 1; -- 14
+    b.mdt_localx := v(msb downto lsb); -- 36 23
+    msb := lsb - 1;
+    lsb := msb - HE_CSF_MDT_LOCALY_LEN + 1; -- 14
+    b.mdt_localy := v(msb downto lsb); -- 22 9
+    msb := lsb - 1;
+    lsb := msb - HE_CSF_MDT_RADIUS_LEN + 1; -- 9
+    b.mdt_radius := v(msb downto lsb); -- 8 0
     return b;
-  end function HE_CSF_2rf;
+  end function he_csf_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPIPE_PTCALC_2af (d: in SLCPIPE_PTCALC_rt)
+  function slcpipe_ptcalc_2af (d: SLCPIPE_PTCALC_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPIPE_PTCALC_msb downto 0);
+    variable v : std_logic_vector(SLCPIPE_PTCALC_LEN-1 downto 0);
   begin
-    v := d.SLC_MUID
-         & d.vec_mdtid
+    v := slc_muid_2af(d.slc_muid_r)
+         & d.inn_vec_mdtid
+         & d.mid_vec_mdtid
+         & d.out_vec_mdtid
+         & d.ext_vec_mdtid
          & d.phimod
          & d.charge;
     return v;
-  end function SLCPIPE_PTCALC_2af;
+  end function slcpipe_ptcalc_2af;
 
-  function SLCPIPE_PTCALC_2rf (v: in std_logic_vector)
+  function slcpipe_ptcalc_2rf (v: slcpipe_ptcalc_at)
   return SLCPIPE_PTCALC_rt is
     variable b : SLCPIPE_PTCALC_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_MUID := v(52 downto 33);
-    b.INN_vec_mdtid := v(32 downto 27);
-    b.phimod := v(8 downto 1);
-    b.charge := v(0 downto 0);
+    msb := SLCPIPE_PTCALC_LEN - 1; -- 53
+    lsb := msb - SLCPIPE_PTCALC_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 52 33
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_PTCALC_INN_VEC_MDTID_LEN + 1; -- 6
+    b.inn_vec_mdtid := v(msb downto lsb); -- 32 27
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_PTCALC_MID_VEC_MDTID_LEN + 1; -- 6
+    b.mid_vec_mdtid := v(msb downto lsb); -- 26 21
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_PTCALC_OUT_VEC_MDTID_LEN + 1; -- 6
+    b.out_vec_mdtid := v(msb downto lsb); -- 20 15
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_PTCALC_EXT_VEC_MDTID_LEN + 1; -- 6
+    b.ext_vec_mdtid := v(msb downto lsb); -- 14 9
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_PTCALC_PHIMOD_LEN + 1; -- 8
+    b.phimod := v(msb downto lsb); -- 8 1
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_PTCALC_CHARGE_LEN + 1; -- 1
+    b.charge := v(msb); -- 0
     return b;
-  end function SLCPIPE_PTCALC_2rf;
+  end function slcpipe_ptcalc_2rf;
 
   -- -----------------------------------------------------------------
-  function SF_2af (d: in SF_rt)
+  function sf_2af (d: SF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SF_msb downto 0);
+    variable v : std_logic_vector(SF_LEN-1 downto 0);
   begin
-    v := d.SLC_MUID
+    v := slc_muid_2af(d.slc_muid_r)
          & d.vec_mdtid
          & d.segvalid
          & d.segpos
          & d.segangle
          & d.segquality;
     return v;
-  end function SF_2af;
+  end function sf_2af;
 
-  function SF_2rf (v: in std_logic_vector)
+  function sf_2rf (v: sf_at)
   return SF_rt is
     variable b : SF_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_MUID := v(54 downto 35);
-    b.vec_mdtid := v(34 downto 29);
-    b.segvalid := v(28 downto 28);
-    b.segpos := v(27 downto 12);
-    b.segangle := v(11 downto 1);
-    b.segquality := v(0 downto 0);
+    msb := SF_LEN - 1; -- 55
+    lsb := msb - SF_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 54 35
+    msb := lsb - 1;
+    lsb := msb - SF_VEC_MDTID_LEN + 1; -- 6
+    b.vec_mdtid := v(msb downto lsb); -- 34 29
+    msb := lsb - 1;
+    lsb := msb - SF_SEGVALID_LEN + 1; -- 1
+    b.segvalid := v(msb); -- 28
+    msb := lsb - 1;
+    lsb := msb - SF_SEGPOS_LEN + 1; -- 16
+    b.segpos := v(msb downto lsb); -- 27 12
+    msb := lsb - 1;
+    lsb := msb - SF_SEGANGLE_LEN + 1; -- 11
+    b.segangle := v(msb downto lsb); -- 11 1
+    msb := lsb - 1;
+    lsb := msb - SF_SEGQUALITY_LEN + 1; -- 1
+    b.segquality := v(msb); -- 0
     return b;
-  end function SF_2rf;
+  end function sf_2rf;
 
   -- -----------------------------------------------------------------
-  function PTCALC_2af (d: in PTCALC_rt)
+  function ptcalc_2af (d: PTCALC_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(PTCALC_msb downto 0);
+    variable v : std_logic_vector(PTCALC_LEN-1 downto 0);
   begin
-    v := d.SLC_MUID
+    v := slc_muid_2af(d.slc_muid_r)
          & d.mtc_eta
          & d.mtc_pt
          & d.mtc_ptthresh
@@ -394,76 +732,114 @@ package mdttp_functions_pkg is
          & d.mtc_nsegments
          & d.mtc_quality;
     return v;
-  end function PTCALC_2af;
+  end function ptcalc_2af;
 
-  function PTCALC_2rf (v: in std_logic_vector)
+  function ptcalc_2rf (v: ptcalc_at)
   return PTCALC_rt is
     variable b : PTCALC_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_MUID := v(51 downto 32);
-    b.mtc_eta := v(31 downto 18);
-    b.mtc_pt := v(17 downto 10);
-    b.mtc_ptthresh := v(9 downto 6);
-    b.mtc_charge := v(5 downto 5);
-    b.mtc_nsegments := v(4 downto 3);
-    b.mtc_quality := v(2 downto 0);
+    msb := PTCALC_LEN - 1; -- 52
+    lsb := msb - PTCALC_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 51 32
+    msb := lsb - 1;
+    lsb := msb - PTCALC_MTC_ETA_LEN + 1; -- 14
+    b.mtc_eta := v(msb downto lsb); -- 31 18
+    msb := lsb - 1;
+    lsb := msb - PTCALC_MTC_PT_LEN + 1; -- 8
+    b.mtc_pt := v(msb downto lsb); -- 17 10
+    msb := lsb - 1;
+    lsb := msb - PTCALC_MTC_PTTHRESH_LEN + 1; -- 4
+    b.mtc_ptthresh := v(msb downto lsb); -- 9 6
+    msb := lsb - 1;
+    lsb := msb - PTCALC_MTC_CHARGE_LEN + 1; -- 1
+    b.mtc_charge := v(msb); -- 5
+    msb := lsb - 1;
+    lsb := msb - PTCALC_MTC_NSEGMENTS_LEN + 1; -- 2
+    b.mtc_nsegments := v(msb downto lsb); -- 4 3
+    msb := lsb - 1;
+    lsb := msb - PTCALC_MTC_QUALITY_LEN + 1; -- 3
+    b.mtc_quality := v(msb downto lsb); -- 2 0
     return b;
-  end function PTCALC_2rf;
+  end function ptcalc_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPIPE_MTC_ENDCAP_2af (d: in SLCPIPE_MTC_ENDCAP_rt)
+  function slcpipe_mtc_endcap_2af (d: SLCPIPE_MTC_ENDCAP_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPIPE_MTC_ENDCAP_msb downto 0);
+    variable v : std_logic_vector(SLCPIPE_MTC_ENDCAP_LEN-1 downto 0);
   begin
-    v := d.SLC_MUID
-         & d.SLC_COMMON
+    v := slc_muid_2af(d.slc_muid_r)
+         & slc_common_2af(d.slc_common_r)
          & d.busy
          & d.destsl;
     return v;
-  end function SLCPIPE_MTC_ENDCAP_2af;
+  end function slcpipe_mtc_endcap_2af;
 
-  function SLCPIPE_MTC_ENDCAP_2rf (v: in std_logic_vector)
+  function slcpipe_mtc_endcap_2rf (v: slcpipe_mtc_endcap_at)
   return SLCPIPE_MTC_ENDCAP_rt is
     variable b : SLCPIPE_MTC_ENDCAP_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_MUID := v(53 downto 34);
-    b.SLC_COMMON := v(33 downto 3);
-    b.busy := v(2 downto 2);
-    b.destsl := v(1 downto 0);
+    msb := SLCPIPE_MTC_ENDCAP_LEN - 1; -- 54
+    lsb := msb - SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 53 34
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_ENDCAP_SLC_COMMON_LEN + 1; -- 31
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 33 3
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_ENDCAP_BUSY_LEN + 1; -- 1
+    b.busy := v(msb); -- 2
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_ENDCAP_DESTSL_LEN + 1; -- 2
+    b.destsl := v(msb downto lsb); -- 1 0
     return b;
-  end function SLCPIPE_MTC_ENDCAP_2rf;
+  end function slcpipe_mtc_endcap_2rf;
 
   -- -----------------------------------------------------------------
-  function SLCPIPE_MTC_BARREL_2af (d: in SLCPIPE_MTC_BARREL_rt)
+  function slcpipe_mtc_barrel_2af (d: SLCPIPE_MTC_BARREL_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPIPE_MTC_BARREL_msb downto 0);
+    variable v : std_logic_vector(SLCPIPE_MTC_BARREL_LEN-1 downto 0);
   begin
     v := d.cointype
-         & d.SLC_MUID
-         & d.SLC_COMMON
+         & slc_muid_2af(d.slc_muid_r)
+         & slc_common_2af(d.slc_common_r)
          & d.busy
          & d.destsl;
     return v;
-  end function SLCPIPE_MTC_BARREL_2af;
+  end function slcpipe_mtc_barrel_2af;
 
-  function SLCPIPE_MTC_BARREL_2rf (v: in std_logic_vector)
+  function slcpipe_mtc_barrel_2rf (v: slcpipe_mtc_barrel_at)
   return SLCPIPE_MTC_BARREL_rt is
     variable b : SLCPIPE_MTC_BARREL_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.cointype := v(56 downto 54);
-    b.SLC_MUID := v(53 downto 34);
-    b.SLC_COMMON := v(33 downto 3);
-    b.busy := v(2 downto 2);
-    b.destsl := v(1 downto 0);
+    msb := SLCPIPE_MTC_BARREL_LEN - 1; -- 57
+    lsb := msb - SLCPIPE_MTC_BARREL_COINTYPE_LEN + 1; -- 3
+    b.cointype := v(msb downto lsb); -- 56 54
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_BARREL_SLC_MUID_LEN + 1; -- 20
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 53 34
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_BARREL_SLC_COMMON_LEN + 1; -- 31
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 33 3
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_BARREL_BUSY_LEN + 1; -- 1
+    b.busy := v(msb); -- 2
+    msb := lsb - 1;
+    lsb := msb - SLCPIPE_MTC_BARREL_DESTSL_LEN + 1; -- 2
+    b.destsl := v(msb downto lsb); -- 1 0
     return b;
-  end function SLCPIPE_MTC_BARREL_2rf;
+  end function slcpipe_mtc_barrel_2rf;
 
   -- -----------------------------------------------------------------
-  function MTC_2af (d: in MTC_rt)
+  function mtc_2af (d: MTC_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(MTC_msb downto 0);
+    variable v : std_logic_vector(MTC_LEN-1 downto 0);
   begin
-    v := d.SLC_COMMON
+    v := slc_common_2af(d.slc_common_r)
          & d.mtc_eta
          & d.mtc_pt
          & d.mtc_ptthresh
@@ -472,23 +848,41 @@ package mdttp_functions_pkg is
          & d.mtc_nsegments
          & d.mtc_quality;
     return v;
-  end function MTC_2af;
+  end function mtc_2af;
 
-  function MTC_2rf (v: in std_logic_vector)
+  function mtc_2rf (v: mtc_at)
   return MTC_rt is
     variable b : MTC_rt;
+    variable msb : integer;
+    variable lsb : integer;
   begin
-    b.SLC_COMMON := v(66 downto 36);
-    b.mtc_eta := v(35 downto 22);
-    b.mtc_pt := v(21 downto 14);
-    b.mtc_ptthresh := v(13 downto 10);
-    b.mtc_charge := v(9 downto 9);
-    b.mtc_procflags := v(8 downto 5);
-    b.mtc_nsegments := v(4 downto 3);
-    b.mtc_quality := v(2 downto 0);
+    msb := MTC_LEN - 1; -- 67
+    lsb := msb - MTC_SLC_COMMON_LEN + 1; -- 31
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 66 36
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_ETA_LEN + 1; -- 14
+    b.mtc_eta := v(msb downto lsb); -- 35 22
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_PT_LEN + 1; -- 8
+    b.mtc_pt := v(msb downto lsb); -- 21 14
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_PTTHRESH_LEN + 1; -- 4
+    b.mtc_ptthresh := v(msb downto lsb); -- 13 10
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_CHARGE_LEN + 1; -- 1
+    b.mtc_charge := v(msb); -- 9
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_PROCFLAGS_LEN + 1; -- 4
+    b.mtc_procflags := v(msb downto lsb); -- 8 5
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_NSEGMENTS_LEN + 1; -- 2
+    b.mtc_nsegments := v(msb downto lsb); -- 4 3
+    msb := lsb - 1;
+    lsb := msb - MTC_MTC_QUALITY_LEN + 1; -- 3
+    b.mtc_quality := v(msb downto lsb); -- 2 0
     return b;
-  end function MTC_2rf;
+  end function mtc_2rf;
 
   -- -------------------------------------------------------------------
 
-end package mdttp_functions_pkg;
+end package body mdttp_functions_pkg;

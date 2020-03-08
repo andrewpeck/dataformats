@@ -109,7 +109,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
         write_ln("");
         write_ln(f"// {'-'*67}")
-        write_ln(f"const int {bus.name}_width = {bus.width};")
+        write_ln(f"const int {bus.name}_LEN = {bus.width};")
 
         for var in bus.vars:
             if var.type == "struct":
@@ -123,16 +123,19 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             tpl = "const int %s = %s;"
 
+            suffix = ""
             
             if var.station:
-                var_prefix = f"{bus.name}_{var.station}_{var.name}"
+                prefix = f"{bus.name}_{var.station}_{var.name}"
             else:
-                var_prefix = f"{bus.name}_{var.name}"
+                prefix = f"{bus.name}_{var.name}"
 
-            write_ln(tpl %(f"{var_prefix}_width", var.width))
-            # write_ln(tpl %(f"{var_prefix}_msb", var.msb))
-            write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
-            write_ln(tpl %(f"{var_prefix}_decb", var.decb))
+            var_name = f"{prefix}{var.name}{suffix}".upper()
+
+            write_ln(tpl %(f"{var_name}_LEN", var.width))
+            write_ln(tpl %(f"{var_name}_MSB", var.msb))
+            write_ln(tpl %(f"{var_name}_LSB", var.lsb))
+            write_ln(tpl %(f"{var_name}_DECB", var.decb))
 
     write_ln("")
     write_ln(f"// {'-'*67}")
@@ -198,13 +201,17 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             l = ((int(var.width)-1) // 8) + 1
             l_fmt = f"[{l}]" if l > 1 else ""
+
+            suffix = ""
             
             if var.station:
-                var_prefix = f"{var.station}_{var.name}"
+                prefix = f"{var.station}_"
             else:
-                var_prefix += f"{var.name}"
+                prefix += f""
 
-            write_ln(f"    char {var_prefix}{l_fmt}; // {var.width} bits")
+            var_name = f"{prefix}{var.name}{suffix}"
+                
+            write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
         write_ln(f"}} {bus.name}_rt;")
         
@@ -241,7 +248,7 @@ def write_sv_file(sv_name, df_hash, o_dir):
 
         write_ln("");
         write_ln(f"// {'-'*67}")
-        write_ln(f"`define {bus.name}_width {bus.width}")
+        write_ln(f"`define {bus.name}_LEN {bus.width}")
 
         for var in bus.vars:
             if var.type == "struct":
@@ -255,16 +262,18 @@ def write_sv_file(sv_name, df_hash, o_dir):
 
             tpl = "`define %s %s"
 
-            
+            suffix = ""
             if var.station:
-                var_prefix = f"{bus.name}_{var.station}_{var.name}"
+                prefix = f"{bus.name}_{var.station}_"
             else:
-                var_prefix = f"{bus.name}_{var.name}"
+                prefix = f"{bus.name}_{var.name}"
+
+            var_name = f"{prefix}{var.name}{suffix}"
             
-            write_ln(tpl %(f"{var_prefix}_width", var.width))
-            # write_ln(tpl %(f"{var_prefix}_msb", var.msb))
-            write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
-            write_ln(tpl %(f"{var_prefix}_decb", var.decb))
+            write_ln(tpl %(f"{var_name}_LEN", var.width))
+            write_ln(tpl %(f"{var_name}_MSB", var.msb))
+            write_ln(tpl %(f"{var_name}_LSB", var.lsb))
+            write_ln(tpl %(f"{var_name}_DECB", var.decb))
 
     f_constants.close()
 
@@ -308,12 +317,16 @@ def write_sv_file(sv_name, df_hash, o_dir):
                 write_ln(f"    // {var.parameter}")
             msb = int(var.width)-1
 
+            suffix = ""
+            
             if var.station:
-                var_prefix = f"{var.station}_{var.name}"
+                prefix = f"{var.station}_{var.name}"
             else:
-                var_prefix = f"{var.name}"
+                prefix = f"{var.name}"
 
-            write_ln(f"    logic [{msb}:0] {var_prefix};")
+            var_name = f"{prefix}{var.name}{suffix}"
+                
+            write_ln(f"    logic [{msb}:0] {var_name};")
 
         write_ln(f"}} {bus.name}_rt;")
         
@@ -357,35 +370,39 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
             write_ln("")
             write_ln("  " + "-" * 70)
         
-            write_ln(f"  constant {bus.name}_width : natural := {bus.width};")
+            write_ln(f"  constant {bus.name}_LEN : natural := {bus.width};")
         
             for var in bus.vars:
                 if var.type == "struct":
                     continue
         
-                if var.parameter == "(COPY)":
-                    continue
+                #if var.parameter == "(COPY)":
+                #    continue
         
                 write_ln("")
                 write_ln(f"  -- {var.parameter}")
-        
-                tpl = "  constant %s : natural := %s;"
-                tpl_real = "  constant %s : real := %s;"
+
+                tpl = "  constant %s : %s := %s;"
+
+                suffix = ""
                 
                 if var.station:
-                    var_prefix = f"{bus.name}_{var.station}_{var.name}"
+                    prefix = f"{bus.name}_{var.station}_"
        	        else:
-                    var_prefix = f"{bus.name}_{var.name}"
-			 
+                    prefix = f"{bus.name}_"
+
+                var_name = f"{prefix}{var.name}{suffix}".upper()
+                    
+                write_ln(tpl %(f"{var_name}_LEN", "natural", var.width))
+                write_ln(tpl %(f"{var_name}_MSB", "natural", var.msb))
+                write_ln(tpl %(f"{var_name}_LSB", "natural", var.lsb))
+                write_ln(tpl %(f"{var_name}_DECB", "natural", var.decb))
+
                 mult = 0
                 if var.high != '' and var.low!= '':
                     mult = round((2**int(var.width))/(float(var.high)-float(var.low)))
-
-                write_ln(tpl %(f"{var_prefix}_width", var.width))
-                write_ln(tpl_real %(f"{var_prefix}_mult", mult))
-                write_ln(tpl %(f"{var_prefix}_msb", var.msb))
-                write_ln(tpl %(f"{var_prefix}_lsb", var.lsb))
-                write_ln(tpl %(f"{var_prefix}_decb", var.decb))
+                
+                write_ln(tpl %(f"{var_name}_MULT", "natural", mult))
         
         write_ln("")
         write_ln("  " + "-" * 70)
@@ -406,6 +423,10 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         write_ln("library ieee;")
         write_ln("use ieee.std_logic_1164.all;")
         write_ln("use ieee.numeric_std.all;")
+
+        write_ln("");
+        write_ln("library l0mdt_lib;")
+        write_ln("use l0mdt_lib.mdttp_constants_pkg.all;")
         
         write_ln("")
         write_ln("package mdttp_types_pkg is")
@@ -424,41 +445,48 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
             write_ln("");
             write_ln(f"  -- {'-'*65}")
 
-            tpl = f"  subtype %s_vt is std_logic_vector(%s downto 0);"
+            tpl = f"  subtype %s_at is std_logic_vector(%s downto 0);"
             write_ln(tpl %(bus.name, int(bus.width)-1))
             
             write_ln("");
-            write_ln(f"  type {bus.name}_rt is record")
+            write_ln(f"  type {bus.name.lower()}_rt is record")
         
             included = []
             for var in bus.vars:
                 
-                if var.name in included:
-                    continue
-        
-                included.append(var.name)
-                
                 if var.type != 'var':
                     write_ln(f"    -- struct {var.name}")
-                    suffix = "_v"
+                    suffix = "_r"
                 elif var.type == 'var':
                     write_ln(f"    -- {var.parameter}")
                     suffix = ""
 
                 if var.station:
-                    var_prefix = f"{var.station}_"
+                    prefix = f"{var.station}_"
                 else:
-                    var_prefix = f""
+                    prefix = f""
 
-                var_name = f"{var_prefix}{var.name}{suffix}"
-                    
-                msb = int(var.width)-1
-                if msb > 0:
-                    write_ln(f"    {var_name} : std_logic_vector({msb} downto 0);")
-                else:
-                    write_ln(f"    {var_name} : std_logic;")
+                var_name = f"{prefix}{var.name}{suffix}".lower()
+                const_name = f"{bus.name}_{prefix}{var.name}".upper()
+
+
+                if var_name in included:
+                    continue
         
-            write_ln(f"  end record {bus.name}_rt;")
+                included.append(var_name)
+                
+                if var.type == 'var':
+                    msb = int(var.width)-1
+                    if msb > 0: 
+                        aux = f"std_logic_vector({const_name}_LEN-1 downto 0)"
+                        write_ln(f"    {var_name} : {aux}; -- {msb}")
+                    else:
+                        write_ln(f"    {var_name} : std_logic;")
+                else:
+                        write_ln(f"    {var_name} : {var.name}_rt;")
+                    
+        
+            write_ln(f"  end record {bus.name.lower()}_rt;")
             
         write_ln("")
         write_ln(f"-- {'-'*67}")
@@ -483,10 +511,59 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
         
         write_ln("");
         write_ln("library l0mdt_lib;")
+        write_ln("use l0mdt_lib.mdttp_constants_pkg.all;")
         write_ln("use l0mdt_lib.mdttp_types_pkg.all;")
         
         write_ln("")
         write_ln("package mdttp_functions_pkg is")
+        
+        write_ln("")
+        msb = len(df_hash)*4-1
+        tpl = 'constant DF_HASH : std_logic_vector(%s downto 0);'
+        write_ln(f'  {tpl}' %(msb))
+        
+        for bus in buses:
+            if not f'{bus.name}':
+                ## somehow we have an empty bus name...
+                continue
+            
+            write_ln("");
+            write_ln(f"  -- {'-'*65}")
+
+            included = []
+            for var in bus.vars:
+                
+                if var.type != 'var':
+                    tpl = f"{var.name}_2af(d.{var.name}_r)"
+                    included.append(tpl)
+                elif var.type == 'var':
+                    if var.station:
+                        var_prefix = f"{var.station}_"
+                    else:
+                        var_prefix = f""
+
+                    var_name = f"d.{var_prefix}{var.name}"
+                    if var_name in included:
+                        continue
+                    included.append(var_name)
+
+            ## to vector
+            write_ln(f'  function {bus.name.lower()}_2af (d: {bus.name}_rt)')
+            write_ln(f'  return std_logic_vector;')
+
+            write_ln("")
+            
+            # from vector
+            write_ln(f'  function {bus.name.lower()}_2rf (v: {bus.name.lower()}_at)')
+            write_ln(f'  return {bus.name}_rt;')
+
+        write_ln("")
+        write_ln(f"  -- {'-'*67}")
+        write_ln("")
+        write_ln("end package mdttp_functions_pkg;")
+
+        write_ln("")
+        write_ln("package body mdttp_functions_pkg is")
         
         write_ln("")
         msb = len(df_hash)*4-1
@@ -503,49 +580,98 @@ def write_vhdl_file(vhdl_name, df_hash, o_dir) :
 
             included = []
             for var in bus.vars:
-                if var.name in included:
-                    continue
-                included.append(var.name)
+                
+                if var.type != 'var':
+                    tpl = f"{var.name}_2af(d.{var.name}_r)"
+                    included.append(tpl)
+                elif var.type == 'var':
+                    if var.station:
+                        var_prefix = f"{var.station}_"
+                    else:
+                        var_prefix = f""
+
+                    var_name = f"d.{var_prefix}{var.name}"
+                    if var_name in included:
+                        continue
+                    included.append(var_name)
 
             ## to vector
-            write_ln(f'  function {bus.name}_2af (d: in {bus.name}_rt)')
+            write_ln(f'  function {bus.name.lower()}_2af (d: {bus.name}_rt)')
             write_ln(f'  return std_logic_vector is')
-            write_ln(f'    variable v : std_logic_vector({bus.name}_msb downto 0);')
+            write_ln(f'    variable v : std_logic_vector({bus.name}_LEN-1 downto 0);')
             write_ln(f'  begin')
-            c = ["d." + x for x in included]
+            c = [x.lower() for x in included]
             r_side = "\n         & ".join(c).strip()
             write_ln(f'    v := {r_side};')
             write_ln(f'    return v;')
-            write_ln(f'  end function {bus.name}_2af;')
+            write_ln(f'  end function {bus.name.lower()}_2af;')
 
             write_ln("")
             
             # from vector
-            write_ln(f'  function {bus.name}_2rf (v: in std_logic_vector)')
+            write_ln(f'  function {bus.name.lower()}_2rf (v: {bus.name.lower()}_at)')
             write_ln(f'  return {bus.name}_rt is')
             write_ln(f'    variable b : {bus.name}_rt;')
+            write_ln(f"    variable msb : integer;")
+            write_ln(f"    variable lsb : integer;")
             write_ln(f'  begin')
 
             included = []
+            prev_var = None
             for var in bus.vars:
-                if var.name in included:
-                    continue
-                included.append(var.name)
+                if var.type != 'var':
+                    var_suffix = "_r"
+                elif var.type == 'var':
+                    var_suffix = ""
 
+                const_suffix = ""
+                const_prefix = f"{bus.name}_"
+                
                 if var.station:
-                    var_prefix = f"{var.station}_{var.name}"
+                    var_prefix = f"{var.station}_"
+                    const_prefix += f"{var.station}_"
                 else:
-                    var_prefix = f"{var.name}"
+                    var_prefix = f""
+
+                var_name = f"{var_prefix}{var.name}{var_suffix}"
+                const_name = f"{const_prefix}{var.name}{const_suffix}"
+
+                if var_name in included:
+                    continue
+                included.append(var_name)
+
+                if prev_var is None:
+                    msb = int(bus.width)-1
+                    write_ln(f'    msb := {bus.name.upper()}_LEN - 1; -- {bus.width}')
+                else:
+                    msb = lsb - 1
+                    write_ln(f'    msb := lsb - 1;')
+
+                lsb = msb - int(var.width) + 1
+                write_ln(f'    lsb := msb - {const_name.upper()}_LEN + 1; -- {var.width}')
+                prev_var = var
+
+                if msb != lsb:
+                    var_range = f"v(msb downto lsb)"
+                    var_comment = f"{msb} {lsb}"
+                else:
+                    var_range = "v(msb)"
+                    var_comment = f"{msb}"
                     
-                write_ln(f'    b.{var_prefix} := v({var.msb} downto {var.lsb});')
+                    
+                if var.type == 'var':
+                    write_ln(f'    b.{var_name.lower()} := {var_range}; -- {var_comment}')
+                else:
+                    right = f'{var.name.lower()}_2rf({var_range}); -- {var_comment}'
+                    write_ln(f'    b.{var_name.lower()} := {right}')
 
             write_ln(f'    return b;')
-            write_ln(f'  end function {bus.name}_2rf;')
+            write_ln(f'  end function {bus.name.lower()}_2rf;')
 
         write_ln("")
         write_ln(f"  -- {'-'*67}")
         write_ln("")
-        write_ln("end package mdttp_functions_pkg;")
+        write_ln("end package body mdttp_functions_pkg;")
 
     print('VHDL: functions file written.')
 

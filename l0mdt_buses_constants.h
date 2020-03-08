@@ -9,401 +9,469 @@
 const char df_hash[] = "a34aee13";
 
 // -------------------------------------------------------------------
-const int SLC_MUID_width = 20;
+const int SLC_MUID_LEN = 20;
 
 // SLc Identification (up to 3)
-const int SLC_MUID_slcid_width = 2;
-const int SLC_MUID_slcid_lsb = 18;
-const int SLC_MUID_slcid_decb = 0;
+const int SLC_MUID_SLCIDSLCID_LEN = 2;
+const int SLC_MUID_SLCIDSLCID_MSB = 19;
+const int SLC_MUID_SLCIDSLCID_LSB = 18;
+const int SLC_MUID_SLCIDSLCID_DECB = 0;
 
 // SL board ID (based on the fiber ID)
-const int SLC_MUID_slid_width = 6;
-const int SLC_MUID_slid_lsb = 12;
-const int SLC_MUID_slid_decb = 0;
+const int SLC_MUID_SLIDSLID_LEN = 6;
+const int SLC_MUID_SLIDSLID_MSB = 17;
+const int SLC_MUID_SLIDSLID_LSB = 12;
+const int SLC_MUID_SLIDSLID_DECB = 0;
 
 // BCID from SLC
-const int SLC_MUID_bcid_width = 12;
-const int SLC_MUID_bcid_lsb = 0;
-const int SLC_MUID_bcid_decb = 0;
+const int SLC_MUID_BCIDBCID_LEN = 12;
+const int SLC_MUID_BCIDBCID_MSB = 11;
+const int SLC_MUID_BCIDBCID_LSB = 0;
+const int SLC_MUID_BCIDBCID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_COMMON_width = 31;
+const int SLC_COMMON_LEN = 31;
 
 // SLc Identification (up to 3)
-const int SLC_COMMON_slcid_width = 2;
-const int SLC_COMMON_slcid_lsb = 29;
-const int SLC_COMMON_slcid_decb = 0;
+const int SLC_COMMON_SLCIDSLCID_LEN = 2;
+const int SLC_COMMON_SLCIDSLCID_MSB = 30;
+const int SLC_COMMON_SLCIDSLCID_LSB = 29;
+const int SLC_COMMON_SLCIDSLCID_DECB = 0;
 
 // TC sent to MDT TP
-const int SLC_COMMON_tcsent_width = 1;
-const int SLC_COMMON_tcsent_lsb = 28;
-const int SLC_COMMON_tcsent_decb = 0;
+const int SLC_COMMON_TCSENTTCSENT_LEN = 1;
+const int SLC_COMMON_TCSENTTCSENT_MSB = 28;
+const int SLC_COMMON_TCSENTTCSENT_LSB = 28;
+const int SLC_COMMON_TCSENTTCSENT_DECB = 0;
 
 // SLc Eta Position
-const int SLC_COMMON_poseta_width = 14;
-const int SLC_COMMON_poseta_lsb = 14;
-const int SLC_COMMON_poseta_decb = 12;
+const int SLC_COMMON_POSETAPOSETA_LEN = 14;
+const int SLC_COMMON_POSETAPOSETA_MSB = 27;
+const int SLC_COMMON_POSETAPOSETA_LSB = 14;
+const int SLC_COMMON_POSETAPOSETA_DECB = 12;
 
 // SLc Phi Position
-const int SLC_COMMON_posphi_width = 9;
-const int SLC_COMMON_posphi_lsb = 5;
-const int SLC_COMMON_posphi_decb = 0;
+const int SLC_COMMON_POSPHIPOSPHI_LEN = 9;
+const int SLC_COMMON_POSPHIPOSPHI_MSB = 13;
+const int SLC_COMMON_POSPHIPOSPHI_LSB = 5;
+const int SLC_COMMON_POSPHIPOSPHI_DECB = 0;
 
 // SLc highest pT threshold passed
-const int SLC_COMMON_ptthresh_width = 4;
-const int SLC_COMMON_ptthresh_lsb = 1;
-const int SLC_COMMON_ptthresh_decb = 0;
+const int SLC_COMMON_PTTHRESHPTTHRESH_LEN = 4;
+const int SLC_COMMON_PTTHRESHPTTHRESH_MSB = 4;
+const int SLC_COMMON_PTTHRESHPTTHRESH_LSB = 1;
+const int SLC_COMMON_PTTHRESHPTTHRESH_DECB = 0;
 
 // SLc charge
-const int SLC_COMMON_charge_width = 1;
-const int SLC_COMMON_charge_lsb = 0;
-const int SLC_COMMON_charge_decb = 0;
+const int SLC_COMMON_CHARGECHARGE_LEN = 1;
+const int SLC_COMMON_CHARGECHARGE_MSB = 0;
+const int SLC_COMMON_CHARGECHARGE_LSB = 0;
+const int SLC_COMMON_CHARGECHARGE_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_ENDCAP_width = 69;
+const int SLC_ENDCAP_LEN = 69;
 
 // SLc Segment Angle wrt Eta position
-const int SLC_ENDCAP_seg_angdtheta_width = 7;
-const int SLC_ENDCAP_seg_angdtheta_lsb = 31;
-const int SLC_ENDCAP_seg_angdtheta_decb = 0;
+const int SLC_ENDCAP_SEG_ANGDTHETASEG_ANGDTHETA_LEN = 7;
+const int SLC_ENDCAP_SEG_ANGDTHETASEG_ANGDTHETA_MSB = 37;
+const int SLC_ENDCAP_SEG_ANGDTHETASEG_ANGDTHETA_LSB = 31;
+const int SLC_ENDCAP_SEG_ANGDTHETASEG_ANGDTHETA_DECB = 0;
 
 // SLc Segment Angle wrt Phi position
-const int SLC_ENDCAP_seg_angdphi_width = 4;
-const int SLC_ENDCAP_seg_angdphi_lsb = 27;
-const int SLC_ENDCAP_seg_angdphi_decb = 0;
+const int SLC_ENDCAP_SEG_ANGDPHISEG_ANGDPHI_LEN = 4;
+const int SLC_ENDCAP_SEG_ANGDPHISEG_ANGDPHI_MSB = 30;
+const int SLC_ENDCAP_SEG_ANGDPHISEG_ANGDPHI_LSB = 27;
+const int SLC_ENDCAP_SEG_ANGDPHISEG_ANGDPHI_DECB = 0;
 
 // NSW segment eta position
-const int SLC_ENDCAP_nswseg_poseta_width = 14;
-const int SLC_ENDCAP_nswseg_poseta_lsb = 13;
-const int SLC_ENDCAP_nswseg_poseta_decb = 13;
+const int SLC_ENDCAP_NSWSEG_POSETANSWSEG_POSETA_LEN = 14;
+const int SLC_ENDCAP_NSWSEG_POSETANSWSEG_POSETA_MSB = 26;
+const int SLC_ENDCAP_NSWSEG_POSETANSWSEG_POSETA_LSB = 13;
+const int SLC_ENDCAP_NSWSEG_POSETANSWSEG_POSETA_DECB = 13;
 
 // NSW segment phi position
-const int SLC_ENDCAP_nswseg_posphi_width = 8;
-const int SLC_ENDCAP_nswseg_posphi_lsb = 5;
-const int SLC_ENDCAP_nswseg_posphi_decb = 0;
+const int SLC_ENDCAP_NSWSEG_POSPHINSWSEG_POSPHI_LEN = 8;
+const int SLC_ENDCAP_NSWSEG_POSPHINSWSEG_POSPHI_MSB = 12;
+const int SLC_ENDCAP_NSWSEG_POSPHINSWSEG_POSPHI_LSB = 5;
+const int SLC_ENDCAP_NSWSEG_POSPHINSWSEG_POSPHI_DECB = 0;
 
 // NSW segment angle wrt Eta position
-const int SLC_ENDCAP_nswseg_angdtheta_width = 5;
-const int SLC_ENDCAP_nswseg_angdtheta_lsb = 0;
-const int SLC_ENDCAP_nswseg_angdtheta_decb = 0;
+const int SLC_ENDCAP_NSWSEG_ANGDTHETANSWSEG_ANGDTHETA_LEN = 5;
+const int SLC_ENDCAP_NSWSEG_ANGDTHETANSWSEG_ANGDTHETA_MSB = 4;
+const int SLC_ENDCAP_NSWSEG_ANGDTHETANSWSEG_ANGDTHETA_LSB = 0;
+const int SLC_ENDCAP_NSWSEG_ANGDTHETANSWSEG_ANGDTHETA_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_BARREL_width = 74;
+const int SLC_BARREL_LEN = 74;
 
 // SLc Hit Z Position in RPC0
-const int SLC_BARREL_rpc0_posz_width = 10;
-const int SLC_BARREL_rpc0_posz_lsb = 33;
-const int SLC_BARREL_rpc0_posz_decb = 0;
+const int SLC_BARREL_RPC0_POSZRPC0_POSZ_LEN = 10;
+const int SLC_BARREL_RPC0_POSZRPC0_POSZ_MSB = 42;
+const int SLC_BARREL_RPC0_POSZRPC0_POSZ_LSB = 33;
+const int SLC_BARREL_RPC0_POSZRPC0_POSZ_DECB = 0;
 
 // SLc Hit Z Position in RPC1
-const int SLC_BARREL_rpc1_posz_width = 10;
-const int SLC_BARREL_rpc1_posz_lsb = 23;
-const int SLC_BARREL_rpc1_posz_decb = 0;
+const int SLC_BARREL_RPC1_POSZRPC1_POSZ_LEN = 10;
+const int SLC_BARREL_RPC1_POSZRPC1_POSZ_MSB = 32;
+const int SLC_BARREL_RPC1_POSZRPC1_POSZ_LSB = 23;
+const int SLC_BARREL_RPC1_POSZRPC1_POSZ_DECB = 0;
 
 // SLc Hit Z Position in RPC2
-const int SLC_BARREL_rpc2_posz_width = 10;
-const int SLC_BARREL_rpc2_posz_lsb = 13;
-const int SLC_BARREL_rpc2_posz_decb = 0;
+const int SLC_BARREL_RPC2_POSZRPC2_POSZ_LEN = 10;
+const int SLC_BARREL_RPC2_POSZRPC2_POSZ_MSB = 22;
+const int SLC_BARREL_RPC2_POSZRPC2_POSZ_LSB = 13;
+const int SLC_BARREL_RPC2_POSZRPC2_POSZ_DECB = 0;
 
 // SLc Hit Z Position in RPC3
-const int SLC_BARREL_rpc3_posz_width = 10;
-const int SLC_BARREL_rpc3_posz_lsb = 3;
-const int SLC_BARREL_rpc3_posz_decb = 0;
+const int SLC_BARREL_RPC3_POSZRPC3_POSZ_LEN = 10;
+const int SLC_BARREL_RPC3_POSZRPC3_POSZ_MSB = 12;
+const int SLC_BARREL_RPC3_POSZRPC3_POSZ_LSB = 3;
+const int SLC_BARREL_RPC3_POSZRPC3_POSZ_DECB = 0;
 
 // SLc coincidence type
-const int SLC_BARREL_cointype_width = 3;
-const int SLC_BARREL_cointype_lsb = 0;
-const int SLC_BARREL_cointype_decb = 0;
+const int SLC_BARREL_COINTYPECOINTYPE_LEN = 3;
+const int SLC_BARREL_COINTYPECOINTYPE_MSB = 2;
+const int SLC_BARREL_COINTYPECOINTYPE_LSB = 0;
+const int SLC_BARREL_COINTYPECOINTYPE_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_COMMON_width = 35;
+const int SLCPROC_PIPELINE_COMMON_LEN = 35;
 
 // SLc busy flag
-const int SLCPROC_PIPELINE_COMMON_busy_width = 1;
-const int SLCPROC_PIPELINE_COMMON_busy_lsb = 34;
-const int SLCPROC_PIPELINE_COMMON_busy_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_BUSYBUSY_LEN = 1;
+const int SLCPROC_PIPELINE_COMMON_BUSYBUSY_MSB = 34;
+const int SLCPROC_PIPELINE_COMMON_BUSYBUSY_LSB = 34;
+const int SLCPROC_PIPELINE_COMMON_BUSYBUSY_DECB = 0;
 
 // SLc board destination
-const int SLCPROC_PIPELINE_COMMON_destsl_width = 2;
-const int SLCPROC_PIPELINE_COMMON_destsl_lsb = 32;
-const int SLCPROC_PIPELINE_COMMON_destsl_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_DESTSLDESTSL_LEN = 2;
+const int SLCPROC_PIPELINE_COMMON_DESTSLDESTSL_MSB = 33;
+const int SLCPROC_PIPELINE_COMMON_DESTSLDESTSL_LSB = 32;
+const int SLCPROC_PIPELINE_COMMON_DESTSLDESTSL_DECB = 0;
 
 // SLc phimod
-const int SLCPROC_PIPELINE_COMMON_phimod_width = 8;
-const int SLCPROC_PIPELINE_COMMON_phimod_lsb = 24;
-const int SLCPROC_PIPELINE_COMMON_phimod_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_PHIMODPHIMOD_LEN = 8;
+const int SLCPROC_PIPELINE_COMMON_PHIMODPHIMOD_MSB = 31;
+const int SLCPROC_PIPELINE_COMMON_PHIMODPHIMOD_LSB = 24;
+const int SLCPROC_PIPELINE_COMMON_PHIMODPHIMOD_DECB = 0;
 
 // SLc Inner Vector MDT chamber ID
-const int SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_width = 6;
-const int SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_lsb = 18;
-const int SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_INN_VEC_MDTIDVEC_MDTID_LEN = 6;
+const int SLCPROC_PIPELINE_COMMON_INN_VEC_MDTIDVEC_MDTID_MSB = 23;
+const int SLCPROC_PIPELINE_COMMON_INN_VEC_MDTIDVEC_MDTID_LSB = 18;
+const int SLCPROC_PIPELINE_COMMON_INN_VEC_MDTIDVEC_MDTID_DECB = 0;
 
 // SLc Middle Vector MDT chamber ID
-const int SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_width = 6;
-const int SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_lsb = 12;
-const int SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_MID_VEC_MDTIDVEC_MDTID_LEN = 6;
+const int SLCPROC_PIPELINE_COMMON_MID_VEC_MDTIDVEC_MDTID_MSB = 17;
+const int SLCPROC_PIPELINE_COMMON_MID_VEC_MDTIDVEC_MDTID_LSB = 12;
+const int SLCPROC_PIPELINE_COMMON_MID_VEC_MDTIDVEC_MDTID_DECB = 0;
 
 // SLc Outer Vector MDT chamber ID
-const int SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_width = 6;
-const int SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_lsb = 6;
-const int SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTIDVEC_MDTID_LEN = 6;
+const int SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTIDVEC_MDTID_MSB = 11;
+const int SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTIDVEC_MDTID_LSB = 6;
+const int SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTIDVEC_MDTID_DECB = 0;
 
 // SLc Extra Vector MDT chamber ID
-const int SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_width = 6;
-const int SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_lsb = 0;
-const int SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_decb = 0;
+const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTIDVEC_MDTID_LEN = 6;
+const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTIDVEC_MDTID_MSB = 5;
+const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTIDVEC_MDTID_LSB = 0;
+const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTIDVEC_MDTID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_ENDCAP_width = 124;
+const int SLCPROC_PIPELINE_ENDCAP_LEN = 124;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_BARREL_width = 129;
+const int SLCPROC_PIPELINE_BARREL_LEN = 129;
 
 // -------------------------------------------------------------------
-const int TDC_width = 32;
+const int TDC_LEN = 32;
 
 // Channel number within TDC
-const int TDC_chanid_width = 5;
-const int TDC_chanid_lsb = 27;
-const int TDC_chanid_decb = 0;
+const int TDC_CHANIDCHANID_LEN = 5;
+const int TDC_CHANIDCHANID_MSB = 31;
+const int TDC_CHANIDCHANID_LSB = 27;
+const int TDC_CHANIDCHANID_DECB = 0;
 
 // Edge or pair mode
-const int TDC_edgemode_width = 2;
-const int TDC_edgemode_lsb = 25;
-const int TDC_edgemode_decb = 0;
+const int TDC_EDGEMODEEDGEMODE_LEN = 2;
+const int TDC_EDGEMODEEDGEMODE_MSB = 26;
+const int TDC_EDGEMODEEDGEMODE_LSB = 25;
+const int TDC_EDGEMODEEDGEMODE_DECB = 0;
 
 // TDC BCID
-const int TDC_coarsetime_width = 12;
-const int TDC_coarsetime_lsb = 13;
-const int TDC_coarsetime_decb = 0;
+const int TDC_COARSETIMECOARSETIME_LEN = 12;
+const int TDC_COARSETIMECOARSETIME_MSB = 24;
+const int TDC_COARSETIMECOARSETIME_LSB = 13;
+const int TDC_COARSETIMECOARSETIME_DECB = 0;
 
 // TDC fine time with BCID
-const int TDC_finetime_width = 5;
-const int TDC_finetime_lsb = 8;
-const int TDC_finetime_decb = 1;
+const int TDC_FINETIMEFINETIME_LEN = 5;
+const int TDC_FINETIMEFINETIME_MSB = 12;
+const int TDC_FINETIMEFINETIME_LSB = 8;
+const int TDC_FINETIMEFINETIME_DECB = 1;
 
 // Pulse width
-const int TDC_pulsewidth_width = 8;
-const int TDC_pulsewidth_lsb = 0;
-const int TDC_pulsewidth_decb = 1;
+const int TDC_PULSEWIDTHPULSEWIDTH_LEN = 8;
+const int TDC_PULSEWIDTHPULSEWIDTH_MSB = 7;
+const int TDC_PULSEWIDTHPULSEWIDTH_LSB = 0;
+const int TDC_PULSEWIDTHPULSEWIDTH_DECB = 1;
 
 // -------------------------------------------------------------------
-const int TDCFORMAT_width = 44;
+const int TDCFORMAT_LEN = 44;
 
 // Fiber ID within board
-const int TDCFORMAT_fiberid_width = 5;
-const int TDCFORMAT_fiberid_lsb = 7;
-const int TDCFORMAT_fiberid_decb = 0;
+const int TDCFORMAT_FIBERIDFIBERID_LEN = 5;
+const int TDCFORMAT_FIBERIDFIBERID_MSB = 11;
+const int TDCFORMAT_FIBERIDFIBERID_LSB = 7;
+const int TDCFORMAT_FIBERIDFIBERID_DECB = 0;
 
 // Elink ID within fiber
-const int TDCFORMAT_elinkid_width = 4;
-const int TDCFORMAT_elinkid_lsb = 3;
-const int TDCFORMAT_elinkid_decb = 0;
+const int TDCFORMAT_ELINKIDELINKID_LEN = 4;
+const int TDCFORMAT_ELINKIDELINKID_MSB = 6;
+const int TDCFORMAT_ELINKIDELINKID_LSB = 3;
+const int TDCFORMAT_ELINKIDELINKID_DECB = 0;
 
 // Valid bit
-const int TDCFORMAT_datavalid_width = 1;
-const int TDCFORMAT_datavalid_lsb = 2;
-const int TDCFORMAT_datavalid_decb = 0;
+const int TDCFORMAT_DATAVALIDDATAVALID_LEN = 1;
+const int TDCFORMAT_DATAVALIDDATAVALID_MSB = 2;
+const int TDCFORMAT_DATAVALIDDATAVALID_LSB = 2;
+const int TDCFORMAT_DATAVALIDDATAVALID_DECB = 0;
 
 // MDT Station Type (Inner, Middle, Outer, Extra)
-const int TDCFORMAT_stationid_width = 2;
-const int TDCFORMAT_stationid_lsb = 0;
-const int TDCFORMAT_stationid_decb = 0;
+const int TDCFORMAT_STATIONIDSTATIONID_LEN = 2;
+const int TDCFORMAT_STATIONIDSTATIONID_MSB = 1;
+const int TDCFORMAT_STATIONIDSTATIONID_LSB = 0;
+const int TDCFORMAT_STATIONIDSTATIONID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_HESF_width = 48;
+const int SLCPROC_HESF_LEN = 48;
 
 // SLc Muon Unique Identifier
-const int SLCPROC_HESF_SLC_MUID_width = 20;
-const int SLCPROC_HESF_SLC_MUID_lsb = 28;
-const int SLCPROC_HESF_SLC_MUID_decb = 0;
+const int SLCPROC_HESF_SLC_MUIDSLC_MUID_LEN = 20;
+const int SLCPROC_HESF_SLC_MUIDSLC_MUID_MSB = 47;
+const int SLCPROC_HESF_SLC_MUIDSLC_MUID_LSB = 28;
+const int SLCPROC_HESF_SLC_MUIDSLC_MUID_DECB = 0;
 
 // inner MDT segment chip destination
-const int SLCPROC_HESF_mdtseg_dest_width = 2;
-const int SLCPROC_HESF_mdtseg_dest_lsb = 26;
-const int SLCPROC_HESF_mdtseg_dest_decb = 0;
+const int SLCPROC_HESF_MDTSEG_DESTMDTSEG_DEST_LEN = 2;
+const int SLCPROC_HESF_MDTSEG_DESTMDTSEG_DEST_MSB = 27;
+const int SLCPROC_HESF_MDTSEG_DESTMDTSEG_DEST_LSB = 26;
+const int SLCPROC_HESF_MDTSEG_DESTMDTSEG_DEST_DECB = 0;
 
 // SLc Inner Vector MDT chamber ID
-const int SLCPROC_HESF_vec_mdtid_width = 6;
-const int SLCPROC_HESF_vec_mdtid_lsb = 20;
-const int SLCPROC_HESF_vec_mdtid_decb = 0;
+const int SLCPROC_HESF_VEC_MDTIDVEC_MDTID_LEN = 6;
+const int SLCPROC_HESF_VEC_MDTIDVEC_MDTID_MSB = 25;
+const int SLCPROC_HESF_VEC_MDTIDVEC_MDTID_LSB = 20;
+const int SLCPROC_HESF_VEC_MDTIDVEC_MDTID_DECB = 0;
 
 // SLc inner vector rho position
-const int SLCPROC_HESF_vec_pos_width = 10;
-const int SLCPROC_HESF_vec_pos_lsb = 10;
-const int SLCPROC_HESF_vec_pos_decb = 0;
+const int SLCPROC_HESF_VEC_POSVEC_POS_LEN = 10;
+const int SLCPROC_HESF_VEC_POSVEC_POS_MSB = 19;
+const int SLCPROC_HESF_VEC_POSVEC_POS_LSB = 10;
+const int SLCPROC_HESF_VEC_POSVEC_POS_DECB = 0;
 
 // SLc inner vector theta angle
-const int SLCPROC_HESF_vec_ang_width = 10;
-const int SLCPROC_HESF_vec_ang_lsb = 0;
-const int SLCPROC_HESF_vec_ang_decb = 0;
+const int SLCPROC_HESF_VEC_ANGVEC_ANG_LEN = 10;
+const int SLCPROC_HESF_VEC_ANGVEC_ANG_MSB = 9;
+const int SLCPROC_HESF_VEC_ANGVEC_ANG_LSB = 0;
+const int SLCPROC_HESF_VEC_ANGVEC_ANG_DECB = 0;
 
 // -------------------------------------------------------------------
-const int TUBEREMAP_width = 69;
+const int TUBEREMAP_LEN = 69;
 
 // Tube layer within one station
-const int TUBEREMAP_mdt_tube_layer_width = 5;
-const int TUBEREMAP_mdt_tube_layer_lsb = 64;
-const int TUBEREMAP_mdt_tube_layer_decb = 0;
+const int TUBEREMAP_MDT_TUBE_LAYERMDT_TUBE_LAYER_LEN = 5;
+const int TUBEREMAP_MDT_TUBE_LAYERMDT_TUBE_LAYER_MSB = 68;
+const int TUBEREMAP_MDT_TUBE_LAYERMDT_TUBE_LAYER_LSB = 64;
+const int TUBEREMAP_MDT_TUBE_LAYERMDT_TUBE_LAYER_DECB = 0;
 
 // Tube number within one station
-const int TUBEREMAP_mdt_tube_num_width = 9;
-const int TUBEREMAP_mdt_tube_num_lsb = 55;
-const int TUBEREMAP_mdt_tube_num_decb = 0;
+const int TUBEREMAP_MDT_TUBE_NUMMDT_TUBE_NUM_LEN = 9;
+const int TUBEREMAP_MDT_TUBE_NUMMDT_TUBE_NUM_MSB = 63;
+const int TUBEREMAP_MDT_TUBE_NUMMDT_TUBE_NUM_LSB = 55;
+const int TUBEREMAP_MDT_TUBE_NUMMDT_TUBE_NUM_DECB = 0;
 
 // Tube radial position
-const int TUBEREMAP_mdt_tube_rho_width = 18;
-const int TUBEREMAP_mdt_tube_rho_lsb = 37;
-const int TUBEREMAP_mdt_tube_rho_decb = 5;
+const int TUBEREMAP_MDT_TUBE_RHOMDT_TUBE_RHO_LEN = 18;
+const int TUBEREMAP_MDT_TUBE_RHOMDT_TUBE_RHO_MSB = 54;
+const int TUBEREMAP_MDT_TUBE_RHOMDT_TUBE_RHO_LSB = 37;
+const int TUBEREMAP_MDT_TUBE_RHOMDT_TUBE_RHO_DECB = 5;
 
 // Tube position along z
-const int TUBEREMAP_mdt_tube_z_width = 19;
-const int TUBEREMAP_mdt_tube_z_lsb = 18;
-const int TUBEREMAP_mdt_tube_z_decb = 5;
+const int TUBEREMAP_MDT_TUBE_ZMDT_TUBE_Z_LEN = 19;
+const int TUBEREMAP_MDT_TUBE_ZMDT_TUBE_Z_MSB = 36;
+const int TUBEREMAP_MDT_TUBE_ZMDT_TUBE_Z_LSB = 18;
+const int TUBEREMAP_MDT_TUBE_ZMDT_TUBE_Z_DECB = 5;
 
 // Tube (uncalibrated) time
-const int TUBEREMAP_mdt_tube_time_width = 18;
-const int TUBEREMAP_mdt_tube_time_lsb = 0;
-const int TUBEREMAP_mdt_tube_time_decb = 1;
+const int TUBEREMAP_MDT_TUBE_TIMEMDT_TUBE_TIME_LEN = 18;
+const int TUBEREMAP_MDT_TUBE_TIMEMDT_TUBE_TIME_MSB = 17;
+const int TUBEREMAP_MDT_TUBE_TIMEMDT_TUBE_TIME_LSB = 0;
+const int TUBEREMAP_MDT_TUBE_TIMEMDT_TUBE_TIME_DECB = 1;
 
 // -------------------------------------------------------------------
-const int HE_LSF_width = 39;
+const int HE_LSF_LEN = 39;
 
 // Hit Valid bit
-const int HE_LSF_mdt_valid_width = 1;
-const int HE_LSF_mdt_valid_lsb = 38;
-const int HE_LSF_mdt_valid_decb = 0;
+const int HE_LSF_MDT_VALIDMDT_VALID_LEN = 1;
+const int HE_LSF_MDT_VALIDMDT_VALID_MSB = 38;
+const int HE_LSF_MDT_VALIDMDT_VALID_LSB = 38;
+const int HE_LSF_MDT_VALIDMDT_VALID_DECB = 0;
 
 // Data Valid bit
-const int HE_LSF_data_valid_width = 1;
-const int HE_LSF_data_valid_lsb = 37;
-const int HE_LSF_data_valid_decb = 0;
+const int HE_LSF_DATA_VALIDDATA_VALID_LEN = 1;
+const int HE_LSF_DATA_VALIDDATA_VALID_MSB = 37;
+const int HE_LSF_DATA_VALIDDATA_VALID_LSB = 37;
+const int HE_LSF_DATA_VALIDDATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HE_LSF_mdt_localx_width = 14;
-const int HE_LSF_mdt_localx_lsb = 23;
-const int HE_LSF_mdt_localx_decb = 5;
+const int HE_LSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
+const int HE_LSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
+const int HE_LSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
+const int HE_LSF_MDT_LOCALXMDT_LOCALX_DECB = 5;
 
 // Tube local position along second coord
-const int HE_LSF_mdt_localy_width = 14;
-const int HE_LSF_mdt_localy_lsb = 9;
-const int HE_LSF_mdt_localy_decb = 5;
+const int HE_LSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
+const int HE_LSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
+const int HE_LSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
+const int HE_LSF_MDT_LOCALYMDT_LOCALY_DECB = 5;
 
 // Tube drift radius
-const int HE_LSF_mdt_radius_width = 9;
-const int HE_LSF_mdt_radius_lsb = 0;
-const int HE_LSF_mdt_radius_decb = 5;
+const int HE_LSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
+const int HE_LSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
+const int HE_LSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
+const int HE_LSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int HE_CSF_width = 39;
+const int HE_CSF_LEN = 39;
 
 // Hit Valid bit
-const int HE_CSF_mdt_valid_width = 1;
-const int HE_CSF_mdt_valid_lsb = 38;
-const int HE_CSF_mdt_valid_decb = 0;
+const int HE_CSF_MDT_VALIDMDT_VALID_LEN = 1;
+const int HE_CSF_MDT_VALIDMDT_VALID_MSB = 38;
+const int HE_CSF_MDT_VALIDMDT_VALID_LSB = 38;
+const int HE_CSF_MDT_VALIDMDT_VALID_DECB = 0;
 
 // Data Valid bit
-const int HE_CSF_data_valid_width = 1;
-const int HE_CSF_data_valid_lsb = 37;
-const int HE_CSF_data_valid_decb = 0;
+const int HE_CSF_DATA_VALIDDATA_VALID_LEN = 1;
+const int HE_CSF_DATA_VALIDDATA_VALID_MSB = 37;
+const int HE_CSF_DATA_VALIDDATA_VALID_LSB = 37;
+const int HE_CSF_DATA_VALIDDATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HE_CSF_mdt_localx_width = 14;
-const int HE_CSF_mdt_localx_lsb = 23;
-const int HE_CSF_mdt_localx_decb = 4;
+const int HE_CSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
+const int HE_CSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
+const int HE_CSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
+const int HE_CSF_MDT_LOCALXMDT_LOCALX_DECB = 4;
 
 // Tube local position along second coord
-const int HE_CSF_mdt_localy_width = 14;
-const int HE_CSF_mdt_localy_lsb = 9;
-const int HE_CSF_mdt_localy_decb = 4;
+const int HE_CSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
+const int HE_CSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
+const int HE_CSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
+const int HE_CSF_MDT_LOCALYMDT_LOCALY_DECB = 4;
 
 // Tube drift radius
-const int HE_CSF_mdt_radius_width = 9;
-const int HE_CSF_mdt_radius_lsb = 0;
-const int HE_CSF_mdt_radius_decb = 5;
+const int HE_CSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
+const int HE_CSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
+const int HE_CSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
+const int HE_CSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int SLCPIPE_PTCALC_width = 53;
+const int SLCPIPE_PTCALC_LEN = 53;
 
 // -------------------------------------------------------------------
-const int SF_width = 55;
+const int SF_LEN = 55;
 
 // SF MDT segment valid bit
-const int SF_segvalid_width = 1;
-const int SF_segvalid_lsb = 28;
-const int SF_segvalid_decb = 0;
+const int SF_SEGVALIDSEGVALID_LEN = 1;
+const int SF_SEGVALIDSEGVALID_MSB = 28;
+const int SF_SEGVALIDSEGVALID_LSB = 28;
+const int SF_SEGVALIDSEGVALID_DECB = 0;
 
 // SF MDT segment position along the precision coord
-const int SF_segpos_width = 16;
-const int SF_segpos_lsb = 12;
-const int SF_segpos_decb = 3;
+const int SF_SEGPOSSEGPOS_LEN = 16;
+const int SF_SEGPOSSEGPOS_MSB = 27;
+const int SF_SEGPOSSEGPOS_LSB = 12;
+const int SF_SEGPOSSEGPOS_DECB = 3;
 
 // SF MDT segment angle along the precision coord
-const int SF_segangle_width = 11;
-const int SF_segangle_lsb = 1;
-const int SF_segangle_decb = 0;
+const int SF_SEGANGLESEGANGLE_LEN = 11;
+const int SF_SEGANGLESEGANGLE_MSB = 11;
+const int SF_SEGANGLESEGANGLE_LSB = 1;
+const int SF_SEGANGLESEGANGLE_DECB = 0;
 
 // SF MDT segment qualiry
-const int SF_segquality_width = 1;
-const int SF_segquality_lsb = 0;
-const int SF_segquality_decb = 0;
+const int SF_SEGQUALITYSEGQUALITY_LEN = 1;
+const int SF_SEGQUALITYSEGQUALITY_MSB = 0;
+const int SF_SEGQUALITYSEGQUALITY_LSB = 0;
+const int SF_SEGQUALITYSEGQUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
-const int PTCALC_width = 52;
+const int PTCALC_LEN = 52;
 
 // eta of the innermost MDT station segment position
-const int PTCALC_mtc_eta_width = 14;
-const int PTCALC_mtc_eta_lsb = 18;
-const int PTCALC_mtc_eta_decb = 12;
+const int PTCALC_MTC_ETAMTC_ETA_LEN = 14;
+const int PTCALC_MTC_ETAMTC_ETA_MSB = 31;
+const int PTCALC_MTC_ETAMTC_ETA_LSB = 18;
+const int PTCALC_MTC_ETAMTC_ETA_DECB = 12;
 
 // pT calculated by the pT Calc
-const int PTCALC_mtc_pt_width = 8;
-const int PTCALC_mtc_pt_lsb = 10;
-const int PTCALC_mtc_pt_decb = 2;
+const int PTCALC_MTC_PTMTC_PT_LEN = 8;
+const int PTCALC_MTC_PTMTC_PT_MSB = 17;
+const int PTCALC_MTC_PTMTC_PT_LSB = 10;
+const int PTCALC_MTC_PTMTC_PT_DECB = 2;
 
 // pT threshold satisfied by the MDT TC
-const int PTCALC_mtc_ptthresh_width = 4;
-const int PTCALC_mtc_ptthresh_lsb = 6;
-const int PTCALC_mtc_ptthresh_decb = 0;
+const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_LEN = 4;
+const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_MSB = 9;
+const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_LSB = 6;
+const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_DECB = 0;
 
 // charge determined from the pT calc
-const int PTCALC_mtc_charge_width = 1;
-const int PTCALC_mtc_charge_lsb = 5;
-const int PTCALC_mtc_charge_decb = 0;
+const int PTCALC_MTC_CHARGEMTC_CHARGE_LEN = 1;
+const int PTCALC_MTC_CHARGEMTC_CHARGE_MSB = 5;
+const int PTCALC_MTC_CHARGEMTC_CHARGE_LSB = 5;
+const int PTCALC_MTC_CHARGEMTC_CHARGE_DECB = 0;
 
 // # of segments used for calculating the pT
-const int PTCALC_mtc_nsegments_width = 2;
-const int PTCALC_mtc_nsegments_lsb = 3;
-const int PTCALC_mtc_nsegments_decb = 0;
+const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_LEN = 2;
+const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_MSB = 4;
+const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_LSB = 3;
+const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_DECB = 0;
 
 // quality of the MDT TC (TBC how this is defined)
-const int PTCALC_mtc_quality_width = 3;
-const int PTCALC_mtc_quality_lsb = 0;
-const int PTCALC_mtc_quality_decb = 0;
+const int PTCALC_MTC_QUALITYMTC_QUALITY_LEN = 3;
+const int PTCALC_MTC_QUALITYMTC_QUALITY_MSB = 2;
+const int PTCALC_MTC_QUALITYMTC_QUALITY_LSB = 0;
+const int PTCALC_MTC_QUALITYMTC_QUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPE_MTC_ENDCAP_width = 54;
+const int SLCPIPE_MTC_ENDCAP_LEN = 54;
 
 // 
-const int SLCPIPE_MTC_ENDCAP_SLC_MUID_width = 20;
-const int SLCPIPE_MTC_ENDCAP_SLC_MUID_lsb = 34;
-const int SLCPIPE_MTC_ENDCAP_SLC_MUID_decb = 0;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_LEN = 20;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_MSB = 53;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_LSB = 34;
+const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPE_MTC_BARREL_width = 57;
+const int SLCPIPE_MTC_BARREL_LEN = 57;
 
 // 
-const int SLCPIPE_MTC_BARREL_SLC_MUID_width = 20;
-const int SLCPIPE_MTC_BARREL_SLC_MUID_lsb = 34;
-const int SLCPIPE_MTC_BARREL_SLC_MUID_decb = 0;
+const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_LEN = 20;
+const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_MSB = 53;
+const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_LSB = 34;
+const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int MTC_width = 67;
+const int MTC_LEN = 67;
 
 // MDT processing flags
-const int MTC_mtc_procflags_width = 4;
-const int MTC_mtc_procflags_lsb = 5;
-const int MTC_mtc_procflags_decb = 0;
+const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_LEN = 4;
+const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_MSB = 8;
+const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_LSB = 5;
+const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_DECB = 0;
 
 // -------------------------------------------------------------------
 

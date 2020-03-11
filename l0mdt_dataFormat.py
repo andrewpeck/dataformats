@@ -145,7 +145,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             else:
                 prefix = f"{bus.name}_"
 
-            var_name = f"{prefix}{suffix}".upper()
+            var_name = f"{prefix}{var.name}{suffix}".upper()
 
             write_ln(tpl %(f"{var_name}_LEN", var.width))
             write_ln(tpl %(f"{var_name}_MSB", var.msb))
@@ -224,7 +224,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             suffix = ""
             
             if var.station:
-                prefix = f"{var.station}"
+                prefix = f"{var.station}_"
             else:
                 prefix = f""
 

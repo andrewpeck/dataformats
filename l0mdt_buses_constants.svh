@@ -6,466 +6,466 @@
 `define DF_HASH a34aee13;
 
 // -------------------------------------------------------------------
-`define SLC_MUID_LEN 20
+parameter SLC_MUID_LEN = 20 ;
 
 // SLc Identification (up to 3)
-`define SLC_MUID_slcidslcid_LEN 2
-`define SLC_MUID_slcidslcid_MSB 19
-`define SLC_MUID_slcidslcid_LSB 18
-`define SLC_MUID_slcidslcid_DECB 0
+parameter SLC_MUID_SLCID_LEN = 2 ;
+parameter SLC_MUID_SLCID_MSB = 19 ;
+parameter SLC_MUID_SLCID_LSB = 18 ;
+parameter SLC_MUID_SLCID_DECB = 0 ;
 
 // SL board ID (based on the fiber ID)
-`define SLC_MUID_slidslid_LEN 6
-`define SLC_MUID_slidslid_MSB 17
-`define SLC_MUID_slidslid_LSB 12
-`define SLC_MUID_slidslid_DECB 0
+parameter SLC_MUID_SLID_LEN = 6 ;
+parameter SLC_MUID_SLID_MSB = 17 ;
+parameter SLC_MUID_SLID_LSB = 12 ;
+parameter SLC_MUID_SLID_DECB = 0 ;
 
 // BCID from SLC
-`define SLC_MUID_bcidbcid_LEN 12
-`define SLC_MUID_bcidbcid_MSB 11
-`define SLC_MUID_bcidbcid_LSB 0
-`define SLC_MUID_bcidbcid_DECB 0
+parameter SLC_MUID_BCID_LEN = 12 ;
+parameter SLC_MUID_BCID_MSB = 11 ;
+parameter SLC_MUID_BCID_LSB = 0 ;
+parameter SLC_MUID_BCID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLC_COMMON_LEN 31
+parameter SLC_COMMON_LEN = 31 ;
 
 // SLc Identification (up to 3)
-`define SLC_COMMON_slcidslcid_LEN 2
-`define SLC_COMMON_slcidslcid_MSB 30
-`define SLC_COMMON_slcidslcid_LSB 29
-`define SLC_COMMON_slcidslcid_DECB 0
+parameter SLC_COMMON_SLCID_LEN = 2 ;
+parameter SLC_COMMON_SLCID_MSB = 30 ;
+parameter SLC_COMMON_SLCID_LSB = 29 ;
+parameter SLC_COMMON_SLCID_DECB = 0 ;
 
 // TC sent to MDT TP
-`define SLC_COMMON_tcsenttcsent_LEN 1
-`define SLC_COMMON_tcsenttcsent_MSB 28
-`define SLC_COMMON_tcsenttcsent_LSB 28
-`define SLC_COMMON_tcsenttcsent_DECB 0
+parameter SLC_COMMON_TCSENT_LEN = 1 ;
+parameter SLC_COMMON_TCSENT_MSB = 28 ;
+parameter SLC_COMMON_TCSENT_LSB = 28 ;
+parameter SLC_COMMON_TCSENT_DECB = 0 ;
 
 // SLc Eta Position
-`define SLC_COMMON_posetaposeta_LEN 14
-`define SLC_COMMON_posetaposeta_MSB 27
-`define SLC_COMMON_posetaposeta_LSB 14
-`define SLC_COMMON_posetaposeta_DECB 12
+parameter SLC_COMMON_POSETA_LEN = 14 ;
+parameter SLC_COMMON_POSETA_MSB = 27 ;
+parameter SLC_COMMON_POSETA_LSB = 14 ;
+parameter SLC_COMMON_POSETA_DECB = 12 ;
 
 // SLc Phi Position
-`define SLC_COMMON_posphiposphi_LEN 9
-`define SLC_COMMON_posphiposphi_MSB 13
-`define SLC_COMMON_posphiposphi_LSB 5
-`define SLC_COMMON_posphiposphi_DECB 0
+parameter SLC_COMMON_POSPHI_LEN = 9 ;
+parameter SLC_COMMON_POSPHI_MSB = 13 ;
+parameter SLC_COMMON_POSPHI_LSB = 5 ;
+parameter SLC_COMMON_POSPHI_DECB = 0 ;
 
 // SLc highest pT threshold passed
-`define SLC_COMMON_ptthreshptthresh_LEN 4
-`define SLC_COMMON_ptthreshptthresh_MSB 4
-`define SLC_COMMON_ptthreshptthresh_LSB 1
-`define SLC_COMMON_ptthreshptthresh_DECB 0
+parameter SLC_COMMON_PTTHRESH_LEN = 4 ;
+parameter SLC_COMMON_PTTHRESH_MSB = 4 ;
+parameter SLC_COMMON_PTTHRESH_LSB = 1 ;
+parameter SLC_COMMON_PTTHRESH_DECB = 0 ;
 
 // SLc charge
-`define SLC_COMMON_chargecharge_LEN 1
-`define SLC_COMMON_chargecharge_MSB 0
-`define SLC_COMMON_chargecharge_LSB 0
-`define SLC_COMMON_chargecharge_DECB 0
+parameter SLC_COMMON_CHARGE_LEN = 1 ;
+parameter SLC_COMMON_CHARGE_MSB = 0 ;
+parameter SLC_COMMON_CHARGE_LSB = 0 ;
+parameter SLC_COMMON_CHARGE_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLC_ENDCAP_LEN 69
+parameter SLC_ENDCAP_LEN = 69 ;
 
 // SLc Segment Angle wrt Eta position
-`define SLC_ENDCAP_seg_angdthetaseg_angdtheta_LEN 7
-`define SLC_ENDCAP_seg_angdthetaseg_angdtheta_MSB 37
-`define SLC_ENDCAP_seg_angdthetaseg_angdtheta_LSB 31
-`define SLC_ENDCAP_seg_angdthetaseg_angdtheta_DECB 0
+parameter SLC_ENDCAP_SEG_ANGDTHETA_LEN = 7 ;
+parameter SLC_ENDCAP_SEG_ANGDTHETA_MSB = 37 ;
+parameter SLC_ENDCAP_SEG_ANGDTHETA_LSB = 31 ;
+parameter SLC_ENDCAP_SEG_ANGDTHETA_DECB = 0 ;
 
 // SLc Segment Angle wrt Phi position
-`define SLC_ENDCAP_seg_angdphiseg_angdphi_LEN 4
-`define SLC_ENDCAP_seg_angdphiseg_angdphi_MSB 30
-`define SLC_ENDCAP_seg_angdphiseg_angdphi_LSB 27
-`define SLC_ENDCAP_seg_angdphiseg_angdphi_DECB 0
+parameter SLC_ENDCAP_SEG_ANGDPHI_LEN = 4 ;
+parameter SLC_ENDCAP_SEG_ANGDPHI_MSB = 30 ;
+parameter SLC_ENDCAP_SEG_ANGDPHI_LSB = 27 ;
+parameter SLC_ENDCAP_SEG_ANGDPHI_DECB = 0 ;
 
 // NSW segment eta position
-`define SLC_ENDCAP_nswseg_posetanswseg_poseta_LEN 14
-`define SLC_ENDCAP_nswseg_posetanswseg_poseta_MSB 26
-`define SLC_ENDCAP_nswseg_posetanswseg_poseta_LSB 13
-`define SLC_ENDCAP_nswseg_posetanswseg_poseta_DECB 13
+parameter SLC_ENDCAP_NSWSEG_POSETA_LEN = 14 ;
+parameter SLC_ENDCAP_NSWSEG_POSETA_MSB = 26 ;
+parameter SLC_ENDCAP_NSWSEG_POSETA_LSB = 13 ;
+parameter SLC_ENDCAP_NSWSEG_POSETA_DECB = 13 ;
 
 // NSW segment phi position
-`define SLC_ENDCAP_nswseg_posphinswseg_posphi_LEN 8
-`define SLC_ENDCAP_nswseg_posphinswseg_posphi_MSB 12
-`define SLC_ENDCAP_nswseg_posphinswseg_posphi_LSB 5
-`define SLC_ENDCAP_nswseg_posphinswseg_posphi_DECB 0
+parameter SLC_ENDCAP_NSWSEG_POSPHI_LEN = 8 ;
+parameter SLC_ENDCAP_NSWSEG_POSPHI_MSB = 12 ;
+parameter SLC_ENDCAP_NSWSEG_POSPHI_LSB = 5 ;
+parameter SLC_ENDCAP_NSWSEG_POSPHI_DECB = 0 ;
 
 // NSW segment angle wrt Eta position
-`define SLC_ENDCAP_nswseg_angdthetanswseg_angdtheta_LEN 5
-`define SLC_ENDCAP_nswseg_angdthetanswseg_angdtheta_MSB 4
-`define SLC_ENDCAP_nswseg_angdthetanswseg_angdtheta_LSB 0
-`define SLC_ENDCAP_nswseg_angdthetanswseg_angdtheta_DECB 0
+parameter SLC_ENDCAP_NSWSEG_ANGDTHETA_LEN = 5 ;
+parameter SLC_ENDCAP_NSWSEG_ANGDTHETA_MSB = 4 ;
+parameter SLC_ENDCAP_NSWSEG_ANGDTHETA_LSB = 0 ;
+parameter SLC_ENDCAP_NSWSEG_ANGDTHETA_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLC_BARREL_LEN 74
+parameter SLC_BARREL_LEN = 74 ;
 
 // SLc Hit Z Position in RPC0
-`define SLC_BARREL_rpc0_poszrpc0_posz_LEN 10
-`define SLC_BARREL_rpc0_poszrpc0_posz_MSB 42
-`define SLC_BARREL_rpc0_poszrpc0_posz_LSB 33
-`define SLC_BARREL_rpc0_poszrpc0_posz_DECB 0
+parameter SLC_BARREL_RPC0_POSZ_LEN = 10 ;
+parameter SLC_BARREL_RPC0_POSZ_MSB = 42 ;
+parameter SLC_BARREL_RPC0_POSZ_LSB = 33 ;
+parameter SLC_BARREL_RPC0_POSZ_DECB = 0 ;
 
 // SLc Hit Z Position in RPC1
-`define SLC_BARREL_rpc1_poszrpc1_posz_LEN 10
-`define SLC_BARREL_rpc1_poszrpc1_posz_MSB 32
-`define SLC_BARREL_rpc1_poszrpc1_posz_LSB 23
-`define SLC_BARREL_rpc1_poszrpc1_posz_DECB 0
+parameter SLC_BARREL_RPC1_POSZ_LEN = 10 ;
+parameter SLC_BARREL_RPC1_POSZ_MSB = 32 ;
+parameter SLC_BARREL_RPC1_POSZ_LSB = 23 ;
+parameter SLC_BARREL_RPC1_POSZ_DECB = 0 ;
 
 // SLc Hit Z Position in RPC2
-`define SLC_BARREL_rpc2_poszrpc2_posz_LEN 10
-`define SLC_BARREL_rpc2_poszrpc2_posz_MSB 22
-`define SLC_BARREL_rpc2_poszrpc2_posz_LSB 13
-`define SLC_BARREL_rpc2_poszrpc2_posz_DECB 0
+parameter SLC_BARREL_RPC2_POSZ_LEN = 10 ;
+parameter SLC_BARREL_RPC2_POSZ_MSB = 22 ;
+parameter SLC_BARREL_RPC2_POSZ_LSB = 13 ;
+parameter SLC_BARREL_RPC2_POSZ_DECB = 0 ;
 
 // SLc Hit Z Position in RPC3
-`define SLC_BARREL_rpc3_poszrpc3_posz_LEN 10
-`define SLC_BARREL_rpc3_poszrpc3_posz_MSB 12
-`define SLC_BARREL_rpc3_poszrpc3_posz_LSB 3
-`define SLC_BARREL_rpc3_poszrpc3_posz_DECB 0
+parameter SLC_BARREL_RPC3_POSZ_LEN = 10 ;
+parameter SLC_BARREL_RPC3_POSZ_MSB = 12 ;
+parameter SLC_BARREL_RPC3_POSZ_LSB = 3 ;
+parameter SLC_BARREL_RPC3_POSZ_DECB = 0 ;
 
 // SLc coincidence type
-`define SLC_BARREL_cointypecointype_LEN 3
-`define SLC_BARREL_cointypecointype_MSB 2
-`define SLC_BARREL_cointypecointype_LSB 0
-`define SLC_BARREL_cointypecointype_DECB 0
+parameter SLC_BARREL_COINTYPE_LEN = 3 ;
+parameter SLC_BARREL_COINTYPE_MSB = 2 ;
+parameter SLC_BARREL_COINTYPE_LSB = 0 ;
+parameter SLC_BARREL_COINTYPE_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLCPROC_PIPELINE_COMMON_LEN 35
+parameter SLCPROC_PIPELINE_COMMON_LEN = 35 ;
 
 // SLc busy flag
-`define SLCPROC_PIPELINE_COMMON_busybusy_LEN 1
-`define SLCPROC_PIPELINE_COMMON_busybusy_MSB 34
-`define SLCPROC_PIPELINE_COMMON_busybusy_LSB 34
-`define SLCPROC_PIPELINE_COMMON_busybusy_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_BUSY_LEN = 1 ;
+parameter SLCPROC_PIPELINE_COMMON_BUSY_MSB = 34 ;
+parameter SLCPROC_PIPELINE_COMMON_BUSY_LSB = 34 ;
+parameter SLCPROC_PIPELINE_COMMON_BUSY_DECB = 0 ;
 
 // SLc board destination
-`define SLCPROC_PIPELINE_COMMON_destsldestsl_LEN 2
-`define SLCPROC_PIPELINE_COMMON_destsldestsl_MSB 33
-`define SLCPROC_PIPELINE_COMMON_destsldestsl_LSB 32
-`define SLCPROC_PIPELINE_COMMON_destsldestsl_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_DESTSL_LEN = 2 ;
+parameter SLCPROC_PIPELINE_COMMON_DESTSL_MSB = 33 ;
+parameter SLCPROC_PIPELINE_COMMON_DESTSL_LSB = 32 ;
+parameter SLCPROC_PIPELINE_COMMON_DESTSL_DECB = 0 ;
 
 // SLc phimod
-`define SLCPROC_PIPELINE_COMMON_phimodphimod_LEN 8
-`define SLCPROC_PIPELINE_COMMON_phimodphimod_MSB 31
-`define SLCPROC_PIPELINE_COMMON_phimodphimod_LSB 24
-`define SLCPROC_PIPELINE_COMMON_phimodphimod_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_PHIMOD_LEN = 8 ;
+parameter SLCPROC_PIPELINE_COMMON_PHIMOD_MSB = 31 ;
+parameter SLCPROC_PIPELINE_COMMON_PHIMOD_LSB = 24 ;
+parameter SLCPROC_PIPELINE_COMMON_PHIMOD_DECB = 0 ;
 
 // SLc Inner Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_LEN 6
-`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_MSB 23
-`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_LSB 18
-`define SLCPROC_PIPELINE_COMMON_INN_vec_mdtid_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LEN = 6 ;
+parameter SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_MSB = 23 ;
+parameter SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LSB = 18 ;
+parameter SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_DECB = 0 ;
 
 // SLc Middle Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_LEN 6
-`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_MSB 17
-`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_LSB 12
-`define SLCPROC_PIPELINE_COMMON_MID_vec_mdtid_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LEN = 6 ;
+parameter SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_MSB = 17 ;
+parameter SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LSB = 12 ;
+parameter SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_DECB = 0 ;
 
 // SLc Outer Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_LEN 6
-`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_MSB 11
-`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_LSB 6
-`define SLCPROC_PIPELINE_COMMON_OUT_vec_mdtid_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LEN = 6 ;
+parameter SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_MSB = 11 ;
+parameter SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LSB = 6 ;
+parameter SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_DECB = 0 ;
 
 // SLc Extra Vector MDT chamber ID
-`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_LEN 6
-`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_MSB 5
-`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_LSB 0
-`define SLCPROC_PIPELINE_COMMON_EXT_vec_mdtid_DECB 0
+parameter SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LEN = 6 ;
+parameter SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_MSB = 5 ;
+parameter SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LSB = 0 ;
+parameter SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLCPROC_PIPELINE_ENDCAP_LEN 124
+parameter SLCPROC_PIPELINE_ENDCAP_LEN = 124 ;
 
 // -------------------------------------------------------------------
-`define SLCPROC_PIPELINE_BARREL_LEN 129
+parameter SLCPROC_PIPELINE_BARREL_LEN = 129 ;
 
 // -------------------------------------------------------------------
-`define TDC_LEN 32
+parameter TDC_LEN = 32 ;
 
 // Channel number within TDC
-`define TDC_chanidchanid_LEN 5
-`define TDC_chanidchanid_MSB 31
-`define TDC_chanidchanid_LSB 27
-`define TDC_chanidchanid_DECB 0
+parameter TDC_CHANID_LEN = 5 ;
+parameter TDC_CHANID_MSB = 31 ;
+parameter TDC_CHANID_LSB = 27 ;
+parameter TDC_CHANID_DECB = 0 ;
 
 // Edge or pair mode
-`define TDC_edgemodeedgemode_LEN 2
-`define TDC_edgemodeedgemode_MSB 26
-`define TDC_edgemodeedgemode_LSB 25
-`define TDC_edgemodeedgemode_DECB 0
+parameter TDC_EDGEMODE_LEN = 2 ;
+parameter TDC_EDGEMODE_MSB = 26 ;
+parameter TDC_EDGEMODE_LSB = 25 ;
+parameter TDC_EDGEMODE_DECB = 0 ;
 
 // TDC BCID
-`define TDC_coarsetimecoarsetime_LEN 12
-`define TDC_coarsetimecoarsetime_MSB 24
-`define TDC_coarsetimecoarsetime_LSB 13
-`define TDC_coarsetimecoarsetime_DECB 0
+parameter TDC_COARSETIME_LEN = 12 ;
+parameter TDC_COARSETIME_MSB = 24 ;
+parameter TDC_COARSETIME_LSB = 13 ;
+parameter TDC_COARSETIME_DECB = 0 ;
 
 // TDC fine time with BCID
-`define TDC_finetimefinetime_LEN 5
-`define TDC_finetimefinetime_MSB 12
-`define TDC_finetimefinetime_LSB 8
-`define TDC_finetimefinetime_DECB 1
+parameter TDC_FINETIME_LEN = 5 ;
+parameter TDC_FINETIME_MSB = 12 ;
+parameter TDC_FINETIME_LSB = 8 ;
+parameter TDC_FINETIME_DECB = 1 ;
 
 // Pulse width
-`define TDC_pulsewidthpulsewidth_LEN 8
-`define TDC_pulsewidthpulsewidth_MSB 7
-`define TDC_pulsewidthpulsewidth_LSB 0
-`define TDC_pulsewidthpulsewidth_DECB 1
+parameter TDC_PULSEWIDTH_LEN = 8 ;
+parameter TDC_PULSEWIDTH_MSB = 7 ;
+parameter TDC_PULSEWIDTH_LSB = 0 ;
+parameter TDC_PULSEWIDTH_DECB = 1 ;
 
 // -------------------------------------------------------------------
-`define TDCFORMAT_LEN 44
+parameter TDCFORMAT_LEN = 44 ;
 
 // Fiber ID within board
-`define TDCFORMAT_fiberidfiberid_LEN 5
-`define TDCFORMAT_fiberidfiberid_MSB 11
-`define TDCFORMAT_fiberidfiberid_LSB 7
-`define TDCFORMAT_fiberidfiberid_DECB 0
+parameter TDCFORMAT_FIBERID_LEN = 5 ;
+parameter TDCFORMAT_FIBERID_MSB = 11 ;
+parameter TDCFORMAT_FIBERID_LSB = 7 ;
+parameter TDCFORMAT_FIBERID_DECB = 0 ;
 
 // Elink ID within fiber
-`define TDCFORMAT_elinkidelinkid_LEN 4
-`define TDCFORMAT_elinkidelinkid_MSB 6
-`define TDCFORMAT_elinkidelinkid_LSB 3
-`define TDCFORMAT_elinkidelinkid_DECB 0
+parameter TDCFORMAT_ELINKID_LEN = 4 ;
+parameter TDCFORMAT_ELINKID_MSB = 6 ;
+parameter TDCFORMAT_ELINKID_LSB = 3 ;
+parameter TDCFORMAT_ELINKID_DECB = 0 ;
 
 // Valid bit
-`define TDCFORMAT_datavaliddatavalid_LEN 1
-`define TDCFORMAT_datavaliddatavalid_MSB 2
-`define TDCFORMAT_datavaliddatavalid_LSB 2
-`define TDCFORMAT_datavaliddatavalid_DECB 0
+parameter TDCFORMAT_DATAVALID_LEN = 1 ;
+parameter TDCFORMAT_DATAVALID_MSB = 2 ;
+parameter TDCFORMAT_DATAVALID_LSB = 2 ;
+parameter TDCFORMAT_DATAVALID_DECB = 0 ;
 
 // MDT Station Type (Inner, Middle, Outer, Extra)
-`define TDCFORMAT_stationidstationid_LEN 2
-`define TDCFORMAT_stationidstationid_MSB 1
-`define TDCFORMAT_stationidstationid_LSB 0
-`define TDCFORMAT_stationidstationid_DECB 0
+parameter TDCFORMAT_STATIONID_LEN = 2 ;
+parameter TDCFORMAT_STATIONID_MSB = 1 ;
+parameter TDCFORMAT_STATIONID_LSB = 0 ;
+parameter TDCFORMAT_STATIONID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLCPROC_HESF_LEN 48
+parameter SLCPROC_HESF_LEN = 48 ;
 
 // SLc Muon Unique Identifier
-`define SLCPROC_HESF_SLC_MUIDSLC_MUID_LEN 20
-`define SLCPROC_HESF_SLC_MUIDSLC_MUID_MSB 47
-`define SLCPROC_HESF_SLC_MUIDSLC_MUID_LSB 28
-`define SLCPROC_HESF_SLC_MUIDSLC_MUID_DECB 0
+parameter SLCPROC_HESF_SLC_MUID_LEN = 20 ;
+parameter SLCPROC_HESF_SLC_MUID_MSB = 47 ;
+parameter SLCPROC_HESF_SLC_MUID_LSB = 28 ;
+parameter SLCPROC_HESF_SLC_MUID_DECB = 0 ;
 
 // inner MDT segment chip destination
-`define SLCPROC_HESF_mdtseg_destmdtseg_dest_LEN 2
-`define SLCPROC_HESF_mdtseg_destmdtseg_dest_MSB 27
-`define SLCPROC_HESF_mdtseg_destmdtseg_dest_LSB 26
-`define SLCPROC_HESF_mdtseg_destmdtseg_dest_DECB 0
+parameter SLCPROC_HESF_MDTSEG_DEST_LEN = 2 ;
+parameter SLCPROC_HESF_MDTSEG_DEST_MSB = 27 ;
+parameter SLCPROC_HESF_MDTSEG_DEST_LSB = 26 ;
+parameter SLCPROC_HESF_MDTSEG_DEST_DECB = 0 ;
 
 // SLc Inner Vector MDT chamber ID
-`define SLCPROC_HESF_vec_mdtidvec_mdtid_LEN 6
-`define SLCPROC_HESF_vec_mdtidvec_mdtid_MSB 25
-`define SLCPROC_HESF_vec_mdtidvec_mdtid_LSB 20
-`define SLCPROC_HESF_vec_mdtidvec_mdtid_DECB 0
+parameter SLCPROC_HESF_VEC_MDTID_LEN = 6 ;
+parameter SLCPROC_HESF_VEC_MDTID_MSB = 25 ;
+parameter SLCPROC_HESF_VEC_MDTID_LSB = 20 ;
+parameter SLCPROC_HESF_VEC_MDTID_DECB = 0 ;
 
 // SLc inner vector rho position
-`define SLCPROC_HESF_vec_posvec_pos_LEN 10
-`define SLCPROC_HESF_vec_posvec_pos_MSB 19
-`define SLCPROC_HESF_vec_posvec_pos_LSB 10
-`define SLCPROC_HESF_vec_posvec_pos_DECB 0
+parameter SLCPROC_HESF_VEC_POS_LEN = 10 ;
+parameter SLCPROC_HESF_VEC_POS_MSB = 19 ;
+parameter SLCPROC_HESF_VEC_POS_LSB = 10 ;
+parameter SLCPROC_HESF_VEC_POS_DECB = 0 ;
 
 // SLc inner vector theta angle
-`define SLCPROC_HESF_vec_angvec_ang_LEN 10
-`define SLCPROC_HESF_vec_angvec_ang_MSB 9
-`define SLCPROC_HESF_vec_angvec_ang_LSB 0
-`define SLCPROC_HESF_vec_angvec_ang_DECB 0
+parameter SLCPROC_HESF_VEC_ANG_LEN = 10 ;
+parameter SLCPROC_HESF_VEC_ANG_MSB = 9 ;
+parameter SLCPROC_HESF_VEC_ANG_LSB = 0 ;
+parameter SLCPROC_HESF_VEC_ANG_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define TUBEREMAP_LEN 69
+parameter TUBEREMAP_LEN = 69 ;
 
 // Tube layer within one station
-`define TUBEREMAP_mdt_tube_layermdt_tube_layer_LEN 5
-`define TUBEREMAP_mdt_tube_layermdt_tube_layer_MSB 68
-`define TUBEREMAP_mdt_tube_layermdt_tube_layer_LSB 64
-`define TUBEREMAP_mdt_tube_layermdt_tube_layer_DECB 0
+parameter TUBEREMAP_MDT_TUBE_LAYER_LEN = 5 ;
+parameter TUBEREMAP_MDT_TUBE_LAYER_MSB = 68 ;
+parameter TUBEREMAP_MDT_TUBE_LAYER_LSB = 64 ;
+parameter TUBEREMAP_MDT_TUBE_LAYER_DECB = 0 ;
 
 // Tube number within one station
-`define TUBEREMAP_mdt_tube_nummdt_tube_num_LEN 9
-`define TUBEREMAP_mdt_tube_nummdt_tube_num_MSB 63
-`define TUBEREMAP_mdt_tube_nummdt_tube_num_LSB 55
-`define TUBEREMAP_mdt_tube_nummdt_tube_num_DECB 0
+parameter TUBEREMAP_MDT_TUBE_NUM_LEN = 9 ;
+parameter TUBEREMAP_MDT_TUBE_NUM_MSB = 63 ;
+parameter TUBEREMAP_MDT_TUBE_NUM_LSB = 55 ;
+parameter TUBEREMAP_MDT_TUBE_NUM_DECB = 0 ;
 
 // Tube radial position
-`define TUBEREMAP_mdt_tube_rhomdt_tube_rho_LEN 18
-`define TUBEREMAP_mdt_tube_rhomdt_tube_rho_MSB 54
-`define TUBEREMAP_mdt_tube_rhomdt_tube_rho_LSB 37
-`define TUBEREMAP_mdt_tube_rhomdt_tube_rho_DECB 5
+parameter TUBEREMAP_MDT_TUBE_RHO_LEN = 18 ;
+parameter TUBEREMAP_MDT_TUBE_RHO_MSB = 54 ;
+parameter TUBEREMAP_MDT_TUBE_RHO_LSB = 37 ;
+parameter TUBEREMAP_MDT_TUBE_RHO_DECB = 5 ;
 
 // Tube position along z
-`define TUBEREMAP_mdt_tube_zmdt_tube_z_LEN 19
-`define TUBEREMAP_mdt_tube_zmdt_tube_z_MSB 36
-`define TUBEREMAP_mdt_tube_zmdt_tube_z_LSB 18
-`define TUBEREMAP_mdt_tube_zmdt_tube_z_DECB 5
+parameter TUBEREMAP_MDT_TUBE_Z_LEN = 19 ;
+parameter TUBEREMAP_MDT_TUBE_Z_MSB = 36 ;
+parameter TUBEREMAP_MDT_TUBE_Z_LSB = 18 ;
+parameter TUBEREMAP_MDT_TUBE_Z_DECB = 5 ;
 
 // Tube (uncalibrated) time
-`define TUBEREMAP_mdt_tube_timemdt_tube_time_LEN 18
-`define TUBEREMAP_mdt_tube_timemdt_tube_time_MSB 17
-`define TUBEREMAP_mdt_tube_timemdt_tube_time_LSB 0
-`define TUBEREMAP_mdt_tube_timemdt_tube_time_DECB 1
+parameter TUBEREMAP_MDT_TUBE_TIME_LEN = 18 ;
+parameter TUBEREMAP_MDT_TUBE_TIME_MSB = 17 ;
+parameter TUBEREMAP_MDT_TUBE_TIME_LSB = 0 ;
+parameter TUBEREMAP_MDT_TUBE_TIME_DECB = 1 ;
 
 // -------------------------------------------------------------------
-`define HE_LSF_LEN 39
+parameter HE_LSF_LEN = 39 ;
 
 // Hit Valid bit
-`define HE_LSF_mdt_validmdt_valid_LEN 1
-`define HE_LSF_mdt_validmdt_valid_MSB 38
-`define HE_LSF_mdt_validmdt_valid_LSB 38
-`define HE_LSF_mdt_validmdt_valid_DECB 0
+parameter HE_LSF_MDT_VALID_LEN = 1 ;
+parameter HE_LSF_MDT_VALID_MSB = 38 ;
+parameter HE_LSF_MDT_VALID_LSB = 38 ;
+parameter HE_LSF_MDT_VALID_DECB = 0 ;
 
 // Data Valid bit
-`define HE_LSF_data_validdata_valid_LEN 1
-`define HE_LSF_data_validdata_valid_MSB 37
-`define HE_LSF_data_validdata_valid_LSB 37
-`define HE_LSF_data_validdata_valid_DECB 0
+parameter HE_LSF_DATA_VALID_LEN = 1 ;
+parameter HE_LSF_DATA_VALID_MSB = 37 ;
+parameter HE_LSF_DATA_VALID_LSB = 37 ;
+parameter HE_LSF_DATA_VALID_DECB = 0 ;
 
 // Tube local position along precision coord
-`define HE_LSF_mdt_localxmdt_localx_LEN 14
-`define HE_LSF_mdt_localxmdt_localx_MSB 36
-`define HE_LSF_mdt_localxmdt_localx_LSB 23
-`define HE_LSF_mdt_localxmdt_localx_DECB 5
+parameter HE_LSF_MDT_LOCALX_LEN = 14 ;
+parameter HE_LSF_MDT_LOCALX_MSB = 36 ;
+parameter HE_LSF_MDT_LOCALX_LSB = 23 ;
+parameter HE_LSF_MDT_LOCALX_DECB = 5 ;
 
 // Tube local position along second coord
-`define HE_LSF_mdt_localymdt_localy_LEN 14
-`define HE_LSF_mdt_localymdt_localy_MSB 22
-`define HE_LSF_mdt_localymdt_localy_LSB 9
-`define HE_LSF_mdt_localymdt_localy_DECB 5
+parameter HE_LSF_MDT_LOCALY_LEN = 14 ;
+parameter HE_LSF_MDT_LOCALY_MSB = 22 ;
+parameter HE_LSF_MDT_LOCALY_LSB = 9 ;
+parameter HE_LSF_MDT_LOCALY_DECB = 5 ;
 
 // Tube drift radius
-`define HE_LSF_mdt_radiusmdt_radius_LEN 9
-`define HE_LSF_mdt_radiusmdt_radius_MSB 8
-`define HE_LSF_mdt_radiusmdt_radius_LSB 0
-`define HE_LSF_mdt_radiusmdt_radius_DECB 5
+parameter HE_LSF_MDT_RADIUS_LEN = 9 ;
+parameter HE_LSF_MDT_RADIUS_MSB = 8 ;
+parameter HE_LSF_MDT_RADIUS_LSB = 0 ;
+parameter HE_LSF_MDT_RADIUS_DECB = 5 ;
 
 // -------------------------------------------------------------------
-`define HE_CSF_LEN 39
+parameter HE_CSF_LEN = 39 ;
 
 // Hit Valid bit
-`define HE_CSF_mdt_validmdt_valid_LEN 1
-`define HE_CSF_mdt_validmdt_valid_MSB 38
-`define HE_CSF_mdt_validmdt_valid_LSB 38
-`define HE_CSF_mdt_validmdt_valid_DECB 0
+parameter HE_CSF_MDT_VALID_LEN = 1 ;
+parameter HE_CSF_MDT_VALID_MSB = 38 ;
+parameter HE_CSF_MDT_VALID_LSB = 38 ;
+parameter HE_CSF_MDT_VALID_DECB = 0 ;
 
 // Data Valid bit
-`define HE_CSF_data_validdata_valid_LEN 1
-`define HE_CSF_data_validdata_valid_MSB 37
-`define HE_CSF_data_validdata_valid_LSB 37
-`define HE_CSF_data_validdata_valid_DECB 0
+parameter HE_CSF_DATA_VALID_LEN = 1 ;
+parameter HE_CSF_DATA_VALID_MSB = 37 ;
+parameter HE_CSF_DATA_VALID_LSB = 37 ;
+parameter HE_CSF_DATA_VALID_DECB = 0 ;
 
 // Tube local position along precision coord
-`define HE_CSF_mdt_localxmdt_localx_LEN 14
-`define HE_CSF_mdt_localxmdt_localx_MSB 36
-`define HE_CSF_mdt_localxmdt_localx_LSB 23
-`define HE_CSF_mdt_localxmdt_localx_DECB 4
+parameter HE_CSF_MDT_LOCALX_LEN = 14 ;
+parameter HE_CSF_MDT_LOCALX_MSB = 36 ;
+parameter HE_CSF_MDT_LOCALX_LSB = 23 ;
+parameter HE_CSF_MDT_LOCALX_DECB = 4 ;
 
 // Tube local position along second coord
-`define HE_CSF_mdt_localymdt_localy_LEN 14
-`define HE_CSF_mdt_localymdt_localy_MSB 22
-`define HE_CSF_mdt_localymdt_localy_LSB 9
-`define HE_CSF_mdt_localymdt_localy_DECB 4
+parameter HE_CSF_MDT_LOCALY_LEN = 14 ;
+parameter HE_CSF_MDT_LOCALY_MSB = 22 ;
+parameter HE_CSF_MDT_LOCALY_LSB = 9 ;
+parameter HE_CSF_MDT_LOCALY_DECB = 4 ;
 
 // Tube drift radius
-`define HE_CSF_mdt_radiusmdt_radius_LEN 9
-`define HE_CSF_mdt_radiusmdt_radius_MSB 8
-`define HE_CSF_mdt_radiusmdt_radius_LSB 0
-`define HE_CSF_mdt_radiusmdt_radius_DECB 5
+parameter HE_CSF_MDT_RADIUS_LEN = 9 ;
+parameter HE_CSF_MDT_RADIUS_MSB = 8 ;
+parameter HE_CSF_MDT_RADIUS_LSB = 0 ;
+parameter HE_CSF_MDT_RADIUS_DECB = 5 ;
 
 // -------------------------------------------------------------------
-`define SLCPIPE_PTCALC_LEN 53
+parameter SLCPIPE_PTCALC_LEN = 53 ;
 
 // -------------------------------------------------------------------
-`define SF_LEN 55
+parameter SF_LEN = 55 ;
 
 // SF MDT segment valid bit
-`define SF_segvalidsegvalid_LEN 1
-`define SF_segvalidsegvalid_MSB 28
-`define SF_segvalidsegvalid_LSB 28
-`define SF_segvalidsegvalid_DECB 0
+parameter SF_SEGVALID_LEN = 1 ;
+parameter SF_SEGVALID_MSB = 28 ;
+parameter SF_SEGVALID_LSB = 28 ;
+parameter SF_SEGVALID_DECB = 0 ;
 
 // SF MDT segment position along the precision coord
-`define SF_segpossegpos_LEN 16
-`define SF_segpossegpos_MSB 27
-`define SF_segpossegpos_LSB 12
-`define SF_segpossegpos_DECB 3
+parameter SF_SEGPOS_LEN = 16 ;
+parameter SF_SEGPOS_MSB = 27 ;
+parameter SF_SEGPOS_LSB = 12 ;
+parameter SF_SEGPOS_DECB = 3 ;
 
 // SF MDT segment angle along the precision coord
-`define SF_seganglesegangle_LEN 11
-`define SF_seganglesegangle_MSB 11
-`define SF_seganglesegangle_LSB 1
-`define SF_seganglesegangle_DECB 0
+parameter SF_SEGANGLE_LEN = 11 ;
+parameter SF_SEGANGLE_MSB = 11 ;
+parameter SF_SEGANGLE_LSB = 1 ;
+parameter SF_SEGANGLE_DECB = 0 ;
 
 // SF MDT segment qualiry
-`define SF_segqualitysegquality_LEN 1
-`define SF_segqualitysegquality_MSB 0
-`define SF_segqualitysegquality_LSB 0
-`define SF_segqualitysegquality_DECB 0
+parameter SF_SEGQUALITY_LEN = 1 ;
+parameter SF_SEGQUALITY_MSB = 0 ;
+parameter SF_SEGQUALITY_LSB = 0 ;
+parameter SF_SEGQUALITY_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define PTCALC_LEN 52
+parameter PTCALC_LEN = 52 ;
 
 // eta of the innermost MDT station segment position
-`define PTCALC_mtc_etamtc_eta_LEN 14
-`define PTCALC_mtc_etamtc_eta_MSB 31
-`define PTCALC_mtc_etamtc_eta_LSB 18
-`define PTCALC_mtc_etamtc_eta_DECB 12
+parameter PTCALC_MTC_ETA_LEN = 14 ;
+parameter PTCALC_MTC_ETA_MSB = 31 ;
+parameter PTCALC_MTC_ETA_LSB = 18 ;
+parameter PTCALC_MTC_ETA_DECB = 12 ;
 
 // pT calculated by the pT Calc
-`define PTCALC_mtc_ptmtc_pt_LEN 8
-`define PTCALC_mtc_ptmtc_pt_MSB 17
-`define PTCALC_mtc_ptmtc_pt_LSB 10
-`define PTCALC_mtc_ptmtc_pt_DECB 2
+parameter PTCALC_MTC_PT_LEN = 8 ;
+parameter PTCALC_MTC_PT_MSB = 17 ;
+parameter PTCALC_MTC_PT_LSB = 10 ;
+parameter PTCALC_MTC_PT_DECB = 2 ;
 
 // pT threshold satisfied by the MDT TC
-`define PTCALC_mtc_ptthreshmtc_ptthresh_LEN 4
-`define PTCALC_mtc_ptthreshmtc_ptthresh_MSB 9
-`define PTCALC_mtc_ptthreshmtc_ptthresh_LSB 6
-`define PTCALC_mtc_ptthreshmtc_ptthresh_DECB 0
+parameter PTCALC_MTC_PTTHRESH_LEN = 4 ;
+parameter PTCALC_MTC_PTTHRESH_MSB = 9 ;
+parameter PTCALC_MTC_PTTHRESH_LSB = 6 ;
+parameter PTCALC_MTC_PTTHRESH_DECB = 0 ;
 
 // charge determined from the pT calc
-`define PTCALC_mtc_chargemtc_charge_LEN 1
-`define PTCALC_mtc_chargemtc_charge_MSB 5
-`define PTCALC_mtc_chargemtc_charge_LSB 5
-`define PTCALC_mtc_chargemtc_charge_DECB 0
+parameter PTCALC_MTC_CHARGE_LEN = 1 ;
+parameter PTCALC_MTC_CHARGE_MSB = 5 ;
+parameter PTCALC_MTC_CHARGE_LSB = 5 ;
+parameter PTCALC_MTC_CHARGE_DECB = 0 ;
 
 // # of segments used for calculating the pT
-`define PTCALC_mtc_nsegmentsmtc_nsegments_LEN 2
-`define PTCALC_mtc_nsegmentsmtc_nsegments_MSB 4
-`define PTCALC_mtc_nsegmentsmtc_nsegments_LSB 3
-`define PTCALC_mtc_nsegmentsmtc_nsegments_DECB 0
+parameter PTCALC_MTC_NSEGMENTS_LEN = 2 ;
+parameter PTCALC_MTC_NSEGMENTS_MSB = 4 ;
+parameter PTCALC_MTC_NSEGMENTS_LSB = 3 ;
+parameter PTCALC_MTC_NSEGMENTS_DECB = 0 ;
 
 // quality of the MDT TC (TBC how this is defined)
-`define PTCALC_mtc_qualitymtc_quality_LEN 3
-`define PTCALC_mtc_qualitymtc_quality_MSB 2
-`define PTCALC_mtc_qualitymtc_quality_LSB 0
-`define PTCALC_mtc_qualitymtc_quality_DECB 0
+parameter PTCALC_MTC_QUALITY_LEN = 3 ;
+parameter PTCALC_MTC_QUALITY_MSB = 2 ;
+parameter PTCALC_MTC_QUALITY_LSB = 0 ;
+parameter PTCALC_MTC_QUALITY_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLCPIPE_MTC_ENDCAP_LEN 54
+parameter SLCPIPE_MTC_ENDCAP_LEN = 54 ;
 
 // 
-`define SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_LEN 20
-`define SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_MSB 53
-`define SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_LSB 34
-`define SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_DECB 0
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN = 20 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_MSB = 53 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_LSB = 34 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define SLCPIPE_MTC_BARREL_LEN 57
+parameter SLCPIPE_MTC_BARREL_LEN = 57 ;
 
 // 
-`define SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_LEN 20
-`define SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_MSB 53
-`define SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_LSB 34
-`define SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_DECB 0
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_LEN = 20 ;
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_MSB = 53 ;
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_LSB = 34 ;
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-`define MTC_LEN 67
+parameter MTC_LEN = 67 ;
 
 // MDT processing flags
-`define MTC_mtc_procflagsmtc_procflags_LEN 4
-`define MTC_mtc_procflagsmtc_procflags_MSB 8
-`define MTC_mtc_procflagsmtc_procflags_LSB 5
-`define MTC_mtc_procflagsmtc_procflags_DECB 0
+parameter MTC_MTC_PROCFLAGS_LEN = 4 ;
+parameter MTC_MTC_PROCFLAGS_MSB = 8 ;
+parameter MTC_MTC_PROCFLAGS_LSB = 5 ;
+parameter MTC_MTC_PROCFLAGS_DECB = 0 ;

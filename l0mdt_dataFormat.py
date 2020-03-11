@@ -248,7 +248,7 @@ def write_sv_file(sv_name, df_hash, o_dir):
 
         write_ln("");
         write_ln(f"// {'-'*67}")
-        write_ln(f"`define {bus.name}_LEN {bus.width}")
+        write_ln(f"parameter {bus.name}_LEN = {bus.width} ;")
 
         for var in bus.vars:
             if var.type == "struct":
@@ -260,15 +260,15 @@ def write_sv_file(sv_name, df_hash, o_dir):
             write_ln("")
             write_ln(f"// {var.parameter}")
 
-            tpl = "`define %s %s"
+            tpl = "parameter %s = %s ;"
 
             suffix = ""
             if var.station:
                 prefix = f"{bus.name}_{var.station}_"
             else:
-                prefix = f"{bus.name}_{var.name}"
+                prefix = f"{bus.name}_"
 
-            var_name = f"{prefix}{var.name}{suffix}"
+            var_name = f"{prefix}{var.name}{suffix}".upper()
             
             write_ln(tpl %(f"{var_name}_LEN", var.width))
             write_ln(tpl %(f"{var_name}_MSB", var.msb))

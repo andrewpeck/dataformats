@@ -3,6 +3,7 @@ from typing import NamedTuple
 import sys, getopt, csv, os
 from datetime import datetime, timezone
 from pathlib import Path
+from math import ceil, floor, log
 
 #declare variable class
 class Var(NamedTuple):
@@ -95,6 +96,20 @@ def write_c_file(c_name, df_hash, o_dir) :
     def write_ln(line):
         f_constants.write(f"{line}\n");
 
+    def get_ap_type(var):
+        if not (var.low or var.high or var.prec):
+            return "uint"
+        elif int(var.decb) == 0:
+            if int(var.low) < 0:
+                return "int"
+            else:
+                return "uint"
+        else:
+            if float(var.low) < 0:
+                return "fixed"
+            else:
+                return "ufixed"
+
     write_ln("");
     write_ln("#ifndef LOMDT_BUSES_CONSTANTS_H")
     write_ln("#define LOMDT_BUSES_CONSTANTS_H")
@@ -136,6 +151,10 @@ def write_c_file(c_name, df_hash, o_dir) :
             write_ln(tpl %(f"{var_name}_MSB", var.msb))
             write_ln(tpl %(f"{var_name}_LSB", var.lsb))
             write_ln(tpl %(f"{var_name}_DECB", var.decb))
+            var_iwidth = str(int(var.width) - int(var.decb))
+            write_ln(tpl %(f"{var_name}_IW", var_iwidth))
+            if 'int' in get_ap_type(var) and var.prec and float(var.prec) > 1:
+                write_ln(tpl %(f"{var_name}_SCALE", str(floor(float(var.prec)))))
 
     write_ln("")
     write_ln(f"// {'-'*67}")
@@ -214,6 +233,31 @@ def write_c_file(c_name, df_hash, o_dir) :
             write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
         write_ln(f"}} {bus.name}_rt;")
+        for var in bus.vars:
+            if var.type == "struct":
+                continue
+
+            if var.parameter == "(COPY)":
+                continue
+            if var.station:
+                prefix = f"{bus.name}_{var.station}_{var.name}"
+            else:
+                prefix = f"{bus.name}_{var.name}"
+
+            var_name = f"{prefix}{suffix}".lower()
+
+            var_iwidth = str(int(var.width) - int(var.decb))
+            ap_type = get_ap_type(var)
+            if 'fixed' in ap_type:
+                ap_def = "ap_%s<%s, %s>" % (ap_type, var.width, var_iwidth)
+            elif 'int' in ap_type:
+                ap_def = "ap_%s<%s>" % (ap_type, var.width)
+            write_ln("typedef %s %s" % (ap_def, f"{var_name}_{ap_type}_t"))
+
+            if 'int' in ap_type and var.prec and float(var.prec) > 1:
+                var_range = float(var.high) - float(var.low) + 1
+                scaled_width = ceil(log(var_range,2))
+                write_ln("typedef ap_%s<%i> %s" % (ap_type, scaled_width, f"{var_name}_{ap_type}_scaled_t"))
         
     write_ln("")
     write_ln(f"// {'-'*67}")

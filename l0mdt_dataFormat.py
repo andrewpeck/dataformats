@@ -130,7 +130,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             else:
                 prefix = f"{bus.name}_"
 
-            var_name = f"{prefix}{var.name}{suffix}".upper()
+            var_name = f"{prefix}{suffix}".upper()
 
             write_ln(tpl %(f"{var_name}_LEN", var.width))
             write_ln(tpl %(f"{var_name}_MSB", var.msb))
@@ -205,12 +205,12 @@ def write_c_file(c_name, df_hash, o_dir) :
             suffix = ""
             
             if var.station:
-                prefix = f"{var.station}_"
+                prefix = f"{var.station}"
             else:
                 prefix += f""
 
-            var_name = f"{prefix}{var.name}{suffix}"
-                
+            var_name = f"{prefix}_{var.name}{suffix}"
+
             write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
         write_ln(f"}} {bus.name}_rt;")
@@ -268,8 +268,8 @@ def write_sv_file(sv_name, df_hash, o_dir):
             else:
                 prefix = f"{bus.name}_"
 
-            var_name = f"{prefix}{var.name}{suffix}".upper()
-            
+            var_name = f"{prefix}{var.name}{suffix}"
+
             write_ln(tpl %(f"{var_name}_LEN", var.width))
             write_ln(tpl %(f"{var_name}_MSB", var.msb))
             write_ln(tpl %(f"{var_name}_LSB", var.lsb))

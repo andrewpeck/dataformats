@@ -112,11 +112,11 @@ def write_c_file(c_name, df_hash, o_dir) :
         write_ln(f"const int {bus.name}_LEN = {bus.width};")
 
         for var in bus.vars:
-            if var.type == "struct":
-                continue
+            ##if var.type != "var":
+            ##    continue
 
-            if var.parameter == "(COPY)":
-                continue
+            ##if var.parameter == "(COPY)":
+            ##    continue
 
             write_ln("")
             write_ln(f"// {var.parameter}")
@@ -251,11 +251,11 @@ def write_sv_file(sv_name, df_hash, o_dir):
         write_ln(f"parameter {bus.name}_LEN = {bus.width} ;")
 
         for var in bus.vars:
-            if var.type == "struct":
-                continue
+            #if var.type != "var":
+            #    continue
 
-            if var.parameter == "(COPY)":
-                continue
+            #if var.parameter == "(COPY)":
+            #    continue
 
             write_ln("")
             write_ln(f"// {var.parameter}")

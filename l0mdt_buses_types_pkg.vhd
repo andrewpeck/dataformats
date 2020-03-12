@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"1db9cdce";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -265,17 +265,17 @@ package mdttp_types_pkg is
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- eta of the innermost MDT station segment position
-    mtc_eta : std_logic_vector(PTCALC_MTC_ETA_LEN-1 downto 0); -- 13
+    eta : std_logic_vector(PTCALC_ETA_LEN-1 downto 0); -- 13
     -- pT calculated by the pT Calc
-    mtc_pt : std_logic_vector(PTCALC_MTC_PT_LEN-1 downto 0); -- 7
+    pt : std_logic_vector(PTCALC_PT_LEN-1 downto 0); -- 7
     -- pT threshold satisfied by the MDT TC
-    mtc_ptthresh : std_logic_vector(PTCALC_MTC_PTTHRESH_LEN-1 downto 0); -- 3
+    ptthresh : std_logic_vector(PTCALC_PTTHRESH_LEN-1 downto 0); -- 3
     -- charge determined from the pT calc
-    mtc_charge : std_logic;
+    charge : std_logic;
     -- # of segments used for calculating the pT
-    mtc_nsegments : std_logic_vector(PTCALC_MTC_NSEGMENTS_LEN-1 downto 0); -- 1
+    nsegments : std_logic_vector(PTCALC_NSEGMENTS_LEN-1 downto 0); -- 1
     -- quality of the MDT TC (TBC how this is defined)
-    mtc_quality : std_logic_vector(PTCALC_MTC_QUALITY_LEN-1 downto 0); -- 2
+    quality : std_logic_vector(PTCALC_QUALITY_LEN-1 downto 0); -- 2
   end record ptcalc_rt;
 
   -- -----------------------------------------------------------------
@@ -315,19 +315,19 @@ package mdttp_types_pkg is
     -- struct SLC_COMMON
     slc_common_r : SLC_COMMON_rt;
     -- (COPY)
-    mtc_eta : std_logic_vector(MTC_MTC_ETA_LEN-1 downto 0); -- 13
+    eta : std_logic_vector(MTC_ETA_LEN-1 downto 0); -- 13
     -- (COPY)
-    mtc_pt : std_logic_vector(MTC_MTC_PT_LEN-1 downto 0); -- 7
+    pt : std_logic_vector(MTC_PT_LEN-1 downto 0); -- 7
     -- (COPY)
-    mtc_ptthresh : std_logic_vector(MTC_MTC_PTTHRESH_LEN-1 downto 0); -- 3
+    ptthresh : std_logic_vector(MTC_PTTHRESH_LEN-1 downto 0); -- 3
     -- (COPY)
-    mtc_charge : std_logic;
+    charge : std_logic;
     -- MDT processing flags
-    mtc_procflags : std_logic_vector(MTC_MTC_PROCFLAGS_LEN-1 downto 0); -- 3
+    procflags : std_logic_vector(MTC_PROCFLAGS_LEN-1 downto 0); -- 3
     -- (COPY)
-    mtc_nsegments : std_logic_vector(MTC_MTC_NSEGMENTS_LEN-1 downto 0); -- 1
+    nsegments : std_logic_vector(MTC_NSEGMENTS_LEN-1 downto 0); -- 1
     -- (COPY)
-    mtc_quality : std_logic_vector(MTC_MTC_QUALITY_LEN-1 downto 0); -- 2
+    quality : std_logic_vector(MTC_QUALITY_LEN-1 downto 0); -- 2
   end record mtc_rt;
 
 -- -------------------------------------------------------------------

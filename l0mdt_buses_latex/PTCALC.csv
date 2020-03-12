@@ -1,9 +1,9 @@
 Name,Station,Width,MSB index,LSB index,DECB
 SLC\_MUID,,20,51,32,0
-mtc\_eta,,14,31,18,12
-mtc\_pt,,8,17,10,2
-mtc\_ptthresh,,4,9,6,0
-mtc\_charge,,1,5,5,0
-mtc\_nsegments,,2,4,3,0
-mtc\_quality,,3,2,0,0
+eta,,14,31,18,12
+pt,,8,17,10,2
+ptthresh,,4,9,6,0
+charge,,1,5,5,0
+nsegments,,2,4,3,0
+quality,,3,2,0,0
 

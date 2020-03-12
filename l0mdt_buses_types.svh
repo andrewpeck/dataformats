@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "a34aee13";
+const char df_hash[] = "1db9cdce";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -215,17 +215,17 @@ typedef struct PTCALC_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // eta of the innermost MDT station segment position
-    logic [13:0] mtc_etamtc_eta;
+    logic [13:0] etaeta;
     // pT calculated by the pT Calc
-    logic [7:0] mtc_ptmtc_pt;
+    logic [7:0] ptpt;
     // pT threshold satisfied by the MDT TC
-    logic [3:0] mtc_ptthreshmtc_ptthresh;
+    logic [3:0] ptthreshptthresh;
     // charge determined from the pT calc
-    logic [0:0] mtc_chargemtc_charge;
+    logic [0:0] chargecharge;
     // # of segments used for calculating the pT
-    logic [1:0] mtc_nsegmentsmtc_nsegments;
+    logic [1:0] nsegmentsnsegments;
     // quality of the MDT TC (TBC how this is defined)
-    logic [2:0] mtc_qualitymtc_quality;
+    logic [2:0] qualityquality;
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
@@ -259,19 +259,19 @@ typedef struct MTC_n {
     // struct SLC_COMMON
     logic [30:0] SLC_COMMONSLC_COMMON;
     // (COPY)
-    logic [13:0] mtc_etamtc_eta;
+    logic [13:0] etaeta;
     // (COPY)
-    logic [7:0] mtc_ptmtc_pt;
+    logic [7:0] ptpt;
     // (COPY)
-    logic [3:0] mtc_ptthreshmtc_ptthresh;
+    logic [3:0] ptthreshptthresh;
     // (COPY)
-    logic [0:0] mtc_chargemtc_charge;
+    logic [0:0] chargecharge;
     // MDT processing flags
-    logic [3:0] mtc_procflagsmtc_procflags;
+    logic [3:0] procflagsprocflags;
     // (COPY)
-    logic [1:0] mtc_nsegmentsmtc_nsegments;
+    logic [1:0] nsegmentsnsegments;
     // (COPY)
-    logic [2:0] mtc_qualitymtc_quality;
+    logic [2:0] qualityquality;
 } MTC_rt;
 
 // -------------------------------------------------------------------

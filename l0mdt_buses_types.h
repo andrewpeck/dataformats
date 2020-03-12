@@ -3,8 +3,10 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-#ifndef LOMDT_BUS_TYPES_H
-#define LOMDT_BUS_TYPES_H
+#ifndef LOMDT_BUSES_TYPES_H
+#define LOMDT_BUSES_TYPES_H
+
+const char df_hash_types[] = "a34aee13";
 
 // Usage:
 //   uint16_t bcid;
@@ -26,10 +28,6 @@ typedef struct SLC_MUID_n {
     // BCID from SLC
     char bcid[2]; // 12 bits
 } SLC_MUID_rt;
-typedef ap_uint<2> slc_muid_slcid_uint_t
-typedef ap_uint<6> slc_muid_slid_uint_t
-typedef ap_uint<12> slc_muid_bcid_uint_t
-typedef ap_uint<17> slc_muid_bcid_uint_scaled_t
 
 // -------------------------------------------------------------------
 typedef struct SLC_COMMON_n {
@@ -46,14 +44,6 @@ typedef struct SLC_COMMON_n {
     // SLc charge
     char charge; // 1 bits
 } SLC_COMMON_rt;
-typedef ap_uint<2> slc_common_slcid_uint_t
-typedef ap_uint<1> slc_common_tcsent_uint_t
-typedef ap_fixed<14, 2> slc_common_poseta_fixed_t
-typedef ap_uint<9> slc_common_posphi_uint_t
-typedef ap_uint<13> slc_common_posphi_uint_scaled_t
-typedef ap_uint<4> slc_common_ptthresh_uint_t
-typedef ap_uint<7> slc_common_ptthresh_uint_scaled_t
-typedef ap_uint<1> slc_common_charge_uint_t
 
 // -------------------------------------------------------------------
 typedef struct SLC_ENDCAP_n {
@@ -70,14 +60,6 @@ typedef struct SLC_ENDCAP_n {
     // NSW segment angle wrt Eta position
     char nswseg_angdtheta; // 5 bits
 } SLC_ENDCAP_rt;
-typedef ap_int<7> slc_endcap_seg_angdtheta_int_t
-typedef ap_int<9> slc_endcap_seg_angdtheta_int_scaled_t
-typedef ap_int<4> slc_endcap_seg_angdphi_int_t
-typedef ap_int<7> slc_endcap_seg_angdphi_int_scaled_t
-typedef ap_ufixed<14, 1> slc_endcap_nswseg_poseta_ufixed_t
-typedef ap_uint<8> slc_endcap_nswseg_posphi_uint_t
-typedef ap_uint<13> slc_endcap_nswseg_posphi_uint_scaled_t
-typedef ap_int<5> slc_endcap_nswseg_angdtheta_int_t
 
 // -------------------------------------------------------------------
 typedef struct SLC_BARREL_n {
@@ -94,15 +76,6 @@ typedef struct SLC_BARREL_n {
     // SLc coincidence type
     char cointype; // 3 bits
 } SLC_BARREL_rt;
-typedef ap_uint<10> slc_barrel_rpc0_posz_uint_t
-typedef ap_uint<14> slc_barrel_rpc0_posz_uint_scaled_t
-typedef ap_uint<10> slc_barrel_rpc1_posz_uint_t
-typedef ap_uint<14> slc_barrel_rpc1_posz_uint_scaled_t
-typedef ap_uint<10> slc_barrel_rpc2_posz_uint_t
-typedef ap_uint<14> slc_barrel_rpc2_posz_uint_scaled_t
-typedef ap_uint<10> slc_barrel_rpc3_posz_uint_t
-typedef ap_uint<14> slc_barrel_rpc3_posz_uint_scaled_t
-typedef ap_uint<3> slc_barrel_cointype_uint_t
 
 // -------------------------------------------------------------------
 typedef struct SLCPROC_PIPE_COMMON_n {
@@ -149,12 +122,6 @@ typedef struct TDC_n {
     // Pulse width
     char pulsewidth[2]; // 9 bits
 } TDC_rt;
-typedef ap_uint<5> tdc_chanid_uint_t
-typedef ap_uint<2> tdc_edgemode_uint_t
-typedef ap_uint<12> tdc_coarsetime_uint_t
-typedef ap_uint<17> tdc_coarsetime_uint_scaled_t
-typedef ap_ufixed<5, 4> tdc_finetime_ufixed_t
-typedef ap_ufixed<8, 7> tdc_pulsewidth_ufixed_t
 
 // -------------------------------------------------------------------
 typedef struct TDCPOLMUX_n {
@@ -247,10 +214,6 @@ typedef struct SF_n {
     // SF MDT segment qualiry
     char segquality; // 1 bits
 } SF_rt;
-typedef ap_uint<1> sf_segvalid_uint_t
-typedef ap_ufixed<16, 13> sf_segpos_ufixed_t
-typedef ap_uint<11> sf_segangle_uint_t
-typedef ap_uint<1> sf_segquality_uint_t
 
 // -------------------------------------------------------------------
 typedef struct PTCALC_n {
@@ -269,13 +232,6 @@ typedef struct PTCALC_n {
     // quality of the MDT TC (TBC how this is defined)
     char quality; // 3 bits
 } PTCALC_rt;
-typedef ap_fixed<14, 2> ptcalc_mtc_eta_fixed_t
-typedef ap_ufixed<8, 6> ptcalc_mtc_pt_ufixed_t
-typedef ap_uint<4> ptcalc_mtc_ptthresh_uint_t
-typedef ap_uint<7> ptcalc_mtc_ptthresh_uint_scaled_t
-typedef ap_uint<1> ptcalc_mtc_charge_uint_t
-typedef ap_uint<2> ptcalc_mtc_nsegments_uint_t
-typedef ap_uint<3> ptcalc_mtc_quality_uint_t
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_MTC_ENDCAP_n {
@@ -288,7 +244,6 @@ typedef struct SLCPIPE_MTC_ENDCAP_n {
     // (COPY)
     char destsl; // 2 bits
 } SLCPIPE_MTC_ENDCAP_rt;
-typedef ap_uint<20> slcpipe_mtc_endcap_slc_muid_uint_t
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_MTC_BARREL_n {
@@ -303,7 +258,6 @@ typedef struct SLCPIPE_MTC_BARREL_n {
     // (COPY)
     char destsl; // 2 bits
 } SLCPIPE_MTC_BARREL_rt;
-typedef ap_uint<20> slcpipe_mtc_barrel_slc_muid_uint_t
 
 // -------------------------------------------------------------------
 typedef struct MTC_n {
@@ -324,8 +278,7 @@ typedef struct MTC_n {
     // (COPY)
     char quality; // 3 bits
 } MTC_rt;
-typedef ap_uint<4> mtc_mtc_procflags_uint_t
 
 // -------------------------------------------------------------------
 
-#endif // LOMDT_BUS_TYPES_H
+#endif // LOMDT_BUSES_TYPES_H

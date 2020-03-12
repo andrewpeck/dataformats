@@ -88,15 +88,27 @@ def insert_header_notes(file_obj, comment):
 #C file writer
 def write_c_file(c_name, df_hash, o_dir) :
 
-    #constants ---------------------------------------------
-    p = os.path.join(o_dir, c_name+"_constants.h")
-    f_constants = open(p, "w")
-    insert_header_notes(f_constants, "//")
-
+    ofile = None
     def write_ln(line):
-        f_constants.write(f"{line}\n");
+        nonlocal ofile
+        ofile.write(f"{line}\n");
 
-    def get_ap_type(var):
+    def write_header(suffix):
+        write_ln("");
+        write_ln(f"#ifndef LOMDT_BUSES_{suffix.upper()}_H")
+        write_ln(f"#define LOMDT_BUSES_{suffix.upper()}_H")
+
+        write_ln("");
+        write_ln(f'const char df_hash_{suffix.lower()}[] = "{df_hash}";')
+
+
+    def write_footer(suffix):
+        write_ln("")
+        write_ln(f"// {'-'*67}")
+        write_ln("")
+        write_ln(f"#endif // LOMDT_BUSES_{suffix.upper()}_H")
+
+    def get_hls_type(var):
         if not (var.low or var.high or var.prec):
             return "uint"
         elif int(var.decb) == 0:
@@ -110,17 +122,15 @@ def write_c_file(c_name, df_hash, o_dir) :
             else:
                 return "ufixed"
 
-    write_ln("");
-    write_ln("#ifndef LOMDT_BUSES_CONSTANTS_H")
-    write_ln("#define LOMDT_BUSES_CONSTANTS_H")
+    buses_gen = [bus for bus in buses if bus.name]
 
-    write_ln("");
-    write_ln(f'const char df_hash[] = "{df_hash}";')
-
-    for bus in buses:
-        if not f'{bus.name}':
-            ## somehow we have an empty bus name...
-            continue
+    #constants ---------------------------------------------
+    p = os.path.join(o_dir, c_name+"_constants.h")
+    ofile = open(p, "w")
+    insert_header_notes(ofile, "//")
+    
+    write_header("constants")
+    for bus in buses_gen:
 
         write_ln("");
         write_ln(f"// {'-'*67}")
@@ -153,30 +163,62 @@ def write_c_file(c_name, df_hash, o_dir) :
             write_ln(tpl %(f"{var_name}_DECB", var.decb))
             var_iwidth = str(int(var.width) - int(var.decb))
             write_ln(tpl %(f"{var_name}_IW", var_iwidth))
-            if 'int' in get_ap_type(var) and var.prec and float(var.prec) > 1:
+            if 'int' in get_hls_type(var) and var.prec and float(var.prec) > 1:
                 write_ln(tpl %(f"{var_name}_SCALE", str(floor(float(var.prec)))))
 
-    write_ln("")
-    write_ln(f"// {'-'*67}")
-    write_ln("")
-    write_ln("#endif // LOMDT_BUSES_CONSTANTS_H")
-    f_constants.close()
-
+    write_footer("constants")
+    ofile.close()
     print('C: constants file generated.')
 
 
+    # HLS types  ---------------------------------------------
+    p = os.path.join(o_dir, c_name+"_hls_types.h")
+    ofile = open(p, "w")
+    write_header("hls_types")
+    #write_ln(f"#include \"{c_name}_constants.h\"")
+    for bus in buses_gen:
+        write_ln("");
+        write_ln(f"// {'-'*67}")
+        write_ln(f"typedef ap_uint<{bus.name}_LEN> {bus.name.lower()}_uint_t;")
+
+        for var in bus.vars:
+            if var.type == "struct": continue
+            if var.parameter == "(COPY)": continue
+            
+            prefix = f"{bus.name}"
+            prefix += f"_{var.station}" if var.station else ""
+            prefix += f"_{var.name}"
+
+            var_name = f"{prefix}{suffix}".upper()
+
+            ap_type = get_hls_type(var)
+            if 'fixed' in ap_type:
+                ap_def = f"ap_{ap_type}<{var_name}_LEN, {var_name}_IW>"
+            elif 'int' in ap_type:
+                ap_def = f"ap_{ap_type}<{var_name}_LEN>"
+            write_ln(f"typedef {ap_def} {var_name}_{ap_type}_t;")
+
+            if 'int' in ap_type and var.prec and float(var.prec) > 1:
+                var_range = float(var.high) - float(var.low) + 1
+                scaled_width = ceil(log(var_range,2))
+                write_ln(f"typedef ap_{ap_type}<{scaled_width}> {var_name.lower()}_{ap_type}_scaled_t;")
+
+    write_footer("hls_types")
+    ofile.close()
+
+    print('C: HLS types file generated.')
+    
     # types ------------------------------------------------
     p = os.path.join(o_dir, c_name+"_types.h")
-    f_types = open(p, "w")
-    insert_header_notes(f_types, "//")
+    ofile = open(p, "w")
+    insert_header_notes(ofile, "//")
+    write_header("types")
 
-    def write_ln(line):
-        f_types.write(f"{line}\n");
-
-    write_ln("");
-    write_ln("#ifndef LOMDT_BUS_TYPES_H")
-    write_ln("#define LOMDT_BUS_TYPES_H")
-
+    #write_ln("template <typename DEST>")
+    #write_ln("void GETVAL(DEST dest, char orig, unsigned int nbits) {")
+    #write_ln("")
+    #write_ln("}")
+    
     macro=([
         "#define GETVAL(dest,orig,nbits) \\"
         , "    dest = 0; \\"
@@ -193,10 +235,7 @@ def write_c_file(c_name, df_hash, o_dir) :
     for line in ex: write_ln(line)
     for line in macro: write_ln(line)
 
-    write_ln("");
-    write_ln(f'const char df_hash[] = "{df_hash}";')
-
-    for bus in buses:
+    for bus in buses_gen:
         if not f'{bus.name}':
             ## somehow we have an empty bus name...
             continue
@@ -233,37 +272,9 @@ def write_c_file(c_name, df_hash, o_dir) :
             write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
         write_ln(f"}} {bus.name}_rt;")
-        for var in bus.vars:
-            if var.type == "struct":
-                continue
-
-            if var.parameter == "(COPY)":
-                continue
-            if var.station:
-                prefix = f"{bus.name}_{var.station}_{var.name}"
-            else:
-                prefix = f"{bus.name}_{var.name}"
-
-            var_name = f"{prefix}{suffix}".lower()
-
-            var_iwidth = str(int(var.width) - int(var.decb))
-            ap_type = get_ap_type(var)
-            if 'fixed' in ap_type:
-                ap_def = "ap_%s<%s, %s>" % (ap_type, var.width, var_iwidth)
-            elif 'int' in ap_type:
-                ap_def = "ap_%s<%s>" % (ap_type, var.width)
-            write_ln("typedef %s %s" % (ap_def, f"{var_name}_{ap_type}_t"))
-
-            if 'int' in ap_type and var.prec and float(var.prec) > 1:
-                var_range = float(var.high) - float(var.low) + 1
-                scaled_width = ceil(log(var_range,2))
-                write_ln("typedef ap_%s<%i> %s" % (ap_type, scaled_width, f"{var_name}_{ap_type}_scaled_t"))
         
-    write_ln("")
-    write_ln(f"// {'-'*67}")
-    write_ln("")
-    write_ln("#endif // LOMDT_BUS_TYPES_H")
-    f_constants.close()
+    write_footer("types")
+    ofile.close()
 
     print('C: types file generated.')
 

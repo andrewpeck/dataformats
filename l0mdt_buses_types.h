@@ -131,9 +131,7 @@ typedef struct TDCPOLMUX_n {
     char elinkid; // 4 bits
     // Valid bit
     char datavalid; // 1 bits
-    // MDT Station Type (Inner, Middle, Outer, Extra)
-    char stationid; // 2 bits
-} TDCFORMAT_rt;
+} TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPROC_HPS_SF_n {
@@ -163,7 +161,7 @@ typedef struct TAR_n {
     char INN_mdt_tube_z[3]; // 20 bits
     // Tube (uncalibrated) time
     char mdt_tube_time[3]; // 18 bits
-} TUBEREMAP_rt;
+} TAR_rt;
 
 // -------------------------------------------------------------------
 typedef struct HPS_LSF_n {
@@ -193,8 +191,6 @@ typedef struct HPS_CSF_n {
 typedef struct SLCPIPE_PTCALC_n {
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
-    // (COPY)
-    char INN_vec_mdtid; // 6 bits
     // (COPY)
     char phimod; // 8 bits
     // (COPY)
@@ -226,13 +222,13 @@ typedef struct PTCALC_n {
     // pT calculated by the pT Calc
     char INN_pt[2]; // 9 bits
     // pT threshold satisfied by the MDT TC
-    char mtc_ptthresh; // 4 bits
+    char ptthresh; // 4 bits
     // charge determined from the pT calc
-    char mtc_charge; // 1 bits
+    char charge; // 1 bits
     // # of segments used for calculating the pT
-    char mtc_nsegments; // 2 bits
+    char nsegments; // 2 bits
     // quality of the MDT TC (TBC how this is defined)
-    char mtc_quality; // 3 bits
+    char quality; // 3 bits
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
@@ -270,15 +266,15 @@ typedef struct MTC_n {
     // (COPY)
     char INN_pt[2]; // 9 bits
     // (COPY)
-    char mtc_ptthresh; // 4 bits
+    char ptthresh; // 4 bits
     // (COPY)
-    char mtc_charge; // 1 bits
+    char charge; // 1 bits
     // MDT processing flags
-    char mtc_procflags; // 4 bits
+    char procflags; // 4 bits
     // (COPY)
-    char mtc_nsegments; // 2 bits
+    char nsegments; // 2 bits
     // (COPY)
-    char mtc_quality; // 3 bits
+    char quality; // 3 bits
 } MTC_rt;
 
 // -------------------------------------------------------------------

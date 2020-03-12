@@ -126,9 +126,9 @@ def write_c_file(c_name, df_hash, o_dir) :
             suffix = ""
             
             if var.station:
-                prefix = f"{bus.name}_{var.station}_{var.name}"
+                prefix = f"{bus.name}_{var.station}_"
             else:
-                prefix = f"{bus.name}_{var.name}"
+                prefix = f"{bus.name}_"
 
             var_name = f"{prefix}{var.name}{suffix}".upper()
 

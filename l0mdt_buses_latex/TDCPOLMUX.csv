@@ -1,0 +1,6 @@
+Name,Station,Width,MSB index,LSB index,DECB
+TDC,,32,41,10,0
+fiberid,,5,9,5,0
+elinkid,,4,4,1,0
+datavalid,,1,0,0,0
+

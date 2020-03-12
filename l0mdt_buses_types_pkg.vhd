@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"7221817b";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -141,99 +141,89 @@ package mdttp_types_pkg is
   end record tdc_rt;
 
   -- -----------------------------------------------------------------
-  subtype TDCFORMAT_at is std_logic_vector(43 downto 0);
+  subtype TDCPOLMUX_at is std_logic_vector(41 downto 0);
 
-  type tdcformat_rt is record
+  type tdcpolmux_rt is record
     -- struct TDC
     tdc_r : TDC_rt;
     -- Fiber ID within board
-    fiberid : std_logic_vector(TDCFORMAT_FIBERID_LEN-1 downto 0); -- 4
+    fiberid : std_logic_vector(TDCPOLMUX_FIBERID_LEN-1 downto 0); -- 4
     -- Elink ID within fiber
-    elinkid : std_logic_vector(TDCFORMAT_ELINKID_LEN-1 downto 0); -- 3
+    elinkid : std_logic_vector(TDCPOLMUX_ELINKID_LEN-1 downto 0); -- 3
     -- Valid bit
     datavalid : std_logic;
-    -- MDT Station Type (Inner, Middle, Outer, Extra)
-    stationid : std_logic_vector(TDCFORMAT_STATIONID_LEN-1 downto 0); -- 1
-  end record tdcformat_rt;
+  end record tdcpolmux_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_HESF_at is std_logic_vector(47 downto 0);
+  subtype SLCPROC_HPS_at is std_logic_vector(47 downto 0);
 
-  type slcproc_hesf_rt is record
+  type slcproc_hps_rt is record
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- inner MDT segment chip destination
-    mdtseg_dest : std_logic_vector(SLCPROC_HESF_MDTSEG_DEST_LEN-1 downto 0); -- 1
+    mdtseg_dest : std_logic_vector(SLCPROC_HPS_MDTSEG_DEST_LEN-1 downto 0); -- 1
     -- SLc Inner Vector MDT chamber ID
-    vec_mdtid : std_logic_vector(SLCPROC_HESF_VEC_MDTID_LEN-1 downto 0); -- 5
+    vec_mdtid : std_logic_vector(SLCPROC_HPS_VEC_MDTID_LEN-1 downto 0); -- 5
     -- SLc inner vector rho position
-    vec_pos : std_logic_vector(SLCPROC_HESF_VEC_POS_LEN-1 downto 0); -- 9
+    vec_pos : std_logic_vector(SLCPROC_HPS_VEC_POS_LEN-1 downto 0); -- 9
     -- SLc inner vector theta angle
-    vec_ang : std_logic_vector(SLCPROC_HESF_VEC_ANG_LEN-1 downto 0); -- 9
-  end record slcproc_hesf_rt;
+    vec_ang : std_logic_vector(SLCPROC_HPS_VEC_ANG_LEN-1 downto 0); -- 9
+  end record slcproc_hps_rt;
 
   -- -----------------------------------------------------------------
-  subtype TUBEREMAP_at is std_logic_vector(68 downto 0);
+  subtype TAR_at is std_logic_vector(68 downto 0);
 
-  type tuberemap_rt is record
+  type tar_rt is record
     -- Tube layer within one station
-    mdt_tube_layer : std_logic_vector(TUBEREMAP_MDT_TUBE_LAYER_LEN-1 downto 0); -- 4
+    mdt_tube_layer : std_logic_vector(TAR_MDT_TUBE_LAYER_LEN-1 downto 0); -- 4
     -- Tube number within one station
-    mdt_tube_num : std_logic_vector(TUBEREMAP_MDT_TUBE_NUM_LEN-1 downto 0); -- 8
+    mdt_tube_num : std_logic_vector(TAR_MDT_TUBE_NUM_LEN-1 downto 0); -- 8
     -- Tube radial position
-    mdt_tube_rho : std_logic_vector(TUBEREMAP_MDT_TUBE_RHO_LEN-1 downto 0); -- 17
+    mdt_tube_rho : std_logic_vector(TAR_MDT_TUBE_RHO_LEN-1 downto 0); -- 17
     -- Tube position along z
-    mdt_tube_z : std_logic_vector(TUBEREMAP_MDT_TUBE_Z_LEN-1 downto 0); -- 18
+    mdt_tube_z : std_logic_vector(TAR_MDT_TUBE_Z_LEN-1 downto 0); -- 18
     -- Tube (uncalibrated) time
-    mdt_tube_time : std_logic_vector(TUBEREMAP_MDT_TUBE_TIME_LEN-1 downto 0); -- 17
-  end record tuberemap_rt;
+    mdt_tube_time : std_logic_vector(TAR_MDT_TUBE_TIME_LEN-1 downto 0); -- 17
+  end record tar_rt;
 
   -- -----------------------------------------------------------------
-  subtype HE_LSF_at is std_logic_vector(38 downto 0);
+  subtype HP_LSF_at is std_logic_vector(38 downto 0);
 
-  type he_lsf_rt is record
+  type hp_lsf_rt is record
     -- Hit Valid bit
     mdt_valid : std_logic;
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(HE_LSF_MDT_LOCALX_LEN-1 downto 0); -- 13
+    mdt_localx : std_logic_vector(HP_LSF_MDT_LOCALX_LEN-1 downto 0); -- 13
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(HE_LSF_MDT_LOCALY_LEN-1 downto 0); -- 13
+    mdt_localy : std_logic_vector(HP_LSF_MDT_LOCALY_LEN-1 downto 0); -- 13
     -- Tube drift radius
-    mdt_radius : std_logic_vector(HE_LSF_MDT_RADIUS_LEN-1 downto 0); -- 8
-  end record he_lsf_rt;
+    mdt_radius : std_logic_vector(HP_LSF_MDT_RADIUS_LEN-1 downto 0); -- 8
+  end record hp_lsf_rt;
 
   -- -----------------------------------------------------------------
-  subtype HE_CSF_at is std_logic_vector(38 downto 0);
+  subtype HP_CSF_at is std_logic_vector(38 downto 0);
 
-  type he_csf_rt is record
+  type hp_csf_rt is record
     -- Hit Valid bit
     mdt_valid : std_logic;
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(HE_CSF_MDT_LOCALX_LEN-1 downto 0); -- 13
+    mdt_localx : std_logic_vector(HP_CSF_MDT_LOCALX_LEN-1 downto 0); -- 13
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(HE_CSF_MDT_LOCALY_LEN-1 downto 0); -- 13
+    mdt_localy : std_logic_vector(HP_CSF_MDT_LOCALY_LEN-1 downto 0); -- 13
     -- Tube drift radius
-    mdt_radius : std_logic_vector(HE_CSF_MDT_RADIUS_LEN-1 downto 0); -- 8
-  end record he_csf_rt;
+    mdt_radius : std_logic_vector(HP_CSF_MDT_RADIUS_LEN-1 downto 0); -- 8
+  end record hp_csf_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPIPE_PTCALC_at is std_logic_vector(52 downto 0);
+  subtype SLCPIPE_PTCALC_at is std_logic_vector(28 downto 0);
 
   type slcpipe_ptcalc_rt is record
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
-    -- (COPY)
-    inn_vec_mdtid : std_logic_vector(SLCPIPE_PTCALC_INN_VEC_MDTID_LEN-1 downto 0); -- 5
-    -- (COPY)
-    mid_vec_mdtid : std_logic_vector(SLCPIPE_PTCALC_MID_VEC_MDTID_LEN-1 downto 0); -- 5
-    -- (COPY)
-    out_vec_mdtid : std_logic_vector(SLCPIPE_PTCALC_OUT_VEC_MDTID_LEN-1 downto 0); -- 5
-    -- (COPY)
-    ext_vec_mdtid : std_logic_vector(SLCPIPE_PTCALC_EXT_VEC_MDTID_LEN-1 downto 0); -- 5
     -- (COPY)
     phimod : std_logic_vector(SLCPIPE_PTCALC_PHIMOD_LEN-1 downto 0); -- 7
     -- (COPY)
@@ -265,17 +255,17 @@ package mdttp_types_pkg is
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- eta of the innermost MDT station segment position
-    mtc_eta : std_logic_vector(PTCALC_MTC_ETA_LEN-1 downto 0); -- 13
+    eta : std_logic_vector(PTCALC_ETA_LEN-1 downto 0); -- 13
     -- pT calculated by the pT Calc
-    mtc_pt : std_logic_vector(PTCALC_MTC_PT_LEN-1 downto 0); -- 7
+    pt : std_logic_vector(PTCALC_PT_LEN-1 downto 0); -- 7
     -- pT threshold satisfied by the MDT TC
-    mtc_ptthresh : std_logic_vector(PTCALC_MTC_PTTHRESH_LEN-1 downto 0); -- 3
+    ptthresh : std_logic_vector(PTCALC_PTTHRESH_LEN-1 downto 0); -- 3
     -- charge determined from the pT calc
-    mtc_charge : std_logic;
+    charge : std_logic;
     -- # of segments used for calculating the pT
-    mtc_nsegments : std_logic_vector(PTCALC_MTC_NSEGMENTS_LEN-1 downto 0); -- 1
+    nsegments : std_logic_vector(PTCALC_NSEGMENTS_LEN-1 downto 0); -- 1
     -- quality of the MDT TC (TBC how this is defined)
-    mtc_quality : std_logic_vector(PTCALC_MTC_QUALITY_LEN-1 downto 0); -- 2
+    quality : std_logic_vector(PTCALC_QUALITY_LEN-1 downto 0); -- 2
   end record ptcalc_rt;
 
   -- -----------------------------------------------------------------
@@ -315,19 +305,19 @@ package mdttp_types_pkg is
     -- struct SLC_COMMON
     slc_common_r : SLC_COMMON_rt;
     -- (COPY)
-    mtc_eta : std_logic_vector(MTC_MTC_ETA_LEN-1 downto 0); -- 13
+    eta : std_logic_vector(MTC_ETA_LEN-1 downto 0); -- 13
     -- (COPY)
-    mtc_pt : std_logic_vector(MTC_MTC_PT_LEN-1 downto 0); -- 7
+    pt : std_logic_vector(MTC_PT_LEN-1 downto 0); -- 7
     -- (COPY)
-    mtc_ptthresh : std_logic_vector(MTC_MTC_PTTHRESH_LEN-1 downto 0); -- 3
+    ptthresh : std_logic_vector(MTC_PTTHRESH_LEN-1 downto 0); -- 3
     -- (COPY)
-    mtc_charge : std_logic;
+    charge : std_logic;
     -- MDT processing flags
-    mtc_procflags : std_logic_vector(MTC_MTC_PROCFLAGS_LEN-1 downto 0); -- 3
+    procflags : std_logic_vector(MTC_PROCFLAGS_LEN-1 downto 0); -- 3
     -- (COPY)
-    mtc_nsegments : std_logic_vector(MTC_MTC_NSEGMENTS_LEN-1 downto 0); -- 1
+    nsegments : std_logic_vector(MTC_NSEGMENTS_LEN-1 downto 0); -- 1
     -- (COPY)
-    mtc_quality : std_logic_vector(MTC_MTC_QUALITY_LEN-1 downto 0); -- 2
+    quality : std_logic_vector(MTC_QUALITY_LEN-1 downto 0); -- 2
   end record mtc_rt;
 
 -- -------------------------------------------------------------------

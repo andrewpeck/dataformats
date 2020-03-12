@@ -1,10 +1,10 @@
 Name,Station,Width,MSB index,LSB index,DECB
 SLC\_COMMON,,31,66,36,0
-mtc\_eta,,14,35,22,11
-mtc\_pt,,8,21,14,1
-mtc\_ptthresh,,4,13,10,0
-mtc\_charge,,1,9,9,0
-mtc\_procflags,,4,8,5,0
-mtc\_nsegments,,2,4,3,0
-mtc\_quality,,3,2,0,0
+eta,,14,35,22,11
+pt,,8,21,14,1
+ptthresh,,4,13,10,0
+charge,,1,9,9,0
+procflags,,4,8,5,0
+nsegments,,2,4,3,0
+quality,,3,2,0,0
 

@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"7221817b";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -309,232 +309,197 @@ package mdttp_constants_pkg is
   constant TDC_PULSEWIDTH_MULT : natural := 1;
 
   ----------------------------------------------------------------------
-  constant TDCFORMAT_LEN : natural := 44;
+  constant TDCPOLMUX_LEN : natural := 42;
 
   -- (COPY)
-  constant TDCFORMAT_TDC_LEN : natural := 32;
-  constant TDCFORMAT_TDC_MSB : natural := 43;
-  constant TDCFORMAT_TDC_LSB : natural := 12;
-  constant TDCFORMAT_TDC_DECB : natural := 0;
-  constant TDCFORMAT_TDC_MULT : natural := 0;
+  constant TDCPOLMUX_TDC_LEN : natural := 32;
+  constant TDCPOLMUX_TDC_MSB : natural := 41;
+  constant TDCPOLMUX_TDC_LSB : natural := 10;
+  constant TDCPOLMUX_TDC_DECB : natural := 0;
+  constant TDCPOLMUX_TDC_MULT : natural := 0;
 
   -- Fiber ID within board
-  constant TDCFORMAT_FIBERID_LEN : natural := 5;
-  constant TDCFORMAT_FIBERID_MSB : natural := 11;
-  constant TDCFORMAT_FIBERID_LSB : natural := 7;
-  constant TDCFORMAT_FIBERID_DECB : natural := 0;
-  constant TDCFORMAT_FIBERID_MULT : natural := 1;
+  constant TDCPOLMUX_FIBERID_LEN : natural := 5;
+  constant TDCPOLMUX_FIBERID_MSB : natural := 9;
+  constant TDCPOLMUX_FIBERID_LSB : natural := 5;
+  constant TDCPOLMUX_FIBERID_DECB : natural := 0;
+  constant TDCPOLMUX_FIBERID_MULT : natural := 1;
 
   -- Elink ID within fiber
-  constant TDCFORMAT_ELINKID_LEN : natural := 4;
-  constant TDCFORMAT_ELINKID_MSB : natural := 6;
-  constant TDCFORMAT_ELINKID_LSB : natural := 3;
-  constant TDCFORMAT_ELINKID_DECB : natural := 0;
-  constant TDCFORMAT_ELINKID_MULT : natural := 1;
+  constant TDCPOLMUX_ELINKID_LEN : natural := 4;
+  constant TDCPOLMUX_ELINKID_MSB : natural := 4;
+  constant TDCPOLMUX_ELINKID_LSB : natural := 1;
+  constant TDCPOLMUX_ELINKID_DECB : natural := 0;
+  constant TDCPOLMUX_ELINKID_MULT : natural := 1;
 
   -- Valid bit
-  constant TDCFORMAT_DATAVALID_LEN : natural := 1;
-  constant TDCFORMAT_DATAVALID_MSB : natural := 2;
-  constant TDCFORMAT_DATAVALID_LSB : natural := 2;
-  constant TDCFORMAT_DATAVALID_DECB : natural := 0;
-  constant TDCFORMAT_DATAVALID_MULT : natural := 2;
-
-  -- MDT Station Type (Inner, Middle, Outer, Extra)
-  constant TDCFORMAT_STATIONID_LEN : natural := 2;
-  constant TDCFORMAT_STATIONID_MSB : natural := 1;
-  constant TDCFORMAT_STATIONID_LSB : natural := 0;
-  constant TDCFORMAT_STATIONID_DECB : natural := 0;
-  constant TDCFORMAT_STATIONID_MULT : natural := 1;
+  constant TDCPOLMUX_DATAVALID_LEN : natural := 1;
+  constant TDCPOLMUX_DATAVALID_MSB : natural := 0;
+  constant TDCPOLMUX_DATAVALID_LSB : natural := 0;
+  constant TDCPOLMUX_DATAVALID_DECB : natural := 0;
+  constant TDCPOLMUX_DATAVALID_MULT : natural := 2;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_HESF_LEN : natural := 48;
+  constant SLCPROC_HPS_LEN : natural := 48;
 
   -- SLc Muon Unique Identifier
-  constant SLCPROC_HESF_SLC_MUID_LEN : natural := 20;
-  constant SLCPROC_HESF_SLC_MUID_MSB : natural := 47;
-  constant SLCPROC_HESF_SLC_MUID_LSB : natural := 28;
-  constant SLCPROC_HESF_SLC_MUID_DECB : natural := 0;
-  constant SLCPROC_HESF_SLC_MUID_MULT : natural := 0;
+  constant SLCPROC_HPS_SLC_MUID_LEN : natural := 20;
+  constant SLCPROC_HPS_SLC_MUID_MSB : natural := 47;
+  constant SLCPROC_HPS_SLC_MUID_LSB : natural := 28;
+  constant SLCPROC_HPS_SLC_MUID_DECB : natural := 0;
+  constant SLCPROC_HPS_SLC_MUID_MULT : natural := 0;
 
   -- inner MDT segment chip destination
-  constant SLCPROC_HESF_MDTSEG_DEST_LEN : natural := 2;
-  constant SLCPROC_HESF_MDTSEG_DEST_MSB : natural := 27;
-  constant SLCPROC_HESF_MDTSEG_DEST_LSB : natural := 26;
-  constant SLCPROC_HESF_MDTSEG_DEST_DECB : natural := 0;
-  constant SLCPROC_HESF_MDTSEG_DEST_MULT : natural := 1;
+  constant SLCPROC_HPS_MDTSEG_DEST_LEN : natural := 2;
+  constant SLCPROC_HPS_MDTSEG_DEST_MSB : natural := 27;
+  constant SLCPROC_HPS_MDTSEG_DEST_LSB : natural := 26;
+  constant SLCPROC_HPS_MDTSEG_DEST_DECB : natural := 0;
+  constant SLCPROC_HPS_MDTSEG_DEST_MULT : natural := 1;
 
   -- SLc Inner Vector MDT chamber ID
-  constant SLCPROC_HESF_VEC_MDTID_LEN : natural := 6;
-  constant SLCPROC_HESF_VEC_MDTID_MSB : natural := 25;
-  constant SLCPROC_HESF_VEC_MDTID_LSB : natural := 20;
-  constant SLCPROC_HESF_VEC_MDTID_DECB : natural := 0;
-  constant SLCPROC_HESF_VEC_MDTID_MULT : natural := 1;
+  constant SLCPROC_HPS_VEC_MDTID_LEN : natural := 6;
+  constant SLCPROC_HPS_VEC_MDTID_MSB : natural := 25;
+  constant SLCPROC_HPS_VEC_MDTID_LSB : natural := 20;
+  constant SLCPROC_HPS_VEC_MDTID_DECB : natural := 0;
+  constant SLCPROC_HPS_VEC_MDTID_MULT : natural := 1;
 
   -- SLc inner vector rho position
-  constant SLCPROC_HESF_VEC_POS_LEN : natural := 10;
-  constant SLCPROC_HESF_VEC_POS_MSB : natural := 19;
-  constant SLCPROC_HESF_VEC_POS_LSB : natural := 10;
-  constant SLCPROC_HESF_VEC_POS_DECB : natural := 0;
-  constant SLCPROC_HESF_VEC_POS_MULT : natural := 0;
+  constant SLCPROC_HPS_VEC_POS_LEN : natural := 10;
+  constant SLCPROC_HPS_VEC_POS_MSB : natural := 19;
+  constant SLCPROC_HPS_VEC_POS_LSB : natural := 10;
+  constant SLCPROC_HPS_VEC_POS_DECB : natural := 0;
+  constant SLCPROC_HPS_VEC_POS_MULT : natural := 0;
 
   -- SLc inner vector theta angle
-  constant SLCPROC_HESF_VEC_ANG_LEN : natural := 10;
-  constant SLCPROC_HESF_VEC_ANG_MSB : natural := 9;
-  constant SLCPROC_HESF_VEC_ANG_LSB : natural := 0;
-  constant SLCPROC_HESF_VEC_ANG_DECB : natural := 0;
-  constant SLCPROC_HESF_VEC_ANG_MULT : natural := 1;
+  constant SLCPROC_HPS_VEC_ANG_LEN : natural := 10;
+  constant SLCPROC_HPS_VEC_ANG_MSB : natural := 9;
+  constant SLCPROC_HPS_VEC_ANG_LSB : natural := 0;
+  constant SLCPROC_HPS_VEC_ANG_DECB : natural := 0;
+  constant SLCPROC_HPS_VEC_ANG_MULT : natural := 1;
 
   ----------------------------------------------------------------------
-  constant TUBEREMAP_LEN : natural := 69;
+  constant TAR_LEN : natural := 69;
 
   -- Tube layer within one station
-  constant TUBEREMAP_MDT_TUBE_LAYER_LEN : natural := 5;
-  constant TUBEREMAP_MDT_TUBE_LAYER_MSB : natural := 68;
-  constant TUBEREMAP_MDT_TUBE_LAYER_LSB : natural := 64;
-  constant TUBEREMAP_MDT_TUBE_LAYER_DECB : natural := 0;
-  constant TUBEREMAP_MDT_TUBE_LAYER_MULT : natural := 1;
+  constant TAR_MDT_TUBE_LAYER_LEN : natural := 5;
+  constant TAR_MDT_TUBE_LAYER_MSB : natural := 68;
+  constant TAR_MDT_TUBE_LAYER_LSB : natural := 64;
+  constant TAR_MDT_TUBE_LAYER_DECB : natural := 0;
+  constant TAR_MDT_TUBE_LAYER_MULT : natural := 1;
 
   -- Tube number within one station
-  constant TUBEREMAP_MDT_TUBE_NUM_LEN : natural := 9;
-  constant TUBEREMAP_MDT_TUBE_NUM_MSB : natural := 63;
-  constant TUBEREMAP_MDT_TUBE_NUM_LSB : natural := 55;
-  constant TUBEREMAP_MDT_TUBE_NUM_DECB : natural := 0;
-  constant TUBEREMAP_MDT_TUBE_NUM_MULT : natural := 1;
+  constant TAR_MDT_TUBE_NUM_LEN : natural := 9;
+  constant TAR_MDT_TUBE_NUM_MSB : natural := 63;
+  constant TAR_MDT_TUBE_NUM_LSB : natural := 55;
+  constant TAR_MDT_TUBE_NUM_DECB : natural := 0;
+  constant TAR_MDT_TUBE_NUM_MULT : natural := 1;
 
   -- Tube radial position
-  constant TUBEREMAP_MDT_TUBE_RHO_LEN : natural := 18;
-  constant TUBEREMAP_MDT_TUBE_RHO_MSB : natural := 54;
-  constant TUBEREMAP_MDT_TUBE_RHO_LSB : natural := 37;
-  constant TUBEREMAP_MDT_TUBE_RHO_DECB : natural := 5;
-  constant TUBEREMAP_MDT_TUBE_RHO_MULT : natural := 22;
+  constant TAR_MDT_TUBE_RHO_LEN : natural := 18;
+  constant TAR_MDT_TUBE_RHO_MSB : natural := 54;
+  constant TAR_MDT_TUBE_RHO_LSB : natural := 37;
+  constant TAR_MDT_TUBE_RHO_DECB : natural := 5;
+  constant TAR_MDT_TUBE_RHO_MULT : natural := 22;
 
   -- Tube position along z
-  constant TUBEREMAP_MDT_TUBE_Z_LEN : natural := 19;
-  constant TUBEREMAP_MDT_TUBE_Z_MSB : natural := 36;
-  constant TUBEREMAP_MDT_TUBE_Z_LSB : natural := 18;
-  constant TUBEREMAP_MDT_TUBE_Z_DECB : natural := 5;
-  constant TUBEREMAP_MDT_TUBE_Z_MULT : natural := 21;
+  constant TAR_MDT_TUBE_Z_LEN : natural := 19;
+  constant TAR_MDT_TUBE_Z_MSB : natural := 36;
+  constant TAR_MDT_TUBE_Z_LSB : natural := 18;
+  constant TAR_MDT_TUBE_Z_DECB : natural := 5;
+  constant TAR_MDT_TUBE_Z_MULT : natural := 21;
 
   -- Tube (uncalibrated) time
-  constant TUBEREMAP_MDT_TUBE_TIME_LEN : natural := 18;
-  constant TUBEREMAP_MDT_TUBE_TIME_MSB : natural := 17;
-  constant TUBEREMAP_MDT_TUBE_TIME_LSB : natural := 0;
-  constant TUBEREMAP_MDT_TUBE_TIME_DECB : natural := 1;
-  constant TUBEREMAP_MDT_TUBE_TIME_MULT : natural := 3;
+  constant TAR_MDT_TUBE_TIME_LEN : natural := 18;
+  constant TAR_MDT_TUBE_TIME_MSB : natural := 17;
+  constant TAR_MDT_TUBE_TIME_LSB : natural := 0;
+  constant TAR_MDT_TUBE_TIME_DECB : natural := 1;
+  constant TAR_MDT_TUBE_TIME_MULT : natural := 3;
 
   ----------------------------------------------------------------------
-  constant HE_LSF_LEN : natural := 39;
+  constant HP_LSF_LEN : natural := 39;
 
   -- Hit Valid bit
-  constant HE_LSF_MDT_VALID_LEN : natural := 1;
-  constant HE_LSF_MDT_VALID_MSB : natural := 38;
-  constant HE_LSF_MDT_VALID_LSB : natural := 38;
-  constant HE_LSF_MDT_VALID_DECB : natural := 0;
-  constant HE_LSF_MDT_VALID_MULT : natural := 2;
+  constant HP_LSF_MDT_VALID_LEN : natural := 1;
+  constant HP_LSF_MDT_VALID_MSB : natural := 38;
+  constant HP_LSF_MDT_VALID_LSB : natural := 38;
+  constant HP_LSF_MDT_VALID_DECB : natural := 0;
+  constant HP_LSF_MDT_VALID_MULT : natural := 2;
 
   -- Data Valid bit
-  constant HE_LSF_DATA_VALID_LEN : natural := 1;
-  constant HE_LSF_DATA_VALID_MSB : natural := 37;
-  constant HE_LSF_DATA_VALID_LSB : natural := 37;
-  constant HE_LSF_DATA_VALID_DECB : natural := 0;
-  constant HE_LSF_DATA_VALID_MULT : natural := 2;
+  constant HP_LSF_DATA_VALID_LEN : natural := 1;
+  constant HP_LSF_DATA_VALID_MSB : natural := 37;
+  constant HP_LSF_DATA_VALID_LSB : natural := 37;
+  constant HP_LSF_DATA_VALID_DECB : natural := 0;
+  constant HP_LSF_DATA_VALID_MULT : natural := 2;
 
   -- Tube local position along precision coord
-  constant HE_LSF_MDT_LOCALX_LEN : natural := 14;
-  constant HE_LSF_MDT_LOCALX_MSB : natural := 36;
-  constant HE_LSF_MDT_LOCALX_LSB : natural := 23;
-  constant HE_LSF_MDT_LOCALX_DECB : natural := 5;
-  constant HE_LSF_MDT_LOCALX_MULT : natural := 21;
+  constant HP_LSF_MDT_LOCALX_LEN : natural := 14;
+  constant HP_LSF_MDT_LOCALX_MSB : natural := 36;
+  constant HP_LSF_MDT_LOCALX_LSB : natural := 23;
+  constant HP_LSF_MDT_LOCALX_DECB : natural := 5;
+  constant HP_LSF_MDT_LOCALX_MULT : natural := 21;
 
   -- Tube local position along second coord
-  constant HE_LSF_MDT_LOCALY_LEN : natural := 14;
-  constant HE_LSF_MDT_LOCALY_MSB : natural := 22;
-  constant HE_LSF_MDT_LOCALY_LSB : natural := 9;
-  constant HE_LSF_MDT_LOCALY_DECB : natural := 5;
-  constant HE_LSF_MDT_LOCALY_MULT : natural := 23;
+  constant HP_LSF_MDT_LOCALY_LEN : natural := 14;
+  constant HP_LSF_MDT_LOCALY_MSB : natural := 22;
+  constant HP_LSF_MDT_LOCALY_LSB : natural := 9;
+  constant HP_LSF_MDT_LOCALY_DECB : natural := 5;
+  constant HP_LSF_MDT_LOCALY_MULT : natural := 23;
 
   -- Tube drift radius
-  constant HE_LSF_MDT_RADIUS_LEN : natural := 9;
-  constant HE_LSF_MDT_RADIUS_MSB : natural := 8;
-  constant HE_LSF_MDT_RADIUS_LSB : natural := 0;
-  constant HE_LSF_MDT_RADIUS_DECB : natural := 5;
-  constant HE_LSF_MDT_RADIUS_MULT : natural := 34;
+  constant HP_LSF_MDT_RADIUS_LEN : natural := 9;
+  constant HP_LSF_MDT_RADIUS_MSB : natural := 8;
+  constant HP_LSF_MDT_RADIUS_LSB : natural := 0;
+  constant HP_LSF_MDT_RADIUS_DECB : natural := 5;
+  constant HP_LSF_MDT_RADIUS_MULT : natural := 34;
 
   ----------------------------------------------------------------------
-  constant HE_CSF_LEN : natural := 39;
+  constant HP_CSF_LEN : natural := 39;
 
   -- Hit Valid bit
-  constant HE_CSF_MDT_VALID_LEN : natural := 1;
-  constant HE_CSF_MDT_VALID_MSB : natural := 38;
-  constant HE_CSF_MDT_VALID_LSB : natural := 38;
-  constant HE_CSF_MDT_VALID_DECB : natural := 0;
-  constant HE_CSF_MDT_VALID_MULT : natural := 2;
+  constant HP_CSF_MDT_VALID_LEN : natural := 1;
+  constant HP_CSF_MDT_VALID_MSB : natural := 38;
+  constant HP_CSF_MDT_VALID_LSB : natural := 38;
+  constant HP_CSF_MDT_VALID_DECB : natural := 0;
+  constant HP_CSF_MDT_VALID_MULT : natural := 2;
 
   -- Data Valid bit
-  constant HE_CSF_DATA_VALID_LEN : natural := 1;
-  constant HE_CSF_DATA_VALID_MSB : natural := 37;
-  constant HE_CSF_DATA_VALID_LSB : natural := 37;
-  constant HE_CSF_DATA_VALID_DECB : natural := 0;
-  constant HE_CSF_DATA_VALID_MULT : natural := 2;
+  constant HP_CSF_DATA_VALID_LEN : natural := 1;
+  constant HP_CSF_DATA_VALID_MSB : natural := 37;
+  constant HP_CSF_DATA_VALID_LSB : natural := 37;
+  constant HP_CSF_DATA_VALID_DECB : natural := 0;
+  constant HP_CSF_DATA_VALID_MULT : natural := 2;
 
   -- Tube local position along precision coord
-  constant HE_CSF_MDT_LOCALX_LEN : natural := 14;
-  constant HE_CSF_MDT_LOCALX_MSB : natural := 36;
-  constant HE_CSF_MDT_LOCALX_LSB : natural := 23;
-  constant HE_CSF_MDT_LOCALX_DECB : natural := 4;
-  constant HE_CSF_MDT_LOCALX_MULT : natural := 16;
+  constant HP_CSF_MDT_LOCALX_LEN : natural := 14;
+  constant HP_CSF_MDT_LOCALX_MSB : natural := 36;
+  constant HP_CSF_MDT_LOCALX_LSB : natural := 23;
+  constant HP_CSF_MDT_LOCALX_DECB : natural := 4;
+  constant HP_CSF_MDT_LOCALX_MULT : natural := 16;
 
   -- Tube local position along second coord
-  constant HE_CSF_MDT_LOCALY_LEN : natural := 14;
-  constant HE_CSF_MDT_LOCALY_MSB : natural := 22;
-  constant HE_CSF_MDT_LOCALY_LSB : natural := 9;
-  constant HE_CSF_MDT_LOCALY_DECB : natural := 4;
-  constant HE_CSF_MDT_LOCALY_MULT : natural := 16;
+  constant HP_CSF_MDT_LOCALY_LEN : natural := 14;
+  constant HP_CSF_MDT_LOCALY_MSB : natural := 22;
+  constant HP_CSF_MDT_LOCALY_LSB : natural := 9;
+  constant HP_CSF_MDT_LOCALY_DECB : natural := 4;
+  constant HP_CSF_MDT_LOCALY_MULT : natural := 16;
 
   -- Tube drift radius
-  constant HE_CSF_MDT_RADIUS_LEN : natural := 9;
-  constant HE_CSF_MDT_RADIUS_MSB : natural := 8;
-  constant HE_CSF_MDT_RADIUS_LSB : natural := 0;
-  constant HE_CSF_MDT_RADIUS_DECB : natural := 5;
-  constant HE_CSF_MDT_RADIUS_MULT : natural := 32;
+  constant HP_CSF_MDT_RADIUS_LEN : natural := 9;
+  constant HP_CSF_MDT_RADIUS_MSB : natural := 8;
+  constant HP_CSF_MDT_RADIUS_LSB : natural := 0;
+  constant HP_CSF_MDT_RADIUS_DECB : natural := 5;
+  constant HP_CSF_MDT_RADIUS_MULT : natural := 32;
 
   ----------------------------------------------------------------------
-  constant SLCPIPE_PTCALC_LEN : natural := 53;
+  constant SLCPIPE_PTCALC_LEN : natural := 29;
 
   -- (COPY)
   constant SLCPIPE_PTCALC_SLC_MUID_LEN : natural := 20;
-  constant SLCPIPE_PTCALC_SLC_MUID_MSB : natural := 52;
-  constant SLCPIPE_PTCALC_SLC_MUID_LSB : natural := 33;
+  constant SLCPIPE_PTCALC_SLC_MUID_MSB : natural := 28;
+  constant SLCPIPE_PTCALC_SLC_MUID_LSB : natural := 9;
   constant SLCPIPE_PTCALC_SLC_MUID_DECB : natural := 0;
   constant SLCPIPE_PTCALC_SLC_MUID_MULT : natural := 0;
-
-  -- (COPY)
-  constant SLCPIPE_PTCALC_INN_VEC_MDTID_LEN : natural := 6;
-  constant SLCPIPE_PTCALC_INN_VEC_MDTID_MSB : natural := 32;
-  constant SLCPIPE_PTCALC_INN_VEC_MDTID_LSB : natural := 27;
-  constant SLCPIPE_PTCALC_INN_VEC_MDTID_DECB : natural := 0;
-  constant SLCPIPE_PTCALC_INN_VEC_MDTID_MULT : natural := 1;
-
-  -- (COPY)
-  constant SLCPIPE_PTCALC_MID_VEC_MDTID_LEN : natural := 6;
-  constant SLCPIPE_PTCALC_MID_VEC_MDTID_MSB : natural := 26;
-  constant SLCPIPE_PTCALC_MID_VEC_MDTID_LSB : natural := 21;
-  constant SLCPIPE_PTCALC_MID_VEC_MDTID_DECB : natural := 0;
-  constant SLCPIPE_PTCALC_MID_VEC_MDTID_MULT : natural := 1;
-
-  -- (COPY)
-  constant SLCPIPE_PTCALC_OUT_VEC_MDTID_LEN : natural := 6;
-  constant SLCPIPE_PTCALC_OUT_VEC_MDTID_MSB : natural := 20;
-  constant SLCPIPE_PTCALC_OUT_VEC_MDTID_LSB : natural := 15;
-  constant SLCPIPE_PTCALC_OUT_VEC_MDTID_DECB : natural := 0;
-  constant SLCPIPE_PTCALC_OUT_VEC_MDTID_MULT : natural := 1;
-
-  -- (COPY)
-  constant SLCPIPE_PTCALC_EXT_VEC_MDTID_LEN : natural := 6;
-  constant SLCPIPE_PTCALC_EXT_VEC_MDTID_MSB : natural := 14;
-  constant SLCPIPE_PTCALC_EXT_VEC_MDTID_LSB : natural := 9;
-  constant SLCPIPE_PTCALC_EXT_VEC_MDTID_DECB : natural := 0;
-  constant SLCPIPE_PTCALC_EXT_VEC_MDTID_MULT : natural := 1;
 
   -- (COPY)
   constant SLCPIPE_PTCALC_PHIMOD_LEN : natural := 8;
@@ -606,46 +571,46 @@ package mdttp_constants_pkg is
   constant PTCALC_SLC_MUID_MULT : natural := 0;
 
   -- eta of the innermost MDT station segment position
-  constant PTCALC_MTC_ETA_LEN : natural := 14;
-  constant PTCALC_MTC_ETA_MSB : natural := 31;
-  constant PTCALC_MTC_ETA_LSB : natural := 18;
-  constant PTCALC_MTC_ETA_DECB : natural := 12;
-  constant PTCALC_MTC_ETA_MULT : natural := 3034;
+  constant PTCALC_ETA_LEN : natural := 14;
+  constant PTCALC_ETA_MSB : natural := 31;
+  constant PTCALC_ETA_LSB : natural := 18;
+  constant PTCALC_ETA_DECB : natural := 12;
+  constant PTCALC_ETA_MULT : natural := 3034;
 
   -- pT calculated by the pT Calc
-  constant PTCALC_MTC_PT_LEN : natural := 8;
-  constant PTCALC_MTC_PT_MSB : natural := 17;
-  constant PTCALC_MTC_PT_LSB : natural := 10;
-  constant PTCALC_MTC_PT_DECB : natural := 2;
-  constant PTCALC_MTC_PT_MULT : natural := 3;
+  constant PTCALC_PT_LEN : natural := 8;
+  constant PTCALC_PT_MSB : natural := 17;
+  constant PTCALC_PT_LSB : natural := 10;
+  constant PTCALC_PT_DECB : natural := 2;
+  constant PTCALC_PT_MULT : natural := 3;
 
   -- pT threshold satisfied by the MDT TC
-  constant PTCALC_MTC_PTTHRESH_LEN : natural := 4;
-  constant PTCALC_MTC_PTTHRESH_MSB : natural := 9;
-  constant PTCALC_MTC_PTTHRESH_LSB : natural := 6;
-  constant PTCALC_MTC_PTTHRESH_DECB : natural := 0;
-  constant PTCALC_MTC_PTTHRESH_MULT : natural := 0;
+  constant PTCALC_PTTHRESH_LEN : natural := 4;
+  constant PTCALC_PTTHRESH_MSB : natural := 9;
+  constant PTCALC_PTTHRESH_LSB : natural := 6;
+  constant PTCALC_PTTHRESH_DECB : natural := 0;
+  constant PTCALC_PTTHRESH_MULT : natural := 0;
 
   -- charge determined from the pT calc
-  constant PTCALC_MTC_CHARGE_LEN : natural := 1;
-  constant PTCALC_MTC_CHARGE_MSB : natural := 5;
-  constant PTCALC_MTC_CHARGE_LSB : natural := 5;
-  constant PTCALC_MTC_CHARGE_DECB : natural := 0;
-  constant PTCALC_MTC_CHARGE_MULT : natural := 2;
+  constant PTCALC_CHARGE_LEN : natural := 1;
+  constant PTCALC_CHARGE_MSB : natural := 5;
+  constant PTCALC_CHARGE_LSB : natural := 5;
+  constant PTCALC_CHARGE_DECB : natural := 0;
+  constant PTCALC_CHARGE_MULT : natural := 2;
 
   -- # of segments used for calculating the pT
-  constant PTCALC_MTC_NSEGMENTS_LEN : natural := 2;
-  constant PTCALC_MTC_NSEGMENTS_MSB : natural := 4;
-  constant PTCALC_MTC_NSEGMENTS_LSB : natural := 3;
-  constant PTCALC_MTC_NSEGMENTS_DECB : natural := 0;
-  constant PTCALC_MTC_NSEGMENTS_MULT : natural := 1;
+  constant PTCALC_NSEGMENTS_LEN : natural := 2;
+  constant PTCALC_NSEGMENTS_MSB : natural := 4;
+  constant PTCALC_NSEGMENTS_LSB : natural := 3;
+  constant PTCALC_NSEGMENTS_DECB : natural := 0;
+  constant PTCALC_NSEGMENTS_MULT : natural := 1;
 
   -- quality of the MDT TC (TBC how this is defined)
-  constant PTCALC_MTC_QUALITY_LEN : natural := 3;
-  constant PTCALC_MTC_QUALITY_MSB : natural := 2;
-  constant PTCALC_MTC_QUALITY_LSB : natural := 0;
-  constant PTCALC_MTC_QUALITY_DECB : natural := 0;
-  constant PTCALC_MTC_QUALITY_MULT : natural := 1;
+  constant PTCALC_QUALITY_LEN : natural := 3;
+  constant PTCALC_QUALITY_MSB : natural := 2;
+  constant PTCALC_QUALITY_LSB : natural := 0;
+  constant PTCALC_QUALITY_DECB : natural := 0;
+  constant PTCALC_QUALITY_MULT : natural := 1;
 
   ----------------------------------------------------------------------
   constant SLCPIPE_MTC_ENDCAP_LEN : natural := 54;
@@ -727,53 +692,53 @@ package mdttp_constants_pkg is
   constant MTC_SLC_COMMON_MULT : natural := 0;
 
   -- (COPY)
-  constant MTC_MTC_ETA_LEN : natural := 14;
-  constant MTC_MTC_ETA_MSB : natural := 35;
-  constant MTC_MTC_ETA_LSB : natural := 22;
-  constant MTC_MTC_ETA_DECB : natural := 11;
-  constant MTC_MTC_ETA_MULT : natural := 3034;
+  constant MTC_ETA_LEN : natural := 14;
+  constant MTC_ETA_MSB : natural := 35;
+  constant MTC_ETA_LSB : natural := 22;
+  constant MTC_ETA_DECB : natural := 11;
+  constant MTC_ETA_MULT : natural := 3034;
 
   -- (COPY)
-  constant MTC_MTC_PT_LEN : natural := 8;
-  constant MTC_MTC_PT_MSB : natural := 21;
-  constant MTC_MTC_PT_LSB : natural := 14;
-  constant MTC_MTC_PT_DECB : natural := 1;
-  constant MTC_MTC_PT_MULT : natural := 3;
+  constant MTC_PT_LEN : natural := 8;
+  constant MTC_PT_MSB : natural := 21;
+  constant MTC_PT_LSB : natural := 14;
+  constant MTC_PT_DECB : natural := 1;
+  constant MTC_PT_MULT : natural := 3;
 
   -- (COPY)
-  constant MTC_MTC_PTTHRESH_LEN : natural := 4;
-  constant MTC_MTC_PTTHRESH_MSB : natural := 13;
-  constant MTC_MTC_PTTHRESH_LSB : natural := 10;
-  constant MTC_MTC_PTTHRESH_DECB : natural := 0;
-  constant MTC_MTC_PTTHRESH_MULT : natural := 0;
+  constant MTC_PTTHRESH_LEN : natural := 4;
+  constant MTC_PTTHRESH_MSB : natural := 13;
+  constant MTC_PTTHRESH_LSB : natural := 10;
+  constant MTC_PTTHRESH_DECB : natural := 0;
+  constant MTC_PTTHRESH_MULT : natural := 0;
 
   -- (COPY)
-  constant MTC_MTC_CHARGE_LEN : natural := 1;
-  constant MTC_MTC_CHARGE_MSB : natural := 9;
-  constant MTC_MTC_CHARGE_LSB : natural := 9;
-  constant MTC_MTC_CHARGE_DECB : natural := 0;
-  constant MTC_MTC_CHARGE_MULT : natural := 2;
+  constant MTC_CHARGE_LEN : natural := 1;
+  constant MTC_CHARGE_MSB : natural := 9;
+  constant MTC_CHARGE_LSB : natural := 9;
+  constant MTC_CHARGE_DECB : natural := 0;
+  constant MTC_CHARGE_MULT : natural := 2;
 
   -- MDT processing flags
-  constant MTC_MTC_PROCFLAGS_LEN : natural := 4;
-  constant MTC_MTC_PROCFLAGS_MSB : natural := 8;
-  constant MTC_MTC_PROCFLAGS_LSB : natural := 5;
-  constant MTC_MTC_PROCFLAGS_DECB : natural := 0;
-  constant MTC_MTC_PROCFLAGS_MULT : natural := 1;
+  constant MTC_PROCFLAGS_LEN : natural := 4;
+  constant MTC_PROCFLAGS_MSB : natural := 8;
+  constant MTC_PROCFLAGS_LSB : natural := 5;
+  constant MTC_PROCFLAGS_DECB : natural := 0;
+  constant MTC_PROCFLAGS_MULT : natural := 1;
 
   -- (COPY)
-  constant MTC_MTC_NSEGMENTS_LEN : natural := 2;
-  constant MTC_MTC_NSEGMENTS_MSB : natural := 4;
-  constant MTC_MTC_NSEGMENTS_LSB : natural := 3;
-  constant MTC_MTC_NSEGMENTS_DECB : natural := 0;
-  constant MTC_MTC_NSEGMENTS_MULT : natural := 1;
+  constant MTC_NSEGMENTS_LEN : natural := 2;
+  constant MTC_NSEGMENTS_MSB : natural := 4;
+  constant MTC_NSEGMENTS_LSB : natural := 3;
+  constant MTC_NSEGMENTS_DECB : natural := 0;
+  constant MTC_NSEGMENTS_MULT : natural := 1;
 
   -- (COPY)
-  constant MTC_MTC_QUALITY_LEN : natural := 3;
-  constant MTC_MTC_QUALITY_MSB : natural := 2;
-  constant MTC_MTC_QUALITY_LSB : natural := 0;
-  constant MTC_MTC_QUALITY_DECB : natural := 0;
-  constant MTC_MTC_QUALITY_MULT : natural := 1;
+  constant MTC_QUALITY_LEN : natural := 3;
+  constant MTC_QUALITY_MSB : natural := 2;
+  constant MTC_QUALITY_LSB : natural := 0;
+  constant MTC_QUALITY_DECB : natural := 0;
+  constant MTC_QUALITY_MULT : natural := 1;
 
   ----------------------------------------------------------------------
 

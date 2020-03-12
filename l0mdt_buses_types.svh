@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "a34aee13";
+const char df_hash[] = "7221817b";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -113,7 +113,7 @@ typedef struct TDC_n {
 } TDC_rt;
 
 // -------------------------------------------------------------------
-typedef struct TDCFORMAT_n {
+typedef struct TDCPOLMUX_n {
     // struct TDC
     logic [31:0] TDCTDC;
     // Fiber ID within board
@@ -122,12 +122,10 @@ typedef struct TDCFORMAT_n {
     logic [3:0] elinkidelinkid;
     // Valid bit
     logic [0:0] datavaliddatavalid;
-    // MDT Station Type (Inner, Middle, Outer, Extra)
-    logic [1:0] stationidstationid;
-} TDCFORMAT_rt;
+} TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_HESF_n {
+typedef struct SLCPROC_HPS_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // inner MDT segment chip destination
@@ -138,10 +136,10 @@ typedef struct SLCPROC_HESF_n {
     logic [9:0] vec_posvec_pos;
     // SLc inner vector theta angle
     logic [9:0] vec_angvec_ang;
-} SLCPROC_HESF_rt;
+} SLCPROC_HPS_rt;
 
 // -------------------------------------------------------------------
-typedef struct TUBEREMAP_n {
+typedef struct TAR_n {
     // Tube layer within one station
     logic [4:0] mdt_tube_layermdt_tube_layer;
     // Tube number within one station
@@ -152,10 +150,10 @@ typedef struct TUBEREMAP_n {
     logic [18:0] mdt_tube_zmdt_tube_z;
     // Tube (uncalibrated) time
     logic [17:0] mdt_tube_timemdt_tube_time;
-} TUBEREMAP_rt;
+} TAR_rt;
 
 // -------------------------------------------------------------------
-typedef struct HE_LSF_n {
+typedef struct HP_LSF_n {
     // Hit Valid bit
     logic [0:0] mdt_validmdt_valid;
     // Data Valid bit
@@ -166,10 +164,10 @@ typedef struct HE_LSF_n {
     logic [13:0] mdt_localymdt_localy;
     // Tube drift radius
     logic [8:0] mdt_radiusmdt_radius;
-} HE_LSF_rt;
+} HP_LSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct HE_CSF_n {
+typedef struct HP_CSF_n {
     // Hit Valid bit
     logic [0:0] mdt_validmdt_valid;
     // Data Valid bit
@@ -180,14 +178,12 @@ typedef struct HE_CSF_n {
     logic [13:0] mdt_localymdt_localy;
     // Tube drift radius
     logic [8:0] mdt_radiusmdt_radius;
-} HE_CSF_rt;
+} HP_CSF_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_PTCALC_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
-    // (COPY)
-    logic [5:0] INN_vec_mdtidvec_mdtid;
     // (COPY)
     logic [7:0] phimodphimod;
     // (COPY)
@@ -215,17 +211,17 @@ typedef struct PTCALC_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // eta of the innermost MDT station segment position
-    logic [13:0] mtc_etamtc_eta;
+    logic [13:0] etaeta;
     // pT calculated by the pT Calc
-    logic [7:0] mtc_ptmtc_pt;
+    logic [7:0] ptpt;
     // pT threshold satisfied by the MDT TC
-    logic [3:0] mtc_ptthreshmtc_ptthresh;
+    logic [3:0] ptthreshptthresh;
     // charge determined from the pT calc
-    logic [0:0] mtc_chargemtc_charge;
+    logic [0:0] chargecharge;
     // # of segments used for calculating the pT
-    logic [1:0] mtc_nsegmentsmtc_nsegments;
+    logic [1:0] nsegmentsnsegments;
     // quality of the MDT TC (TBC how this is defined)
-    logic [2:0] mtc_qualitymtc_quality;
+    logic [2:0] qualityquality;
 } PTCALC_rt;
 
 // -------------------------------------------------------------------
@@ -259,19 +255,19 @@ typedef struct MTC_n {
     // struct SLC_COMMON
     logic [30:0] SLC_COMMONSLC_COMMON;
     // (COPY)
-    logic [13:0] mtc_etamtc_eta;
+    logic [13:0] etaeta;
     // (COPY)
-    logic [7:0] mtc_ptmtc_pt;
+    logic [7:0] ptpt;
     // (COPY)
-    logic [3:0] mtc_ptthreshmtc_ptthresh;
+    logic [3:0] ptthreshptthresh;
     // (COPY)
-    logic [0:0] mtc_chargemtc_charge;
+    logic [0:0] chargecharge;
     // MDT processing flags
-    logic [3:0] mtc_procflagsmtc_procflags;
+    logic [3:0] procflagsprocflags;
     // (COPY)
-    logic [1:0] mtc_nsegmentsmtc_nsegments;
+    logic [1:0] nsegmentsnsegments;
     // (COPY)
-    logic [2:0] mtc_qualitymtc_quality;
+    logic [2:0] qualityquality;
 } MTC_rt;
 
 // -------------------------------------------------------------------

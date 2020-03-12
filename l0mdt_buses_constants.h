@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "a34aee13";
+const char df_hash[] = "1db9cdce";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;
@@ -525,40 +525,40 @@ const int PTCALC_SLC_MUIDSLC_MUID_LSB = 32;
 const int PTCALC_SLC_MUIDSLC_MUID_DECB = 0;
 
 // eta of the innermost MDT station segment position
-const int PTCALC_MTC_ETAMTC_ETA_LEN = 14;
-const int PTCALC_MTC_ETAMTC_ETA_MSB = 31;
-const int PTCALC_MTC_ETAMTC_ETA_LSB = 18;
-const int PTCALC_MTC_ETAMTC_ETA_DECB = 12;
+const int PTCALC_ETAETA_LEN = 14;
+const int PTCALC_ETAETA_MSB = 31;
+const int PTCALC_ETAETA_LSB = 18;
+const int PTCALC_ETAETA_DECB = 12;
 
 // pT calculated by the pT Calc
-const int PTCALC_MTC_PTMTC_PT_LEN = 8;
-const int PTCALC_MTC_PTMTC_PT_MSB = 17;
-const int PTCALC_MTC_PTMTC_PT_LSB = 10;
-const int PTCALC_MTC_PTMTC_PT_DECB = 2;
+const int PTCALC_PTPT_LEN = 8;
+const int PTCALC_PTPT_MSB = 17;
+const int PTCALC_PTPT_LSB = 10;
+const int PTCALC_PTPT_DECB = 2;
 
 // pT threshold satisfied by the MDT TC
-const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_LEN = 4;
-const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_MSB = 9;
-const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_LSB = 6;
-const int PTCALC_MTC_PTTHRESHMTC_PTTHRESH_DECB = 0;
+const int PTCALC_PTTHRESHPTTHRESH_LEN = 4;
+const int PTCALC_PTTHRESHPTTHRESH_MSB = 9;
+const int PTCALC_PTTHRESHPTTHRESH_LSB = 6;
+const int PTCALC_PTTHRESHPTTHRESH_DECB = 0;
 
 // charge determined from the pT calc
-const int PTCALC_MTC_CHARGEMTC_CHARGE_LEN = 1;
-const int PTCALC_MTC_CHARGEMTC_CHARGE_MSB = 5;
-const int PTCALC_MTC_CHARGEMTC_CHARGE_LSB = 5;
-const int PTCALC_MTC_CHARGEMTC_CHARGE_DECB = 0;
+const int PTCALC_CHARGECHARGE_LEN = 1;
+const int PTCALC_CHARGECHARGE_MSB = 5;
+const int PTCALC_CHARGECHARGE_LSB = 5;
+const int PTCALC_CHARGECHARGE_DECB = 0;
 
 // # of segments used for calculating the pT
-const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_LEN = 2;
-const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_MSB = 4;
-const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_LSB = 3;
-const int PTCALC_MTC_NSEGMENTSMTC_NSEGMENTS_DECB = 0;
+const int PTCALC_NSEGMENTSNSEGMENTS_LEN = 2;
+const int PTCALC_NSEGMENTSNSEGMENTS_MSB = 4;
+const int PTCALC_NSEGMENTSNSEGMENTS_LSB = 3;
+const int PTCALC_NSEGMENTSNSEGMENTS_DECB = 0;
 
 // quality of the MDT TC (TBC how this is defined)
-const int PTCALC_MTC_QUALITYMTC_QUALITY_LEN = 3;
-const int PTCALC_MTC_QUALITYMTC_QUALITY_MSB = 2;
-const int PTCALC_MTC_QUALITYMTC_QUALITY_LSB = 0;
-const int PTCALC_MTC_QUALITYMTC_QUALITY_DECB = 0;
+const int PTCALC_QUALITYQUALITY_LEN = 3;
+const int PTCALC_QUALITYQUALITY_MSB = 2;
+const int PTCALC_QUALITYQUALITY_LSB = 0;
+const int PTCALC_QUALITYQUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
 const int SLCPIPE_MTC_ENDCAP_LEN = 54;
@@ -630,46 +630,46 @@ const int MTC_SLC_COMMONSLC_COMMON_LSB = 36;
 const int MTC_SLC_COMMONSLC_COMMON_DECB = 0;
 
 // (COPY)
-const int MTC_MTC_ETAMTC_ETA_LEN = 14;
-const int MTC_MTC_ETAMTC_ETA_MSB = 35;
-const int MTC_MTC_ETAMTC_ETA_LSB = 22;
-const int MTC_MTC_ETAMTC_ETA_DECB = 11;
+const int MTC_ETAETA_LEN = 14;
+const int MTC_ETAETA_MSB = 35;
+const int MTC_ETAETA_LSB = 22;
+const int MTC_ETAETA_DECB = 11;
 
 // (COPY)
-const int MTC_MTC_PTMTC_PT_LEN = 8;
-const int MTC_MTC_PTMTC_PT_MSB = 21;
-const int MTC_MTC_PTMTC_PT_LSB = 14;
-const int MTC_MTC_PTMTC_PT_DECB = 1;
+const int MTC_PTPT_LEN = 8;
+const int MTC_PTPT_MSB = 21;
+const int MTC_PTPT_LSB = 14;
+const int MTC_PTPT_DECB = 1;
 
 // (COPY)
-const int MTC_MTC_PTTHRESHMTC_PTTHRESH_LEN = 4;
-const int MTC_MTC_PTTHRESHMTC_PTTHRESH_MSB = 13;
-const int MTC_MTC_PTTHRESHMTC_PTTHRESH_LSB = 10;
-const int MTC_MTC_PTTHRESHMTC_PTTHRESH_DECB = 0;
+const int MTC_PTTHRESHPTTHRESH_LEN = 4;
+const int MTC_PTTHRESHPTTHRESH_MSB = 13;
+const int MTC_PTTHRESHPTTHRESH_LSB = 10;
+const int MTC_PTTHRESHPTTHRESH_DECB = 0;
 
 // (COPY)
-const int MTC_MTC_CHARGEMTC_CHARGE_LEN = 1;
-const int MTC_MTC_CHARGEMTC_CHARGE_MSB = 9;
-const int MTC_MTC_CHARGEMTC_CHARGE_LSB = 9;
-const int MTC_MTC_CHARGEMTC_CHARGE_DECB = 0;
+const int MTC_CHARGECHARGE_LEN = 1;
+const int MTC_CHARGECHARGE_MSB = 9;
+const int MTC_CHARGECHARGE_LSB = 9;
+const int MTC_CHARGECHARGE_DECB = 0;
 
 // MDT processing flags
-const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_LEN = 4;
-const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_MSB = 8;
-const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_LSB = 5;
-const int MTC_MTC_PROCFLAGSMTC_PROCFLAGS_DECB = 0;
+const int MTC_PROCFLAGSPROCFLAGS_LEN = 4;
+const int MTC_PROCFLAGSPROCFLAGS_MSB = 8;
+const int MTC_PROCFLAGSPROCFLAGS_LSB = 5;
+const int MTC_PROCFLAGSPROCFLAGS_DECB = 0;
 
 // (COPY)
-const int MTC_MTC_NSEGMENTSMTC_NSEGMENTS_LEN = 2;
-const int MTC_MTC_NSEGMENTSMTC_NSEGMENTS_MSB = 4;
-const int MTC_MTC_NSEGMENTSMTC_NSEGMENTS_LSB = 3;
-const int MTC_MTC_NSEGMENTSMTC_NSEGMENTS_DECB = 0;
+const int MTC_NSEGMENTSNSEGMENTS_LEN = 2;
+const int MTC_NSEGMENTSNSEGMENTS_MSB = 4;
+const int MTC_NSEGMENTSNSEGMENTS_LSB = 3;
+const int MTC_NSEGMENTSNSEGMENTS_DECB = 0;
 
 // (COPY)
-const int MTC_MTC_QUALITYMTC_QUALITY_LEN = 3;
-const int MTC_MTC_QUALITYMTC_QUALITY_MSB = 2;
-const int MTC_MTC_QUALITYMTC_QUALITY_LSB = 0;
-const int MTC_MTC_QUALITYMTC_QUALITY_DECB = 0;
+const int MTC_QUALITYQUALITY_LEN = 3;
+const int MTC_QUALITYQUALITY_MSB = 2;
+const int MTC_QUALITYQUALITY_LSB = 0;
+const int MTC_QUALITYQUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
 

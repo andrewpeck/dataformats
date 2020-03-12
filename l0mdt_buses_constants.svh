@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH a34aee13;
+`define DF_HASH 1db9cdce;
 
 // -------------------------------------------------------------------
 parameter SLC_MUID_LEN = 20 ;
@@ -522,40 +522,40 @@ parameter PTCALC_SLC_MUID_LSB = 32 ;
 parameter PTCALC_SLC_MUID_DECB = 0 ;
 
 // eta of the innermost MDT station segment position
-parameter PTCALC_MTC_ETA_LEN = 14 ;
-parameter PTCALC_MTC_ETA_MSB = 31 ;
-parameter PTCALC_MTC_ETA_LSB = 18 ;
-parameter PTCALC_MTC_ETA_DECB = 12 ;
+parameter PTCALC_ETA_LEN = 14 ;
+parameter PTCALC_ETA_MSB = 31 ;
+parameter PTCALC_ETA_LSB = 18 ;
+parameter PTCALC_ETA_DECB = 12 ;
 
 // pT calculated by the pT Calc
-parameter PTCALC_MTC_PT_LEN = 8 ;
-parameter PTCALC_MTC_PT_MSB = 17 ;
-parameter PTCALC_MTC_PT_LSB = 10 ;
-parameter PTCALC_MTC_PT_DECB = 2 ;
+parameter PTCALC_PT_LEN = 8 ;
+parameter PTCALC_PT_MSB = 17 ;
+parameter PTCALC_PT_LSB = 10 ;
+parameter PTCALC_PT_DECB = 2 ;
 
 // pT threshold satisfied by the MDT TC
-parameter PTCALC_MTC_PTTHRESH_LEN = 4 ;
-parameter PTCALC_MTC_PTTHRESH_MSB = 9 ;
-parameter PTCALC_MTC_PTTHRESH_LSB = 6 ;
-parameter PTCALC_MTC_PTTHRESH_DECB = 0 ;
+parameter PTCALC_PTTHRESH_LEN = 4 ;
+parameter PTCALC_PTTHRESH_MSB = 9 ;
+parameter PTCALC_PTTHRESH_LSB = 6 ;
+parameter PTCALC_PTTHRESH_DECB = 0 ;
 
 // charge determined from the pT calc
-parameter PTCALC_MTC_CHARGE_LEN = 1 ;
-parameter PTCALC_MTC_CHARGE_MSB = 5 ;
-parameter PTCALC_MTC_CHARGE_LSB = 5 ;
-parameter PTCALC_MTC_CHARGE_DECB = 0 ;
+parameter PTCALC_CHARGE_LEN = 1 ;
+parameter PTCALC_CHARGE_MSB = 5 ;
+parameter PTCALC_CHARGE_LSB = 5 ;
+parameter PTCALC_CHARGE_DECB = 0 ;
 
 // # of segments used for calculating the pT
-parameter PTCALC_MTC_NSEGMENTS_LEN = 2 ;
-parameter PTCALC_MTC_NSEGMENTS_MSB = 4 ;
-parameter PTCALC_MTC_NSEGMENTS_LSB = 3 ;
-parameter PTCALC_MTC_NSEGMENTS_DECB = 0 ;
+parameter PTCALC_NSEGMENTS_LEN = 2 ;
+parameter PTCALC_NSEGMENTS_MSB = 4 ;
+parameter PTCALC_NSEGMENTS_LSB = 3 ;
+parameter PTCALC_NSEGMENTS_DECB = 0 ;
 
 // quality of the MDT TC (TBC how this is defined)
-parameter PTCALC_MTC_QUALITY_LEN = 3 ;
-parameter PTCALC_MTC_QUALITY_MSB = 2 ;
-parameter PTCALC_MTC_QUALITY_LSB = 0 ;
-parameter PTCALC_MTC_QUALITY_DECB = 0 ;
+parameter PTCALC_QUALITY_LEN = 3 ;
+parameter PTCALC_QUALITY_MSB = 2 ;
+parameter PTCALC_QUALITY_LSB = 0 ;
+parameter PTCALC_QUALITY_DECB = 0 ;
 
 // -------------------------------------------------------------------
 parameter SLCPIPE_MTC_ENDCAP_LEN = 54 ;
@@ -627,43 +627,43 @@ parameter MTC_SLC_COMMON_LSB = 36 ;
 parameter MTC_SLC_COMMON_DECB = 0 ;
 
 // (COPY)
-parameter MTC_MTC_ETA_LEN = 14 ;
-parameter MTC_MTC_ETA_MSB = 35 ;
-parameter MTC_MTC_ETA_LSB = 22 ;
-parameter MTC_MTC_ETA_DECB = 11 ;
+parameter MTC_ETA_LEN = 14 ;
+parameter MTC_ETA_MSB = 35 ;
+parameter MTC_ETA_LSB = 22 ;
+parameter MTC_ETA_DECB = 11 ;
 
 // (COPY)
-parameter MTC_MTC_PT_LEN = 8 ;
-parameter MTC_MTC_PT_MSB = 21 ;
-parameter MTC_MTC_PT_LSB = 14 ;
-parameter MTC_MTC_PT_DECB = 1 ;
+parameter MTC_PT_LEN = 8 ;
+parameter MTC_PT_MSB = 21 ;
+parameter MTC_PT_LSB = 14 ;
+parameter MTC_PT_DECB = 1 ;
 
 // (COPY)
-parameter MTC_MTC_PTTHRESH_LEN = 4 ;
-parameter MTC_MTC_PTTHRESH_MSB = 13 ;
-parameter MTC_MTC_PTTHRESH_LSB = 10 ;
-parameter MTC_MTC_PTTHRESH_DECB = 0 ;
+parameter MTC_PTTHRESH_LEN = 4 ;
+parameter MTC_PTTHRESH_MSB = 13 ;
+parameter MTC_PTTHRESH_LSB = 10 ;
+parameter MTC_PTTHRESH_DECB = 0 ;
 
 // (COPY)
-parameter MTC_MTC_CHARGE_LEN = 1 ;
-parameter MTC_MTC_CHARGE_MSB = 9 ;
-parameter MTC_MTC_CHARGE_LSB = 9 ;
-parameter MTC_MTC_CHARGE_DECB = 0 ;
+parameter MTC_CHARGE_LEN = 1 ;
+parameter MTC_CHARGE_MSB = 9 ;
+parameter MTC_CHARGE_LSB = 9 ;
+parameter MTC_CHARGE_DECB = 0 ;
 
 // MDT processing flags
-parameter MTC_MTC_PROCFLAGS_LEN = 4 ;
-parameter MTC_MTC_PROCFLAGS_MSB = 8 ;
-parameter MTC_MTC_PROCFLAGS_LSB = 5 ;
-parameter MTC_MTC_PROCFLAGS_DECB = 0 ;
+parameter MTC_PROCFLAGS_LEN = 4 ;
+parameter MTC_PROCFLAGS_MSB = 8 ;
+parameter MTC_PROCFLAGS_LSB = 5 ;
+parameter MTC_PROCFLAGS_DECB = 0 ;
 
 // (COPY)
-parameter MTC_MTC_NSEGMENTS_LEN = 2 ;
-parameter MTC_MTC_NSEGMENTS_MSB = 4 ;
-parameter MTC_MTC_NSEGMENTS_LSB = 3 ;
-parameter MTC_MTC_NSEGMENTS_DECB = 0 ;
+parameter MTC_NSEGMENTS_LEN = 2 ;
+parameter MTC_NSEGMENTS_MSB = 4 ;
+parameter MTC_NSEGMENTS_LSB = 3 ;
+parameter MTC_NSEGMENTS_DECB = 0 ;
 
 // (COPY)
-parameter MTC_MTC_QUALITY_LEN = 3 ;
-parameter MTC_MTC_QUALITY_MSB = 2 ;
-parameter MTC_MTC_QUALITY_LSB = 0 ;
-parameter MTC_MTC_QUALITY_DECB = 0 ;
+parameter MTC_QUALITY_LEN = 3 ;
+parameter MTC_QUALITY_MSB = 2 ;
+parameter MTC_QUALITY_LSB = 0 ;
+parameter MTC_QUALITY_DECB = 0 ;

@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"1db9cdce";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -725,12 +725,12 @@ package body mdttp_functions_pkg is
     variable v : std_logic_vector(PTCALC_LEN-1 downto 0);
   begin
     v := slc_muid_2af(d.slc_muid_r)
-         & d.mtc_eta
-         & d.mtc_pt
-         & d.mtc_ptthresh
-         & d.mtc_charge
-         & d.mtc_nsegments
-         & d.mtc_quality;
+         & d.eta
+         & d.pt
+         & d.ptthresh
+         & d.charge
+         & d.nsegments
+         & d.quality;
     return v;
   end function ptcalc_2af;
 
@@ -744,23 +744,23 @@ package body mdttp_functions_pkg is
     lsb := msb - PTCALC_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 51 32
     msb := lsb - 1;
-    lsb := msb - PTCALC_MTC_ETA_LEN + 1; -- 14
-    b.mtc_eta := v(msb downto lsb); -- 31 18
+    lsb := msb - PTCALC_ETA_LEN + 1; -- 14
+    b.eta := v(msb downto lsb); -- 31 18
     msb := lsb - 1;
-    lsb := msb - PTCALC_MTC_PT_LEN + 1; -- 8
-    b.mtc_pt := v(msb downto lsb); -- 17 10
+    lsb := msb - PTCALC_PT_LEN + 1; -- 8
+    b.pt := v(msb downto lsb); -- 17 10
     msb := lsb - 1;
-    lsb := msb - PTCALC_MTC_PTTHRESH_LEN + 1; -- 4
-    b.mtc_ptthresh := v(msb downto lsb); -- 9 6
+    lsb := msb - PTCALC_PTTHRESH_LEN + 1; -- 4
+    b.ptthresh := v(msb downto lsb); -- 9 6
     msb := lsb - 1;
-    lsb := msb - PTCALC_MTC_CHARGE_LEN + 1; -- 1
-    b.mtc_charge := v(msb); -- 5
+    lsb := msb - PTCALC_CHARGE_LEN + 1; -- 1
+    b.charge := v(msb); -- 5
     msb := lsb - 1;
-    lsb := msb - PTCALC_MTC_NSEGMENTS_LEN + 1; -- 2
-    b.mtc_nsegments := v(msb downto lsb); -- 4 3
+    lsb := msb - PTCALC_NSEGMENTS_LEN + 1; -- 2
+    b.nsegments := v(msb downto lsb); -- 4 3
     msb := lsb - 1;
-    lsb := msb - PTCALC_MTC_QUALITY_LEN + 1; -- 3
-    b.mtc_quality := v(msb downto lsb); -- 2 0
+    lsb := msb - PTCALC_QUALITY_LEN + 1; -- 3
+    b.quality := v(msb downto lsb); -- 2 0
     return b;
   end function ptcalc_2rf;
 
@@ -840,13 +840,13 @@ package body mdttp_functions_pkg is
     variable v : std_logic_vector(MTC_LEN-1 downto 0);
   begin
     v := slc_common_2af(d.slc_common_r)
-         & d.mtc_eta
-         & d.mtc_pt
-         & d.mtc_ptthresh
-         & d.mtc_charge
-         & d.mtc_procflags
-         & d.mtc_nsegments
-         & d.mtc_quality;
+         & d.eta
+         & d.pt
+         & d.ptthresh
+         & d.charge
+         & d.procflags
+         & d.nsegments
+         & d.quality;
     return v;
   end function mtc_2af;
 
@@ -860,26 +860,26 @@ package body mdttp_functions_pkg is
     lsb := msb - MTC_SLC_COMMON_LEN + 1; -- 31
     b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 66 36
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_ETA_LEN + 1; -- 14
-    b.mtc_eta := v(msb downto lsb); -- 35 22
+    lsb := msb - MTC_ETA_LEN + 1; -- 14
+    b.eta := v(msb downto lsb); -- 35 22
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_PT_LEN + 1; -- 8
-    b.mtc_pt := v(msb downto lsb); -- 21 14
+    lsb := msb - MTC_PT_LEN + 1; -- 8
+    b.pt := v(msb downto lsb); -- 21 14
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_PTTHRESH_LEN + 1; -- 4
-    b.mtc_ptthresh := v(msb downto lsb); -- 13 10
+    lsb := msb - MTC_PTTHRESH_LEN + 1; -- 4
+    b.ptthresh := v(msb downto lsb); -- 13 10
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_CHARGE_LEN + 1; -- 1
-    b.mtc_charge := v(msb); -- 9
+    lsb := msb - MTC_CHARGE_LEN + 1; -- 1
+    b.charge := v(msb); -- 9
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_PROCFLAGS_LEN + 1; -- 4
-    b.mtc_procflags := v(msb downto lsb); -- 8 5
+    lsb := msb - MTC_PROCFLAGS_LEN + 1; -- 4
+    b.procflags := v(msb downto lsb); -- 8 5
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_NSEGMENTS_LEN + 1; -- 2
-    b.mtc_nsegments := v(msb downto lsb); -- 4 3
+    lsb := msb - MTC_NSEGMENTS_LEN + 1; -- 2
+    b.nsegments := v(msb downto lsb); -- 4 3
     msb := lsb - 1;
-    lsb := msb - MTC_MTC_QUALITY_LEN + 1; -- 3
-    b.mtc_quality := v(msb downto lsb); -- 2 0
+    lsb := msb - MTC_QUALITY_LEN + 1; -- 3
+    b.quality := v(msb downto lsb); -- 2 0
     return b;
   end function mtc_2rf;
 

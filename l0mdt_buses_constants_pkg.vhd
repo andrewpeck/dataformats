@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"a34aee13";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"1db9cdce";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -606,46 +606,46 @@ package mdttp_constants_pkg is
   constant PTCALC_SLC_MUID_MULT : natural := 0;
 
   -- eta of the innermost MDT station segment position
-  constant PTCALC_MTC_ETA_LEN : natural := 14;
-  constant PTCALC_MTC_ETA_MSB : natural := 31;
-  constant PTCALC_MTC_ETA_LSB : natural := 18;
-  constant PTCALC_MTC_ETA_DECB : natural := 12;
-  constant PTCALC_MTC_ETA_MULT : natural := 3034;
+  constant PTCALC_ETA_LEN : natural := 14;
+  constant PTCALC_ETA_MSB : natural := 31;
+  constant PTCALC_ETA_LSB : natural := 18;
+  constant PTCALC_ETA_DECB : natural := 12;
+  constant PTCALC_ETA_MULT : natural := 3034;
 
   -- pT calculated by the pT Calc
-  constant PTCALC_MTC_PT_LEN : natural := 8;
-  constant PTCALC_MTC_PT_MSB : natural := 17;
-  constant PTCALC_MTC_PT_LSB : natural := 10;
-  constant PTCALC_MTC_PT_DECB : natural := 2;
-  constant PTCALC_MTC_PT_MULT : natural := 3;
+  constant PTCALC_PT_LEN : natural := 8;
+  constant PTCALC_PT_MSB : natural := 17;
+  constant PTCALC_PT_LSB : natural := 10;
+  constant PTCALC_PT_DECB : natural := 2;
+  constant PTCALC_PT_MULT : natural := 3;
 
   -- pT threshold satisfied by the MDT TC
-  constant PTCALC_MTC_PTTHRESH_LEN : natural := 4;
-  constant PTCALC_MTC_PTTHRESH_MSB : natural := 9;
-  constant PTCALC_MTC_PTTHRESH_LSB : natural := 6;
-  constant PTCALC_MTC_PTTHRESH_DECB : natural := 0;
-  constant PTCALC_MTC_PTTHRESH_MULT : natural := 0;
+  constant PTCALC_PTTHRESH_LEN : natural := 4;
+  constant PTCALC_PTTHRESH_MSB : natural := 9;
+  constant PTCALC_PTTHRESH_LSB : natural := 6;
+  constant PTCALC_PTTHRESH_DECB : natural := 0;
+  constant PTCALC_PTTHRESH_MULT : natural := 0;
 
   -- charge determined from the pT calc
-  constant PTCALC_MTC_CHARGE_LEN : natural := 1;
-  constant PTCALC_MTC_CHARGE_MSB : natural := 5;
-  constant PTCALC_MTC_CHARGE_LSB : natural := 5;
-  constant PTCALC_MTC_CHARGE_DECB : natural := 0;
-  constant PTCALC_MTC_CHARGE_MULT : natural := 2;
+  constant PTCALC_CHARGE_LEN : natural := 1;
+  constant PTCALC_CHARGE_MSB : natural := 5;
+  constant PTCALC_CHARGE_LSB : natural := 5;
+  constant PTCALC_CHARGE_DECB : natural := 0;
+  constant PTCALC_CHARGE_MULT : natural := 2;
 
   -- # of segments used for calculating the pT
-  constant PTCALC_MTC_NSEGMENTS_LEN : natural := 2;
-  constant PTCALC_MTC_NSEGMENTS_MSB : natural := 4;
-  constant PTCALC_MTC_NSEGMENTS_LSB : natural := 3;
-  constant PTCALC_MTC_NSEGMENTS_DECB : natural := 0;
-  constant PTCALC_MTC_NSEGMENTS_MULT : natural := 1;
+  constant PTCALC_NSEGMENTS_LEN : natural := 2;
+  constant PTCALC_NSEGMENTS_MSB : natural := 4;
+  constant PTCALC_NSEGMENTS_LSB : natural := 3;
+  constant PTCALC_NSEGMENTS_DECB : natural := 0;
+  constant PTCALC_NSEGMENTS_MULT : natural := 1;
 
   -- quality of the MDT TC (TBC how this is defined)
-  constant PTCALC_MTC_QUALITY_LEN : natural := 3;
-  constant PTCALC_MTC_QUALITY_MSB : natural := 2;
-  constant PTCALC_MTC_QUALITY_LSB : natural := 0;
-  constant PTCALC_MTC_QUALITY_DECB : natural := 0;
-  constant PTCALC_MTC_QUALITY_MULT : natural := 1;
+  constant PTCALC_QUALITY_LEN : natural := 3;
+  constant PTCALC_QUALITY_MSB : natural := 2;
+  constant PTCALC_QUALITY_LSB : natural := 0;
+  constant PTCALC_QUALITY_DECB : natural := 0;
+  constant PTCALC_QUALITY_MULT : natural := 1;
 
   ----------------------------------------------------------------------
   constant SLCPIPE_MTC_ENDCAP_LEN : natural := 54;
@@ -727,53 +727,53 @@ package mdttp_constants_pkg is
   constant MTC_SLC_COMMON_MULT : natural := 0;
 
   -- (COPY)
-  constant MTC_MTC_ETA_LEN : natural := 14;
-  constant MTC_MTC_ETA_MSB : natural := 35;
-  constant MTC_MTC_ETA_LSB : natural := 22;
-  constant MTC_MTC_ETA_DECB : natural := 11;
-  constant MTC_MTC_ETA_MULT : natural := 3034;
+  constant MTC_ETA_LEN : natural := 14;
+  constant MTC_ETA_MSB : natural := 35;
+  constant MTC_ETA_LSB : natural := 22;
+  constant MTC_ETA_DECB : natural := 11;
+  constant MTC_ETA_MULT : natural := 3034;
 
   -- (COPY)
-  constant MTC_MTC_PT_LEN : natural := 8;
-  constant MTC_MTC_PT_MSB : natural := 21;
-  constant MTC_MTC_PT_LSB : natural := 14;
-  constant MTC_MTC_PT_DECB : natural := 1;
-  constant MTC_MTC_PT_MULT : natural := 3;
+  constant MTC_PT_LEN : natural := 8;
+  constant MTC_PT_MSB : natural := 21;
+  constant MTC_PT_LSB : natural := 14;
+  constant MTC_PT_DECB : natural := 1;
+  constant MTC_PT_MULT : natural := 3;
 
   -- (COPY)
-  constant MTC_MTC_PTTHRESH_LEN : natural := 4;
-  constant MTC_MTC_PTTHRESH_MSB : natural := 13;
-  constant MTC_MTC_PTTHRESH_LSB : natural := 10;
-  constant MTC_MTC_PTTHRESH_DECB : natural := 0;
-  constant MTC_MTC_PTTHRESH_MULT : natural := 0;
+  constant MTC_PTTHRESH_LEN : natural := 4;
+  constant MTC_PTTHRESH_MSB : natural := 13;
+  constant MTC_PTTHRESH_LSB : natural := 10;
+  constant MTC_PTTHRESH_DECB : natural := 0;
+  constant MTC_PTTHRESH_MULT : natural := 0;
 
   -- (COPY)
-  constant MTC_MTC_CHARGE_LEN : natural := 1;
-  constant MTC_MTC_CHARGE_MSB : natural := 9;
-  constant MTC_MTC_CHARGE_LSB : natural := 9;
-  constant MTC_MTC_CHARGE_DECB : natural := 0;
-  constant MTC_MTC_CHARGE_MULT : natural := 2;
+  constant MTC_CHARGE_LEN : natural := 1;
+  constant MTC_CHARGE_MSB : natural := 9;
+  constant MTC_CHARGE_LSB : natural := 9;
+  constant MTC_CHARGE_DECB : natural := 0;
+  constant MTC_CHARGE_MULT : natural := 2;
 
   -- MDT processing flags
-  constant MTC_MTC_PROCFLAGS_LEN : natural := 4;
-  constant MTC_MTC_PROCFLAGS_MSB : natural := 8;
-  constant MTC_MTC_PROCFLAGS_LSB : natural := 5;
-  constant MTC_MTC_PROCFLAGS_DECB : natural := 0;
-  constant MTC_MTC_PROCFLAGS_MULT : natural := 1;
+  constant MTC_PROCFLAGS_LEN : natural := 4;
+  constant MTC_PROCFLAGS_MSB : natural := 8;
+  constant MTC_PROCFLAGS_LSB : natural := 5;
+  constant MTC_PROCFLAGS_DECB : natural := 0;
+  constant MTC_PROCFLAGS_MULT : natural := 1;
 
   -- (COPY)
-  constant MTC_MTC_NSEGMENTS_LEN : natural := 2;
-  constant MTC_MTC_NSEGMENTS_MSB : natural := 4;
-  constant MTC_MTC_NSEGMENTS_LSB : natural := 3;
-  constant MTC_MTC_NSEGMENTS_DECB : natural := 0;
-  constant MTC_MTC_NSEGMENTS_MULT : natural := 1;
+  constant MTC_NSEGMENTS_LEN : natural := 2;
+  constant MTC_NSEGMENTS_MSB : natural := 4;
+  constant MTC_NSEGMENTS_LSB : natural := 3;
+  constant MTC_NSEGMENTS_DECB : natural := 0;
+  constant MTC_NSEGMENTS_MULT : natural := 1;
 
   -- (COPY)
-  constant MTC_MTC_QUALITY_LEN : natural := 3;
-  constant MTC_MTC_QUALITY_MSB : natural := 2;
-  constant MTC_MTC_QUALITY_LSB : natural := 0;
-  constant MTC_MTC_QUALITY_DECB : natural := 0;
-  constant MTC_MTC_QUALITY_MULT : natural := 1;
+  constant MTC_QUALITY_LEN : natural := 3;
+  constant MTC_QUALITY_MSB : natural := 2;
+  constant MTC_QUALITY_LSB : natural := 0;
+  constant MTC_QUALITY_DECB : natural := 0;
+  constant MTC_QUALITY_MULT : natural := 1;
 
   ----------------------------------------------------------------------
 

@@ -61,15 +61,14 @@ finetime,,5,12,8,1,0,24.21875,0.78125,ns,,TDC Formatter,CSM,TDC fine time with B
 pulsewidth,,8,7,0,1,0,199.21875,0.78125,ns,,TDC Formatter,CSM,Pulse width,var,,
 TOTAL,,32,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-TDCFORMAT,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-TDC,,32,43,12,0,,,,#,,Tube Remap,CSM,(COPY),TDC,,
-fiberid,,5,11,7,0,0,31,1,#,,Tube Remap,TDC Formatter,Fiber ID within board,var,,
-elinkid,,4,6,3,0,0,15,1,#,,Tube Remap,TDC Formatter,Elink ID within fiber,var,,
-datavalid,,1,2,2,0,0,1,1,#,,Tube Remap,TDC Formatter,Valid bit,var,,
-stationid,,2,1,0,0,0,3,1,#,,Tube Remap,TDC Formatter,"MDT Station Type (Inner, Middle, Outer, Extra)",var,,
-TOTAL,,44,,,,,,,,,,,,,,
+TDCPOLMUX,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+TDC,,32,41,10,0,,,,#,,Tube Remap,CSM,(COPY),TDC,,
+fiberid,,5,9,5,0,0,31,1,#,,Tube Remap,TDC Formatter,Fiber ID within board,var,,
+elinkid,,4,4,1,0,0,15,1,#,,Tube Remap,TDC Formatter,Elink ID within fiber,var,,
+datavalid,,1,0,0,0,0,1,1,#,,Tube Remap,TDC Formatter,Valid bit,var,,
+TOTAL,,42,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPROC_HESF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPROC_HPS,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,47,28,0,,,,#,,HE_SF,SLc Processor,SLc Muon Unique Identifier,SLC_MUID,,
 mdtseg_dest,,2,27,26,0,0,3,1,#,,HE_SF,SLc Processor,inner MDT segment chip destination,var,,
 vec_mdtid,,6,25,20,0,0,63,1,#,,HE_SF,SLc Processor,SLc Inner Vector MDT chamber ID,var,,
@@ -77,7 +76,7 @@ vec_pos,,10,19,10,0,0,13000,13.00000,mm,,HE_SF,SLc Processor,SLc inner vector rh
 vec_ang,,10,9,0,0,0,1599,3.00000,mrad,,HE_SF,SLc Processor,SLc inner vector theta angle,var,,
 TOTAL,,48,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-TUBEREMAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+TAR,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 mdt_tube_layer,,5,68,64,0,0,31,1,#,,Hit Extractor,Tube Remap,Tube layer within one station,var,,
 mdt_tube_num,,9,63,55,0,0,511,1,#,,Hit Extractor,Tube Remap,Tube number within one station,var,,
 mdt_tube_rho,,18,54,37,5,0,12000,0.05000,mm,,Hit Extractor,Tube Remap,Tube radial position,var,,
@@ -85,7 +84,7 @@ mdt_tube_z,,19,36,18,5,0,25000,0.05000,mm,,Hit Extractor,Tube Remap,Tube positio
 mdt_tube_time,,18,17,0,1,0,102400,0.78125,ns,,Hit Extractor,Tube Remap,Tube (uncalibrated) time,var,,
 TOTAL,,69,,,,,,,,,,,,,,per tube
 ,,,,,,,,,,,,,,,,
-HE_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+HP_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
 data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_localx,,14,36,23,5,0,780,0.05000,mm,,SF,HE,Tube local position along precision coord,var,,LSF
@@ -93,7 +92,7 @@ mdt_localy,,14,22,9,5,0,720,0.05000,mm,,SF,HE,Tube local position along second c
 mdt_radius,,9,8,0,5,0,15,0.05000,mm,,SF,HE,Tube drift radius,var,,LSF
 TOTAL,,39,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-HE_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+HP_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
 data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_localx,,14,36,23,4,0,1024,0.06500,mm,,SF,HE,Tube local position along precision coord,var,,csf
@@ -102,14 +101,10 @@ mdt_radius,,9,8,0,5,0,16,0.05000,mm,,SF,HE,Tube drift radius,var,,csf
 TOTAL,,39,,,,,◊,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_MUID,,20,52,33,0,,,,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,
-vec_mdtid,INN,6,32,27,0,0,63,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
-vec_mdtid,MID,6,26,21,0,0,63,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
-vec_mdtid,OUT,6,20,15,0,0,63,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
-vec_mdtid,EXT,6,14,9,0,0,63,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
+SLC_MUID,,20,28,9,0,,,,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,
 phimod,,8,8,1,0,-400,400,4.00000,mrad,,◊,SLC Pipeline,(COPY),var,,
 charge,,1,0,0,0,0,2,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
-TOTAL,,53,,,,,,,,,,,,,,
+TOTAL,,29,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,54,35,0,,,,#,,Pt Calc,SF,(COPY),SLC_MUID,,

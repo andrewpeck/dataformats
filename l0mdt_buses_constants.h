@@ -306,18 +306,21 @@ const int TDCPOLMUX_FIBERID_LEN = 5;
 const int TDCPOLMUX_FIBERID_MSB = 9;
 const int TDCPOLMUX_FIBERID_LSB = 5;
 const int TDCPOLMUX_FIBERID_DECB = 0;
+const int TDCPOLMUX_FIBERID_IW = 5;
 
 // Elink ID within fiber
 const int TDCPOLMUX_ELINKID_LEN = 4;
 const int TDCPOLMUX_ELINKID_MSB = 4;
 const int TDCPOLMUX_ELINKID_LSB = 1;
 const int TDCPOLMUX_ELINKID_DECB = 0;
+const int TDCPOLMUX_ELINKID_IW = 4;
 
 // Valid bit
 const int TDCPOLMUX_DATAVALID_LEN = 1;
 const int TDCPOLMUX_DATAVALID_MSB = 0;
 const int TDCPOLMUX_DATAVALID_LSB = 0;
 const int TDCPOLMUX_DATAVALID_DECB = 0;
+const int TDCPOLMUX_DATAVALID_IW = 1;
 
 // -------------------------------------------------------------------
 const int SLCPROC_HPS_SF_LEN = 49;
@@ -390,6 +393,7 @@ const int TAR_MDT_TUBE_TIME_LEN = 18;
 const int TAR_MDT_TUBE_TIME_MSB = 17;
 const int TAR_MDT_TUBE_TIME_LSB = 0;
 const int TAR_MDT_TUBE_TIME_DECB = 1;
+const int TAR_MDT_TUBE_TIME_IW = 17;
 
 // -------------------------------------------------------------------
 const int HPS_LSF_LEN = 40;
@@ -533,24 +537,29 @@ const int PTCALC_PTTHRESH_LEN = 4;
 const int PTCALC_PTTHRESH_MSB = 9;
 const int PTCALC_PTTHRESH_LSB = 6;
 const int PTCALC_PTTHRESH_DECB = 0;
+const int PTCALC_PTTHRESH_IW = 4;
+const int PTCALC_PTTHRESH_SCALE = 5;
 
 // charge determined from the pT calc
 const int PTCALC_CHARGE_LEN = 1;
 const int PTCALC_CHARGE_MSB = 5;
 const int PTCALC_CHARGE_LSB = 5;
 const int PTCALC_CHARGE_DECB = 0;
+const int PTCALC_CHARGE_IW = 1;
 
 // # of segments used for calculating the pT
 const int PTCALC_NSEGMENTS_LEN = 2;
 const int PTCALC_NSEGMENTS_MSB = 4;
 const int PTCALC_NSEGMENTS_LSB = 3;
 const int PTCALC_NSEGMENTS_DECB = 0;
+const int PTCALC_NSEGMENTS_IW = 2;
 
 // quality of the MDT TC (TBC how this is defined)
 const int PTCALC_QUALITY_LEN = 3;
 const int PTCALC_QUALITY_MSB = 2;
 const int PTCALC_QUALITY_LSB = 0;
 const int PTCALC_QUALITY_DECB = 0;
+const int PTCALC_QUALITY_IW = 3;
 
 // -------------------------------------------------------------------
 const int SLCPIPE_MTC_ENDCAP_LEN = 55;
@@ -650,6 +659,7 @@ const int MTC_PROCFLAGS_LEN = 4;
 const int MTC_PROCFLAGS_MSB = 8;
 const int MTC_PROCFLAGS_LSB = 5;
 const int MTC_PROCFLAGS_DECB = 0;
+const int MTC_PROCFLAGS_IW = 4;
 
 // (COPY)
 const int MTC_NSEGMENTS_LEN = 2;

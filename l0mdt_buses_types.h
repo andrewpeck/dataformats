@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_TYPES_H
 #define LOMDT_BUSES_TYPES_H
 
-const char df_hash_types[] = "a34aee13";
+const char df_hash_types[] = "7221817b";
 
 // Usage:
 //   uint16_t bcid;

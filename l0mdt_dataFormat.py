@@ -150,11 +150,9 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             suffix = ""
             
-            if var.station:
-                prefix = f"{bus.name}_{var.station}_"
-            else:
-                prefix = f"{bus.name}_"
-
+            prefix = f"{bus.name}"
+            prefix += f"_{var.station}" if var.station else ""
+            prefix += "_"
             var_name = f"{prefix}{var.name}{suffix}".upper()
 
             write_ln(tpl %(f"{var_name}_LEN", var.width))
@@ -187,9 +185,8 @@ def write_c_file(c_name, df_hash, o_dir) :
             
             prefix = f"{bus.name}"
             prefix += f"_{var.station}" if var.station else ""
-            prefix += f"_{var.name}"
-
-            var_name = f"{prefix}{suffix}".upper()
+            prefix += "_"
+            var_name = f"{prefix}{var.name}{suffix}".upper()
 
             ap_type = get_hls_type(var)
             if 'fixed' in ap_type:

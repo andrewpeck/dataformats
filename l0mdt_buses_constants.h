@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "1db9cdce";
+const char df_hash[] = "eec84758";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;
@@ -267,202 +267,172 @@ const int TDC_PULSEWIDTH_LSB = 0;
 const int TDC_PULSEWIDTH_DECB = 1;
 
 // -------------------------------------------------------------------
-const int TDCFORMAT_LEN = 44;
+const int TDCPOLMUX_LEN = 42;
 
 // (COPY)
-const int TDCFORMAT_TDC_LEN = 32;
-const int TDCFORMAT_TDC_MSB = 43;
-const int TDCFORMAT_TDC_LSB = 12;
-const int TDCFORMAT_TDC_DECB = 0;
+const int TDCPOLMUX_TDC_LEN = 32;
+const int TDCPOLMUX_TDC_MSB = 41;
+const int TDCPOLMUX_TDC_LSB = 10;
+const int TDCPOLMUX_TDC_DECB = 0;
 
 // Fiber ID within board
-const int TDCFORMAT_FIBERID_LEN = 5;
-const int TDCFORMAT_FIBERID_MSB = 11;
-const int TDCFORMAT_FIBERID_LSB = 7;
-const int TDCFORMAT_FIBERID_DECB = 0;
+const int TDCPOLMUX_FIBERID_LEN = 5;
+const int TDCPOLMUX_FIBERID_MSB = 9;
+const int TDCPOLMUX_FIBERID_LSB = 5;
+const int TDCPOLMUX_FIBERID_DECB = 0;
 
 // Elink ID within fiber
-const int TDCFORMAT_ELINKID_LEN = 4;
-const int TDCFORMAT_ELINKID_MSB = 6;
-const int TDCFORMAT_ELINKID_LSB = 3;
-const int TDCFORMAT_ELINKID_DECB = 0;
+const int TDCPOLMUX_ELINKID_LEN = 4;
+const int TDCPOLMUX_ELINKID_MSB = 4;
+const int TDCPOLMUX_ELINKID_LSB = 1;
+const int TDCPOLMUX_ELINKID_DECB = 0;
 
 // Valid bit
-const int TDCFORMAT_DATAVALID_LEN = 1;
-const int TDCFORMAT_DATAVALID_MSB = 2;
-const int TDCFORMAT_DATAVALID_LSB = 2;
-const int TDCFORMAT_DATAVALID_DECB = 0;
-
-// MDT Station Type (Inner, Middle, Outer, Extra)
-const int TDCFORMAT_STATIONID_LEN = 2;
-const int TDCFORMAT_STATIONID_MSB = 1;
-const int TDCFORMAT_STATIONID_LSB = 0;
-const int TDCFORMAT_STATIONID_DECB = 0;
+const int TDCPOLMUX_DATAVALID_LEN = 1;
+const int TDCPOLMUX_DATAVALID_MSB = 0;
+const int TDCPOLMUX_DATAVALID_LSB = 0;
+const int TDCPOLMUX_DATAVALID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_HESF_LEN = 48;
+const int SLCPROC_HPS_LEN = 48;
 
 // SLc Muon Unique Identifier
-const int SLCPROC_HESF_SLC_MUID_LEN = 20;
-const int SLCPROC_HESF_SLC_MUID_MSB = 47;
-const int SLCPROC_HESF_SLC_MUID_LSB = 28;
-const int SLCPROC_HESF_SLC_MUID_DECB = 0;
+const int SLCPROC_HPS_SLC_MUID_LEN = 20;
+const int SLCPROC_HPS_SLC_MUID_MSB = 47;
+const int SLCPROC_HPS_SLC_MUID_LSB = 28;
+const int SLCPROC_HPS_SLC_MUID_DECB = 0;
 
 // inner MDT segment chip destination
-const int SLCPROC_HESF_MDTSEG_DEST_LEN = 2;
-const int SLCPROC_HESF_MDTSEG_DEST_MSB = 27;
-const int SLCPROC_HESF_MDTSEG_DEST_LSB = 26;
-const int SLCPROC_HESF_MDTSEG_DEST_DECB = 0;
+const int SLCPROC_HPS_MDTSEG_DEST_LEN = 2;
+const int SLCPROC_HPS_MDTSEG_DEST_MSB = 27;
+const int SLCPROC_HPS_MDTSEG_DEST_LSB = 26;
+const int SLCPROC_HPS_MDTSEG_DEST_DECB = 0;
 
 // SLc Inner Vector MDT chamber ID
-const int SLCPROC_HESF_VEC_MDTID_LEN = 6;
-const int SLCPROC_HESF_VEC_MDTID_MSB = 25;
-const int SLCPROC_HESF_VEC_MDTID_LSB = 20;
-const int SLCPROC_HESF_VEC_MDTID_DECB = 0;
+const int SLCPROC_HPS_VEC_MDTID_LEN = 6;
+const int SLCPROC_HPS_VEC_MDTID_MSB = 25;
+const int SLCPROC_HPS_VEC_MDTID_LSB = 20;
+const int SLCPROC_HPS_VEC_MDTID_DECB = 0;
 
 // SLc inner vector rho position
-const int SLCPROC_HESF_VEC_POS_LEN = 10;
-const int SLCPROC_HESF_VEC_POS_MSB = 19;
-const int SLCPROC_HESF_VEC_POS_LSB = 10;
-const int SLCPROC_HESF_VEC_POS_DECB = 0;
+const int SLCPROC_HPS_VEC_POS_LEN = 10;
+const int SLCPROC_HPS_VEC_POS_MSB = 19;
+const int SLCPROC_HPS_VEC_POS_LSB = 10;
+const int SLCPROC_HPS_VEC_POS_DECB = 0;
 
 // SLc inner vector theta angle
-const int SLCPROC_HESF_VEC_ANG_LEN = 10;
-const int SLCPROC_HESF_VEC_ANG_MSB = 9;
-const int SLCPROC_HESF_VEC_ANG_LSB = 0;
-const int SLCPROC_HESF_VEC_ANG_DECB = 0;
+const int SLCPROC_HPS_VEC_ANG_LEN = 10;
+const int SLCPROC_HPS_VEC_ANG_MSB = 9;
+const int SLCPROC_HPS_VEC_ANG_LSB = 0;
+const int SLCPROC_HPS_VEC_ANG_DECB = 0;
 
 // -------------------------------------------------------------------
-const int TUBEREMAP_LEN = 69;
+const int TAR_LEN = 69;
 
 // Tube layer within one station
-const int TUBEREMAP_MDT_TUBE_LAYER_LEN = 5;
-const int TUBEREMAP_MDT_TUBE_LAYER_MSB = 68;
-const int TUBEREMAP_MDT_TUBE_LAYER_LSB = 64;
-const int TUBEREMAP_MDT_TUBE_LAYER_DECB = 0;
+const int TAR_MDT_TUBE_LAYER_LEN = 5;
+const int TAR_MDT_TUBE_LAYER_MSB = 68;
+const int TAR_MDT_TUBE_LAYER_LSB = 64;
+const int TAR_MDT_TUBE_LAYER_DECB = 0;
 
 // Tube number within one station
-const int TUBEREMAP_MDT_TUBE_NUM_LEN = 9;
-const int TUBEREMAP_MDT_TUBE_NUM_MSB = 63;
-const int TUBEREMAP_MDT_TUBE_NUM_LSB = 55;
-const int TUBEREMAP_MDT_TUBE_NUM_DECB = 0;
+const int TAR_MDT_TUBE_NUM_LEN = 9;
+const int TAR_MDT_TUBE_NUM_MSB = 63;
+const int TAR_MDT_TUBE_NUM_LSB = 55;
+const int TAR_MDT_TUBE_NUM_DECB = 0;
 
 // Tube radial position
-const int TUBEREMAP_MDT_TUBE_RHO_LEN = 18;
-const int TUBEREMAP_MDT_TUBE_RHO_MSB = 54;
-const int TUBEREMAP_MDT_TUBE_RHO_LSB = 37;
-const int TUBEREMAP_MDT_TUBE_RHO_DECB = 5;
+const int TAR_MDT_TUBE_RHO_LEN = 18;
+const int TAR_MDT_TUBE_RHO_MSB = 54;
+const int TAR_MDT_TUBE_RHO_LSB = 37;
+const int TAR_MDT_TUBE_RHO_DECB = 5;
 
 // Tube position along z
-const int TUBEREMAP_MDT_TUBE_Z_LEN = 19;
-const int TUBEREMAP_MDT_TUBE_Z_MSB = 36;
-const int TUBEREMAP_MDT_TUBE_Z_LSB = 18;
-const int TUBEREMAP_MDT_TUBE_Z_DECB = 5;
+const int TAR_MDT_TUBE_Z_LEN = 19;
+const int TAR_MDT_TUBE_Z_MSB = 36;
+const int TAR_MDT_TUBE_Z_LSB = 18;
+const int TAR_MDT_TUBE_Z_DECB = 5;
 
 // Tube (uncalibrated) time
-const int TUBEREMAP_MDT_TUBE_TIME_LEN = 18;
-const int TUBEREMAP_MDT_TUBE_TIME_MSB = 17;
-const int TUBEREMAP_MDT_TUBE_TIME_LSB = 0;
-const int TUBEREMAP_MDT_TUBE_TIME_DECB = 1;
+const int TAR_MDT_TUBE_TIME_LEN = 18;
+const int TAR_MDT_TUBE_TIME_MSB = 17;
+const int TAR_MDT_TUBE_TIME_LSB = 0;
+const int TAR_MDT_TUBE_TIME_DECB = 1;
 
 // -------------------------------------------------------------------
-const int HE_LSF_LEN = 39;
+const int HP_LSF_LEN = 39;
 
 // Hit Valid bit
-const int HE_LSF_MDT_VALID_LEN = 1;
-const int HE_LSF_MDT_VALID_MSB = 38;
-const int HE_LSF_MDT_VALID_LSB = 38;
-const int HE_LSF_MDT_VALID_DECB = 0;
+const int HP_LSF_MDT_VALID_LEN = 1;
+const int HP_LSF_MDT_VALID_MSB = 38;
+const int HP_LSF_MDT_VALID_LSB = 38;
+const int HP_LSF_MDT_VALID_DECB = 0;
 
 // Data Valid bit
-const int HE_LSF_DATA_VALID_LEN = 1;
-const int HE_LSF_DATA_VALID_MSB = 37;
-const int HE_LSF_DATA_VALID_LSB = 37;
-const int HE_LSF_DATA_VALID_DECB = 0;
+const int HP_LSF_DATA_VALID_LEN = 1;
+const int HP_LSF_DATA_VALID_MSB = 37;
+const int HP_LSF_DATA_VALID_LSB = 37;
+const int HP_LSF_DATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HE_LSF_MDT_LOCALX_LEN = 14;
-const int HE_LSF_MDT_LOCALX_MSB = 36;
-const int HE_LSF_MDT_LOCALX_LSB = 23;
-const int HE_LSF_MDT_LOCALX_DECB = 5;
+const int HP_LSF_MDT_LOCALX_LEN = 14;
+const int HP_LSF_MDT_LOCALX_MSB = 36;
+const int HP_LSF_MDT_LOCALX_LSB = 23;
+const int HP_LSF_MDT_LOCALX_DECB = 5;
 
 // Tube local position along second coord
-const int HE_LSF_MDT_LOCALY_LEN = 14;
-const int HE_LSF_MDT_LOCALY_MSB = 22;
-const int HE_LSF_MDT_LOCALY_LSB = 9;
-const int HE_LSF_MDT_LOCALY_DECB = 5;
+const int HP_LSF_MDT_LOCALY_LEN = 14;
+const int HP_LSF_MDT_LOCALY_MSB = 22;
+const int HP_LSF_MDT_LOCALY_LSB = 9;
+const int HP_LSF_MDT_LOCALY_DECB = 5;
 
 // Tube drift radius
-const int HE_LSF_MDT_RADIUS_LEN = 9;
-const int HE_LSF_MDT_RADIUS_MSB = 8;
-const int HE_LSF_MDT_RADIUS_LSB = 0;
-const int HE_LSF_MDT_RADIUS_DECB = 5;
+const int HP_LSF_MDT_RADIUS_LEN = 9;
+const int HP_LSF_MDT_RADIUS_MSB = 8;
+const int HP_LSF_MDT_RADIUS_LSB = 0;
+const int HP_LSF_MDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int HE_CSF_LEN = 39;
+const int HP_CSF_LEN = 39;
 
 // Hit Valid bit
-const int HE_CSF_MDT_VALID_LEN = 1;
-const int HE_CSF_MDT_VALID_MSB = 38;
-const int HE_CSF_MDT_VALID_LSB = 38;
-const int HE_CSF_MDT_VALID_DECB = 0;
+const int HP_CSF_MDT_VALID_LEN = 1;
+const int HP_CSF_MDT_VALID_MSB = 38;
+const int HP_CSF_MDT_VALID_LSB = 38;
+const int HP_CSF_MDT_VALID_DECB = 0;
 
 // Data Valid bit
-const int HE_CSF_DATA_VALID_LEN = 1;
-const int HE_CSF_DATA_VALID_MSB = 37;
-const int HE_CSF_DATA_VALID_LSB = 37;
-const int HE_CSF_DATA_VALID_DECB = 0;
+const int HP_CSF_DATA_VALID_LEN = 1;
+const int HP_CSF_DATA_VALID_MSB = 37;
+const int HP_CSF_DATA_VALID_LSB = 37;
+const int HP_CSF_DATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HE_CSF_MDT_LOCALX_LEN = 14;
-const int HE_CSF_MDT_LOCALX_MSB = 36;
-const int HE_CSF_MDT_LOCALX_LSB = 23;
-const int HE_CSF_MDT_LOCALX_DECB = 4;
+const int HP_CSF_MDT_LOCALX_LEN = 14;
+const int HP_CSF_MDT_LOCALX_MSB = 36;
+const int HP_CSF_MDT_LOCALX_LSB = 23;
+const int HP_CSF_MDT_LOCALX_DECB = 4;
 
 // Tube local position along second coord
-const int HE_CSF_MDT_LOCALY_LEN = 14;
-const int HE_CSF_MDT_LOCALY_MSB = 22;
-const int HE_CSF_MDT_LOCALY_LSB = 9;
-const int HE_CSF_MDT_LOCALY_DECB = 4;
+const int HP_CSF_MDT_LOCALY_LEN = 14;
+const int HP_CSF_MDT_LOCALY_MSB = 22;
+const int HP_CSF_MDT_LOCALY_LSB = 9;
+const int HP_CSF_MDT_LOCALY_DECB = 4;
 
 // Tube drift radius
-const int HE_CSF_MDT_RADIUS_LEN = 9;
-const int HE_CSF_MDT_RADIUS_MSB = 8;
-const int HE_CSF_MDT_RADIUS_LSB = 0;
-const int HE_CSF_MDT_RADIUS_DECB = 5;
+const int HP_CSF_MDT_RADIUS_LEN = 9;
+const int HP_CSF_MDT_RADIUS_MSB = 8;
+const int HP_CSF_MDT_RADIUS_LSB = 0;
+const int HP_CSF_MDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int SLCPIPE_PTCALC_LEN = 53;
+const int SLCPIPE_PTCALC_LEN = 29;
 
 // (COPY)
 const int SLCPIPE_PTCALC_SLC_MUID_LEN = 20;
-const int SLCPIPE_PTCALC_SLC_MUID_MSB = 52;
-const int SLCPIPE_PTCALC_SLC_MUID_LSB = 33;
+const int SLCPIPE_PTCALC_SLC_MUID_MSB = 28;
+const int SLCPIPE_PTCALC_SLC_MUID_LSB = 9;
 const int SLCPIPE_PTCALC_SLC_MUID_DECB = 0;
-
-// (COPY)
-const int SLCPIPE_PTCALC_INN_VEC_MDTID_LEN = 6;
-const int SLCPIPE_PTCALC_INN_VEC_MDTID_MSB = 32;
-const int SLCPIPE_PTCALC_INN_VEC_MDTID_LSB = 27;
-const int SLCPIPE_PTCALC_INN_VEC_MDTID_DECB = 0;
-
-// (COPY)
-const int SLCPIPE_PTCALC_MID_VEC_MDTID_LEN = 6;
-const int SLCPIPE_PTCALC_MID_VEC_MDTID_MSB = 26;
-const int SLCPIPE_PTCALC_MID_VEC_MDTID_LSB = 21;
-const int SLCPIPE_PTCALC_MID_VEC_MDTID_DECB = 0;
-
-// (COPY)
-const int SLCPIPE_PTCALC_OUT_VEC_MDTID_LEN = 6;
-const int SLCPIPE_PTCALC_OUT_VEC_MDTID_MSB = 20;
-const int SLCPIPE_PTCALC_OUT_VEC_MDTID_LSB = 15;
-const int SLCPIPE_PTCALC_OUT_VEC_MDTID_DECB = 0;
-
-// (COPY)
-const int SLCPIPE_PTCALC_EXT_VEC_MDTID_LEN = 6;
-const int SLCPIPE_PTCALC_EXT_VEC_MDTID_MSB = 14;
-const int SLCPIPE_PTCALC_EXT_VEC_MDTID_LSB = 9;
-const int SLCPIPE_PTCALC_EXT_VEC_MDTID_DECB = 0;
 
 // (COPY)
 const int SLCPIPE_PTCALC_PHIMOD_LEN = 8;

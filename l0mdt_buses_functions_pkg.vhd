@@ -72,39 +72,39 @@ package mdttp_functions_pkg is
   return TDC_rt;
 
   -- -----------------------------------------------------------------
-  function tdcformat_2af (d: TDCFORMAT_rt)
+  function tdcpolmux_2af (d: TDCPOLMUX_rt)
   return std_logic_vector;
 
-  function tdcformat_2rf (v: tdcformat_at)
-  return TDCFORMAT_rt;
+  function tdcpolmux_2rf (v: tdcpolmux_at)
+  return TDCPOLMUX_rt;
 
   -- -----------------------------------------------------------------
-  function slcproc_hesf_2af (d: SLCPROC_HESF_rt)
+  function slcproc_hps_2af (d: SLCPROC_HPS_rt)
   return std_logic_vector;
 
-  function slcproc_hesf_2rf (v: slcproc_hesf_at)
-  return SLCPROC_HESF_rt;
+  function slcproc_hps_2rf (v: slcproc_hps_at)
+  return SLCPROC_HPS_rt;
 
   -- -----------------------------------------------------------------
-  function tuberemap_2af (d: TUBEREMAP_rt)
+  function tar_2af (d: TAR_rt)
   return std_logic_vector;
 
-  function tuberemap_2rf (v: tuberemap_at)
-  return TUBEREMAP_rt;
+  function tar_2rf (v: tar_at)
+  return TAR_rt;
 
   -- -----------------------------------------------------------------
-  function he_lsf_2af (d: HE_LSF_rt)
+  function hp_lsf_2af (d: HP_LSF_rt)
   return std_logic_vector;
 
-  function he_lsf_2rf (v: he_lsf_at)
-  return HE_LSF_rt;
+  function hp_lsf_2rf (v: hp_lsf_at)
+  return HP_LSF_rt;
 
   -- -----------------------------------------------------------------
-  function he_csf_2af (d: HE_CSF_rt)
+  function hp_csf_2af (d: HP_CSF_rt)
   return std_logic_vector;
 
-  function he_csf_2rf (v: he_csf_at)
-  return HE_CSF_rt;
+  function hp_csf_2rf (v: hp_csf_at)
+  return HP_CSF_rt;
 
   -- -----------------------------------------------------------------
   function slcpipe_ptcalc_2af (d: SLCPIPE_PTCALC_rt)
@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"1db9cdce";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"eec84758";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -449,46 +449,42 @@ package body mdttp_functions_pkg is
   end function tdc_2rf;
 
   -- -----------------------------------------------------------------
-  function tdcformat_2af (d: TDCFORMAT_rt)
+  function tdcpolmux_2af (d: TDCPOLMUX_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(TDCFORMAT_LEN-1 downto 0);
+    variable v : std_logic_vector(TDCPOLMUX_LEN-1 downto 0);
   begin
     v := tdc_2af(d.tdc_r)
          & d.fiberid
          & d.elinkid
-         & d.datavalid
-         & d.stationid;
+         & d.datavalid;
     return v;
-  end function tdcformat_2af;
+  end function tdcpolmux_2af;
 
-  function tdcformat_2rf (v: tdcformat_at)
-  return TDCFORMAT_rt is
-    variable b : TDCFORMAT_rt;
+  function tdcpolmux_2rf (v: tdcpolmux_at)
+  return TDCPOLMUX_rt is
+    variable b : TDCPOLMUX_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TDCFORMAT_LEN - 1; -- 44
-    lsb := msb - TDCFORMAT_TDC_LEN + 1; -- 32
-    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 43 12
+    msb := TDCPOLMUX_LEN - 1; -- 42
+    lsb := msb - TDCPOLMUX_TDC_LEN + 1; -- 32
+    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 41 10
     msb := lsb - 1;
-    lsb := msb - TDCFORMAT_FIBERID_LEN + 1; -- 5
-    b.fiberid := v(msb downto lsb); -- 11 7
+    lsb := msb - TDCPOLMUX_FIBERID_LEN + 1; -- 5
+    b.fiberid := v(msb downto lsb); -- 9 5
     msb := lsb - 1;
-    lsb := msb - TDCFORMAT_ELINKID_LEN + 1; -- 4
-    b.elinkid := v(msb downto lsb); -- 6 3
+    lsb := msb - TDCPOLMUX_ELINKID_LEN + 1; -- 4
+    b.elinkid := v(msb downto lsb); -- 4 1
     msb := lsb - 1;
-    lsb := msb - TDCFORMAT_DATAVALID_LEN + 1; -- 1
-    b.datavalid := v(msb); -- 2
-    msb := lsb - 1;
-    lsb := msb - TDCFORMAT_STATIONID_LEN + 1; -- 2
-    b.stationid := v(msb downto lsb); -- 1 0
+    lsb := msb - TDCPOLMUX_DATAVALID_LEN + 1; -- 1
+    b.datavalid := v(msb); -- 0
     return b;
-  end function tdcformat_2rf;
+  end function tdcpolmux_2rf;
 
   -- -----------------------------------------------------------------
-  function slcproc_hesf_2af (d: SLCPROC_HESF_rt)
+  function slcproc_hps_2af (d: SLCPROC_HPS_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_HESF_LEN-1 downto 0);
+    variable v : std_logic_vector(SLCPROC_HPS_LEN-1 downto 0);
   begin
     v := slc_muid_2af(d.slc_muid_r)
          & d.mdtseg_dest
@@ -496,36 +492,36 @@ package body mdttp_functions_pkg is
          & d.vec_pos
          & d.vec_ang;
     return v;
-  end function slcproc_hesf_2af;
+  end function slcproc_hps_2af;
 
-  function slcproc_hesf_2rf (v: slcproc_hesf_at)
-  return SLCPROC_HESF_rt is
-    variable b : SLCPROC_HESF_rt;
+  function slcproc_hps_2rf (v: slcproc_hps_at)
+  return SLCPROC_HPS_rt is
+    variable b : SLCPROC_HPS_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_HESF_LEN - 1; -- 48
-    lsb := msb - SLCPROC_HESF_SLC_MUID_LEN + 1; -- 20
+    msb := SLCPROC_HPS_LEN - 1; -- 48
+    lsb := msb - SLCPROC_HPS_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 47 28
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HESF_MDTSEG_DEST_LEN + 1; -- 2
+    lsb := msb - SLCPROC_HPS_MDTSEG_DEST_LEN + 1; -- 2
     b.mdtseg_dest := v(msb downto lsb); -- 27 26
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HESF_VEC_MDTID_LEN + 1; -- 6
+    lsb := msb - SLCPROC_HPS_VEC_MDTID_LEN + 1; -- 6
     b.vec_mdtid := v(msb downto lsb); -- 25 20
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HESF_VEC_POS_LEN + 1; -- 10
+    lsb := msb - SLCPROC_HPS_VEC_POS_LEN + 1; -- 10
     b.vec_pos := v(msb downto lsb); -- 19 10
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HESF_VEC_ANG_LEN + 1; -- 10
+    lsb := msb - SLCPROC_HPS_VEC_ANG_LEN + 1; -- 10
     b.vec_ang := v(msb downto lsb); -- 9 0
     return b;
-  end function slcproc_hesf_2rf;
+  end function slcproc_hps_2rf;
 
   -- -----------------------------------------------------------------
-  function tuberemap_2af (d: TUBEREMAP_rt)
+  function tar_2af (d: TAR_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(TUBEREMAP_LEN-1 downto 0);
+    variable v : std_logic_vector(TAR_LEN-1 downto 0);
   begin
     v := d.mdt_tube_layer
          & d.mdt_tube_num
@@ -533,36 +529,36 @@ package body mdttp_functions_pkg is
          & d.mdt_tube_z
          & d.mdt_tube_time;
     return v;
-  end function tuberemap_2af;
+  end function tar_2af;
 
-  function tuberemap_2rf (v: tuberemap_at)
-  return TUBEREMAP_rt is
-    variable b : TUBEREMAP_rt;
+  function tar_2rf (v: tar_at)
+  return TAR_rt is
+    variable b : TAR_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TUBEREMAP_LEN - 1; -- 69
-    lsb := msb - TUBEREMAP_MDT_TUBE_LAYER_LEN + 1; -- 5
+    msb := TAR_LEN - 1; -- 69
+    lsb := msb - TAR_MDT_TUBE_LAYER_LEN + 1; -- 5
     b.mdt_tube_layer := v(msb downto lsb); -- 68 64
     msb := lsb - 1;
-    lsb := msb - TUBEREMAP_MDT_TUBE_NUM_LEN + 1; -- 9
+    lsb := msb - TAR_MDT_TUBE_NUM_LEN + 1; -- 9
     b.mdt_tube_num := v(msb downto lsb); -- 63 55
     msb := lsb - 1;
-    lsb := msb - TUBEREMAP_MDT_TUBE_RHO_LEN + 1; -- 18
+    lsb := msb - TAR_MDT_TUBE_RHO_LEN + 1; -- 18
     b.mdt_tube_rho := v(msb downto lsb); -- 54 37
     msb := lsb - 1;
-    lsb := msb - TUBEREMAP_MDT_TUBE_Z_LEN + 1; -- 19
+    lsb := msb - TAR_MDT_TUBE_Z_LEN + 1; -- 19
     b.mdt_tube_z := v(msb downto lsb); -- 36 18
     msb := lsb - 1;
-    lsb := msb - TUBEREMAP_MDT_TUBE_TIME_LEN + 1; -- 18
+    lsb := msb - TAR_MDT_TUBE_TIME_LEN + 1; -- 18
     b.mdt_tube_time := v(msb downto lsb); -- 17 0
     return b;
-  end function tuberemap_2rf;
+  end function tar_2rf;
 
   -- -----------------------------------------------------------------
-  function he_lsf_2af (d: HE_LSF_rt)
+  function hp_lsf_2af (d: HP_LSF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(HE_LSF_LEN-1 downto 0);
+    variable v : std_logic_vector(HP_LSF_LEN-1 downto 0);
   begin
     v := d.mdt_valid
          & d.data_valid
@@ -570,36 +566,36 @@ package body mdttp_functions_pkg is
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function he_lsf_2af;
+  end function hp_lsf_2af;
 
-  function he_lsf_2rf (v: he_lsf_at)
-  return HE_LSF_rt is
-    variable b : HE_LSF_rt;
+  function hp_lsf_2rf (v: hp_lsf_at)
+  return HP_LSF_rt is
+    variable b : HP_LSF_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HE_LSF_LEN - 1; -- 39
-    lsb := msb - HE_LSF_MDT_VALID_LEN + 1; -- 1
+    msb := HP_LSF_LEN - 1; -- 39
+    lsb := msb - HP_LSF_MDT_VALID_LEN + 1; -- 1
     b.mdt_valid := v(msb); -- 38
     msb := lsb - 1;
-    lsb := msb - HE_LSF_DATA_VALID_LEN + 1; -- 1
+    lsb := msb - HP_LSF_DATA_VALID_LEN + 1; -- 1
     b.data_valid := v(msb); -- 37
     msb := lsb - 1;
-    lsb := msb - HE_LSF_MDT_LOCALX_LEN + 1; -- 14
+    lsb := msb - HP_LSF_MDT_LOCALX_LEN + 1; -- 14
     b.mdt_localx := v(msb downto lsb); -- 36 23
     msb := lsb - 1;
-    lsb := msb - HE_LSF_MDT_LOCALY_LEN + 1; -- 14
+    lsb := msb - HP_LSF_MDT_LOCALY_LEN + 1; -- 14
     b.mdt_localy := v(msb downto lsb); -- 22 9
     msb := lsb - 1;
-    lsb := msb - HE_LSF_MDT_RADIUS_LEN + 1; -- 9
+    lsb := msb - HP_LSF_MDT_RADIUS_LEN + 1; -- 9
     b.mdt_radius := v(msb downto lsb); -- 8 0
     return b;
-  end function he_lsf_2rf;
+  end function hp_lsf_2rf;
 
   -- -----------------------------------------------------------------
-  function he_csf_2af (d: HE_CSF_rt)
+  function hp_csf_2af (d: HP_CSF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(HE_CSF_LEN-1 downto 0);
+    variable v : std_logic_vector(HP_CSF_LEN-1 downto 0);
   begin
     v := d.mdt_valid
          & d.data_valid
@@ -607,31 +603,31 @@ package body mdttp_functions_pkg is
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function he_csf_2af;
+  end function hp_csf_2af;
 
-  function he_csf_2rf (v: he_csf_at)
-  return HE_CSF_rt is
-    variable b : HE_CSF_rt;
+  function hp_csf_2rf (v: hp_csf_at)
+  return HP_CSF_rt is
+    variable b : HP_CSF_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HE_CSF_LEN - 1; -- 39
-    lsb := msb - HE_CSF_MDT_VALID_LEN + 1; -- 1
+    msb := HP_CSF_LEN - 1; -- 39
+    lsb := msb - HP_CSF_MDT_VALID_LEN + 1; -- 1
     b.mdt_valid := v(msb); -- 38
     msb := lsb - 1;
-    lsb := msb - HE_CSF_DATA_VALID_LEN + 1; -- 1
+    lsb := msb - HP_CSF_DATA_VALID_LEN + 1; -- 1
     b.data_valid := v(msb); -- 37
     msb := lsb - 1;
-    lsb := msb - HE_CSF_MDT_LOCALX_LEN + 1; -- 14
+    lsb := msb - HP_CSF_MDT_LOCALX_LEN + 1; -- 14
     b.mdt_localx := v(msb downto lsb); -- 36 23
     msb := lsb - 1;
-    lsb := msb - HE_CSF_MDT_LOCALY_LEN + 1; -- 14
+    lsb := msb - HP_CSF_MDT_LOCALY_LEN + 1; -- 14
     b.mdt_localy := v(msb downto lsb); -- 22 9
     msb := lsb - 1;
-    lsb := msb - HE_CSF_MDT_RADIUS_LEN + 1; -- 9
+    lsb := msb - HP_CSF_MDT_RADIUS_LEN + 1; -- 9
     b.mdt_radius := v(msb downto lsb); -- 8 0
     return b;
-  end function he_csf_2rf;
+  end function hp_csf_2rf;
 
   -- -----------------------------------------------------------------
   function slcpipe_ptcalc_2af (d: SLCPIPE_PTCALC_rt)
@@ -639,10 +635,6 @@ package body mdttp_functions_pkg is
     variable v : std_logic_vector(SLCPIPE_PTCALC_LEN-1 downto 0);
   begin
     v := slc_muid_2af(d.slc_muid_r)
-         & d.inn_vec_mdtid
-         & d.mid_vec_mdtid
-         & d.out_vec_mdtid
-         & d.ext_vec_mdtid
          & d.phimod
          & d.charge;
     return v;
@@ -654,21 +646,9 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPIPE_PTCALC_LEN - 1; -- 53
+    msb := SLCPIPE_PTCALC_LEN - 1; -- 29
     lsb := msb - SLCPIPE_PTCALC_SLC_MUID_LEN + 1; -- 20
-    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 52 33
-    msb := lsb - 1;
-    lsb := msb - SLCPIPE_PTCALC_INN_VEC_MDTID_LEN + 1; -- 6
-    b.inn_vec_mdtid := v(msb downto lsb); -- 32 27
-    msb := lsb - 1;
-    lsb := msb - SLCPIPE_PTCALC_MID_VEC_MDTID_LEN + 1; -- 6
-    b.mid_vec_mdtid := v(msb downto lsb); -- 26 21
-    msb := lsb - 1;
-    lsb := msb - SLCPIPE_PTCALC_OUT_VEC_MDTID_LEN + 1; -- 6
-    b.out_vec_mdtid := v(msb downto lsb); -- 20 15
-    msb := lsb - 1;
-    lsb := msb - SLCPIPE_PTCALC_EXT_VEC_MDTID_LEN + 1; -- 6
-    b.ext_vec_mdtid := v(msb downto lsb); -- 14 9
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 28 9
     msb := lsb - 1;
     lsb := msb - SLCPIPE_PTCALC_PHIMOD_LEN + 1; -- 8
     b.phimod := v(msb downto lsb); -- 8 1

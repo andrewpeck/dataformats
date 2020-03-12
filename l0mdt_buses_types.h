@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "1db9cdce";
+const char df_hash[] = "eec84758";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -122,7 +122,7 @@ typedef struct TDC_n {
 } TDC_rt;
 
 // -------------------------------------------------------------------
-typedef struct TDCFORMAT_n {
+typedef struct TDCPOLMUX_n {
     // struct TDC
     char INN_TDC[4]; // 32 bits
     // Fiber ID within board
@@ -131,12 +131,10 @@ typedef struct TDCFORMAT_n {
     char INN_elinkid; // 4 bits
     // Valid bit
     char INN_datavalid; // 1 bits
-    // MDT Station Type (Inner, Middle, Outer, Extra)
-    char INN_stationid; // 2 bits
-} TDCFORMAT_rt;
+} TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_HESF_n {
+typedef struct SLCPROC_HPS_n {
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
     // inner MDT segment chip destination
@@ -147,10 +145,10 @@ typedef struct SLCPROC_HESF_n {
     char INN_vec_pos[2]; // 10 bits
     // SLc inner vector theta angle
     char INN_vec_ang[2]; // 10 bits
-} SLCPROC_HESF_rt;
+} SLCPROC_HPS_rt;
 
 // -------------------------------------------------------------------
-typedef struct TUBEREMAP_n {
+typedef struct TAR_n {
     // Tube layer within one station
     char INN_mdt_tube_layer; // 5 bits
     // Tube number within one station
@@ -161,10 +159,10 @@ typedef struct TUBEREMAP_n {
     char INN_mdt_tube_z[3]; // 19 bits
     // Tube (uncalibrated) time
     char INN_mdt_tube_time[3]; // 18 bits
-} TUBEREMAP_rt;
+} TAR_rt;
 
 // -------------------------------------------------------------------
-typedef struct HE_LSF_n {
+typedef struct HP_LSF_n {
     // Hit Valid bit
     char INN_mdt_valid; // 1 bits
     // Data Valid bit
@@ -175,10 +173,10 @@ typedef struct HE_LSF_n {
     char INN_mdt_localy[2]; // 14 bits
     // Tube drift radius
     char INN_mdt_radius[2]; // 9 bits
-} HE_LSF_rt;
+} HP_LSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct HE_CSF_n {
+typedef struct HP_CSF_n {
     // Hit Valid bit
     char INN_mdt_valid; // 1 bits
     // Data Valid bit
@@ -189,14 +187,12 @@ typedef struct HE_CSF_n {
     char INN_mdt_localy[2]; // 14 bits
     // Tube drift radius
     char INN_mdt_radius[2]; // 9 bits
-} HE_CSF_rt;
+} HP_CSF_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_PTCALC_n {
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
-    // (COPY)
-    char INN_vec_mdtid; // 6 bits
     // (COPY)
     char INN_phimod; // 8 bits
     // (COPY)

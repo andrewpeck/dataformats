@@ -69,12 +69,13 @@ datavalid,,1,0,0,0,0,1,1,#,,Tube Remap,TDC Formatter,Valid bit,var,,
 TOTAL,,42,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPROC_HPS,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+slc_valid,,1,48,48,0,0,1,1,#,,HE_SF,SLc Processor,SLC Valid bit,var,,
 SLC_MUID,,20,47,28,0,,,,#,,HE_SF,SLc Processor,SLc Muon Unique Identifier,SLC_MUID,,
 mdtseg_dest,,2,27,26,0,0,3,1,#,,HE_SF,SLc Processor,inner MDT segment chip destination,var,,
 vec_mdtid,,6,25,20,0,0,63,1,#,,HE_SF,SLc Processor,SLc Inner Vector MDT chamber ID,var,,
 vec_pos,,10,19,10,0,0,13000,13.00000,mm,,HE_SF,SLc Processor,SLc inner vector rho position,var,,
 vec_ang,,10,9,0,0,0,1599,3.00000,mrad,,HE_SF,SLc Processor,SLc inner vector theta angle,var,,
-TOTAL,,48,,,,,,,,,,,,,,
+TOTAL,,49,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 TAR,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 mdt_tube_layer,,5,68,64,0,0,31,1,#,,Hit Extractor,Tube Remap,Tube layer within one station,var,,
@@ -85,20 +86,18 @@ mdt_tube_time,,18,17,0,1,0,102400,0.78125,ns,,Hit Extractor,Tube Remap,Tube (unc
 TOTAL,,69,,,,,,,,,,,,,,per tube
 ,,,,,,,,,,,,,,,,
 HP_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
 data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_localx,,14,36,23,5,0,780,0.05000,mm,,SF,HE,Tube local position along precision coord,var,,LSF
 mdt_localy,,14,22,9,5,0,720,0.05000,mm,,SF,HE,Tube local position along second coord,var,,LSF
 mdt_radius,,9,8,0,5,0,15,0.05000,mm,,SF,HE,Tube drift radius,var,,LSF
-TOTAL,,39,,,,,,,,,,,,,,
+TOTAL,,38,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 HP_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
 data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_localx,,14,36,23,4,0,1024,0.06500,mm,,SF,HE,Tube local position along precision coord,var,,csf
 mdt_localy,,14,22,9,4,-512,512,0.06500,mm,,SF,HE,Tube local position along second coord,var,,csf
 mdt_radius,,9,8,0,5,0,16,0.05000,mm,,SF,HE,Tube drift radius,var,,csf
-TOTAL,,39,,,,,◊,,,,,,,,,
+TOTAL,,38,,,,,◊,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,28,9,0,,,,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,
@@ -126,7 +125,7 @@ quality,,3,2,0,0,0,7,1,#,,mTC_Builder,Pt Calc,quality of the MDT TC (TBC how thi
 TOTAL,,52,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_MTC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_MUID,,20,53,34,0,,,,,,mTC_Builder,,,,,
+SLC_MUID,,20,53,34,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLC_MUID,,
 SLC_COMMON,,31,33,3,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_ENDCAP,,
 busy,,1,2,2,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
 destsl,,2,1,0,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
@@ -134,7 +133,7 @@ TOTAL,,54,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_MTC_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 cointype,,3,56,54,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
-SLC_MUID,,20,53,34,0,,,,sign,,mTC_builder,,,,,
+SLC_MUID,,20,53,34,0,,,,sign,,mTC_builder,SLC Pipeline,(COPY),SLC_MUID,,
 SLC_COMMON,,31,33,3,0,,,,,,mTC_builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_BARREL,,
 busy,,1,2,2,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
 destsl,,2,1,0,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,

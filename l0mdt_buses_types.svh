@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "7221817b";
+const char df_hash[] = "2f2974c9";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -126,6 +126,8 @@ typedef struct TDCPOLMUX_n {
 
 // -------------------------------------------------------------------
 typedef struct SLCPROC_HPS_n {
+    // SLC Valid bit
+    logic [0:0] slc_validslc_valid;
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // inner MDT segment chip destination
@@ -154,8 +156,6 @@ typedef struct TAR_n {
 
 // -------------------------------------------------------------------
 typedef struct HP_LSF_n {
-    // Hit Valid bit
-    logic [0:0] mdt_validmdt_valid;
     // Data Valid bit
     logic [0:0] data_validdata_valid;
     // Tube local position along precision coord
@@ -168,8 +168,6 @@ typedef struct HP_LSF_n {
 
 // -------------------------------------------------------------------
 typedef struct HP_CSF_n {
-    // Hit Valid bit
-    logic [0:0] mdt_validmdt_valid;
     // Data Valid bit
     logic [0:0] data_validdata_valid;
     // Tube local position along precision coord

@@ -1,4 +1,5 @@
 Name,Station,Width,MSB index,LSB index,DECB
+slc\_valid,,1,48,48,0
 SLC\_MUID,,20,47,28,0
 mdtseg\_dest,,2,27,26,0
 vec\_mdtid,,6,25,20,0

@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"7221817b";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"2f2974c9";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -340,7 +340,14 @@ package mdttp_constants_pkg is
   constant TDCPOLMUX_DATAVALID_MULT : natural := 2;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_HPS_LEN : natural := 48;
+  constant SLCPROC_HPS_LEN : natural := 49;
+
+  -- SLC Valid bit
+  constant SLCPROC_HPS_SLC_VALID_LEN : natural := 1;
+  constant SLCPROC_HPS_SLC_VALID_MSB : natural := 48;
+  constant SLCPROC_HPS_SLC_VALID_LSB : natural := 48;
+  constant SLCPROC_HPS_SLC_VALID_DECB : natural := 0;
+  constant SLCPROC_HPS_SLC_VALID_MULT : natural := 2;
 
   -- SLc Muon Unique Identifier
   constant SLCPROC_HPS_SLC_MUID_LEN : natural := 20;
@@ -416,14 +423,7 @@ package mdttp_constants_pkg is
   constant TAR_MDT_TUBE_TIME_MULT : natural := 3;
 
   ----------------------------------------------------------------------
-  constant HP_LSF_LEN : natural := 39;
-
-  -- Hit Valid bit
-  constant HP_LSF_MDT_VALID_LEN : natural := 1;
-  constant HP_LSF_MDT_VALID_MSB : natural := 38;
-  constant HP_LSF_MDT_VALID_LSB : natural := 38;
-  constant HP_LSF_MDT_VALID_DECB : natural := 0;
-  constant HP_LSF_MDT_VALID_MULT : natural := 2;
+  constant HP_LSF_LEN : natural := 38;
 
   -- Data Valid bit
   constant HP_LSF_DATA_VALID_LEN : natural := 1;
@@ -454,14 +454,7 @@ package mdttp_constants_pkg is
   constant HP_LSF_MDT_RADIUS_MULT : natural := 34;
 
   ----------------------------------------------------------------------
-  constant HP_CSF_LEN : natural := 39;
-
-  -- Hit Valid bit
-  constant HP_CSF_MDT_VALID_LEN : natural := 1;
-  constant HP_CSF_MDT_VALID_MSB : natural := 38;
-  constant HP_CSF_MDT_VALID_LSB : natural := 38;
-  constant HP_CSF_MDT_VALID_DECB : natural := 0;
-  constant HP_CSF_MDT_VALID_MULT : natural := 2;
+  constant HP_CSF_LEN : natural := 38;
 
   -- Data Valid bit
   constant HP_CSF_DATA_VALID_LEN : natural := 1;
@@ -615,7 +608,7 @@ package mdttp_constants_pkg is
   ----------------------------------------------------------------------
   constant SLCPIPE_MTC_ENDCAP_LEN : natural := 54;
 
-  -- 
+  -- (COPY)
   constant SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN : natural := 20;
   constant SLCPIPE_MTC_ENDCAP_SLC_MUID_MSB : natural := 53;
   constant SLCPIPE_MTC_ENDCAP_SLC_MUID_LSB : natural := 34;
@@ -653,7 +646,7 @@ package mdttp_constants_pkg is
   constant SLCPIPE_MTC_BARREL_COINTYPE_DECB : natural := 0;
   constant SLCPIPE_MTC_BARREL_COINTYPE_MULT : natural := 0;
 
-  -- 
+  -- (COPY)
   constant SLCPIPE_MTC_BARREL_SLC_MUID_LEN : natural := 20;
   constant SLCPIPE_MTC_BARREL_SLC_MUID_MSB : natural := 53;
   constant SLCPIPE_MTC_BARREL_SLC_MUID_LSB : natural := 34;

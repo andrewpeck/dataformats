@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "7221817b";
+const char df_hash[] = "2f2974c9";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -135,6 +135,8 @@ typedef struct TDCPOLMUX_n {
 
 // -------------------------------------------------------------------
 typedef struct SLCPROC_HPS_n {
+    // SLC Valid bit
+    char INN_slc_valid; // 1 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
     // inner MDT segment chip destination
@@ -163,8 +165,6 @@ typedef struct TAR_n {
 
 // -------------------------------------------------------------------
 typedef struct HP_LSF_n {
-    // Hit Valid bit
-    char INN_mdt_valid; // 1 bits
     // Data Valid bit
     char INN_data_valid; // 1 bits
     // Tube local position along precision coord
@@ -177,8 +177,6 @@ typedef struct HP_LSF_n {
 
 // -------------------------------------------------------------------
 typedef struct HP_CSF_n {
-    // Hit Valid bit
-    char INN_mdt_valid; // 1 bits
     // Data Valid bit
     char INN_data_valid; // 1 bits
     // Tube local position along precision coord

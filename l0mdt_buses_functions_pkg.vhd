@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"7221817b";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"2f2974c9";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -486,7 +486,8 @@ package body mdttp_functions_pkg is
   return std_logic_vector is
     variable v : std_logic_vector(SLCPROC_HPS_LEN-1 downto 0);
   begin
-    v := slc_muid_2af(d.slc_muid_r)
+    v := d.slc_valid
+         & slc_muid_2af(d.slc_muid_r)
          & d.mdtseg_dest
          & d.vec_mdtid
          & d.vec_pos
@@ -500,7 +501,10 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_HPS_LEN - 1; -- 48
+    msb := SLCPROC_HPS_LEN - 1; -- 49
+    lsb := msb - SLCPROC_HPS_SLC_VALID_LEN + 1; -- 1
+    b.slc_valid := v(msb); -- 48
+    msb := lsb - 1;
     lsb := msb - SLCPROC_HPS_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 47 28
     msb := lsb - 1;
@@ -560,8 +564,7 @@ package body mdttp_functions_pkg is
   return std_logic_vector is
     variable v : std_logic_vector(HP_LSF_LEN-1 downto 0);
   begin
-    v := d.mdt_valid
-         & d.data_valid
+    v := d.data_valid
          & d.mdt_localx
          & d.mdt_localy
          & d.mdt_radius;
@@ -574,10 +577,7 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HP_LSF_LEN - 1; -- 39
-    lsb := msb - HP_LSF_MDT_VALID_LEN + 1; -- 1
-    b.mdt_valid := v(msb); -- 38
-    msb := lsb - 1;
+    msb := HP_LSF_LEN - 1; -- 38
     lsb := msb - HP_LSF_DATA_VALID_LEN + 1; -- 1
     b.data_valid := v(msb); -- 37
     msb := lsb - 1;
@@ -597,8 +597,7 @@ package body mdttp_functions_pkg is
   return std_logic_vector is
     variable v : std_logic_vector(HP_CSF_LEN-1 downto 0);
   begin
-    v := d.mdt_valid
-         & d.data_valid
+    v := d.data_valid
          & d.mdt_localx
          & d.mdt_localy
          & d.mdt_radius;
@@ -611,10 +610,7 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HP_CSF_LEN - 1; -- 39
-    lsb := msb - HP_CSF_MDT_VALID_LEN + 1; -- 1
-    b.mdt_valid := v(msb); -- 38
-    msb := lsb - 1;
+    msb := HP_CSF_LEN - 1; -- 38
     lsb := msb - HP_CSF_DATA_VALID_LEN + 1; -- 1
     b.data_valid := v(msb); -- 37
     msb := lsb - 1;

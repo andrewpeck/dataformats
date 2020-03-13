@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"7221817b";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"2f2974c9";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -155,9 +155,11 @@ package mdttp_types_pkg is
   end record tdcpolmux_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_HPS_at is std_logic_vector(47 downto 0);
+  subtype SLCPROC_HPS_at is std_logic_vector(48 downto 0);
 
   type slcproc_hps_rt is record
+    -- SLC Valid bit
+    slc_valid : std_logic;
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- inner MDT segment chip destination
@@ -187,11 +189,9 @@ package mdttp_types_pkg is
   end record tar_rt;
 
   -- -----------------------------------------------------------------
-  subtype HP_LSF_at is std_logic_vector(38 downto 0);
+  subtype HP_LSF_at is std_logic_vector(37 downto 0);
 
   type hp_lsf_rt is record
-    -- Hit Valid bit
-    mdt_valid : std_logic;
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
@@ -203,11 +203,9 @@ package mdttp_types_pkg is
   end record hp_lsf_rt;
 
   -- -----------------------------------------------------------------
-  subtype HP_CSF_at is std_logic_vector(38 downto 0);
+  subtype HP_CSF_at is std_logic_vector(37 downto 0);
 
   type hp_csf_rt is record
-    -- Hit Valid bit
-    mdt_valid : std_logic;
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord

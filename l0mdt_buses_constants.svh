@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 7221817b;
+`define DF_HASH 2f2974c9;
 
 // -------------------------------------------------------------------
 parameter SLC_MUID_LEN = 20 ;
@@ -237,7 +237,13 @@ parameter TDCPOLMUX_DATAVALID_LSB = 0 ;
 parameter TDCPOLMUX_DATAVALID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-parameter SLCPROC_HPS_LEN = 48 ;
+parameter SLCPROC_HPS_LEN = 49 ;
+
+// SLC Valid bit
+parameter SLCPROC_HPS_SLC_VALID_LEN = 1 ;
+parameter SLCPROC_HPS_SLC_VALID_MSB = 48 ;
+parameter SLCPROC_HPS_SLC_VALID_LSB = 48 ;
+parameter SLCPROC_HPS_SLC_VALID_DECB = 0 ;
 
 // SLc Muon Unique Identifier
 parameter SLCPROC_HPS_SLC_MUID_LEN = 20 ;
@@ -303,13 +309,7 @@ parameter TAR_MDT_TUBE_TIME_LSB = 0 ;
 parameter TAR_MDT_TUBE_TIME_DECB = 1 ;
 
 // -------------------------------------------------------------------
-parameter HP_LSF_LEN = 39 ;
-
-// Hit Valid bit
-parameter HP_LSF_MDT_VALID_LEN = 1 ;
-parameter HP_LSF_MDT_VALID_MSB = 38 ;
-parameter HP_LSF_MDT_VALID_LSB = 38 ;
-parameter HP_LSF_MDT_VALID_DECB = 0 ;
+parameter HP_LSF_LEN = 38 ;
 
 // Data Valid bit
 parameter HP_LSF_DATA_VALID_LEN = 1 ;
@@ -336,13 +336,7 @@ parameter HP_LSF_MDT_RADIUS_LSB = 0 ;
 parameter HP_LSF_MDT_RADIUS_DECB = 5 ;
 
 // -------------------------------------------------------------------
-parameter HP_CSF_LEN = 39 ;
-
-// Hit Valid bit
-parameter HP_CSF_MDT_VALID_LEN = 1 ;
-parameter HP_CSF_MDT_VALID_MSB = 38 ;
-parameter HP_CSF_MDT_VALID_LSB = 38 ;
-parameter HP_CSF_MDT_VALID_DECB = 0 ;
+parameter HP_CSF_LEN = 38 ;
 
 // Data Valid bit
 parameter HP_CSF_DATA_VALID_LEN = 1 ;
@@ -440,20 +434,8 @@ parameter PTCALC_QUALITY_DECB = 0 ;
 // -------------------------------------------------------------------
 parameter SLCPIPE_MTC_ENDCAP_LEN = 54 ;
 
-// 
-parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN = 20 ;
-parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_MSB = 53 ;
-parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_LSB = 34 ;
-parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_DECB = 0 ;
-
 // -------------------------------------------------------------------
 parameter SLCPIPE_MTC_BARREL_LEN = 57 ;
-
-// 
-parameter SLCPIPE_MTC_BARREL_SLC_MUID_LEN = 20 ;
-parameter SLCPIPE_MTC_BARREL_SLC_MUID_MSB = 53 ;
-parameter SLCPIPE_MTC_BARREL_SLC_MUID_LSB = 34 ;
-parameter SLCPIPE_MTC_BARREL_SLC_MUID_DECB = 0 ;
 
 // -------------------------------------------------------------------
 parameter MTC_LEN = 67 ;

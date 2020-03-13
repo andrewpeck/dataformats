@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "7221817b";
+const char df_hash[] = "2f2974c9";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;
@@ -240,7 +240,13 @@ const int TDCPOLMUX_DATAVALIDDATAVALID_LSB = 0;
 const int TDCPOLMUX_DATAVALIDDATAVALID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_HPS_LEN = 48;
+const int SLCPROC_HPS_LEN = 49;
+
+// SLC Valid bit
+const int SLCPROC_HPS_SLC_VALIDSLC_VALID_LEN = 1;
+const int SLCPROC_HPS_SLC_VALIDSLC_VALID_MSB = 48;
+const int SLCPROC_HPS_SLC_VALIDSLC_VALID_LSB = 48;
+const int SLCPROC_HPS_SLC_VALIDSLC_VALID_DECB = 0;
 
 // SLc Muon Unique Identifier
 const int SLCPROC_HPS_SLC_MUIDSLC_MUID_LEN = 20;
@@ -306,13 +312,7 @@ const int TAR_MDT_TUBE_TIMEMDT_TUBE_TIME_LSB = 0;
 const int TAR_MDT_TUBE_TIMEMDT_TUBE_TIME_DECB = 1;
 
 // -------------------------------------------------------------------
-const int HP_LSF_LEN = 39;
-
-// Hit Valid bit
-const int HP_LSF_MDT_VALIDMDT_VALID_LEN = 1;
-const int HP_LSF_MDT_VALIDMDT_VALID_MSB = 38;
-const int HP_LSF_MDT_VALIDMDT_VALID_LSB = 38;
-const int HP_LSF_MDT_VALIDMDT_VALID_DECB = 0;
+const int HP_LSF_LEN = 38;
 
 // Data Valid bit
 const int HP_LSF_DATA_VALIDDATA_VALID_LEN = 1;
@@ -339,13 +339,7 @@ const int HP_LSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
 const int HP_LSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int HP_CSF_LEN = 39;
-
-// Hit Valid bit
-const int HP_CSF_MDT_VALIDMDT_VALID_LEN = 1;
-const int HP_CSF_MDT_VALIDMDT_VALID_MSB = 38;
-const int HP_CSF_MDT_VALIDMDT_VALID_LSB = 38;
-const int HP_CSF_MDT_VALIDMDT_VALID_DECB = 0;
+const int HP_CSF_LEN = 38;
 
 // Data Valid bit
 const int HP_CSF_DATA_VALIDDATA_VALID_LEN = 1;
@@ -443,20 +437,8 @@ const int PTCALC_QUALITYQUALITY_DECB = 0;
 // -------------------------------------------------------------------
 const int SLCPIPE_MTC_ENDCAP_LEN = 54;
 
-// 
-const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_LEN = 20;
-const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_MSB = 53;
-const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_LSB = 34;
-const int SLCPIPE_MTC_ENDCAP_SLC_MUIDSLC_MUID_DECB = 0;
-
 // -------------------------------------------------------------------
 const int SLCPIPE_MTC_BARREL_LEN = 57;
-
-// 
-const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_LEN = 20;
-const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_MSB = 53;
-const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_LSB = 34;
-const int SLCPIPE_MTC_BARREL_SLC_MUIDSLC_MUID_DECB = 0;
 
 // -------------------------------------------------------------------
 const int MTC_LEN = 67;

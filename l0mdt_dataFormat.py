@@ -122,15 +122,15 @@ def write_c_file(c_name, df_hash, o_dir) :
             else:
                 return "ufixed"
 
-    buses_gen = [bus for bus in buses if bus.name]
+    buses_filt = [bus for bus in buses if bus.name]
 
     #constants ---------------------------------------------
     p = os.path.join(o_dir, c_name+"_constants.h")
     ofile = open(p, "w")
     insert_header_notes(ofile, "//")
-    
+
     write_header("constants")
-    for bus in buses_gen:
+    for bus in buses_filt:
 
         write_ln("");
         write_ln(f"// {'-'*67}")
@@ -149,20 +149,25 @@ def write_c_file(c_name, df_hash, o_dir) :
             tpl = "const int %s = %s;"
 
             suffix = ""
-            
+
             prefix = f"{bus.name}"
             prefix += f"_{var.station}" if var.station else ""
             prefix += "_"
             var_name = f"{prefix}{var.name}{suffix}".upper()
 
+            hls_type = get_hls_type(var)
+
             write_ln(tpl %(f"{var_name}_LEN", var.width))
             write_ln(tpl %(f"{var_name}_MSB", var.msb))
             write_ln(tpl %(f"{var_name}_LSB", var.lsb))
-            write_ln(tpl %(f"{var_name}_DECB", var.decb))
-            var_iwidth = str(int(var.width) - int(var.decb))
-            write_ln(tpl %(f"{var_name}_IW", var_iwidth))
+            if 'fixed' in hls_type:
+                write_ln(tpl %(f"{var_name}_DECB", var.decb))
+                var_iwidth = str(int(var.width) - int(var.decb))
+                write_ln(tpl %(f"{var_name}_IW", var_iwidth))
             if 'int' in get_hls_type(var) and var.prec and float(var.prec) > 1:
-                write_ln(tpl %(f"{var_name}_SCALE", str(floor(float(var.prec)))))
+                scale = floor(float(var.prec))
+                write_ln(tpl %(f"{var_name}_SCALE", str(scale)))
+                write_ln(tpl %(f"{var_name}_SCALE_INV", str(round(1/scale,6))))
 
     write_footer("constants")
     ofile.close()
@@ -173,8 +178,12 @@ def write_c_file(c_name, df_hash, o_dir) :
     p = os.path.join(o_dir, c_name+"_hls_types.h")
     ofile = open(p, "w")
     write_header("hls_types")
-    #write_ln(f"#include \"{c_name}_constants.h\"")
-    for bus in buses_gen:
+
+    write_ln("");
+    write_ln("#include <ap_fixed.h>")
+    write_ln("#include <ap_int.h>")
+
+    for bus in buses_filt:
         write_ln("");
         write_ln(f"// {'-'*67}")
         write_ln(f"typedef ap_uint<{bus.name}_LEN> {bus.name.lower()}_uint_t;")
@@ -182,29 +191,29 @@ def write_c_file(c_name, df_hash, o_dir) :
         for var in bus.vars:
             if var.type == "struct": continue
             if var.parameter == "(COPY)": continue
-            
+
             prefix = f"{bus.name}"
             prefix += f"_{var.station}" if var.station else ""
             prefix += "_"
             var_name = f"{prefix}{var.name}{suffix}".upper()
 
-            ap_type = get_hls_type(var)
-            if 'fixed' in ap_type:
-                ap_def = f"ap_{ap_type}<{var_name}_LEN, {var_name}_IW>"
-            elif 'int' in ap_type:
-                ap_def = f"ap_{ap_type}<{var_name}_LEN>"
-            write_ln(f"typedef {ap_def} {var_name}_{ap_type}_t;")
+            hls_type = get_hls_type(var)
+            if 'fixed' in hls_type:
+                hls_def = f"ap_{hls_type}<{var_name}_LEN, {var_name}_IW>"
+            elif 'int' in hls_type:
+                hls_def = f"ap_{hls_type}<{var_name}_LEN>"
+            write_ln(f"typedef {hls_def} {var_name.lower()}_{hls_type}_t;")
 
-            if 'int' in ap_type and var.prec and float(var.prec) > 1:
+            if 'int' in hls_type and var.prec and float(var.prec) > 1:
                 var_range = float(var.high) - float(var.low) + 1
                 scaled_width = ceil(log(var_range,2))
-                write_ln(f"typedef ap_{ap_type}<{scaled_width}> {var_name.lower()}_{ap_type}_scaled_t;")
+                write_ln(f"typedef ap_{hls_type}<{scaled_width}> {var_name.lower()}_{hls_type}_scaled_t;")
 
     write_footer("hls_types")
     ofile.close()
 
     print('C: HLS types file generated.')
-    
+
     # types ------------------------------------------------
     p = os.path.join(o_dir, c_name+"_types.h")
     ofile = open(p, "w")
@@ -215,7 +224,7 @@ def write_c_file(c_name, df_hash, o_dir) :
     #write_ln("void GETVAL(DEST dest, char orig, unsigned int nbits) {")
     #write_ln("")
     #write_ln("}")
-    
+
     macro=([
         "#define GETVAL(dest,orig,nbits) \\"
         , "    dest = 0; \\"
@@ -232,7 +241,7 @@ def write_c_file(c_name, df_hash, o_dir) :
     for line in ex: write_ln(line)
     for line in macro: write_ln(line)
 
-    for bus in buses_gen:
+    for bus in buses_filt:
         if not f'{bus.name}':
             ## somehow we have an empty bus name...
             continue
@@ -258,7 +267,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             l_fmt = f"[{l}]" if l > 1 else ""
 
             suffix = ""
-            
+
             if var.station:
                 prefix = f"{var.station}_"
             else:
@@ -269,7 +278,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
         write_ln(f"}} {bus.name}_rt;")
-        
+
     write_footer("types")
     ofile.close()
 
@@ -278,7 +287,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
 
 
-    
+
 #system-verilog file writer
 def write_sv_file(sv_name, df_hash, o_dir):
 

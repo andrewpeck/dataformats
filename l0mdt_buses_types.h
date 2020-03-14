@@ -136,7 +136,7 @@ typedef struct TDCPOLMUX_n {
 // -------------------------------------------------------------------
 typedef struct SLCPROC_HPS_SF_n {
     // SLC Valid bit
-    char INN_slc_valid; // 1 bits
+    char slc_valid; // 1 bits
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
     // inner MDT segment chip destination
@@ -172,7 +172,7 @@ typedef struct HPS_LSF_n {
     // Tube local position along second coord
     char INN_mdt_localy[2]; // 15 bits
     // Tube drift radius
-    char INN_mdt_radius[2]; // 9 bits
+    char mdt_radius[2]; // 9 bits
 } HPS_LSF_rt;
 
 // -------------------------------------------------------------------
@@ -184,7 +184,7 @@ typedef struct HPS_CSF_n {
     // Tube local position along second coord
     char INN_mdt_localy[2]; // 15 bits
     // Tube drift radius
-    char INN_mdt_radius[2]; // 9 bits
+    char mdt_radius[2]; // 9 bits
 } HPS_CSF_rt;
 
 // -------------------------------------------------------------------

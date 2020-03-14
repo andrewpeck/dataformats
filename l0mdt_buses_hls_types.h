@@ -2,7 +2,7 @@
 #ifndef LOMDT_BUSES_HLS_TYPES_H
 #define LOMDT_BUSES_HLS_TYPES_H
 
-const char df_hash_hls_types[] = "7221817b";
+const char df_hash_hls_types[] = "7eb82b5b";
 
 #include <ap_fixed.h>
 #include <ap_int.h>
@@ -82,6 +82,7 @@ typedef ap_uint<TDCPOLMUX_DATAVALID_LEN> tdcpolmux_datavalid_uint_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<SLCPROC_HPS_LEN> slcproc_hps_uint_t;
+typedef ap_uint<SLCPROC_HPS_SLC_VALID_LEN> slcproc_hps_slc_valid_uint_t;
 typedef ap_uint<SLCPROC_HPS_SLC_MUID_LEN> slcproc_hps_slc_muid_uint_t;
 typedef ap_uint<SLCPROC_HPS_MDTSEG_DEST_LEN> slcproc_hps_mdtseg_dest_uint_t;
 typedef ap_uint<SLCPROC_HPS_VEC_MDTID_LEN> slcproc_hps_vec_mdtid_uint_t;
@@ -99,20 +100,18 @@ typedef ap_ufixed<TAR_MDT_TUBE_Z_LEN, TAR_MDT_TUBE_Z_IW> tar_mdt_tube_z_ufixed_t
 typedef ap_ufixed<TAR_MDT_TUBE_TIME_LEN, TAR_MDT_TUBE_TIME_IW> tar_mdt_tube_time_ufixed_t;
 
 // -------------------------------------------------------------------
-typedef ap_uint<HP_LSF_LEN> hp_lsf_uint_t;
-typedef ap_uint<HP_LSF_MDT_VALID_LEN> hp_lsf_mdt_valid_uint_t;
-typedef ap_uint<HP_LSF_DATA_VALID_LEN> hp_lsf_data_valid_uint_t;
-typedef ap_ufixed<HP_LSF_MDT_LOCALX_LEN, HP_LSF_MDT_LOCALX_IW> hp_lsf_mdt_localx_ufixed_t;
-typedef ap_ufixed<HP_LSF_MDT_LOCALY_LEN, HP_LSF_MDT_LOCALY_IW> hp_lsf_mdt_localy_ufixed_t;
-typedef ap_ufixed<HP_LSF_MDT_RADIUS_LEN, HP_LSF_MDT_RADIUS_IW> hp_lsf_mdt_radius_ufixed_t;
+typedef ap_uint<HPS_LSF_LEN> hps_lsf_uint_t;
+typedef ap_uint<HPS_LSF_DATA_VALID_LEN> hps_lsf_data_valid_uint_t;
+typedef ap_ufixed<HPS_LSF_MDT_LOCALX_LEN, HPS_LSF_MDT_LOCALX_IW> hps_lsf_mdt_localx_ufixed_t;
+typedef ap_ufixed<HPS_LSF_MDT_LOCALY_LEN, HPS_LSF_MDT_LOCALY_IW> hps_lsf_mdt_localy_ufixed_t;
+typedef ap_ufixed<HPS_LSF_MDT_RADIUS_LEN, HPS_LSF_MDT_RADIUS_IW> hps_lsf_mdt_radius_ufixed_t;
 
 // -------------------------------------------------------------------
-typedef ap_uint<HP_CSF_LEN> hp_csf_uint_t;
-typedef ap_uint<HP_CSF_MDT_VALID_LEN> hp_csf_mdt_valid_uint_t;
-typedef ap_uint<HP_CSF_DATA_VALID_LEN> hp_csf_data_valid_uint_t;
-typedef ap_ufixed<HP_CSF_MDT_LOCALX_LEN, HP_CSF_MDT_LOCALX_IW> hp_csf_mdt_localx_ufixed_t;
-typedef ap_fixed<HP_CSF_MDT_LOCALY_LEN, HP_CSF_MDT_LOCALY_IW> hp_csf_mdt_localy_fixed_t;
-typedef ap_ufixed<HP_CSF_MDT_RADIUS_LEN, HP_CSF_MDT_RADIUS_IW> hp_csf_mdt_radius_ufixed_t;
+typedef ap_uint<HPS_CSF_LEN> hps_csf_uint_t;
+typedef ap_uint<HPS_CSF_DATA_VALID_LEN> hps_csf_data_valid_uint_t;
+typedef ap_ufixed<HPS_CSF_MDT_LOCALX_LEN, HPS_CSF_MDT_LOCALX_IW> hps_csf_mdt_localx_ufixed_t;
+typedef ap_fixed<HPS_CSF_MDT_LOCALY_LEN, HPS_CSF_MDT_LOCALY_IW> hps_csf_mdt_localy_fixed_t;
+typedef ap_ufixed<HPS_CSF_MDT_RADIUS_LEN, HPS_CSF_MDT_RADIUS_IW> hps_csf_mdt_radius_ufixed_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<SLCPIPE_PTCALC_LEN> slcpipe_ptcalc_uint_t;
@@ -136,11 +135,9 @@ typedef ap_uint<PTCALC_QUALITY_LEN> ptcalc_quality_uint_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<SLCPIPE_MTC_ENDCAP_LEN> slcpipe_mtc_endcap_uint_t;
-typedef ap_uint<SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN> slcpipe_mtc_endcap_slc_muid_uint_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<SLCPIPE_MTC_BARREL_LEN> slcpipe_mtc_barrel_uint_t;
-typedef ap_uint<SLCPIPE_MTC_BARREL_SLC_MUID_LEN> slcpipe_mtc_barrel_slc_muid_uint_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<MTC_LEN> mtc_uint_t;

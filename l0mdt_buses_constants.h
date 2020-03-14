@@ -425,6 +425,7 @@ const int HPS_LSF_MDT_RADIUS_LEN = 9;
 const int HPS_LSF_MDT_RADIUS_MSB = 8;
 const int HPS_LSF_MDT_RADIUS_LSB = 0;
 const int HPS_LSF_MDT_RADIUS_DECB = 5;
+const int HPS_LSF_MDT_RADIUS_IW = 4;
 
 // -------------------------------------------------------------------
 const int HPS_CSF_LEN = 40;

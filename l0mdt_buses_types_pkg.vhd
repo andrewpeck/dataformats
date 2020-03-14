@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"2f2974c9";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"7eb82b5b";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -189,32 +189,32 @@ package mdttp_types_pkg is
   end record tar_rt;
 
   -- -----------------------------------------------------------------
-  subtype HP_LSF_at is std_logic_vector(37 downto 0);
+  subtype HPS_LSF_at is std_logic_vector(37 downto 0);
 
-  type hp_lsf_rt is record
+  type hps_lsf_rt is record
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(HP_LSF_MDT_LOCALX_LEN-1 downto 0); -- 13
+    mdt_localx : std_logic_vector(HPS_LSF_MDT_LOCALX_LEN-1 downto 0); -- 13
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(HP_LSF_MDT_LOCALY_LEN-1 downto 0); -- 13
+    mdt_localy : std_logic_vector(HPS_LSF_MDT_LOCALY_LEN-1 downto 0); -- 13
     -- Tube drift radius
-    mdt_radius : std_logic_vector(HP_LSF_MDT_RADIUS_LEN-1 downto 0); -- 8
-  end record hp_lsf_rt;
+    mdt_radius : std_logic_vector(HPS_LSF_MDT_RADIUS_LEN-1 downto 0); -- 8
+  end record hps_lsf_rt;
 
   -- -----------------------------------------------------------------
-  subtype HP_CSF_at is std_logic_vector(37 downto 0);
+  subtype HPS_CSF_at is std_logic_vector(37 downto 0);
 
-  type hp_csf_rt is record
+  type hps_csf_rt is record
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(HP_CSF_MDT_LOCALX_LEN-1 downto 0); -- 13
+    mdt_localx : std_logic_vector(HPS_CSF_MDT_LOCALX_LEN-1 downto 0); -- 13
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(HP_CSF_MDT_LOCALY_LEN-1 downto 0); -- 13
+    mdt_localy : std_logic_vector(HPS_CSF_MDT_LOCALY_LEN-1 downto 0); -- 13
     -- Tube drift radius
-    mdt_radius : std_logic_vector(HP_CSF_MDT_RADIUS_LEN-1 downto 0); -- 8
-  end record hp_csf_rt;
+    mdt_radius : std_logic_vector(HPS_CSF_MDT_RADIUS_LEN-1 downto 0); -- 8
+  end record hps_csf_rt;
 
   -- -----------------------------------------------------------------
   subtype SLCPIPE_PTCALC_at is std_logic_vector(28 downto 0);

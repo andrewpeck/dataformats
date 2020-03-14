@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "2f2974c9";
+const char df_hash[] = "7eb82b5b";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;
@@ -312,58 +312,58 @@ const int TAR_MDT_TUBE_TIMEMDT_TUBE_TIME_LSB = 0;
 const int TAR_MDT_TUBE_TIMEMDT_TUBE_TIME_DECB = 1;
 
 // -------------------------------------------------------------------
-const int HP_LSF_LEN = 38;
+const int HPS_LSF_LEN = 38;
 
 // Data Valid bit
-const int HP_LSF_DATA_VALIDDATA_VALID_LEN = 1;
-const int HP_LSF_DATA_VALIDDATA_VALID_MSB = 37;
-const int HP_LSF_DATA_VALIDDATA_VALID_LSB = 37;
-const int HP_LSF_DATA_VALIDDATA_VALID_DECB = 0;
+const int HPS_LSF_DATA_VALIDDATA_VALID_LEN = 1;
+const int HPS_LSF_DATA_VALIDDATA_VALID_MSB = 37;
+const int HPS_LSF_DATA_VALIDDATA_VALID_LSB = 37;
+const int HPS_LSF_DATA_VALIDDATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HP_LSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
-const int HP_LSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
-const int HP_LSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
-const int HP_LSF_MDT_LOCALXMDT_LOCALX_DECB = 5;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_DECB = 5;
 
 // Tube local position along second coord
-const int HP_LSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
-const int HP_LSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
-const int HP_LSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
-const int HP_LSF_MDT_LOCALYMDT_LOCALY_DECB = 5;
+const int HPS_LSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
+const int HPS_LSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
+const int HPS_LSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
+const int HPS_LSF_MDT_LOCALYMDT_LOCALY_DECB = 5;
 
 // Tube drift radius
-const int HP_LSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
-const int HP_LSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
-const int HP_LSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
-const int HP_LSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
+const int HPS_LSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
+const int HPS_LSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
+const int HPS_LSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
+const int HPS_LSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int HP_CSF_LEN = 38;
+const int HPS_CSF_LEN = 38;
 
 // Data Valid bit
-const int HP_CSF_DATA_VALIDDATA_VALID_LEN = 1;
-const int HP_CSF_DATA_VALIDDATA_VALID_MSB = 37;
-const int HP_CSF_DATA_VALIDDATA_VALID_LSB = 37;
-const int HP_CSF_DATA_VALIDDATA_VALID_DECB = 0;
+const int HPS_CSF_DATA_VALIDDATA_VALID_LEN = 1;
+const int HPS_CSF_DATA_VALIDDATA_VALID_MSB = 37;
+const int HPS_CSF_DATA_VALIDDATA_VALID_LSB = 37;
+const int HPS_CSF_DATA_VALIDDATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HP_CSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
-const int HP_CSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
-const int HP_CSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
-const int HP_CSF_MDT_LOCALXMDT_LOCALX_DECB = 4;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_DECB = 4;
 
 // Tube local position along second coord
-const int HP_CSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
-const int HP_CSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
-const int HP_CSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
-const int HP_CSF_MDT_LOCALYMDT_LOCALY_DECB = 4;
+const int HPS_CSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
+const int HPS_CSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
+const int HPS_CSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
+const int HPS_CSF_MDT_LOCALYMDT_LOCALY_DECB = 4;
 
 // Tube drift radius
-const int HP_CSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
-const int HP_CSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
-const int HP_CSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
-const int HP_CSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
+const int HPS_CSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
+const int HPS_CSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
+const int HPS_CSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
+const int HPS_CSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
 const int SLCPIPE_PTCALC_LEN = 29;

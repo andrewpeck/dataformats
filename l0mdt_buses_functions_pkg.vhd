@@ -93,18 +93,18 @@ package mdttp_functions_pkg is
   return TAR_rt;
 
   -- -----------------------------------------------------------------
-  function hp_lsf_2af (d: HP_LSF_rt)
+  function hps_lsf_2af (d: HPS_LSF_rt)
   return std_logic_vector;
 
-  function hp_lsf_2rf (v: hp_lsf_at)
-  return HP_LSF_rt;
+  function hps_lsf_2rf (v: hps_lsf_at)
+  return HPS_LSF_rt;
 
   -- -----------------------------------------------------------------
-  function hp_csf_2af (d: HP_CSF_rt)
+  function hps_csf_2af (d: HPS_CSF_rt)
   return std_logic_vector;
 
-  function hp_csf_2rf (v: hp_csf_at)
-  return HP_CSF_rt;
+  function hps_csf_2rf (v: hps_csf_at)
+  return HPS_CSF_rt;
 
   -- -----------------------------------------------------------------
   function slcpipe_ptcalc_2af (d: SLCPIPE_PTCALC_rt)
@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"2f2974c9";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"7eb82b5b";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -560,70 +560,70 @@ package body mdttp_functions_pkg is
   end function tar_2rf;
 
   -- -----------------------------------------------------------------
-  function hp_lsf_2af (d: HP_LSF_rt)
+  function hps_lsf_2af (d: HPS_LSF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(HP_LSF_LEN-1 downto 0);
+    variable v : std_logic_vector(HPS_LSF_LEN-1 downto 0);
   begin
     v := d.data_valid
          & d.mdt_localx
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function hp_lsf_2af;
+  end function hps_lsf_2af;
 
-  function hp_lsf_2rf (v: hp_lsf_at)
-  return HP_LSF_rt is
-    variable b : HP_LSF_rt;
+  function hps_lsf_2rf (v: hps_lsf_at)
+  return HPS_LSF_rt is
+    variable b : HPS_LSF_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HP_LSF_LEN - 1; -- 38
-    lsb := msb - HP_LSF_DATA_VALID_LEN + 1; -- 1
+    msb := HPS_LSF_LEN - 1; -- 38
+    lsb := msb - HPS_LSF_DATA_VALID_LEN + 1; -- 1
     b.data_valid := v(msb); -- 37
     msb := lsb - 1;
-    lsb := msb - HP_LSF_MDT_LOCALX_LEN + 1; -- 14
+    lsb := msb - HPS_LSF_MDT_LOCALX_LEN + 1; -- 14
     b.mdt_localx := v(msb downto lsb); -- 36 23
     msb := lsb - 1;
-    lsb := msb - HP_LSF_MDT_LOCALY_LEN + 1; -- 14
+    lsb := msb - HPS_LSF_MDT_LOCALY_LEN + 1; -- 14
     b.mdt_localy := v(msb downto lsb); -- 22 9
     msb := lsb - 1;
-    lsb := msb - HP_LSF_MDT_RADIUS_LEN + 1; -- 9
+    lsb := msb - HPS_LSF_MDT_RADIUS_LEN + 1; -- 9
     b.mdt_radius := v(msb downto lsb); -- 8 0
     return b;
-  end function hp_lsf_2rf;
+  end function hps_lsf_2rf;
 
   -- -----------------------------------------------------------------
-  function hp_csf_2af (d: HP_CSF_rt)
+  function hps_csf_2af (d: HPS_CSF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(HP_CSF_LEN-1 downto 0);
+    variable v : std_logic_vector(HPS_CSF_LEN-1 downto 0);
   begin
     v := d.data_valid
          & d.mdt_localx
          & d.mdt_localy
          & d.mdt_radius;
     return v;
-  end function hp_csf_2af;
+  end function hps_csf_2af;
 
-  function hp_csf_2rf (v: hp_csf_at)
-  return HP_CSF_rt is
-    variable b : HP_CSF_rt;
+  function hps_csf_2rf (v: hps_csf_at)
+  return HPS_CSF_rt is
+    variable b : HPS_CSF_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HP_CSF_LEN - 1; -- 38
-    lsb := msb - HP_CSF_DATA_VALID_LEN + 1; -- 1
+    msb := HPS_CSF_LEN - 1; -- 38
+    lsb := msb - HPS_CSF_DATA_VALID_LEN + 1; -- 1
     b.data_valid := v(msb); -- 37
     msb := lsb - 1;
-    lsb := msb - HP_CSF_MDT_LOCALX_LEN + 1; -- 14
+    lsb := msb - HPS_CSF_MDT_LOCALX_LEN + 1; -- 14
     b.mdt_localx := v(msb downto lsb); -- 36 23
     msb := lsb - 1;
-    lsb := msb - HP_CSF_MDT_LOCALY_LEN + 1; -- 14
+    lsb := msb - HPS_CSF_MDT_LOCALY_LEN + 1; -- 14
     b.mdt_localy := v(msb downto lsb); -- 22 9
     msb := lsb - 1;
-    lsb := msb - HP_CSF_MDT_RADIUS_LEN + 1; -- 9
+    lsb := msb - HPS_CSF_MDT_RADIUS_LEN + 1; -- 9
     b.mdt_radius := v(msb downto lsb); -- 8 0
     return b;
-  end function hp_csf_2rf;
+  end function hps_csf_2rf;
 
   -- -----------------------------------------------------------------
   function slcpipe_ptcalc_2af (d: SLCPIPE_PTCALC_rt)

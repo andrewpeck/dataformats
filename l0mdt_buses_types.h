@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "2f2974c9";
+const char df_hash[] = "7eb82b5b";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -164,7 +164,7 @@ typedef struct TAR_n {
 } TAR_rt;
 
 // -------------------------------------------------------------------
-typedef struct HP_LSF_n {
+typedef struct HPS_LSF_n {
     // Data Valid bit
     char INN_data_valid; // 1 bits
     // Tube local position along precision coord
@@ -173,10 +173,10 @@ typedef struct HP_LSF_n {
     char INN_mdt_localy[2]; // 14 bits
     // Tube drift radius
     char INN_mdt_radius[2]; // 9 bits
-} HP_LSF_rt;
+} HPS_LSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct HP_CSF_n {
+typedef struct HPS_CSF_n {
     // Data Valid bit
     char INN_data_valid; // 1 bits
     // Tube local position along precision coord
@@ -185,7 +185,7 @@ typedef struct HP_CSF_n {
     char INN_mdt_localy[2]; // 14 bits
     // Tube drift radius
     char INN_mdt_radius[2]; // 9 bits
-} HP_CSF_rt;
+} HPS_CSF_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_PTCALC_n {

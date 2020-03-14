@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"2f2974c9";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"7eb82b5b";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -423,66 +423,66 @@ package mdttp_constants_pkg is
   constant TAR_MDT_TUBE_TIME_MULT : natural := 3;
 
   ----------------------------------------------------------------------
-  constant HP_LSF_LEN : natural := 38;
+  constant HPS_LSF_LEN : natural := 38;
 
   -- Data Valid bit
-  constant HP_LSF_DATA_VALID_LEN : natural := 1;
-  constant HP_LSF_DATA_VALID_MSB : natural := 37;
-  constant HP_LSF_DATA_VALID_LSB : natural := 37;
-  constant HP_LSF_DATA_VALID_DECB : natural := 0;
-  constant HP_LSF_DATA_VALID_MULT : natural := 2;
+  constant HPS_LSF_DATA_VALID_LEN : natural := 1;
+  constant HPS_LSF_DATA_VALID_MSB : natural := 37;
+  constant HPS_LSF_DATA_VALID_LSB : natural := 37;
+  constant HPS_LSF_DATA_VALID_DECB : natural := 0;
+  constant HPS_LSF_DATA_VALID_MULT : natural := 2;
 
   -- Tube local position along precision coord
-  constant HP_LSF_MDT_LOCALX_LEN : natural := 14;
-  constant HP_LSF_MDT_LOCALX_MSB : natural := 36;
-  constant HP_LSF_MDT_LOCALX_LSB : natural := 23;
-  constant HP_LSF_MDT_LOCALX_DECB : natural := 5;
-  constant HP_LSF_MDT_LOCALX_MULT : natural := 21;
+  constant HPS_LSF_MDT_LOCALX_LEN : natural := 14;
+  constant HPS_LSF_MDT_LOCALX_MSB : natural := 36;
+  constant HPS_LSF_MDT_LOCALX_LSB : natural := 23;
+  constant HPS_LSF_MDT_LOCALX_DECB : natural := 5;
+  constant HPS_LSF_MDT_LOCALX_MULT : natural := 21;
 
   -- Tube local position along second coord
-  constant HP_LSF_MDT_LOCALY_LEN : natural := 14;
-  constant HP_LSF_MDT_LOCALY_MSB : natural := 22;
-  constant HP_LSF_MDT_LOCALY_LSB : natural := 9;
-  constant HP_LSF_MDT_LOCALY_DECB : natural := 5;
-  constant HP_LSF_MDT_LOCALY_MULT : natural := 23;
+  constant HPS_LSF_MDT_LOCALY_LEN : natural := 14;
+  constant HPS_LSF_MDT_LOCALY_MSB : natural := 22;
+  constant HPS_LSF_MDT_LOCALY_LSB : natural := 9;
+  constant HPS_LSF_MDT_LOCALY_DECB : natural := 5;
+  constant HPS_LSF_MDT_LOCALY_MULT : natural := 23;
 
   -- Tube drift radius
-  constant HP_LSF_MDT_RADIUS_LEN : natural := 9;
-  constant HP_LSF_MDT_RADIUS_MSB : natural := 8;
-  constant HP_LSF_MDT_RADIUS_LSB : natural := 0;
-  constant HP_LSF_MDT_RADIUS_DECB : natural := 5;
-  constant HP_LSF_MDT_RADIUS_MULT : natural := 34;
+  constant HPS_LSF_MDT_RADIUS_LEN : natural := 9;
+  constant HPS_LSF_MDT_RADIUS_MSB : natural := 8;
+  constant HPS_LSF_MDT_RADIUS_LSB : natural := 0;
+  constant HPS_LSF_MDT_RADIUS_DECB : natural := 5;
+  constant HPS_LSF_MDT_RADIUS_MULT : natural := 34;
 
   ----------------------------------------------------------------------
-  constant HP_CSF_LEN : natural := 38;
+  constant HPS_CSF_LEN : natural := 38;
 
   -- Data Valid bit
-  constant HP_CSF_DATA_VALID_LEN : natural := 1;
-  constant HP_CSF_DATA_VALID_MSB : natural := 37;
-  constant HP_CSF_DATA_VALID_LSB : natural := 37;
-  constant HP_CSF_DATA_VALID_DECB : natural := 0;
-  constant HP_CSF_DATA_VALID_MULT : natural := 2;
+  constant HPS_CSF_DATA_VALID_LEN : natural := 1;
+  constant HPS_CSF_DATA_VALID_MSB : natural := 37;
+  constant HPS_CSF_DATA_VALID_LSB : natural := 37;
+  constant HPS_CSF_DATA_VALID_DECB : natural := 0;
+  constant HPS_CSF_DATA_VALID_MULT : natural := 2;
 
   -- Tube local position along precision coord
-  constant HP_CSF_MDT_LOCALX_LEN : natural := 14;
-  constant HP_CSF_MDT_LOCALX_MSB : natural := 36;
-  constant HP_CSF_MDT_LOCALX_LSB : natural := 23;
-  constant HP_CSF_MDT_LOCALX_DECB : natural := 4;
-  constant HP_CSF_MDT_LOCALX_MULT : natural := 16;
+  constant HPS_CSF_MDT_LOCALX_LEN : natural := 14;
+  constant HPS_CSF_MDT_LOCALX_MSB : natural := 36;
+  constant HPS_CSF_MDT_LOCALX_LSB : natural := 23;
+  constant HPS_CSF_MDT_LOCALX_DECB : natural := 4;
+  constant HPS_CSF_MDT_LOCALX_MULT : natural := 16;
 
   -- Tube local position along second coord
-  constant HP_CSF_MDT_LOCALY_LEN : natural := 14;
-  constant HP_CSF_MDT_LOCALY_MSB : natural := 22;
-  constant HP_CSF_MDT_LOCALY_LSB : natural := 9;
-  constant HP_CSF_MDT_LOCALY_DECB : natural := 4;
-  constant HP_CSF_MDT_LOCALY_MULT : natural := 16;
+  constant HPS_CSF_MDT_LOCALY_LEN : natural := 14;
+  constant HPS_CSF_MDT_LOCALY_MSB : natural := 22;
+  constant HPS_CSF_MDT_LOCALY_LSB : natural := 9;
+  constant HPS_CSF_MDT_LOCALY_DECB : natural := 4;
+  constant HPS_CSF_MDT_LOCALY_MULT : natural := 16;
 
   -- Tube drift radius
-  constant HP_CSF_MDT_RADIUS_LEN : natural := 9;
-  constant HP_CSF_MDT_RADIUS_MSB : natural := 8;
-  constant HP_CSF_MDT_RADIUS_LSB : natural := 0;
-  constant HP_CSF_MDT_RADIUS_DECB : natural := 5;
-  constant HP_CSF_MDT_RADIUS_MULT : natural := 32;
+  constant HPS_CSF_MDT_RADIUS_LEN : natural := 9;
+  constant HPS_CSF_MDT_RADIUS_MSB : natural := 8;
+  constant HPS_CSF_MDT_RADIUS_LSB : natural := 0;
+  constant HPS_CSF_MDT_RADIUS_DECB : natural := 5;
+  constant HPS_CSF_MDT_RADIUS_MULT : natural := 32;
 
   ----------------------------------------------------------------------
   constant SLCPIPE_PTCALC_LEN : natural := 29;

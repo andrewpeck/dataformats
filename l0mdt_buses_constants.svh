@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 2f2974c9;
+`define DF_HASH 7eb82b5b;
 
 // -------------------------------------------------------------------
 parameter SLC_MUID_LEN = 20 ;
@@ -309,58 +309,58 @@ parameter TAR_MDT_TUBE_TIME_LSB = 0 ;
 parameter TAR_MDT_TUBE_TIME_DECB = 1 ;
 
 // -------------------------------------------------------------------
-parameter HP_LSF_LEN = 38 ;
+parameter HPS_LSF_LEN = 38 ;
 
 // Data Valid bit
-parameter HP_LSF_DATA_VALID_LEN = 1 ;
-parameter HP_LSF_DATA_VALID_MSB = 37 ;
-parameter HP_LSF_DATA_VALID_LSB = 37 ;
-parameter HP_LSF_DATA_VALID_DECB = 0 ;
+parameter HPS_LSF_DATA_VALID_LEN = 1 ;
+parameter HPS_LSF_DATA_VALID_MSB = 37 ;
+parameter HPS_LSF_DATA_VALID_LSB = 37 ;
+parameter HPS_LSF_DATA_VALID_DECB = 0 ;
 
 // Tube local position along precision coord
-parameter HP_LSF_MDT_LOCALX_LEN = 14 ;
-parameter HP_LSF_MDT_LOCALX_MSB = 36 ;
-parameter HP_LSF_MDT_LOCALX_LSB = 23 ;
-parameter HP_LSF_MDT_LOCALX_DECB = 5 ;
+parameter HPS_LSF_MDT_LOCALX_LEN = 14 ;
+parameter HPS_LSF_MDT_LOCALX_MSB = 36 ;
+parameter HPS_LSF_MDT_LOCALX_LSB = 23 ;
+parameter HPS_LSF_MDT_LOCALX_DECB = 5 ;
 
 // Tube local position along second coord
-parameter HP_LSF_MDT_LOCALY_LEN = 14 ;
-parameter HP_LSF_MDT_LOCALY_MSB = 22 ;
-parameter HP_LSF_MDT_LOCALY_LSB = 9 ;
-parameter HP_LSF_MDT_LOCALY_DECB = 5 ;
+parameter HPS_LSF_MDT_LOCALY_LEN = 14 ;
+parameter HPS_LSF_MDT_LOCALY_MSB = 22 ;
+parameter HPS_LSF_MDT_LOCALY_LSB = 9 ;
+parameter HPS_LSF_MDT_LOCALY_DECB = 5 ;
 
 // Tube drift radius
-parameter HP_LSF_MDT_RADIUS_LEN = 9 ;
-parameter HP_LSF_MDT_RADIUS_MSB = 8 ;
-parameter HP_LSF_MDT_RADIUS_LSB = 0 ;
-parameter HP_LSF_MDT_RADIUS_DECB = 5 ;
+parameter HPS_LSF_MDT_RADIUS_LEN = 9 ;
+parameter HPS_LSF_MDT_RADIUS_MSB = 8 ;
+parameter HPS_LSF_MDT_RADIUS_LSB = 0 ;
+parameter HPS_LSF_MDT_RADIUS_DECB = 5 ;
 
 // -------------------------------------------------------------------
-parameter HP_CSF_LEN = 38 ;
+parameter HPS_CSF_LEN = 38 ;
 
 // Data Valid bit
-parameter HP_CSF_DATA_VALID_LEN = 1 ;
-parameter HP_CSF_DATA_VALID_MSB = 37 ;
-parameter HP_CSF_DATA_VALID_LSB = 37 ;
-parameter HP_CSF_DATA_VALID_DECB = 0 ;
+parameter HPS_CSF_DATA_VALID_LEN = 1 ;
+parameter HPS_CSF_DATA_VALID_MSB = 37 ;
+parameter HPS_CSF_DATA_VALID_LSB = 37 ;
+parameter HPS_CSF_DATA_VALID_DECB = 0 ;
 
 // Tube local position along precision coord
-parameter HP_CSF_MDT_LOCALX_LEN = 14 ;
-parameter HP_CSF_MDT_LOCALX_MSB = 36 ;
-parameter HP_CSF_MDT_LOCALX_LSB = 23 ;
-parameter HP_CSF_MDT_LOCALX_DECB = 4 ;
+parameter HPS_CSF_MDT_LOCALX_LEN = 14 ;
+parameter HPS_CSF_MDT_LOCALX_MSB = 36 ;
+parameter HPS_CSF_MDT_LOCALX_LSB = 23 ;
+parameter HPS_CSF_MDT_LOCALX_DECB = 4 ;
 
 // Tube local position along second coord
-parameter HP_CSF_MDT_LOCALY_LEN = 14 ;
-parameter HP_CSF_MDT_LOCALY_MSB = 22 ;
-parameter HP_CSF_MDT_LOCALY_LSB = 9 ;
-parameter HP_CSF_MDT_LOCALY_DECB = 4 ;
+parameter HPS_CSF_MDT_LOCALY_LEN = 14 ;
+parameter HPS_CSF_MDT_LOCALY_MSB = 22 ;
+parameter HPS_CSF_MDT_LOCALY_LSB = 9 ;
+parameter HPS_CSF_MDT_LOCALY_DECB = 4 ;
 
 // Tube drift radius
-parameter HP_CSF_MDT_RADIUS_LEN = 9 ;
-parameter HP_CSF_MDT_RADIUS_MSB = 8 ;
-parameter HP_CSF_MDT_RADIUS_LSB = 0 ;
-parameter HP_CSF_MDT_RADIUS_DECB = 5 ;
+parameter HPS_CSF_MDT_RADIUS_LEN = 9 ;
+parameter HPS_CSF_MDT_RADIUS_MSB = 8 ;
+parameter HPS_CSF_MDT_RADIUS_LSB = 0 ;
+parameter HPS_CSF_MDT_RADIUS_DECB = 5 ;
 
 // -------------------------------------------------------------------
 parameter SLCPIPE_PTCALC_LEN = 29 ;

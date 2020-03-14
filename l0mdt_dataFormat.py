@@ -167,7 +167,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             if 'int' in get_hls_type(var) and var.prec and float(var.prec) > 1:
                 scale = floor(float(var.prec))
                 write_ln(tpl %(f"{var_name}_SCALE", str(scale)))
-                write_ln(tpl %(f"{var_name}_SCALE_INV", str(round(1/scale,6))))
+                write_ln(f"const float {var_name}_SCALE_INV = " + str(round(1/scale,6)) + ";")
 
     write_footer("constants")
     ofile.close()

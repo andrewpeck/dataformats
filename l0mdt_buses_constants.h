@@ -26,7 +26,7 @@ const int SLC_MUID_BCID_LEN = 12;
 const int SLC_MUID_BCID_MSB = 11;
 const int SLC_MUID_BCID_LSB = 0;
 const int SLC_MUID_BCID_SCALE = 25;
-const int SLC_MUID_BCID_SCALE_INV = 0.04;
+const float SLC_MUID_BCID_SCALE_INV = 0.04;
 
 // -------------------------------------------------------------------
 const int SLC_COMMON_LEN = 32;
@@ -54,14 +54,14 @@ const int SLC_COMMON_POSPHI_LEN = 9;
 const int SLC_COMMON_POSPHI_MSB = 13;
 const int SLC_COMMON_POSPHI_LSB = 5;
 const int SLC_COMMON_POSPHI_SCALE = 24;
-const int SLC_COMMON_POSPHI_SCALE_INV = 0.041667;
+const float SLC_COMMON_POSPHI_SCALE_INV = 0.041667;
 
 // SLc highest pT threshold passed
 const int SLC_COMMON_PTTHRESH_LEN = 4;
 const int SLC_COMMON_PTTHRESH_MSB = 4;
 const int SLC_COMMON_PTTHRESH_LSB = 1;
 const int SLC_COMMON_PTTHRESH_SCALE = 5;
-const int SLC_COMMON_PTTHRESH_SCALE_INV = 0.2;
+const float SLC_COMMON_PTTHRESH_SCALE_INV = 0.2;
 
 // SLc charge
 const int SLC_COMMON_CHARGE_LEN = 1;
@@ -82,14 +82,14 @@ const int SLC_ENDCAP_SEG_ANGDTHETA_LEN = 7;
 const int SLC_ENDCAP_SEG_ANGDTHETA_MSB = 37;
 const int SLC_ENDCAP_SEG_ANGDTHETA_LSB = 31;
 const int SLC_ENDCAP_SEG_ANGDTHETA_SCALE = 3;
-const int SLC_ENDCAP_SEG_ANGDTHETA_SCALE_INV = 0.333333;
+const float SLC_ENDCAP_SEG_ANGDTHETA_SCALE_INV = 0.333333;
 
 // SLc Segment Angle wrt Phi position
 const int SLC_ENDCAP_SEG_ANGDPHI_LEN = 4;
 const int SLC_ENDCAP_SEG_ANGDPHI_MSB = 30;
 const int SLC_ENDCAP_SEG_ANGDPHI_LSB = 27;
 const int SLC_ENDCAP_SEG_ANGDPHI_SCALE = 5;
-const int SLC_ENDCAP_SEG_ANGDPHI_SCALE_INV = 0.2;
+const float SLC_ENDCAP_SEG_ANGDPHI_SCALE_INV = 0.2;
 
 // NSW segment eta position
 const int SLC_ENDCAP_NSWSEG_POSETA_LEN = 14;
@@ -103,7 +103,7 @@ const int SLC_ENDCAP_NSWSEG_POSPHI_LEN = 8;
 const int SLC_ENDCAP_NSWSEG_POSPHI_MSB = 12;
 const int SLC_ENDCAP_NSWSEG_POSPHI_LSB = 5;
 const int SLC_ENDCAP_NSWSEG_POSPHI_SCALE = 25;
-const int SLC_ENDCAP_NSWSEG_POSPHI_SCALE_INV = 0.04;
+const float SLC_ENDCAP_NSWSEG_POSPHI_SCALE_INV = 0.04;
 
 // NSW segment angle wrt Eta position
 const int SLC_ENDCAP_NSWSEG_ANGDTHETA_LEN = 5;
@@ -124,28 +124,28 @@ const int SLC_BARREL_RPC0_POSZ_LEN = 10;
 const int SLC_BARREL_RPC0_POSZ_MSB = 42;
 const int SLC_BARREL_RPC0_POSZ_LSB = 33;
 const int SLC_BARREL_RPC0_POSZ_SCALE = 13;
-const int SLC_BARREL_RPC0_POSZ_SCALE_INV = 0.076923;
+const float SLC_BARREL_RPC0_POSZ_SCALE_INV = 0.076923;
 
 // SLc Hit Z Position in RPC1
 const int SLC_BARREL_RPC1_POSZ_LEN = 10;
 const int SLC_BARREL_RPC1_POSZ_MSB = 32;
 const int SLC_BARREL_RPC1_POSZ_LSB = 23;
 const int SLC_BARREL_RPC1_POSZ_SCALE = 13;
-const int SLC_BARREL_RPC1_POSZ_SCALE_INV = 0.076923;
+const float SLC_BARREL_RPC1_POSZ_SCALE_INV = 0.076923;
 
 // SLc Hit Z Position in RPC2
 const int SLC_BARREL_RPC2_POSZ_LEN = 10;
 const int SLC_BARREL_RPC2_POSZ_MSB = 22;
 const int SLC_BARREL_RPC2_POSZ_LSB = 13;
 const int SLC_BARREL_RPC2_POSZ_SCALE = 13;
-const int SLC_BARREL_RPC2_POSZ_SCALE_INV = 0.076923;
+const float SLC_BARREL_RPC2_POSZ_SCALE_INV = 0.076923;
 
 // SLc Hit Z Position in RPC3
 const int SLC_BARREL_RPC3_POSZ_LEN = 10;
 const int SLC_BARREL_RPC3_POSZ_MSB = 12;
 const int SLC_BARREL_RPC3_POSZ_LSB = 3;
 const int SLC_BARREL_RPC3_POSZ_SCALE = 13;
-const int SLC_BARREL_RPC3_POSZ_SCALE_INV = 0.076923;
+const float SLC_BARREL_RPC3_POSZ_SCALE_INV = 0.076923;
 
 // SLc coincidence type
 const int SLC_BARREL_COINTYPE_LEN = 3;
@@ -537,7 +537,7 @@ const int PTCALC_PTTHRESH_LEN = 4;
 const int PTCALC_PTTHRESH_MSB = 9;
 const int PTCALC_PTTHRESH_LSB = 6;
 const int PTCALC_PTTHRESH_SCALE = 5;
-const int PTCALC_PTTHRESH_SCALE_INV = 0.2;
+const float PTCALC_PTTHRESH_SCALE_INV = 0.2;
 
 // charge determined from the pT calc
 const int PTCALC_CHARGE_LEN = 1;

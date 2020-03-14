@@ -85,14 +85,14 @@ mdt_tube_z,,19,36,18,5,0,25000,0.05000,mm,,Hit Extractor,Tube Remap,Tube positio
 mdt_tube_time,,18,17,0,1,0,102400,0.78125,ns,,Hit Extractor,Tube Remap,Tube (uncalibrated) time,var,,
 TOTAL,,69,,,,,,,,,,,,,,per tube
 ,,,,,,,,,,,,,,,,
-HP_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+HPS_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_localx,,14,36,23,5,0,780,0.05000,mm,,SF,HE,Tube local position along precision coord,var,,LSF
 mdt_localy,,14,22,9,5,0,720,0.05000,mm,,SF,HE,Tube local position along second coord,var,,LSF
 mdt_radius,,9,8,0,5,0,15,0.05000,mm,,SF,HE,Tube drift radius,var,,LSF
 TOTAL,,38,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-HP_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+HPS_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
 mdt_localx,,14,36,23,4,0,1024,0.06500,mm,,SF,HE,Tube local position along precision coord,var,,csf
 mdt_localy,,14,22,9,4,-512,512,0.06500,mm,,SF,HE,Tube local position along second coord,var,,csf

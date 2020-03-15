@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"7eb82b5b";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"2b838470";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -205,15 +205,15 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLC_COMMON_LEN - 1; -- 31
+    msb := SLC_COMMON_LEN - 1; -- 32
     lsb := msb - SLC_COMMON_SLCID_LEN + 1; -- 2
-    b.slcid := v(msb downto lsb); -- 30 29
+    b.slcid := v(msb downto lsb); -- 31 30
     msb := lsb - 1;
     lsb := msb - SLC_COMMON_TCSENT_LEN + 1; -- 1
-    b.tcsent := v(msb); -- 28
+    b.tcsent := v(msb); -- 29
     msb := lsb - 1;
-    lsb := msb - SLC_COMMON_POSETA_LEN + 1; -- 14
-    b.poseta := v(msb downto lsb); -- 27 14
+    lsb := msb - SLC_COMMON_POSETA_LEN + 1; -- 15
+    b.poseta := v(msb downto lsb); -- 28 14
     msb := lsb - 1;
     lsb := msb - SLC_COMMON_POSPHI_LEN + 1; -- 9
     b.posphi := v(msb downto lsb); -- 13 5
@@ -246,9 +246,9 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLC_ENDCAP_LEN - 1; -- 69
-    lsb := msb - SLC_ENDCAP_SLC_COMMON_LEN + 1; -- 31
-    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 68 38
+    msb := SLC_ENDCAP_LEN - 1; -- 70
+    lsb := msb - SLC_ENDCAP_SLC_COMMON_LEN + 1; -- 32
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 69 38
     msb := lsb - 1;
     lsb := msb - SLC_ENDCAP_SEG_ANGDTHETA_LEN + 1; -- 7
     b.seg_angdtheta := v(msb downto lsb); -- 37 31
@@ -287,9 +287,9 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLC_BARREL_LEN - 1; -- 74
-    lsb := msb - SLC_BARREL_SLC_COMMON_LEN + 1; -- 31
-    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 73 43
+    msb := SLC_BARREL_LEN - 1; -- 75
+    lsb := msb - SLC_BARREL_SLC_COMMON_LEN + 1; -- 32
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 74 43
     msb := lsb - 1;
     lsb := msb - SLC_BARREL_RPC0_POSZ_LEN + 1; -- 10
     b.rpc0_posz := v(msb downto lsb); -- 42 33
@@ -370,12 +370,12 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_PIPELINE_ENDCAP_LEN - 1; -- 124
+    msb := SLCPROC_PIPELINE_ENDCAP_LEN - 1; -- 125
     lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN + 1; -- 35
-    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 123 89
+    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 124 90
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN + 1; -- 69
-    b.slc_endcap_r := slc_endcap_2rf(v(msb downto lsb)); -- 88 20
+    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN + 1; -- 70
+    b.slc_endcap_r := slc_endcap_2rf(v(msb downto lsb)); -- 89 20
     msb := lsb - 1;
     lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 19 0
@@ -399,12 +399,12 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_PIPELINE_BARREL_LEN - 1; -- 129
+    msb := SLCPROC_PIPELINE_BARREL_LEN - 1; -- 130
     lsb := msb - SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN + 1; -- 35
-    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 128 94
+    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 129 95
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN + 1; -- 74
-    b.slc_barrel_r := slc_barrel_2rf(v(msb downto lsb)); -- 93 20
+    lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN + 1; -- 75
+    b.slc_barrel_r := slc_barrel_2rf(v(msb downto lsb)); -- 94 20
     msb := lsb - 1;
     lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 19 0
@@ -430,21 +430,21 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TDC_LEN - 1; -- 32
+    msb := TDC_LEN - 1; -- 34
     lsb := msb - TDC_CHANID_LEN + 1; -- 5
-    b.chanid := v(msb downto lsb); -- 31 27
+    b.chanid := v(msb downto lsb); -- 33 29
     msb := lsb - 1;
     lsb := msb - TDC_EDGEMODE_LEN + 1; -- 2
-    b.edgemode := v(msb downto lsb); -- 26 25
+    b.edgemode := v(msb downto lsb); -- 28 27
     msb := lsb - 1;
     lsb := msb - TDC_COARSETIME_LEN + 1; -- 12
-    b.coarsetime := v(msb downto lsb); -- 24 13
+    b.coarsetime := v(msb downto lsb); -- 26 15
     msb := lsb - 1;
-    lsb := msb - TDC_FINETIME_LEN + 1; -- 5
-    b.finetime := v(msb downto lsb); -- 12 8
+    lsb := msb - TDC_FINETIME_LEN + 1; -- 6
+    b.finetime := v(msb downto lsb); -- 14 9
     msb := lsb - 1;
-    lsb := msb - TDC_PULSEWIDTH_LEN + 1; -- 8
-    b.pulsewidth := v(msb downto lsb); -- 7 0
+    lsb := msb - TDC_PULSEWIDTH_LEN + 1; -- 9
+    b.pulsewidth := v(msb downto lsb); -- 8 0
     return b;
   end function tdc_2rf;
 
@@ -466,9 +466,9 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TDCPOLMUX_LEN - 1; -- 42
-    lsb := msb - TDCPOLMUX_TDC_LEN + 1; -- 32
-    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 41 10
+    msb := TDCPOLMUX_LEN - 1; -- 44
+    lsb := msb - TDCPOLMUX_TDC_LEN + 1; -- 34
+    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 43 10
     msb := lsb - 1;
     lsb := msb - TDCPOLMUX_FIBERID_LEN + 1; -- 5
     b.fiberid := v(msb downto lsb); -- 9 5
@@ -541,18 +541,18 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TAR_LEN - 1; -- 69
+    msb := TAR_LEN - 1; -- 71
     lsb := msb - TAR_MDT_TUBE_LAYER_LEN + 1; -- 5
-    b.mdt_tube_layer := v(msb downto lsb); -- 68 64
+    b.mdt_tube_layer := v(msb downto lsb); -- 70 66
     msb := lsb - 1;
     lsb := msb - TAR_MDT_TUBE_NUM_LEN + 1; -- 9
-    b.mdt_tube_num := v(msb downto lsb); -- 63 55
+    b.mdt_tube_num := v(msb downto lsb); -- 65 57
     msb := lsb - 1;
-    lsb := msb - TAR_MDT_TUBE_RHO_LEN + 1; -- 18
-    b.mdt_tube_rho := v(msb downto lsb); -- 54 37
+    lsb := msb - TAR_MDT_TUBE_RHO_LEN + 1; -- 19
+    b.mdt_tube_rho := v(msb downto lsb); -- 56 38
     msb := lsb - 1;
-    lsb := msb - TAR_MDT_TUBE_Z_LEN + 1; -- 19
-    b.mdt_tube_z := v(msb downto lsb); -- 36 18
+    lsb := msb - TAR_MDT_TUBE_Z_LEN + 1; -- 20
+    b.mdt_tube_z := v(msb downto lsb); -- 37 18
     msb := lsb - 1;
     lsb := msb - TAR_MDT_TUBE_TIME_LEN + 1; -- 18
     b.mdt_tube_time := v(msb downto lsb); -- 17 0
@@ -577,15 +577,15 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HPS_LSF_LEN - 1; -- 38
+    msb := HPS_LSF_LEN - 1; -- 40
     lsb := msb - HPS_LSF_DATA_VALID_LEN + 1; -- 1
-    b.data_valid := v(msb); -- 37
+    b.data_valid := v(msb); -- 39
     msb := lsb - 1;
-    lsb := msb - HPS_LSF_MDT_LOCALX_LEN + 1; -- 14
-    b.mdt_localx := v(msb downto lsb); -- 36 23
+    lsb := msb - HPS_LSF_MDT_LOCALX_LEN + 1; -- 15
+    b.mdt_localx := v(msb downto lsb); -- 38 24
     msb := lsb - 1;
-    lsb := msb - HPS_LSF_MDT_LOCALY_LEN + 1; -- 14
-    b.mdt_localy := v(msb downto lsb); -- 22 9
+    lsb := msb - HPS_LSF_MDT_LOCALY_LEN + 1; -- 15
+    b.mdt_localy := v(msb downto lsb); -- 23 9
     msb := lsb - 1;
     lsb := msb - HPS_LSF_MDT_RADIUS_LEN + 1; -- 9
     b.mdt_radius := v(msb downto lsb); -- 8 0
@@ -610,15 +610,15 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := HPS_CSF_LEN - 1; -- 38
+    msb := HPS_CSF_LEN - 1; -- 40
     lsb := msb - HPS_CSF_DATA_VALID_LEN + 1; -- 1
-    b.data_valid := v(msb); -- 37
+    b.data_valid := v(msb); -- 39
     msb := lsb - 1;
-    lsb := msb - HPS_CSF_MDT_LOCALX_LEN + 1; -- 14
-    b.mdt_localx := v(msb downto lsb); -- 36 23
+    lsb := msb - HPS_CSF_MDT_LOCALX_LEN + 1; -- 15
+    b.mdt_localx := v(msb downto lsb); -- 38 24
     msb := lsb - 1;
-    lsb := msb - HPS_CSF_MDT_LOCALY_LEN + 1; -- 14
-    b.mdt_localy := v(msb downto lsb); -- 22 9
+    lsb := msb - HPS_CSF_MDT_LOCALY_LEN + 1; -- 15
+    b.mdt_localy := v(msb downto lsb); -- 23 9
     msb := lsb - 1;
     lsb := msb - HPS_CSF_MDT_RADIUS_LEN + 1; -- 9
     b.mdt_radius := v(msb downto lsb); -- 8 0
@@ -674,18 +674,18 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SF_LEN - 1; -- 55
+    msb := SF_LEN - 1; -- 56
     lsb := msb - SF_SLC_MUID_LEN + 1; -- 20
-    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 54 35
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 55 36
     msb := lsb - 1;
     lsb := msb - SF_VEC_MDTID_LEN + 1; -- 6
-    b.vec_mdtid := v(msb downto lsb); -- 34 29
+    b.vec_mdtid := v(msb downto lsb); -- 35 30
     msb := lsb - 1;
     lsb := msb - SF_SEGVALID_LEN + 1; -- 1
-    b.segvalid := v(msb); -- 28
+    b.segvalid := v(msb); -- 29
     msb := lsb - 1;
-    lsb := msb - SF_SEGPOS_LEN + 1; -- 16
-    b.segpos := v(msb downto lsb); -- 27 12
+    lsb := msb - SF_SEGPOS_LEN + 1; -- 17
+    b.segpos := v(msb downto lsb); -- 28 12
     msb := lsb - 1;
     lsb := msb - SF_SEGANGLE_LEN + 1; -- 11
     b.segangle := v(msb downto lsb); -- 11 1
@@ -716,15 +716,15 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := PTCALC_LEN - 1; -- 52
+    msb := PTCALC_LEN - 1; -- 54
     lsb := msb - PTCALC_SLC_MUID_LEN + 1; -- 20
-    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 51 32
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 53 34
     msb := lsb - 1;
-    lsb := msb - PTCALC_ETA_LEN + 1; -- 14
-    b.eta := v(msb downto lsb); -- 31 18
+    lsb := msb - PTCALC_ETA_LEN + 1; -- 15
+    b.eta := v(msb downto lsb); -- 33 19
     msb := lsb - 1;
-    lsb := msb - PTCALC_PT_LEN + 1; -- 8
-    b.pt := v(msb downto lsb); -- 17 10
+    lsb := msb - PTCALC_PT_LEN + 1; -- 9
+    b.pt := v(msb downto lsb); -- 18 10
     msb := lsb - 1;
     lsb := msb - PTCALC_PTTHRESH_LEN + 1; -- 4
     b.ptthresh := v(msb downto lsb); -- 9 6
@@ -758,12 +758,12 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPIPE_MTC_ENDCAP_LEN - 1; -- 54
+    msb := SLCPIPE_MTC_ENDCAP_LEN - 1; -- 55
     lsb := msb - SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN + 1; -- 20
-    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 53 34
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 54 35
     msb := lsb - 1;
-    lsb := msb - SLCPIPE_MTC_ENDCAP_SLC_COMMON_LEN + 1; -- 31
-    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 33 3
+    lsb := msb - SLCPIPE_MTC_ENDCAP_SLC_COMMON_LEN + 1; -- 32
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 34 3
     msb := lsb - 1;
     lsb := msb - SLCPIPE_MTC_ENDCAP_BUSY_LEN + 1; -- 1
     b.busy := v(msb); -- 2
@@ -792,15 +792,15 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPIPE_MTC_BARREL_LEN - 1; -- 57
+    msb := SLCPIPE_MTC_BARREL_LEN - 1; -- 58
     lsb := msb - SLCPIPE_MTC_BARREL_COINTYPE_LEN + 1; -- 3
-    b.cointype := v(msb downto lsb); -- 56 54
+    b.cointype := v(msb downto lsb); -- 57 55
     msb := lsb - 1;
     lsb := msb - SLCPIPE_MTC_BARREL_SLC_MUID_LEN + 1; -- 20
-    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 53 34
+    b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 54 35
     msb := lsb - 1;
-    lsb := msb - SLCPIPE_MTC_BARREL_SLC_COMMON_LEN + 1; -- 31
-    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 33 3
+    lsb := msb - SLCPIPE_MTC_BARREL_SLC_COMMON_LEN + 1; -- 32
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 34 3
     msb := lsb - 1;
     lsb := msb - SLCPIPE_MTC_BARREL_BUSY_LEN + 1; -- 1
     b.busy := v(msb); -- 2
@@ -832,15 +832,15 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := MTC_LEN - 1; -- 67
-    lsb := msb - MTC_SLC_COMMON_LEN + 1; -- 31
-    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 66 36
+    msb := MTC_LEN - 1; -- 70
+    lsb := msb - MTC_SLC_COMMON_LEN + 1; -- 32
+    b.slc_common_r := slc_common_2rf(v(msb downto lsb)); -- 69 38
     msb := lsb - 1;
-    lsb := msb - MTC_ETA_LEN + 1; -- 14
-    b.eta := v(msb downto lsb); -- 35 22
+    lsb := msb - MTC_ETA_LEN + 1; -- 15
+    b.eta := v(msb downto lsb); -- 37 23
     msb := lsb - 1;
-    lsb := msb - MTC_PT_LEN + 1; -- 8
-    b.pt := v(msb downto lsb); -- 21 14
+    lsb := msb - MTC_PT_LEN + 1; -- 9
+    b.pt := v(msb downto lsb); -- 22 14
     msb := lsb - 1;
     lsb := msb - MTC_PTTHRESH_LEN + 1; -- 4
     b.ptthresh := v(msb downto lsb); -- 13 10

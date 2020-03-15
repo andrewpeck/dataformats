@@ -1,7 +1,7 @@
 Name,Station,Width,MSB index,LSB index,DECB
-slcid,,2,30,29,0
-tcsent,,1,28,28,0
-poseta,,14,27,14,12
+slcid,,2,31,30,0
+tcsent,,1,29,29,0
+poseta,,15,28,14,12
 posphi,,9,13,5,0
 ptthresh,,4,4,1,0
 charge,,1,0,0,0

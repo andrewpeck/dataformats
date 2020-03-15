@@ -1,5 +1,5 @@
 Name,Station,Width,MSB index,LSB index,DECB
-SLC\_COMMON,,31,73,43,0
+SLC\_COMMON,,32,74,43,0
 rpc0\_posz,,10,42,33,0
 rpc1\_posz,,10,32,23,0
 rpc2\_posz,,10,22,13,0

@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "7eb82b5b";
+const char df_hash[] = "2b838470";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;
@@ -30,23 +30,23 @@ const int SLC_MUID_BCIDBCID_LSB = 0;
 const int SLC_MUID_BCIDBCID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_COMMON_LEN = 31;
+const int SLC_COMMON_LEN = 32;
 
 // SLc Identification (up to 3)
 const int SLC_COMMON_SLCIDSLCID_LEN = 2;
-const int SLC_COMMON_SLCIDSLCID_MSB = 30;
-const int SLC_COMMON_SLCIDSLCID_LSB = 29;
+const int SLC_COMMON_SLCIDSLCID_MSB = 31;
+const int SLC_COMMON_SLCIDSLCID_LSB = 30;
 const int SLC_COMMON_SLCIDSLCID_DECB = 0;
 
 // TC sent to MDT TP
 const int SLC_COMMON_TCSENTTCSENT_LEN = 1;
-const int SLC_COMMON_TCSENTTCSENT_MSB = 28;
-const int SLC_COMMON_TCSENTTCSENT_LSB = 28;
+const int SLC_COMMON_TCSENTTCSENT_MSB = 29;
+const int SLC_COMMON_TCSENTTCSENT_LSB = 29;
 const int SLC_COMMON_TCSENTTCSENT_DECB = 0;
 
 // SLc Eta Position
-const int SLC_COMMON_POSETAPOSETA_LEN = 14;
-const int SLC_COMMON_POSETAPOSETA_MSB = 27;
+const int SLC_COMMON_POSETAPOSETA_LEN = 15;
+const int SLC_COMMON_POSETAPOSETA_MSB = 28;
 const int SLC_COMMON_POSETAPOSETA_LSB = 14;
 const int SLC_COMMON_POSETAPOSETA_DECB = 12;
 
@@ -69,7 +69,7 @@ const int SLC_COMMON_CHARGECHARGE_LSB = 0;
 const int SLC_COMMON_CHARGECHARGE_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_ENDCAP_LEN = 69;
+const int SLC_ENDCAP_LEN = 70;
 
 // SLc Segment Angle wrt Eta position
 const int SLC_ENDCAP_SEG_ANGDTHETASEG_ANGDTHETA_LEN = 7;
@@ -102,7 +102,7 @@ const int SLC_ENDCAP_NSWSEG_ANGDTHETANSWSEG_ANGDTHETA_LSB = 0;
 const int SLC_ENDCAP_NSWSEG_ANGDTHETANSWSEG_ANGDTHETA_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_BARREL_LEN = 74;
+const int SLC_BARREL_LEN = 75;
 
 // SLc Hit Z Position in RPC0
 const int SLC_BARREL_RPC0_POSZRPC0_POSZ_LEN = 10;
@@ -180,46 +180,46 @@ const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTIDVEC_MDTID_LSB = 0;
 const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTIDVEC_MDTID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_ENDCAP_LEN = 124;
+const int SLCPROC_PIPELINE_ENDCAP_LEN = 125;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_BARREL_LEN = 129;
+const int SLCPROC_PIPELINE_BARREL_LEN = 130;
 
 // -------------------------------------------------------------------
-const int TDC_LEN = 32;
+const int TDC_LEN = 34;
 
 // Channel number within TDC
 const int TDC_CHANIDCHANID_LEN = 5;
-const int TDC_CHANIDCHANID_MSB = 31;
-const int TDC_CHANIDCHANID_LSB = 27;
+const int TDC_CHANIDCHANID_MSB = 33;
+const int TDC_CHANIDCHANID_LSB = 29;
 const int TDC_CHANIDCHANID_DECB = 0;
 
 // Edge or pair mode
 const int TDC_EDGEMODEEDGEMODE_LEN = 2;
-const int TDC_EDGEMODEEDGEMODE_MSB = 26;
-const int TDC_EDGEMODEEDGEMODE_LSB = 25;
+const int TDC_EDGEMODEEDGEMODE_MSB = 28;
+const int TDC_EDGEMODEEDGEMODE_LSB = 27;
 const int TDC_EDGEMODEEDGEMODE_DECB = 0;
 
 // TDC BCID
 const int TDC_COARSETIMECOARSETIME_LEN = 12;
-const int TDC_COARSETIMECOARSETIME_MSB = 24;
-const int TDC_COARSETIMECOARSETIME_LSB = 13;
+const int TDC_COARSETIMECOARSETIME_MSB = 26;
+const int TDC_COARSETIMECOARSETIME_LSB = 15;
 const int TDC_COARSETIMECOARSETIME_DECB = 0;
 
 // TDC fine time with BCID
-const int TDC_FINETIMEFINETIME_LEN = 5;
-const int TDC_FINETIMEFINETIME_MSB = 12;
-const int TDC_FINETIMEFINETIME_LSB = 8;
+const int TDC_FINETIMEFINETIME_LEN = 6;
+const int TDC_FINETIMEFINETIME_MSB = 14;
+const int TDC_FINETIMEFINETIME_LSB = 9;
 const int TDC_FINETIMEFINETIME_DECB = 1;
 
 // Pulse width
-const int TDC_PULSEWIDTHPULSEWIDTH_LEN = 8;
-const int TDC_PULSEWIDTHPULSEWIDTH_MSB = 7;
+const int TDC_PULSEWIDTHPULSEWIDTH_LEN = 9;
+const int TDC_PULSEWIDTHPULSEWIDTH_MSB = 8;
 const int TDC_PULSEWIDTHPULSEWIDTH_LSB = 0;
 const int TDC_PULSEWIDTHPULSEWIDTH_DECB = 1;
 
 // -------------------------------------------------------------------
-const int TDCPOLMUX_LEN = 42;
+const int TDCPOLMUX_LEN = 44;
 
 // Fiber ID within board
 const int TDCPOLMUX_FIBERIDFIBERID_LEN = 5;
@@ -279,29 +279,29 @@ const int SLCPROC_HPS_VEC_ANGVEC_ANG_LSB = 0;
 const int SLCPROC_HPS_VEC_ANGVEC_ANG_DECB = 0;
 
 // -------------------------------------------------------------------
-const int TAR_LEN = 69;
+const int TAR_LEN = 71;
 
 // Tube layer within one station
 const int TAR_MDT_TUBE_LAYERMDT_TUBE_LAYER_LEN = 5;
-const int TAR_MDT_TUBE_LAYERMDT_TUBE_LAYER_MSB = 68;
-const int TAR_MDT_TUBE_LAYERMDT_TUBE_LAYER_LSB = 64;
+const int TAR_MDT_TUBE_LAYERMDT_TUBE_LAYER_MSB = 70;
+const int TAR_MDT_TUBE_LAYERMDT_TUBE_LAYER_LSB = 66;
 const int TAR_MDT_TUBE_LAYERMDT_TUBE_LAYER_DECB = 0;
 
 // Tube number within one station
 const int TAR_MDT_TUBE_NUMMDT_TUBE_NUM_LEN = 9;
-const int TAR_MDT_TUBE_NUMMDT_TUBE_NUM_MSB = 63;
-const int TAR_MDT_TUBE_NUMMDT_TUBE_NUM_LSB = 55;
+const int TAR_MDT_TUBE_NUMMDT_TUBE_NUM_MSB = 65;
+const int TAR_MDT_TUBE_NUMMDT_TUBE_NUM_LSB = 57;
 const int TAR_MDT_TUBE_NUMMDT_TUBE_NUM_DECB = 0;
 
 // Tube radial position
-const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_LEN = 18;
-const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_MSB = 54;
-const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_LSB = 37;
+const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_LEN = 19;
+const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_MSB = 56;
+const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_LSB = 38;
 const int TAR_MDT_TUBE_RHOMDT_TUBE_RHO_DECB = 5;
 
 // Tube position along z
-const int TAR_MDT_TUBE_ZMDT_TUBE_Z_LEN = 19;
-const int TAR_MDT_TUBE_ZMDT_TUBE_Z_MSB = 36;
+const int TAR_MDT_TUBE_ZMDT_TUBE_Z_LEN = 20;
+const int TAR_MDT_TUBE_ZMDT_TUBE_Z_MSB = 37;
 const int TAR_MDT_TUBE_ZMDT_TUBE_Z_LSB = 18;
 const int TAR_MDT_TUBE_ZMDT_TUBE_Z_DECB = 5;
 
@@ -312,23 +312,23 @@ const int TAR_MDT_TUBE_TIMEMDT_TUBE_TIME_LSB = 0;
 const int TAR_MDT_TUBE_TIMEMDT_TUBE_TIME_DECB = 1;
 
 // -------------------------------------------------------------------
-const int HPS_LSF_LEN = 38;
+const int HPS_LSF_LEN = 40;
 
 // Data Valid bit
 const int HPS_LSF_DATA_VALIDDATA_VALID_LEN = 1;
-const int HPS_LSF_DATA_VALIDDATA_VALID_MSB = 37;
-const int HPS_LSF_DATA_VALIDDATA_VALID_LSB = 37;
+const int HPS_LSF_DATA_VALIDDATA_VALID_MSB = 39;
+const int HPS_LSF_DATA_VALIDDATA_VALID_LSB = 39;
 const int HPS_LSF_DATA_VALIDDATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HPS_LSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
-const int HPS_LSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
-const int HPS_LSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_LEN = 15;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_MSB = 38;
+const int HPS_LSF_MDT_LOCALXMDT_LOCALX_LSB = 24;
 const int HPS_LSF_MDT_LOCALXMDT_LOCALX_DECB = 5;
 
 // Tube local position along second coord
-const int HPS_LSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
-const int HPS_LSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
+const int HPS_LSF_MDT_LOCALYMDT_LOCALY_LEN = 15;
+const int HPS_LSF_MDT_LOCALYMDT_LOCALY_MSB = 23;
 const int HPS_LSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
 const int HPS_LSF_MDT_LOCALYMDT_LOCALY_DECB = 5;
 
@@ -339,23 +339,23 @@ const int HPS_LSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
 const int HPS_LSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
 
 // -------------------------------------------------------------------
-const int HPS_CSF_LEN = 38;
+const int HPS_CSF_LEN = 40;
 
 // Data Valid bit
 const int HPS_CSF_DATA_VALIDDATA_VALID_LEN = 1;
-const int HPS_CSF_DATA_VALIDDATA_VALID_MSB = 37;
-const int HPS_CSF_DATA_VALIDDATA_VALID_LSB = 37;
+const int HPS_CSF_DATA_VALIDDATA_VALID_MSB = 39;
+const int HPS_CSF_DATA_VALIDDATA_VALID_LSB = 39;
 const int HPS_CSF_DATA_VALIDDATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
-const int HPS_CSF_MDT_LOCALXMDT_LOCALX_LEN = 14;
-const int HPS_CSF_MDT_LOCALXMDT_LOCALX_MSB = 36;
-const int HPS_CSF_MDT_LOCALXMDT_LOCALX_LSB = 23;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_LEN = 15;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_MSB = 38;
+const int HPS_CSF_MDT_LOCALXMDT_LOCALX_LSB = 24;
 const int HPS_CSF_MDT_LOCALXMDT_LOCALX_DECB = 4;
 
 // Tube local position along second coord
-const int HPS_CSF_MDT_LOCALYMDT_LOCALY_LEN = 14;
-const int HPS_CSF_MDT_LOCALYMDT_LOCALY_MSB = 22;
+const int HPS_CSF_MDT_LOCALYMDT_LOCALY_LEN = 15;
+const int HPS_CSF_MDT_LOCALYMDT_LOCALY_MSB = 23;
 const int HPS_CSF_MDT_LOCALYMDT_LOCALY_LSB = 9;
 const int HPS_CSF_MDT_LOCALYMDT_LOCALY_DECB = 4;
 
@@ -363,23 +363,23 @@ const int HPS_CSF_MDT_LOCALYMDT_LOCALY_DECB = 4;
 const int HPS_CSF_MDT_RADIUSMDT_RADIUS_LEN = 9;
 const int HPS_CSF_MDT_RADIUSMDT_RADIUS_MSB = 8;
 const int HPS_CSF_MDT_RADIUSMDT_RADIUS_LSB = 0;
-const int HPS_CSF_MDT_RADIUSMDT_RADIUS_DECB = 5;
+const int HPS_CSF_MDT_RADIUSMDT_RADIUS_DECB = 4;
 
 // -------------------------------------------------------------------
 const int SLCPIPE_PTCALC_LEN = 29;
 
 // -------------------------------------------------------------------
-const int SF_LEN = 55;
+const int SF_LEN = 56;
 
 // SF MDT segment valid bit
 const int SF_SEGVALIDSEGVALID_LEN = 1;
-const int SF_SEGVALIDSEGVALID_MSB = 28;
-const int SF_SEGVALIDSEGVALID_LSB = 28;
+const int SF_SEGVALIDSEGVALID_MSB = 29;
+const int SF_SEGVALIDSEGVALID_LSB = 29;
 const int SF_SEGVALIDSEGVALID_DECB = 0;
 
 // SF MDT segment position along the precision coord
-const int SF_SEGPOSSEGPOS_LEN = 16;
-const int SF_SEGPOSSEGPOS_MSB = 27;
+const int SF_SEGPOSSEGPOS_LEN = 17;
+const int SF_SEGPOSSEGPOS_MSB = 28;
 const int SF_SEGPOSSEGPOS_LSB = 12;
 const int SF_SEGPOSSEGPOS_DECB = 3;
 
@@ -396,17 +396,17 @@ const int SF_SEGQUALITYSEGQUALITY_LSB = 0;
 const int SF_SEGQUALITYSEGQUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
-const int PTCALC_LEN = 52;
+const int PTCALC_LEN = 54;
 
 // eta of the innermost MDT station segment position
-const int PTCALC_ETAETA_LEN = 14;
-const int PTCALC_ETAETA_MSB = 31;
-const int PTCALC_ETAETA_LSB = 18;
+const int PTCALC_ETAETA_LEN = 15;
+const int PTCALC_ETAETA_MSB = 33;
+const int PTCALC_ETAETA_LSB = 19;
 const int PTCALC_ETAETA_DECB = 12;
 
 // pT calculated by the pT Calc
-const int PTCALC_PTPT_LEN = 8;
-const int PTCALC_PTPT_MSB = 17;
+const int PTCALC_PTPT_LEN = 9;
+const int PTCALC_PTPT_MSB = 18;
 const int PTCALC_PTPT_LSB = 10;
 const int PTCALC_PTPT_DECB = 2;
 
@@ -435,13 +435,13 @@ const int PTCALC_QUALITYQUALITY_LSB = 0;
 const int PTCALC_QUALITYQUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPIPE_MTC_ENDCAP_LEN = 54;
+const int SLCPIPE_MTC_ENDCAP_LEN = 55;
 
 // -------------------------------------------------------------------
-const int SLCPIPE_MTC_BARREL_LEN = 57;
+const int SLCPIPE_MTC_BARREL_LEN = 58;
 
 // -------------------------------------------------------------------
-const int MTC_LEN = 67;
+const int MTC_LEN = 70;
 
 // MDT processing flags
 const int MTC_PROCFLAGSPROCFLAGS_LEN = 4;

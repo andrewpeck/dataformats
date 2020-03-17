@@ -108,10 +108,10 @@ def write_c_file(c_name, df_hash, o_dir) :
 
     buses_filt = [bus for bus in buses if bus.name]
 
-    def get_var_name(bus, var):
-        prefix = f"{bus.name}"
-        if var.station: prefix += f"_{var.station}"
-        prefix += "_"
+    def get_var_name(var, bus=None):
+        prefix = ""
+        if bus: prefix += f"{bus.name}_"
+        if var.station: prefix += f"{var.station}_"
         return f"{prefix}{var.name}".upper()
 
     def get_hls_type(var):
@@ -157,7 +157,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             tpl = "const int %s = %s;"
 
-            var_name = get_var_name(bus, var)
+            var_name = get_var_name(var, bus)
 
             hls_type = get_hls_type(var)
 
@@ -192,7 +192,7 @@ def write_c_file(c_name, df_hash, o_dir) :
     for bus in buses_filt:
 
         n_vars = len(bus.vars)
-        var_sum = "\n\t\t+ ".join([get_var_name(bus, var)+"_LEN" for var in bus.vars])
+        var_sum = "\n\t\t+ ".join([get_var_name(var, bus)+"_LEN" for var in bus.vars])
 
         write_ln("");
         write_ln(f"// {'-'*67}")
@@ -207,7 +207,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             tpl = "const int %s = %s;"
 
-            var_name = get_var_name(bus, var)
+            var_name = get_var_name(var, bus)
 
             hls_type = get_hls_type(var)
 
@@ -220,7 +220,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             var_idx = bus.vars.index(var)
             if var_idx < n_vars-1:
-                next_var_name = get_var_name(bus, bus.vars[var_idx+1])
+                next_var_name = get_var_name(bus.vars[var_idx+1], bus)
                 write_ln(tpl %(f"{var_name}_LSB", f"{next_var_name}_MSB + 1"))
             else:
                 write_ln(tpl %(f"{var_name}_LSB", "0"))
@@ -280,10 +280,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             l = ((int(var.width)-1) // 8) + 1
             l_fmt = f"[{l}]" if l > 1 else ""
 
-            prefix = ""
-            if var.station: prefix = f"{var.station}"
-            prefix += "_"
-            var_name = f"{prefix}{var.name}"
+            var_name = get_var_name(var).lower()
 
             write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
@@ -313,10 +310,7 @@ def write_c_file(c_name, df_hash, o_dir) :
         for var in bus.vars:
             if var.parameter == "(COPY)": continue
 
-            prefix = f"{bus.name}"
-            if var.station: prefix += f"_{var.station}"
-            prefix += "_"
-            var_name = f"{prefix}{var.name}".upper()
+            var_name = get_var_name(var, bus)
 
             hls_type = get_hls_type(var)
 

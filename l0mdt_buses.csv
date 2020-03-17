@@ -68,7 +68,7 @@ elinkid,,4,4,1,0,0,15,1,#,,Tube Remap,TDC Formatter,Elink ID within fiber,var,,
 datavalid,,1,0,0,0,0,1,1,#,,Tube Remap,TDC Formatter,Valid bit,var,,
 TOTAL,,44,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPROC_HPS,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPROC_HPS_SF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 slc_valid,,1,48,48,0,0,1,1,#,,HE_SF,SLc Processor,SLC Valid bit,var,,
 SLC_MUID,,20,47,28,0,,,,#,,HE_SF,SLc Processor,SLc Muon Unique Identifier,SLC_MUID,,
 mdtseg_dest,,2,27,26,0,0,3,1,#,,HE_SF,SLc Processor,inner MDT segment chip destination,var,,

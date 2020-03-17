@@ -1,8 +1,10 @@
+// -------------------------------------------------------------------------------------------------
+// Auto-generated from:
+// https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
+// -------------------------------------------------------------------------------------------------
+#ifndef L0MDT_BUSES_HLS_TYPES_H
+#define L0MDT_BUSES_HLS_TYPES_H
 
-#ifndef LOMDT_BUSES_HLS_TYPES_H
-#define LOMDT_BUSES_HLS_TYPES_H
-
-const char df_hash_hls_types[] = "7eb82b5b";
 
 #include <ap_fixed.h>
 #include <ap_int.h>
@@ -145,4 +147,4 @@ typedef ap_uint<MTC_PROCFLAGS_LEN> mtc_procflags_uint_t;
 
 // -------------------------------------------------------------------
 
-#endif // LOMDT_BUSES_HLS_TYPES_H
+#endif // L0MDT_BUSES_HLS_TYPES_H

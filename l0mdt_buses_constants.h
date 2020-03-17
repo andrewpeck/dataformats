@@ -2,6 +2,8 @@
 // Auto-generated from:
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
+#ifndef L0MDT_BUSES_CONSTANTS_H
+#define L0MDT_BUSES_CONSTANTS_H
 
 #ifndef LOMDT_BUSES_CONSTANTS_H
 #define LOMDT_BUSES_CONSTANTS_H
@@ -218,17 +220,17 @@ const int SLCPROC_PIPE_ENDCAP_SLC_MUID_MSB = 19;
 const int SLCPROC_PIPE_ENDCAP_SLC_MUID_LSB = 0;
 const int SLCPROC_PIPE_ENDCAP_SLC_MUID_DECB = 0;
 
-// (COPY)
+// (COPY - SLCPROC_PIPELINE_COMMON)
 const int SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN = 35;
-const int SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_MSB = 123;
-const int SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LSB = 89;
+const int SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_MSB = 124;
+const int SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LSB = 90;
 
-// (COPY)
-const int SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN = 69;
-const int SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_MSB = 88;
+// (COPY - SLC_ENDCAP)
+const int SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN = 70;
+const int SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_MSB = 89;
 const int SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LSB = 20;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LEN = 20;
 const int SLCPROC_PIPELINE_ENDCAP_SLC_MUID_MSB = 19;
 const int SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LSB = 0;
@@ -254,17 +256,17 @@ const int SLCPROC_PIPE_BARREL_SLC_MUID_MSB = 19;
 const int SLCPROC_PIPE_BARREL_SLC_MUID_LSB = 0;
 const int SLCPROC_PIPE_BARREL_SLC_MUID_DECB = 0;
 
-// (COPY)
+// (COPY - SLCPROC_PIPELINE_COMMON)
 const int SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN = 35;
-const int SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_MSB = 128;
-const int SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LSB = 94;
+const int SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_MSB = 129;
+const int SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LSB = 95;
 
-// (COPY)
-const int SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN = 74;
-const int SLCPROC_PIPELINE_BARREL_SLC_BARREL_MSB = 93;
+// (COPY - SLC_BARREL)
+const int SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN = 75;
+const int SLCPROC_PIPELINE_BARREL_SLC_BARREL_MSB = 94;
 const int SLCPROC_PIPELINE_BARREL_SLC_BARREL_LSB = 20;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int SLCPROC_PIPELINE_BARREL_SLC_MUID_LEN = 20;
 const int SLCPROC_PIPELINE_BARREL_SLC_MUID_MSB = 19;
 const int SLCPROC_PIPELINE_BARREL_SLC_MUID_LSB = 0;
@@ -457,19 +459,19 @@ const int HPS_CSF_MDT_RADIUS_DECB = 4;
 // -------------------------------------------------------------------
 const int SLCPIPE_PTCALC_LEN = 29;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int SLCPIPE_PTCALC_SLC_MUID_LEN = 20;
 const int SLCPIPE_PTCALC_SLC_MUID_MSB = 28;
 const int SLCPIPE_PTCALC_SLC_MUID_LSB = 9;
 const int SLCPIPE_PTCALC_SLC_MUID_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_PTCALC_PHIMOD_LEN = 8;
 const int SLCPIPE_PTCALC_PHIMOD_MSB = 8;
 const int SLCPIPE_PTCALC_PHIMOD_LSB = 1;
 const int SLCPIPE_PTCALC_PHIMOD_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_PTCALC_CHARGE_LEN = 1;
 const int SLCPIPE_PTCALC_CHARGE_MSB = 0;
 const int SLCPIPE_PTCALC_CHARGE_LSB = 0;
@@ -478,13 +480,13 @@ const int SLCPIPE_PTCALC_CHARGE_DECB = 0;
 // -------------------------------------------------------------------
 const int SF_LEN = 56;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int SF_SLC_MUID_LEN = 20;
 const int SF_SLC_MUID_MSB = 55;
 const int SF_SLC_MUID_LSB = 36;
 const int SF_SLC_MUID_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SF_VEC_MDTID_LEN = 6;
 const int SF_VEC_MDTID_MSB = 35;
 const int SF_VEC_MDTID_LSB = 30;
@@ -515,7 +517,7 @@ const int SF_SEGQUALITY_LSB = 0;
 // -------------------------------------------------------------------
 const int PTCALC_LEN = 54;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int PTCALC_SLC_MUID_LEN = 20;
 const int PTCALC_SLC_MUID_MSB = 53;
 const int PTCALC_SLC_MUID_LSB = 34;
@@ -558,7 +560,7 @@ const int PTCALC_QUALITY_LSB = 0;
 // -------------------------------------------------------------------
 const int SLCPIPE_MTC_ENDCAP_LEN = 55;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN = 20;
 const int SLCPIPE_MTC_ENDCAP_SLC_MUID_MSB = 54;
 const int SLCPIPE_MTC_ENDCAP_SLC_MUID_LSB = 35;
@@ -570,13 +572,13 @@ const int SLCPIPE_MTC_ENDCAP_SLC_COMMON_MSB = 34;
 const int SLCPIPE_MTC_ENDCAP_SLC_COMMON_LSB = 3;
 const int SLCPIPE_MTC_ENDCAP_SLC_COMMON_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_MTC_ENDCAP_BUSY_LEN = 1;
 const int SLCPIPE_MTC_ENDCAP_BUSY_MSB = 2;
 const int SLCPIPE_MTC_ENDCAP_BUSY_LSB = 2;
 const int SLCPIPE_MTC_ENDCAP_BUSY_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_MTC_ENDCAP_DESTSL_LEN = 2;
 const int SLCPIPE_MTC_ENDCAP_DESTSL_MSB = 1;
 const int SLCPIPE_MTC_ENDCAP_DESTSL_LSB = 0;
@@ -585,13 +587,13 @@ const int SLCPIPE_MTC_ENDCAP_DESTSL_DECB = 0;
 // -------------------------------------------------------------------
 const int SLCPIPE_MTC_BARREL_LEN = 58;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_MTC_BARREL_COINTYPE_LEN = 3;
 const int SLCPIPE_MTC_BARREL_COINTYPE_MSB = 57;
 const int SLCPIPE_MTC_BARREL_COINTYPE_LSB = 55;
 const int SLCPIPE_MTC_BARREL_COINTYPE_DECB = 0;
 
-// (COPY)
+// (COPY - SLC_MUID)
 const int SLCPIPE_MTC_BARREL_SLC_MUID_LEN = 20;
 const int SLCPIPE_MTC_BARREL_SLC_MUID_MSB = 54;
 const int SLCPIPE_MTC_BARREL_SLC_MUID_LSB = 35;
@@ -603,13 +605,13 @@ const int SLCPIPE_MTC_BARREL_SLC_COMMON_MSB = 34;
 const int SLCPIPE_MTC_BARREL_SLC_COMMON_LSB = 3;
 const int SLCPIPE_MTC_BARREL_SLC_COMMON_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_MTC_BARREL_BUSY_LEN = 1;
 const int SLCPIPE_MTC_BARREL_BUSY_MSB = 2;
 const int SLCPIPE_MTC_BARREL_BUSY_LSB = 2;
 const int SLCPIPE_MTC_BARREL_BUSY_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int SLCPIPE_MTC_BARREL_DESTSL_LEN = 2;
 const int SLCPIPE_MTC_BARREL_DESTSL_MSB = 1;
 const int SLCPIPE_MTC_BARREL_DESTSL_LSB = 0;
@@ -636,13 +638,13 @@ const int MTC_PT_MSB = 22;
 const int MTC_PT_LSB = 14;
 const int MTC_PT_DECB = 2;
 
-// (COPY)
+// (COPY - var)
 const int MTC_PTTHRESH_LEN = 4;
 const int MTC_PTTHRESH_MSB = 13;
 const int MTC_PTTHRESH_LSB = 10;
 const int MTC_PTTHRESH_DECB = 0;
 
-// (COPY)
+// (COPY - var)
 const int MTC_CHARGE_LEN = 1;
 const int MTC_CHARGE_MSB = 9;
 const int MTC_CHARGE_LSB = 9;
@@ -653,12 +655,12 @@ const int MTC_PROCFLAGS_LEN = 4;
 const int MTC_PROCFLAGS_MSB = 8;
 const int MTC_PROCFLAGS_LSB = 5;
 
-// (COPY)
+// (COPY - var)
 const int MTC_NSEGMENTS_LEN = 2;
 const int MTC_NSEGMENTS_MSB = 4;
 const int MTC_NSEGMENTS_LSB = 3;
 
-// (COPY)
+// (COPY - var)
 const int MTC_QUALITY_LEN = 3;
 const int MTC_QUALITY_MSB = 2;
 const int MTC_QUALITY_LSB = 0;
@@ -677,4 +679,4 @@ const int MTC_QUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
 
-#endif // LOMDT_BUSES_CONSTANTS_H
+#endif // L0MDT_BUSES_CONSTANTS_H

@@ -92,7 +92,7 @@ typedef struct SLCPROC_PIPE_ENDCAP_n {
     // struct SLCPROC_PIPE_COMMON
     char INN_SLCPROC_PIPE_COMMON[5]; // 35 bits
     // struct SLC_ENDCAP
-    char INN_SLC_ENDCAP[9]; // 70 bits
+    char SLC_ENDCAP[9]; // 70 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
 } SLCPROC_PIPE_ENDCAP_rt;
@@ -102,7 +102,7 @@ typedef struct SLCPROC_PIPE_BARREL_n {
     // struct SLCPROC_PIPE_COMMON
     char INN_SLCPROC_PIPE_COMMON[5]; // 35 bits
     // struct SLC_BARREL
-    char INN_SLC_BARREL[10]; // 75 bits
+    char SLC_BARREL[10]; // 75 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
 } SLCPROC_PIPE_BARREL_rt;
@@ -116,15 +116,15 @@ typedef struct TDC_n {
     // TDC BCID
     char coarsetime[2]; // 12 bits
     // TDC fine time with BCID
-    char INN_finetime; // 6 bits
+    char finetime; // 6 bits
     // Pulse width
-    char INN_pulsewidth[2]; // 9 bits
+    char pulsewidth[2]; // 9 bits
 } TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCPOLMUX_n {
     // struct TDC
-    char INN_TDC[5]; // 34 bits
+    char TDC[5]; // 34 bits
     // Fiber ID within board
     char fiberid; // 5 bits
     // Elink ID within fiber
@@ -156,9 +156,9 @@ typedef struct TAR_n {
     // Tube number within one station
     char mdt_tube_num[2]; // 9 bits
     // Tube radial position
-    char INN_mdt_tube_rho[3]; // 19 bits
+    char mdt_tube_rho[3]; // 19 bits
     // Tube position along z
-    char INN_mdt_tube_z[3]; // 20 bits
+    char mdt_tube_z[3]; // 20 bits
     // Tube (uncalibrated) time
     char mdt_tube_time[3]; // 18 bits
 } TAR_rt;
@@ -168,9 +168,9 @@ typedef struct HPS_LSF_n {
     // Data Valid bit
     char data_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_mdt_localx[2]; // 15 bits
+    char mdt_localx[2]; // 15 bits
     // Tube local position along second coord
-    char INN_mdt_localy[2]; // 15 bits
+    char mdt_localy[2]; // 15 bits
     // Tube drift radius
     char mdt_radius[2]; // 9 bits
 } HPS_LSF_rt;
@@ -180,9 +180,9 @@ typedef struct HPS_CSF_n {
     // Data Valid bit
     char data_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_mdt_localx[2]; // 15 bits
+    char mdt_localx[2]; // 15 bits
     // Tube local position along second coord
-    char INN_mdt_localy[2]; // 15 bits
+    char mdt_localy[2]; // 15 bits
     // Tube drift radius
     char mdt_radius[2]; // 9 bits
 } HPS_CSF_rt;
@@ -206,7 +206,7 @@ typedef struct SF_n {
     // SF MDT segment valid bit
     char segvalid; // 1 bits
     // SF MDT segment position along the precision coord
-    char INN_segpos[3]; // 17 bits
+    char segpos[3]; // 17 bits
     // SF MDT segment angle along the precision coord
     char segangle[2]; // 11 bits
     // SF MDT segment qualiry
@@ -218,9 +218,9 @@ typedef struct PTCALC_n {
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
     // eta of the innermost MDT station segment position
-    char INN_eta[2]; // 15 bits
+    char eta[2]; // 15 bits
     // pT calculated by the pT Calc
-    char INN_pt[2]; // 9 bits
+    char pt[2]; // 9 bits
     // pT threshold satisfied by the MDT TC
     char ptthresh; // 4 bits
     // charge determined from the pT calc
@@ -236,7 +236,7 @@ typedef struct SLCPIPE_MTC_ENDCAP_n {
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
-    char INN_SLC_COMMON[4]; // 32 bits
+    char SLC_COMMON[4]; // 32 bits
     // (COPY)
     char busy; // 1 bits
     // (COPY)
@@ -250,7 +250,7 @@ typedef struct SLCPIPE_MTC_BARREL_n {
     // struct SLC_MUID
     char SLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
-    char INN_SLC_COMMON[4]; // 32 bits
+    char SLC_COMMON[4]; // 32 bits
     // (COPY)
     char busy; // 1 bits
     // (COPY)
@@ -260,11 +260,11 @@ typedef struct SLCPIPE_MTC_BARREL_n {
 // -------------------------------------------------------------------
 typedef struct MTC_n {
     // struct SLC_COMMON
-    char INN_SLC_COMMON[4]; // 32 bits
+    char SLC_COMMON[4]; // 32 bits
     // (COPY)
-    char INN_eta[2]; // 15 bits
+    char eta[2]; // 15 bits
     // (COPY)
-    char INN_pt[2]; // 9 bits
+    char pt[2]; // 9 bits
     // (COPY)
     char ptthresh; // 4 bits
     // (COPY)

@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"2b838470";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -340,49 +340,49 @@ package mdttp_constants_pkg is
   constant TDCPOLMUX_DATAVALID_MULT : natural := 2;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_HPS_LEN : natural := 49;
+  constant SLCPROC_HPS_SF_LEN : natural := 49;
 
   -- SLC Valid bit
-  constant SLCPROC_HPS_SLC_VALID_LEN : natural := 1;
-  constant SLCPROC_HPS_SLC_VALID_MSB : natural := 48;
-  constant SLCPROC_HPS_SLC_VALID_LSB : natural := 48;
-  constant SLCPROC_HPS_SLC_VALID_DECB : natural := 0;
-  constant SLCPROC_HPS_SLC_VALID_MULT : natural := 2;
+  constant SLCPROC_HPS_SF_SLC_VALID_LEN : natural := 1;
+  constant SLCPROC_HPS_SF_SLC_VALID_MSB : natural := 48;
+  constant SLCPROC_HPS_SF_SLC_VALID_LSB : natural := 48;
+  constant SLCPROC_HPS_SF_SLC_VALID_DECB : natural := 0;
+  constant SLCPROC_HPS_SF_SLC_VALID_MULT : natural := 2;
 
   -- SLc Muon Unique Identifier
-  constant SLCPROC_HPS_SLC_MUID_LEN : natural := 20;
-  constant SLCPROC_HPS_SLC_MUID_MSB : natural := 47;
-  constant SLCPROC_HPS_SLC_MUID_LSB : natural := 28;
-  constant SLCPROC_HPS_SLC_MUID_DECB : natural := 0;
-  constant SLCPROC_HPS_SLC_MUID_MULT : natural := 0;
+  constant SLCPROC_HPS_SF_SLC_MUID_LEN : natural := 20;
+  constant SLCPROC_HPS_SF_SLC_MUID_MSB : natural := 47;
+  constant SLCPROC_HPS_SF_SLC_MUID_LSB : natural := 28;
+  constant SLCPROC_HPS_SF_SLC_MUID_DECB : natural := 0;
+  constant SLCPROC_HPS_SF_SLC_MUID_MULT : natural := 0;
 
   -- inner MDT segment chip destination
-  constant SLCPROC_HPS_MDTSEG_DEST_LEN : natural := 2;
-  constant SLCPROC_HPS_MDTSEG_DEST_MSB : natural := 27;
-  constant SLCPROC_HPS_MDTSEG_DEST_LSB : natural := 26;
-  constant SLCPROC_HPS_MDTSEG_DEST_DECB : natural := 0;
-  constant SLCPROC_HPS_MDTSEG_DEST_MULT : natural := 1;
+  constant SLCPROC_HPS_SF_MDTSEG_DEST_LEN : natural := 2;
+  constant SLCPROC_HPS_SF_MDTSEG_DEST_MSB : natural := 27;
+  constant SLCPROC_HPS_SF_MDTSEG_DEST_LSB : natural := 26;
+  constant SLCPROC_HPS_SF_MDTSEG_DEST_DECB : natural := 0;
+  constant SLCPROC_HPS_SF_MDTSEG_DEST_MULT : natural := 1;
 
   -- SLc Inner Vector MDT chamber ID
-  constant SLCPROC_HPS_VEC_MDTID_LEN : natural := 6;
-  constant SLCPROC_HPS_VEC_MDTID_MSB : natural := 25;
-  constant SLCPROC_HPS_VEC_MDTID_LSB : natural := 20;
-  constant SLCPROC_HPS_VEC_MDTID_DECB : natural := 0;
-  constant SLCPROC_HPS_VEC_MDTID_MULT : natural := 1;
+  constant SLCPROC_HPS_SF_VEC_MDTID_LEN : natural := 6;
+  constant SLCPROC_HPS_SF_VEC_MDTID_MSB : natural := 25;
+  constant SLCPROC_HPS_SF_VEC_MDTID_LSB : natural := 20;
+  constant SLCPROC_HPS_SF_VEC_MDTID_DECB : natural := 0;
+  constant SLCPROC_HPS_SF_VEC_MDTID_MULT : natural := 1;
 
   -- SLc inner vector rho position
-  constant SLCPROC_HPS_VEC_POS_LEN : natural := 10;
-  constant SLCPROC_HPS_VEC_POS_MSB : natural := 19;
-  constant SLCPROC_HPS_VEC_POS_LSB : natural := 10;
-  constant SLCPROC_HPS_VEC_POS_DECB : natural := 0;
-  constant SLCPROC_HPS_VEC_POS_MULT : natural := 0;
+  constant SLCPROC_HPS_SF_VEC_POS_LEN : natural := 10;
+  constant SLCPROC_HPS_SF_VEC_POS_MSB : natural := 19;
+  constant SLCPROC_HPS_SF_VEC_POS_LSB : natural := 10;
+  constant SLCPROC_HPS_SF_VEC_POS_DECB : natural := 0;
+  constant SLCPROC_HPS_SF_VEC_POS_MULT : natural := 0;
 
   -- SLc inner vector theta angle
-  constant SLCPROC_HPS_VEC_ANG_LEN : natural := 10;
-  constant SLCPROC_HPS_VEC_ANG_MSB : natural := 9;
-  constant SLCPROC_HPS_VEC_ANG_LSB : natural := 0;
-  constant SLCPROC_HPS_VEC_ANG_DECB : natural := 0;
-  constant SLCPROC_HPS_VEC_ANG_MULT : natural := 1;
+  constant SLCPROC_HPS_SF_VEC_ANG_LEN : natural := 10;
+  constant SLCPROC_HPS_SF_VEC_ANG_MSB : natural := 9;
+  constant SLCPROC_HPS_SF_VEC_ANG_LSB : natural := 0;
+  constant SLCPROC_HPS_SF_VEC_ANG_DECB : natural := 0;
+  constant SLCPROC_HPS_SF_VEC_ANG_MULT : natural := 1;
 
   ----------------------------------------------------------------------
   constant TAR_LEN : natural := 71;

@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 2b838470;
+`define DF_HASH 26fa9dec;
 
 // -------------------------------------------------------------------
 parameter SLC_MUID_LEN = 20 ;
@@ -237,43 +237,43 @@ parameter TDCPOLMUX_DATAVALID_LSB = 0 ;
 parameter TDCPOLMUX_DATAVALID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-parameter SLCPROC_HPS_LEN = 49 ;
+parameter SLCPROC_HPS_SF_LEN = 49 ;
 
 // SLC Valid bit
-parameter SLCPROC_HPS_SLC_VALID_LEN = 1 ;
-parameter SLCPROC_HPS_SLC_VALID_MSB = 48 ;
-parameter SLCPROC_HPS_SLC_VALID_LSB = 48 ;
-parameter SLCPROC_HPS_SLC_VALID_DECB = 0 ;
+parameter SLCPROC_HPS_SF_SLC_VALID_LEN = 1 ;
+parameter SLCPROC_HPS_SF_SLC_VALID_MSB = 48 ;
+parameter SLCPROC_HPS_SF_SLC_VALID_LSB = 48 ;
+parameter SLCPROC_HPS_SF_SLC_VALID_DECB = 0 ;
 
 // SLc Muon Unique Identifier
-parameter SLCPROC_HPS_SLC_MUID_LEN = 20 ;
-parameter SLCPROC_HPS_SLC_MUID_MSB = 47 ;
-parameter SLCPROC_HPS_SLC_MUID_LSB = 28 ;
-parameter SLCPROC_HPS_SLC_MUID_DECB = 0 ;
+parameter SLCPROC_HPS_SF_SLC_MUID_LEN = 20 ;
+parameter SLCPROC_HPS_SF_SLC_MUID_MSB = 47 ;
+parameter SLCPROC_HPS_SF_SLC_MUID_LSB = 28 ;
+parameter SLCPROC_HPS_SF_SLC_MUID_DECB = 0 ;
 
 // inner MDT segment chip destination
-parameter SLCPROC_HPS_MDTSEG_DEST_LEN = 2 ;
-parameter SLCPROC_HPS_MDTSEG_DEST_MSB = 27 ;
-parameter SLCPROC_HPS_MDTSEG_DEST_LSB = 26 ;
-parameter SLCPROC_HPS_MDTSEG_DEST_DECB = 0 ;
+parameter SLCPROC_HPS_SF_MDTSEG_DEST_LEN = 2 ;
+parameter SLCPROC_HPS_SF_MDTSEG_DEST_MSB = 27 ;
+parameter SLCPROC_HPS_SF_MDTSEG_DEST_LSB = 26 ;
+parameter SLCPROC_HPS_SF_MDTSEG_DEST_DECB = 0 ;
 
 // SLc Inner Vector MDT chamber ID
-parameter SLCPROC_HPS_VEC_MDTID_LEN = 6 ;
-parameter SLCPROC_HPS_VEC_MDTID_MSB = 25 ;
-parameter SLCPROC_HPS_VEC_MDTID_LSB = 20 ;
-parameter SLCPROC_HPS_VEC_MDTID_DECB = 0 ;
+parameter SLCPROC_HPS_SF_VEC_MDTID_LEN = 6 ;
+parameter SLCPROC_HPS_SF_VEC_MDTID_MSB = 25 ;
+parameter SLCPROC_HPS_SF_VEC_MDTID_LSB = 20 ;
+parameter SLCPROC_HPS_SF_VEC_MDTID_DECB = 0 ;
 
 // SLc inner vector rho position
-parameter SLCPROC_HPS_VEC_POS_LEN = 10 ;
-parameter SLCPROC_HPS_VEC_POS_MSB = 19 ;
-parameter SLCPROC_HPS_VEC_POS_LSB = 10 ;
-parameter SLCPROC_HPS_VEC_POS_DECB = 0 ;
+parameter SLCPROC_HPS_SF_VEC_POS_LEN = 10 ;
+parameter SLCPROC_HPS_SF_VEC_POS_MSB = 19 ;
+parameter SLCPROC_HPS_SF_VEC_POS_LSB = 10 ;
+parameter SLCPROC_HPS_SF_VEC_POS_DECB = 0 ;
 
 // SLc inner vector theta angle
-parameter SLCPROC_HPS_VEC_ANG_LEN = 10 ;
-parameter SLCPROC_HPS_VEC_ANG_MSB = 9 ;
-parameter SLCPROC_HPS_VEC_ANG_LSB = 0 ;
-parameter SLCPROC_HPS_VEC_ANG_DECB = 0 ;
+parameter SLCPROC_HPS_SF_VEC_ANG_LEN = 10 ;
+parameter SLCPROC_HPS_SF_VEC_ANG_MSB = 9 ;
+parameter SLCPROC_HPS_SF_VEC_ANG_LSB = 0 ;
+parameter SLCPROC_HPS_SF_VEC_ANG_DECB = 0 ;
 
 // -------------------------------------------------------------------
 parameter TAR_LEN = 71 ;

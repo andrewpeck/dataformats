@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "2b838470";
+const char df_hash[] = "26fa9dec";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -134,7 +134,7 @@ typedef struct TDCPOLMUX_n {
 } TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_HPS_n {
+typedef struct SLCPROC_HPS_SF_n {
     // SLC Valid bit
     char INN_slc_valid; // 1 bits
     // struct SLC_MUID
@@ -147,7 +147,7 @@ typedef struct SLCPROC_HPS_n {
     char INN_vec_pos[2]; // 10 bits
     // SLc inner vector theta angle
     char INN_vec_ang[2]; // 10 bits
-} SLCPROC_HPS_rt;
+} SLCPROC_HPS_SF_rt;
 
 // -------------------------------------------------------------------
 typedef struct TAR_n {

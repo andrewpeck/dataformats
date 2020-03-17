@@ -79,11 +79,11 @@ package mdttp_functions_pkg is
   return TDCPOLMUX_rt;
 
   -- -----------------------------------------------------------------
-  function slcproc_hps_2af (d: SLCPROC_HPS_rt)
+  function slcproc_hps_sf_2af (d: SLCPROC_HPS_SF_rt)
   return std_logic_vector;
 
-  function slcproc_hps_2rf (v: slcproc_hps_at)
-  return SLCPROC_HPS_rt;
+  function slcproc_hps_sf_2rf (v: slcproc_hps_sf_at)
+  return SLCPROC_HPS_SF_rt;
 
   -- -----------------------------------------------------------------
   function tar_2af (d: TAR_rt)
@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"2b838470";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -482,9 +482,9 @@ package body mdttp_functions_pkg is
   end function tdcpolmux_2rf;
 
   -- -----------------------------------------------------------------
-  function slcproc_hps_2af (d: SLCPROC_HPS_rt)
+  function slcproc_hps_sf_2af (d: SLCPROC_HPS_SF_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_HPS_LEN-1 downto 0);
+    variable v : std_logic_vector(SLCPROC_HPS_SF_LEN-1 downto 0);
   begin
     v := d.slc_valid
          & slc_muid_2af(d.slc_muid_r)
@@ -493,34 +493,34 @@ package body mdttp_functions_pkg is
          & d.vec_pos
          & d.vec_ang;
     return v;
-  end function slcproc_hps_2af;
+  end function slcproc_hps_sf_2af;
 
-  function slcproc_hps_2rf (v: slcproc_hps_at)
-  return SLCPROC_HPS_rt is
-    variable b : SLCPROC_HPS_rt;
+  function slcproc_hps_sf_2rf (v: slcproc_hps_sf_at)
+  return SLCPROC_HPS_SF_rt is
+    variable b : SLCPROC_HPS_SF_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_HPS_LEN - 1; -- 49
-    lsb := msb - SLCPROC_HPS_SLC_VALID_LEN + 1; -- 1
+    msb := SLCPROC_HPS_SF_LEN - 1; -- 49
+    lsb := msb - SLCPROC_HPS_SF_SLC_VALID_LEN + 1; -- 1
     b.slc_valid := v(msb); -- 48
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HPS_SLC_MUID_LEN + 1; -- 20
+    lsb := msb - SLCPROC_HPS_SF_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 47 28
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HPS_MDTSEG_DEST_LEN + 1; -- 2
+    lsb := msb - SLCPROC_HPS_SF_MDTSEG_DEST_LEN + 1; -- 2
     b.mdtseg_dest := v(msb downto lsb); -- 27 26
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HPS_VEC_MDTID_LEN + 1; -- 6
+    lsb := msb - SLCPROC_HPS_SF_VEC_MDTID_LEN + 1; -- 6
     b.vec_mdtid := v(msb downto lsb); -- 25 20
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HPS_VEC_POS_LEN + 1; -- 10
+    lsb := msb - SLCPROC_HPS_SF_VEC_POS_LEN + 1; -- 10
     b.vec_pos := v(msb downto lsb); -- 19 10
     msb := lsb - 1;
-    lsb := msb - SLCPROC_HPS_VEC_ANG_LEN + 1; -- 10
+    lsb := msb - SLCPROC_HPS_SF_VEC_ANG_LEN + 1; -- 10
     b.vec_ang := v(msb downto lsb); -- 9 0
     return b;
-  end function slcproc_hps_2rf;
+  end function slcproc_hps_sf_2rf;
 
   -- -----------------------------------------------------------------
   function tar_2af (d: TAR_rt)

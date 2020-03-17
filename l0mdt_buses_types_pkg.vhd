@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"2b838470";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -155,22 +155,22 @@ package mdttp_types_pkg is
   end record tdcpolmux_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_HPS_at is std_logic_vector(48 downto 0);
+  subtype SLCPROC_HPS_SF_at is std_logic_vector(48 downto 0);
 
-  type slcproc_hps_rt is record
+  type slcproc_hps_sf_rt is record
     -- SLC Valid bit
     slc_valid : std_logic;
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- inner MDT segment chip destination
-    mdtseg_dest : std_logic_vector(SLCPROC_HPS_MDTSEG_DEST_LEN-1 downto 0); -- 1
+    mdtseg_dest : std_logic_vector(SLCPROC_HPS_SF_MDTSEG_DEST_LEN-1 downto 0); -- 1
     -- SLc Inner Vector MDT chamber ID
-    vec_mdtid : std_logic_vector(SLCPROC_HPS_VEC_MDTID_LEN-1 downto 0); -- 5
+    vec_mdtid : std_logic_vector(SLCPROC_HPS_SF_VEC_MDTID_LEN-1 downto 0); -- 5
     -- SLc inner vector rho position
-    vec_pos : std_logic_vector(SLCPROC_HPS_VEC_POS_LEN-1 downto 0); -- 9
+    vec_pos : std_logic_vector(SLCPROC_HPS_SF_VEC_POS_LEN-1 downto 0); -- 9
     -- SLc inner vector theta angle
-    vec_ang : std_logic_vector(SLCPROC_HPS_VEC_ANG_LEN-1 downto 0); -- 9
-  end record slcproc_hps_rt;
+    vec_ang : std_logic_vector(SLCPROC_HPS_SF_VEC_ANG_LEN-1 downto 0); -- 9
+  end record slcproc_hps_sf_rt;
 
   -- -----------------------------------------------------------------
   subtype TAR_at is std_logic_vector(70 downto 0);

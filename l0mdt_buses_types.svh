@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "2b838470";
+const char df_hash[] = "26fa9dec";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -125,7 +125,7 @@ typedef struct TDCPOLMUX_n {
 } TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_HPS_n {
+typedef struct SLCPROC_HPS_SF_n {
     // SLC Valid bit
     logic [0:0] slc_validslc_valid;
     // struct SLC_MUID
@@ -138,7 +138,7 @@ typedef struct SLCPROC_HPS_n {
     logic [9:0] vec_posvec_pos;
     // SLc inner vector theta angle
     logic [9:0] vec_angvec_ang;
-} SLCPROC_HPS_rt;
+} SLCPROC_HPS_SF_rt;
 
 // -------------------------------------------------------------------
 typedef struct TAR_n {

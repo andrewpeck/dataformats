@@ -140,7 +140,7 @@ typedef struct SLCPROC_HPS_SF_n {
     // SLC Valid bit
     char slc_valid; // 1 bits
     // struct SLC_MUID
-    char slc_muid[3]; // 20 bits
+    char SLC_MUID[3]; // 20 bits
     // inner MDT segment chip destination
     char mdtseg_dest; // 2 bits
     // SLc Inner Vector MDT chamber ID
@@ -192,7 +192,7 @@ typedef struct HPS_CSF_n {
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_PTCALC_n {
     // struct SLC_MUID
-    char slc_muid[3]; // 20 bits
+    char SLC_MUID[3]; // 20 bits
     // (COPY)
     char phimod; // 8 bits
     // (COPY)
@@ -202,7 +202,7 @@ typedef struct SLCPIPE_PTCALC_n {
 // -------------------------------------------------------------------
 typedef struct SF_n {
     // struct SLC_MUID
-    char slc_muid[3]; // 20 bits
+    char SLC_MUID[3]; // 20 bits
     // (COPY)
     char vec_mdtid; // 6 bits
     // SF MDT segment valid bit
@@ -218,7 +218,7 @@ typedef struct SF_n {
 // -------------------------------------------------------------------
 typedef struct PTCALC_n {
     // struct SLC_MUID
-    char slc_muid[3]; // 20 bits
+    char SLC_MUID[3]; // 20 bits
     // eta of the innermost MDT station segment position
     char eta[2]; // 15 bits
     // pT calculated by the pT Calc
@@ -236,7 +236,7 @@ typedef struct PTCALC_n {
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_MTC_ENDCAP_n {
     // struct SLC_MUID
-    char slc_muid[3]; // 20 bits
+    char SLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
     char SLC_COMMON[4]; // 32 bits
     // (COPY)
@@ -250,7 +250,7 @@ typedef struct SLCPIPE_MTC_BARREL_n {
     // (COPY)
     char cointype; // 3 bits
     // struct SLC_MUID
-    char slc_muid[3]; // 20 bits
+    char SLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
     char SLC_COMMON[4]; // 32 bits
     // (COPY)

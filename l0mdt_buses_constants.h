@@ -37,19 +37,18 @@ const int SLC_COMMON_LEN = 32;
 const int SLC_COMMON_SLCID_LEN = 2;
 const int SLC_COMMON_SLCID_MSB = 31;
 const int SLC_COMMON_SLCID_LSB = 30;
-const int SLC_COMMON_SLCID_DECB = 0;
 
 // TC sent to MDT TP
 const int SLC_COMMON_TCSENT_LEN = 1;
 const int SLC_COMMON_TCSENT_MSB = 29;
 const int SLC_COMMON_TCSENT_LSB = 29;
-const int SLC_COMMON_TCSENT_DECB = 0;
 
 // SLc Eta Position
 const int SLC_COMMON_POSETA_LEN = 15;
 const int SLC_COMMON_POSETA_MSB = 28;
 const int SLC_COMMON_POSETA_LSB = 14;
 const int SLC_COMMON_POSETA_DECB = 12;
+const int SLC_COMMON_POSETA_IW = 3;
 
 // SLc Phi Position
 const int SLC_COMMON_POSPHI_LEN = 9;
@@ -278,31 +277,32 @@ const int TDC_LEN = 34;
 const int TDC_CHANID_LEN = 5;
 const int TDC_CHANID_MSB = 33;
 const int TDC_CHANID_LSB = 29;
-const int TDC_CHANID_DECB = 0;
 
 // Edge or pair mode
 const int TDC_EDGEMODE_LEN = 2;
 const int TDC_EDGEMODE_MSB = 28;
 const int TDC_EDGEMODE_LSB = 27;
-const int TDC_EDGEMODE_DECB = 0;
 
 // TDC BCID
 const int TDC_COARSETIME_LEN = 12;
 const int TDC_COARSETIME_MSB = 26;
 const int TDC_COARSETIME_LSB = 15;
-const int TDC_COARSETIME_DECB = 0;
+const int TDC_COARSETIME_SCALE = 25;
+const float TDC_COARSETIME_SCALE_INV = 0.04;
 
 // TDC fine time with BCID
 const int TDC_FINETIME_LEN = 6;
 const int TDC_FINETIME_MSB = 14;
 const int TDC_FINETIME_LSB = 9;
 const int TDC_FINETIME_DECB = 1;
+const int TDC_FINETIME_IW = 5;
 
 // Pulse width
 const int TDC_PULSEWIDTH_LEN = 9;
 const int TDC_PULSEWIDTH_MSB = 8;
 const int TDC_PULSEWIDTH_LSB = 0;
 const int TDC_PULSEWIDTH_DECB = 1;
+const int TDC_PULSEWIDTH_IW = 8;
 
 // -------------------------------------------------------------------
 const int TDCPOLMUX_LEN = 44;
@@ -374,25 +374,25 @@ const int TAR_LEN = 71;
 const int TAR_MDT_TUBE_LAYER_LEN = 5;
 const int TAR_MDT_TUBE_LAYER_MSB = 70;
 const int TAR_MDT_TUBE_LAYER_LSB = 66;
-const int TAR_MDT_TUBE_LAYER_DECB = 0;
 
 // Tube number within one station
 const int TAR_MDT_TUBE_NUM_LEN = 9;
 const int TAR_MDT_TUBE_NUM_MSB = 65;
 const int TAR_MDT_TUBE_NUM_LSB = 57;
-const int TAR_MDT_TUBE_NUM_DECB = 0;
 
 // Tube radial position
 const int TAR_MDT_TUBE_RHO_LEN = 19;
 const int TAR_MDT_TUBE_RHO_MSB = 56;
 const int TAR_MDT_TUBE_RHO_LSB = 38;
 const int TAR_MDT_TUBE_RHO_DECB = 5;
+const int TAR_MDT_TUBE_RHO_IW = 14;
 
 // Tube position along z
 const int TAR_MDT_TUBE_Z_LEN = 20;
 const int TAR_MDT_TUBE_Z_MSB = 37;
 const int TAR_MDT_TUBE_Z_LSB = 18;
 const int TAR_MDT_TUBE_Z_DECB = 5;
+const int TAR_MDT_TUBE_Z_IW = 15;
 
 // Tube (uncalibrated) time
 const int TAR_MDT_TUBE_TIME_LEN = 18;
@@ -408,19 +408,20 @@ const int HPS_LSF_LEN = 40;
 const int HPS_LSF_DATA_VALID_LEN = 1;
 const int HPS_LSF_DATA_VALID_MSB = 39;
 const int HPS_LSF_DATA_VALID_LSB = 39;
-const int HPS_LSF_DATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
 const int HPS_LSF_MDT_LOCALX_LEN = 15;
 const int HPS_LSF_MDT_LOCALX_MSB = 38;
 const int HPS_LSF_MDT_LOCALX_LSB = 24;
 const int HPS_LSF_MDT_LOCALX_DECB = 5;
+const int HPS_LSF_MDT_LOCALX_IW = 10;
 
 // Tube local position along second coord
 const int HPS_LSF_MDT_LOCALY_LEN = 15;
 const int HPS_LSF_MDT_LOCALY_MSB = 23;
 const int HPS_LSF_MDT_LOCALY_LSB = 9;
 const int HPS_LSF_MDT_LOCALY_DECB = 5;
+const int HPS_LSF_MDT_LOCALY_IW = 10;
 
 // Tube drift radius
 const int HPS_LSF_MDT_RADIUS_LEN = 9;
@@ -436,25 +437,27 @@ const int HPS_CSF_LEN = 40;
 const int HPS_CSF_DATA_VALID_LEN = 1;
 const int HPS_CSF_DATA_VALID_MSB = 39;
 const int HPS_CSF_DATA_VALID_LSB = 39;
-const int HPS_CSF_DATA_VALID_DECB = 0;
 
 // Tube local position along precision coord
 const int HPS_CSF_MDT_LOCALX_LEN = 15;
 const int HPS_CSF_MDT_LOCALX_MSB = 38;
 const int HPS_CSF_MDT_LOCALX_LSB = 24;
 const int HPS_CSF_MDT_LOCALX_DECB = 4;
+const int HPS_CSF_MDT_LOCALX_IW = 11;
 
 // Tube local position along second coord
 const int HPS_CSF_MDT_LOCALY_LEN = 15;
 const int HPS_CSF_MDT_LOCALY_MSB = 23;
 const int HPS_CSF_MDT_LOCALY_LSB = 9;
 const int HPS_CSF_MDT_LOCALY_DECB = 4;
+const int HPS_CSF_MDT_LOCALY_IW = 11;
 
 // Tube drift radius
 const int HPS_CSF_MDT_RADIUS_LEN = 9;
 const int HPS_CSF_MDT_RADIUS_MSB = 8;
 const int HPS_CSF_MDT_RADIUS_LSB = 0;
 const int HPS_CSF_MDT_RADIUS_DECB = 4;
+const int HPS_CSF_MDT_RADIUS_IW = 5;
 
 // -------------------------------------------------------------------
 const int SLCPIPE_PTCALC_LEN = 29;
@@ -496,13 +499,13 @@ const int SF_VEC_MDTID_DECB = 0;
 const int SF_SEGVALID_LEN = 1;
 const int SF_SEGVALID_MSB = 29;
 const int SF_SEGVALID_LSB = 29;
-const int SF_SEGVALID_DECB = 0;
 
 // SF MDT segment position along the precision coord
 const int SF_SEGPOS_LEN = 17;
 const int SF_SEGPOS_MSB = 28;
 const int SF_SEGPOS_LSB = 12;
 const int SF_SEGPOS_DECB = 3;
+const int SF_SEGPOS_IW = 14;
 
 // SF MDT segment angle along the precision coord
 const int SF_SEGANGLE_LEN = 11;
@@ -528,12 +531,14 @@ const int PTCALC_ETA_LEN = 15;
 const int PTCALC_ETA_MSB = 33;
 const int PTCALC_ETA_LSB = 19;
 const int PTCALC_ETA_DECB = 12;
+const int PTCALC_ETA_IW = 3;
 
 // pT calculated by the pT Calc
 const int PTCALC_PT_LEN = 9;
 const int PTCALC_PT_MSB = 18;
 const int PTCALC_PT_LSB = 10;
 const int PTCALC_PT_DECB = 2;
+const int PTCALC_PT_IW = 7;
 
 // pT threshold satisfied by the MDT TC
 const int PTCALC_PTTHRESH_LEN = 4;

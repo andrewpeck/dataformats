@@ -112,7 +112,7 @@ def write_c_file(c_name, df_hash, o_dir) :
         prefix = ""
         if bus: prefix += f"{bus.name}_"
         if var.station: prefix += f"{var.station}_"
-        return f"{prefix}{var.name}".upper()
+        return f"{prefix}{var.name}"
 
     def get_hls_type(var):
         if not (var.low or var.high or var.prec):
@@ -157,7 +157,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             tpl = "const int %s = %s;"
 
-            var_name = get_var_name(var, bus)
+            var_name = get_var_name(var, bus).upper()
 
             hls_type = get_hls_type(var)
 
@@ -192,7 +192,7 @@ def write_c_file(c_name, df_hash, o_dir) :
     for bus in buses_filt:
 
         n_vars = len(bus.vars)
-        var_sum = "\n\t\t+ ".join([get_var_name(var, bus)+"_LEN" for var in bus.vars])
+        var_sum = "\n\t\t+ ".join([get_var_name(var, bus).upper()+"_LEN" for var in bus.vars])
 
         write_ln("");
         write_ln(f"// {'-'*67}")
@@ -207,7 +207,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             tpl = "const int %s = %s;"
 
-            var_name = get_var_name(var, bus)
+            var_name = get_var_name(var, bus).upper()
 
             hls_type = get_hls_type(var)
 
@@ -220,7 +220,7 @@ def write_c_file(c_name, df_hash, o_dir) :
 
             var_idx = bus.vars.index(var)
             if var_idx < n_vars-1:
-                next_var_name = get_var_name(bus.vars[var_idx+1], bus)
+                next_var_name = get_var_name(bus.vars[var_idx+1], bus).upper()
                 write_ln(tpl %(f"{var_name}_LSB", f"{next_var_name}_MSB + 1"))
             else:
                 write_ln(tpl %(f"{var_name}_LSB", "0"))
@@ -280,7 +280,7 @@ def write_c_file(c_name, df_hash, o_dir) :
             l = ((int(var.width)-1) // 8) + 1
             l_fmt = f"[{l}]" if l > 1 else ""
 
-            var_name = get_var_name(var).lower()
+            var_name = get_var_name(var)
 
             write_ln(f"    char {var_name}{l_fmt}; // {var.width} bits")
 
@@ -310,7 +310,7 @@ def write_c_file(c_name, df_hash, o_dir) :
         for var in bus.vars:
             if var.parameter == "(COPY)": continue
 
-            var_name = get_var_name(var, bus)
+            var_name = get_var_name(var, bus).upper()
 
             hls_type = get_hls_type(var)
 

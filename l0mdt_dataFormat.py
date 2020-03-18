@@ -256,10 +256,11 @@ def write_c_file(c_name, df_hash, o_dir) :
     write_ln("//   uint16_t bcid;")
     write_ln("//   GETVAL(bcid, SLC_MUID.bcid, 12);")
     write_ln("template <typename T>")
-    write_ln("void GETVAL(T dest, char orig, unsigned int nbits) {")
+    write_ln("void GETVAL(T& dest, char orig, unsigned int nbits) {")
     write_ln("    dest = 0;")
     write_ln("    for (int i=0; i <= nbits/8; i++){")
-    write_ln("    dest |= orig[i] << i*8;")
+    write_ln("        dest |= orig[i] << i*8;")
+    write_ln("    }")
     write_ln("}")
 
     for bus in buses_filt:

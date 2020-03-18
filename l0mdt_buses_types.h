@@ -11,10 +11,11 @@ const char df_hash[] = "2b838470";
 //   uint16_t bcid;
 //   GETVAL(bcid, SLC_MUID.bcid, 12);
 template <typename T>
-void GETVAL(T dest, char orig, unsigned int nbits) {
+void GETVAL(T& dest, char orig, unsigned int nbits) {
     dest = 0;
     for (int i=0; i <= nbits/8; i++){
-    dest |= orig[i] << i*8;
+        dest |= orig[i] << i*8;
+    }
 }
 
 const char df_hash[] = "bece9746";

@@ -335,37 +335,35 @@ const int SLCPROC_HPS_SF_LEN = 49;
 const int SLCPROC_HPS_SF_SLC_VALID_LEN = 1;
 const int SLCPROC_HPS_SF_SLC_VALID_MSB = 48;
 const int SLCPROC_HPS_SF_SLC_VALID_LSB = 48;
-const int SLCPROC_HPS_SF_SLC_VALID_DECB = 0;
 
 // SLc Muon Unique Identifier
 const int SLCPROC_HPS_SF_SLC_MUID_LEN = 20;
 const int SLCPROC_HPS_SF_SLC_MUID_MSB = 47;
 const int SLCPROC_HPS_SF_SLC_MUID_LSB = 28;
-const int SLCPROC_HPS_SF_SLC_MUID_DECB = 0;
 
 // inner MDT segment chip destination
 const int SLCPROC_HPS_SF_MDTSEG_DEST_LEN = 2;
 const int SLCPROC_HPS_SF_MDTSEG_DEST_MSB = 27;
 const int SLCPROC_HPS_SF_MDTSEG_DEST_LSB = 26;
-const int SLCPROC_HPS_SF_MDTSEG_DEST_DECB = 0;
 
 // SLc Inner Vector MDT chamber ID
 const int SLCPROC_HPS_SF_VEC_MDTID_LEN = 6;
 const int SLCPROC_HPS_SF_VEC_MDTID_MSB = 25;
 const int SLCPROC_HPS_SF_VEC_MDTID_LSB = 20;
-const int SLCPROC_HPS_SF_VEC_MDTID_DECB = 0;
 
 // SLc inner vector rho position
 const int SLCPROC_HPS_SF_VEC_POS_LEN = 10;
 const int SLCPROC_HPS_SF_VEC_POS_MSB = 19;
 const int SLCPROC_HPS_SF_VEC_POS_LSB = 10;
-const int SLCPROC_HPS_SF_VEC_POS_DECB = 0;
+const int SLCPROC_HPS_SF_VEC_POS_SCALE = 13;
+const float SLCPROC_HPS_SF_VEC_POS_SCALE_INV = 0.076923;
 
 // SLc inner vector theta angle
 const int SLCPROC_HPS_SF_VEC_ANG_LEN = 10;
 const int SLCPROC_HPS_SF_VEC_ANG_MSB = 9;
 const int SLCPROC_HPS_SF_VEC_ANG_LSB = 0;
-const int SLCPROC_HPS_SF_VEC_ANG_DECB = 0;
+const int SLCPROC_HPS_SF_VEC_ANG_SCALE = 3;
+const float SLCPROC_HPS_SF_VEC_ANG_SCALE_INV = 0.333333;
 
 // -------------------------------------------------------------------
 const int TAR_LEN = 71;

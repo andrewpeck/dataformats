@@ -83,15 +83,15 @@ typedef ap_uint<TDCPOLMUX_ELINKID_LEN> tdcpolmux_elinkid_uint_t;
 typedef ap_uint<TDCPOLMUX_DATAVALID_LEN> tdcpolmux_datavalid_uint_t;
 
 // -------------------------------------------------------------------
-typedef ap_uint<SLCPROC_HPS_LEN> slcproc_hps_uint_t;
-typedef ap_uint<SLCPROC_HPS_SLC_VALID_LEN> slcproc_hps_slc_valid_uint_t;
-typedef ap_uint<SLCPROC_HPS_SLC_MUID_LEN> slcproc_hps_slc_muid_uint_t;
-typedef ap_uint<SLCPROC_HPS_MDTSEG_DEST_LEN> slcproc_hps_mdtseg_dest_uint_t;
-typedef ap_uint<SLCPROC_HPS_VEC_MDTID_LEN> slcproc_hps_vec_mdtid_uint_t;
-typedef ap_uint<SLCPROC_HPS_VEC_POS_LEN> slcproc_hps_vec_pos_uint_t;
-typedef ap_uint<14> slcproc_hps_vec_pos_uint_scaled_t;
-typedef ap_uint<SLCPROC_HPS_VEC_ANG_LEN> slcproc_hps_vec_ang_uint_t;
-typedef ap_uint<11> slcproc_hps_vec_ang_uint_scaled_t;
+typedef ap_uint<SLCPROC_HPS_SF_LEN> slcproc_hps_sf_uint_t;
+typedef ap_uint<SLCPROC_HPS_SF_SLC_VALID_LEN> slcproc_hps_sf_slc_valid_uint_t;
+typedef ap_uint<SLCPROC_HPS_SF_SLC_MUID_LEN> slcproc_hps_sf_slc_muid_uint_t;
+typedef ap_uint<SLCPROC_HPS_SF_MDTSEG_DEST_LEN> slcproc_hps_sf_mdtseg_dest_uint_t;
+typedef ap_uint<SLCPROC_HPS_SF_VEC_MDTID_LEN> slcproc_hps_sf_vec_mdtid_uint_t;
+typedef ap_uint<SLCPROC_HPS_SF_VEC_POS_LEN> slcproc_hps_sf_vec_pos_uint_t;
+typedef ap_uint<14> slcproc_hps_sf_vec_pos_uint_scaled_t;
+typedef ap_uint<SLCPROC_HPS_SF_VEC_ANG_LEN> slcproc_hps_sf_vec_ang_uint_t;
+typedef ap_uint<11> slcproc_hps_sf_vec_ang_uint_scaled_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<TAR_LEN> tar_uint_t;

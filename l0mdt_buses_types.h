@@ -146,7 +146,7 @@ typedef struct SLCPROC_HPS_SF_n {
     // SLc inner vector rho position
     char vec_pos[2]; // 10 bits
     // SLc inner vector theta angle
-    char INN_vec_ang[2]; // 10 bits
+    char vec_ang[2]; // 10 bits
 } SLCPROC_HPS_SF_rt;
 
 // -------------------------------------------------------------------

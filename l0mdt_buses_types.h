@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "eec84758";
+const char df_hash[] = "26fa9dec";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -34,7 +34,7 @@ typedef struct SLC_COMMON_n {
     // TC sent to MDT TP
     char MTC_tcsent; // 1 bits
     // SLc Eta Position
-    char MTC_poseta[2]; // 14 bits
+    char MTC_poseta[2]; // 15 bits
     // SLc Phi Position
     char MTC_posphi[2]; // 9 bits
     // SLc highest pT threshold passed
@@ -46,7 +46,7 @@ typedef struct SLC_COMMON_n {
 // -------------------------------------------------------------------
 typedef struct SLC_ENDCAP_n {
     // struct SLC_COMMON
-    char MTC_SLC_COMMON[4]; // 31 bits
+    char MTC_SLC_COMMON[4]; // 32 bits
     // SLc Segment Angle wrt Eta position
     char MTC_seg_angdtheta; // 7 bits
     // SLc Segment Angle wrt Phi position
@@ -62,7 +62,7 @@ typedef struct SLC_ENDCAP_n {
 // -------------------------------------------------------------------
 typedef struct SLC_BARREL_n {
     // struct SLC_COMMON
-    char MTC_SLC_COMMON[4]; // 31 bits
+    char MTC_SLC_COMMON[4]; // 32 bits
     // SLc Hit Z Position in RPC0
     char MTC_rpc0_posz[2]; // 10 bits
     // SLc Hit Z Position in RPC1

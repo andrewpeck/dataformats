@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"eec84758";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;

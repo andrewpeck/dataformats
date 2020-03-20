@@ -160,18 +160,19 @@ def write_c_file(c_name, df_hash, o_dir) :
             var_name = get_var_name(var, bus).upper()
 
             hls_type = get_hls_type(var)
+            var_iwidth = str(int(var.width) - int(var.decb)) if ('fixed' in hls_type) else var.width
+            if 'int' in get_hls_type(var) and var.prec and float(var.prec) > 1:
+                scale = floor(float(var.prec))
+            else:
+                scale = 1
 
             write_ln(tpl %(f"{var_name}_LEN", var.width))
             write_ln(tpl %(f"{var_name}_MSB", var.msb))
             write_ln(tpl %(f"{var_name}_LSB", var.lsb))
-            if 'fixed' in hls_type:
-                write_ln(tpl %(f"{var_name}_DECB", var.decb))
-                var_iwidth = str(int(var.width) - int(var.decb))
-                write_ln(tpl %(f"{var_name}_IW", var_iwidth))
-            if 'int' in get_hls_type(var) and var.prec and float(var.prec) > 1:
-                scale = floor(float(var.prec))
-                write_ln(tpl %(f"{var_name}_SCALE", str(scale)))
-                write_ln(f"const float {var_name}_SCALE_INV = " + str(round(1/scale,6)) + ";")
+            write_ln(tpl %(f"{var_name}_DECB", var.decb))
+            write_ln(tpl %(f"{var_name}_IW", var_iwidth))
+            write_ln(tpl %(f"{var_name}_SCALE", str(scale)))
+            write_ln(f"const float {var_name}_SCALE_INV = " + str(round(1/scale,6)) + ";")
 
     write_footer(suffix)
     ofile.close()
@@ -226,12 +227,10 @@ def write_c_file(c_name, df_hash, o_dir) :
                 write_ln(tpl %(f"{var_name}_LSB", "0"))
             write_ln(tpl %(f"{var_name}_MSB", f"{var_name}_LSB + {len_var}-1"))
 
-            if 'fixed' in hls_type:
-                write_ln(tpl %(f"{var_name}_DECB", "SW_LEN - SW_IW"))
-                write_ln(tpl %(f"{var_name}_IW", "SW_IW"))
-            if 'int' in get_hls_type(var) and var.prec and float(var.prec) > 1:
-                write_ln(tpl %(f"{var_name}_SCALE", str(1)))
-                write_ln(f"const float {var_name}_SCALE_INV = " + str(1) + ";")
+            write_ln(tpl %(f"{var_name}_DECB", "SW_LEN - SW_IW"))
+            write_ln(tpl %(f"{var_name}_IW", "SW_IW"))
+            write_ln(tpl %(f"{var_name}_SCALE", str(1)))
+            write_ln(f"const float {var_name}_SCALE_INV = " + str(1) + ";")
 
         write_ln("")
         write_ln(f"const int {bus.name}_LEN = {var_sum};")

@@ -92,7 +92,7 @@ typedef struct SLCPROC_PIPELINE_ENDCAP_n {
     // struct SLCPROC_PIPELINE_COMMON
     char INN_SLCPROC_PIPELINE_COMMON[5]; // 35 bits
     // struct SLC_ENDCAP
-    char INN_SLC_ENDCAP[9]; // 69 bits
+    char INN_SLC_ENDCAP[9]; // 70 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
 } SLCPROC_PIPELINE_ENDCAP_rt;
@@ -102,7 +102,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
     // struct SLCPROC_PIPELINE_COMMON
     char INN_SLCPROC_PIPELINE_COMMON[5]; // 35 bits
     // struct SLC_BARREL
-    char INN_SLC_BARREL[10]; // 74 bits
+    char INN_SLC_BARREL[10]; // 75 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
 } SLCPROC_PIPELINE_BARREL_rt;
@@ -116,15 +116,15 @@ typedef struct TDC_n {
     // TDC BCID
     char INN_coarsetime[2]; // 12 bits
     // TDC fine time with BCID
-    char INN_finetime; // 5 bits
+    char INN_finetime; // 6 bits
     // Pulse width
-    char INN_pulsewidth; // 8 bits
+    char INN_pulsewidth[2]; // 9 bits
 } TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCPOLMUX_n {
     // struct TDC
-    char INN_TDC[4]; // 32 bits
+    char INN_TDC[5]; // 34 bits
     // Fiber ID within board
     char INN_fiberid; // 5 bits
     // Elink ID within fiber
@@ -134,7 +134,9 @@ typedef struct TDCPOLMUX_n {
 } TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_HPS_n {
+typedef struct SLCPROC_HPS_SF_n {
+    // SLC Valid bit
+    char INN_slc_valid; // 1 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
     // inner MDT segment chip destination
@@ -145,7 +147,7 @@ typedef struct SLCPROC_HPS_n {
     char INN_vec_pos[2]; // 10 bits
     // SLc inner vector theta angle
     char INN_vec_ang[2]; // 10 bits
-} SLCPROC_HPS_rt;
+} SLCPROC_HPS_SF_rt;
 
 // -------------------------------------------------------------------
 typedef struct TAR_n {
@@ -154,40 +156,36 @@ typedef struct TAR_n {
     // Tube number within one station
     char INN_mdt_tube_num[2]; // 9 bits
     // Tube radial position
-    char INN_mdt_tube_rho[3]; // 18 bits
+    char INN_mdt_tube_rho[3]; // 19 bits
     // Tube position along z
-    char INN_mdt_tube_z[3]; // 19 bits
+    char INN_mdt_tube_z[3]; // 20 bits
     // Tube (uncalibrated) time
     char INN_mdt_tube_time[3]; // 18 bits
 } TAR_rt;
 
 // -------------------------------------------------------------------
-typedef struct HP_LSF_n {
-    // Hit Valid bit
-    char INN_mdt_valid; // 1 bits
+typedef struct HPS_LSF_n {
     // Data Valid bit
     char INN_data_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_mdt_localx[2]; // 14 bits
+    char INN_mdt_localx[2]; // 15 bits
     // Tube local position along second coord
-    char INN_mdt_localy[2]; // 14 bits
+    char INN_mdt_localy[2]; // 15 bits
     // Tube drift radius
     char INN_mdt_radius[2]; // 9 bits
-} HP_LSF_rt;
+} HPS_LSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct HP_CSF_n {
-    // Hit Valid bit
-    char INN_mdt_valid; // 1 bits
+typedef struct HPS_CSF_n {
     // Data Valid bit
     char INN_data_valid; // 1 bits
     // Tube local position along precision coord
-    char INN_mdt_localx[2]; // 14 bits
+    char INN_mdt_localx[2]; // 15 bits
     // Tube local position along second coord
-    char INN_mdt_localy[2]; // 14 bits
+    char INN_mdt_localy[2]; // 15 bits
     // Tube drift radius
     char INN_mdt_radius[2]; // 9 bits
-} HP_CSF_rt;
+} HPS_CSF_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_PTCALC_n {
@@ -208,7 +206,7 @@ typedef struct SF_n {
     // SF MDT segment valid bit
     char INN_segvalid; // 1 bits
     // SF MDT segment position along the precision coord
-    char INN_segpos[2]; // 16 bits
+    char INN_segpos[3]; // 17 bits
     // SF MDT segment angle along the precision coord
     char INN_segangle[2]; // 11 bits
     // SF MDT segment qualiry
@@ -220,9 +218,9 @@ typedef struct PTCALC_n {
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
     // eta of the innermost MDT station segment position
-    char INN_eta[2]; // 14 bits
+    char INN_eta[2]; // 15 bits
     // pT calculated by the pT Calc
-    char INN_pt; // 8 bits
+    char INN_pt[2]; // 9 bits
     // pT threshold satisfied by the MDT TC
     char INN_ptthresh; // 4 bits
     // charge determined from the pT calc
@@ -238,7 +236,7 @@ typedef struct SLCPIPE_MTC_ENDCAP_n {
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
-    char INN_SLC_COMMON[4]; // 31 bits
+    char INN_SLC_COMMON[4]; // 32 bits
     // (COPY)
     char INN_busy; // 1 bits
     // (COPY)
@@ -252,7 +250,7 @@ typedef struct SLCPIPE_MTC_BARREL_n {
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
     // struct SLC_COMMON
-    char INN_SLC_COMMON[4]; // 31 bits
+    char INN_SLC_COMMON[4]; // 32 bits
     // (COPY)
     char INN_busy; // 1 bits
     // (COPY)
@@ -262,11 +260,11 @@ typedef struct SLCPIPE_MTC_BARREL_n {
 // -------------------------------------------------------------------
 typedef struct MTC_n {
     // struct SLC_COMMON
-    char INN_SLC_COMMON[4]; // 31 bits
+    char INN_SLC_COMMON[4]; // 32 bits
     // (COPY)
-    char INN_eta[2]; // 14 bits
+    char INN_eta[2]; // 15 bits
     // (COPY)
-    char INN_pt; // 8 bits
+    char INN_pt[2]; // 9 bits
     // (COPY)
     char INN_ptthresh; // 4 bits
     // (COPY)

@@ -1,7 +1,7 @@
 Name,Station,Width,MSB index,LSB index,DECB
-SLC\_COMMON,,31,66,36,0
-eta,,14,35,22,11
-pt,,8,21,14,1
+SLC\_COMMON,,32,69,38,0
+eta,,15,37,23,12
+pt,,9,22,14,2
 ptthresh,,4,13,10,0
 charge,,1,9,9,0
 procflags,,4,8,5,0

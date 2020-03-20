@@ -25,7 +25,7 @@ typedef struct SLC_COMMON_n {
     // TC sent to MDT TP
     logic [0:0] tcsenttcsent;
     // SLc Eta Position
-    logic [13:0] posetaposeta;
+    logic [14:0] posetaposeta;
     // SLc Phi Position
     logic [8:0] posphiposphi;
     // SLc highest pT threshold passed
@@ -37,7 +37,7 @@ typedef struct SLC_COMMON_n {
 // -------------------------------------------------------------------
 typedef struct SLC_ENDCAP_n {
     // struct SLC_COMMON
-    logic [30:0] SLC_COMMONSLC_COMMON;
+    logic [31:0] SLC_COMMONSLC_COMMON;
     // SLc Segment Angle wrt Eta position
     logic [6:0] seg_angdthetaseg_angdtheta;
     // SLc Segment Angle wrt Phi position
@@ -53,7 +53,7 @@ typedef struct SLC_ENDCAP_n {
 // -------------------------------------------------------------------
 typedef struct SLC_BARREL_n {
     // struct SLC_COMMON
-    logic [30:0] SLC_COMMONSLC_COMMON;
+    logic [31:0] SLC_COMMONSLC_COMMON;
     // SLc Hit Z Position in RPC0
     logic [9:0] rpc0_poszrpc0_posz;
     // SLc Hit Z Position in RPC1
@@ -83,7 +83,7 @@ typedef struct SLCPROC_PIPELINE_ENDCAP_n {
     // struct SLCPROC_PIPELINE_COMMON
     logic [34:0] SLCPROC_PIPELINE_COMMONSLCPROC_PIPELINE_COMMON;
     // struct SLC_ENDCAP
-    logic [68:0] SLC_ENDCAPSLC_ENDCAP;
+    logic [69:0] SLC_ENDCAPSLC_ENDCAP;
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
 } SLCPROC_PIPELINE_ENDCAP_rt;
@@ -93,7 +93,7 @@ typedef struct SLCPROC_PIPELINE_BARREL_n {
     // struct SLCPROC_PIPELINE_COMMON
     logic [34:0] SLCPROC_PIPELINE_COMMONSLCPROC_PIPELINE_COMMON;
     // struct SLC_BARREL
-    logic [73:0] SLC_BARRELSLC_BARREL;
+    logic [74:0] SLC_BARRELSLC_BARREL;
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
 } SLCPROC_PIPELINE_BARREL_rt;
@@ -107,15 +107,15 @@ typedef struct TDC_n {
     // TDC BCID
     logic [11:0] coarsetimecoarsetime;
     // TDC fine time with BCID
-    logic [4:0] finetimefinetime;
+    logic [5:0] finetimefinetime;
     // Pulse width
-    logic [7:0] pulsewidthpulsewidth;
+    logic [8:0] pulsewidthpulsewidth;
 } TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCPOLMUX_n {
     // struct TDC
-    logic [31:0] TDCTDC;
+    logic [33:0] TDCTDC;
     // Fiber ID within board
     logic [4:0] fiberidfiberid;
     // Elink ID within fiber
@@ -125,7 +125,9 @@ typedef struct TDCPOLMUX_n {
 } TDCPOLMUX_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_HPS_n {
+typedef struct SLCPROC_HPS_SF_n {
+    // SLC Valid bit
+    logic [0:0] slc_validslc_valid;
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // inner MDT segment chip destination
@@ -136,7 +138,7 @@ typedef struct SLCPROC_HPS_n {
     logic [9:0] vec_posvec_pos;
     // SLc inner vector theta angle
     logic [9:0] vec_angvec_ang;
-} SLCPROC_HPS_rt;
+} SLCPROC_HPS_SF_rt;
 
 // -------------------------------------------------------------------
 typedef struct TAR_n {
@@ -145,40 +147,36 @@ typedef struct TAR_n {
     // Tube number within one station
     logic [8:0] mdt_tube_nummdt_tube_num;
     // Tube radial position
-    logic [17:0] mdt_tube_rhomdt_tube_rho;
+    logic [18:0] mdt_tube_rhomdt_tube_rho;
     // Tube position along z
-    logic [18:0] mdt_tube_zmdt_tube_z;
+    logic [19:0] mdt_tube_zmdt_tube_z;
     // Tube (uncalibrated) time
     logic [17:0] mdt_tube_timemdt_tube_time;
 } TAR_rt;
 
 // -------------------------------------------------------------------
-typedef struct HP_LSF_n {
-    // Hit Valid bit
-    logic [0:0] mdt_validmdt_valid;
+typedef struct HPS_LSF_n {
     // Data Valid bit
     logic [0:0] data_validdata_valid;
     // Tube local position along precision coord
-    logic [13:0] mdt_localxmdt_localx;
+    logic [14:0] mdt_localxmdt_localx;
     // Tube local position along second coord
-    logic [13:0] mdt_localymdt_localy;
+    logic [14:0] mdt_localymdt_localy;
     // Tube drift radius
     logic [8:0] mdt_radiusmdt_radius;
-} HP_LSF_rt;
+} HPS_LSF_rt;
 
 // -------------------------------------------------------------------
-typedef struct HP_CSF_n {
-    // Hit Valid bit
-    logic [0:0] mdt_validmdt_valid;
+typedef struct HPS_CSF_n {
     // Data Valid bit
     logic [0:0] data_validdata_valid;
     // Tube local position along precision coord
-    logic [13:0] mdt_localxmdt_localx;
+    logic [14:0] mdt_localxmdt_localx;
     // Tube local position along second coord
-    logic [13:0] mdt_localymdt_localy;
+    logic [14:0] mdt_localymdt_localy;
     // Tube drift radius
     logic [8:0] mdt_radiusmdt_radius;
-} HP_CSF_rt;
+} HPS_CSF_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPIPE_PTCALC_n {
@@ -199,7 +197,7 @@ typedef struct SF_n {
     // SF MDT segment valid bit
     logic [0:0] segvalidsegvalid;
     // SF MDT segment position along the precision coord
-    logic [15:0] segpossegpos;
+    logic [16:0] segpossegpos;
     // SF MDT segment angle along the precision coord
     logic [10:0] seganglesegangle;
     // SF MDT segment qualiry
@@ -211,9 +209,9 @@ typedef struct PTCALC_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // eta of the innermost MDT station segment position
-    logic [13:0] etaeta;
+    logic [14:0] etaeta;
     // pT calculated by the pT Calc
-    logic [7:0] ptpt;
+    logic [8:0] ptpt;
     // pT threshold satisfied by the MDT TC
     logic [3:0] ptthreshptthresh;
     // charge determined from the pT calc
@@ -229,7 +227,7 @@ typedef struct SLCPIPE_MTC_ENDCAP_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // struct SLC_COMMON
-    logic [30:0] SLC_COMMONSLC_COMMON;
+    logic [31:0] SLC_COMMONSLC_COMMON;
     // (COPY)
     logic [0:0] busybusy;
     // (COPY)
@@ -243,7 +241,7 @@ typedef struct SLCPIPE_MTC_BARREL_n {
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
     // struct SLC_COMMON
-    logic [30:0] SLC_COMMONSLC_COMMON;
+    logic [31:0] SLC_COMMONSLC_COMMON;
     // (COPY)
     logic [0:0] busybusy;
     // (COPY)
@@ -253,11 +251,11 @@ typedef struct SLCPIPE_MTC_BARREL_n {
 // -------------------------------------------------------------------
 typedef struct MTC_n {
     // struct SLC_COMMON
-    logic [30:0] SLC_COMMONSLC_COMMON;
+    logic [31:0] SLC_COMMONSLC_COMMON;
     // (COPY)
-    logic [13:0] etaeta;
+    logic [14:0] etaeta;
     // (COPY)
-    logic [7:0] ptpt;
+    logic [8:0] ptpt;
     // (COPY)
     logic [3:0] ptthreshptthresh;
     // (COPY)

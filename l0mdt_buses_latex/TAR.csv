@@ -1,7 +1,7 @@
 Name,Station,Width,MSB index,LSB index,DECB
-mdt\_tube\_layer,,5,68,64,0
-mdt\_tube\_num,,9,63,55,0
-mdt\_tube\_rho,,18,54,37,5
-mdt\_tube\_z,,19,36,18,5
+mdt\_tube\_layer,,5,70,66,0
+mdt\_tube\_num,,9,65,57,0
+mdt\_tube\_rho,,19,56,38,5
+mdt\_tube\_z,,20,37,18,5
 mdt\_tube\_time,,18,17,0,1
 

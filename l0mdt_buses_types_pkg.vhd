@@ -27,7 +27,7 @@ package mdttp_types_pkg is
   end record slc_muid_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLC_COMMON_at is std_logic_vector(30 downto 0);
+  subtype SLC_COMMON_at is std_logic_vector(31 downto 0);
 
   type slc_common_rt is record
     -- SLc Identification (up to 3)
@@ -35,7 +35,7 @@ package mdttp_types_pkg is
     -- TC sent to MDT TP
     tcsent : std_logic;
     -- SLc Eta Position
-    poseta : std_logic_vector(SLC_COMMON_POSETA_LEN-1 downto 0); -- 13
+    poseta : std_logic_vector(SLC_COMMON_POSETA_LEN-1 downto 0); -- 14
     -- SLc Phi Position
     posphi : std_logic_vector(SLC_COMMON_POSPHI_LEN-1 downto 0); -- 8
     -- SLc highest pT threshold passed
@@ -45,7 +45,7 @@ package mdttp_types_pkg is
   end record slc_common_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLC_ENDCAP_at is std_logic_vector(68 downto 0);
+  subtype SLC_ENDCAP_at is std_logic_vector(69 downto 0);
 
   type slc_endcap_rt is record
     -- struct SLC_COMMON
@@ -63,7 +63,7 @@ package mdttp_types_pkg is
   end record slc_endcap_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLC_BARREL_at is std_logic_vector(73 downto 0);
+  subtype SLC_BARREL_at is std_logic_vector(74 downto 0);
 
   type slc_barrel_rt is record
     -- struct SLC_COMMON
@@ -101,7 +101,7 @@ package mdttp_types_pkg is
   end record slcproc_pipeline_common_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_PIPELINE_ENDCAP_at is std_logic_vector(123 downto 0);
+  subtype SLCPROC_PIPELINE_ENDCAP_at is std_logic_vector(124 downto 0);
 
   type slcproc_pipeline_endcap_rt is record
     -- struct SLCPROC_PIPELINE_COMMON
@@ -113,7 +113,7 @@ package mdttp_types_pkg is
   end record slcproc_pipeline_endcap_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_PIPELINE_BARREL_at is std_logic_vector(128 downto 0);
+  subtype SLCPROC_PIPELINE_BARREL_at is std_logic_vector(129 downto 0);
 
   type slcproc_pipeline_barrel_rt is record
     -- struct SLCPROC_PIPELINE_COMMON
@@ -125,7 +125,7 @@ package mdttp_types_pkg is
   end record slcproc_pipeline_barrel_rt;
 
   -- -----------------------------------------------------------------
-  subtype TDC_at is std_logic_vector(31 downto 0);
+  subtype TDC_at is std_logic_vector(33 downto 0);
 
   type tdc_rt is record
     -- Channel number within TDC
@@ -135,13 +135,13 @@ package mdttp_types_pkg is
     -- TDC BCID
     coarsetime : std_logic_vector(TDC_COARSETIME_LEN-1 downto 0); -- 11
     -- TDC fine time with BCID
-    finetime : std_logic_vector(TDC_FINETIME_LEN-1 downto 0); -- 4
+    finetime : std_logic_vector(TDC_FINETIME_LEN-1 downto 0); -- 5
     -- Pulse width
-    pulsewidth : std_logic_vector(TDC_PULSEWIDTH_LEN-1 downto 0); -- 7
+    pulsewidth : std_logic_vector(TDC_PULSEWIDTH_LEN-1 downto 0); -- 8
   end record tdc_rt;
 
   -- -----------------------------------------------------------------
-  subtype TDCPOLMUX_at is std_logic_vector(41 downto 0);
+  subtype TDCPOLMUX_at is std_logic_vector(43 downto 0);
 
   type tdcpolmux_rt is record
     -- struct TDC
@@ -155,23 +155,25 @@ package mdttp_types_pkg is
   end record tdcpolmux_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_HPS_at is std_logic_vector(47 downto 0);
+  subtype SLCPROC_HPS_SF_at is std_logic_vector(48 downto 0);
 
-  type slcproc_hps_rt is record
+  type slcproc_hps_sf_rt is record
+    -- SLC Valid bit
+    slc_valid : std_logic;
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- inner MDT segment chip destination
-    mdtseg_dest : std_logic_vector(SLCPROC_HPS_MDTSEG_DEST_LEN-1 downto 0); -- 1
+    mdtseg_dest : std_logic_vector(SLCPROC_HPS_SF_MDTSEG_DEST_LEN-1 downto 0); -- 1
     -- SLc Inner Vector MDT chamber ID
-    vec_mdtid : std_logic_vector(SLCPROC_HPS_VEC_MDTID_LEN-1 downto 0); -- 5
+    vec_mdtid : std_logic_vector(SLCPROC_HPS_SF_VEC_MDTID_LEN-1 downto 0); -- 5
     -- SLc inner vector rho position
-    vec_pos : std_logic_vector(SLCPROC_HPS_VEC_POS_LEN-1 downto 0); -- 9
+    vec_pos : std_logic_vector(SLCPROC_HPS_SF_VEC_POS_LEN-1 downto 0); -- 9
     -- SLc inner vector theta angle
-    vec_ang : std_logic_vector(SLCPROC_HPS_VEC_ANG_LEN-1 downto 0); -- 9
-  end record slcproc_hps_rt;
+    vec_ang : std_logic_vector(SLCPROC_HPS_SF_VEC_ANG_LEN-1 downto 0); -- 9
+  end record slcproc_hps_sf_rt;
 
   -- -----------------------------------------------------------------
-  subtype TAR_at is std_logic_vector(68 downto 0);
+  subtype TAR_at is std_logic_vector(70 downto 0);
 
   type tar_rt is record
     -- Tube layer within one station
@@ -179,44 +181,40 @@ package mdttp_types_pkg is
     -- Tube number within one station
     mdt_tube_num : std_logic_vector(TAR_MDT_TUBE_NUM_LEN-1 downto 0); -- 8
     -- Tube radial position
-    mdt_tube_rho : std_logic_vector(TAR_MDT_TUBE_RHO_LEN-1 downto 0); -- 17
+    mdt_tube_rho : std_logic_vector(TAR_MDT_TUBE_RHO_LEN-1 downto 0); -- 18
     -- Tube position along z
-    mdt_tube_z : std_logic_vector(TAR_MDT_TUBE_Z_LEN-1 downto 0); -- 18
+    mdt_tube_z : std_logic_vector(TAR_MDT_TUBE_Z_LEN-1 downto 0); -- 19
     -- Tube (uncalibrated) time
     mdt_tube_time : std_logic_vector(TAR_MDT_TUBE_TIME_LEN-1 downto 0); -- 17
   end record tar_rt;
 
   -- -----------------------------------------------------------------
-  subtype HP_LSF_at is std_logic_vector(38 downto 0);
+  subtype HPS_LSF_at is std_logic_vector(39 downto 0);
 
-  type hp_lsf_rt is record
-    -- Hit Valid bit
-    mdt_valid : std_logic;
+  type hps_lsf_rt is record
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(HP_LSF_MDT_LOCALX_LEN-1 downto 0); -- 13
+    mdt_localx : std_logic_vector(HPS_LSF_MDT_LOCALX_LEN-1 downto 0); -- 14
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(HP_LSF_MDT_LOCALY_LEN-1 downto 0); -- 13
+    mdt_localy : std_logic_vector(HPS_LSF_MDT_LOCALY_LEN-1 downto 0); -- 14
     -- Tube drift radius
-    mdt_radius : std_logic_vector(HP_LSF_MDT_RADIUS_LEN-1 downto 0); -- 8
-  end record hp_lsf_rt;
+    mdt_radius : std_logic_vector(HPS_LSF_MDT_RADIUS_LEN-1 downto 0); -- 8
+  end record hps_lsf_rt;
 
   -- -----------------------------------------------------------------
-  subtype HP_CSF_at is std_logic_vector(38 downto 0);
+  subtype HPS_CSF_at is std_logic_vector(39 downto 0);
 
-  type hp_csf_rt is record
-    -- Hit Valid bit
-    mdt_valid : std_logic;
+  type hps_csf_rt is record
     -- Data Valid bit
     data_valid : std_logic;
     -- Tube local position along precision coord
-    mdt_localx : std_logic_vector(HP_CSF_MDT_LOCALX_LEN-1 downto 0); -- 13
+    mdt_localx : std_logic_vector(HPS_CSF_MDT_LOCALX_LEN-1 downto 0); -- 14
     -- Tube local position along second coord
-    mdt_localy : std_logic_vector(HP_CSF_MDT_LOCALY_LEN-1 downto 0); -- 13
+    mdt_localy : std_logic_vector(HPS_CSF_MDT_LOCALY_LEN-1 downto 0); -- 14
     -- Tube drift radius
-    mdt_radius : std_logic_vector(HP_CSF_MDT_RADIUS_LEN-1 downto 0); -- 8
-  end record hp_csf_rt;
+    mdt_radius : std_logic_vector(HPS_CSF_MDT_RADIUS_LEN-1 downto 0); -- 8
+  end record hps_csf_rt;
 
   -- -----------------------------------------------------------------
   subtype SLCPIPE_PTCALC_at is std_logic_vector(28 downto 0);
@@ -231,7 +229,7 @@ package mdttp_types_pkg is
   end record slcpipe_ptcalc_rt;
 
   -- -----------------------------------------------------------------
-  subtype SF_at is std_logic_vector(54 downto 0);
+  subtype SF_at is std_logic_vector(55 downto 0);
 
   type sf_rt is record
     -- struct SLC_MUID
@@ -241,7 +239,7 @@ package mdttp_types_pkg is
     -- SF MDT segment valid bit
     segvalid : std_logic;
     -- SF MDT segment position along the precision coord
-    segpos : std_logic_vector(SF_SEGPOS_LEN-1 downto 0); -- 15
+    segpos : std_logic_vector(SF_SEGPOS_LEN-1 downto 0); -- 16
     -- SF MDT segment angle along the precision coord
     segangle : std_logic_vector(SF_SEGANGLE_LEN-1 downto 0); -- 10
     -- SF MDT segment qualiry
@@ -249,15 +247,15 @@ package mdttp_types_pkg is
   end record sf_rt;
 
   -- -----------------------------------------------------------------
-  subtype PTCALC_at is std_logic_vector(51 downto 0);
+  subtype PTCALC_at is std_logic_vector(53 downto 0);
 
   type ptcalc_rt is record
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
     -- eta of the innermost MDT station segment position
-    eta : std_logic_vector(PTCALC_ETA_LEN-1 downto 0); -- 13
+    eta : std_logic_vector(PTCALC_ETA_LEN-1 downto 0); -- 14
     -- pT calculated by the pT Calc
-    pt : std_logic_vector(PTCALC_PT_LEN-1 downto 0); -- 7
+    pt : std_logic_vector(PTCALC_PT_LEN-1 downto 0); -- 8
     -- pT threshold satisfied by the MDT TC
     ptthresh : std_logic_vector(PTCALC_PTTHRESH_LEN-1 downto 0); -- 3
     -- charge determined from the pT calc
@@ -269,7 +267,7 @@ package mdttp_types_pkg is
   end record ptcalc_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPIPE_MTC_ENDCAP_at is std_logic_vector(53 downto 0);
+  subtype SLCPIPE_MTC_ENDCAP_at is std_logic_vector(54 downto 0);
 
   type slcpipe_mtc_endcap_rt is record
     -- struct SLC_MUID
@@ -283,7 +281,7 @@ package mdttp_types_pkg is
   end record slcpipe_mtc_endcap_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPIPE_MTC_BARREL_at is std_logic_vector(56 downto 0);
+  subtype SLCPIPE_MTC_BARREL_at is std_logic_vector(57 downto 0);
 
   type slcpipe_mtc_barrel_rt is record
     -- (COPY)
@@ -299,15 +297,15 @@ package mdttp_types_pkg is
   end record slcpipe_mtc_barrel_rt;
 
   -- -----------------------------------------------------------------
-  subtype MTC_at is std_logic_vector(66 downto 0);
+  subtype MTC_at is std_logic_vector(69 downto 0);
 
   type mtc_rt is record
     -- struct SLC_COMMON
     slc_common_r : SLC_COMMON_rt;
     -- (COPY)
-    eta : std_logic_vector(MTC_ETA_LEN-1 downto 0); -- 13
+    eta : std_logic_vector(MTC_ETA_LEN-1 downto 0); -- 14
     -- (COPY)
-    pt : std_logic_vector(MTC_PT_LEN-1 downto 0); -- 7
+    pt : std_logic_vector(MTC_PT_LEN-1 downto 0); -- 8
     -- (COPY)
     ptthresh : std_logic_vector(MTC_PTTHRESH_LEN-1 downto 0); -- 3
     -- (COPY)

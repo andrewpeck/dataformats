@@ -30,7 +30,7 @@ const int SLC_MUID_BCID_LSB = 0;
 const int SLC_MUID_BCID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_COMMON_LEN = 31;
+const int SLC_COMMON_LEN = 32;
 
 // SLc Identification (up to 3)
 const int SLC_COMMON_SLCID_LEN = 2;
@@ -69,7 +69,7 @@ const int SLC_COMMON_CHARGE_LSB = 0;
 const int SLC_COMMON_CHARGE_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_ENDCAP_LEN = 69;
+const int SLC_ENDCAP_LEN = 70;
 
 // (COPY)
 const int SLC_ENDCAP_SLC_COMMON_LEN = 31;
@@ -108,7 +108,7 @@ const int SLC_ENDCAP_NSWSEG_ANGDTHETA_LSB = 0;
 const int SLC_ENDCAP_NSWSEG_ANGDTHETA_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLC_BARREL_LEN = 74;
+const int SLC_BARREL_LEN = 75;
 
 // (COPY)
 const int SLC_BARREL_SLC_COMMON_LEN = 31;
@@ -192,7 +192,7 @@ const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LSB = 0;
 const int SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_ENDCAP_LEN = 124;
+const int SLCPROC_PIPELINE_ENDCAP_LEN = 125;
 
 // (COPY)
 const int SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN = 35;
@@ -213,7 +213,7 @@ const int SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LSB = 0;
 const int SLCPROC_PIPELINE_ENDCAP_SLC_MUID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_PIPELINE_BARREL_LEN = 129;
+const int SLCPROC_PIPELINE_BARREL_LEN = 130;
 
 // (COPY)
 const int SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN = 35;
@@ -234,7 +234,7 @@ const int SLCPROC_PIPELINE_BARREL_SLC_MUID_LSB = 0;
 const int SLCPROC_PIPELINE_BARREL_SLC_MUID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int TDC_LEN = 32;
+const int TDC_LEN = 34;
 
 // Channel number within TDC
 const int TDC_CHANID_LEN = 5;
@@ -267,7 +267,7 @@ const int TDC_PULSEWIDTH_LSB = 0;
 const int TDC_PULSEWIDTH_DECB = 1;
 
 // -------------------------------------------------------------------
-const int TDCPOLMUX_LEN = 42;
+const int TDCPOLMUX_LEN = 44;
 
 // (COPY)
 const int TDCPOLMUX_TDC_LEN = 32;
@@ -294,7 +294,13 @@ const int TDCPOLMUX_DATAVALID_LSB = 0;
 const int TDCPOLMUX_DATAVALID_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SLCPROC_HPS_LEN = 48;
+const int SLCPROC_HPS_SF_LEN = 49;
+
+// SLC Valid bit
+const int SLCPROC_HPS_SF_SLC_VALIDSLC_VALID_LEN = 1;
+const int SLCPROC_HPS_SF_SLC_VALIDSLC_VALID_MSB = 48;
+const int SLCPROC_HPS_SF_SLC_VALIDSLC_VALID_LSB = 48;
+const int SLCPROC_HPS_SF_SLC_VALIDSLC_VALID_DECB = 0;
 
 // SLc Muon Unique Identifier
 const int SLCPROC_HPS_SLC_MUID_LEN = 20;
@@ -327,7 +333,7 @@ const int SLCPROC_HPS_VEC_ANG_LSB = 0;
 const int SLCPROC_HPS_VEC_ANG_DECB = 0;
 
 // -------------------------------------------------------------------
-const int TAR_LEN = 69;
+const int TAR_LEN = 71;
 
 // Tube layer within one station
 const int TAR_MDT_TUBE_LAYER_LEN = 5;
@@ -447,7 +453,7 @@ const int SLCPIPE_PTCALC_CHARGE_LSB = 0;
 const int SLCPIPE_PTCALC_CHARGE_DECB = 0;
 
 // -------------------------------------------------------------------
-const int SF_LEN = 55;
+const int SF_LEN = 56;
 
 // (COPY)
 const int SF_SLC_MUID_LEN = 20;
@@ -486,7 +492,7 @@ const int SF_SEGQUALITY_LSB = 0;
 const int SF_SEGQUALITY_DECB = 0;
 
 // -------------------------------------------------------------------
-const int PTCALC_LEN = 52;
+const int PTCALC_LEN = 54;
 
 // (COPY)
 const int PTCALC_SLC_MUID_LEN = 20;
@@ -591,7 +597,7 @@ const int SLCPIPE_MTC_BARREL_DESTSL_LSB = 0;
 const int SLCPIPE_MTC_BARREL_DESTSL_DECB = 0;
 
 // -------------------------------------------------------------------
-const int MTC_LEN = 67;
+const int MTC_LEN = 70;
 
 // (COPY)
 const int MTC_SLC_COMMON_LEN = 31;

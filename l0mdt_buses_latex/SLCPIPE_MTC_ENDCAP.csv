@@ -1,6 +1,6 @@
 Name,Station,Width,MSB index,LSB index,DECB
-SLC\_MUID,,20,53,34,0
-SLC\_COMMON,,31,33,3,0
+SLC\_MUID,,20,54,35,0
+SLC\_COMMON,,32,34,3,0
 busy,,1,2,2,0
 destsl,,2,1,0,0
 

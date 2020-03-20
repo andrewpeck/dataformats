@@ -5,31 +5,31 @@ bcid,,12,11,0,0,0,102375,25,ns,,,SLc Processor,BCID from SLC,var,,
 TOTAL,,20,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLC_COMMON,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,Use,Comments
-slcid,,2,30,29,0,0,3,1,#,,SLc Processor,SL,SLc Identification (up to 3),var,,
-tcsent,,1,28,28,0,0,1,1,#,,SLc Processor,SL,TC sent to MDT TP,var,,
-poseta,,14,27,14,12,-2.7,2.7,0.00033,#,,SLc Processor,SL,SLc Eta Position,var,,
+slcid,,2,31,30,0,0,3,1,#,,SLc Processor,SL,SLc Identification (up to 3),var,,
+tcsent,,1,29,29,0,0,1,1,#,,SLc Processor,SL,TC sent to MDT TP,var,,
+poseta,,15,28,14,12,-2.7,2.7,0.00033,#,,SLc Processor,SL,SLc Eta Position,var,,
 posphi,,9,13,5,0,0,6280,24.00000,mrad,,SLc Processor,SL,SLc Phi Position,var,,
 ptthresh,,4,4,1,0,4,80,5.10000,GeV,,SLc Processor,SL,SLc highest pT threshold passed,var,,[4-80GeV]
 charge,,1,0,0,0,0,1,1,sign,,SLc Processor,SL,SLc charge,var,,
-TOTAL,,31,,,,,,,,,,,,,,
+TOTAL,,32,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_COMMON,,31,68,38,0,,,,,,SLc Processor,Endcap SL,(COPY),SLC_COMMON,,
+SLC_COMMON,,32,69,38,0,,,,,,SLc Processor,Endcap SL,(COPY),SLC_COMMON,,
 seg_angdtheta,,7,37,31,0,-160,160,3.00000,mrad,,SLc Processor,Endcap SL,SLc Segment Angle wrt Eta position,var,,
 seg_angdphi,,4,30,27,0,-32,32,5.00000,mrad,,SLc Processor,Endcap SL,SLc Segment Angle wrt Phi position,var,,
 nswseg_poseta,,14,26,13,13,1,2.7,0.00020,#,,SLc Processor,Endcap SL,NSW segment eta position,var,,Range TBC
 nswseg_posphi,,8,12,5,0,0,6283,25.00000,mrad,,SLc Processor,Endcap SL,NSW segment phi position,var,,Range TBC
 nswseg_angdtheta,,5,4,0,0,-15,15,1.00000,mrad,,SLc Processor,Endcap SL,NSW segment angle wrt Eta position,var,,Range TBC
-TOTAL,,69,,,,,,,,,,,,,,
+TOTAL,,70,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLC_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_COMMON,,31,73,43,0,,,,#,,SLc Processor,Barrel SL,(COPY),SLC_COMMON,,
+SLC_COMMON,,32,74,43,0,,,,#,,SLc Processor,Barrel SL,(COPY),SLC_COMMON,,
 rpc0_posz,,10,42,33,0,0,13000,13.00000,mm,,SLc Processor,Barrel SL,SLc Hit Z Position in RPC0,var,,
 rpc1_posz,,10,32,23,0,0,13000,13.00000,mm,,SLc Processor,Barrel SL,SLc Hit Z Position in RPC1,var,,
 rpc2_posz,,10,22,13,0,0,13000,13.00000,mm,,SLc Processor,Barrel SL,SLc Hit Z Position in RPC2,var,,
 rpc3_posz,,10,12,3,0,0,13000,13.00000,mm,,SLc Processor,Barrel SL,SLc Hit Z Position in RPC3,var,,
 cointype,,3,2,0,0,0,7,1,#,,SLc Processor,Barrel SL,SLc coincidence type,var,,
-TOTAL,,74,,,,,,1,,,,,,,,
+TOTAL,,75,,,,,,1,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPROC_PIPELINE_COMMON,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 busy,,1,34,34,0,,,,#,,SLc Pipeline,SLc Processor,SLc busy flag,var,,
@@ -42,63 +42,62 @@ vec_mdtid,EXT,6,5,0,0,0,63,1,#,,SLc Pipeline,SLc Processor,SLc Extra Vector MDT 
 TOTAL,,35,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPROC_PIPELINE_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLCPROC_PIPELINE_COMMON,,35,123,89,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPELINE_COMMON,,
-SLC_ENDCAP,,69,88,20,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_ENDCAP,,
+SLCPROC_PIPELINE_COMMON,,35,124,90,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPELINE_COMMON,,
+SLC_ENDCAP,,70,89,20,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_ENDCAP,,
 SLC_MUID,,20,19,0,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_MUID,,
-TOTAL,,124,,,,,,,,,,,,,,
+TOTAL,,125,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPROC_PIPELINE_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLCPROC_PIPELINE_COMMON,,35,128,94,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPELINE_COMMON,,primary or neigh SL
-SLC_BARREL,,74,93,20,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_BARREL,,
+SLCPROC_PIPELINE_COMMON,,35,129,95,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPELINE_COMMON,,primary or neigh SL
+SLC_BARREL,,75,94,20,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_BARREL,,
 SLC_MUID,,20,19,0,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_MUID,,
-TOTAL,,129,,,,,,,,,,,,,,
+TOTAL,,130,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 TDC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-chanid,,5,31,27,0,0,23,1,#,,TDC Formatter,CSM,Channel number within TDC,var,,
-edgemode,,2,26,25,0,0,3,1,#,,TDC Formatter,CSM,Edge or pair mode,var,,
-coarsetime,,12,24,13,0,0,102375,25.00000,ns,,TDC Formatter,CSM,TDC BCID,var,,
-finetime,,5,12,8,1,0,24.21875,0.78125,ns,,TDC Formatter,CSM,TDC fine time with BCID,var,,
-pulsewidth,,8,7,0,1,0,199.21875,0.78125,ns,,TDC Formatter,CSM,Pulse width,var,,
-TOTAL,,32,,,,,,,,,,,,,,
+chanid,,5,33,29,0,0,23,1,#,,TDC Formatter,CSM,Channel number within TDC,var,,
+edgemode,,2,28,27,0,0,3,1,#,,TDC Formatter,CSM,Edge or pair mode,var,,
+coarsetime,,12,26,15,0,0,102375,25.00000,ns,,TDC Formatter,CSM,TDC BCID,var,,
+finetime,,6,14,9,1,0,24.21875,0.78125,ns,,TDC Formatter,CSM,TDC fine time with BCID,var,,
+pulsewidth,,9,8,0,1,0,199.21875,0.78125,ns,,TDC Formatter,CSM,Pulse width,var,,
+TOTAL,,34,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 TDCPOLMUX,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-TDC,,32,41,10,0,,,,#,,Tube Remap,CSM,(COPY),TDC,,
+TDC,,34,43,10,0,,,,#,,Tube Remap,CSM,(COPY),TDC,,
 fiberid,,5,9,5,0,0,31,1,#,,Tube Remap,TDC Formatter,Fiber ID within board,var,,
 elinkid,,4,4,1,0,0,15,1,#,,Tube Remap,TDC Formatter,Elink ID within fiber,var,,
 datavalid,,1,0,0,0,0,1,1,#,,Tube Remap,TDC Formatter,Valid bit,var,,
-TOTAL,,42,,,,,,,,,,,,,,
+TOTAL,,44,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPROC_HPS,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPROC_HPS_SF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+slc_valid,,1,48,48,0,0,1,1,#,,HE_SF,SLc Processor,SLC Valid bit,var,,
 SLC_MUID,,20,47,28,0,,,,#,,HE_SF,SLc Processor,SLc Muon Unique Identifier,SLC_MUID,,
 mdtseg_dest,,2,27,26,0,0,3,1,#,,HE_SF,SLc Processor,inner MDT segment chip destination,var,,
 vec_mdtid,,6,25,20,0,0,63,1,#,,HE_SF,SLc Processor,SLc Inner Vector MDT chamber ID,var,,
 vec_pos,,10,19,10,0,0,13000,13.00000,mm,,HE_SF,SLc Processor,SLc inner vector rho position,var,,
 vec_ang,,10,9,0,0,0,1599,3.00000,mrad,,HE_SF,SLc Processor,SLc inner vector theta angle,var,,
-TOTAL,,48,,,,,,,,,,,,,,
+TOTAL,,49,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 TAR,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_tube_layer,,5,68,64,0,0,31,1,#,,Hit Extractor,Tube Remap,Tube layer within one station,var,,
-mdt_tube_num,,9,63,55,0,0,511,1,#,,Hit Extractor,Tube Remap,Tube number within one station,var,,
-mdt_tube_rho,,18,54,37,5,0,12000,0.05000,mm,,Hit Extractor,Tube Remap,Tube radial position,var,,
-mdt_tube_z,,19,36,18,5,0,25000,0.05000,mm,,Hit Extractor,Tube Remap,Tube position along z,var,,
+mdt_tube_layer,,5,70,66,0,0,31,1,#,,Hit Extractor,Tube Remap,Tube layer within one station,var,,
+mdt_tube_num,,9,65,57,0,0,511,1,#,,Hit Extractor,Tube Remap,Tube number within one station,var,,
+mdt_tube_rho,,19,56,38,5,0,12000,0.05000,mm,,Hit Extractor,Tube Remap,Tube radial position,var,,
+mdt_tube_z,,20,37,18,5,0,25000,0.05000,mm,,Hit Extractor,Tube Remap,Tube position along z,var,,
 mdt_tube_time,,18,17,0,1,0,102400,0.78125,ns,,Hit Extractor,Tube Remap,Tube (uncalibrated) time,var,,
-TOTAL,,69,,,,,,,,,,,,,,per tube
+TOTAL,,71,,,,,,,,,,,,,,per tube
 ,,,,,,,,,,,,,,,,
-HP_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
-data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
-mdt_localx,,14,36,23,5,0,780,0.05000,mm,,SF,HE,Tube local position along precision coord,var,,LSF
-mdt_localy,,14,22,9,5,0,720,0.05000,mm,,SF,HE,Tube local position along second coord,var,,LSF
+HPS_LSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+data_valid,,1,39,39,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
+mdt_localx,,15,38,24,5,0,780,0.05000,mm,,SF,HE,Tube local position along precision coord,var,,LSF
+mdt_localy,,15,23,9,5,0,720,0.05000,mm,,SF,HE,Tube local position along second coord,var,,LSF
 mdt_radius,,9,8,0,5,0,15,0.05000,mm,,SF,HE,Tube drift radius,var,,LSF
-TOTAL,,39,,,,,,,,,,,,,,
+TOTAL,,40,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-HP_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-mdt_valid,,1,38,38,0,0,1,1,#,,SF,HE,Hit Valid bit,var,,common
-data_valid,,1,37,37,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
-mdt_localx,,14,36,23,4,0,1024,0.06500,mm,,SF,HE,Tube local position along precision coord,var,,csf
-mdt_localy,,14,22,9,4,-512,512,0.06500,mm,,SF,HE,Tube local position along second coord,var,,csf
-mdt_radius,,9,8,0,5,0,16,0.05000,mm,,SF,HE,Tube drift radius,var,,csf
-TOTAL,,39,,,,,◊,,,,,,,,,
+HPS_CSF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+data_valid,,1,39,39,0,0,1,1,#,,SF,HE,Data Valid bit,var,,common
+mdt_localx,,15,38,24,4,0,1024,0.06500,mm,,SF,HE,Tube local position along precision coord,var,,csf
+mdt_localy,,15,23,9,4,-512,512,0.06500,mm,,SF,HE,Tube local position along second coord,var,,csf
+mdt_radius,,9,8,0,4,0,16,0.06500,mm,,SF,HE,Tube drift radius,var,,csf
+TOTAL,,40,,,,,◊,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,28,9,0,,,,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,
@@ -107,49 +106,49 @@ charge,,1,0,0,0,0,2,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
 TOTAL,,29,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SF,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_MUID,,20,54,35,0,,,,#,,Pt Calc,SF,(COPY),SLC_MUID,,
-vec_mdtid,,6,34,29,0,0,63,1,#,,Pt Calc,SF,(COPY),var,,
-segvalid,,1,28,28,0,0,1,1,#,,Pt Calc,SF,SF MDT segment valid bit,var,,
-segpos,,16,27,12,3,0,13000,0.20000,mm,,Pt Calc,SF,SF MDT segment position along the precision coord,var,,
+SLC_MUID,,20,55,36,0,,,,#,,Pt Calc,SF,(COPY),SLC_MUID,,
+vec_mdtid,,6,35,30,0,0,63,1,#,,Pt Calc,SF,(COPY),var,,
+segvalid,,1,29,29,0,0,1,1,#,,Pt Calc,SF,SF MDT segment valid bit,var,,
+segpos,,17,28,12,3,0,13000,0.20000,mm,,Pt Calc,SF,SF MDT segment position along the precision coord,var,,
 segangle,,11,11,1,0,0,1570,1.00000,mrad,,Pt Calc,SF,SF MDT segment angle along the precision coord,var,,
 segquality,,1,0,0,0,0,1,1,#,,Pt Calc,SF,SF MDT segment qualiry,var,,
-TOTAL,,55,,,,,,,,,,,,,,
+TOTAL,,56,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_MUID,,20,51,32,0,,,,#,,mTC_Builder,SLC Processor,(COPY),SLC_MUID,,
-eta,,14,31,18,12,-2.7,2.7,0.00033,#,,mTC_Builder,Pt Calc,eta of the innermost MDT station segment position,var,,
-pt,,8,17,10,2,4,80,0.30000,GeV,,mTC_Builder,Pt Calc,pT calculated by the pT Calc,var,,
+SLC_MUID,,20,53,34,0,,,,#,,mTC_Builder,SLC Processor,(COPY),SLC_MUID,,
+eta,,15,33,19,12,-2.7,2.7,0.00033,#,,mTC_Builder,Pt Calc,eta of the innermost MDT station segment position,var,,
+pt,,9,18,10,2,4,80,0.30000,GeV,,mTC_Builder,Pt Calc,pT calculated by the pT Calc,var,,
 ptthresh,,4,9,6,0,4,80,5.10000,GeV,,mTC_Builder,Pt Calc,pT threshold satisfied by the MDT TC,var,,
 charge,,1,5,5,0,0,1,1,sign,,mTC_Builder,Pt Calc,charge determined from the pT calc,var,,
 nsegments,,2,4,3,0,0,3,1,#,,mTC_Builder,Pt Calc,# of segments used for calculating the pT,var,,
 quality,,3,2,0,0,0,7,1,#,,mTC_Builder,Pt Calc,quality of the MDT TC (TBC how this is defined),var,,
-TOTAL,,52,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,,,
-SLCPIPE_MTC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_MUID,,20,53,34,0,,,,,,mTC_Builder,,,,,
-SLC_COMMON,,31,33,3,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_ENDCAP,,
-busy,,1,2,2,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
-destsl,,2,1,0,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
 TOTAL,,54,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
+SLCPIPE_MTC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLC_MUID,,20,54,35,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLC_MUID,,
+SLC_COMMON,,32,34,3,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_ENDCAP,,
+busy,,1,2,2,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
+destsl,,2,1,0,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
+TOTAL,,55,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,
 SLCPIPE_MTC_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-cointype,,3,56,54,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
-SLC_MUID,,20,53,34,0,,,,sign,,mTC_builder,,,,,
-SLC_COMMON,,31,33,3,0,,,,,,mTC_builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_BARREL,,
+cointype,,3,57,55,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
+SLC_MUID,,20,54,35,0,,,,sign,,mTC_builder,SLC Pipeline,(COPY),SLC_MUID,,
+SLC_COMMON,,32,34,3,0,,,,,,mTC_builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_BARREL,,
 busy,,1,2,2,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
 destsl,,2,1,0,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
-TOTAL,,57,,,,,,,,,,,,,,
+TOTAL,,58,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 MTC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLC_COMMON,,31,66,36,0,,,,,,SL,SLC Processor,(COPY),SLC_COMMON,,
-eta,,14,35,22,11,-2.7,2.7,0.00033,#,,SL,Pt Calc,(COPY),var,,
-pt,,8,21,14,1,4,80,0.30000,GeV,,SL,Pt Calc,(COPY),var,,
+SLC_COMMON,,32,69,38,0,,,,,,SL,SLC Processor,(COPY),SLC_COMMON,,
+eta,,15,37,23,12,-2.7,2.7,0.00033,#,,SL,Pt Calc,(COPY),var,,
+pt,,9,22,14,2,4,80,0.30000,GeV,,SL,Pt Calc,(COPY),var,,
 ptthresh,,4,13,10,0,4,80,5.10000,GeV,,SL,Pt Calc,(COPY),var,,
 charge,,1,9,9,0,0,1,1,sign,,SL,Pt Calc,(COPY),var,,
 procflags,,4,8,5,0,0,15,1,#,,SL,mTC_Builder,MDT processing flags,var,,
 nsegments,,2,4,3,0,0,3,1,#,,SL,Pt Calc,(COPY),var,,
 quality,,3,2,0,0,0,7,1,#,,SL,Pt Calc,(COPY),var,,
-TOTAL,,67,,,,,,,,,,,,,,
+TOTAL,,70,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,

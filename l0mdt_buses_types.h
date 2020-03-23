@@ -20,69 +20,69 @@ const char df_hash[] = "26fa9dec";
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
     // SLc Identification (up to 3)
-    char MTC_procflagsslcid; // 2 bits
+    char MTC_slcid; // 2 bits
     // SL board ID (based on the fiber ID)
-    char MTC_procflagsslid; // 6 bits
+    char MTC_slid; // 6 bits
     // BCID from SLC
-    char MTC_procflagsbcid[2]; // 12 bits
+    char MTC_bcid[2]; // 12 bits
 } SLC_MUID_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLC_COMMON_n {
     // SLc Identification (up to 3)
-    char MTC_procflagsslcid; // 2 bits
+    char MTC_slcid; // 2 bits
     // TC sent to MDT TP
-    char MTC_procflagstcsent; // 1 bits
+    char MTC_tcsent; // 1 bits
     // SLc Eta Position
-    char MTC_procflagsposeta[2]; // 15 bits
+    char MTC_poseta[2]; // 15 bits
     // SLc Phi Position
-    char MTC_procflagsposphi[2]; // 9 bits
+    char MTC_posphi[2]; // 9 bits
     // SLc highest pT threshold passed
-    char MTC_procflagsptthresh; // 4 bits
+    char MTC_ptthresh; // 4 bits
     // SLc charge
-    char MTC_procflagscharge; // 1 bits
+    char MTC_charge; // 1 bits
 } SLC_COMMON_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLC_ENDCAP_n {
     // struct SLC_COMMON
-    char MTC_procflagsSLC_COMMON[4]; // 32 bits
+    char MTC_SLC_COMMON[4]; // 32 bits
     // SLc Segment Angle wrt Eta position
-    char MTC_procflagsseg_angdtheta; // 7 bits
+    char MTC_seg_angdtheta; // 7 bits
     // SLc Segment Angle wrt Phi position
-    char MTC_procflagsseg_angdphi; // 4 bits
+    char MTC_seg_angdphi; // 4 bits
     // NSW segment eta position
-    char MTC_procflagsnswseg_poseta[2]; // 14 bits
+    char MTC_nswseg_poseta[2]; // 14 bits
     // NSW segment phi position
-    char MTC_procflagsnswseg_posphi; // 8 bits
+    char MTC_nswseg_posphi; // 8 bits
     // NSW segment angle wrt Eta position
-    char MTC_procflagsnswseg_angdtheta; // 5 bits
+    char MTC_nswseg_angdtheta; // 5 bits
 } SLC_ENDCAP_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLC_BARREL_n {
     // struct SLC_COMMON
-    char MTC_procflagsSLC_COMMON[4]; // 32 bits
+    char MTC_SLC_COMMON[4]; // 32 bits
     // SLc Hit Z Position in RPC0
-    char MTC_procflagsrpc0_posz[2]; // 10 bits
+    char MTC_rpc0_posz[2]; // 10 bits
     // SLc Hit Z Position in RPC1
-    char MTC_procflagsrpc1_posz[2]; // 10 bits
+    char MTC_rpc1_posz[2]; // 10 bits
     // SLc Hit Z Position in RPC2
-    char MTC_procflagsrpc2_posz[2]; // 10 bits
+    char MTC_rpc2_posz[2]; // 10 bits
     // SLc Hit Z Position in RPC3
-    char MTC_procflagsrpc3_posz[2]; // 10 bits
+    char MTC_rpc3_posz[2]; // 10 bits
     // SLc coincidence type
-    char MTC_procflagscointype; // 3 bits
+    char MTC_cointype; // 3 bits
 } SLC_BARREL_rt;
 
 // -------------------------------------------------------------------
 typedef struct SLCPROC_PIPELINE_COMMON_n {
     // SLc busy flag
-    char MTC_procflagsbusy; // 1 bits
+    char MTC_busy; // 1 bits
     // SLc board destination
-    char MTC_procflagsdestsl; // 2 bits
+    char MTC_destsl; // 2 bits
     // SLc phimod
-    char MTC_procflagsphimod; // 8 bits
+    char MTC_phimod; // 8 bits
     // SLc Inner Vector MDT chamber ID
     char INN_vec_mdtid; // 6 bits
 } SLCPROC_PIPELINE_COMMON_rt;

@@ -68,6 +68,12 @@ parameter SLC_COMMON_CHARGE_DECB = 0 ;
 // -------------------------------------------------------------------
 parameter SLC_ENDCAP_LEN = 70 ;
 
+// (COPY)
+parameter SLC_ENDCAP_SLC_COMMON_LEN = 32 ;
+parameter SLC_ENDCAP_SLC_COMMON_MSB = 69 ;
+parameter SLC_ENDCAP_SLC_COMMON_LSB = 38 ;
+parameter SLC_ENDCAP_SLC_COMMON_DECB = 0 ;
+
 // SLc Segment Angle wrt Eta position
 parameter SLC_ENDCAP_SEG_ANGDTHETA_LEN = 7 ;
 parameter SLC_ENDCAP_SEG_ANGDTHETA_MSB = 37 ;
@@ -100,6 +106,12 @@ parameter SLC_ENDCAP_NSWSEG_ANGDTHETA_DECB = 0 ;
 
 // -------------------------------------------------------------------
 parameter SLC_BARREL_LEN = 75 ;
+
+// (COPY)
+parameter SLC_BARREL_SLC_COMMON_LEN = 32 ;
+parameter SLC_BARREL_SLC_COMMON_MSB = 74 ;
+parameter SLC_BARREL_SLC_COMMON_LSB = 43 ;
+parameter SLC_BARREL_SLC_COMMON_DECB = 0 ;
 
 // SLc Hit Z Position in RPC0
 parameter SLC_BARREL_RPC0_POSZ_LEN = 10 ;
@@ -179,8 +191,44 @@ parameter SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_DECB = 0 ;
 // -------------------------------------------------------------------
 parameter SLCPROC_PIPELINE_ENDCAP_LEN = 125 ;
 
+// (COPY)
+parameter SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN = 35 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_MSB = 124 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LSB = 90 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_DECB = 0 ;
+
+// (COPY)
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN = 70 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_MSB = 89 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LSB = 20 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_DECB = 0 ;
+
+// (COPY)
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LEN = 20 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_MUID_MSB = 19 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LSB = 0 ;
+parameter SLCPROC_PIPELINE_ENDCAP_SLC_MUID_DECB = 0 ;
+
 // -------------------------------------------------------------------
 parameter SLCPROC_PIPELINE_BARREL_LEN = 130 ;
+
+// (COPY)
+parameter SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN = 35 ;
+parameter SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_MSB = 129 ;
+parameter SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LSB = 95 ;
+parameter SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_DECB = 0 ;
+
+// (COPY)
+parameter SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN = 75 ;
+parameter SLCPROC_PIPELINE_BARREL_SLC_BARREL_MSB = 94 ;
+parameter SLCPROC_PIPELINE_BARREL_SLC_BARREL_LSB = 20 ;
+parameter SLCPROC_PIPELINE_BARREL_SLC_BARREL_DECB = 0 ;
+
+// (COPY)
+parameter SLCPROC_PIPELINE_BARREL_SLC_MUID_LEN = 20 ;
+parameter SLCPROC_PIPELINE_BARREL_SLC_MUID_MSB = 19 ;
+parameter SLCPROC_PIPELINE_BARREL_SLC_MUID_LSB = 0 ;
+parameter SLCPROC_PIPELINE_BARREL_SLC_MUID_DECB = 0 ;
 
 // -------------------------------------------------------------------
 parameter TDC_LEN = 34 ;
@@ -217,6 +265,12 @@ parameter TDC_PULSEWIDTH_DECB = 1 ;
 
 // -------------------------------------------------------------------
 parameter TDCPOLMUX_LEN = 44 ;
+
+// (COPY)
+parameter TDCPOLMUX_TDC_LEN = 34 ;
+parameter TDCPOLMUX_TDC_MSB = 43 ;
+parameter TDCPOLMUX_TDC_LSB = 10 ;
+parameter TDCPOLMUX_TDC_DECB = 0 ;
 
 // Fiber ID within board
 parameter TDCPOLMUX_FIBERID_LEN = 5 ;
@@ -365,8 +419,38 @@ parameter HPS_CSF_MDT_RADIUS_DECB = 4 ;
 // -------------------------------------------------------------------
 parameter SLCPIPE_PTCALC_LEN = 29 ;
 
+// (COPY)
+parameter SLCPIPE_PTCALC_SLC_MUID_LEN = 20 ;
+parameter SLCPIPE_PTCALC_SLC_MUID_MSB = 28 ;
+parameter SLCPIPE_PTCALC_SLC_MUID_LSB = 9 ;
+parameter SLCPIPE_PTCALC_SLC_MUID_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_PTCALC_PHIMOD_LEN = 8 ;
+parameter SLCPIPE_PTCALC_PHIMOD_MSB = 8 ;
+parameter SLCPIPE_PTCALC_PHIMOD_LSB = 1 ;
+parameter SLCPIPE_PTCALC_PHIMOD_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_PTCALC_CHARGE_LEN = 1 ;
+parameter SLCPIPE_PTCALC_CHARGE_MSB = 0 ;
+parameter SLCPIPE_PTCALC_CHARGE_LSB = 0 ;
+parameter SLCPIPE_PTCALC_CHARGE_DECB = 0 ;
+
 // -------------------------------------------------------------------
 parameter SF_LEN = 56 ;
+
+// (COPY)
+parameter SF_SLC_MUID_LEN = 20 ;
+parameter SF_SLC_MUID_MSB = 55 ;
+parameter SF_SLC_MUID_LSB = 36 ;
+parameter SF_SLC_MUID_DECB = 0 ;
+
+// (COPY)
+parameter SF_VEC_MDTID_LEN = 6 ;
+parameter SF_VEC_MDTID_MSB = 35 ;
+parameter SF_VEC_MDTID_LSB = 30 ;
+parameter SF_VEC_MDTID_DECB = 0 ;
 
 // SF MDT segment valid bit
 parameter SF_SEGVALID_LEN = 1 ;
@@ -394,6 +478,12 @@ parameter SF_SEGQUALITY_DECB = 0 ;
 
 // -------------------------------------------------------------------
 parameter PTCALC_LEN = 54 ;
+
+// (COPY)
+parameter PTCALC_SLC_MUID_LEN = 20 ;
+parameter PTCALC_SLC_MUID_MSB = 53 ;
+parameter PTCALC_SLC_MUID_LSB = 34 ;
+parameter PTCALC_SLC_MUID_DECB = 0 ;
 
 // eta of the innermost MDT station segment position
 parameter PTCALC_ETA_LEN = 15 ;
@@ -434,14 +524,110 @@ parameter PTCALC_QUALITY_DECB = 0 ;
 // -------------------------------------------------------------------
 parameter SLCPIPE_MTC_ENDCAP_LEN = 55 ;
 
+// (COPY)
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_LEN = 20 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_MSB = 54 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_LSB = 35 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_MUID_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_ENDCAP_SLC_COMMON_LEN = 32 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_COMMON_MSB = 34 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_COMMON_LSB = 3 ;
+parameter SLCPIPE_MTC_ENDCAP_SLC_COMMON_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_ENDCAP_BUSY_LEN = 1 ;
+parameter SLCPIPE_MTC_ENDCAP_BUSY_MSB = 2 ;
+parameter SLCPIPE_MTC_ENDCAP_BUSY_LSB = 2 ;
+parameter SLCPIPE_MTC_ENDCAP_BUSY_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_ENDCAP_DESTSL_LEN = 2 ;
+parameter SLCPIPE_MTC_ENDCAP_DESTSL_MSB = 1 ;
+parameter SLCPIPE_MTC_ENDCAP_DESTSL_LSB = 0 ;
+parameter SLCPIPE_MTC_ENDCAP_DESTSL_DECB = 0 ;
+
 // -------------------------------------------------------------------
 parameter SLCPIPE_MTC_BARREL_LEN = 58 ;
 
+// (COPY)
+parameter SLCPIPE_MTC_BARREL_COINTYPE_LEN = 3 ;
+parameter SLCPIPE_MTC_BARREL_COINTYPE_MSB = 57 ;
+parameter SLCPIPE_MTC_BARREL_COINTYPE_LSB = 55 ;
+parameter SLCPIPE_MTC_BARREL_COINTYPE_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_LEN = 20 ;
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_MSB = 54 ;
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_LSB = 35 ;
+parameter SLCPIPE_MTC_BARREL_SLC_MUID_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_BARREL_SLC_COMMON_LEN = 32 ;
+parameter SLCPIPE_MTC_BARREL_SLC_COMMON_MSB = 34 ;
+parameter SLCPIPE_MTC_BARREL_SLC_COMMON_LSB = 3 ;
+parameter SLCPIPE_MTC_BARREL_SLC_COMMON_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_BARREL_BUSY_LEN = 1 ;
+parameter SLCPIPE_MTC_BARREL_BUSY_MSB = 2 ;
+parameter SLCPIPE_MTC_BARREL_BUSY_LSB = 2 ;
+parameter SLCPIPE_MTC_BARREL_BUSY_DECB = 0 ;
+
+// (COPY)
+parameter SLCPIPE_MTC_BARREL_DESTSL_LEN = 2 ;
+parameter SLCPIPE_MTC_BARREL_DESTSL_MSB = 1 ;
+parameter SLCPIPE_MTC_BARREL_DESTSL_LSB = 0 ;
+parameter SLCPIPE_MTC_BARREL_DESTSL_DECB = 0 ;
+
 // -------------------------------------------------------------------
 parameter MTC_LEN = 70 ;
+
+// (COPY)
+parameter MTC_SLC_COMMON_LEN = 32 ;
+parameter MTC_SLC_COMMON_MSB = 69 ;
+parameter MTC_SLC_COMMON_LSB = 38 ;
+parameter MTC_SLC_COMMON_DECB = 0 ;
+
+// (COPY)
+parameter MTC_ETA_LEN = 15 ;
+parameter MTC_ETA_MSB = 37 ;
+parameter MTC_ETA_LSB = 23 ;
+parameter MTC_ETA_DECB = 12 ;
+
+// (COPY)
+parameter MTC_PT_LEN = 9 ;
+parameter MTC_PT_MSB = 22 ;
+parameter MTC_PT_LSB = 14 ;
+parameter MTC_PT_DECB = 2 ;
+
+// (COPY)
+parameter MTC_PTTHRESH_LEN = 4 ;
+parameter MTC_PTTHRESH_MSB = 13 ;
+parameter MTC_PTTHRESH_LSB = 10 ;
+parameter MTC_PTTHRESH_DECB = 0 ;
+
+// (COPY)
+parameter MTC_CHARGE_LEN = 1 ;
+parameter MTC_CHARGE_MSB = 9 ;
+parameter MTC_CHARGE_LSB = 9 ;
+parameter MTC_CHARGE_DECB = 0 ;
 
 // MDT processing flags
 parameter MTC_PROCFLAGS_LEN = 4 ;
 parameter MTC_PROCFLAGS_MSB = 8 ;
 parameter MTC_PROCFLAGS_LSB = 5 ;
 parameter MTC_PROCFLAGS_DECB = 0 ;
+
+// (COPY)
+parameter MTC_NSEGMENTS_LEN = 2 ;
+parameter MTC_NSEGMENTS_MSB = 4 ;
+parameter MTC_NSEGMENTS_LSB = 3 ;
+parameter MTC_NSEGMENTS_DECB = 0 ;
+
+// (COPY)
+parameter MTC_QUALITY_LEN = 3 ;
+parameter MTC_QUALITY_MSB = 2 ;
+parameter MTC_QUALITY_LSB = 0 ;
+parameter MTC_QUALITY_DECB = 0 ;

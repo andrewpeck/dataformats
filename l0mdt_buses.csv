@@ -31,7 +31,7 @@ rpc3_posz,,10,12,3,0,0,13000,13.00000,mm,,SLc Processor,Barrel SL,SLc Hit Z Posi
 cointype,,3,2,0,0,0,7,1,#,,SLc Processor,Barrel SL,SLc coincidence type,var,,
 TOTAL,,75,,,,,,1,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPROC_PIPELINE_COMMON,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPROC_PIPE_COMMON,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 busy,,1,34,34,0,,,,#,,SLc Pipeline,SLc Processor,SLc busy flag,var,,
 destsl,,2,33,32,0,0,2,1,#,,SLc Pipeline,SLc Processor,SLc board destination,var,,primary or neigh SL
 phimod,,8,31,24,0,-400,400,4.00000,mrad,,SLc Pipeline,SLc Processor,SLc phimod,var,,phi-phi_center
@@ -41,14 +41,14 @@ vec_mdtid,OUT,6,11,6,0,0,63,1,#,,SLc Pipeline,SLc Processor,SLc Outer Vector MDT
 vec_mdtid,EXT,6,5,0,0,0,63,1,#,,SLc Pipeline,SLc Processor,SLc Extra Vector MDT chamber ID,var,,
 TOTAL,,35,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPROC_PIPELINE_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLCPROC_PIPELINE_COMMON,,35,124,90,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPELINE_COMMON,,
+SLCPROC_PIPE_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPROC_PIPE_COMMON,,35,124,90,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPE_COMMON,,
 SLC_ENDCAP,,70,89,20,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_ENDCAP,,
 SLC_MUID,,20,19,0,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_MUID,,
 TOTAL,,125,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
-SLCPROC_PIPELINE_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
-SLCPROC_PIPELINE_COMMON,,35,129,95,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPELINE_COMMON,,primary or neigh SL
+SLCPROC_PIPE_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
+SLCPROC_PIPE_COMMON,,35,129,95,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLCPROC_PIPE_COMMON,,primary or neigh SL
 SLC_BARREL,,75,94,20,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_BARREL,,
 SLC_MUID,,20,19,0,0,,,,#,,SLc Pipeline,SLc Processor,(COPY),SLC_MUID,,
 TOTAL,,130,,,,,,,,,,,,,,
@@ -126,7 +126,7 @@ TOTAL,,54,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_MTC_ENDCAP,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,54,35,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLC_MUID,,
-SLC_COMMON,,32,34,3,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_ENDCAP,,
+SLC_COMMON,,32,34,3,0,,,,,,mTC_Builder,SLC Pipeline,(COPY),SLCPROC_PIPE_ENDCAP,,
 busy,,1,2,2,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
 destsl,,2,1,0,0,,,,#,,mTC_Builder,SLC Pipeline,(COPY),var,,
 TOTAL,,55,,,,,,,,,,,,,,
@@ -134,7 +134,7 @@ TOTAL,,55,,,,,,,,,,,,,,
 SLCPIPE_MTC_BARREL,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 cointype,,3,57,55,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
 SLC_MUID,,20,54,35,0,,,,sign,,mTC_builder,SLC Pipeline,(COPY),SLC_MUID,,
-SLC_COMMON,,32,34,3,0,,,,,,mTC_builder,SLC Pipeline,(COPY),SLCPROC_PIPELINE_BARREL,,
+SLC_COMMON,,32,34,3,0,,,,,,mTC_builder,SLC Pipeline,(COPY),SLCPROC_PIPE_BARREL,,
 busy,,1,2,2,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
 destsl,,2,1,0,0,,,,#,,mTC_builder,SLC Pipeline,(COPY),var,,
 TOTAL,,58,,,,,,,,,,,,,,

@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"bece9746";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -81,48 +81,48 @@ package mdttp_types_pkg is
   end record slc_barrel_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_PIPELINE_COMMON_at is std_logic_vector(34 downto 0);
+  subtype SLCPROC_PIPE_COMMON_at is std_logic_vector(34 downto 0);
 
-  type slcproc_pipeline_common_rt is record
+  type slcproc_pipe_common_rt is record
     -- SLc busy flag
     busy : std_logic;
     -- SLc board destination
-    destsl : std_logic_vector(SLCPROC_PIPELINE_COMMON_DESTSL_LEN-1 downto 0); -- 1
+    destsl : std_logic_vector(SLCPROC_PIPE_COMMON_DESTSL_LEN-1 downto 0); -- 1
     -- SLc phimod
-    phimod : std_logic_vector(SLCPROC_PIPELINE_COMMON_PHIMOD_LEN-1 downto 0); -- 7
+    phimod : std_logic_vector(SLCPROC_PIPE_COMMON_PHIMOD_LEN-1 downto 0); -- 7
     -- SLc Inner Vector MDT chamber ID
-    inn_vec_mdtid : std_logic_vector(SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LEN-1 downto 0); -- 5
+    inn_vec_mdtid : std_logic_vector(SLCPROC_PIPE_COMMON_INN_VEC_MDTID_LEN-1 downto 0); -- 5
     -- SLc Middle Vector MDT chamber ID
-    mid_vec_mdtid : std_logic_vector(SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LEN-1 downto 0); -- 5
+    mid_vec_mdtid : std_logic_vector(SLCPROC_PIPE_COMMON_MID_VEC_MDTID_LEN-1 downto 0); -- 5
     -- SLc Outer Vector MDT chamber ID
-    out_vec_mdtid : std_logic_vector(SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LEN-1 downto 0); -- 5
+    out_vec_mdtid : std_logic_vector(SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_LEN-1 downto 0); -- 5
     -- SLc Extra Vector MDT chamber ID
-    ext_vec_mdtid : std_logic_vector(SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LEN-1 downto 0); -- 5
-  end record slcproc_pipeline_common_rt;
+    ext_vec_mdtid : std_logic_vector(SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_LEN-1 downto 0); -- 5
+  end record slcproc_pipe_common_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_PIPELINE_ENDCAP_at is std_logic_vector(124 downto 0);
+  subtype SLCPROC_PIPE_ENDCAP_at is std_logic_vector(124 downto 0);
 
-  type slcproc_pipeline_endcap_rt is record
-    -- struct SLCPROC_PIPELINE_COMMON
-    slcproc_pipeline_common_r : SLCPROC_PIPELINE_COMMON_rt;
+  type slcproc_pipe_endcap_rt is record
+    -- struct SLCPROC_PIPE_COMMON
+    slcproc_pipe_common_r : SLCPROC_PIPE_COMMON_rt;
     -- struct SLC_ENDCAP
     slc_endcap_r : SLC_ENDCAP_rt;
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
-  end record slcproc_pipeline_endcap_rt;
+  end record slcproc_pipe_endcap_rt;
 
   -- -----------------------------------------------------------------
-  subtype SLCPROC_PIPELINE_BARREL_at is std_logic_vector(129 downto 0);
+  subtype SLCPROC_PIPE_BARREL_at is std_logic_vector(129 downto 0);
 
-  type slcproc_pipeline_barrel_rt is record
-    -- struct SLCPROC_PIPELINE_COMMON
-    slcproc_pipeline_common_r : SLCPROC_PIPELINE_COMMON_rt;
+  type slcproc_pipe_barrel_rt is record
+    -- struct SLCPROC_PIPE_COMMON
+    slcproc_pipe_common_r : SLCPROC_PIPE_COMMON_rt;
     -- struct SLC_BARREL
     slc_barrel_r : SLC_BARREL_rt;
     -- struct SLC_MUID
     slc_muid_r : SLC_MUID_rt;
-  end record slcproc_pipeline_barrel_rt;
+  end record slcproc_pipe_barrel_rt;
 
   -- -----------------------------------------------------------------
   subtype TDC_at is std_logic_vector(33 downto 0);

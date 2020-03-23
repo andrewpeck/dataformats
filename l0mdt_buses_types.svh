@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "26fa9dec";
+const char df_hash[] = "bece9746";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -67,7 +67,7 @@ typedef struct SLC_BARREL_n {
 } SLC_BARREL_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_PIPELINE_COMMON_n {
+typedef struct SLCPROC_PIPE_COMMON_n {
     // SLc busy flag
     logic [0:0] busybusy;
     // SLc board destination
@@ -76,27 +76,27 @@ typedef struct SLCPROC_PIPELINE_COMMON_n {
     logic [7:0] phimodphimod;
     // SLc Inner Vector MDT chamber ID
     logic [5:0] INN_vec_mdtidvec_mdtid;
-} SLCPROC_PIPELINE_COMMON_rt;
+} SLCPROC_PIPE_COMMON_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_PIPELINE_ENDCAP_n {
-    // struct SLCPROC_PIPELINE_COMMON
-    logic [34:0] SLCPROC_PIPELINE_COMMONSLCPROC_PIPELINE_COMMON;
+typedef struct SLCPROC_PIPE_ENDCAP_n {
+    // struct SLCPROC_PIPE_COMMON
+    logic [34:0] SLCPROC_PIPE_COMMONSLCPROC_PIPE_COMMON;
     // struct SLC_ENDCAP
     logic [69:0] SLC_ENDCAPSLC_ENDCAP;
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
-} SLCPROC_PIPELINE_ENDCAP_rt;
+} SLCPROC_PIPE_ENDCAP_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_PIPELINE_BARREL_n {
-    // struct SLCPROC_PIPELINE_COMMON
-    logic [34:0] SLCPROC_PIPELINE_COMMONSLCPROC_PIPELINE_COMMON;
+typedef struct SLCPROC_PIPE_BARREL_n {
+    // struct SLCPROC_PIPE_COMMON
+    logic [34:0] SLCPROC_PIPE_COMMONSLCPROC_PIPE_COMMON;
     // struct SLC_BARREL
     logic [74:0] SLC_BARRELSLC_BARREL;
     // struct SLC_MUID
     logic [19:0] SLC_MUIDSLC_MUID;
-} SLCPROC_PIPELINE_BARREL_rt;
+} SLCPROC_PIPE_BARREL_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDC_n {

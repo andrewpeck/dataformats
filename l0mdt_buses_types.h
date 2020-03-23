@@ -15,7 +15,7 @@
         dest |= orig[i] << i*8;\
     }
 
-const char df_hash[] = "26fa9dec";
+const char df_hash[] = "bece9746";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -76,7 +76,7 @@ typedef struct SLC_BARREL_n {
 } SLC_BARREL_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_PIPELINE_COMMON_n {
+typedef struct SLCPROC_PIPE_COMMON_n {
     // SLc busy flag
     char MTC_busy; // 1 bits
     // SLc board destination
@@ -85,27 +85,27 @@ typedef struct SLCPROC_PIPELINE_COMMON_n {
     char MTC_phimod; // 8 bits
     // SLc Inner Vector MDT chamber ID
     char INN_vec_mdtid; // 6 bits
-} SLCPROC_PIPELINE_COMMON_rt;
+} SLCPROC_PIPE_COMMON_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_PIPELINE_ENDCAP_n {
-    // struct SLCPROC_PIPELINE_COMMON
-    char INN_SLCPROC_PIPELINE_COMMON[5]; // 35 bits
+typedef struct SLCPROC_PIPE_ENDCAP_n {
+    // struct SLCPROC_PIPE_COMMON
+    char INN_SLCPROC_PIPE_COMMON[5]; // 35 bits
     // struct SLC_ENDCAP
     char INN_SLC_ENDCAP[9]; // 70 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
-} SLCPROC_PIPELINE_ENDCAP_rt;
+} SLCPROC_PIPE_ENDCAP_rt;
 
 // -------------------------------------------------------------------
-typedef struct SLCPROC_PIPELINE_BARREL_n {
-    // struct SLCPROC_PIPELINE_COMMON
-    char INN_SLCPROC_PIPELINE_COMMON[5]; // 35 bits
+typedef struct SLCPROC_PIPE_BARREL_n {
+    // struct SLCPROC_PIPE_COMMON
+    char INN_SLCPROC_PIPE_COMMON[5]; // 35 bits
     // struct SLC_BARREL
     char INN_SLC_BARREL[10]; // 75 bits
     // struct SLC_MUID
     char INN_SLC_MUID[3]; // 20 bits
-} SLCPROC_PIPELINE_BARREL_rt;
+} SLCPROC_PIPE_BARREL_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDC_n {

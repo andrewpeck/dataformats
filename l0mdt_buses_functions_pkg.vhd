@@ -44,25 +44,25 @@ package mdttp_functions_pkg is
   return SLC_BARREL_rt;
 
   -- -----------------------------------------------------------------
-  function slcproc_pipeline_common_2af (d: SLCPROC_PIPELINE_COMMON_rt)
+  function slcproc_pipe_common_2af (d: SLCPROC_PIPE_COMMON_rt)
   return std_logic_vector;
 
-  function slcproc_pipeline_common_2rf (v: slcproc_pipeline_common_at)
-  return SLCPROC_PIPELINE_COMMON_rt;
+  function slcproc_pipe_common_2rf (v: slcproc_pipe_common_at)
+  return SLCPROC_PIPE_COMMON_rt;
 
   -- -----------------------------------------------------------------
-  function slcproc_pipeline_endcap_2af (d: SLCPROC_PIPELINE_ENDCAP_rt)
+  function slcproc_pipe_endcap_2af (d: SLCPROC_PIPE_ENDCAP_rt)
   return std_logic_vector;
 
-  function slcproc_pipeline_endcap_2rf (v: slcproc_pipeline_endcap_at)
-  return SLCPROC_PIPELINE_ENDCAP_rt;
+  function slcproc_pipe_endcap_2rf (v: slcproc_pipe_endcap_at)
+  return SLCPROC_PIPE_ENDCAP_rt;
 
   -- -----------------------------------------------------------------
-  function slcproc_pipeline_barrel_2af (d: SLCPROC_PIPELINE_BARREL_rt)
+  function slcproc_pipe_barrel_2af (d: SLCPROC_PIPE_BARREL_rt)
   return std_logic_vector;
 
-  function slcproc_pipeline_barrel_2rf (v: slcproc_pipeline_barrel_at)
-  return SLCPROC_PIPELINE_BARREL_rt;
+  function slcproc_pipe_barrel_2rf (v: slcproc_pipe_barrel_at)
+  return SLCPROC_PIPE_BARREL_rt;
 
   -- -----------------------------------------------------------------
   function tdc_2af (d: TDC_rt)
@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"bece9746";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -309,9 +309,9 @@ package body mdttp_functions_pkg is
   end function slc_barrel_2rf;
 
   -- -----------------------------------------------------------------
-  function slcproc_pipeline_common_2af (d: SLCPROC_PIPELINE_COMMON_rt)
+  function slcproc_pipe_common_2af (d: SLCPROC_PIPE_COMMON_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_PIPELINE_COMMON_LEN-1 downto 0);
+    variable v : std_logic_vector(SLCPROC_PIPE_COMMON_LEN-1 downto 0);
   begin
     v := d.busy
          & d.destsl
@@ -321,95 +321,95 @@ package body mdttp_functions_pkg is
          & d.out_vec_mdtid
          & d.ext_vec_mdtid;
     return v;
-  end function slcproc_pipeline_common_2af;
+  end function slcproc_pipe_common_2af;
 
-  function slcproc_pipeline_common_2rf (v: slcproc_pipeline_common_at)
-  return SLCPROC_PIPELINE_COMMON_rt is
-    variable b : SLCPROC_PIPELINE_COMMON_rt;
+  function slcproc_pipe_common_2rf (v: slcproc_pipe_common_at)
+  return SLCPROC_PIPE_COMMON_rt is
+    variable b : SLCPROC_PIPE_COMMON_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_PIPELINE_COMMON_LEN - 1; -- 35
-    lsb := msb - SLCPROC_PIPELINE_COMMON_BUSY_LEN + 1; -- 1
+    msb := SLCPROC_PIPE_COMMON_LEN - 1; -- 35
+    lsb := msb - SLCPROC_PIPE_COMMON_BUSY_LEN + 1; -- 1
     b.busy := v(msb); -- 34
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_COMMON_DESTSL_LEN + 1; -- 2
+    lsb := msb - SLCPROC_PIPE_COMMON_DESTSL_LEN + 1; -- 2
     b.destsl := v(msb downto lsb); -- 33 32
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_COMMON_PHIMOD_LEN + 1; -- 8
+    lsb := msb - SLCPROC_PIPE_COMMON_PHIMOD_LEN + 1; -- 8
     b.phimod := v(msb downto lsb); -- 31 24
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LEN + 1; -- 6
+    lsb := msb - SLCPROC_PIPE_COMMON_INN_VEC_MDTID_LEN + 1; -- 6
     b.inn_vec_mdtid := v(msb downto lsb); -- 23 18
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LEN + 1; -- 6
+    lsb := msb - SLCPROC_PIPE_COMMON_MID_VEC_MDTID_LEN + 1; -- 6
     b.mid_vec_mdtid := v(msb downto lsb); -- 17 12
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LEN + 1; -- 6
+    lsb := msb - SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_LEN + 1; -- 6
     b.out_vec_mdtid := v(msb downto lsb); -- 11 6
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LEN + 1; -- 6
+    lsb := msb - SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_LEN + 1; -- 6
     b.ext_vec_mdtid := v(msb downto lsb); -- 5 0
     return b;
-  end function slcproc_pipeline_common_2rf;
+  end function slcproc_pipe_common_2rf;
 
   -- -----------------------------------------------------------------
-  function slcproc_pipeline_endcap_2af (d: SLCPROC_PIPELINE_ENDCAP_rt)
+  function slcproc_pipe_endcap_2af (d: SLCPROC_PIPE_ENDCAP_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_PIPELINE_ENDCAP_LEN-1 downto 0);
+    variable v : std_logic_vector(SLCPROC_PIPE_ENDCAP_LEN-1 downto 0);
   begin
-    v := slcproc_pipeline_common_2af(d.slcproc_pipeline_common_r)
+    v := slcproc_pipe_common_2af(d.slcproc_pipe_common_r)
          & slc_endcap_2af(d.slc_endcap_r)
          & slc_muid_2af(d.slc_muid_r);
     return v;
-  end function slcproc_pipeline_endcap_2af;
+  end function slcproc_pipe_endcap_2af;
 
-  function slcproc_pipeline_endcap_2rf (v: slcproc_pipeline_endcap_at)
-  return SLCPROC_PIPELINE_ENDCAP_rt is
-    variable b : SLCPROC_PIPELINE_ENDCAP_rt;
+  function slcproc_pipe_endcap_2rf (v: slcproc_pipe_endcap_at)
+  return SLCPROC_PIPE_ENDCAP_rt is
+    variable b : SLCPROC_PIPE_ENDCAP_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_PIPELINE_ENDCAP_LEN - 1; -- 125
-    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN + 1; -- 35
-    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 124 90
+    msb := SLCPROC_PIPE_ENDCAP_LEN - 1; -- 125
+    lsb := msb - SLCPROC_PIPE_ENDCAP_SLCPROC_PIPE_COMMON_LEN + 1; -- 35
+    b.slcproc_pipe_common_r := slcproc_pipe_common_2rf(v(msb downto lsb)); -- 124 90
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN + 1; -- 70
+    lsb := msb - SLCPROC_PIPE_ENDCAP_SLC_ENDCAP_LEN + 1; -- 70
     b.slc_endcap_r := slc_endcap_2rf(v(msb downto lsb)); -- 89 20
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LEN + 1; -- 20
+    lsb := msb - SLCPROC_PIPE_ENDCAP_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 19 0
     return b;
-  end function slcproc_pipeline_endcap_2rf;
+  end function slcproc_pipe_endcap_2rf;
 
   -- -----------------------------------------------------------------
-  function slcproc_pipeline_barrel_2af (d: SLCPROC_PIPELINE_BARREL_rt)
+  function slcproc_pipe_barrel_2af (d: SLCPROC_PIPE_BARREL_rt)
   return std_logic_vector is
-    variable v : std_logic_vector(SLCPROC_PIPELINE_BARREL_LEN-1 downto 0);
+    variable v : std_logic_vector(SLCPROC_PIPE_BARREL_LEN-1 downto 0);
   begin
-    v := slcproc_pipeline_common_2af(d.slcproc_pipeline_common_r)
+    v := slcproc_pipe_common_2af(d.slcproc_pipe_common_r)
          & slc_barrel_2af(d.slc_barrel_r)
          & slc_muid_2af(d.slc_muid_r);
     return v;
-  end function slcproc_pipeline_barrel_2af;
+  end function slcproc_pipe_barrel_2af;
 
-  function slcproc_pipeline_barrel_2rf (v: slcproc_pipeline_barrel_at)
-  return SLCPROC_PIPELINE_BARREL_rt is
-    variable b : SLCPROC_PIPELINE_BARREL_rt;
+  function slcproc_pipe_barrel_2rf (v: slcproc_pipe_barrel_at)
+  return SLCPROC_PIPE_BARREL_rt is
+    variable b : SLCPROC_PIPE_BARREL_rt;
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := SLCPROC_PIPELINE_BARREL_LEN - 1; -- 130
-    lsb := msb - SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN + 1; -- 35
-    b.slcproc_pipeline_common_r := slcproc_pipeline_common_2rf(v(msb downto lsb)); -- 129 95
+    msb := SLCPROC_PIPE_BARREL_LEN - 1; -- 130
+    lsb := msb - SLCPROC_PIPE_BARREL_SLCPROC_PIPE_COMMON_LEN + 1; -- 35
+    b.slcproc_pipe_common_r := slcproc_pipe_common_2rf(v(msb downto lsb)); -- 129 95
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN + 1; -- 75
+    lsb := msb - SLCPROC_PIPE_BARREL_SLC_BARREL_LEN + 1; -- 75
     b.slc_barrel_r := slc_barrel_2rf(v(msb downto lsb)); -- 94 20
     msb := lsb - 1;
-    lsb := msb - SLCPROC_PIPELINE_BARREL_SLC_MUID_LEN + 1; -- 20
+    lsb := msb - SLCPROC_PIPE_BARREL_SLC_MUID_LEN + 1; -- 20
     b.slc_muid_r := slc_muid_2rf(v(msb downto lsb)); -- 19 0
     return b;
-  end function slcproc_pipeline_barrel_2rf;
+  end function slcproc_pipe_barrel_2rf;
 
   -- -----------------------------------------------------------------
   function tdc_2af (d: TDC_rt)

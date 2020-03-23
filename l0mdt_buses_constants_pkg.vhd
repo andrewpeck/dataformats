@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"26fa9dec";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"bece9746";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -171,104 +171,104 @@ package mdttp_constants_pkg is
   constant SLC_BARREL_COINTYPE_MULT : natural := 1;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_PIPELINE_COMMON_LEN : natural := 35;
+  constant SLCPROC_PIPE_COMMON_LEN : natural := 35;
 
   -- SLc busy flag
-  constant SLCPROC_PIPELINE_COMMON_BUSY_LEN : natural := 1;
-  constant SLCPROC_PIPELINE_COMMON_BUSY_MSB : natural := 34;
-  constant SLCPROC_PIPELINE_COMMON_BUSY_LSB : natural := 34;
-  constant SLCPROC_PIPELINE_COMMON_BUSY_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_BUSY_MULT : natural := 0;
+  constant SLCPROC_PIPE_COMMON_BUSY_LEN : natural := 1;
+  constant SLCPROC_PIPE_COMMON_BUSY_MSB : natural := 34;
+  constant SLCPROC_PIPE_COMMON_BUSY_LSB : natural := 34;
+  constant SLCPROC_PIPE_COMMON_BUSY_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_BUSY_MULT : natural := 0;
 
   -- SLc board destination
-  constant SLCPROC_PIPELINE_COMMON_DESTSL_LEN : natural := 2;
-  constant SLCPROC_PIPELINE_COMMON_DESTSL_MSB : natural := 33;
-  constant SLCPROC_PIPELINE_COMMON_DESTSL_LSB : natural := 32;
-  constant SLCPROC_PIPELINE_COMMON_DESTSL_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_DESTSL_MULT : natural := 2;
+  constant SLCPROC_PIPE_COMMON_DESTSL_LEN : natural := 2;
+  constant SLCPROC_PIPE_COMMON_DESTSL_MSB : natural := 33;
+  constant SLCPROC_PIPE_COMMON_DESTSL_LSB : natural := 32;
+  constant SLCPROC_PIPE_COMMON_DESTSL_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_DESTSL_MULT : natural := 2;
 
   -- SLc phimod
-  constant SLCPROC_PIPELINE_COMMON_PHIMOD_LEN : natural := 8;
-  constant SLCPROC_PIPELINE_COMMON_PHIMOD_MSB : natural := 31;
-  constant SLCPROC_PIPELINE_COMMON_PHIMOD_LSB : natural := 24;
-  constant SLCPROC_PIPELINE_COMMON_PHIMOD_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_PHIMOD_MULT : natural := 0;
+  constant SLCPROC_PIPE_COMMON_PHIMOD_LEN : natural := 8;
+  constant SLCPROC_PIPE_COMMON_PHIMOD_MSB : natural := 31;
+  constant SLCPROC_PIPE_COMMON_PHIMOD_LSB : natural := 24;
+  constant SLCPROC_PIPE_COMMON_PHIMOD_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_PHIMOD_MULT : natural := 0;
 
   -- SLc Inner Vector MDT chamber ID
-  constant SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LEN : natural := 6;
-  constant SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_MSB : natural := 23;
-  constant SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LSB : natural := 18;
-  constant SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_MULT : natural := 1;
+  constant SLCPROC_PIPE_COMMON_INN_VEC_MDTID_LEN : natural := 6;
+  constant SLCPROC_PIPE_COMMON_INN_VEC_MDTID_MSB : natural := 23;
+  constant SLCPROC_PIPE_COMMON_INN_VEC_MDTID_LSB : natural := 18;
+  constant SLCPROC_PIPE_COMMON_INN_VEC_MDTID_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_INN_VEC_MDTID_MULT : natural := 1;
 
   -- SLc Middle Vector MDT chamber ID
-  constant SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LEN : natural := 6;
-  constant SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_MSB : natural := 17;
-  constant SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LSB : natural := 12;
-  constant SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_MULT : natural := 1;
+  constant SLCPROC_PIPE_COMMON_MID_VEC_MDTID_LEN : natural := 6;
+  constant SLCPROC_PIPE_COMMON_MID_VEC_MDTID_MSB : natural := 17;
+  constant SLCPROC_PIPE_COMMON_MID_VEC_MDTID_LSB : natural := 12;
+  constant SLCPROC_PIPE_COMMON_MID_VEC_MDTID_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_MID_VEC_MDTID_MULT : natural := 1;
 
   -- SLc Outer Vector MDT chamber ID
-  constant SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LEN : natural := 6;
-  constant SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_MSB : natural := 11;
-  constant SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LSB : natural := 6;
-  constant SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_MULT : natural := 1;
+  constant SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_LEN : natural := 6;
+  constant SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_MSB : natural := 11;
+  constant SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_LSB : natural := 6;
+  constant SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_MULT : natural := 1;
 
   -- SLc Extra Vector MDT chamber ID
-  constant SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LEN : natural := 6;
-  constant SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_MSB : natural := 5;
-  constant SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LSB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_MULT : natural := 1;
+  constant SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_LEN : natural := 6;
+  constant SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_MSB : natural := 5;
+  constant SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_LSB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_DECB : natural := 0;
+  constant SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_MULT : natural := 1;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_PIPELINE_ENDCAP_LEN : natural := 125;
+  constant SLCPROC_PIPE_ENDCAP_LEN : natural := 125;
 
   -- (COPY)
-  constant SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LEN : natural := 35;
-  constant SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_MSB : natural := 124;
-  constant SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_LSB : natural := 90;
-  constant SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_ENDCAP_SLCPROC_PIPELINE_COMMON_MULT : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLCPROC_PIPE_COMMON_LEN : natural := 35;
+  constant SLCPROC_PIPE_ENDCAP_SLCPROC_PIPE_COMMON_MSB : natural := 124;
+  constant SLCPROC_PIPE_ENDCAP_SLCPROC_PIPE_COMMON_LSB : natural := 90;
+  constant SLCPROC_PIPE_ENDCAP_SLCPROC_PIPE_COMMON_DECB : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLCPROC_PIPE_COMMON_MULT : natural := 0;
 
   -- (COPY)
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LEN : natural := 70;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_MSB : natural := 89;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_LSB : natural := 20;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_ENDCAP_MULT : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLC_ENDCAP_LEN : natural := 70;
+  constant SLCPROC_PIPE_ENDCAP_SLC_ENDCAP_MSB : natural := 89;
+  constant SLCPROC_PIPE_ENDCAP_SLC_ENDCAP_LSB : natural := 20;
+  constant SLCPROC_PIPE_ENDCAP_SLC_ENDCAP_DECB : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLC_ENDCAP_MULT : natural := 0;
 
   -- (COPY)
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LEN : natural := 20;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_MUID_MSB : natural := 19;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_MUID_LSB : natural := 0;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_MUID_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_ENDCAP_SLC_MUID_MULT : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLC_MUID_LEN : natural := 20;
+  constant SLCPROC_PIPE_ENDCAP_SLC_MUID_MSB : natural := 19;
+  constant SLCPROC_PIPE_ENDCAP_SLC_MUID_LSB : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLC_MUID_DECB : natural := 0;
+  constant SLCPROC_PIPE_ENDCAP_SLC_MUID_MULT : natural := 0;
 
   ----------------------------------------------------------------------
-  constant SLCPROC_PIPELINE_BARREL_LEN : natural := 130;
+  constant SLCPROC_PIPE_BARREL_LEN : natural := 130;
 
   -- (COPY)
-  constant SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LEN : natural := 35;
-  constant SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_MSB : natural := 129;
-  constant SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_LSB : natural := 95;
-  constant SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_BARREL_SLCPROC_PIPELINE_COMMON_MULT : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLCPROC_PIPE_COMMON_LEN : natural := 35;
+  constant SLCPROC_PIPE_BARREL_SLCPROC_PIPE_COMMON_MSB : natural := 129;
+  constant SLCPROC_PIPE_BARREL_SLCPROC_PIPE_COMMON_LSB : natural := 95;
+  constant SLCPROC_PIPE_BARREL_SLCPROC_PIPE_COMMON_DECB : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLCPROC_PIPE_COMMON_MULT : natural := 0;
 
   -- (COPY)
-  constant SLCPROC_PIPELINE_BARREL_SLC_BARREL_LEN : natural := 75;
-  constant SLCPROC_PIPELINE_BARREL_SLC_BARREL_MSB : natural := 94;
-  constant SLCPROC_PIPELINE_BARREL_SLC_BARREL_LSB : natural := 20;
-  constant SLCPROC_PIPELINE_BARREL_SLC_BARREL_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_BARREL_SLC_BARREL_MULT : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLC_BARREL_LEN : natural := 75;
+  constant SLCPROC_PIPE_BARREL_SLC_BARREL_MSB : natural := 94;
+  constant SLCPROC_PIPE_BARREL_SLC_BARREL_LSB : natural := 20;
+  constant SLCPROC_PIPE_BARREL_SLC_BARREL_DECB : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLC_BARREL_MULT : natural := 0;
 
   -- (COPY)
-  constant SLCPROC_PIPELINE_BARREL_SLC_MUID_LEN : natural := 20;
-  constant SLCPROC_PIPELINE_BARREL_SLC_MUID_MSB : natural := 19;
-  constant SLCPROC_PIPELINE_BARREL_SLC_MUID_LSB : natural := 0;
-  constant SLCPROC_PIPELINE_BARREL_SLC_MUID_DECB : natural := 0;
-  constant SLCPROC_PIPELINE_BARREL_SLC_MUID_MULT : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLC_MUID_LEN : natural := 20;
+  constant SLCPROC_PIPE_BARREL_SLC_MUID_MSB : natural := 19;
+  constant SLCPROC_PIPE_BARREL_SLC_MUID_LSB : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLC_MUID_DECB : natural := 0;
+  constant SLCPROC_PIPE_BARREL_SLC_MUID_MULT : natural := 0;
 
   ----------------------------------------------------------------------
   constant TDC_LEN : natural := 34;

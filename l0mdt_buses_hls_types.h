@@ -51,21 +51,21 @@ typedef ap_uint<14> slc_barrel_rpc3_posz_uint_scaled_t;
 typedef ap_uint<SLC_BARREL_COINTYPE_LEN> slc_barrel_cointype_uint_t;
 
 // -------------------------------------------------------------------
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_LEN> slcproc_pipeline_common_uint_t;
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_BUSY_LEN> slcproc_pipeline_common_busy_uint_t;
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_DESTSL_LEN> slcproc_pipeline_common_destsl_uint_t;
-typedef ap_int<SLCPROC_PIPELINE_COMMON_PHIMOD_LEN> slcproc_pipeline_common_phimod_int_t;
-typedef ap_int<10> slcproc_pipeline_common_phimod_int_scaled_t;
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_INN_VEC_MDTID_LEN> slcproc_pipeline_common_inn_vec_mdtid_uint_t;
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_MID_VEC_MDTID_LEN> slcproc_pipeline_common_mid_vec_mdtid_uint_t;
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_OUT_VEC_MDTID_LEN> slcproc_pipeline_common_out_vec_mdtid_uint_t;
-typedef ap_uint<SLCPROC_PIPELINE_COMMON_EXT_VEC_MDTID_LEN> slcproc_pipeline_common_ext_vec_mdtid_uint_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_LEN> slcproc_pipe_common_uint_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_BUSY_LEN> slcproc_pipe_common_busy_uint_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_DESTSL_LEN> slcproc_pipe_common_destsl_uint_t;
+typedef ap_int<SLCPROC_PIPE_COMMON_PHIMOD_LEN> slcproc_pipe_common_phimod_int_t;
+typedef ap_int<10> slcproc_pipe_common_phimod_int_scaled_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_INN_VEC_MDTID_LEN> slcproc_pipe_common_inn_vec_mdtid_uint_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_MID_VEC_MDTID_LEN> slcproc_pipe_common_mid_vec_mdtid_uint_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_OUT_VEC_MDTID_LEN> slcproc_pipe_common_out_vec_mdtid_uint_t;
+typedef ap_uint<SLCPROC_PIPE_COMMON_EXT_VEC_MDTID_LEN> slcproc_pipe_common_ext_vec_mdtid_uint_t;
 
 // -------------------------------------------------------------------
-typedef ap_uint<SLCPROC_PIPELINE_ENDCAP_LEN> slcproc_pipeline_endcap_uint_t;
+typedef ap_uint<SLCPROC_PIPE_ENDCAP_LEN> slcproc_pipe_endcap_uint_t;
 
 // -------------------------------------------------------------------
-typedef ap_uint<SLCPROC_PIPELINE_BARREL_LEN> slcproc_pipeline_barrel_uint_t;
+typedef ap_uint<SLCPROC_PIPE_BARREL_LEN> slcproc_pipe_barrel_uint_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<TDC_LEN> tdc_uint_t;

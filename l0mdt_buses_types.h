@@ -5,7 +5,7 @@
 #ifndef L0MDT_BUSES_TYPES_H
 #define L0MDT_BUSES_TYPES_H
 
-const char df_hash[] = "26fa9dec";
+const char df_hash[] = "bece9746";
 
 // Usage:
 //   uint16_t bcid;
@@ -17,8 +17,6 @@ void GETVAL(T& dest, char orig, unsigned int nbits) {
         dest |= orig[i] << i*8;
     }
 }
-
-const char df_hash[] = "bece9746";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {

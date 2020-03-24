@@ -2,20 +2,21 @@
 // Auto-generated from:
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
+#ifndef L0MDT_BUSES_TYPES_H
+#define L0MDT_BUSES_TYPES_H
 
-#ifndef LOMDT_BUS_TYPES_H
-#define LOMDT_BUS_TYPES_H
+const char df_hash[] = "bece9746";
 
 // Usage:
 //   uint16_t bcid;
 //   GETVAL(bcid, SLC_MUID.bcid, 12);
-#define GETVAL(dest,orig,nbits) \
-    dest = 0; \
-    for (int i=0; i <= nbits/8; i++){\
-        dest |= orig[i] << i*8;\
+template <typename T>
+void GETVAL(T& dest, char orig, unsigned int nbits) {
+    dest = 0;
+    for (int i=0; i <= nbits/8; i++){
+        dest |= orig[i] << i*8;
     }
-
-const char df_hash[] = "bece9746";
+}
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -279,4 +280,4 @@ typedef struct MTC_n {
 
 // -------------------------------------------------------------------
 
-#endif // LOMDT_BUS_TYPES_H
+#endif // L0MDT_BUSES_TYPES_H

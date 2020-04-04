@@ -101,7 +101,7 @@ TOTAL,,40,,,,,◊,,,,,,,,,
 ,,,,,,,,,,,,,,,,
 SLCPIPE_PTCALC,Station,Width,MSB,LSB,DECB,Low,High,Precision,Units,Destination Chip,Destination Block,Source,Parameter,Type,,Comments
 SLC_MUID,,20,28,9,0,,,,#,,Pt Calc,SLC Pipeline,(COPY),SLC_MUID,,
-phimod,,8,8,1,0,-400,400,4.00000,mrad,,◊,SLC Pipeline,(COPY),var,,
+phimod,,8,8,1,0,-400,400,4.00000,mrad,,Pt Calc,SLC Pipeline,(COPY),var,,
 charge,,1,0,0,0,0,2,1,#,,Pt Calc,SLC Pipeline,(COPY),var,,
 TOTAL,,29,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,

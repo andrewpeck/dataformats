@@ -5,7 +5,7 @@
 #ifndef L0MDT_BUSES_CONSTANTS_SW_H
 #define L0MDT_BUSES_CONSTANTS_SW_H
 
-const char df_hash[] = "bece9746";
+const char df_hash[] = "4fd39fa5";
 
 const int SW_LEN = 64; // Default bit width
 const int SW_IW = 15; // Default integer bit width

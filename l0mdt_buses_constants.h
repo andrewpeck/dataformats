@@ -5,7 +5,7 @@
 #ifndef L0MDT_BUSES_CONSTANTS_H
 #define L0MDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "bece9746";
+const char df_hash[] = "4fd39fa5";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;

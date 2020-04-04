@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "bece9746";
+const char df_hash[] = "4fd39fa5";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {

@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH bece9746;
+`define DF_HASH 4fd39fa5;
 
 // -------------------------------------------------------------------
 parameter SLC_MUID_LEN = 20 ;

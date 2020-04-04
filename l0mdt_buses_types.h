@@ -5,7 +5,7 @@
 #ifndef L0MDT_BUSES_TYPES_H
 #define L0MDT_BUSES_TYPES_H
 
-const char df_hash[] = "bece9746";
+const char df_hash[] = "4fd39fa5";
 
 // Usage:
 //   uint16_t bcid;

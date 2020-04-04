@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"bece9746";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"4fd39fa5";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);

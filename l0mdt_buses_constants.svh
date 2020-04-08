@@ -3,7 +3,7 @@
 // https://docs.google.com/spreadsheets/d/1oJh-NPv990n6AzXXZ7cBaySrltqBO-eGucrsnOx_r4s
 // -------------------------------------------------------------------------------------------------
 
-`define DF_HASH 4fd39fa5;
+`define DF_HASH b70475b5;
 
 // -------------------------------------------------------------------
 parameter SLC_MUID_LEN = 20 ;
@@ -231,44 +231,44 @@ parameter SLCPROC_PIPE_BARREL_SLC_MUID_LSB = 0 ;
 parameter SLCPROC_PIPE_BARREL_SLC_MUID_DECB = 0 ;
 
 // -------------------------------------------------------------------
-parameter TDC_LEN = 34 ;
+parameter TDC_LEN = 32 ;
 
 // Channel number within TDC
 parameter TDC_CHANID_LEN = 5 ;
-parameter TDC_CHANID_MSB = 33 ;
-parameter TDC_CHANID_LSB = 29 ;
+parameter TDC_CHANID_MSB = 31 ;
+parameter TDC_CHANID_LSB = 27 ;
 parameter TDC_CHANID_DECB = 0 ;
 
 // Edge or pair mode
 parameter TDC_EDGEMODE_LEN = 2 ;
-parameter TDC_EDGEMODE_MSB = 28 ;
-parameter TDC_EDGEMODE_LSB = 27 ;
+parameter TDC_EDGEMODE_MSB = 26 ;
+parameter TDC_EDGEMODE_LSB = 25 ;
 parameter TDC_EDGEMODE_DECB = 0 ;
 
 // TDC BCID
 parameter TDC_COARSETIME_LEN = 12 ;
-parameter TDC_COARSETIME_MSB = 26 ;
-parameter TDC_COARSETIME_LSB = 15 ;
+parameter TDC_COARSETIME_MSB = 24 ;
+parameter TDC_COARSETIME_LSB = 13 ;
 parameter TDC_COARSETIME_DECB = 0 ;
 
 // TDC fine time with BCID
-parameter TDC_FINETIME_LEN = 6 ;
-parameter TDC_FINETIME_MSB = 14 ;
-parameter TDC_FINETIME_LSB = 9 ;
-parameter TDC_FINETIME_DECB = 1 ;
+parameter TDC_FINETIME_LEN = 5 ;
+parameter TDC_FINETIME_MSB = 12 ;
+parameter TDC_FINETIME_LSB = 8 ;
+parameter TDC_FINETIME_DECB = 0 ;
 
 // Pulse width
-parameter TDC_PULSEWIDTH_LEN = 9 ;
-parameter TDC_PULSEWIDTH_MSB = 8 ;
+parameter TDC_PULSEWIDTH_LEN = 8 ;
+parameter TDC_PULSEWIDTH_MSB = 7 ;
 parameter TDC_PULSEWIDTH_LSB = 0 ;
-parameter TDC_PULSEWIDTH_DECB = 1 ;
+parameter TDC_PULSEWIDTH_DECB = 0 ;
 
 // -------------------------------------------------------------------
-parameter TDCPOLMUX_LEN = 44 ;
+parameter TDCPOLMUX_LEN = 42 ;
 
 // (COPY)
-parameter TDCPOLMUX_TDC_LEN = 34 ;
-parameter TDCPOLMUX_TDC_MSB = 43 ;
+parameter TDCPOLMUX_TDC_LEN = 32 ;
+parameter TDCPOLMUX_TDC_MSB = 41 ;
 parameter TDCPOLMUX_TDC_LSB = 10 ;
 parameter TDCPOLMUX_TDC_DECB = 0 ;
 

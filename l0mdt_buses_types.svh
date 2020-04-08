@@ -6,7 +6,7 @@
 #ifndef LOMDT_BUS_TYPES_H
 #define LOMDT_BUS_TYPES_H
 
-const char df_hash[] = "4fd39fa5";
+const char df_hash[] = "b70475b5";
 
 // -------------------------------------------------------------------
 typedef struct SLC_MUID_n {
@@ -107,15 +107,15 @@ typedef struct TDC_n {
     // TDC BCID
     logic [11:0] coarsetimecoarsetime;
     // TDC fine time with BCID
-    logic [5:0] finetimefinetime;
+    logic [4:0] finetimefinetime;
     // Pulse width
-    logic [8:0] pulsewidthpulsewidth;
+    logic [7:0] pulsewidthpulsewidth;
 } TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCPOLMUX_n {
     // struct TDC
-    logic [33:0] TDCTDC;
+    logic [31:0] TDCTDC;
     // Fiber ID within board
     logic [4:0] fiberidfiberid;
     // Elink ID within fiber

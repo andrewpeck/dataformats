@@ -73,8 +73,8 @@ typedef ap_uint<TDC_CHANID_LEN> tdc_chanid_uint_t;
 typedef ap_uint<TDC_EDGEMODE_LEN> tdc_edgemode_uint_t;
 typedef ap_uint<TDC_COARSETIME_LEN> tdc_coarsetime_uint_t;
 typedef ap_uint<17> tdc_coarsetime_uint_scaled_t;
-typedef ap_ufixed<TDC_FINETIME_LEN, TDC_FINETIME_IW> tdc_finetime_ufixed_t;
-typedef ap_ufixed<TDC_PULSEWIDTH_LEN, TDC_PULSEWIDTH_IW> tdc_pulsewidth_ufixed_t;
+typedef ap_uint<TDC_FINETIME_LEN> tdc_finetime_uint_t;
+typedef ap_uint<TDC_PULSEWIDTH_LEN> tdc_pulsewidth_uint_t;
 
 // -------------------------------------------------------------------
 typedef ap_uint<TDCPOLMUX_LEN> tdcpolmux_uint_t;

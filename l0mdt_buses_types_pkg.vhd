@@ -12,7 +12,7 @@ use l0mdt_lib.mdttp_constants_pkg.all;
 
 package mdttp_types_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"4fd39fa5";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"b70475b5";
 
   -- -----------------------------------------------------------------
   subtype SLC_MUID_at is std_logic_vector(19 downto 0);
@@ -125,7 +125,7 @@ package mdttp_types_pkg is
   end record slcproc_pipe_barrel_rt;
 
   -- -----------------------------------------------------------------
-  subtype TDC_at is std_logic_vector(33 downto 0);
+  subtype TDC_at is std_logic_vector(31 downto 0);
 
   type tdc_rt is record
     -- Channel number within TDC
@@ -135,13 +135,13 @@ package mdttp_types_pkg is
     -- TDC BCID
     coarsetime : std_logic_vector(TDC_COARSETIME_LEN-1 downto 0); -- 11
     -- TDC fine time with BCID
-    finetime : std_logic_vector(TDC_FINETIME_LEN-1 downto 0); -- 5
+    finetime : std_logic_vector(TDC_FINETIME_LEN-1 downto 0); -- 4
     -- Pulse width
-    pulsewidth : std_logic_vector(TDC_PULSEWIDTH_LEN-1 downto 0); -- 8
+    pulsewidth : std_logic_vector(TDC_PULSEWIDTH_LEN-1 downto 0); -- 7
   end record tdc_rt;
 
   -- -----------------------------------------------------------------
-  subtype TDCPOLMUX_at is std_logic_vector(43 downto 0);
+  subtype TDCPOLMUX_at is std_logic_vector(41 downto 0);
 
   type tdcpolmux_rt is record
     -- struct TDC

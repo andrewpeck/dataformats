@@ -9,7 +9,7 @@ use ieee.numeric_std.all;
 
 package mdttp_constants_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"4fd39fa5";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"b70475b5";
 
   ----------------------------------------------------------------------
   constant SLC_MUID_LEN : natural := 20;
@@ -271,49 +271,49 @@ package mdttp_constants_pkg is
   constant SLCPROC_PIPE_BARREL_SLC_MUID_MULT : natural := 0;
 
   ----------------------------------------------------------------------
-  constant TDC_LEN : natural := 34;
+  constant TDC_LEN : natural := 32;
 
   -- Channel number within TDC
   constant TDC_CHANID_LEN : natural := 5;
-  constant TDC_CHANID_MSB : natural := 33;
-  constant TDC_CHANID_LSB : natural := 29;
+  constant TDC_CHANID_MSB : natural := 31;
+  constant TDC_CHANID_LSB : natural := 27;
   constant TDC_CHANID_DECB : natural := 0;
   constant TDC_CHANID_MULT : natural := 1;
 
   -- Edge or pair mode
   constant TDC_EDGEMODE_LEN : natural := 2;
-  constant TDC_EDGEMODE_MSB : natural := 28;
-  constant TDC_EDGEMODE_LSB : natural := 27;
+  constant TDC_EDGEMODE_MSB : natural := 26;
+  constant TDC_EDGEMODE_LSB : natural := 25;
   constant TDC_EDGEMODE_DECB : natural := 0;
   constant TDC_EDGEMODE_MULT : natural := 1;
 
   -- TDC BCID
   constant TDC_COARSETIME_LEN : natural := 12;
-  constant TDC_COARSETIME_MSB : natural := 26;
-  constant TDC_COARSETIME_LSB : natural := 15;
+  constant TDC_COARSETIME_MSB : natural := 24;
+  constant TDC_COARSETIME_LSB : natural := 13;
   constant TDC_COARSETIME_DECB : natural := 0;
   constant TDC_COARSETIME_MULT : natural := 0;
 
   -- TDC fine time with BCID
-  constant TDC_FINETIME_LEN : natural := 6;
-  constant TDC_FINETIME_MSB : natural := 14;
-  constant TDC_FINETIME_LSB : natural := 9;
-  constant TDC_FINETIME_DECB : natural := 1;
-  constant TDC_FINETIME_MULT : natural := 3;
+  constant TDC_FINETIME_LEN : natural := 5;
+  constant TDC_FINETIME_MSB : natural := 12;
+  constant TDC_FINETIME_LSB : natural := 8;
+  constant TDC_FINETIME_DECB : natural := 0;
+  constant TDC_FINETIME_MULT : natural := 1;
 
   -- Pulse width
-  constant TDC_PULSEWIDTH_LEN : natural := 9;
-  constant TDC_PULSEWIDTH_MSB : natural := 8;
+  constant TDC_PULSEWIDTH_LEN : natural := 8;
+  constant TDC_PULSEWIDTH_MSB : natural := 7;
   constant TDC_PULSEWIDTH_LSB : natural := 0;
-  constant TDC_PULSEWIDTH_DECB : natural := 1;
-  constant TDC_PULSEWIDTH_MULT : natural := 3;
+  constant TDC_PULSEWIDTH_DECB : natural := 0;
+  constant TDC_PULSEWIDTH_MULT : natural := 1;
 
   ----------------------------------------------------------------------
-  constant TDCPOLMUX_LEN : natural := 44;
+  constant TDCPOLMUX_LEN : natural := 42;
 
   -- (COPY)
-  constant TDCPOLMUX_TDC_LEN : natural := 34;
-  constant TDCPOLMUX_TDC_MSB : natural := 43;
+  constant TDCPOLMUX_TDC_LEN : natural := 32;
+  constant TDCPOLMUX_TDC_MSB : natural := 41;
   constant TDCPOLMUX_TDC_LSB : natural := 10;
   constant TDCPOLMUX_TDC_DECB : natural := 0;
   constant TDCPOLMUX_TDC_MULT : natural := 0;

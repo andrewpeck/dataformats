@@ -5,7 +5,7 @@
 #ifndef L0MDT_BUSES_TYPES_H
 #define L0MDT_BUSES_TYPES_H
 
-const char df_hash[] = "4fd39fa5";
+const char df_hash[] = "b70475b5";
 
 // Usage:
 //   uint16_t bcid;
@@ -117,15 +117,15 @@ typedef struct TDC_n {
     // TDC BCID
     char coarsetime[2]; // 12 bits
     // TDC fine time with BCID
-    char finetime; // 6 bits
+    char finetime; // 5 bits
     // Pulse width
-    char pulsewidth[2]; // 9 bits
+    char pulsewidth; // 8 bits
 } TDC_rt;
 
 // -------------------------------------------------------------------
 typedef struct TDCPOLMUX_n {
     // struct TDC
-    char TDC[5]; // 34 bits
+    char TDC[4]; // 32 bits
     // Fiber ID within board
     char fiberid; // 5 bits
     // Elink ID within fiber

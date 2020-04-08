@@ -5,7 +5,7 @@
 #ifndef L0MDT_BUSES_CONSTANTS_H
 #define L0MDT_BUSES_CONSTANTS_H
 
-const char df_hash[] = "4fd39fa5";
+const char df_hash[] = "b70475b5";
 
 // -------------------------------------------------------------------
 const int SLC_MUID_LEN = 20;
@@ -335,12 +335,12 @@ const int SLCPROC_PIPE_BARREL_SLC_MUID_SCALE = 1;
 const float SLCPROC_PIPE_BARREL_SLC_MUID_SCALE_INV = 1.0;
 
 // -------------------------------------------------------------------
-const int TDC_LEN = 34;
+const int TDC_LEN = 32;
 
 // Channel number within TDC
 const int TDC_CHANID_LEN = 5;
-const int TDC_CHANID_MSB = 33;
-const int TDC_CHANID_LSB = 29;
+const int TDC_CHANID_MSB = 31;
+const int TDC_CHANID_LSB = 27;
 const int TDC_CHANID_DECB = 0;
 const int TDC_CHANID_IW = 5;
 const int TDC_CHANID_SCALE = 1;
@@ -348,8 +348,8 @@ const float TDC_CHANID_SCALE_INV = 1.0;
 
 // Edge or pair mode
 const int TDC_EDGEMODE_LEN = 2;
-const int TDC_EDGEMODE_MSB = 28;
-const int TDC_EDGEMODE_LSB = 27;
+const int TDC_EDGEMODE_MSB = 26;
+const int TDC_EDGEMODE_LSB = 25;
 const int TDC_EDGEMODE_DECB = 0;
 const int TDC_EDGEMODE_IW = 2;
 const int TDC_EDGEMODE_SCALE = 1;
@@ -357,40 +357,40 @@ const float TDC_EDGEMODE_SCALE_INV = 1.0;
 
 // TDC BCID
 const int TDC_COARSETIME_LEN = 12;
-const int TDC_COARSETIME_MSB = 26;
-const int TDC_COARSETIME_LSB = 15;
+const int TDC_COARSETIME_MSB = 24;
+const int TDC_COARSETIME_LSB = 13;
 const int TDC_COARSETIME_DECB = 0;
 const int TDC_COARSETIME_IW = 12;
 const int TDC_COARSETIME_SCALE = 25;
 const float TDC_COARSETIME_SCALE_INV = 0.04;
 
 // TDC fine time with BCID
-const int TDC_FINETIME_LEN = 6;
-const int TDC_FINETIME_MSB = 14;
-const int TDC_FINETIME_LSB = 9;
-const int TDC_FINETIME_DECB = 1;
+const int TDC_FINETIME_LEN = 5;
+const int TDC_FINETIME_MSB = 12;
+const int TDC_FINETIME_LSB = 8;
+const int TDC_FINETIME_DECB = 0;
 const int TDC_FINETIME_IW = 5;
 const int TDC_FINETIME_SCALE = 1;
 const float TDC_FINETIME_SCALE_INV = 1.0;
 
 // Pulse width
-const int TDC_PULSEWIDTH_LEN = 9;
-const int TDC_PULSEWIDTH_MSB = 8;
+const int TDC_PULSEWIDTH_LEN = 8;
+const int TDC_PULSEWIDTH_MSB = 7;
 const int TDC_PULSEWIDTH_LSB = 0;
-const int TDC_PULSEWIDTH_DECB = 1;
+const int TDC_PULSEWIDTH_DECB = 0;
 const int TDC_PULSEWIDTH_IW = 8;
 const int TDC_PULSEWIDTH_SCALE = 1;
 const float TDC_PULSEWIDTH_SCALE_INV = 1.0;
 
 // -------------------------------------------------------------------
-const int TDCPOLMUX_LEN = 44;
+const int TDCPOLMUX_LEN = 42;
 
 // (COPY - TDC)
-const int TDCPOLMUX_TDC_LEN = 34;
-const int TDCPOLMUX_TDC_MSB = 43;
+const int TDCPOLMUX_TDC_LEN = 32;
+const int TDCPOLMUX_TDC_MSB = 41;
 const int TDCPOLMUX_TDC_LSB = 10;
 const int TDCPOLMUX_TDC_DECB = 0;
-const int TDCPOLMUX_TDC_IW = 34;
+const int TDCPOLMUX_TDC_IW = 32;
 const int TDCPOLMUX_TDC_SCALE = 1;
 const float TDCPOLMUX_TDC_SCALE_INV = 1.0;
 

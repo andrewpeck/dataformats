@@ -154,7 +154,7 @@ end package mdttp_functions_pkg;
 
 package body mdttp_functions_pkg is
 
-  constant DF_HASH : std_logic_vector(31 downto 0) := x"4fd39fa5";
+  constant DF_HASH : std_logic_vector(31 downto 0) := x"b70475b5";
 
   -- -----------------------------------------------------------------
   function slc_muid_2af (d: SLC_MUID_rt)
@@ -430,21 +430,21 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TDC_LEN - 1; -- 34
+    msb := TDC_LEN - 1; -- 32
     lsb := msb - TDC_CHANID_LEN + 1; -- 5
-    b.chanid := v(msb downto lsb); -- 33 29
+    b.chanid := v(msb downto lsb); -- 31 27
     msb := lsb - 1;
     lsb := msb - TDC_EDGEMODE_LEN + 1; -- 2
-    b.edgemode := v(msb downto lsb); -- 28 27
+    b.edgemode := v(msb downto lsb); -- 26 25
     msb := lsb - 1;
     lsb := msb - TDC_COARSETIME_LEN + 1; -- 12
-    b.coarsetime := v(msb downto lsb); -- 26 15
+    b.coarsetime := v(msb downto lsb); -- 24 13
     msb := lsb - 1;
-    lsb := msb - TDC_FINETIME_LEN + 1; -- 6
-    b.finetime := v(msb downto lsb); -- 14 9
+    lsb := msb - TDC_FINETIME_LEN + 1; -- 5
+    b.finetime := v(msb downto lsb); -- 12 8
     msb := lsb - 1;
-    lsb := msb - TDC_PULSEWIDTH_LEN + 1; -- 9
-    b.pulsewidth := v(msb downto lsb); -- 8 0
+    lsb := msb - TDC_PULSEWIDTH_LEN + 1; -- 8
+    b.pulsewidth := v(msb downto lsb); -- 7 0
     return b;
   end function tdc_2rf;
 
@@ -466,9 +466,9 @@ package body mdttp_functions_pkg is
     variable msb : integer;
     variable lsb : integer;
   begin
-    msb := TDCPOLMUX_LEN - 1; -- 44
-    lsb := msb - TDCPOLMUX_TDC_LEN + 1; -- 34
-    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 43 10
+    msb := TDCPOLMUX_LEN - 1; -- 42
+    lsb := msb - TDCPOLMUX_TDC_LEN + 1; -- 32
+    b.tdc_r := tdc_2rf(v(msb downto lsb)); -- 41 10
     msb := lsb - 1;
     lsb := msb - TDCPOLMUX_FIBERID_LEN + 1; -- 5
     b.fiberid := v(msb downto lsb); -- 9 5
